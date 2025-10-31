@@ -13,7 +13,7 @@
 
     -   **Duración del curso:** X horas
 
-    #### **Instructores:**
+    #### **Instructores**
 
     -   **Mariana Devon** - Estudiante de maestría, UAM
     -   **Mayela Fosado-Mendoza** - Tesista de licenciatura
@@ -33,13 +33,13 @@
 
     -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.
 
-    #### **Resumen:**
+    #### **Resumen**
 
     Este curso ofrece una introducción práctica al uso de herramientas computacionales aplicadas a la biología. Las y los participantes aprenderán a comunicarse con la computadora por medio de línea de comandos para la exploración, organización y análisis de datos biológicos.
 
     Este curso está diseñado para construir desde cero, paso a paso, las habilidades básicas necesarias en bioinformática. Se abordarán temas como la manipulación de archivos, la automatización de tareas simples y el uso de secuencias biológicas como ejemplo de aplicación en un problema real.
 
-    #### **Objetivos:**
+    #### **Objetivos**
 
     Al finalizar este curso, las y los participantes serán capaces de:
 
