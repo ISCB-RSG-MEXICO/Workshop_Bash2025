@@ -1,50 +1,52 @@
 # Instalaciones y requerimientos previos
 
-Para participar en este taller necesitas acceso al siguiente software. Además necesitarás acceso a un navegador como chrome o firefox.
+Para participar en este taller necesitas acceso al siguiente software y acceso a un navegador como chrome o firefox.
 
-Aqui hay una referencia de posibles problemas durante la instalación. [Wiki de problemas de instalación y sus soluciones.](https://nselem.github.io/workshop-template/wiki/Configuration-Problems-and-Solutions)
+Si experimentas problemas durante la instalación, puedes consultar la [Wiki de problemas de instalación y sus soluciones.](#0)
 
 ## Windows
 
 [Video Tutorial](https://www.youtube.com/watch?v=339AEqk9c-8)
 
-1.  Baja para windows [el instalador de git](https://git-for-windows.github.io/).
+1.  Descarga [el instalador de git](https://git-for-windows.github.io/) para Windows desde el sitio oficial
 
-2.  Corre el instalador y sigue los siguientes pasos:
+2.  Ejecuta el instalador y sigue los siguientes pasos:
 
     1.  Click en "Next".
 
     2.  Click en "Next".
 
-    3.  **Manten el "Use Git from the Windows Command Prompt" seleccioinado y click en "Next".** Si se te olvida hacer esto algunos programas que necesitarás no funcionaran correctamente. Si esto te pasa regrésate al paso anterior del instalador y selecciona la opción correcta.
+    3.  Asegúrate de mantener seleccionada la opción **\"Use Git from the Windows Command Prompt\"**, luego haz clic en \"Next\". Si omites este paso, algunos programas no funcionarán correctamente. En caso de que lo hayas omitido, puedes regresar al paso anterior del instalados y seleccionar la opción correcta.
 
     4.  Click en "Next".
 
-    5.  **Mantén "Checkout Windows-style, commit Unix-style line endings" seleccionado y click en "Next".**
+    5.  **Mantén seleccionado "Checkout Windows-style, commit Unix-style line endings" seleccionado y click en "Next".**
 
-    6.  **Mantén "Use Windows' default console window" seleccionado y click en "Next".**
+    6.  **Mantén seleccionado "Use Windows' default console window" seleccionado y click en "Next".**
 
     7.  Click en "Install".
 
     8.  Click en "Finish".
 
-3.  si tu variable de ambiente "HOME" no está lista (o no sabes qué es esto):
+3.  Si la variable de entorno "HOME" no está configurada (o desconoces que es esto):
 
-    1.  Abre el prompt (Abre el menu start, escribe `cmd` y presiona enter \[Enter\])
+    1.  Abre el *Command prompt* (Inicio -\> escribe "cmd" -\> \[Enter\])
 
     2.  Escribe la siguiente línea en la ventana del promt exactamente como se muestra:
 
         `setx HOME "%USERPROFILE%"`
 
-    3.  Presiona \[Enter\], debes de ver `SUCCESS: Specified value was saved.`
+    3.  Presiona \[Enter\] y verifica que aparezca el mensaje
 
-    4.  Para salir del prompr escribe `exit` y presiona enter \[Enter\]
+        `SUCCESS: Specified value was saved.`
 
-Esto te dará ambos Git y Bash en el programa Git Bash.
+    4.  Escribe `exit` y presiona \[Enter\] para cerrar la terminal
+
+Esto intalará tanto Git como Bash, ambos accesibles desde el programa Git Bash
 
 ## macOS
 
-El shell por default en todas las versiones de macOS es Bash, asi que no debes instalar nada. Podrás accesar a Bash desde la Terminal (que se encuentra en `/Applications/Utilities`). Para la instalación de Git aqui tenemos un [video tutorial](https://www.youtube.com/watch?v=9LQhwETCdwY) for an example on how to open the Terminal. Tal vez quieras mantener la Terminal en tu dock para este taller.
+En macOS el shell por defecto en todas las versiones es Bash, por lo que no es necesario instalarlo. Puedes accesar a Bash desde la Terminal (que se encuentra en `/Applications/Utilities`). Para instalar Git sigue las instrucciones del [video tutorial](#0) for an example on how to open the Terminal. Se recomienda mantener la terminal anclada en el Dock para facilitar su uso durante el taller.
 
 ## Linux
 
@@ -52,5 +54,5 @@ El shell es usualmente Bash, pero si tu máquina es diferente puedes abrir una t
 
 ## Material suplementario
 
--   Nelly Selem Tutorial - [Bioinformática](https://nselem.github.io/bioinformatics/)
+-   2Nelly Selem Tutorial - [Bioinformática](https://nselem.github.io/bioinformatics/)
 -   En Windows puedes usar [Git Bash.](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/)
