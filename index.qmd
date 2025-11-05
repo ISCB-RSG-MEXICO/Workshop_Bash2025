@@ -13,11 +13,11 @@
 
     -   **Duración del curso:** X horas
 
-    #### **Instructores:**
+    #### **Instructores**
 
-    -   **Evelia Lorena Coss-Navarrete** - PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
-    -   **Aaron Espinosa Jaime -** Estudiante de maestria, Cinvestav-LANGEBIO.
-    -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.
+    -   **Mariana Devon** - Estudiante de maestría, UAM
+    -   **Mayela Fosado-Mendoza** - Tesista de licenciatura
+    -   **Emilio Ortiz-Avila** - Tesista de licenciatura
 
     Ayudantes:
 
@@ -33,71 +33,60 @@
 
     -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.
 
-    #### **Resumen:**
+    #### **Resumen**
 
-    Para que es el curso, que se va abordar y que se espera que aprendan. Ejemplo:
+    Este curso ofrece una introducción práctica al uso de herramientas computacionales aplicadas a la biología. Las y los participantes aprenderán a comunicarse con la computadora por medio de línea de comandos para la exploración, organización y análisis de datos biológicos.
 
-    Este tutorial te enseñará los conceptos fundamentales en el empleo y manejo de Bash Shell, incluyendo **la creación de scripts de Bash, generación de programas con funcionalidades sencillas aplicables a bioinformática y a programación en general.**
+    Este curso está diseñado para construir desde cero, paso a paso, las habilidades básicas necesarias en bioinformática. Se abordarán temas como la manipulación de archivos, la automatización de tareas simples y el uso de secuencias biológicas como ejemplo de aplicación en un problema real.
 
-    #### **Objetivos:**
+    #### **Objetivos**
 
-    En esta guía rápida aprenderás a:**Daniel Chávez** - Profesor invitado, UAGro.
+    Al finalizar este curso, las y los participantes serán capaces de:
 
-    -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
-
-    -   **Abel Lovaco Flores -** Estudiante de maestria, Cinvestav-Irapuato.
-
-    -   **Israel Aguilar** - Posdoc, Tec de Monterrey.
-
-    -   **Mariana Devon -** Estudiante de maestría, UAM.
-
-    -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.Crear y gestionar un repositorio.
-
-    -   Iniciar y administrar una nueva rama.
-
-    -   Realizar cambios en un archivo y enviarlos a GitHub como confirmación.
-
-    -   Crear tu página de inicio en Github.
-
-    -   Crear tu página web.
+    1.  Comprender el entorno del sistema operativo Linux y el uso básico de la línea de comandos Bash para navegar, organizar y manipular archivos.
+    2.  Aplicar comandos y expresiones regulares para buscar, filtrar y procesar información contenida en archivos con datos biológicos.
+    3.  Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos
+    4.  Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
 
     ## Citar y reutilizar el material del curso
 
-    Los datos del curso se pueden reutilizar y adaptar libremente con la debida atribución. Todos los datos de los cursos de estos repositorios están sujetos a la licencia [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+    El contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](#0).
 
     ### Requisitos previos
 
-    -   Debes tener una **cuenta de usuario de GitHub**. Para más información, consulta "[Creación de una cuenta en GitHub](https://docs.github.com/es/get-started/start-your-journey/creating-an-account-on-github)".
+    -   No se requiere experiencia previa en programación ni en el uso de linux
 
-    -   No necesitas saber cómo codificar, utilizar la línea de comandos o instalar Git (el software de control de versiones en el que está compilado GitHub).
+    -   Conocimientos básicos sobre el manejo de archivos en computadora
 
-    -   Contar con una terminal con Git, en Windows puedes usar [Git Bash.](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/)
+    -   Acceso a un entorno Linux, ya sea instalado, virtualizado o en línea
+
+    -   Disponer de una terminal con Git, en Windows se recomienda utilizar [Git Bash.](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/)
 
     ### Agenda 📆 {#agenda}
 
-    +----------------------------------------------------+-------------+
-    | Tema                                               | Tiempo      |
-    +====================================================+:===========:+
-    | 🔷 **Sección** **1 - (11:30 - 13:30 h) (7 marzo)** |             |
-    +----------------------------------------------------+-------------+
-    | -   Creación de una cuenta en GitHub               | 5 min       |
-    +----------------------------------------------------+-------------+
-    | -   Introducción a Git / GitHub                    | 15 min      |
-    +----------------------------------------------------+-------------+
-    | -   **Actividad 1**: Sincronización y llaves       | 15 min      |
-    +----------------------------------------------------+-------------+
-    | ☕ *Coffee break (10 min) - (12:00-12:10) ☕*      | 10 min      |
-    +----------------------------------------------------+-------------+
-    | 🔷  **Sección** **2 - (12:10-13:00 h)**            |             |
-    +----------------------------------------------------+-------------+
-    | -   Comandos usados en Github y RStudio            | 25 min      |
-    +----------------------------------------------------+-------------+
-    | -   **Actividad 2:** Pagina de inicio en GitHub    | 15 min      |
-    +----------------------------------------------------+-------------+
-    | 🔷  **Sección 3 - (11:30 - 13:30 h) (14 marzo)**   |             |
-    +----------------------------------------------------+-------------+
-    | -   Buenas practicas en R                          | 30 min      |
-    +----------------------------------------------------+-------------+
-    | -   **Actividad 3:** Pagina web en GitHub          | 1:30 min    |
-    +----------------------------------------------------+-------------+
+    +---------------------------------------------------------+----------+
+    | Tema                                                    | Tiempo   |
+    +=========================================================+:========:+
+    | 🔷 **Sección** **1 - (11:30 - 13:30 h) (## noviembre)** |          |
+    +---------------------------------------------------------+----------+
+    | -   Creación de una cuenta en GitHub                    | 5 min    |
+    +---------------------------------------------------------+----------+
+    | -   Introducción a Git / GitHub                         | 15 min   |
+    +---------------------------------------------------------+----------+
+    | -   **Actividad 1**: Sincronización y llaves            | 15 min   |
+    +---------------------------------------------------------+----------+
+    | ☕ *Coffee break (10 min) - (12:00-12:10) ☕*           | 10 min   |
+    +---------------------------------------------------------+----------+
+    | 🔷  **Sección** **2 - (12:10-13:00 h)**                 |          |
+    +---------------------------------------------------------+----------+
+    | -   Comandos usados en Github y RStudio                 | 25 min   |
+    +---------------------------------------------------------+----------+
+    | -   **Actividad 2:** Pagina de inicio en GitHub         | 15 min   |
+    +---------------------------------------------------------+----------+
+    | 🔷  **Sección 3 - (11:30 - 13:30 h) (## noviembre)**    |          |
+    +---------------------------------------------------------+----------+
+    | -   Buenas practicas en R                               | 30 min   |
+    +---------------------------------------------------------+----------+
+    | -   **Actividad 3:** Pagina web en GitHub               | 1:30 min |
+    +---------------------------------------------------------+----------+
     :::

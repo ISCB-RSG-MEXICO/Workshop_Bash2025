@@ -9,6 +9,8 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
+    - req.qmd
+    - req2.qmd
     - Cap1.qmd
     - intro.qmd
     - Cap2.qmd
