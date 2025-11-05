@@ -1,10 +1,10 @@
-# Instalaciones y requerimientos previos
+# Instalación de Git y Bash
 
 Para participar en este taller necesitas acceso al siguiente software y acceso a un navegador como chrome o firefox.
 
 ## Windows
 
-**Nota:** Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: [Instrucciones para instalar Git Bash en Windows](https://www.youtube.com/watch?v=t2-l3WvWvqg).
+**Nota:** Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: [Cómo instalar Git en Windows 11 (Actualizado 2025)](https://www.youtube.com/watch?v=t2-l3WvWvqg).
 
 1.  Descarga el instalador de [Git para Windows](https://gitforwindows.org/).
 
@@ -48,33 +48,33 @@ setx HOME "%USERPROFILE%"
 -   Presiona Enter, deberías ver "SUCCESS: Specified value was saved".
 -   Cierra el símbolo del sistema escribiendo "exit" y presionando Enter.
 
-Esto te proporcionará tanto Git como Bash en el programa Git Bash.
+Esto te proporcionará tanto Git como Bash en el programa **Git Bash**.
 
 ## macOS
 
 En macOS, el shell por defecto en la mayoría de las versiones es **Bash**, por lo que no es necesario instalarlo Puedes acceder a Bash desde la aplicación **Terminal**, ubicada en **/Applications/Utilities/**\
 
-Para instalar **Git**, sigue las instrucciones del [video tutorial](https://www.youtube.com/watch?v=kdM9YOX2hZ0)\
+**Nota:** Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: [Instalar Git fácilmente en MacOS 2025](https://www.youtube.com/watch?v=kdM9YOX2hZ0)\
 
 En el sitio oficial de [git](https://git-scm.com/install/mac) existen varias opciones para la instalación en macOS, en este caso se llevará a cabo a través de [**Homebrew**](https://brew.sh/).
 
 1.  Instalar Homebrew (en caso de que no esté instalado)
 
-    1.  Busca y abre la aplicación de la terminal en tu computadora
+    -   Busca y abre la aplicación de la terminal en tu computadora
 
-    2.  Copia y pega el siguiente código en la terminal y presiona **Enter**
+    -   Copia y pega el siguiente código en la terminal y presiona **Enter**
 
         `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-    3.  Presiona **Enter** para comenzar la instalación
+    -   Presiona **Enter** para comenzar la instalación
 
-    4.  Una vez que acabe la instalación, verifica que la instalación se haya llevado a cabo correctamente con el siguiente código:
+    -   Una vez que acabe la instalación, verifica que la instalación se haya llevado a cabo correctamente con el siguiente código:
 
         `brew --version`
 
         Después de presionar **Enter** aparecerá la última versión de **Homebrew** `Homebrew 4.5.7`
 
-2.  Una vez instalado **Homebrew** copia y pega el siguiente codigo en la terminal
+2.  Una vez instalado **Homebrew** copia y pega el siguiente código en la terminal
 
     `brew install git`
 
