@@ -1,6 +1,6 @@
 # Instalación de R y RStudio
 
-Para participar en este taller necesitas acceso a los siguientes softwares y acceso a un navegador como chrome o firefox.
+Para participar en este taller necesitas acceso a los siguientes software y acceso a un navegador como chrome o firefox.
 
 ## Windows - R
 
@@ -16,27 +16,27 @@ Para participar en este taller necesitas acceso a los siguientes softwares y acc
 
 5.  Ejecuta el instalador y sigue los siguientes pasos:
 
-    -   Selecciona el lenguaje de preferencia durante el proceso y haz click en "OK"
+    -   Selecciona el lenguaje de preferencia durante el proceso y haz click en "**OK**"
 
-    -   Haz clic en "Next"
+    -   Haz clic en "**Next**"
 
-    -   Haz clic en "Next" (Si deseas cambiar el sitio de instalación, haz clic en "Browse" y selecciona tu carpeta deseada).
+    -   Haz clic en "**Next**" (Si deseas cambiar el sitio de instalación, haz clic en "**Browse**" y selecciona tu carpeta deseada).
 
-    -   Haz click en "Next" en las siguientes cuatro ventanas
+    -   Haz click en "**Next**" en las siguientes cuatro ventanas
 
-    -   Espera unos minutos a que finalice la instalación y haz click en "Finish"
+    -   Espera unos minutos a que finalice la instalación y haz click en "**Finish**"
 
 ## Windows - Rstudio
 
 1.  Entra en la siguiente [página](https://posit.co/download/rstudio-desktop/#download)
 2.  Haz click en **Download RStudio Desktop for Windows**
 3.  Ejecuta el instalador y sigue los siguientes pasos:
-    -   Haz clic en "Next"
-    -   Haz clic en "Next" (Si deseas cambiar el sitio de instalación, haz clic en "Browse" y selecciona tu carpeta deseada).
-    -   Haz clic en "Install" y espera unos minutos a que acabe el proceso
-    -   Haz clic en "finish"
+    -   Haz clic en "**Next**"
+    -   Haz clic en "**Next**" (Si deseas cambiar el sitio de instalación, haz clic en "**Browse**" y selecciona tu carpeta deseada).
+    -   Haz clic en "**Install**" y espera unos minutos a que acabe el proceso
+    -   Haz clic en "**Finish**"
 4.  Abre la aplicación de RStudio
-5.  Haz clic en "OK"
+5.  Haz clic en "**OK**"
 
 ## MacOS - R
 
@@ -48,19 +48,19 @@ Para participar en este taller necesitas acceso a los siguientes softwares y acc
 
 3.  Existen dos versiones de R que dependen del procesador de tu computadora. Para ver la versión de tu procesador, haz click en el ícono de apple en la parte superior izquierda de tu pantalla y selecciona "acerca de esta mac". En la ventana emergente, la versión de tu procesador aparecerá junto a la palabra "Chip", por ejemplo: **Chip Apple M1 Pro**
 
-    -   Para Macs con **Apple Silicon** (M1,2,...) haz clic en [R-4.5.2-arm64.pkg]{.underline}
+    -   Para Mac con **Apple Silicon** (M1,2,...) haz clic en [R-4.5.2-arm64.pkg]{.underline}
 
-    -   Para Macs con procesador **Intel** haz clic en [R-4.5.2-x86_64.pkg]{.underline}
+    -   Para Mac con procesador **Intel** haz clic en [R-4.5.2-x86_64.pkg]{.underline}
 
 4.  Ejecuta el instalador y sigue los siguientes pasos:
 
-    -   Haz clic en "Continuar" tres veces
+    -   Haz clic en "**Continuar**" tres veces
 
-    -   Haz clic en "De acuerdo"
+    -   Haz clic en "**De acuerdo**"
 
-    -   Haz click en "instalar"
+    -   Haz click en "**Instalar**"
 
-    -   Espera unos minutos a que finalice la instalación y haz click en "cerrar"
+    -   Espera unos minutos a que finalice la instalación y haz click en "**Cerrar**"
 
 ## MacOS- Rstudio
 
@@ -118,16 +118,18 @@ Para participar en este taller necesitas acceso a los siguientes softwares y acc
 
 Si ya tienes R instalado en tu computadora, asegúrate de tener la versión más actualizada de R
 
-Existen diferentes formas de actualizar R, la manera más sencilla es a través de **Rgui**
+Existen diferentes formas de actualizar R, la manera más sencilla es a través de **Rgui,** la interfaz gráfica que viene con R base, no con RStudio.
 
 **Windows y MacOS**:
 
 1.  Escribe **Rgui** en el explorador de archivos/aplicaciones de tu computadora para abrir la aplicación de R.
 
-2.   Para actualizar R necesitamos de la paquetería **installr**. Para instalarla ejecuta el siguiente código:
+2.  Para actualizar R necesitamos de la paquetería **installr**. Para instalarla ejecuta el siguiente código:
 
-    -   `install.packages(installr)`
-    -   Presiona **Enter**
+```         
+-   `install.packages(installr)`
+-   Presiona **Enter**
+```
 
 3.  Carga la paquetería con la función `library()`
 
@@ -138,13 +140,18 @@ Existen diferentes formas de actualizar R, la manera más sencilla es a través 
 
     -   `installr(GUI = TRUE)`
     -   Presiona **Enter**
-    -   En la ventana emergente asegurate de tener seleccionada la opción "R (updateR)" y haz clic en "OK"
-    -   La siguiente ventana emergente contiene información de la versión de R que estás usando actualmente y si hay disponible una versión más actualizada.
+    -   En la ventana emergente asegúrate de tener seleccionada la opción "R (updateR)" y haz clic en "OK"
 
-5.  En caso de que no tengas la versión más actualizada, haz clic en "OK"
+5.  Aparecerá otra ventana con información sobre la versión de R que estás usando y si existe una versión más reciente.
 
-    -   Haz clic en "NO"
-    -   Haz clic en "Yes" para comenzar el proceso de instalación (puedes regresar a la sección de Windows - R o MacOS - R dentro de este capítulo como guía).
+    -   Si **ya tienes la versión más actual**, simplemente haz clic en **\"OK\"** para cerrar.
+
+    ```{=html}
+    <!-- -->
+    ```
+    -    Si **hay una versión nueva disponible**, haz clic en **\"Yes\"** para comenzar la actualización.
+
+6.  Si durante el proceso aparece una ventana preguntando si deseas copiar paquetes o configuraciones anteriores, puedes hacer clic en **\"No\"** (no es obligatorio copiarlos; puedes reinstalarlos después si lo prefieres).
 
 ## Material suplementario
 
