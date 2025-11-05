@@ -24,7 +24,7 @@ Para participar en este taller necesitas acceso al siguiente software y acceso a
 
     -   Asegúrate de que **"Checkout Windows-style, commit Unix-style line endings" esté seleccionada y haz clic en "Next".**
 
-    -   Asegúrate de que \*\*"Use Windows'\*\* default console window" esté seleccionada y haz clic en "Next".
+    -   Asegúrate de que **"Use Windows' default console window"** esté seleccionada y haz clic en "Next".
 
     -   Asegúrate de que **"Default (fast-forward or merge)"** esté seleccionada y haz clic en "Next".
 
@@ -94,5 +94,3 @@ Si tu sistema es diferente, abre una terminal y ejecuta el comando:
 
 -   Tutorial: Nelly Selem -- [Bioinformática](#0)
 -   En Windows puedes usar [Git Bash](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/) como entorno de práctica
-
-## Glosario
