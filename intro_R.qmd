@@ -1,0 +1,80 @@
+# Conceptos de R 
+
+## ¿Qué es R?
+
+Lenguaje de programación y entorno de software creado en 1993 por **Ross Ihaka** y **Robert Gentleman** en la Universidad de Auckland, Nueva Zelanda.
+
+R está diseñado para el **análisis estadístico**, la **visualización de datos** y la **computación científica**.
+
+-   Software libre y de código abierto.
+
+-   Multiplataforma (Windows, macOS y Linux).
+
+-   Permite realizar análisis reproducibles y automatizados.
+
+R es ampliamente utilizado en biología, ecología, ciencias sociales, economía y muchas otras disciplinas.
+
+![](https://download.logo.wine/logo/R_(programming_language)/R_(programming_language)-Logo.wine.png){fig-align="center" width="400"}
+
+## ¿Qué es RStudio?
+
+**RStudio** es un **Entorno de Desarrollo Integrado (IDE)** que facilita el uso de R.\
+Ofrece una interfaz amigable con herramientas para escribir código, visualizar datos y administrar proyectos.
+
+Ventajas:
+
+-   Permite ejecutar código y ver resultados de inmediato.
+
+-   Integra control de versiones (Git).
+
+-   Incluye paneles para trabajar con archivos, gráficos, paquetes y ayuda.
+
+-   Facilita la creación de reportes, presentaciones y scripts reproducibles.
+
+![](https://www.marefa.org/w/images/thumb/d/d0/RStudio_logo_flat.svg/1200px-RStudio_logo_flat.svg.png){fig-align="center" width="400"}
+
+## Filosofía de R
+
+-   Promueve la **ciencia abierta y reproducible**.
+
+-   Fomenta la **transparencia en los análisis** al guardar todo el flujo de trabajo en código.
+
+-   Comunidad activa que desarrolla miles de paquetes (CRAN, Bioconductor, GitHub).
+
+## Diferencias con hojas de cálculo
+
+Herramientas como **Excel** o **Google Sheets** son útiles para tareas básicas, pero:
+
+-   Limitan el tamaño de los datos.
+
+-   No documentan los pasos del análisis.
+
+-   No son fácilmente reproducibles.
+
+R permite registrar y compartir **todo el proceso analítico** con unas pocas líneas de código.
+
+## Interfaz básica de RStudio
+
+Cuando abres RStudio encontrarás cuatro paneles principales:
+
+1.  **Source** (arriba a la izquierda): donde escribes y editas código.
+
+2.  **Console** (abajo a la izquierda): donde se ejecutan los comandos.
+
+3.  **Environment / History** (arriba a la derecha): muestra los objetos creados y el historial de comandos.
+
+4.  **Files / Plots / Packages / Help / Viewer** (abajo a la derecha): para explorar resultados, archivos y documentación.
+
+    ![](figures/consola_R.png)
+
+## Material suplementario
+
+Para aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:
+
+-   The Carpentries. (2025). *R for Reproducible Scientific Analysis*. <https://swcarpentry.github.io/r-novice-gapminder/>
+
+-   CRAN. (2025). *The Comprehensive R Archive Network*. <https://cran.r-project.org/>
+
+-   Wickham, H. & Grolemund, G. (2017). *R for Data Science*. O\'Reilly Media. <https://r4ds.had.co.nz/>
+
+-    RStudio Education. (2024). *RStudio Primers*. <https://posit.cloud/learn/primers>

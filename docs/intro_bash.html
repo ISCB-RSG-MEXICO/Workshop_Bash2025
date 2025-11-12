@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop - 6&nbsp; Recordatorio de pasos en Bash</title>
+<title>Workshop - 4&nbsp; Conceptos Unix y GNU/Linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Cap2.html" rel="next">
-<link href="./intro_R.html" rel="prev">
+<link href="./intro_R.html" rel="next">
+<link href="./Bpracticas.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -110,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Recordatorio de pasos en Bash</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro_bash.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_bash.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_bash.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span></a>
   </div>
 </li>
@@ -200,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Cap1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Cap1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Recordatorio de pasos en Bash</span></span></a>
   </div>
 </li>
@@ -238,8 +204,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preparación-del-directorio-de-trabajo" id="toc-preparación-del-directorio-de-trabajo" class="nav-link active" data-scroll-target="#preparación-del-directorio-de-trabajo"><span class="header-section-number">6.1</span> Preparación del directorio de trabajo</a></li>
-  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos"><span class="header-section-number">6.2</span> <strong>Comandos básicos</strong></a></li>
+  <li><a href="#qué-es-unix" id="toc-qué-es-unix" class="nav-link active" data-scroll-target="#qué-es-unix"><span class="header-section-number">4.1</span> ¿Qué es UNIX?</a></li>
+  <li><a href="#gnulinux" id="toc-gnulinux" class="nav-link" data-scroll-target="#gnulinux"><span class="header-section-number">4.2</span> GNU/Linux</a></li>
+  <li><a href="#filosofía-gnulinux" id="toc-filosofía-gnulinux" class="nav-link" data-scroll-target="#filosofía-gnulinux"><span class="header-section-number">4.3</span> Filosofía GNU/Linux</a></li>
+  <li><a href="#ubuntu" id="toc-ubuntu" class="nav-link" data-scroll-target="#ubuntu"><span class="header-section-number">4.4</span> Ubuntu</a></li>
+  <li><a href="#shell-bash-bash-shell" id="toc-shell-bash-bash-shell" class="nav-link" data-scroll-target="#shell-bash-bash-shell"><span class="header-section-number">4.5</span> Shell / Bash / Bash Shell</a></li>
+  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">4.6</span> Material suplementario</a></li>
   </ul>
 </nav>
     </div>
@@ -248,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Recordatorio de pasos en Bash</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></h1>
 </div>
 
 
@@ -263,93 +233,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="preparación-del-directorio-de-trabajo" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="preparación-del-directorio-de-trabajo"><span class="header-section-number">6.1</span> Preparación del directorio de trabajo</h2>
+<section id="qué-es-unix" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="qué-es-unix"><span class="header-section-number">4.1</span> ¿Qué es UNIX?</h2>
 <ul>
-<li><p>Ruta / Camino absoluto</p>
-<div class="sourceCode" id="cb1" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/usuario/data/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Ruta / Camino relativo</p>
-<div class="sourceCode" id="cb2" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../ <span class="co"># Ir a la carpeta anterior</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li>Sistema operativo (SO) creado por <strong>Ken Thompson y Dennis Ritchie</strong> de la empresa <em>Bell Laboratories</em> en 1969.</li>
+<li>SO multitarea y multiusuario.</li>
 </ul>
 </section>
-<section id="comandos-básicos" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="comandos-básicos"><span class="header-section-number">6.2</span> <strong>Comandos básicos</strong></h2>
-<table class="table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 50%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Comandos</th>
-<th>Información</th>
-<th>Argumentos</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>ssh</code></td>
-<td>Conexión a servidores</td>
-<td>ssh usuario@servidor.mx</td>
-</tr>
-<tr class="even">
-<td><code>ls</code></td>
-<td>Observar el contenido de los archivos en una carpeta</td>
-<td>ls directorio/</td>
-</tr>
-<tr class="odd">
-<td><code>cd</code></td>
-<td>Moverse de directorios</td>
-<td>cd /home/usuario/data/</td>
-</tr>
-<tr class="even">
-<td><code>mkdir</code></td>
-<td>Crear un nuevo directorio</td>
-<td>mkdir data</td>
-</tr>
-<tr class="odd">
-<td><code>rmdir</code></td>
-<td>Eliminar el directorio</td>
-<td>rmkdir -rf data</td>
-</tr>
-<tr class="even">
-<td><code>nano</code>/<code>vim</code></td>
-<td>Editores de texto plano</td>
-<td>nano Archivo.txt / vim Archivo.txt</td>
-</tr>
-<tr class="odd">
-<td><code>cp</code></td>
-<td>Copiar archivos</td>
-<td>cp Archivo1.txt /home/usuario/data/</td>
-</tr>
-<tr class="even">
-<td><code>mv</code></td>
-<td>Mover un archivo o carpeta</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><code>echo</code></td>
-<td>Para llamar y/o declarar variables</td>
-<td>echo “Hello world”</td>
-</tr>
-<tr class="even">
-<td><code>chmod</code></td>
-<td>Cambiar permisos del usuario</td>
-<td>chmod 777 data/</td>
-</tr>
-<tr class="odd">
-<td><code>rsync</code></td>
-<td>Descargar o subir archivos</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>scp</code></td>
-<td>Descargar o subir archivos</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="gnulinux" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="gnulinux"><span class="header-section-number">4.2</span> GNU/Linux</h2>
+<ul>
+<li>En 1983 <strong>Richard Stallman</strong> lideró la iniciativa <a href="https://www.gnu.org/">GNU</a> (GNU’s Not Unix), SO compatible con UNIX de libre distribución y acceso sin restricciones al código fuente.</li>
+<li>En 1991 <strong>Linus Torvalds</strong> creó su propio <a href="https://linuxjourney.com/lesson/kernel-overview">kernel</a> (Linux), que es la parte del SO que permite la comunicación con los componentes de Hardware. Este kernel fue distribuido de forma libre y gratuita.</li>
+<li>Ambos proyectos se juntaron y se creó <strong>GNU/Linux</strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_basico/01_Unix_GNU-Linux/1_Conceptos_Unix_GNU_Linux.html"><img src="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/_images/GNU_LIN1.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</section>
+<section id="filosofía-gnulinux" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="filosofía-gnulinux"><span class="header-section-number">4.3</span> Filosofía GNU/Linux</h2>
+<ul>
+<li>Los usuarios son libres de <strong>ejecutar, copiar, distribuir, estudiar, cambiar y mejorar</strong> el software.</li>
+<li>El <a href="https://www.gnu.org/philosophy/free-sw.html">software libre</a> se refiere a las libertades mencionadas, no al precio.</li>
+<li><a href="https://opensource.org/">“open source”</a> vs <a href="https://www.gnu.org/philosophy/free-sw.html">“free software”</a>.</li>
+</ul>
+</section>
+<section id="ubuntu" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="ubuntu"><span class="header-section-number">4.4</span> Ubuntu</h2>
+<ul>
+<li>Una de las distribuciones de GNU/Linux más populares.</li>
+<li>Está basada en <a href="https://www.debian.org/">Debian</a> y fue desarrollada por la empresa <a href="https://canonical.com/"><em>Canonical</em></a></li>
+<li>Facilidad de uso e instalación.</li>
+<li>Interfaz de usuario amigable.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_basico/01_Unix_GNU-Linux/1_Conceptos_Unix_GNU_Linux.html"><img src="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/_images/ubuntu.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</section>
+<section id="shell-bash-bash-shell" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="shell-bash-bash-shell"><span class="header-section-number">4.5</span> Shell / Bash / Bash Shell</h2>
+<ul>
+<li>La <a href="https://en.wikipedia.org/wiki/Unix_shell"><em>shell</em></a> es el programa que provee una <strong>interfaz de línea de comandos (CLI)</strong>, que permite la comunicación entre el usuario y el SO.</li>
+<li>La mayoría de distribuciones de Linux tienen por defecto <a href="https://www.gnu.org/software/bash/"><em>bash</em></a> (“Bourne Again SHell”) como <em>shell</em>. Hay <a href="https://www.educba.com/types-of-shells-in-linux/">otros tipos de shell</a> como <strong>sh, csh, tcsh, ksh, zsh</strong>, entre otras.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/_images/b.png" class="img-fluid figure-img" width="400"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bash es un intérprete de comandos que te da el poder de hacer tareas simples rápidamente.</p>
+</div>
+</div>
+</section>
+<section id="material-suplementario" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">4.6</span> Material suplementario</h2>
+<p>Si quieren aprender temas más sobre UNIX, GNU/Linux, bash, emulador de terminal y otros tema, pueden explorar los siguientes recursos, que son de acceso libre:</p>
+<ul>
+<li>Kross, S. (2017). <em>The unix workbench</em>. Leanpub. <a href="https://leanpub.com/unix" class="uri">https://leanpub.com/unix</a></li>
+<li>Ross, A. (2019). <em>The Ultimate Linux Newbie Guide</em>. <a href="https://linuxnewbieguide.org/" class="uri">https://linuxnewbieguide.org/</a></li>
+<li>Shotts, W. (2019). <em>The Linux command line: a complete introduction</em>. No Starch Press. <a href="http://www.linuxcommand.org/tlcl.php/index.php" class="uri">http://www.linuxcommand.org/tlcl.php/index.php</a></li>
+<li>Linux Journey. (2020). Linux Journey. <a href="https://linuxjourney.com/" class="uri">https://linuxjourney.com/</a></li>
+<li>GNU. (2020). GNU. <a href="https://www.gnu.org/" class="uri">https://www.gnu.org/</a></li>
+<li><a href="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_basico/01_Unix_GNU-Linux/1_Conceptos_Unix_GNU_Linux.html">GNU/Linux para bioinformatica</a></li>
+</ul>
 
 
 </section>
@@ -705,13 +666,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro_R.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span>
+      <a href="./Bpracticas.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Cap2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./intro_R.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

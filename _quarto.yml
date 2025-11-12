@@ -12,7 +12,8 @@ book:
     - req.qmd
     - req2.qmd
     - Bpracticas.qmd
-    - intro.qmd
+    - intro_bash.qmd
+    - intro_R.qmd
     - Cap1.qmd
     - Cap2.qmd
     - Cap3.qmd
