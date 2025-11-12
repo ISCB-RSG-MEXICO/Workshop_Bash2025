@@ -1,0 +1,77 @@
+# Primeros pasos en R
+
+## Usar R como calculadora
+
+Una de las formas más sencillas de comenzar a usar `R` es como una **calculadora interactiva**.
+
+La consola de R puede evaluar expresiones matemáticas y mostrar los resultados de inmediato.
+
+Por ejemplo, escribe lo siguiente en la consola y presiona **Enter**:
+
+```{r} 3+500}
+```
+
+R responderá con:
+
+El número entre corchetes `[1]` indica el índice del primer elemento mostrado.
+
+Esto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.
+
+### Operaciones básicas
+
+Puedes realizar diferentes operaciones aritméticas:
+
+```{r} 3 + 5 # suma 7 - 2 # resta 4 * 6 # multiplicación 9 / 3 # división 2^3 # potencia (2 elevado a la 3)}
+```
+
+También puedes combinar operaciones usando paréntesis:
+
+```{r} (4 + 2) * 3}
+```
+
+### Notación de decimales
+
+En R, los **puntos (.)** se utilizan para los decimales, no las comas.\
+Por ejemplo:
+
+```{r} 3.14 * 2}
+```
+
+### Comandos incompletos
+
+Si escribes una instrucción incompleta, R esperará que la termines.\
+Por ejemplo:
+
+`3+`
+
+Verás que el símbolo de la consola cambia de `>` a `+`.\
+Esto indica que R está esperando que completes el comando.\
+Si deseas cancelar, presiona **Esc** (o **Ctrl + C**).
+
+### Guardar resultados
+
+Puedes guardar el resultado de una operación en un **objeto** usando el operador `<-`:
+
+```{r} resultado <- 4 + 6}
+```
+
+Para ver su valor, solo escribe el nombre del objeto:
+
+```{r} resultado}
+```
+
+### Comentarios en R
+
+Puedes agregar comentarios en tu código para explicar qué hace.\
+Todo lo que esté después del símbolo `#` no se ejecutará:
+
+3 + 3 \# Esto es un comentario
+
+#### Limpiar tu entorno en R
+
+Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:
+
+```{r} rm(list = ls())}
+```
+
+Puedes **limpiar la consola** para empezar de nuevo haciendo clic en el ícono con forma de **escoba** 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado **Ctrl + L**.

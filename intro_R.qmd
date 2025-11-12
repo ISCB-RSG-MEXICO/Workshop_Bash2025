@@ -67,6 +67,22 @@ Cuando abres RStudio encontrarás cuatro paneles principales:
 
     ![](figures/consola_R.png)
 
+## Flujo de trabajo en RStudio
+
+Existen dos formas principales de trabajar dentro de **RStudio**:
+
+1.  **Probar y jugar en la consola interactiva** de R, y luego copiar el código a un archivo `.R` para ejecutarlo más tarde.
+
+-   Esta opción es útil al realizar pruebas pequeñas o cuando estás comenzando.
+
+-   Sin embargo, puede volverse tediosa conforme tu código crece.
+
+2.  **Escribir directamente en un archivo `.R`** y usar los atajos de teclado de RStudio para ejecutar líneas o bloques de código en la consola interactiva.
+
+-   Es una excelente forma de trabajar desde el inicio, ya que todo tu código queda guardado.
+
+-   Podrás ejecutar el archivo completo desde RStudio o mediante la función `source()` de R.
+
 ## Material suplementario
 
 Para aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:
