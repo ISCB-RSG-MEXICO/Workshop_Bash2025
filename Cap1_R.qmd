@@ -1,5 +1,16 @@
 # Primeros pasos en R
 
+## Ejecutar código
+
+Puedes ejecutar el código de varias formas:
+
+-   **Correr una línea de código:** selecciona la línea o colócate al final de ella y presiona **Ctrl + Enter** (Windows/Linux) o **⌘ + Enter** (Mac).\
+    Esto enviará el código seleccionado a la consola para su ejecución.
+
+-   **Usar el botón *Run*:** también puedes ejecutar el código haciendo clic en el botón **`Run`**, ubicado en la parte superior derecha del panel de scripts.
+
+Si no hay texto seleccionado al ejecutar `Ctrl + Enter /⌘ + Enter` **o** *`Run`, R* ejecutará la línea donde está el cursor; si hay texto seleccionado, ejecutará solo esa parte.
+
 ## Usar R como calculadora
 
 Una de las formas más sencillas de comenzar a usar `R` es como una **calculadora interactiva**.
@@ -8,7 +19,8 @@ La consola de R puede evaluar expresiones matemáticas y mostrar los resultados 
 
 Por ejemplo, escribe lo siguiente en la consola y presiona **Enter**:
 
-```{r} 3+500}
+```{r}
+ 3+500
 ```
 
 R responderá con:
@@ -17,27 +29,65 @@ El número entre corchetes `[1]` indica el índice del primer elemento mostrado.
 
 Esto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.
 
-### Operaciones básicas
+#### Operaciones básicas
 
 Puedes realizar diferentes operaciones aritméticas:
 
-```{r} 3 + 5 # suma 7 - 2 # resta 4 * 6 # multiplicación 9 / 3 # división 2^3 # potencia (2 elevado a la 3)}
+```{r}
+3 + 5 # suma 
+7 - 2 # resta 
+4 * 6 # multiplicación 
+9 / 3 # división 
+2^3 # potencia (2 elevado a la 3)
 ```
 
-También puedes combinar operaciones usando paréntesis:
+Cuando realices operaciones más complejas en R, el **orden de operaciones** sigue las mismas reglas matemáticas de siempre:
 
-```{r} (4 + 2) * 3}
+De mayor a menor precedencia:
+
+-   Paréntesis: `(`, `)`
+
+-   Exponentes: `^` o `**`
+
+-   Multiplicación: `*`
+
+-   División: `/`
+
+-    Suma: `+`
+
+-   Resta: `-`
+
+```{r}
+4+2 * 3
 ```
 
-### Notación de decimales
+Usa paréntesis para agrupar operaciones y forzar el orden de evaluación si difiere del predeterminado, o para aclarar tus intenciones:
 
-En R, los **puntos (.)** se utilizan para los decimales, no las comas.\
-Por ejemplo:
+```{r}
+# Sin paréntesis: se sigue el orden de operaciones
+ 2 + 3 * 4   
 
-```{r} 3.14 * 2}
+# Con paréntesis: cambiamos el orden de evaluación
+(2 + 3) * 4 
 ```
 
-### Comandos incompletos
+#### Notación científica
+
+Números muy pequeños o muy grandes se muestran en notación científica:
+
+```{r}
+7/10000
+```
+
+Esto es una abreviación de "multiplicado por `10^XX`". Por ejemplo, `7e-4` es equivalente a `7 * 10^(-4)`.
+
+También puedes escribir números directamente en notación científica:
+
+```{r}
+5e3 # Nota que no hay signo menos
+```
+
+#### Comandos incompletos
 
 Si escribes una instrucción incompleta, R esperará que la termines.\
 Por ejemplo:
@@ -47,6 +97,10 @@ Por ejemplo:
 Verás que el símbolo de la consola cambia de `>` a `+`.\
 Esto indica que R está esperando que completes el comando.\
 Si deseas cancelar, presiona **Esc** (o **Ctrl + C**).
+
+## Funciones matemáticas
+
+R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:
 
 ### Guardar resultados
 
@@ -65,7 +119,8 @@ Para ver su valor, solo escribe el nombre del objeto:
 Puedes agregar comentarios en tu código para explicar qué hace.\
 Todo lo que esté después del símbolo `#` no se ejecutará:
 
-3 + 3 \# Esto es un comentario
+```{r} 3 + 3 # Esto es un comentario}
+```
 
 #### Limpiar tu entorno en R
 
@@ -74,4 +129,4 @@ Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:
 ```{r} rm(list = ls())}
 ```
 
-Puedes **limpiar la consola** para empezar de nuevo haciendo clic en el ícono con forma de **escoba** 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado **Ctrl + L**.
+Puedes **limpiar la consola** para empezar de nuevo haciendo clic en el ícono con forma de **escoba** 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado `Ctrl + L`(Windows/Linux) o `⌘ + L` (Mac).
