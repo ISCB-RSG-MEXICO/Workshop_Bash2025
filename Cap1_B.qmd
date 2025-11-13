@@ -18,7 +18,7 @@ comando [opciones] [argumentos]
 
 -   **opciones**: modificadores que cambian el comportamiento del comando; suelen comenzar con `-` o `--` .
 
--   **argumentos**: los objetos sobre los que el comando actuará (archivos, carpetas, patrones, etc.)
+-   **argumentos**: los objetos sobre los que el comando actuará (archivos, directorios, patrones, etc.)
 
 Por ejemplo:
 
@@ -33,7 +33,7 @@ Por ejemplo:
 Otro ejemplo:
 
 ``` {.bash code-copy="true" eval="false"}
-grep -i "gene" genes.gft
+grep -i "gene" genes.gtf
 ```
 
 -   grep → busca texto dentro de los archivos
@@ -71,13 +71,13 @@ Aquí `-l`, `-a` y `-h` se aplican simultáneamente:
 -   Ruta / Camino relativo: indica la ubicación en relación con el directorio actual.
 
     ``` {.bash code-copy="true" eval="false"}
-    cd ../ # Ir a la carpeta anterior
+    cd ../ # Ir a la directorio anterior
     ```
 
 ::: callout-note
-**NOTA 1:** Si utilizas `cd` y no indicas una ruta absoluta, te llevara al directorio raíz (`~`).
+**NOTA 1:** Si utilizas `cd` y no indicas una ruta absoluta, te llevara al directorio home (`~`).
 
-**NOTA 2:** Puedes usar la tecla **TAB** para completar el nombre de carpetas o archivos. Si hay varias carpetas con el mismo inicio, presiona **TAB** dos veces para ver las coincidencias.
+**NOTA 2:** Puedes usar la tecla **TAB** para completar el nombre de directorios o archivos. Si hay varias directorios con el mismo inicio, presiona **TAB** dos veces para ver las coincidencias.
 :::
 
 ## Conocer mi dirección / ubicación
@@ -94,7 +94,7 @@ En la computadora de Emilio, el sistema de archivos se ve así:
 
 En la parte superior se encuentra el **directorio raíz** (`/`), que contiene todo lo demás.
 
-Dentro de él se ubican otros directorios comúnes:
+Dentro de él se ubican otros directorios comunes:
 
 -   `bin`: programas del sistema
 -   `data`: archivos de datos
@@ -104,13 +104,13 @@ Dentro de él se ubican otros directorios comúnes:
 ::: callout-note
 ## Ejercicio 1
 
-A partir de `/Users/emilio/data/`, ¿Cuál de los siguientes comandos lleva al directorio de inicio, que es `/Users/emilio`?
+A partir de `/Users/emilio/data/`, ¿Cuál de los siguientes comandos lleva al directorio de inicio, que es `/Users/emilio`
 
 1.  `cd .`
 
 2.  `cd /`
 
-3.  `cd /home/amanda`
+3.  `cd /home/emilio`
 
 4.  `cd ../..`
 
@@ -127,7 +127,7 @@ A partir de `/Users/emilio/data/`, ¿Cuál de los siguientes comandos lleva al 
     ::: {.callout-tip collapse="true" icon="false"}
     ## Solución
 
-    1.  No: `.` indicael directorio actual.
+    1.  No: `.` indica el directorio actual.
 
     2.  No: `/` es el directorio raíz.
 
@@ -135,11 +135,11 @@ A partir de `/Users/emilio/data/`, ¿Cuál de los siguientes comandos lleva al 
 
     4.  No: sube dos niveles, quedando en `/Users`.
 
-    5.  Sí: `~` representa el directorio **home** del usuario, en este caso `/Users/amanda`.
+    5.  Sí: `~` representa el directorio **home** del usuario, en este caso `/Users/emilio`.
 
     6.  No: buscaría un directorio `home` dentro del actual (si existiera).
 
-    7.  Sí: sube un sivel desde `~/data` .
+    7.  Sí: sube un nivel desde `~/data` .
 
     8.  Sí: `cd` sin argumentos te lleva al **home**
 
@@ -156,25 +156,25 @@ Ejemplo de rutas:
 Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema
 
 | Comandos  | Información                                            | Ejemplo de uso       |
-|----------------|---------------------------------------|----------------|
+|-----------|--------------------------------------------------------|----------------------|
 | `pwd`     | Muestra el directorio actual                           | `pwd`                |
 | `history` | Muestra el historial de comandos                       | `history`            |
 | `ls`      | Observar el contenido de los archivos en un directorio | `ls mi_directorio`   |
 | `which`   | Muestra la ruta del ejecutable de un comando           | `which python`       |
-| `file`    | Moverse de directorios                                 | `file documento.txt` |
-| `whomai`  | Muestra el usuario actual                              | `whomai`             |
+| `file`    | Muestra el tipo de archivo (texto, binario, etc.)      | `file documento.txt` |
+| `whoami`  | Muestra el usuario actual                              | `whoami`             |
 | `which`   | Muestra la ubicación del ejecutable de un comando      | `which python`       |
 
 ## Moverse en el sistema de archivos
 
-Comandos para navegar entre directoriosy rutas
+Comandos para navegar entre directorios y rutas
 
-| Comando | Descripción                               | Ejemplo           |
-|---------|-------------------------------------------|-------------------|
-| `cd`    | Cambia de directorio                      | `cd ~/Documentos` |
-| `cd ..` | Sube un nivel en la jerarquía de carpetas | `cd ..`           |
-| `cd ~`  | Va al directorio personal del usuario     | `cd ~`            |
-| `cd -`  | Vuelve al directorio anterior             | `cd -`            |
+| Comando | Descripción                                  | Ejemplo           |
+|---------|----------------------------------------------|-------------------|
+| `cd`    | Cambia de directorio                         | `cd ~/Documentos` |
+| `cd ..` | Sube un nivel en la jerarquía de directorios | `cd ..`           |
+| `cd ~`  | Va al directorio personal del usuario        | `cd ~`            |
+| `cd -`  | Vuelve al directorio anterior                | `cd -`            |
 
 ## Crear, copiar, mover y eliminar
 
@@ -185,7 +185,7 @@ Comandos que modifican la estructura de directorios y archivos
 | `mkdir` | Crea un nuevo directorio     | `mkdir resultados`         |
 | `touch` | Crea un archivo vacío        | `touch notas.txt`          |
 | `cp`    | Copia archivos o directorios | `cp archivo.txt copia.txt` |
-| `mv`    | Mueve o renombra archivos    | `mv datos.csv carpeta/`    |
+| `mv`    | Mueve o renombra archivos    | `mv datos.csv directorio/` |
 | `rm`    | Elimina archivos             | `rm archivo.txt`           |
 | `rmdir` | Elimina directorios vacíos   | `rmdir vieja/`             |
 
@@ -205,13 +205,13 @@ Comandos para inspeccionar lo que hay dentro de los archivos sin abrirlos en un 
 Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.
 
 | Comando | Descripción                                                                       | Ejemplo          |
-|------------------|---------------------------|---------------------------|
+|---------|-----------------------------------------------------------------------------------|------------------|
 | nano    | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
-| vim     | Editor avanzado con control mediante comandos; guarda con :w y sal con :q         | `vim script.sh`  |
+| vim     | Editor avanzado con control mediante comandos; guarda con :w y sale con :q        | `vim script.sh`  |
 
 ## Buscar y filtrar
 
-Comandos para localizar texto o patrones dentro de archivos o carpetas
+Comandos para localizar texto o patrones dentro de archivos o directorios
 
 | Comando | Descripción                          | Ejemplo                |
 |---------|--------------------------------------|------------------------|
@@ -233,27 +233,27 @@ Comandos para ver o modificar quién puede leer, escribir o ejecutar archivos
 
 Comandos para ahorrar espacio o mover varios archivos juntos
 
-| Comando          | Descripción                      | Ejemplo                               |
-|------------------|---------------------------|---------------------------|
-| `gzip / gunzip`  | Comprime o descomprime archivos  | `gzip datos.txt`                      |
-| `tar`            | Empaqueta y comprime directorios | `tar -czf proyecto.tar.gz carpeta/`   |
-| `zip` / `unzip`  | Comprime o descomprime archivos  | `zip -r resultados.zip ./resultados/` |
+| Comando         | Descripción                      | Ejemplo                                |
+|-----------------|----------------------------------|----------------------------------------|
+| `gzip / gunzip` | Comprime o descomprime archivos  | `gzip datos.txt`                       |
+| `tar`           | Empaqueta y comprime directorios | `tar -czf proyecto.tar.gz directorio/` |
+| `zip` / `unzip` | Comprime o descomprime archivos  | `zip -r resultados.zip ./resultados/`  |
 
-## Transeferncia de archivos entre sistemas
+## Transferencia de archivos entre sistemas
 
-| Comando   | Descripción                                                                               | Ejemplo                                                   |
-|------------------|---------------------------|---------------------------|
-| `ssh`     | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
-| scp       | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
-| `scp -r`  | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |
-| `rsync`   | Sincroniza directorios locales o remotas, copiando solo los archivos nuevos o modificados | `rsync -av datos/ usuario@servidor:/home/usuario/backup/` |
+| Comando  | Descripción                                                                               | Ejemplo                                                   |
+|----------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| `ssh`    | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
+| scp      | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
+| `scp -r` | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |
+| `rsync`  | Sincroniza directorios locales o remotas, copiando solo los archivos nuevos o modificados | `rsync -av datos/ usuario@servidor:/home/usuario/backup/` |
 
 ## Redirección y concatenación
 
 Comandos para conectar procesos o guardar salidas
 
 | Comando | Descripción                                            | Ejemplo                       |
-|------------------|---------------------------|---------------------------|
+|---------|--------------------------------------------------------|-------------------------------|
 | `>`     | Redirige la salida a un archivo                        | `ls > lista.txt`              |
 | `>>`    | Agrega la salida al final del archivo existente        | `echo "nuevo" >> lista.txt`   |
 | `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
@@ -292,11 +292,13 @@ Cada usuario tiene permisos diferentes cuando crea un archivo. Los permisos pued
 
 Los caracteres atribuidos a los permisos son:
 
--   `r` : escritura (Read)
+-   `r` : lectura (Read)
 
--   `w` : lectura (Write)
+-   `w` : escritura(Write)
 
 -   `x` : ejecución (eXecute)
+
+Cada archivo tiene tres grupos de permisos: usuario (u), grupo (g) y otros (o).
 
 En el siguiente ejemplo, el usuario cuenta con todos los permisos activos, mientras que el grupo y otros tienen solo permisos de lectura y ejecución.
 
@@ -338,18 +340,18 @@ Por lo tanto:
 
 Los archivos pueden contener diversos tipos de extensiones, dependiendo del objetivo será necesario descomprimirlos y en otros dejarlos comprimidos para no abarcar tanto espacio en tu espacio de trabajo. 
 
-| Tipo de archivo | Comprimir                                                | Descomprimir               |
-|-----------------|-------------------------------------|------------------|
-| Carpeta.tar     | `tar -cvf carpeta.tar /dir/a/comprimir/carpeta`          | `tar -xvf carpeta.tar`     |
-| Carpeta.tar.gz  | `tar -czvf carpeta.tar.gz /carpeta/a/empaquetar/carpeta` | `tar -zxvf carpeta.tar.gz` |
-| Carpeta.gz      | `gzip -9 carpeta.gz carpeta/a/empaquetar/carpeta`        | `gunzip -kd carpeta.gz`    |
-| Carpeta.zip     | `zip -r carpeta.zip carpeta`                             | `unzip carpeta.zip`        |
+| Tipo de archivo   | Comprimir                                                         | Descomprimir                  |
+|-------------------|-------------------------------------------------------------------|-------------------------------|
+| directorio.tar    | `tar -cvf directorio.tar /dir/a/comprimir/directorio`             | `tar -xvf directorio.tar`     |
+| directorio.tar.gz | `tar -czvf directorio.tar.gz /directorio/a/empaquetar/directorio` | `tar -zxvf directorio.tar.gz` |
+| archivo.gz        | `gzip -9 archivo.txt`                                             | `gunzip -kd archivo.txt.gz`   |
+| directorio.zip    | `zip -r directorio.zip directorio`                                | `unzip directorio.zip`        |
 
 ::: callout-note
 ## Ejercicio 2
 
 1.  Descarga todo el repositorio comprimido [unix.bioinfo.rsgecuador](https://github.com/RSG-Ecuador/unix.bioinfo.rsgecuador/tree/gh-pages) en tu computadora. El archivo se almacenara con la extension (.ZIP).
-2.  Colocate en la carpeta donde se encuentra el archivo. Ejemplo en mi computadora: `cd "C:/Users/ecoss/Documents/Respaldos/Github_notes/Workshop_Bash2024/data"`
+2.  Colocate en la directorio donde se encuentra el archivo. Ejemplo en mi computadora: `cd "C:/Users/ecoss/Documents/Respaldos/Github_notes/Workshop_Bash2024/data"`
 3.  Descomprime el archivo ZIP. `unzip unix.bioinfo.rsgecuador-gh-pages.zip`
 :::
 
