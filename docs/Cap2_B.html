@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Buenas prácticas en bioinformática – Workshop</title>
+<title>8&nbsp; Instalar Git Bash en Windows – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro_bash.html" rel="next">
-<link href="./req_R.html" rel="prev">
+<link href="./Cap3_B.html" rel="next">
+<link href="./Cap1_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bpracticas.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap2_B.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -321,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Bpracticas.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Bpracticas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span></a>
   </div>
 </li>
@@ -351,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Cap2_B.html" class="sidebar-item-text sidebar-link">
+  <a href="./Cap2_B.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></span></a>
   </div>
 </li>
@@ -383,12 +418,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#materiales-informativos" id="toc-materiales-informativos" class="nav-link active" data-scroll-target="#materiales-informativos"><span class="header-section-number">3.1</span> Materiales informativos</a></li>
-  <li><a href="#un-algoritmo-nos-permite-resolver-un-problema" id="toc-un-algoritmo-nos-permite-resolver-un-problema" class="nav-link" data-scroll-target="#un-algoritmo-nos-permite-resolver-un-problema"><span class="header-section-number">3.2</span> <strong>Un algoritmo nos permite resolver un problema ⭐</strong></a></li>
-  <li><a href="#para-escribir-un-buen-software-necesitas" id="toc-para-escribir-un-buen-software-necesitas" class="nav-link" data-scroll-target="#para-escribir-un-buen-software-necesitas"><span class="header-section-number">3.3</span> <strong>Para escribir un buen software necesitas:</strong></a></li>
-  <li><a href="#paso-7-documentación" id="toc-paso-7-documentación" class="nav-link" data-scroll-target="#paso-7-documentación"><span class="header-section-number">3.4</span> <strong>Paso 7: Documentación</strong></a></li>
-  <li><a href="#puntos-claves-para-buenas-prácticas-en-bioinfo" id="toc-puntos-claves-para-buenas-prácticas-en-bioinfo" class="nav-link" data-scroll-target="#puntos-claves-para-buenas-prácticas-en-bioinfo"><span class="header-section-number">3.5</span> Puntos claves para buenas prácticas en bioinfo ⭐</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">3.6</span> Referencias</a></li>
+  <li><a href="#referencia" id="toc-referencia" class="nav-link active" data-scroll-target="#referencia"><span class="header-section-number">8.1</span> Referencia</a></li>
   </ul>
 </nav>
     </div>
@@ -398,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></h1>
 </div>
 
 
@@ -415,7 +445,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Notas personales recabadas a partir de los tutoriales y ejemplos 😊. Espero que les funcione 💜</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -426,157 +455,44 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><a href="https://eveliacoss.github.io/LCG2025_S1_Buenaspracticas_presentacion/Dia1_BuenasPracticas.html#1">Presentación completa</a> empleando Rmarkdown</p>
+<p>Si necesitas que los participantes instalen algo, puedes dejar la informacion con las instrucciones</p>
 </div>
 </div>
-<section id="materiales-informativos" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="materiales-informativos"><span class="header-section-number">3.1</span> Materiales informativos</h2>
-<ul>
-<li><a href="https://comunidadbioinfo.github.io/cdsb2023/creaci%C3%B3n-de-vi%C3%B1etas.html">Curso de Joselyn Cristina Chávez Fuentes</a></li>
-<li>Me ayudo mucho este <a href="https://www.youtube.com/watch?v=7ZgZ6qUKZvE&amp;ab_channel=DaniMedi">Video</a></li>
-<li><a href="https://comunidadbioinfo.github.io/cdsb2023/documentaci%C3%B3n-de-funciones.html">Documentación de funciones de Andrés Arredondo Cruz</a></li>
-</ul>
-<p>💪 Estuve muy intensa viendo su codigo. Muchas gracias por tenerlos publico.</p>
-</section>
-<section id="un-algoritmo-nos-permite-resolver-un-problema" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="un-algoritmo-nos-permite-resolver-un-problema"><span class="header-section-number">3.2</span> <strong>Un algoritmo nos permite resolver un problema ⭐</strong></h2>
-<p>Un <strong>algoritmo</strong> es un método para resolver un problema mediante una serie de pasos <strong>definidos, precisos</strong> y <strong>finitos</strong>.</p>
-<ul>
-<li><strong>Definido</strong>: si se sigue dos veces, se obtiene el mismo resultado. Es reproducible.</li>
-<li><strong>Preciso</strong>: implica el orden de realización de cada uno de los pasos.</li>
-<li><strong>Finito</strong>: Tiene un numero determinado de pasos, implica que tiene un fin.</li>
-</ul>
-<blockquote class="blockquote">
-<p>Un algoritmo podemos definirlo como un <strong>programa o software</strong>.</p>
-</blockquote>
-<p><a href="https://allisonhorst.com/allison-horst"><img src="reproducible/figures/allison-horst-code-kitchen.png" class="img-fluid"></a></p>
-</section>
-<section id="para-escribir-un-buen-software-necesitas" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="para-escribir-un-buen-software-necesitas"><span class="header-section-number">3.3</span> <strong>Para escribir un buen software necesitas:</strong></h2>
-<blockquote class="blockquote">
-<p>Escribir <strong>código mantenible (maintainable code), usar control de versiones (version control) y rastreadores de problemas (issue trackers), revisiones de código (code reviews), pruebas unitarias (unit testing) y automatización de tareas (task automation)</strong>.</p>
-<p><a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Wilson, <em>et al.</em> 2014. <em>PLOS Biology</em></a></p>
-</blockquote>
-<p>En bioinformática, es fundamental garantizar el uso <strong>ético y responsable de datos sensibles</strong>, como los genomas humanos, respetando la privacidad y los marcos legales vigentes. Al mismo tiempo, se debe fomentar la ciencia abierta <strong>mediante prácticas transparentes y reproducibles</strong>, sin comprometer la integridad de la información. Estas acciones no solo fortalecen la <strong>confianza en los resultados</strong>, sino que también previenen errores graves que podrían derivar en la <strong>retracción de artículos científicos</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://devcom.com/tech-blog/code-quality-definition-how-to-improve-code-quality/"><img src="reproducible/figures/what-code-quality-1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
-</figure>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pasos para escribir un buen software
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: <a href="https://youtu.be/339AEqk9c-8">Instrucciones para instalar Git Bash en Windows</a>.</p>
 <ol type="1">
-<li><p>Análisis del problema / Definir el problema</p></li>
-<li><p>Diseño del algoritmo / Diseño del programa</p></li>
-<li><p>Codificación / Escribir el código</p></li>
-<li><p>Compilación y ejecución del programa</p></li>
-<li><p>Verificación / Realizar pruebas</p></li>
-<li><p>Depuración / Detectar los errores y corregirlos</p></li>
-</ol>
-<blockquote class="blockquote">
-<p>Programacion defensiva</p>
-</blockquote>
-<ol start="7" type="1">
-<li>Documentación</li>
-</ol>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/homersapien.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="paso-7-documentación" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="paso-7-documentación"><span class="header-section-number">3.4</span> <strong>Paso 7: Documentación</strong></h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<li><p>Descarga el instalador de <a href="https://gitforwindows.org/">Git para Windows</a>.</p></li>
+<li><p>Ejecuta el instalador y sigue los siguientes pasos:</p>
 <ul>
-<li><p><em>Título</em> (opcional)</p></li>
-<li><p><em>Autor (author)</em>: Su nombre</p></li>
-<li><p><em>Dia (date)</em>: Fecha de creación</p></li>
-<li><p><em>Paquetes (packages)</em></p></li>
-<li><p><em>Directorio de trabajo (Working directory)</em>: En que carpeta se encuentra tu datos y programa.</p></li>
-<li><p><em>Información descriptiva del programa (Description)</em>: ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.</p></li>
-<li><p><em>Usage</em> ¿Cómo se utiliza?</p></li>
-<li><p><em>Argumentos (Arguments)</em></p>
-<ul>
-<li><p><em>Información de entrada (Data Inputs)</em>: Ej: Solo numeros enteros (sin decimales).</p></li>
-<li><p><em>Información de salida (Outpus)</em>: Graficas, figuras, tablas, etc.</p></li>
+<li><p>Haz clic en <strong>“Next” cuatro veces</strong> (dos veces si ya has instalado Git previamente). No necesitas cambiar nada en las pantallas de Información, ubicación, componentes y menú de inicio.</p></li>
+<li><p>En el menú desplegable <strong>“Choosing the default editor used by Git”, selecciona “Use the Nano editor by default”</strong> (NOTA: necesitarás desplazarte hacia arriba para encontrarlo) y haz clic en “Next”.</p></li>
+<li><p>En la página que dice <strong>“Adjusting the name of the initial branch in new repositories”, asegúrate de que “Let Git decide”</strong> esté seleccionado. Esto garantizará el nivel más alto de compatibilidad para nuestras lecciones.</p></li>
+<li><p>Asegúrate de que esté seleccionada la opción <strong>“Git from the command line and also from 3rd-party software” y haz clic en “Next”.</strong> (Si no haces esto, Git Bash no funcionará correctamente, lo que te obligará a eliminar la instalación de Git Bash, volver a ejecutar el instalador y seleccionar la opción “<strong>Git from the command line and also from 3rd-party software”).</strong></p></li>
+<li><p>Selecciona <strong>“Use bundled OpenSSH”</strong>.</p></li>
+<li><p>Asegúrate de que <strong>“Use the native Windows Secure Channel Library” esté seleccionada y haz clic en “Next”</strong>.</p></li>
+<li><p>Asegúrate de que <strong>“Checkout Windows-style, commit Unix-style line endings” esté seleccionada y haz clic en “Next”.</strong></p></li>
+<li><p>Asegúrate de que **“Use Windows’** default console window” esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Default (fast-forward or merge)”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Git Credential Manager”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Enable file system caching”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Haz clic en <strong>“Install”</strong>.</p></li>
+<li><p>Haz clic en <strong>“Finish” o “Next”</strong>.</p></li>
 </ul></li>
-</ul>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="puntos-claves-para-buenas-prácticas-en-bioinfo" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="puntos-claves-para-buenas-prácticas-en-bioinfo"><span class="header-section-number">3.5</span> Puntos claves para buenas prácticas en bioinfo ⭐</h2>
-<ol type="1">
-<li><p>Escriba <strong>programas para personas, no para computadoras</strong> (Documenta qué hace y por qué). - Se coherente en la nomenclatura, indentación y otros aspectos del estilo.</p></li>
-<li><p>Modularidad: Divide los programas en <em>funciones cortas de un solo propósito.</em> 💻 📚</p></li>
-<li><p><strong>No repitas tu código</strong>. Crea pasos reproducibles o que se repitan por si solas. ➰</p></li>
-<li><p>Planifique los errores (<strong>Programacion defensiva</strong>) 🚩</p></li>
-<li><p>Optimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.</p></li>
-<li><p>Colaborar - Busque siempre bibliotecas de software bien mantenidas que hagan lo que necesita. 👥</p></li>
+<li><p>Si tu variable de entorno <strong>“HOME”</strong> no está configurada (o no sabes qué es):</p></li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ejemplo de como realizo mis documentos 💜
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Aqui les dejo el script que les doy a mis alumnos <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024/blob/main/Practica_Dia3/scripts/VisualizacionDatos.R">VisualizacionDatos.R</a> del curso de <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024">Análisis de datos de RNA-Seq</a>.</p>
-</div>
-</div>
-</section>
-<section id="referencias" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="referencias"><span class="header-section-number">3.6</span> Referencias</h2>
 <ul>
-<li>Presentación de <a href="https://miriamll.github.io/teaching_R_Rmd/Repro#1">Reproducibilidad de Miriam Lerma</a></li>
-<li>Presentación <a href="https://miriamll.github.io/teaching_R_Rmd/GitGithubZenodo#1">introducción a Git, GitHub y Zenodo de Miriam Lerma</a></li>
-<li><a href="https://lcg-cursos.github.io/material/introbioinfo/L2-buenas-practicas.html#1">Presentación de Introducción a la Bioinformática - Heladia Salgado</a></li>
-<li><a href="https://flor14.github.io/rladies-jujuy/presentacion.html?panelset=compendio&amp;panelset1=bibliograf%25C3%25ADa#3">Mi próximo artículo científico en R de Florencia D´Andrea</a></li>
-<li><a href="https://github.com/WhitakerLab/ReproducibleResearch">Kristie Reproducible Research</a></li>
-<li><a href="https://figshare.com/articles/journal_contribution/Showing_your_working_a_how_to_guide_to_reproducible_research/5443201/1?file=9410686">Presentación de Kristie</a></li>
-<li><a href="https://ifb-elixirfr.github.io/IFB-FAIR-bioinfo-training/assets/pdf/Session2020/01_introduction.pdf">FAIR- bioinformatic</a></li>
-<li><a href="https://github.com/AliciaMstt/BioinfInvRepro2016-II/blob/master/Unidad1/Unidad1_Bioinf_e_Investigaci%C3%B3n_Reproducible.md">Unidad 1 Bioinformática e investigación reproducible</a></li>
-<li><a href="https://academic.oup.com/bib/article/24/6/bbad375/7326135">The five pillars of computational reproducibility: bioinformatics and beyond</a></li>
-<li><a href="https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_ES/02OpenScienceBasics/04ReproducibleResearchAndDataAnalysis.html">Investigación reproducible y análisis de datos</a></li>
-<li>Haydee tutorial: <a href="https://haydeeperuyero.github.io/Computo_Cientifico/">Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos</a></li>
-<li>Alejandra Medina tutorial: <a href="https://comunidadbioinfo.github.io/cdsb2023/control-de-versiones-con-github-y-rstudio.html">Control de versiones con GitHub y RStudio</a></li>
-<li>Wilson, et al.&nbsp;2014. <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>. PLOS Biology</li>
-<li>Evelia Coss - tutorial <a href="https://github.com/EveliaCoss/Buenaspracticas_R_Mayo2024">Buenas practicas en R</a></li>
-<li>Evelia Coss - <a href="https://github.com/EveliaCoss/Make_yourCV">Make your CV tutorial</a></li>
-<li>Markdwn Guide - <a href="https://www.markdownguide.org/getting-started/">Getting Started</a></li>
-<li>Allison Horst - <a href="https://allisonhorst.com/allison-horst">Imagenes</a></li>
-<li><a href="https://srvanderplas.github.io/stat-computing-r-python/">Statistical Computing using R and Python</a></li>
-<li><a href="https://learning.nceas.ucsb.edu/2024-10-coreR/">Training Materials</a></li>
-<li><a href="https://damiandeluca.com.ar/como-comenzar-con-visual-studio-code-una-guia-para-principiantes">Visual Studio Code</a></li>
-<li><a href="https://blog.ml.cmu.edu/2020/08/31/5-reproducibility/">Articulo reproducibilidad</a></li>
+<li>Abre el símbolo del sistema (abre el menú de inicio, luego escribe <code>cmd</code> y presiona <strong>Enter</strong>).</li>
+<li>Escribe la siguiente línea exactamente como se muestra en la ventana del símbolo del sistema.</li>
+</ul>
+<div class="sourceCode" id="cb1" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">setx</span> HOME <span class="st">"%USERPROFILE%"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Presiona Enter, deberías ver “SUCCESS: Specified value was saved”.</li>
+<li>Cierra el símbolo del sistema escribiendo “exit” y presionando Enter.</li>
+</ul>
+<p>Esto te proporcionará tanto Git como Bash en el programa Git Bash.</p>
+<section id="referencia" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="referencia"><span class="header-section-number">8.1</span> Referencia</h2>
+<ul>
+<li>Guia de instalacion de <a href="https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/#the-bash-shell">Git Bash</a></li>
 </ul>
 
 
@@ -997,13 +913,13 @@ Ejemplo de como realizo mis documentos 💜
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./req_R.html" class="pagination-link" aria-label="Instalación de R y RStudio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span>
+      <a href="./Cap1_R.html" class="pagination-link" aria-label="Primeros pasos en R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro_bash.html" class="pagination-link" aria-label="Conceptos Unix y GNU/Linux">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Cap3_B.html" class="pagination-link" aria-label="Conectar a GitHub con SSH">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

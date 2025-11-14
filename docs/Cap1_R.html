@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Buenas prácticas en bioinformática – Workshop</title>
+<title>7&nbsp; Primeros pasos en R – Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro_bash.html" rel="next">
-<link href="./req_R.html" rel="prev">
+<link href="./Cap2_B.html" rel="next">
+<link href="./Cap1_B.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bpracticas.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap1_R.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -321,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Bpracticas.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Bpracticas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span></a>
   </div>
 </li>
@@ -345,7 +380,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
+  <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></span></a>
   </div>
 </li>
@@ -383,12 +418,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#materiales-informativos" id="toc-materiales-informativos" class="nav-link active" data-scroll-target="#materiales-informativos"><span class="header-section-number">3.1</span> Materiales informativos</a></li>
-  <li><a href="#un-algoritmo-nos-permite-resolver-un-problema" id="toc-un-algoritmo-nos-permite-resolver-un-problema" class="nav-link" data-scroll-target="#un-algoritmo-nos-permite-resolver-un-problema"><span class="header-section-number">3.2</span> <strong>Un algoritmo nos permite resolver un problema ⭐</strong></a></li>
-  <li><a href="#para-escribir-un-buen-software-necesitas" id="toc-para-escribir-un-buen-software-necesitas" class="nav-link" data-scroll-target="#para-escribir-un-buen-software-necesitas"><span class="header-section-number">3.3</span> <strong>Para escribir un buen software necesitas:</strong></a></li>
-  <li><a href="#paso-7-documentación" id="toc-paso-7-documentación" class="nav-link" data-scroll-target="#paso-7-documentación"><span class="header-section-number">3.4</span> <strong>Paso 7: Documentación</strong></a></li>
-  <li><a href="#puntos-claves-para-buenas-prácticas-en-bioinfo" id="toc-puntos-claves-para-buenas-prácticas-en-bioinfo" class="nav-link" data-scroll-target="#puntos-claves-para-buenas-prácticas-en-bioinfo"><span class="header-section-number">3.5</span> Puntos claves para buenas prácticas en bioinfo ⭐</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">3.6</span> Referencias</a></li>
+  <li><a href="#ejecutar-código" id="toc-ejecutar-código" class="nav-link active" data-scroll-target="#ejecutar-código"><span class="header-section-number">7.1</span> Ejecutar código</a></li>
+  <li><a href="#usar-r-como-calculadora" id="toc-usar-r-como-calculadora" class="nav-link" data-scroll-target="#usar-r-como-calculadora"><span class="header-section-number">7.2</span> Usar R como calculadora</a>
+  <ul>
+  <li><a href="#operaciones-básicas" id="toc-operaciones-básicas" class="nav-link" data-scroll-target="#operaciones-básicas">Operaciones básicas</a></li>
+  <li><a href="#notación-científica" id="toc-notación-científica" class="nav-link" data-scroll-target="#notación-científica">Notación científica</a></li>
+  <li><a href="#comandos-incompletos" id="toc-comandos-incompletos" class="nav-link" data-scroll-target="#comandos-incompletos">Comandos incompletos</a></li>
+  </ul></li>
+  <li><a href="#funciones-matemáticas" id="toc-funciones-matemáticas" class="nav-link" data-scroll-target="#funciones-matemáticas"><span class="header-section-number">7.3</span> Funciones matemáticas</a>
+  <ul>
+  <li><a href="#guardar-resultados" id="toc-guardar-resultados" class="nav-link" data-scroll-target="#guardar-resultados"><span class="header-section-number">7.3.1</span> Guardar resultados</a></li>
+  <li><a href="#comentarios-en-r" id="toc-comentarios-en-r" class="nav-link" data-scroll-target="#comentarios-en-r"><span class="header-section-number">7.3.2</span> Comentarios en R</a>
+  <ul class="collapse">
+  <li><a href="#limpiar-tu-entorno-en-r" id="toc-limpiar-tu-entorno-en-r" class="nav-link" data-scroll-target="#limpiar-tu-entorno-en-r">Limpiar tu entorno en R</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -398,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></h1>
 </div>
 
 
@@ -415,171 +459,170 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Notas personales recabadas a partir de los tutoriales y ejemplos 😊. Espero que les funcione 💜</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://eveliacoss.github.io/LCG2025_S1_Buenaspracticas_presentacion/Dia1_BuenasPracticas.html#1">Presentación completa</a> empleando Rmarkdown</p>
-</div>
-</div>
-<section id="materiales-informativos" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="materiales-informativos"><span class="header-section-number">3.1</span> Materiales informativos</h2>
+<section id="ejecutar-código" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="ejecutar-código"><span class="header-section-number">7.1</span> Ejecutar código</h2>
+<p>Puedes ejecutar el código de varias formas:</p>
 <ul>
-<li><a href="https://comunidadbioinfo.github.io/cdsb2023/creaci%C3%B3n-de-vi%C3%B1etas.html">Curso de Joselyn Cristina Chávez Fuentes</a></li>
-<li>Me ayudo mucho este <a href="https://www.youtube.com/watch?v=7ZgZ6qUKZvE&amp;ab_channel=DaniMedi">Video</a></li>
-<li><a href="https://comunidadbioinfo.github.io/cdsb2023/documentaci%C3%B3n-de-funciones.html">Documentación de funciones de Andrés Arredondo Cruz</a></li>
+<li><p><strong>Correr una línea de código:</strong> selecciona la línea o colócate al final de ella y presiona <strong>Ctrl + Enter</strong> (Windows/Linux) o <strong>⌘ + Enter</strong> (Mac).<br>
+Esto enviará el código seleccionado a la consola para su ejecución.</p></li>
+<li><p><strong>Usar el botón <em>Run</em>:</strong> también puedes ejecutar el código haciendo clic en el botón <strong><code>Run</code></strong>, ubicado en la parte superior derecha del panel de scripts.</p></li>
 </ul>
-<p>💪 Estuve muy intensa viendo su codigo. Muchas gracias por tenerlos publico.</p>
+<p>Si no hay texto seleccionado al ejecutar <code>Ctrl + Enter /⌘ + Enter</code> <strong>o</strong> <em><code>Run</code>, R</em> ejecutará la línea donde está el cursor; si hay texto seleccionado, ejecutará solo esa parte.</p>
 </section>
-<section id="un-algoritmo-nos-permite-resolver-un-problema" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="un-algoritmo-nos-permite-resolver-un-problema"><span class="header-section-number">3.2</span> <strong>Un algoritmo nos permite resolver un problema ⭐</strong></h2>
-<p>Un <strong>algoritmo</strong> es un método para resolver un problema mediante una serie de pasos <strong>definidos, precisos</strong> y <strong>finitos</strong>.</p>
+<section id="usar-r-como-calculadora" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="usar-r-como-calculadora"><span class="header-section-number">7.2</span> Usar R como calculadora</h2>
+<p>Una de las formas más sencillas de comenzar a usar <code>R</code> es como una <strong>calculadora interactiva</strong>.</p>
+<p>La consola de R puede evaluar expresiones matemáticas y mostrar los resultados de inmediato.</p>
+<p>Por ejemplo, escribe lo siguiente en la consola y presiona <strong>Enter</strong>:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span><span class="sc">+</span><span class="dv">500</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 503</code></pre>
+</div>
+</div>
+<p>R responderá con:</p>
+<p>El número entre corchetes <code>[1]</code> indica el índice del primer elemento mostrado.</p>
+<p>Esto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.</p>
+<section id="operaciones-básicas" class="level4">
+<h4 class="anchored" data-anchor-id="operaciones-básicas">Operaciones básicas</h4>
+<p>Puedes realizar diferentes operaciones aritméticas:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">5</span> <span class="co"># suma </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="sc">-</span> <span class="dv">2</span> <span class="co"># resta </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">6</span> <span class="co"># multiplicación </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">/</span> <span class="dv">3</span> <span class="co"># división </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span> <span class="co"># potencia (2 elevado a la 3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<p>Cuando realices operaciones más complejas en R, el <strong>orden de operaciones</strong> sigue las mismas reglas matemáticas de siempre:</p>
+<p>De mayor a menor precedencia:</p>
 <ul>
-<li><strong>Definido</strong>: si se sigue dos veces, se obtiene el mismo resultado. Es reproducible.</li>
-<li><strong>Preciso</strong>: implica el orden de realización de cada uno de los pasos.</li>
-<li><strong>Finito</strong>: Tiene un numero determinado de pasos, implica que tiene un fin.</li>
+<li><p>Paréntesis: <code>(</code>, <code>)</code></p></li>
+<li><p>Exponentes: <code>^</code> o <code>**</code></p></li>
+<li><p>Multiplicación: <code>*</code></p></li>
+<li><p>División: <code>/</code></p></li>
+<li><p>Suma: <code>+</code></p></li>
+<li><p>Resta: <code>-</code></p></li>
 </ul>
-<blockquote class="blockquote">
-<p>Un algoritmo podemos definirlo como un <strong>programa o software</strong>.</p>
-</blockquote>
-<p><a href="https://allisonhorst.com/allison-horst"><img src="reproducible/figures/allison-horst-code-kitchen.png" class="img-fluid"></a></p>
-</section>
-<section id="para-escribir-un-buen-software-necesitas" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="para-escribir-un-buen-software-necesitas"><span class="header-section-number">3.3</span> <strong>Para escribir un buen software necesitas:</strong></h2>
-<blockquote class="blockquote">
-<p>Escribir <strong>código mantenible (maintainable code), usar control de versiones (version control) y rastreadores de problemas (issue trackers), revisiones de código (code reviews), pruebas unitarias (unit testing) y automatización de tareas (task automation)</strong>.</p>
-<p><a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Wilson, <em>et al.</em> 2014. <em>PLOS Biology</em></a></p>
-</blockquote>
-<p>En bioinformática, es fundamental garantizar el uso <strong>ético y responsable de datos sensibles</strong>, como los genomas humanos, respetando la privacidad y los marcos legales vigentes. Al mismo tiempo, se debe fomentar la ciencia abierta <strong>mediante prácticas transparentes y reproducibles</strong>, sin comprometer la integridad de la información. Estas acciones no solo fortalecen la <strong>confianza en los resultados</strong>, sino que también previenen errores graves que podrían derivar en la <strong>retracción de artículos científicos</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://devcom.com/tech-blog/code-quality-definition-how-to-improve-code-quality/"><img src="reproducible/figures/what-code-quality-1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
-</figure>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pasos para escribir un buen software
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">+</span><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><p>Análisis del problema / Definir el problema</p></li>
-<li><p>Diseño del algoritmo / Diseño del programa</p></li>
-<li><p>Codificación / Escribir el código</p></li>
-<li><p>Compilación y ejecución del programa</p></li>
-<li><p>Verificación / Realizar pruebas</p></li>
-<li><p>Depuración / Detectar los errores y corregirlos</p></li>
-</ol>
-<blockquote class="blockquote">
-<p>Programacion defensiva</p>
-</blockquote>
-<ol start="7" type="1">
-<li>Documentación</li>
-</ol>
+<p>Usa paréntesis para agrupar operaciones y forzar el orden de evaluación si difiere del predeterminado, o para aclarar tus intenciones:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin paréntesis: se sigue el orden de operaciones</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">4</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
 </div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/homersapien.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="paso-7-documentación" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="paso-7-documentación"><span class="header-section-number">3.4</span> <strong>Paso 7: Documentación</strong></h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><em>Título</em> (opcional)</p></li>
-<li><p><em>Autor (author)</em>: Su nombre</p></li>
-<li><p><em>Dia (date)</em>: Fecha de creación</p></li>
-<li><p><em>Paquetes (packages)</em></p></li>
-<li><p><em>Directorio de trabajo (Working directory)</em>: En que carpeta se encuentra tu datos y programa.</p></li>
-<li><p><em>Información descriptiva del programa (Description)</em>: ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.</p></li>
-<li><p><em>Usage</em> ¿Cómo se utiliza?</p></li>
-<li><p><em>Argumentos (Arguments)</em></p>
-<ul>
-<li><p><em>Información de entrada (Data Inputs)</em>: Ej: Solo numeros enteros (sin decimales).</p></li>
-<li><p><em>Información de salida (Outpus)</em>: Graficas, figuras, tablas, etc.</p></li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="puntos-claves-para-buenas-prácticas-en-bioinfo" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="puntos-claves-para-buenas-prácticas-en-bioinfo"><span class="header-section-number">3.5</span> Puntos claves para buenas prácticas en bioinfo ⭐</h2>
-<ol type="1">
-<li><p>Escriba <strong>programas para personas, no para computadoras</strong> (Documenta qué hace y por qué). - Se coherente en la nomenclatura, indentación y otros aspectos del estilo.</p></li>
-<li><p>Modularidad: Divide los programas en <em>funciones cortas de un solo propósito.</em> 💻 📚</p></li>
-<li><p><strong>No repitas tu código</strong>. Crea pasos reproducibles o que se repitan por si solas. ➰</p></li>
-<li><p>Planifique los errores (<strong>Programacion defensiva</strong>) 🚩</p></li>
-<li><p>Optimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.</p></li>
-<li><p>Colaborar - Busque siempre bibliotecas de software bien mantenidas que hagan lo que necesita. 👥</p></li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ejemplo de como realizo mis documentos 💜
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Aqui les dejo el script que les doy a mis alumnos <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024/blob/main/Practica_Dia3/scripts/VisualizacionDatos.R">VisualizacionDatos.R</a> del curso de <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024">Análisis de datos de RNA-Seq</a>.</p>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Con paréntesis: cambiamos el orden de evaluación</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span>) <span class="sc">*</span> <span class="dv">4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
 </div>
 </div>
 </section>
-<section id="referencias" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="referencias"><span class="header-section-number">3.6</span> Referencias</h2>
-<ul>
-<li>Presentación de <a href="https://miriamll.github.io/teaching_R_Rmd/Repro#1">Reproducibilidad de Miriam Lerma</a></li>
-<li>Presentación <a href="https://miriamll.github.io/teaching_R_Rmd/GitGithubZenodo#1">introducción a Git, GitHub y Zenodo de Miriam Lerma</a></li>
-<li><a href="https://lcg-cursos.github.io/material/introbioinfo/L2-buenas-practicas.html#1">Presentación de Introducción a la Bioinformática - Heladia Salgado</a></li>
-<li><a href="https://flor14.github.io/rladies-jujuy/presentacion.html?panelset=compendio&amp;panelset1=bibliograf%25C3%25ADa#3">Mi próximo artículo científico en R de Florencia D´Andrea</a></li>
-<li><a href="https://github.com/WhitakerLab/ReproducibleResearch">Kristie Reproducible Research</a></li>
-<li><a href="https://figshare.com/articles/journal_contribution/Showing_your_working_a_how_to_guide_to_reproducible_research/5443201/1?file=9410686">Presentación de Kristie</a></li>
-<li><a href="https://ifb-elixirfr.github.io/IFB-FAIR-bioinfo-training/assets/pdf/Session2020/01_introduction.pdf">FAIR- bioinformatic</a></li>
-<li><a href="https://github.com/AliciaMstt/BioinfInvRepro2016-II/blob/master/Unidad1/Unidad1_Bioinf_e_Investigaci%C3%B3n_Reproducible.md">Unidad 1 Bioinformática e investigación reproducible</a></li>
-<li><a href="https://academic.oup.com/bib/article/24/6/bbad375/7326135">The five pillars of computational reproducibility: bioinformatics and beyond</a></li>
-<li><a href="https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_ES/02OpenScienceBasics/04ReproducibleResearchAndDataAnalysis.html">Investigación reproducible y análisis de datos</a></li>
-<li>Haydee tutorial: <a href="https://haydeeperuyero.github.io/Computo_Cientifico/">Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos</a></li>
-<li>Alejandra Medina tutorial: <a href="https://comunidadbioinfo.github.io/cdsb2023/control-de-versiones-con-github-y-rstudio.html">Control de versiones con GitHub y RStudio</a></li>
-<li>Wilson, et al.&nbsp;2014. <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>. PLOS Biology</li>
-<li>Evelia Coss - tutorial <a href="https://github.com/EveliaCoss/Buenaspracticas_R_Mayo2024">Buenas practicas en R</a></li>
-<li>Evelia Coss - <a href="https://github.com/EveliaCoss/Make_yourCV">Make your CV tutorial</a></li>
-<li>Markdwn Guide - <a href="https://www.markdownguide.org/getting-started/">Getting Started</a></li>
-<li>Allison Horst - <a href="https://allisonhorst.com/allison-horst">Imagenes</a></li>
-<li><a href="https://srvanderplas.github.io/stat-computing-r-python/">Statistical Computing using R and Python</a></li>
-<li><a href="https://learning.nceas.ucsb.edu/2024-10-coreR/">Training Materials</a></li>
-<li><a href="https://damiandeluca.com.ar/como-comenzar-con-visual-studio-code-una-guia-para-principiantes">Visual Studio Code</a></li>
-<li><a href="https://blog.ml.cmu.edu/2020/08/31/5-reproducibility/">Articulo reproducibilidad</a></li>
-</ul>
+<section id="notación-científica" class="level4">
+<h4 class="anchored" data-anchor-id="notación-científica">Notación científica</h4>
+<p>Números muy pequeños o muy grandes se muestran en notación científica:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span><span class="sc">/</span><span class="dv">10000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7e-04</code></pre>
+</div>
+</div>
+<p>Esto es una abreviación de “multiplicado por <code>10^XX</code>”. Por ejemplo, <code>7e-4</code> es equivalente a <code>7 * 10^(-4)</code>.</p>
+<p>También puedes escribir números directamente en notación científica:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fl">5e3</span> <span class="co"># Nota que no hay signo menos</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5000</code></pre>
+</div>
+</div>
+</section>
+<section id="comandos-incompletos" class="level4">
+<h4 class="anchored" data-anchor-id="comandos-incompletos">Comandos incompletos</h4>
+<p>Si escribes una instrucción incompleta, R esperará que la termines.<br>
+Por ejemplo:</p>
+<p><code>3+</code></p>
+<p>Verás que el símbolo de la consola cambia de <code>&gt;</code> a <code>+</code>.<br>
+Esto indica que R está esperando que completes el comando.<br>
+Si deseas cancelar, presiona <strong>Esc</strong> (o <strong>Ctrl + C</strong>).</p>
+</section>
+</section>
+<section id="funciones-matemáticas" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="funciones-matemáticas"><span class="header-section-number">7.3</span> Funciones matemáticas</h2>
+<p>R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:</p>
+<section id="guardar-resultados" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="guardar-resultados"><span class="header-section-number">7.3.1</span> Guardar resultados</h3>
+<p>Puedes guardar el resultado de una operación en un <strong>objeto</strong> usando el operador <code>&lt;-</code>:</p>
+<pre class="{r} resultado <- 4 + 6}"><code></code></pre>
+<p>Para ver su valor, solo escribe el nombre del objeto:</p>
+<pre class="{r} resultado}"><code></code></pre>
+</section>
+<section id="comentarios-en-r" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="comentarios-en-r"><span class="header-section-number">7.3.2</span> Comentarios en R</h3>
+<p>Puedes agregar comentarios en tu código para explicar qué hace.<br>
+Todo lo que esté después del símbolo <code>#</code> no se ejecutará:</p>
+<pre class="{r} 3 + 3 # Esto es un comentario}"><code></code></pre>
+<section id="limpiar-tu-entorno-en-r" class="level4">
+<h4 class="anchored" data-anchor-id="limpiar-tu-entorno-en-r">Limpiar tu entorno en R</h4>
+<p>Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:</p>
+<p><code>lfm rm(list = ls())}</code></p>
+<p>Puedes <strong>limpiar la consola</strong> para empezar de nuevo haciendo clic en el ícono con forma de <strong>escoba</strong> 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado <code>Ctrl + L</code>(Windows/Linux) o <code>⌘ + L</code> (Mac).</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -997,13 +1040,13 @@ Ejemplo de como realizo mis documentos 💜
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./req_R.html" class="pagination-link" aria-label="Instalación de R y RStudio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span>
+      <a href="./Cap1_B.html" class="pagination-link" aria-label="Mis primeros pasos en Bash">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mis primeros pasos en Bash</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro_bash.html" class="pagination-link" aria-label="Conceptos Unix y GNU/Linux">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Cap2_B.html" class="pagination-link" aria-label="Instalar Git Bash en Windows">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
