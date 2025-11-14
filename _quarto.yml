@@ -4,7 +4,10 @@ project:
 
 book:
   title: "Workshop"
-  author: "Dra. Evelia Coss"
+  author: 
+    - Mayela Fosado-Mendoza
+    - Mariana Devon
+    - Emilio Ortiz-Avila
   date: "27/03/2025"
   page-navigation: true
   chapters:

@@ -9,29 +9,23 @@
 
     Fuente del curso
 
-    -   **Fechas:** Dias de la semana/ dias del mes
+    -   **Fechas:** 27 y 28 de noviembre
 
     -   **Duración del curso:** X horas
 
     #### **Instructores**
 
-    -   **Mariana Devon** - Estudiante de maestría, UAM
     -   **Mayela Fosado-Mendoza** - Tesista de licenciatura
+    -   **Mariana Devon** - Estudiante de maestría, UAM
     -   **Emilio Ortiz-Avila** - Tesista de licenciatura
 
     Ayudantes:
 
-    -   **Daniel Chávez** - Profesor invitado, UAGro.
-
+    -   **Aaron Espinosa Jaime -** Estudiante de maestria, Cinvestav-LANGEBIO.
     -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
-
     -   **Abel Lovaco Flores -** Estudiante de maestria, Cinvestav-Irapuato.
-
-    -   **Israel Aguilar** - Posdoc, Tec de Monterrey.
-
-    -   **Mariana Devon -** Estudiante de maestría, UAM.
-
     -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.
+    -   **Johana Castelán** - RSG-México y RLadies Morelia.
 
     #### **Resumen**
 
@@ -64,29 +58,29 @@
 
     ### Agenda 📆 {#agenda}
 
-    +---------------------------------------------------------+----------+
-    | Tema                                                    | Tiempo   |
-    +=========================================================+:========:+
-    | 🔷 **Sección** **1 - (11:30 - 13:30 h) (## noviembre)** |          |
-    +---------------------------------------------------------+----------+
-    | -   Creación de una cuenta en GitHub                    | 5 min    |
-    +---------------------------------------------------------+----------+
-    | -   Introducción a Git / GitHub                         | 15 min   |
-    +---------------------------------------------------------+----------+
-    | -   **Actividad 1**: Sincronización y llaves            | 15 min   |
-    +---------------------------------------------------------+----------+
-    | ☕ *Coffee break (10 min) - (12:00-12:10) ☕*           | 10 min   |
-    +---------------------------------------------------------+----------+
-    | 🔷  **Sección** **2 - (12:10-13:00 h)**                 |          |
-    +---------------------------------------------------------+----------+
-    | -   Comandos usados en Github y RStudio                 | 25 min   |
-    +---------------------------------------------------------+----------+
-    | -   **Actividad 2:** Pagina de inicio en GitHub         | 15 min   |
-    +---------------------------------------------------------+----------+
-    | 🔷  **Sección 3 - (11:30 - 13:30 h) (## noviembre)**    |          |
-    +---------------------------------------------------------+----------+
-    | -   Buenas practicas en R                               | 30 min   |
-    +---------------------------------------------------------+----------+
-    | -   **Actividad 3:** Pagina web en GitHub               | 1:30 min |
-    +---------------------------------------------------------+----------+
+    +---------------------------------------------------------+-------------+
+    | Tema                                                    | Tiempo      |
+    +=========================================================+:===========:+
+    | 🔷 **Sección** **1 - (11:30 - 13:30 h) (## noviembre)** |             |
+    +---------------------------------------------------------+-------------+
+    | -   Creación de una cuenta en GitHub                    | 5 min       |
+    +---------------------------------------------------------+-------------+
+    | -   Introducción a Git / GitHub                         | 15 min      |
+    +---------------------------------------------------------+-------------+
+    | -   **Actividad 1**: Sincronización y llaves            | 15 min      |
+    +---------------------------------------------------------+-------------+
+    | ☕ *Coffee break (10 min) - (12:00-12:10) ☕*           | 10 min      |
+    +---------------------------------------------------------+-------------+
+    | 🔷  **Sección** **2 - (12:10-13:00 h)**                 |             |
+    +---------------------------------------------------------+-------------+
+    | -   Comandos usados en Github y RStudio                 | 25 min      |
+    +---------------------------------------------------------+-------------+
+    | -   **Actividad 2:** Pagina de inicio en GitHub         | 15 min      |
+    +---------------------------------------------------------+-------------+
+    | 🔷  **Sección 3 - (11:30 - 13:30 h) (## noviembre)**    |             |
+    +---------------------------------------------------------+-------------+
+    | -   Buenas practicas en R                               | 30 min      |
+    +---------------------------------------------------------+-------------+
+    | -   **Actividad 3:** Pagina web en GitHub               | 1:30 min    |
+    +---------------------------------------------------------+-------------+
     :::
