@@ -13,6 +13,10 @@
 
     -   **Duración del curso:** X horas
 
+    -   **Horario:** 9 am -X
+
+    ![](figures/flyers.jpeg){width="467"}
+
     #### **Instructores**
 
     -   **Mayela Fosado-Mendoza** - Tesista de licenciatura
@@ -23,9 +27,14 @@
 
     -   **Aaron Espinosa Jaime -** Estudiante de maestria, Cinvestav-LANGEBIO.
     -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
-    -   **Abel Lovaco Flores -** Estudiante de maestria, Cinvestav-Irapuato.
     -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM.
     -   **Johana Castelán** - RSG-México y RLadies Morelia.
+    -   **Daniel Chávez** - Profesor invitado, UAGro.
+
+    Organizadores del curso:
+
+    -   **Abel Lovaco Flores -** Estudiante de maestria, Cinvestav-Irapuato.
+    -   **Evelia Lorena Coss-Navarrete** - PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
 
     #### **Resumen**
 
