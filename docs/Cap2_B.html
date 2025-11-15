@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Conceptos de R – Workshop Bash &amp; R</title>
+<title>8&nbsp; Instalar Git Bash en Windows – Workshop Bash &amp; R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Cap1_B.html" rel="next">
-<link href="./intro_bash.html" rel="prev">
+<link href="./Cap3_B.html" rel="next">
+<link href="./Cap1_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro_R.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap2_B.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -333,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_R.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
@@ -351,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Cap2_B.html" class="sidebar-item-text sidebar-link">
+  <a href="./Cap2_B.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></span></a>
   </div>
 </li>
@@ -383,13 +418,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-r" id="toc-qué-es-r" class="nav-link active" data-scroll-target="#qué-es-r"><span class="header-section-number">5.1</span> ¿Qué es R?</a></li>
-  <li><a href="#qué-es-rstudio" id="toc-qué-es-rstudio" class="nav-link" data-scroll-target="#qué-es-rstudio"><span class="header-section-number">5.2</span> ¿Qué es RStudio?</a></li>
-  <li><a href="#filosofía-de-r" id="toc-filosofía-de-r" class="nav-link" data-scroll-target="#filosofía-de-r"><span class="header-section-number">5.3</span> Filosofía de R</a></li>
-  <li><a href="#diferencias-con-hojas-de-cálculo" id="toc-diferencias-con-hojas-de-cálculo" class="nav-link" data-scroll-target="#diferencias-con-hojas-de-cálculo"><span class="header-section-number">5.4</span> Diferencias con hojas de cálculo</a></li>
-  <li><a href="#interfaz-básica-de-rstudio" id="toc-interfaz-básica-de-rstudio" class="nav-link" data-scroll-target="#interfaz-básica-de-rstudio"><span class="header-section-number">5.5</span> Interfaz básica de RStudio</a></li>
-  <li><a href="#flujo-de-trabajo-en-rstudio" id="toc-flujo-de-trabajo-en-rstudio" class="nav-link" data-scroll-target="#flujo-de-trabajo-en-rstudio"><span class="header-section-number">5.6</span> Flujo de trabajo en RStudio</a></li>
-  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">5.7</span> Material suplementario</a></li>
+  <li><a href="#referencia" id="toc-referencia" class="nav-link active" data-scroll-target="#referencia"><span class="header-section-number">8.1</span> Referencia</a></li>
   </ul>
 </nav>
     </div>
@@ -399,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></h1>
 </div>
 
 
@@ -416,94 +445,54 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="qué-es-r" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="qué-es-r"><span class="header-section-number">5.1</span> ¿Qué es R?</h2>
-<p>Lenguaje de programación y entorno de software creado en 1993 por <strong>Ross Ihaka</strong> y <strong>Robert Gentleman</strong> en la Universidad de Auckland, Nueva Zelanda.</p>
-<p>R está diseñado para el <strong>análisis estadístico</strong>, la <strong>visualización de datos</strong> y la <strong>computación científica</strong>.</p>
-<ul>
-<li><p>Software libre y de código abierto.</p></li>
-<li><p>Multiplataforma (Windows, macOS y Linux).</p></li>
-<li><p>Permite realizar análisis reproducibles y automatizados.</p></li>
-</ul>
-<p>R es ampliamente utilizado en biología, ecología, ciencias sociales, economía y muchas otras disciplinas.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://download.logo.wine/logo/R_(programming_language)/R_(programming_language)-Logo.wine.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
-</figure>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="qué-es-rstudio" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="qué-es-rstudio"><span class="header-section-number">5.2</span> ¿Qué es RStudio?</h2>
-<p><strong>RStudio</strong> es un <strong>Entorno de Desarrollo Integrado (IDE)</strong> que facilita el uso de R.<br>
-Ofrece una interfaz amigable con herramientas para escribir código, visualizar datos y administrar proyectos.</p>
-<p>Ventajas:</p>
-<ul>
-<li><p>Permite ejecutar código y ver resultados de inmediato.</p></li>
-<li><p>Integra control de versiones (Git).</p></li>
-<li><p>Incluye paneles para trabajar con archivos, gráficos, paquetes y ayuda.</p></li>
-<li><p>Facilita la creación de reportes, presentaciones y scripts reproducibles.</p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.marefa.org/w/images/thumb/d/d0/RStudio_logo_flat.svg/1200px-RStudio_logo_flat.svg.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
-</figure>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-</section>
-<section id="filosofía-de-r" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="filosofía-de-r"><span class="header-section-number">5.3</span> Filosofía de R</h2>
-<ul>
-<li><p>Promueve la <strong>ciencia abierta y reproducible</strong>.</p></li>
-<li><p>Fomenta la <strong>transparencia en los análisis</strong> al guardar todo el flujo de trabajo en código.</p></li>
-<li><p>Comunidad activa que desarrolla miles de paquetes (CRAN, Bioconductor, GitHub).</p></li>
-</ul>
-</section>
-<section id="diferencias-con-hojas-de-cálculo" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="diferencias-con-hojas-de-cálculo"><span class="header-section-number">5.4</span> Diferencias con hojas de cálculo</h2>
-<p>Herramientas como <strong>Excel</strong> o <strong>Google Sheets</strong> son útiles para tareas básicas, pero:</p>
-<ul>
-<li><p>Limitan el tamaño de los datos.</p></li>
-<li><p>No documentan los pasos del análisis.</p></li>
-<li><p>No son fácilmente reproducibles.</p></li>
-</ul>
-<p>R permite registrar y compartir <strong>todo el proceso analítico</strong> con unas pocas líneas de código.</p>
-</section>
-<section id="interfaz-básica-de-rstudio" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="interfaz-básica-de-rstudio"><span class="header-section-number">5.5</span> Interfaz básica de RStudio</h2>
-<p>Cuando abres RStudio encontrarás cuatro paneles principales:</p>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si necesitas que los participantes instalen algo, puedes dejar la informacion con las instrucciones</p>
+</div>
+</div>
+<p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: <a href="https://youtu.be/339AEqk9c-8">Instrucciones para instalar Git Bash en Windows</a>.</p>
 <ol type="1">
-<li><p><strong>Source</strong> (arriba a la izquierda): donde escribes y editas código.</p></li>
-<li><p><strong>Console</strong> (abajo a la izquierda): donde se ejecutan los comandos.</p></li>
-<li><p><strong>Environment / History</strong> (arriba a la derecha): muestra los objetos creados y el historial de comandos.</p></li>
-<li><p><strong>Files / Plots / Packages / Help / Viewer</strong> (abajo a la derecha): para explorar resultados, archivos y documentación.</p>
-<p><img src="figures/consola_R.png" class="img-fluid"></p></li>
-</ol>
-</section>
-<section id="flujo-de-trabajo-en-rstudio" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="flujo-de-trabajo-en-rstudio"><span class="header-section-number">5.6</span> Flujo de trabajo en RStudio</h2>
-<p>Existen dos formas principales de trabajar dentro de <strong>RStudio</strong>:</p>
-<ol type="1">
-<li><strong>Probar y jugar en la consola interactiva</strong> de R, y luego copiar el código a un archivo <code>.R</code> para ejecutarlo más tarde.</li>
+<li><p>Descarga el instalador de <a href="https://gitforwindows.org/">Git para Windows</a>.</p></li>
+<li><p>Ejecuta el instalador y sigue los siguientes pasos:</p>
+<ul>
+<li><p>Haz clic en <strong>“Next” cuatro veces</strong> (dos veces si ya has instalado Git previamente). No necesitas cambiar nada en las pantallas de Información, ubicación, componentes y menú de inicio.</p></li>
+<li><p>En el menú desplegable <strong>“Choosing the default editor used by Git”, selecciona “Use the Nano editor by default”</strong> (NOTA: necesitarás desplazarte hacia arriba para encontrarlo) y haz clic en “Next”.</p></li>
+<li><p>En la página que dice <strong>“Adjusting the name of the initial branch in new repositories”, asegúrate de que “Let Git decide”</strong> esté seleccionado. Esto garantizará el nivel más alto de compatibilidad para nuestras lecciones.</p></li>
+<li><p>Asegúrate de que esté seleccionada la opción <strong>“Git from the command line and also from 3rd-party software” y haz clic en “Next”.</strong> (Si no haces esto, Git Bash no funcionará correctamente, lo que te obligará a eliminar la instalación de Git Bash, volver a ejecutar el instalador y seleccionar la opción “<strong>Git from the command line and also from 3rd-party software”).</strong></p></li>
+<li><p>Selecciona <strong>“Use bundled OpenSSH”</strong>.</p></li>
+<li><p>Asegúrate de que <strong>“Use the native Windows Secure Channel Library” esté seleccionada y haz clic en “Next”</strong>.</p></li>
+<li><p>Asegúrate de que <strong>“Checkout Windows-style, commit Unix-style line endings” esté seleccionada y haz clic en “Next”.</strong></p></li>
+<li><p>Asegúrate de que **“Use Windows’** default console window” esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Default (fast-forward or merge)”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Git Credential Manager”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Enable file system caching”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Haz clic en <strong>“Install”</strong>.</p></li>
+<li><p>Haz clic en <strong>“Finish” o “Next”</strong>.</p></li>
+</ul></li>
+<li><p>Si tu variable de entorno <strong>“HOME”</strong> no está configurada (o no sabes qué es):</p></li>
 </ol>
 <ul>
-<li><p>Esta opción es útil al realizar pruebas pequeñas o cuando estás comenzando.</p></li>
-<li><p>Sin embargo, puede volverse tediosa conforme tu código crece.</p></li>
+<li>Abre el símbolo del sistema (abre el menú de inicio, luego escribe <code>cmd</code> y presiona <strong>Enter</strong>).</li>
+<li>Escribe la siguiente línea exactamente como se muestra en la ventana del símbolo del sistema.</li>
 </ul>
-<ol start="2" type="1">
-<li><strong>Escribir directamente en un archivo <code>.R</code></strong> y usar los atajos de teclado de RStudio para ejecutar líneas o bloques de código en la consola interactiva.</li>
-</ol>
+<div class="sourceCode" id="cb1" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">setx</span> HOME <span class="st">"%USERPROFILE%"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>Es una excelente forma de trabajar desde el inicio, ya que todo tu código queda guardado.</p></li>
-<li><p>Podrás ejecutar el archivo completo desde RStudio o mediante la función <code>source()</code> de R.</p></li>
+<li>Presiona Enter, deberías ver “SUCCESS: Specified value was saved”.</li>
+<li>Cierra el símbolo del sistema escribiendo “exit” y presionando Enter.</li>
 </ul>
-</section>
-<section id="material-suplementario" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">5.7</span> Material suplementario</h2>
-<p>Para aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:</p>
+<p>Esto te proporcionará tanto Git como Bash en el programa Git Bash.</p>
+<section id="referencia" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="referencia"><span class="header-section-number">8.1</span> Referencia</h2>
 <ul>
-<li><p>The Carpentries. (2025). <em>R for Reproducible Scientific Analysis</em>. <a href="https://swcarpentry.github.io/r-novice-gapminder/" class="uri">https://swcarpentry.github.io/r-novice-gapminder/</a></p></li>
-<li><p>CRAN. (2025). <em>The Comprehensive R Archive Network</em>. <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
-<li><p>Wickham, H. &amp; Grolemund, G. (2017). <em>R for Data Science</em>. O'Reilly Media. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></p></li>
-<li><p>RStudio Education. (2024). <em>RStudio Primers</em>. <a href="https://posit.cloud/learn/primers" class="uri">https://posit.cloud/learn/primers</a></p></li>
+<li>Guia de instalacion de <a href="https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/#the-bash-shell">Git Bash</a></li>
 </ul>
 
 
@@ -924,13 +913,13 @@ Ofrece una interfaz amigable con herramientas para escribir código, visualizar 
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro_bash.html" class="pagination-link" aria-label="Conceptos Unix y GNU/Linux">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span>
+      <a href="./Cap1_R.html" class="pagination-link" aria-label="Primeros pasos en R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Cap1_B.html" class="pagination-link" aria-label="Mis primeros pasos en Bash">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mis primeros pasos en Bash</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Cap3_B.html" class="pagination-link" aria-label="Conectar a GitHub con SSH">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

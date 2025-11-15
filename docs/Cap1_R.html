@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Conceptos de R – Workshop Bash &amp; R</title>
+<title>7&nbsp; Primeros pasos en R – Workshop Bash &amp; R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Cap1_B.html" rel="next">
-<link href="./intro_bash.html" rel="prev">
+<link href="./Cap2_B.html" rel="next">
+<link href="./Cap1_B.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro_R.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap1_R.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -333,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_R.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
@@ -345,7 +380,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
+  <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></span></a>
   </div>
 </li>
@@ -383,13 +418,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-r" id="toc-qué-es-r" class="nav-link active" data-scroll-target="#qué-es-r"><span class="header-section-number">5.1</span> ¿Qué es R?</a></li>
-  <li><a href="#qué-es-rstudio" id="toc-qué-es-rstudio" class="nav-link" data-scroll-target="#qué-es-rstudio"><span class="header-section-number">5.2</span> ¿Qué es RStudio?</a></li>
-  <li><a href="#filosofía-de-r" id="toc-filosofía-de-r" class="nav-link" data-scroll-target="#filosofía-de-r"><span class="header-section-number">5.3</span> Filosofía de R</a></li>
-  <li><a href="#diferencias-con-hojas-de-cálculo" id="toc-diferencias-con-hojas-de-cálculo" class="nav-link" data-scroll-target="#diferencias-con-hojas-de-cálculo"><span class="header-section-number">5.4</span> Diferencias con hojas de cálculo</a></li>
-  <li><a href="#interfaz-básica-de-rstudio" id="toc-interfaz-básica-de-rstudio" class="nav-link" data-scroll-target="#interfaz-básica-de-rstudio"><span class="header-section-number">5.5</span> Interfaz básica de RStudio</a></li>
-  <li><a href="#flujo-de-trabajo-en-rstudio" id="toc-flujo-de-trabajo-en-rstudio" class="nav-link" data-scroll-target="#flujo-de-trabajo-en-rstudio"><span class="header-section-number">5.6</span> Flujo de trabajo en RStudio</a></li>
-  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">5.7</span> Material suplementario</a></li>
+  <li><a href="#ejecutar-código" id="toc-ejecutar-código" class="nav-link active" data-scroll-target="#ejecutar-código"><span class="header-section-number">7.1</span> Ejecutar código</a></li>
+  <li><a href="#usar-r-como-calculadora" id="toc-usar-r-como-calculadora" class="nav-link" data-scroll-target="#usar-r-como-calculadora"><span class="header-section-number">7.2</span> Usar R como calculadora</a>
+  <ul>
+  <li><a href="#operaciones-básicas" id="toc-operaciones-básicas" class="nav-link" data-scroll-target="#operaciones-básicas">Operaciones básicas</a></li>
+  <li><a href="#notación-científica" id="toc-notación-científica" class="nav-link" data-scroll-target="#notación-científica">Notación científica</a></li>
+  <li><a href="#comandos-incompletos" id="toc-comandos-incompletos" class="nav-link" data-scroll-target="#comandos-incompletos">Comandos incompletos</a></li>
+  </ul></li>
+  <li><a href="#funciones-matemáticas" id="toc-funciones-matemáticas" class="nav-link" data-scroll-target="#funciones-matemáticas"><span class="header-section-number">7.3</span> Funciones matemáticas</a>
+  <ul>
+  <li><a href="#guardar-resultados" id="toc-guardar-resultados" class="nav-link" data-scroll-target="#guardar-resultados"><span class="header-section-number">7.3.1</span> Guardar resultados</a></li>
+  <li><a href="#comentarios-en-r" id="toc-comentarios-en-r" class="nav-link" data-scroll-target="#comentarios-en-r"><span class="header-section-number">7.3.2</span> Comentarios en R</a>
+  <ul class="collapse">
+  <li><a href="#limpiar-tu-entorno-en-r" id="toc-limpiar-tu-entorno-en-r" class="nav-link" data-scroll-target="#limpiar-tu-entorno-en-r">Limpiar tu entorno en R</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -399,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conceptos de R</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></h1>
 </div>
 
 
@@ -416,97 +459,170 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="qué-es-r" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="qué-es-r"><span class="header-section-number">5.1</span> ¿Qué es R?</h2>
-<p>Lenguaje de programación y entorno de software creado en 1993 por <strong>Ross Ihaka</strong> y <strong>Robert Gentleman</strong> en la Universidad de Auckland, Nueva Zelanda.</p>
-<p>R está diseñado para el <strong>análisis estadístico</strong>, la <strong>visualización de datos</strong> y la <strong>computación científica</strong>.</p>
+<section id="ejecutar-código" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="ejecutar-código"><span class="header-section-number">7.1</span> Ejecutar código</h2>
+<p>Puedes ejecutar el código de varias formas:</p>
 <ul>
-<li><p>Software libre y de código abierto.</p></li>
-<li><p>Multiplataforma (Windows, macOS y Linux).</p></li>
-<li><p>Permite realizar análisis reproducibles y automatizados.</p></li>
+<li><p><strong>Correr una línea de código:</strong> selecciona la línea o colócate al final de ella y presiona <strong>Ctrl + Enter</strong> (Windows/Linux) o <strong>⌘ + Enter</strong> (Mac).<br>
+Esto enviará el código seleccionado a la consola para su ejecución.</p></li>
+<li><p><strong>Usar el botón <em>Run</em>:</strong> también puedes ejecutar el código haciendo clic en el botón <strong><code>Run</code></strong>, ubicado en la parte superior derecha del panel de scripts.</p></li>
 </ul>
-<p>R es ampliamente utilizado en biología, ecología, ciencias sociales, economía y muchas otras disciplinas.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://download.logo.wine/logo/R_(programming_language)/R_(programming_language)-Logo.wine.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
-</figure>
+<p>Si no hay texto seleccionado al ejecutar <code>Ctrl + Enter /⌘ + Enter</code> <strong>o</strong> <em><code>Run</code>, R</em> ejecutará la línea donde está el cursor; si hay texto seleccionado, ejecutará solo esa parte.</p>
+</section>
+<section id="usar-r-como-calculadora" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="usar-r-como-calculadora"><span class="header-section-number">7.2</span> Usar R como calculadora</h2>
+<p>Una de las formas más sencillas de comenzar a usar <code>R</code> es como una <strong>calculadora interactiva</strong>.</p>
+<p>La consola de R puede evaluar expresiones matemáticas y mostrar los resultados de inmediato.</p>
+<p>Por ejemplo, escribe lo siguiente en la consola y presiona <strong>Enter</strong>:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span><span class="sc">+</span><span class="dv">500</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 503</code></pre>
+</div>
+</div>
+<p>R responderá con:</p>
+<p>El número entre corchetes <code>[1]</code> indica el índice del primer elemento mostrado.</p>
+<p>Esto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.</p>
+<section id="operaciones-básicas" class="level4">
+<h4 class="anchored" data-anchor-id="operaciones-básicas">Operaciones básicas</h4>
+<p>Puedes realizar diferentes operaciones aritméticas:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">5</span> <span class="co"># suma </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="sc">-</span> <span class="dv">2</span> <span class="co"># resta </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">6</span> <span class="co"># multiplicación </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="sc">/</span> <span class="dv">3</span> <span class="co"># división </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">3</span> <span class="co"># potencia (2 elevado a la 3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<p>Cuando realices operaciones más complejas en R, el <strong>orden de operaciones</strong> sigue las mismas reglas matemáticas de siempre:</p>
+<p>De mayor a menor precedencia:</p>
+<ul>
+<li><p>Paréntesis: <code>(</code>, <code>)</code></p></li>
+<li><p>Exponentes: <code>^</code> o <code>**</code></p></li>
+<li><p>Multiplicación: <code>*</code></p></li>
+<li><p>División: <code>/</code></p></li>
+<li><p>Suma: <code>+</code></p></li>
+<li><p>Resta: <code>-</code></p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">+</span><span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+<p>Usa paréntesis para agrupar operaciones y forzar el orden de evaluación si difiere del predeterminado, o para aclarar tus intenciones:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin paréntesis: se sigue el orden de operaciones</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">4</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Con paréntesis: cambiamos el orden de evaluación</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span>) <span class="sc">*</span> <span class="dv">4</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
 </div>
 </section>
-<section id="qué-es-rstudio" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="qué-es-rstudio"><span class="header-section-number">5.2</span> ¿Qué es RStudio?</h2>
-<p><strong>RStudio</strong> es un <strong>Entorno de Desarrollo Integrado (IDE)</strong> que facilita el uso de R.<br>
-Ofrece una interfaz amigable con herramientas para escribir código, visualizar datos y administrar proyectos.</p>
-<p>Ventajas:</p>
-<ul>
-<li><p>Permite ejecutar código y ver resultados de inmediato.</p></li>
-<li><p>Integra control de versiones (Git).</p></li>
-<li><p>Incluye paneles para trabajar con archivos, gráficos, paquetes y ayuda.</p></li>
-<li><p>Facilita la creación de reportes, presentaciones y scripts reproducibles.</p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.marefa.org/w/images/thumb/d/d0/RStudio_logo_flat.svg/1200px-RStudio_logo_flat.svg.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
-</figure>
+<section id="notación-científica" class="level4">
+<h4 class="anchored" data-anchor-id="notación-científica">Notación científica</h4>
+<p>Números muy pequeños o muy grandes se muestran en notación científica:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span><span class="sc">/</span><span class="dv">10000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7e-04</code></pre>
+</div>
+</div>
+<p>Esto es una abreviación de “multiplicado por <code>10^XX</code>”. Por ejemplo, <code>7e-4</code> es equivalente a <code>7 * 10^(-4)</code>.</p>
+<p>También puedes escribir números directamente en notación científica:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fl">5e3</span> <span class="co"># Nota que no hay signo menos</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5000</code></pre>
+</div>
 </div>
 </section>
-<section id="filosofía-de-r" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="filosofía-de-r"><span class="header-section-number">5.3</span> Filosofía de R</h2>
-<ul>
-<li><p>Promueve la <strong>ciencia abierta y reproducible</strong>.</p></li>
-<li><p>Fomenta la <strong>transparencia en los análisis</strong> al guardar todo el flujo de trabajo en código.</p></li>
-<li><p>Comunidad activa que desarrolla miles de paquetes (CRAN, Bioconductor, GitHub).</p></li>
-</ul>
+<section id="comandos-incompletos" class="level4">
+<h4 class="anchored" data-anchor-id="comandos-incompletos">Comandos incompletos</h4>
+<p>Si escribes una instrucción incompleta, R esperará que la termines.<br>
+Por ejemplo:</p>
+<p><code>3+</code></p>
+<p>Verás que el símbolo de la consola cambia de <code>&gt;</code> a <code>+</code>.<br>
+Esto indica que R está esperando que completes el comando.<br>
+Si deseas cancelar, presiona <strong>Esc</strong> (o <strong>Ctrl + C</strong>).</p>
 </section>
-<section id="diferencias-con-hojas-de-cálculo" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="diferencias-con-hojas-de-cálculo"><span class="header-section-number">5.4</span> Diferencias con hojas de cálculo</h2>
-<p>Herramientas como <strong>Excel</strong> o <strong>Google Sheets</strong> son útiles para tareas básicas, pero:</p>
-<ul>
-<li><p>Limitan el tamaño de los datos.</p></li>
-<li><p>No documentan los pasos del análisis.</p></li>
-<li><p>No son fácilmente reproducibles.</p></li>
-</ul>
-<p>R permite registrar y compartir <strong>todo el proceso analítico</strong> con unas pocas líneas de código.</p>
 </section>
-<section id="interfaz-básica-de-rstudio" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="interfaz-básica-de-rstudio"><span class="header-section-number">5.5</span> Interfaz básica de RStudio</h2>
-<p>Cuando abres RStudio encontrarás cuatro paneles principales:</p>
-<ol type="1">
-<li><p><strong>Source</strong> (arriba a la izquierda): donde escribes y editas código.</p></li>
-<li><p><strong>Console</strong> (abajo a la izquierda): donde se ejecutan los comandos.</p></li>
-<li><p><strong>Environment / History</strong> (arriba a la derecha): muestra los objetos creados y el historial de comandos.</p></li>
-<li><p><strong>Files / Plots / Packages / Help / Viewer</strong> (abajo a la derecha): para explorar resultados, archivos y documentación.</p>
-<p><img src="figures/consola_R.png" class="img-fluid"></p></li>
-</ol>
+<section id="funciones-matemáticas" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="funciones-matemáticas"><span class="header-section-number">7.3</span> Funciones matemáticas</h2>
+<p>R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:</p>
+<section id="guardar-resultados" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="guardar-resultados"><span class="header-section-number">7.3.1</span> Guardar resultados</h3>
+<p>Puedes guardar el resultado de una operación en un <strong>objeto</strong> usando el operador <code>&lt;-</code>:</p>
+<pre class="{r} resultado <- 4 + 6}"><code></code></pre>
+<p>Para ver su valor, solo escribe el nombre del objeto:</p>
+<pre class="{r} resultado}"><code></code></pre>
 </section>
-<section id="flujo-de-trabajo-en-rstudio" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="flujo-de-trabajo-en-rstudio"><span class="header-section-number">5.6</span> Flujo de trabajo en RStudio</h2>
-<p>Existen dos formas principales de trabajar dentro de <strong>RStudio</strong>:</p>
-<ol type="1">
-<li><strong>Probar y jugar en la consola interactiva</strong> de R, y luego copiar el código a un archivo <code>.R</code> para ejecutarlo más tarde.</li>
-</ol>
-<ul>
-<li><p>Esta opción es útil al realizar pruebas pequeñas o cuando estás comenzando.</p></li>
-<li><p>Sin embargo, puede volverse tediosa conforme tu código crece.</p></li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Escribir directamente en un archivo <code>.R</code></strong> y usar los atajos de teclado de RStudio para ejecutar líneas o bloques de código en la consola interactiva.</li>
-</ol>
-<ul>
-<li><p>Es una excelente forma de trabajar desde el inicio, ya que todo tu código queda guardado.</p></li>
-<li><p>Podrás ejecutar el archivo completo desde RStudio o mediante la función <code>source()</code> de R.</p></li>
-</ul>
-</section>
-<section id="material-suplementario" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">5.7</span> Material suplementario</h2>
-<p>Para aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:</p>
-<ul>
-<li><p>The Carpentries. (2025). <em>R for Reproducible Scientific Analysis</em>. <a href="https://swcarpentry.github.io/r-novice-gapminder/" class="uri">https://swcarpentry.github.io/r-novice-gapminder/</a></p></li>
-<li><p>CRAN. (2025). <em>The Comprehensive R Archive Network</em>. <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
-<li><p>Wickham, H. &amp; Grolemund, G. (2017). <em>R for Data Science</em>. O'Reilly Media. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></p></li>
-<li><p>RStudio Education. (2024). <em>RStudio Primers</em>. <a href="https://posit.cloud/learn/primers" class="uri">https://posit.cloud/learn/primers</a></p></li>
-</ul>
+<section id="comentarios-en-r" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="comentarios-en-r"><span class="header-section-number">7.3.2</span> Comentarios en R</h3>
+<p>Puedes agregar comentarios en tu código para explicar qué hace.<br>
+Todo lo que esté después del símbolo <code>#</code> no se ejecutará:</p>
+<pre class="{r} 3 + 3 # Esto es un comentario}"><code></code></pre>
+<section id="limpiar-tu-entorno-en-r" class="level4">
+<h4 class="anchored" data-anchor-id="limpiar-tu-entorno-en-r">Limpiar tu entorno en R</h4>
+<p>Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:</p>
+<p><code>ked rm(list = ls())}</code></p>
+<p>Puedes <strong>limpiar la consola</strong> para empezar de nuevo haciendo clic en el ícono con forma de <strong>escoba</strong> 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado <code>Ctrl + L</code>(Windows/Linux) o <code>⌘ + L</code> (Mac).</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -924,13 +1040,13 @@ Ofrece una interfaz amigable con herramientas para escribir código, visualizar 
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro_bash.html" class="pagination-link" aria-label="Conceptos Unix y GNU/Linux">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span>
+      <a href="./Cap1_B.html" class="pagination-link" aria-label="Mis primeros pasos en Bash">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mis primeros pasos en Bash</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Cap1_B.html" class="pagination-link" aria-label="Mis primeros pasos en Bash">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mis primeros pasos en Bash</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Cap2_B.html" class="pagination-link" aria-label="Instalar Git Bash en Windows">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Instalar Git Bash en Windows</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

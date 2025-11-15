@@ -3,22 +3,26 @@ project:
   output-dir: docs
 
 book:
-  title: "Workshop"
-  author: "Dra. Evelia Coss"
+  title: "Workshop Bash & R"
+  author: 
+    - Mayela Fosado-Mendoza
+    - Mariana Devon
+    - Emilio Ortiz-Avila
   date: "27/03/2025"
   page-navigation: true
   chapters:
     - index.qmd
-    - req.qmd
-    - req2.qmd
+    - req_B.qmd
+    - req_R.qmd
     - Bpracticas.qmd
     - intro_bash.qmd
     - intro_R.qmd
-    - Cap1.qmd
-    - Cap2.qmd
-    - Cap3.qmd
-    - Cap4.qmd
-    - Cap5.qmd
+    - Cap1_B.qmd
+    - Cap1_R.qmd
+    - Cap2_B.qmd
+    - Cap3_B.qmd
+    - Cap4_B.qmd
+    - Cap5_B.qmd
   # Information
   repo-url: https://github.com/ISCB-RSG-MEXICO/Workshop_template # link de Github
   sharing: [twitter, facebook, linkedin]
