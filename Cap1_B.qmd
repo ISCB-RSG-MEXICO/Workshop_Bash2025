@@ -156,11 +156,10 @@ Ejemplo de rutas:
 Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema
 
 | Comandos  | Información                                            | Ejemplo de uso       |
-|-----------|--------------------------------------------------------|----------------------|
+|-------------------|-----------------------------------|-------------------|
 | `pwd`     | Muestra el directorio actual                           | `pwd`                |
 | `history` | Muestra el historial de comandos                       | `history`            |
 | `ls`      | Observar el contenido de los archivos en un directorio | `ls mi_directorio`   |
-| `which`   | Muestra la ruta del ejecutable de un comando           | `which python`       |
 | `file`    | Muestra el tipo de archivo (texto, binario, etc.)      | `file documento.txt` |
 | `whoami`  | Muestra el usuario actual                              | `whoami`             |
 | `which`   | Muestra la ubicación del ejecutable de un comando      | `which python`       |
@@ -205,7 +204,7 @@ Comandos para inspeccionar lo que hay dentro de los archivos sin abrirlos en un 
 Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.
 
 | Comando | Descripción                                                                       | Ejemplo          |
-|---------|-----------------------------------------------------------------------------------|------------------|
+|-------------------|---------------------------|---------------------------|
 | nano    | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
 | vim     | Editor avanzado con control mediante comandos; guarda con :w y sale con :q        | `vim script.sh`  |
 
@@ -234,7 +233,7 @@ Comandos para ver o modificar quién puede leer, escribir o ejecutar archivos
 Comandos para ahorrar espacio o mover varios archivos juntos
 
 | Comando         | Descripción                      | Ejemplo                                |
-|-----------------|----------------------------------|----------------------------------------|
+|-------------------|---------------------------|---------------------------|
 | `gzip / gunzip` | Comprime o descomprime archivos  | `gzip datos.txt`                       |
 | `tar`           | Empaqueta y comprime directorios | `tar -czf proyecto.tar.gz directorio/` |
 | `zip` / `unzip` | Comprime o descomprime archivos  | `zip -r resultados.zip ./resultados/`  |
@@ -242,7 +241,7 @@ Comandos para ahorrar espacio o mover varios archivos juntos
 ## Transferencia de archivos entre sistemas
 
 | Comando  | Descripción                                                                               | Ejemplo                                                   |
-|----------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+|-------------------|---------------------------|---------------------------|
 | `ssh`    | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
 | scp      | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
 | `scp -r` | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |
@@ -253,7 +252,7 @@ Comandos para ahorrar espacio o mover varios archivos juntos
 Comandos para conectar procesos o guardar salidas
 
 | Comando | Descripción                                            | Ejemplo                       |
-|---------|--------------------------------------------------------|-------------------------------|
+|-------------------|---------------------------|---------------------------|
 | `>`     | Redirige la salida a un archivo                        | `ls > lista.txt`              |
 | `>>`    | Agrega la salida al final del archivo existente        | `echo "nuevo" >> lista.txt`   |
 | `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
@@ -338,10 +337,10 @@ Por lo tanto:
 
 ## Comprimir y descomprimir archivos
 
-Los archivos pueden contener diversos tipos de extensiones, dependiendo del objetivo será necesario descomprimirlos y en otros dejarlos comprimidos para no abarcar tanto espacio en tu espacio de trabajo. 
+Los archivos pueden tener distintas extensiones según su propósito. En algunos casos será necesario descomprimirlos para acceder a su contenido, y en otros conviene mantenerlos comprimidos para ahorrar espacio en tu entorno de trabajo. 
 
 | Tipo de archivo   | Comprimir                                                         | Descomprimir                  |
-|-------------------|-------------------------------------------------------------------|-------------------------------|
+|-------------------|----------------------------------|-------------------|
 | directorio.tar    | `tar -cvf directorio.tar /dir/a/comprimir/directorio`             | `tar -xvf directorio.tar`     |
 | directorio.tar.gz | `tar -czvf directorio.tar.gz /directorio/a/empaquetar/directorio` | `tar -zxvf directorio.tar.gz` |
 | archivo.gz        | `gzip -9 archivo.txt`                                             | `gunzip -kd archivo.txt.gz`   |
