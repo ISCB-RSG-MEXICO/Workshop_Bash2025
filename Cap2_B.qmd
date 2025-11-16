@@ -1,54 +1,361 @@
-# Instalar Git Bash en Windows
+# Explorando texto y flujo de datos de Bash
+
+En esta sección aprenderemos a trabajar con archivos de texto usando herramientas básicas de la terminal. Comenzaremos creando y organizando directorios, luego construiremos nuestros propios archivos con un editor y finalmente aprenderemos a explorarlos, buscar patrones y combinar comandos para analizar su contenido.
+
+## Manipulación de archivos
+
+En la terminal trabajamos dentro de un sistema de archivos organizado en **directorios**.\
+Un **directorio** cumple la misma función que una "**carpeta**" en una computadora, pero en el contexto de la línea de comandos se utiliza el término directorio porque proviene de la estructura jerárquica del sistema operativo (como el "árbol de directorios"), no de una metáfora gráfica.
+
+La organización en directorios es fundamental para mantener un espacio de trabajo claro y ordenado, especialmente cuando trabajamos con muchos archivos o con proyectos que contienen datos, scripts y resultados.
+
+Para crear y eliminar directorios usaremos dos comandos básicos:
+
+-   `mkdir` - crea directorios nuevos\
+-   `rmdir` - elimina directorios vacíos
+
+Estos comandos permiten organizar tu trabajo de manera estructurada desde la terminal.
 
 ::: callout-note
-Si necesitas que los participantes instalen algo, puedes dejar la informacion con las instrucciones
+## Ejercicio 1
+
+1.  ¿Cuál es la línea de comando para crear un directorio llamado "mi primer directorio"?
+
+::: callout-caution
+## ¡Cuidado!
+
+Al escribir nombres con varias palabras, Bash interpreta cada espacio como si fuera un argumento diferente. Para evitar problemas, es recomendable usar un separador
 :::
 
-**Nota:** Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: [Instrucciones para instalar Git Bash en Windows](https://youtu.be/339AEqk9c-8).
+2.  ¿Qué ocurre si no utilizo separadores para crear "mi primer directorio"?
+3.  Enlista los archivos que hay en el directorio actual
+4.  Elimina los directorios creados en el inciso 2)
 
-1.  Descarga el instalador de [Git para Windows](https://gitforwindows.org/).
+::: callout-tip
+## Soluciones
 
-2.  Ejecuta el instalador y sigue los siguientes pasos:
+1.  `mkdir mi_primer_directorio`
 
-    -   Haz clic en **"Next" cuatro veces** (dos veces si ya has instalado Git previamente). No necesitas cambiar nada en las pantallas de Información, ubicación, componentes y menú de inicio.
+::: callout-important
+Para nombrar un directorio o archivo con más de una palabra es recomendable utilizar un separador, en este caso guiónes bajos.
+:::
 
-    -   En el menú desplegable **"Choosing the default editor used by Git", selecciona "Use the Nano editor by default"** (NOTA: necesitarás desplazarte hacia arriba para encontrarlo) y haz clic en "Next".
+2.  Bash interpreta que debe de crear tres directorios diferentes: "mi", "primer", y "directorio"
 
-    -   En la página que dice **"Adjusting the name of the initial branch in new repositories", asegúrate de que "Let Git decide"** esté seleccionado. Esto garantizará el nivel más alto de compatibilidad para nuestras lecciones.
+3.  `ls`o`ls -l`
 
-    -   Asegúrate de que esté seleccionada la opción **"Git from the command line and also from 3rd-party software" y haz clic en "Next".** (Si no haces esto, Git Bash no funcionará correctamente, lo que te obligará a eliminar la instalación de Git Bash, volver a ejecutar el instalador y seleccionar la opción "**Git from the command line and also from 3rd-party software").**
+4.  `mkdir mi_segundo_directorio`
 
-    -   Selecciona **"Use bundled OpenSSH"**.
+    `rmdir mi_primer_directorio`
+:::
+:::
 
-    -   Asegúrate de que **"Use the native Windows Secure Channel Library" esté seleccionada y haz clic en "Next"**.
+## Creación de un archivo de texto
 
-    -   Asegúrate de que **"Checkout Windows-style, commit Unix-style line endings" esté seleccionada y haz clic en "Next".**
+Antes de crear y manipular un archivo de texto, aclaremos algunos conceptos básicos:
 
-    -   Asegúrate de que \*\*"Use Windows'\*\* default console window" esté seleccionada y haz clic en "Next".
+**¿Qué es un archivo de texto?**
 
-    -   Asegúrate de que **"Default (fast-forward or merge)"** esté seleccionada y haz clic en "Next".
+Es un archivo formado por líneas de caracteres que pueden incluir letras, números, espacios y signos de puntuación. No contiene formato (negritas, colores, tamaño de letra), solo texto plano.
 
-    -   Asegúrate de que **"Git Credential Manager"** esté seleccionada y haz clic en "Next".
+**¿Qué es una línea?**
 
-    -   Asegúrate de que **"Enable file system caching"** esté seleccionada y haz clic en "Next".
+Una línea es un conjunto de caracteres que termina con un **salto de línea**. Aunque un párrafo se vea largo, si no contiene saltos de línea, sigue siendo una sola línea para la computadora.
 
-    -   Haz clic en **"Install"**.
+**¿Qué es un carácter?**
 
-    -   Haz clic en **"Finish" o "Next"**.
+Un carácter es cualquier símbolo individual: letras (`a`, `b`, `c`), números (`0–9`), espacios, puntos, comas, saltos de línea, etc.
 
-3.  Si tu variable de entorno **"HOME"** no está configurada (o no sabes qué es):
+**¿Qué es un editor de texto en terminal?**
 
--   Abre el símbolo del sistema (abre el menú de inicio, luego escribe `cmd` y presiona **Enter**).
--   Escribe la siguiente línea exactamente como se muestra en la ventana del símbolo del sistema.
+Es un programa que permite crear o modificar archivos sin un entorno gráfico.
 
-``` {.bash eval="false"}
-setx HOME "%USERPROFILE%"
-```
+Ahora posicionemonos en el directorio con el comando `cd:` y utilicemos por primera vez el comando `nano` para crear un archivo de texto
 
--   Presiona Enter, deberías ver "SUCCESS: Specified value was saved".
--   Cierra el símbolo del sistema escribiendo "exit" y presionando Enter.
+`cd mi_primer_directorio/`
 
-Esto te proporcionará tanto Git como Bash en el programa Git Bash.
+`nano fragmento.txt`
+
+El editor `nano` es uno de los editores de texto más sencillos y accesibles en Linux.\
+Permite crear y modificar archivos directamente desde la terminal sin necesidad de interfaces gráficas, lo que lo convierte en una herramienta esencial cuando se trabaja en servidores remotos o entornos bioinformáticos.
+
+Al abrir un archivo con `nano`, verás el contenido del archivo (si existe) y, en la parte inferior, una lista de comandos abreviados.
+
+::: callout-note
+Los atajos se indican con el símbolo `^`, que representa la tecla **Ctrl**.
+
+Por ejemplo, `^O` significa presionar **Ctrl + O**.
+
+En !OS en vez de **Ctrl** es **CMD**
+:::
+
+Una vez dentro de `nano`, puedes escribir, editar, guardar y salir usando los comandos que aparecen al pie de la pantalla.
+
+Principales comandos de `nano`
+
+| Atajo      | Acción           | Descripción                                        |
+|:------------------|:--------------------|:-------------------------------|
+| `Ctrl + O` | Guardar archivo  | Guarda los cambios sin salir.                      |
+| `Ctrl + X` | Salir            | Cierra `nano` (pide guardar si hay cambios).       |
+| `Ctrl + W` | Buscar texto     | Busca una palabra o frase en el archivo.           |
+| `Ctrl + K` | Cortar línea     | Elimina la línea actual y la guarda temporalmente. |
+| `Ctrl + U` | Pegar línea      | Pega la línea cortada o copiada.                   |
+| `Ctrl + C` | Mostrar posición | Muestra el número de línea y columna.              |
+| `Ctrl + G` | Ayuda            | Abre la guía rápida de comandos.                   |
+
+### Ejercicio 2: Creación de un archivo de texto
+
+Para el siguiente ejercicio utilizaremos un fragmento del libro "Cien años de soledad" escrito García Marquez (1967):
+
+::: callout-tip
+## Cien años de soledad (fragmento) - Gabriel García Marquez
+
+"Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar aquella tarde remota en que su padre lo llevó a conocer el hielo. Macondo era entonces una aldea de veinte casas de barro y cañabrava construidas a la orilla de un río de aguas diáfanas que se precipitaban por un lecho de piedras pulidas, blancas y enormes como huevos prehistóricos. El mundo era tan reciente, que muchas cosas carecían de nombre, y para mencionarlas había que señalarlas con el dedo. Todos los años, por el mes de marzo, una familia de gitanos desarrapados plantaba su carpa cerca de la aldea, y con un grande alboroto de pitos y timbales daban a conocer los nuevos inventos. Primero llevaron el imán. Un gitano corpulento de barba montaraz y manos de gorrión, que se presentó con el nombre de Melquíades, hizo una truculenta demostración pública de lo que él mismo llamaba la octava maravilla de los sabios alquimistas de Macedonia. Fue de casa en casa arrastrando dos lingotes metálicos, y todo el mundo se espantó al ver que..." ....
+
+"Cuando el pirata Francis Drake asaltó Riohacha, en el siglos XVI, la bisabuela de Úrsula Iguarán se asustó tanto con el toque de rebato y el estampido de los cañones, que perdió el control de los nervios y se sentó en un fogón encendido. Las quemaduras la dejaron convertida en una esposa inútil para toda la vida. No podía sentarse sino de medio lado, acomodada en cojines, y algo extraño debió quedarle en el modo de andar, porque nunca volvió a caminar en público. Renunció a toda clase de hábitos sociales obsesionada por la idea de que su cuerpo despedía un olor a chamusquina. El alba la sorprendía en el patio sin atreverse a dormir, porque soñaba que los ingleses con sus feroces perros de asalto se metían por la ventana del dormitorio y la sometían a vergonzosos tormentos con hierros al rojo vivo. Su marido, un comerciante aragonés con quien tenía dos hijos, se gastó media tienda en medicinas y entretenimientos buscando la manera de aliviar sus terrores. Por último liquidó el negocio y llevó la familia a vivir lejos del mar, en una ranchería de indios pacíficos situada en las estribaciones de la sierra, donde le construyó a su mujer un dormitorio sin ventanas para que no tuvieran por donde entrar los piratas de sus pesadillas". ....
+
+"El coronel Aureliano Buendía promovió treinta dos levantamientos armados y los perdió todos. Tuvo diecisiete hijos varones de diecisiete mujeres distintas, que fueron exterminados uno tras otro en una sola noche, antes de que el mayor cumpliera treinta y cinco años. Escapó a catorce atentados, a setenta y tres emboscadas y a un pelotón de fusilamiento. Sobrevivió a una carga de estricnina en el café que habría bastado para matar un caballo. Rechazó la Orden del Mérito que le otorgó el presidente de la república. Llegó a ser comandante general de las fuerzas revolucionarias, con jurisdicción y mando de una frontera a la otra, y el hombre más temido por el gobierno, pero nunca permitió que le tomaran una fotografía. Declinó la pensión vitalicia que le ofrecieron después de la guerra y vivió hasta la vejez de los pescaditos de oro que fabricaba en su taller de Macondo. Aunque peleó siempre al frente de sus hombres, la única herida que recibió se la produjo él mismo después de firmar la capitulación de Neerlandia que puso término a casi veinte años de guerras civiles".
+:::
+
+::: callout-tip
+## Acerca de\...
+
+**Cien años de soledad** (1967) es una de las obras más reconocidas del escritor colombiano **Gabriel García Márquez** y un pilar fundamental del **realismo mágico** en la literatura latinoamericana. La novela narra la historia de la familia **Buendía** a lo largo de varias generaciones, desde la fundación del pueblo ficticio de **Macondo** hasta su decadencia.
+
+En el libro se mezclan hechos cotidianos con elementos fantásticos presentados como parte natural de la vida, reflejando la complejidad social, histórica y emocional de América Latina. La obra explora temas como el tiempo cíclico, la memoria, la soledad, el poder, el destino y los vínculos familiares.
+:::
+
+Copiemos y peguemos el fragmento del libro en `fragmento.txt` que abrimos con `nano`. Puedes pegar texto:
+
+-   Haciendo clic derecho
+
+-   `Ctrl + v`
+
+Para desplazarte desplazarte en el editor puedes utilizar las flechas de tu teclado: → hacia la derecha, ← hacia la izquierda, ↑ hacia arriba y ↓ hacia abajo.
+
+Guarda el archivo `Ctrl + O` y para confirmar los cambios presiona **Enter**
+
+Para salir del editor presiona `Ctrl + X`
+
+Una vez que tenemos un archivo de texto, el siguiente paso es aprender a explorarlo desde la terminal.\
+La mayoría de los análisis en Bash comienzan revisando información básica del archivo: cuántas líneas tiene, cuántas palabras contiene, cómo luce su comienzo o su final, etc.
+
+Aunque podríamos abrir el archivo en un editor cada vez que queramos revisarlo, la terminal ofrece herramientas mucho más rápidas y eficientes para obtener esta información. Estas herramientas no modifican el archivo, solo muestran datos sobre él.
+
+Para lograr esto, Bash incluye utilidades como:
+
+-   `wc` - permite contar caracteres, palabras y líneas.\
+-   `head` - muestra el inicio de un archivo.\
+-   `tail` - muestra el final del archivo.
+
+::: callout-note
+## Ejercicio 3
+
+Para `fragmento.txt` qué línea de comando utilizarías para...
+
+1.  Contar el número de caracteres
+
+2.  Contar el número de palabras
+
+3.  Contar el número de renglones
+
+4.  Muestra las primeras cinco líneas
+
+5.  Muestra las úlimas cinco líneas
+
+::: callout-tip
+## Soluciones
+
+1.  `wc -c fragmento.txt #Esto cuenta el número de caracteres`
+
+2.  ``` wc -w fragmento.txt``#Esto cuenta el número de palabras ```
+
+3.  ``` wc -l fragmento.txt``#Esto cuenta el número de renglones ```
+
+4.  ``` head -5 fragmento.txt``#Esto concatena las primeras cinco líneas ```
+
+5.  ``` tail -5 fragmento.txt``#Esto concatena las últimas cinco líneas ```
+:::
+:::
+
+## Búsqueda de patrones en un archivo (wild cards \*\[\]?)
+
+Los `wildcards` o `wild characters` son símbolos utilizados para representar uno o más caracteres. Se pueden utilizar con otros comandos para facilitar el procesamiento o búsqueda de archivos, directorios y datos en general.
+
+| **Wildcard** | **Función**                                    |
+|--------------|------------------------------------------------|
+| `*`          | Coincide con cualquier cantidad de caracteres  |
+| `?`          | Coincide con un solo caracter                  |
+| `[ ]`        | Coincide con un conjunto o rango de caracteres |
+
+::: callout-important
+El wildcard más usado es `*` porque es muy versátil.
+:::
+
+Además de contar líneas, palabras o caracteres, muchas veces queremos buscar si cierta palabra o frase aparece dentro de un archivo de texto.
+
+El comando grep sirve para buscar patrones de texto dentro de uno o varios archivos y mostrar las líneas donde aparece ese patrón.
+
+::: callout-important
+## Importante
+
+Las wildcards buscan patrones en **nombres de archivos**, mientras que `grep` busca patrones **dentro del contenido** de los archivos.
+:::
+
+::: callout-note
+## Ejercicio 4
+
+1.  Muestra las líneas donde aparece la palabra "Aureliano". ¿Qué ocurre si en vez de escribir "Aureliano" escribes "aureliano"? ¿Hay alguna manera de buscar ignorando Mayúsculas/minúsculas?
+
+2.  Muestra las líneas que no contienen la palabra "aldea"
+
+3.  Guarda en un archivo todas las líneas que tengan la palabra "pirata"
+
+4.  ¿Qué hará el siguiente comando? `grep "[A-Z]" *.txt`
+
+5.  Muestra las líneas que NO tengan letras mayúscula
+
+::: callout-tip
+## Soluciones
+
+1.  `grep "Aureliano" fragmento.txt` No hay resultados para la búsqueda, el comando `grep` es sensible a mayúsculas y minúsculas. `grep -i "aureliano" fragmento.txt`
+
+2.  `grep -v "aldea" fragmento.txt`
+
+3.  `grep "pirata" fragmento.txt > pirata.txt # El operador ">" nos permite redirigir la búsqueda a un archivo de texto nuevo llamado "pirata.txt"`
+
+4.  Despliega todas las líneas que contengan al menos una palabra con letra mayúscula
+
+5.  `grep -v "[A-Z]" fragmento.txt`
+:::
+:::
+
+## Uso de pipes (`|`) para combinar comandos y operadores
+
+Los pipes permiten encadenar estos comandos para crear un flujo de trabajo donde la salida de un comando pasa directamente a ser la entrada del siguiente. El símbolo `|` se conoce como pipe.
+
+Los pipes permiten:
+
+-   procesar información sin crear archivos intermedios
+-   combinar comandos simples para realizar tareas más complejas
+-   trabajar de manera eficiente con archivos grandes
+-   construir flujos de análisis paso a paso
+
+Los corchetes `[]` se usan para buscar coincidencias específicas con conjunto o un rango de caracteres válidos para una posición.
+
+::: callout-note
+## Ejercicio 5
+
+1.  ¿Qué hará la siguiente línea de comando? `grep "años" fragmento.txt | wc -l`
+
+2.  Escribe una línea de comando que muestre las 3 primeras líneas que contienen la palabra "años"
+
+3.  ¿Qué hará el siguiente comando? `grep "[A-Z]" fragmento.txt`
+
+4.  Escribe una línea de comando que muestre las líneas que NO tengan letras mayúscula
+
+::: callout-tip
+## Soluciones
+
+1.  Cuenta cuántas líneas contienen la palabra "años"
+
+2.  `grep "años" fragmento.txt | wc -l`
+
+3.  `grep "años" fragmento.txt | head -3`
+
+4.  Despliega todas las líneas que contengan al menos una palabra con letra mayúscula
+
+5.  `grep -v "[A-Z]" fragmento.txt`
+:::
+:::
+
+## Uso de expresiones regulares
+
+Las expresiones regulares (regex) permiten buscar patrones más precisos dentro del texto. A diferencia de los comodines del shell (como `*`, `?`, `[]`), las expresiones regulares son interpretadas por comandos como `grep` y se aplican sobre el contenido de un archivo, no sobre los nombres de archivo.
+
+Aunque existen expresiones regulares muy complejas, podemos comenzar con algunas básicas que son muy útiles en análisis de texto:
+
+-   `^` marca el inicio de una línea
+-   `$` marca el final de una línea
+-   `.` coincide con cualquier carácter
+
+::: callout-note
+## Ejercicio 6
+
+¿Qué harán las siguientes líneas de comando?
+
+1.  `grep -i "^e" fragmento.txt`
+
+2.  `grep -i "\.$" fragmento.txt`
+
+3.  `grep "[0-9]" fragmento.txt`
+
+::: callout-tip
+## Soluciones
+
+1.  Muestra todas las líneas que comienzan con la letra "e" mayúscula y minúscula
+
+2.  Encuentra las líneas que terminan con punto "."
+
+3.  Encuentra líneas que contengan números
+:::
+:::
+
+## Lista de comandos importantes
+
+### Crear, copiar, mover y eliminar
+
+Comandos que modifican la estructura de directorios y archivos
+
+| Comando | Descripción                  | Ejemplo                    |
+|---------|------------------------------|----------------------------|
+| `mkdir` | Crea un nuevo directorio     | `mkdir resultados`         |
+| `touch` | Crea un archivo vacío        | `touch notas.txt`          |
+| `cp`    | Copia archivos o directorios | `cp archivo.txt copia.txt` |
+| `mv`    | Mueve o renombra archivos    | `mv datos.csv directorio/` |
+| `rm`    | Elimina archivos             | `rm archivo.txt`           |
+| `rmdir` | Elimina directorios vacíos   | `rmdir vieja/`             |
+
+### Editores de archivos
+
+Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.
+
+| Comando | Descripción                                                                       | Ejemplo          |
+|-------------------|---------------------------|---------------------------|
+| `nano`  | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
+| `vim`   | Editor avanzado con control mediante comandos; guarda con :w y sale con :q        | `vim script.sh`  |
+
+### Exploración de archivos
+
+Comandos para inspeccionar lo que hay dentro de los archivos sin abrirlos en un editor
+
+| Comando | Descripción                   | Ejemplo                   |
+|---------|-------------------------------|---------------------------|
+| `cat`   | Muestra el contenido completo | `cat notas.txt`           |
+| `head`  | Muestra las primeras líneas   | `head -n 10 datos.csv`    |
+| `tail`  | Muestra las últimas líneas    | `tail -n 20 registro.log` |
+| `less`  | Muestra el contenido paginado | `less texto.txt`          |
+
+### Buscar y filtrar
+
+Comandos para localizar texto o patrones dentro de archivos o directorios
+
+| Comando | Descripción                          | Ejemplo                |
+|---------|--------------------------------------|------------------------|
+| `grep`  | Busca texto dentro de archivos       | `grep "error" log.txt` |
+| `find`  | Busca archivos según criterios       | `find . -name "*.txt"` |
+| `wc`    | Cuenta líneas, palabras o caracteres | `wc -l datos.txt`      |
+
+### Redirección y concatenación
+
+Comandos para conectar procesos o guardar salidas
+
+| Comando | Descripción                                            | Ejemplo                       |
+|-------------------|---------------------------|---------------------------|
+| `>`     | Redirige la salida a un archivo                        | `ls > lista.txt`              |
+| `>>`    | Agrega la salida al final del archivo existente        | `echo "nuevo" >> lista.txt`   |
+| `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
+| `|`     | Conecta la salida de un comando con la entrada de otro | `cat datos.txt | grep "gene"` |
 
 ## Referencia
 
