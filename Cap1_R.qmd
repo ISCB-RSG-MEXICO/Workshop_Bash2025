@@ -102,6 +102,34 @@ Si deseas cancelar, presiona **Esc** (o **Ctrl + C**).
 
 R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:
 
+-   Funciones trigonométricas:
+
+```{r}
+sin(1) 
+```
+
+-   Logaritmo natural
+
+```{r}
+log(1)
+```
+
+-   Logaritmo en base 10
+
+```{r}
+log10(10)
+```
+
+-   Exponencial de un número, es decir: $e^x$.
+
+```{r}
+exp(0.5)  # Calcula e^(0.5)
+```
+
+```{r}
+getwd() # devuelve la ruta absoluta del directorio de trabajo
+```
+
 ### Guardar resultados
 
 Puedes guardar el resultado de una operación en un **objeto** usando el operador `<-`:
