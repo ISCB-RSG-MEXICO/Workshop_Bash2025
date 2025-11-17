@@ -53,7 +53,7 @@ De mayor a menor precedencia:
 
 -   División: `/`
 
--    Suma: `+`
+-   Suma: `+`
 
 -   Resta: `-`
 
@@ -106,7 +106,7 @@ R tiene muchas funciones matemáticas integradas. Para usar una función, escrib
 
 Puedes guardar el resultado de una operación en un **objeto** usando el operador `<-`:
 
-```{r} 
+```{r}
 resultado <- 4 + 6
 ```
 
@@ -181,7 +181,7 @@ Para asignar un objeto a una variable, debemos usar nombres válidos:
 
 -   **Puede contener:** letras, números, puntos (`.`), guiones bajos (`_`)
 
--    **Debe comenzar con:** letra o punto seguido de letra.
+-   **Debe comenzar con:** letra o punto seguido de letra.
 
 -   **No puede comenzar con:** número, guion bajo, punto seguido de número.
 
@@ -212,7 +212,6 @@ Ejemplos inválidos:
 ### Objetos
 
 En R, todo lo que guardamos dentro de una variable es un objeto.\
-
 Si la variable es la *etiqueta*, el objeto es el *contenido* que esa etiqueta señala.
 
 Ejemplos de objetos:\
@@ -244,13 +243,12 @@ getwd()
 
 ```
 
-
 ### Comentarios en R
 
 Puedes agregar comentarios en tu código para explicar qué hace.\
 Todo lo que esté después del símbolo `#` no se ejecutará:
 
-```{r} 
+```{r}
 3 + 3 # Esto es un comentario
 ```
 
@@ -258,7 +256,7 @@ Todo lo que esté después del símbolo `#` no se ejecutará:
 
 Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:
 
-```{r} 
+```{r}
 rm(list = ls())
 ```
 
