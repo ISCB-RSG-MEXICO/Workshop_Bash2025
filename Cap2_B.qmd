@@ -29,7 +29,6 @@ Al escribir nombres con varias palabras, Bash interpreta cada espacio como si fu
 3.  Enlista los archivos que hay en el directorio actual
 4.  Elimina los directorios creados en el inciso 2)
 
-
 ::: {.callout-tip collapse="true" icon="false"}
 ## Soluciones
 
@@ -47,7 +46,7 @@ Para nombrar un directorio o archivo con más de una palabra es recomendable uti
 
     `rmdir mi_primer_directorio`
 :::
-
+:::
 
 ## Creación de un archivo de texto
 
@@ -93,7 +92,7 @@ Una vez dentro de `nano`, puedes escribir, editar, guardar y salir usando los co
 Principales comandos de `nano`
 
 | Atajo      | Acción           | Descripción                                        |
-|:------------------|:--------------------|:-------------------------------|
+|:-----------|:-----------------|:---------------------------------------------------|
 | `Ctrl + O` | Guardar archivo  | Guarda los cambios sin salir.                      |
 | `Ctrl + X` | Salir            | Cierra `nano` (pide guardar si hay cambios).       |
 | `Ctrl + W` | Buscar texto     | Busca una palabra o frase en el archivo.           |
@@ -214,7 +213,6 @@ Las wildcards buscan patrones en **nombres de archivos**, mientras que `grep` bu
 
 5.  Muestra las líneas que NO tengan letras mayúscula
 
-
 ::: {.callout-tip collapse="true" icon="false"}
 ## Soluciones
 
@@ -321,7 +319,7 @@ Comandos que modifican la estructura de directorios y archivos
 Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.
 
 | Comando | Descripción                                                                       | Ejemplo          |
-|-------------------|---------------------------|---------------------------|
+|---------|-----------------------------------------------------------------------------------|------------------|
 | `nano`  | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
 | `vim`   | Editor avanzado con control mediante comandos; guarda con :w y sale con :q        | `vim script.sh`  |
 
@@ -351,7 +349,7 @@ Comandos para localizar texto o patrones dentro de archivos o directorios
 Comandos para conectar procesos o guardar salidas
 
 | Comando | Descripción                                            | Ejemplo                       |
-|-------------------|---------------------------|---------------------------|
+|---------|--------------------------------------------------------|-------------------------------|
 | `>`     | Redirige la salida a un archivo                        | `ls > lista.txt`              |
 | `>>`    | Agrega la salida al final del archivo existente        | `echo "nuevo" >> lista.txt`   |
 | `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
