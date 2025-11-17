@@ -1,1 +1,99 @@
 # Introducción a las paqueterías y manejo de data frames en R
+
+### Paqueterías/Librerías en R
+
+En R, podemos **agregar funciones y herramientas adicionales** mediante **paqueterías (packages),** también llamadas **librerías**.
+
+Una librería es un conjunto de funciones, datos y documentación creado por alguien más, o incluso por ti.
+
+Actualmente, hay **más de 10,000 librerías disponibles en CRAN** (Comprehensive R Archive Network).
+
+### ¿Para qué sirven las paqueterías en R?
+
+Las librerías en R permiten **ampliar las funciones básicas del programa**. Por ejemplo:
+
+-    Crear gráficos más avanzados (`ggplot2`).
+
+-    Manipular y limpiar datos fácilmente (`dplyr`, `tidyr`).
+
+-    Realizar análisis estadísticos complejos (`lme4`, `caret`).
+
+-   Trabajar con fechas, textos o datos especiales (`lubridate`, `stringr`).
+
+En otras palabras, **las librerías te dan herramientas listas para usar** que te ahorran tiempo y esfuerzo, sin tener que escribir todo desde cero.
+
+### ¿En dónde encontrar más librerías?
+
+Si quieres explorar más librerías de R o buscar herramientas específicas, existen varios sitios confiables donde puedes consultar. Algunos de ellos son:
+
+-   El **repositorio oficial CRAN** (Comprehensive R Archive Network) contiene todas las librerías revisados y se puede consultar en <https://cran.r-project.org/web/packages/>.
+
+-   Para explorar y administrar librerías de manera más cómoda, también puedes usar el **RStudio Package Manager** en <https://packagemanager.rstudio.com/>.
+
+-   Si trabajas con datos biológicos o genómicos, **Bioconductor** ofrece muchas librerías especializadas en este tipo de análisis <https://www.bioconductor.org/packages/>.
+
+-   Además, algunos desarrolladores publican librerías en **GitHub**, desde donde se pueden instalar directamente usando `devtools::install_github("usuario/paquete")`.
+
+Ahora veamos cómo utilizarlas en R con loos siguientes códigos:
+
+1.  Ver qué librerías tienes instaladas
+
+```{r}
+installed.packages()
+```
+
+2.  Instalar una librería
+
+Para instalar una nueva librería se utiliza la función `install.packages("nombre_de_la_libreria")`
+
+Reemplaza `"nombre_de_la_libreria"` por el nombre real del la librería que quieras instalar.
+
+Ejemplo:
+
+```{r}
+install.packages("ggplot2") # una libreria muy famosa para crear graficos
+```
+
+3.  Actualizar una librería
+
+Si queremos actualizar una librería, lo podemos realizar con el siguiente código.
+
+```{r}
+update.packages("ggplot2")
+```
+
+::: callout-caution
+Si no específicas, por defecto R, revisa todas las librerías instaladas. Dependiendo de la versión de R y de tu configuración, puede actualizarlas todas.
+:::
+
+4.  Eliminar una librería
+
+```{r}
+remove.packages("ggplot2")
+```
+
+5.  Cargar una librería para utilizarla
+
+```{r}
+install.packages("ggplot2") #lo volvemos a instalar porque previamente la borramos
+
+library(ggplot2)
+```
+
+También existe otra manera de cargar las librerías. Usando la pestaña de **Packages** en la ventana inferior derecha de Rstudio puedes ver todos las librerías instaladas.
+
+-    Cada paquete tiene una **casilla de verificación**:
+
+    -    ✅ Casilla marcada → el paquete está **cargado y listo para usar**
+
+    -    ⬜ Casilla vacía → el paquete **no está cargado**
+
+```{=html}
+<!-- -->
+```
+-    Puedes **marcar la casilla** para cargar un paquete, o **desmarcarla** para descargarlo de la sesión.
+
+```{=html}
+<!-- -->
+```
+-   También puedes instalar o actualizar librerías usando los botones **Install** y **Update** en la parte superior de la pestaña.

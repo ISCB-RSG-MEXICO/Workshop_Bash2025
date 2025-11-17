@@ -1,4 +1,32 @@
-# Primeros pasos en R
+# Mis primeros pasos en R
+
+## Introducción al script de R
+
+Antes de empezar a escribir y ejecutar instrucciones en R, es importante conocer el **script**, que es donde realmente vamos a trabajar.
+
+Un **script** es un archivo de texto donde puedes escribir tus instrucciones de R para ejecutarlas después, en lugar de escribirlas directamente en la consola. Usar un script tiene varias ventajas: puedes **guardar tu trabajo**, **corregirlo fácilmente** y **ejecutar varias instrucciones de manera ordenada**.
+
+#### Ubicación y manejo de scripts en RStudio
+
+-   El script se abre en el **panel superior izquierdo** de RStudio por defecto.
+
+-   Puedes tener **varios scripts abiertos a la vez**, cada uno en su propia pestaña. Esto te permite trabajar en diferentes proyectos o partes de un proyecto sin perder nada.
+
+-   Para cambiar de script, simplemente haz clic en la pestaña correspondiente.
+
+#### Cómo usar un script en RStudio
+
+1.   **Crear un script nuevo:**\
+    Ve a `File → New File → R Script` o presiona `Ctrl + Shift + N` (Windows/Linux) o `⌘ + Shift + N` (Mac).
+
+2.  **Escribir código:**\
+    En el script puedes escribir cualquier instrucción de R, desde operaciones matemáticas hasta funciones complejas.
+
+    ![](figures/Sript_R.png)
+
+::: callout-caution
+No olvides **guardar tu script y los cambios** que realices con frecuencia, para no perder nada. Para guardar, usa `Ctrl + S` (Windows/Linux) o `⌘ + S` (Mac), o ve a `File → Save`.
+:::
 
 ## Ejecutar código
 
