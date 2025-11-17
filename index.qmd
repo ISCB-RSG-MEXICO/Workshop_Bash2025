@@ -36,7 +36,7 @@
 
     #### **Resumen**
 
-    Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar **R a través de la interfaz de RStudio** para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.
+    Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.
 
     El curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.
 
@@ -44,14 +44,14 @@
 
     Al finalizar este curso, las y los participantes serán capaces de:
 
-    En Bash:
+    **En Bash:**
 
     -   Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
     -   Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.
     -   Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos
     -   Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
 
-    En R:
+    **En R:**
 
     -   Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
 
