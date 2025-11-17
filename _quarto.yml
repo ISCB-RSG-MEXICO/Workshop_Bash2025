@@ -5,10 +5,10 @@ project:
 book:
   title: "Workshop Bash & R"
   author: 
-    - Emilio Ortiz-Avila
     - Mayela Fosado-Mendoza
     - Mariana Devon
-  date: "11/18/2025"
+    - Emilio Ortiz-Avila
+  date: "27/03/2025"
   page-navigation: true
   chapters:
     - index.qmd
@@ -35,7 +35,7 @@ format:
     number-depth: 3
   # Boton para cambiar tema de oscuro a claro
     theme:
-      light: minty
+      light: cosmo
       dark: darkly
     code-fold: show # Ocultar codigo
     code-copy: true # Copy button

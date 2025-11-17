@@ -1,4 +1,4 @@
-# Conceptos de R
+# Conceptos de R 
 
 ## ¿Qué es R?
 
@@ -91,6 +91,6 @@ Para aprender más sobre R y RStudio puedes consultar los siguientes recursos ab
 
 -   CRAN. (2025). *The Comprehensive R Archive Network*. <https://cran.r-project.org/>
 
--   Wickham, H. & Grolemund, G. (2017). *R for Data Science*. O'Reilly Media. <https://r4ds.had.co.nz/>
+-   Wickham, H. & Grolemund, G. (2017). *R for Data Science*. O\'Reilly Media. <https://r4ds.had.co.nz/>
 
--   RStudio Education. (2024). *RStudio Primers*. <https://posit.cloud/learn/primers>
+-    RStudio Education. (2024). *RStudio Primers*. <https://posit.cloud/learn/primers>

@@ -29,7 +29,7 @@ El número entre corchetes `[1]` indica el índice del primer elemento mostrado.
 
 Esto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.
 
-### Operaciones básicas
+#### Operaciones básicas
 
 Puedes realizar diferentes operaciones aritméticas:
 
@@ -53,7 +53,7 @@ De mayor a menor precedencia:
 
 -   División: `/`
 
--   Suma: `+`
+-    Suma: `+`
 
 -   Resta: `-`
 
@@ -71,7 +71,7 @@ Usa paréntesis para agrupar operaciones y forzar el orden de evaluación si dif
 (2 + 3) * 4 
 ```
 
-### Notación científica
+#### Notación científica
 
 Números muy pequeños o muy grandes se muestran en notación científica:
 
@@ -85,51 +85,6 @@ También puedes escribir números directamente en notación científica:
 
 ```{r}
 5e3 # Nota que no hay signo menos
-```
-
-### Comparando valores
-
-También podemos hacer comparaciones en R:
-
-**Igualdad:**
-
--   Los dos signos igual, se leen "es igual a"
-
-```{r}
-7 == 7 
-```
-
-\
-**Desigualdad**:
-
--   Se lee "no es igual a"
-
-```{r}
-1 != 2
-```
-
-**Menor que:**
-
-```{r}
-1 < 7
-```
-
-**Menor o igual que:**
-
-```{r}
-7 <= 9
-```
-
-**Mayor que:**
-
-```{r}
-1 > 0
-```
-
-**Mayor o igual que:**
-
-```{r}
-17 >= 27
 ```
 
 #### Comandos incompletos
@@ -147,14 +102,16 @@ Si deseas cancelar, presiona **Esc** (o **Ctrl + C**).
 
 R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:
 
--   Funciones trigonométricas:
+### Guardar resultados
 
-```{r}
-sin(1) 
+Puedes guardar el resultado de una operación en un **objeto** usando el operador `<-`:
+
+```{r} resultado <- 4 + 6}
 ```
 
--   Logaritmo natural
+Para ver su valor, solo escribe el nombre del objeto:
 
+<<<<<<< HEAD
 ```{r}
 log(1)
 ```
@@ -278,34 +235,24 @@ La función `getwd()` te devuelve la ruta absoluta del directorio de trabajo
 
 ```{r}
 getwd() 
+=======
+```{r} resultado}
+>>>>>>> 62772742fdc00873788f7531cab0085796a693a9
 ```
 
 ### Comentarios en R
 
-Puedes agregar comentarios en tu código para explicar qué hace. Todo lo que escribas después del símbolo `#` no se ejecuta.
+Puedes agregar comentarios en tu código para explicar qué hace.\
+Todo lo que esté después del símbolo `#` no se ejecutará:
 
-```{r}
-3 + 3 # Asi se ve un comentario
+```{r} 3 + 3 # Esto es un comentario}
 ```
 
-Nota: Evita usar acentos o la letra ñ en los comentarios. Esto ayuda a prevenir que, al abrir el archivo de nuevo, aparezcan caracteres raros como:
-
--    `Ã¡` en lugar de **á**
-
--   `Ã©` en lugar de **é**
-
--    `Ã±` en lugar de **ñ**
-
--    `Â` que aparece pegado a letras
-
--    `?` o `�` (el famoso \"rombo con signo de interrogación\")
-
-### Limpiar tu entorno en R
+#### Limpiar tu entorno en R
 
 Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:
 
-```{r}
-rm(list = ls())
+```{r} rm(list = ls())}
 ```
 
 Puedes **limpiar la consola** para empezar de nuevo haciendo clic en el ícono con forma de **escoba** 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado `Ctrl + L`(Windows/Linux) o `⌘ + L` (Mac).
