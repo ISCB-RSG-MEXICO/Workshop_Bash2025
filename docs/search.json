@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Workshop Bash & R",
     "section": "",
-    "text": "Información general\n\n\nSobre el cursoEn BashEn R y RStudioRequisitos previosAgenda\n\n\nFuente del curso\n\nFechas: 27 y 28 de noviembre\nDuración del curso: 15 horas\nHorario: 8:00 am - 3:30 PM (UTC-6)\n\n\nInstructores\n\nMayela Fosado-Mendoza - Tesista de licenciatura, UAQ-UNAM\nMariana Devon - Estudiante de maestría, UAM\nEmilio Ortiz-Avila - Tesista de licenciatura, UAQ-UNAM\n\nAyudantes:\n\nAaron Espinosa Jaime - Estudiante de maestría, Cinvestav-LANGEBIO\nCamilo Pérez - Estudiante de doctorado, Cinvestav-LANGEBIO\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM. Pagina web\nJohanna Castelán - Estudiante de maestría, UPAEP\nDaniel Chávez - Profesor invitado, UAGro\n\nOrganizadores del curso:\n\nAbel Lovaco Flores - Estudiante de maestría, Cinvestav-Irapuato\nEvelia Lorena Coss-Navarrete - PostDoc, LIIGH-UNAM. Pagina web\n\nResumen\nEste curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.\nEl curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.\nObjetivos\nAl finalizar este curso, las y los participantes serán capaces de:\n\n\n\nComprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.\nAplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.\nConstruir y ejecutar scripts en Bash para automatizar tareas básicas.\nIntegrar buenas prácticas computacionales que favorezcan la organización y reproducibilidad.\n\n\n\n\nConocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.\nUsar R a través de la interfaz de RStudio para análisis sencillos.\nCrear variables, usar operadores y ejecutar funciones básicas en R.\nAdministrar paquetes e iniciar proyectos estructurados en RStudio.\nGenerar scripts simples y mantener un flujo de trabajo reproducible.\nCrear gráficas básicas en R para visualizar datos de manera rápida y clara.\n\nCitar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).\n\n\n\nNo se requiere experiencia previa en programación ni en el uso de Linux.\nConocimientos básicos sobre el manejo de archivos en computadora.\nDurante el curso usaremos un servidor, por lo que no es necesario instalar nada.\nOpcional: instalación de un enterno Linux como Bash, R y RStudio si deseas descargar y trabajar localmente con los archivos que generemos en el servidor.\n\n\n\n\n\n\n\n\n\n\nTema\nTiempo\n\n\n\n\n27 de noviembre\n\n\n\nSección 1 - (08:00 - 13:30 h)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10)\n10 min\n\n\nSección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\nSección 3 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min\n\n\n28 de noviembre\nSección 1 - (08:00 - 13:30 h)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10)\n10 min\n\n\nSección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\nSección 3 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min"
+    "text": "Información general\n\n\nSobre el cursoRequisitos previosAgenda\n\n\nFuente del curso\n\nFechas: 27 y 28 de noviembre\nDuración del curso: 15 horas\nHorario: 8:00 am - 3:30 PM (UTC-6)\n\n\nInstructores\n\nMayela Fosado-Mendoza - Tesista de licenciatura, UAQ-UNAM\nMariana Devon - Estudiante de maestría, UAM\nEmilio Ortiz-Avila - Tesista de licenciatura, UAQ-UNAM\n\nAyudantes:\n\nAaron Espinosa Jaime - Estudiante de maestría, Cinvestav-LANGEBIO\nCamilo Pérez - Estudiante de doctorado, Cinvestav-LANGEBIO\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM. Pagina web\nJohanna Castelán - Estudiante de maestría, UPAEP\nDaniel Chávez - Profesor invitado, UAGro\n\nOrganizadores del curso:\n\nAbel Lovaco Flores - Estudiante de maestría, Cinvestav-Irapuato\nEvelia Lorena Coss-Navarrete - PostDoc, LIIGH-UNAM. Pagina web\n\nResumen\nEste curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.\nEl curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.\nObjetivos\nAl finalizar este curso, las y los participantes serán capaces de:\nEn Bash\n\nComprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.\nAplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.\nConstruir y ejecutar scripts en Bash para automatizar tareas básicas.\nIntegrar buenas prácticas computacionales que favorezcan la organización y reproducibilidad.\n\nEn R y RStudio\n\nConocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.\nUsar R a través de la interfaz de RStudio para análisis sencillos.\nCrear variables, usar operadores y ejecutar funciones básicas en R.\nAdministrar paquetes e iniciar proyectos estructurados en RStudio.\nGenerar scripts simples y mantener un flujo de trabajo reproducible.\nCrear gráficas básicas en R para visualizar datos de manera rápida y clara.\n\nCitar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).\n\n\n\nNo se requiere experiencia previa en programación ni en el uso de Linux.\nConocimientos básicos sobre el manejo de archivos en computadora.\nDurante el curso usaremos un servidor, por lo que no es necesario instalar nada.\nOpcional: instalación de un enterno Linux como Bash, R y RStudio si deseas descargar y trabajar localmente con los archivos que generemos en el servidor.\n\n\n\n\n\n\n\n\n\n\nTema\nTiempo\n\n\n\n\n27 de noviembre\n\n\n\nSección 1 - (08:00 - 13:30 h)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10)\n10 min\n\n\nSección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\nSección 3 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min\n\n\n28 de noviembre\nSección 1 - (08:00 - 13:30 h)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10)\n10 min\n\n\nSección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\nSección 3 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min"
   },
   {
     "objectID": "req_B.html",
@@ -58,81 +58,57 @@
     "objectID": "req_R.html#windows---r",
     "href": "req_R.html#windows---r",
     "title": "2  Instalación de R y RStudio",
-    "section": "",
-    "text": "Entra a la siguiente página\nHaz click en Download R for Windows\nHaz click en install R for the first time\nHaz click en Download R-4.5.2 for Windows\nEjecuta el instalador y sigue los siguientes pasos:\n\nSelecciona el lenguaje de preferencia durante el proceso y haz click en “OK”\nHaz clic en “Next”\nHaz clic en “Next” (Si deseas cambiar el sitio de instalación, haz clic en “Browse” y selecciona tu carpeta deseada).\nHaz click en “Next” en las siguientes cuatro ventanas\nEspera unos minutos a que finalice la instalación y haz click en “Finish”",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "section": "2.1 Windows - R",
+    "text": "2.1 Windows - R\nNota: Para obtener más detalles sobre cómo instalar y configurar R y Rstudio, puedes ver este video tutorial: Cómo instalar R y RStudio en Windows 11.\n\nEntra a la siguiente página\nHaz click en Download R for Windows\nHaz click en install R for the first time\nHaz click en Download R-4.5.2 for Windows\nEjecuta el instalador y sigue los siguientes pasos:\n\nSelecciona el lenguaje de preferencia durante el proceso y haz click en “OK”\nHaz clic en “Next”\nHaz clic en “Next” (Si deseas cambiar el sitio de instalación, haz clic en “Browse” y selecciona tu carpeta deseada).\nHaz click en “Next” en las siguientes cuatro ventanas\nEspera unos minutos a que finalice la instalación y haz click en “Finish”"
   },
   {
     "objectID": "req_R.html#windows---rstudio",
     "href": "req_R.html#windows---rstudio",
     "title": "2  Instalación de R y RStudio",
     "section": "2.2 Windows - Rstudio",
-    "text": "2.2 Windows - Rstudio\n\nEntra en la siguiente página\nHaz click en Download RStudio Desktop for Windows\nEjecuta el instalador y sigue los siguientes pasos:\n\nHaz clic en “Next”\nHaz clic en “Next” (Si deseas cambiar el sitio de instalación, haz clic en “Browse” y selecciona tu carpeta deseada).\nHaz clic en “Install” y espera unos minutos a que acabe el proceso\nHaz clic en “Finish”\n\nAbre la aplicación de RStudio\nHaz clic en “OK”",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "text": "2.2 Windows - Rstudio\n\nEntra en la siguiente página\nHaz click en Download RStudio Desktop for Windows\nEjecuta el instalador y sigue los siguientes pasos:\n\nHaz clic en “Next”\nHaz clic en “Next” (Si deseas cambiar el sitio de instalación, haz clic en “Browse” y selecciona tu carpeta deseada).\nHaz clic en “Install” y espera unos minutos a que acabe el proceso\nHaz clic en “Finish”\n\nAbre la aplicación de RStudio\nHaz clic en “OK”"
   },
   {
     "objectID": "req_R.html#macos---r",
     "href": "req_R.html#macos---r",
     "title": "2  Instalación de R y RStudio",
     "section": "2.3 MacOS - R",
-    "text": "2.3 MacOS - R\nNota: Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: Cómo instalar R y R Studio en MacOS\n\nEntra a la siguiente página\nHaz click en Download R for macOS\nExisten dos versiones de R que dependen del procesador de tu computadora. Para ver la versión de tu procesador, haz click en el ícono de apple en la parte superior izquierda de tu pantalla y selecciona “acerca de esta mac”. En la ventana emergente, la versión de tu procesador aparecerá junto a la palabra “Chip”, por ejemplo: Chip Apple M1 Pro\n\nPara Mac con Apple Silicon (M1,2,…) haz clic en R-4.5.2-arm64.pkg\nPara Mac con procesador Intel haz clic en R-4.5.2-x86_64.pkg\n\nEjecuta el instalador y sigue los siguientes pasos:\n\nHaz clic en “Continuar” tres veces\nHaz clic en “De acuerdo”\nHaz click en “Instalar”\nEspera unos minutos a que finalice la instalación y haz click en “Cerrar”",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "text": "2.3 MacOS - R\nNota: Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: Cómo instalar R y R Studio en MacOS\n\nEntra a la siguiente página\nHaz click en Download R for macOS\nExisten dos versiones de R que dependen del procesador de tu computadora. Para ver la versión de tu procesador, haz click en el ícono de apple en la parte superior izquierda de tu pantalla y selecciona “acerca de esta mac”. En la ventana emergente, la versión de tu procesador aparecerá junto a la palabra “Chip”, por ejemplo: Chip Apple M1 Pro\n\nPara Mac con Apple Silicon (M1,2,…) haz clic en R-4.5.2-arm64.pkg\nPara Mac con procesador Intel haz clic en R-4.5.2-x86_64.pkg\n\nEjecuta el instalador y sigue los siguientes pasos:\n\nHaz clic en “Continuar” tres veces\nHaz clic en “De acuerdo”\nHaz click en “Instalar”\nEspera unos minutos a que finalice la instalación y haz click en “Cerrar”"
   },
   {
     "objectID": "req_R.html#macos--rstudio",
     "href": "req_R.html#macos--rstudio",
     "title": "2  Instalación de R y RStudio",
     "section": "2.4 MacOS- Rstudio",
-    "text": "2.4 MacOS- Rstudio\n\nEntra en la siguiente página\nHaz click en Download RStudio Desktop for macOS 13+\n\nPara ver la versión de tu procesador, haz click en el ícono de apple en la parte superior izquierda de tu pantalla y selecciona “acerca de esta mac”. En la ventana emergente, la versión de tu sistema operativo aparecerá junto a la palabra “macOS”, por ejemplo: macOS Sequola 15.1.1.\nSi la versión de tu sistema operativo está por debajo de la versión 13, haz clic en download a previous version.\n\nEjecuta el instalador\nArrastra el ícono de RStudio a la carpeta de aplicaciones y espera a que finalice la instalación",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "text": "2.4 MacOS- Rstudio\n\nEntra en la siguiente página\nHaz click en Download RStudio Desktop for macOS 13+\n\nPara ver la versión de tu procesador, haz click en el ícono de apple en la parte superior izquierda de tu pantalla y selecciona “acerca de esta mac”. En la ventana emergente, la versión de tu sistema operativo aparecerá junto a la palabra “macOS”, por ejemplo: macOS Sequola 15.1.1.\nSi la versión de tu sistema operativo está por debajo de la versión 13, haz clic en download a previous version.\n\nEjecuta el instalador\nArrastra el ícono de RStudio a la carpeta de aplicaciones y espera a que finalice la instalación"
   },
   {
     "objectID": "req_R.html#linux---r",
     "href": "req_R.html#linux---r",
     "title": "2  Instalación de R y RStudio",
     "section": "2.5 Linux - R",
-    "text": "2.5 Linux - R\n\nEntra a la siguiente página\nJunto a Download R for Linux existen tres opciones, selecciona la que se ajusta a tu distribución de Linux\n\nDebian\nFedora/Redhat\nUbuntu\n\nPara instalar Linux en Debian y ejecuta las siguientes líneas de código (presiona Enter después de cada línea de código):\n\nsudo apt update\nsudo apt install r-base r-base-dev\n\nPara instalar Linux en Fedora/Redhat y ejecuta la siguiente línea de código:\n\nsudo dnf install R\nPresiona Enter\n\nPara instalar Linux en Ubuntu y ejecuta las siguientes líneas de código (presiona Enter después de cada línea de código):\n\nsudo apt update -qq\nsudo apt install --no-install-recommends software-properties-common dirmngr\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\nsudo apt install --no-install-recommends r-base",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "text": "2.5 Linux - R\n\nEntra a la siguiente página\nJunto a Download R for Linux existen tres opciones, selecciona la que se ajusta a tu distribución de Linux\n\nDebian\nFedora/Redhat\nUbuntu\n\nPara instalar Linux en Debian y ejecuta las siguientes líneas de código (presiona Enter después de cada línea de código):\n\nsudo apt update\nsudo apt install r-base r-base-dev\n\nPara instalar Linux en Fedora/Redhat y ejecuta la siguiente línea de código:\n\nsudo dnf install R\nPresiona Enter\n\nPara instalar Linux en Ubuntu y ejecuta las siguientes líneas de código (presiona Enter después de cada línea de código):\n\nsudo apt update -qq\nsudo apt install --no-install-recommends software-properties-common dirmngr\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\nsudo apt install --no-install-recommends r-base"
   },
   {
     "objectID": "req_R.html#linux---rstudio",
     "href": "req_R.html#linux---rstudio",
     "title": "2  Instalación de R y RStudio",
     "section": "2.6 Linux - RStudio",
-    "text": "2.6 Linux - RStudio\n\nEntra en la siguiente página\nDesliza la página hasta llegar a la tabla de opciones de instalación\nSelecciona tu opción de accuerdo con la distribución y versión de tu sistema operativo (Debian, Fedora/Redhat, Ubuntu).\nEjecuta el instalador",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "text": "2.6 Linux - RStudio\n\nEntra en la siguiente página\nDesliza la página hasta llegar a la tabla de opciones de instalación\nSelecciona tu opción de accuerdo con la distribución y versión de tu sistema operativo (Debian, Fedora/Redhat, Ubuntu).\nEjecuta el instalador"
   },
   {
     "objectID": "req_R.html#actualizar-r---windows-y-macos",
     "href": "req_R.html#actualizar-r---windows-y-macos",
     "title": "2  Instalación de R y RStudio",
     "section": "2.7 Actualizar R - Windows y MacOS",
-    "text": "2.7 Actualizar R - Windows y MacOS\nSi ya tienes R instalado en tu computadora, asegúrate de tener la versión más actualizada de R\nExisten diferentes formas de actualizar R, la manera más sencilla es a través de Rgui, la interfaz gráfica que viene con R base, no con RStudio.\nWindows y MacOS:\n\nEscribe Rgui en el explorador de archivos/aplicaciones de tu computadora para abrir la aplicación de R.\nPara actualizar R necesitamos de la paquetería installr. Para instalarla ejecuta el siguiente código:\n\n-   `install.packages(installr)`\n-   Presiona **Enter**\n\nCarga la paquetería con la función library()\n\nlibrary(installr)\nPresiona Enter\n\nPara revisar si tienes la versión de R más actualizada ejecuta el siguiente código:\n\ninstallr(GUI = TRUE)\nPresiona Enter\nEn la ventana emergente asegúrate de tener seleccionada la opción “R (updateR)” y haz clic en “OK”\n\nAparecerá otra ventana con información sobre la versión de R que estás usando y si existe una versión más reciente.\n\nSi ya tienes la versión más actual, simplemente haz clic en “OK” para cerrar.\nSi hay una versión nueva disponible, haz clic en “Yes” para comenzar la actualización.\n\nSi durante el proceso aparece una ventana preguntando si deseas copiar paquetes o configuraciones anteriores, puedes hacer clic en “No” (no es obligatorio copiarlos; puedes reinstalarlos después si lo prefieres).",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "text": "2.7 Actualizar R - Windows y MacOS\nSi ya tienes R instalado en tu computadora, asegúrate de tener la versión más actualizada de R\nExisten diferentes formas de actualizar R, la manera más sencilla es a través de Rgui, la interfaz gráfica que viene con R base, no con RStudio.\nWindows y MacOS:\n\nEscribe Rgui en el explorador de archivos/aplicaciones de tu computadora para abrir la aplicación de R.\nPara actualizar R necesitamos de la paquetería installr. Para instalarla ejecuta el siguiente código:\n\n-   `install.packages(installr)`\n-   Presiona **Enter**\n\nCarga la paquetería con la función library()\n\nlibrary(installr)\nPresiona Enter\n\nPara revisar si tienes la versión de R más actualizada ejecuta el siguiente código:\n\ninstallr(GUI = TRUE)\nPresiona Enter\nEn la ventana emergente asegúrate de tener seleccionada la opción “R (updateR)” y haz clic en “OK”\n\nAparecerá otra ventana con información sobre la versión de R que estás usando y si existe una versión más reciente.\n\nSi ya tienes la versión más actual, simplemente haz clic en “OK” para cerrar.\nSi hay una versión nueva disponible, haz clic en “Yes” para comenzar la actualización.\n\nSi durante el proceso aparece una ventana preguntando si deseas copiar paquetes o configuraciones anteriores, puedes hacer clic en “No” (no es obligatorio copiarlos; puedes reinstalarlos después si lo prefieres)."
   },
   {
     "objectID": "req_R.html#material-suplementario",
     "href": "req_R.html#material-suplementario",
     "title": "2  Instalación de R y RStudio",
     "section": "2.8 Material suplementario",
-    "text": "2.8 Material suplementario\n\nTutorial: Nelly Selem – Bioinformática\nEn Windows puedes usar Git Bash como entorno de práctica",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Instalación de R y RStudio</span>"
-    ]
+    "text": "2.8 Material suplementario\n\nTutorial: Nelly Selem – Bioinformática\nEn Windows puedes usar Git Bash como entorno de práctica"
   },
   {
     "objectID": "Bpracticas.html",
@@ -148,61 +124,43 @@
     "objectID": "Bpracticas.html#materiales-informativos",
     "href": "Bpracticas.html#materiales-informativos",
     "title": "3  Buenas prácticas en bioinformática",
-    "section": "",
-    "text": "Curso de Joselyn Cristina Chávez Fuentes\nMe ayudo mucho este Video\nDocumentación de funciones de Andrés Arredondo Cruz",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
+    "section": "3.1 Materiales informativos",
+    "text": "3.1 Materiales informativos\n\nCurso de Joselyn Cristina Chávez Fuentes\nMe ayudo mucho este Video\nDocumentación de funciones de Andrés Arredondo Cruz\n\n💪 Estuve muy intensa viendo su codigo. Muchas gracias por tenerlos publico."
   },
   {
     "objectID": "Bpracticas.html#un-algoritmo-nos-permite-resolver-un-problema",
     "href": "Bpracticas.html#un-algoritmo-nos-permite-resolver-un-problema",
     "title": "3  Buenas prácticas en bioinformática",
     "section": "3.2 Un algoritmo nos permite resolver un problema ⭐",
-    "text": "3.2 Un algoritmo nos permite resolver un problema ⭐\nUn algoritmo es un método para resolver un problema mediante una serie de pasos definidos, precisos y finitos.\n\nDefinido: si se sigue dos veces, se obtiene el mismo resultado. Es reproducible.\nPreciso: implica el orden de realización de cada uno de los pasos.\nFinito: Tiene un numero determinado de pasos, implica que tiene un fin.\n\n\nUn algoritmo podemos definirlo como un programa o software.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
+    "text": "3.2 Un algoritmo nos permite resolver un problema ⭐\nUn algoritmo es un método para resolver un problema mediante una serie de pasos definidos, precisos y finitos.\n\nDefinido: si se sigue dos veces, se obtiene el mismo resultado. Es reproducible.\nPreciso: implica el orden de realización de cada uno de los pasos.\nFinito: Tiene un numero determinado de pasos, implica que tiene un fin.\n\n\nUn algoritmo podemos definirlo como un programa o software."
   },
   {
     "objectID": "Bpracticas.html#para-escribir-un-buen-software-necesitas",
     "href": "Bpracticas.html#para-escribir-un-buen-software-necesitas",
     "title": "3  Buenas prácticas en bioinformática",
     "section": "3.3 Para escribir un buen software necesitas:",
-    "text": "3.3 Para escribir un buen software necesitas:\n\nEscribir código mantenible (maintainable code), usar control de versiones (version control) y rastreadores de problemas (issue trackers), revisiones de código (code reviews), pruebas unitarias (unit testing) y automatización de tareas (task automation).\nWilson, et al. 2014. PLOS Biology\n\nEn bioinformática, es fundamental garantizar el uso ético y responsable de datos sensibles, como los genomas humanos, respetando la privacidad y los marcos legales vigentes. Al mismo tiempo, se debe fomentar la ciencia abierta mediante prácticas transparentes y reproducibles, sin comprometer la integridad de la información. Estas acciones no solo fortalecen la confianza en los resultados, sino que también previenen errores graves que podrían derivar en la retracción de artículos científicos.\n\n\n\n\n\n\n\n\n\n\n\nPasos para escribir un buen software\n\n\n\n\nAnálisis del problema / Definir el problema\nDiseño del algoritmo / Diseño del programa\nCodificación / Escribir el código\nCompilación y ejecución del programa\nVerificación / Realizar pruebas\nDepuración / Detectar los errores y corregirlos\n\n\nProgramacion defensiva\n\n\nDocumentación",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
+    "text": "3.3 Para escribir un buen software necesitas:\n\nEscribir código mantenible (maintainable code), usar control de versiones (version control) y rastreadores de problemas (issue trackers), revisiones de código (code reviews), pruebas unitarias (unit testing) y automatización de tareas (task automation).\nWilson, et al. 2014. PLOS Biology\n\nEn bioinformática, es fundamental garantizar el uso ético y responsable de datos sensibles, como los genomas humanos, respetando la privacidad y los marcos legales vigentes. Al mismo tiempo, se debe fomentar la ciencia abierta mediante prácticas transparentes y reproducibles, sin comprometer la integridad de la información. Estas acciones no solo fortalecen la confianza en los resultados, sino que también previenen errores graves que podrían derivar en la retracción de artículos científicos.\n\n\n\n\n\n\n\n\n\n\n\nPasos para escribir un buen software\n\n\n\n\nAnálisis del problema / Definir el problema\nDiseño del algoritmo / Diseño del programa\nCodificación / Escribir el código\nCompilación y ejecución del programa\nVerificación / Realizar pruebas\nDepuración / Detectar los errores y corregirlos\n\n\nProgramacion defensiva\n\n\nDocumentación"
   },
   {
     "objectID": "Bpracticas.html#paso-7-documentación",
     "href": "Bpracticas.html#paso-7-documentación",
     "title": "3  Buenas prácticas en bioinformática",
     "section": "3.4 Paso 7: Documentación",
-    "text": "3.4 Paso 7: Documentación\n\n\n\n\n\n\nNote\n\n\n\n\nTítulo (opcional)\nAutor (author): Su nombre\nDia (date): Fecha de creación\nPaquetes (packages)\nDirectorio de trabajo (Working directory): En que carpeta se encuentra tu datos y programa.\nInformación descriptiva del programa (Description): ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.\nUsage ¿Cómo se utiliza?\nArgumentos (Arguments)\n\nInformación de entrada (Data Inputs): Ej: Solo numeros enteros (sin decimales).\nInformación de salida (Outpus): Graficas, figuras, tablas, etc.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
+    "text": "3.4 Paso 7: Documentación\n\n\n\n\n\n\nNote\n\n\n\n\nTítulo (opcional)\nAutor (author): Su nombre\nDia (date): Fecha de creación\nPaquetes (packages)\nDirectorio de trabajo (Working directory): En que carpeta se encuentra tu datos y programa.\nInformación descriptiva del programa (Description): ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.\nUsage ¿Cómo se utiliza?\nArgumentos (Arguments)\n\nInformación de entrada (Data Inputs): Ej: Solo numeros enteros (sin decimales).\nInformación de salida (Outpus): Graficas, figuras, tablas, etc."
   },
   {
     "objectID": "Bpracticas.html#puntos-claves-para-buenas-prácticas-en-bioinfo",
     "href": "Bpracticas.html#puntos-claves-para-buenas-prácticas-en-bioinfo",
     "title": "3  Buenas prácticas en bioinformática",
     "section": "3.5 Puntos claves para buenas prácticas en bioinfo ⭐",
-    "text": "3.5 Puntos claves para buenas prácticas en bioinfo ⭐\n\nEscriba programas para personas, no para computadoras (Documenta qué hace y por qué). - Se coherente en la nomenclatura, indentación y otros aspectos del estilo.\nModularidad: Divide los programas en funciones cortas de un solo propósito. 💻 📚\nNo repitas tu código. Crea pasos reproducibles o que se repitan por si solas. ➰\nPlanifique los errores (Programacion defensiva) 🚩\nOptimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.\nColaborar - Busque siempre bibliotecas de software bien mantenidas que hagan lo que necesita. 👥\n\n\n\n\n\n\n\nEjemplo de como realizo mis documentos 💜\n\n\n\nAqui les dejo el script que les doy a mis alumnos VisualizacionDatos.R del curso de Análisis de datos de RNA-Seq.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
+    "text": "3.5 Puntos claves para buenas prácticas en bioinfo ⭐\n\nEscriba programas para personas, no para computadoras (Documenta qué hace y por qué). - Se coherente en la nomenclatura, indentación y otros aspectos del estilo.\nModularidad: Divide los programas en funciones cortas de un solo propósito. 💻 📚\nNo repitas tu código. Crea pasos reproducibles o que se repitan por si solas. ➰\nPlanifique los errores (Programacion defensiva) 🚩\nOptimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.\nColaborar - Busque siempre bibliotecas de software bien mantenidas que hagan lo que necesita. 👥\n\n\n\n\n\n\n\nEjemplo de como realizo mis documentos 💜\n\n\n\nAqui les dejo el script que les doy a mis alumnos VisualizacionDatos.R del curso de Análisis de datos de RNA-Seq."
   },
   {
     "objectID": "Bpracticas.html#referencias",
     "href": "Bpracticas.html#referencias",
     "title": "3  Buenas prácticas en bioinformática",
     "section": "3.6 Referencias",
-    "text": "3.6 Referencias\n\nPresentación de Reproducibilidad de Miriam Lerma\nPresentación introducción a Git, GitHub y Zenodo de Miriam Lerma\nPresentación de Introducción a la Bioinformática - Heladia Salgado\nMi próximo artículo científico en R de Florencia D´Andrea\nKristie Reproducible Research\nPresentación de Kristie\nFAIR- bioinformatic\nUnidad 1 Bioinformática e investigación reproducible\nThe five pillars of computational reproducibility: bioinformatics and beyond\nInvestigación reproducible y análisis de datos\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial\nMarkdwn Guide - Getting Started\nAllison Horst - Imagenes\nStatistical Computing using R and Python\nTraining Materials\nVisual Studio Code\nArticulo reproducibilidad",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
+    "text": "3.6 Referencias\n\nPresentación de Reproducibilidad de Miriam Lerma\nPresentación introducción a Git, GitHub y Zenodo de Miriam Lerma\nPresentación de Introducción a la Bioinformática - Heladia Salgado\nMi próximo artículo científico en R de Florencia D´Andrea\nKristie Reproducible Research\nPresentación de Kristie\nFAIR- bioinformatic\nUnidad 1 Bioinformática e investigación reproducible\nThe five pillars of computational reproducibility: bioinformatics and beyond\nInvestigación reproducible y análisis de datos\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial\nMarkdwn Guide - Getting Started\nAllison Horst - Imagenes\nStatistical Computing using R and Python\nTraining Materials\nVisual Studio Code\nArticulo reproducibilidad"
   },
   {
     "objectID": "intro_bash.html",
@@ -218,61 +176,43 @@
     "objectID": "intro_bash.html#qué-es-unix",
     "href": "intro_bash.html#qué-es-unix",
     "title": "4  Conceptos Unix y GNU/Linux",
-    "section": "",
-    "text": "Sistema operativo (SO) creado por Ken Thompson y Dennis Ritchie de la empresa Bell Laboratories en 1969.\nSO multitarea y multiusuario.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conceptos Unix y GNU/Linux</span>"
-    ]
+    "section": "4.1 ¿Qué es UNIX?",
+    "text": "4.1 ¿Qué es UNIX?\n\nSistema operativo (SO) creado por Ken Thompson y Dennis Ritchie de la empresa Bell Laboratories en 1969.\nSO multitarea y multiusuario."
   },
   {
     "objectID": "intro_bash.html#gnulinux",
     "href": "intro_bash.html#gnulinux",
     "title": "4  Conceptos Unix y GNU/Linux",
     "section": "4.2 GNU/Linux",
-    "text": "4.2 GNU/Linux\n\nEn 1983 Richard Stallman lideró la iniciativa GNU (GNU’s Not Unix), SO compatible con UNIX de libre distribución y acceso sin restricciones al código fuente.\nEn 1991 Linus Torvalds creó su propio kernel (Linux), que es la parte del SO que permite la comunicación con los componentes de Hardware. Este kernel fue distribuido de forma libre y gratuita.\nAmbos proyectos se juntaron y se creó GNU/Linux",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conceptos Unix y GNU/Linux</span>"
-    ]
+    "text": "4.2 GNU/Linux\n\nEn 1983 Richard Stallman lideró la iniciativa GNU (GNU’s Not Unix), SO compatible con UNIX de libre distribución y acceso sin restricciones al código fuente.\nEn 1991 Linus Torvalds creó su propio kernel (Linux), que es la parte del SO que permite la comunicación con los componentes de Hardware. Este kernel fue distribuido de forma libre y gratuita.\nAmbos proyectos se juntaron y se creó GNU/Linux"
   },
   {
     "objectID": "intro_bash.html#filosofía-gnulinux",
     "href": "intro_bash.html#filosofía-gnulinux",
     "title": "4  Conceptos Unix y GNU/Linux",
     "section": "4.3 Filosofía GNU/Linux",
-    "text": "4.3 Filosofía GNU/Linux\n\nLos usuarios son libres de ejecutar, copiar, distribuir, estudiar, cambiar y mejorar el software.\nEl software libre se refiere a las libertades mencionadas, no al precio.\n“open source” vs “free software”.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conceptos Unix y GNU/Linux</span>"
-    ]
+    "text": "4.3 Filosofía GNU/Linux\n\nLos usuarios son libres de ejecutar, copiar, distribuir, estudiar, cambiar y mejorar el software.\nEl software libre se refiere a las libertades mencionadas, no al precio.\n“open source” vs “free software”."
   },
   {
     "objectID": "intro_bash.html#ubuntu",
     "href": "intro_bash.html#ubuntu",
     "title": "4  Conceptos Unix y GNU/Linux",
     "section": "4.4 Ubuntu",
-    "text": "4.4 Ubuntu\n\nUna de las distribuciones de GNU/Linux más populares.\nEstá basada en Debian y fue desarrollada por la empresa Canonical\nFacilidad de uso e instalación.\nInterfaz de usuario amigable.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conceptos Unix y GNU/Linux</span>"
-    ]
+    "text": "4.4 Ubuntu\n\nUna de las distribuciones de GNU/Linux más populares.\nEstá basada en Debian y fue desarrollada por la empresa Canonical\nFacilidad de uso e instalación.\nInterfaz de usuario amigable."
   },
   {
     "objectID": "intro_bash.html#shell-bash-bash-shell",
     "href": "intro_bash.html#shell-bash-bash-shell",
     "title": "4  Conceptos Unix y GNU/Linux",
     "section": "4.5 Shell / Bash / Bash Shell",
-    "text": "4.5 Shell / Bash / Bash Shell\n\nLa shell es el programa que provee una interfaz de línea de comandos (CLI), que permite la comunicación entre el usuario y el SO.\nLa mayoría de distribuciones de Linux tienen por defecto bash (“Bourne Again SHell”) como shell. Hay otros tipos de shell como sh, csh, tcsh, ksh, zsh, entre otras.\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nBash es un intérprete de comandos que te da el poder de hacer tareas simples rápidamente.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conceptos Unix y GNU/Linux</span>"
-    ]
+    "text": "4.5 Shell / Bash / Bash Shell\n\nLa shell es el programa que provee una interfaz de línea de comandos (CLI), que permite la comunicación entre el usuario y el SO.\nLa mayoría de distribuciones de Linux tienen por defecto bash (“Bourne Again SHell”) como shell. Hay otros tipos de shell como sh, csh, tcsh, ksh, zsh, entre otras.\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nBash es un intérprete de comandos que te da el poder de hacer tareas simples rápidamente."
   },
   {
     "objectID": "intro_bash.html#material-suplementario",
     "href": "intro_bash.html#material-suplementario",
     "title": "4  Conceptos Unix y GNU/Linux",
     "section": "4.6 Material suplementario",
-    "text": "4.6 Material suplementario\nSi quieren aprender temas más sobre UNIX, GNU/Linux, bash, emulador de terminal y otros tema, pueden explorar los siguientes recursos, que son de acceso libre:\n\nKross, S. (2017). The unix workbench. Leanpub. https://leanpub.com/unix\nRoss, A. (2019). The Ultimate Linux Newbie Guide. https://linuxnewbieguide.org/\nShotts, W. (2019). The Linux command line: a complete introduction. No Starch Press. http://www.linuxcommand.org/tlcl.php/index.php\nLinux Journey. (2020). Linux Journey. https://linuxjourney.com/\nGNU. (2020). GNU. https://www.gnu.org/\nGNU/Linux para bioinformatica",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Conceptos Unix y GNU/Linux</span>"
-    ]
+    "text": "4.6 Material suplementario\nSi quieren aprender temas más sobre UNIX, GNU/Linux, bash, emulador de terminal y otros tema, pueden explorar los siguientes recursos, que son de acceso libre:\n\nKross, S. (2017). The unix workbench. Leanpub. https://leanpub.com/unix\nRoss, A. (2019). The Ultimate Linux Newbie Guide. https://linuxnewbieguide.org/\nShotts, W. (2019). The Linux command line: a complete introduction. No Starch Press. http://www.linuxcommand.org/tlcl.php/index.php\nLinux Journey. (2020). Linux Journey. https://linuxjourney.com/\nGNU. (2020). GNU. https://www.gnu.org/\nGNU/Linux para bioinformatica"
   },
   {
     "objectID": "intro_R.html",
