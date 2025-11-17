@@ -21,9 +21,7 @@ Estos comandos permiten organizar tu trabajo de manera estructurada desde la ter
 
 1.  ¿Cuál es la línea de comando para crear un directorio llamado "mi primer directorio"?
 
-::: callout-caution
-## ¡Cuidado!
-
+::: {.callout-caution title="¡Cuidado!"}
 Al escribir nombres con varias palabras, Bash interpreta cada espacio como si fuera un argumento diferente. Para evitar problemas, es recomendable usar un separador
 :::
 
