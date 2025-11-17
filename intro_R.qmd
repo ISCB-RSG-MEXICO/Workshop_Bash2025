@@ -63,7 +63,7 @@ Cuando abres RStudio encontrarás cuatro paneles principales:
 
 3.  [**Environment / History**]{style="color:#5ce1e6"} (arriba a la derecha): muestra los objetos creados y el historial de comandos.
 
-4.  <span style="color:#ff91d5">Files / Plots / Packages / Help / Viewer (abajo a la derecha): para explorar resultados, archivos y documentación.
+4.  [**Files / Plots / Packages / Help / Viewer**]{style="color:#ff91d5"} (abajo a la derecha): para explorar resultados, archivos y documentación.
 
     ![](figures/consola_R.png)
 
