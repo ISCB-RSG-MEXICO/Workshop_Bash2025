@@ -116,6 +116,14 @@ Vamos a ver algunos ejemplos:
 
 -   Valor absoluto
 
+```{r}
+
+```
+
+```{r}
+
+```
+
 -   Logaritmo natural
 
 ```{r}

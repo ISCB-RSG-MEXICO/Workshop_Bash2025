@@ -250,12 +250,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#usar-r-como-calculadora" id="toc-usar-r-como-calculadora" class="nav-link" data-scroll-target="#usar-r-como-calculadora"><span class="header-section-number">7.2</span> Usar R como calculadora</a>
   <ul>
   <li><a href="#operaciones-básicas" id="toc-operaciones-básicas" class="nav-link" data-scroll-target="#operaciones-básicas"><span class="header-section-number">7.2.1</span> Operaciones básicas</a></li>
-  <li><a href="#notación-científica" id="toc-notación-científica" class="nav-link" data-scroll-target="#notación-científica"><span class="header-section-number">7.2.2</span> Notación científica</a>
-  <ul class="collapse">
-  <li><a href="#comandos-incompletos" id="toc-comandos-incompletos" class="nav-link" data-scroll-target="#comandos-incompletos">Comandos incompletos</a></li>
+  <li><a href="#notación-científica" id="toc-notación-científica" class="nav-link" data-scroll-target="#notación-científica"><span class="header-section-number">7.2.2</span> Notación científica</a></li>
   </ul></li>
+  <li><a href="#funciones-en-r" id="toc-funciones-en-r" class="nav-link" data-scroll-target="#funciones-en-r"><span class="header-section-number">7.3</span> Funciones en R</a>
+  <ul>
+  <li><a href="#funciones-matemáticas" id="toc-funciones-matemáticas" class="nav-link" data-scroll-target="#funciones-matemáticas"><span class="header-section-number">7.3.1</span> Funciones matemáticas</a></li>
   </ul></li>
-  <li><a href="#funciones-matemáticas" id="toc-funciones-matemáticas" class="nav-link" data-scroll-target="#funciones-matemáticas"><span class="header-section-number">7.3</span> Funciones matemáticas</a></li>
   <li><a href="#variables-y-objetos-en-r" id="toc-variables-y-objetos-en-r" class="nav-link" data-scroll-target="#variables-y-objetos-en-r"><span class="header-section-number">7.4</span> Variables y objetos en R</a>
   <ul>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">7.4.1</span> Variables</a>
@@ -433,22 +433,48 @@ Esto enviará el código seleccionado a la consola para su ejecución.</p></li>
 <pre><code>[1] 5000</code></pre>
 </div>
 </div>
-<section id="comandos-incompletos" class="level4">
-<h4 class="anchored" data-anchor-id="comandos-incompletos">Comandos incompletos</h4>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comandos incompletos
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Si escribes una instrucción incompleta, R esperará que la termines.<br>
 Por ejemplo:</p>
 <p><code>3+</code></p>
 <p>Verás que el símbolo de la consola cambia de <code>&gt;</code> a <code>+</code>.<br>
 Esto indica que R está esperando que completes el comando.<br>
 Si deseas cancelar, presiona <strong>Esc</strong> (o <strong>Ctrl + C</strong>).</p>
+</div>
+</div>
 </section>
 </section>
-</section>
-<section id="funciones-matemáticas" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="funciones-matemáticas"><span class="header-section-number">7.3</span> Funciones matemáticas</h2>
-<p>R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:</p>
+<section id="funciones-en-r" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="funciones-en-r"><span class="header-section-number">7.3</span> Funciones en R</h2>
+<p>En R, una <strong>función</strong> es un comando que realiza una tarea específica. Para usarla, escribe su nombre seguido de paréntesis <code>()</code>. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Algunas funciones necesitan <strong>argumentos</strong>; otras no.</p>
+</div>
+</div>
+<p>Vamos a ver algunos ejemplos:</p>
+<section id="funciones-matemáticas" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="funciones-matemáticas"><span class="header-section-number">7.3.1</span> Funciones matemáticas</h3>
 <ul>
-<li>Logaritmo natural</li>
+<li><p>Valor absoluto</p></li>
+<li><p>Logaritmo natural</p></li>
 </ul>
 <div class="cell">
 <details open="">
@@ -483,6 +509,7 @@ Si deseas cancelar, presiona <strong>Esc</strong> (o <strong>Ctrl + C</strong>).
 <pre><code>[1] 1.648721</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="variables-y-objetos-en-r" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="variables-y-objetos-en-r"><span class="header-section-number">7.4</span> Variables y objetos en R</h2>
