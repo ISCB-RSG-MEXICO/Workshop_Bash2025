@@ -156,7 +156,7 @@ Ejemplo de rutas:
 Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema
 
 | Comandos  | Información                                            | Ejemplo de uso       |
-|-------------------|-----------------------------------|-------------------|
+|-------------------|----------------------------------|-------------------|
 | `pwd`     | Muestra el directorio actual                           | `pwd`                |
 | `history` | Muestra el historial de comandos                       | `history`            |
 | `ls`      | Observar el contenido de los archivos en un directorio | `ls mi_directorio`   |
@@ -174,49 +174,6 @@ Comandos para navegar entre directorios y rutas
 | `cd ..` | Sube un nivel en la jerarquía de directorios | `cd ..`           |
 | `cd ~`  | Va al directorio personal del usuario        | `cd ~`            |
 | `cd -`  | Vuelve al directorio anterior                | `cd -`            |
-
-## Crear, copiar, mover y eliminar
-
-Comandos que modifican la estructura de directorios y archivos
-
-| Comando | Descripción                  | Ejemplo                    |
-|---------|------------------------------|----------------------------|
-| `mkdir` | Crea un nuevo directorio     | `mkdir resultados`         |
-| `touch` | Crea un archivo vacío        | `touch notas.txt`          |
-| `cp`    | Copia archivos o directorios | `cp archivo.txt copia.txt` |
-| `mv`    | Mueve o renombra archivos    | `mv datos.csv directorio/` |
-| `rm`    | Elimina archivos             | `rm archivo.txt`           |
-| `rmdir` | Elimina directorios vacíos   | `rmdir vieja/`             |
-
-## Ver y examinar contenido
-
-Comandos para inspeccionar lo que hay dentro de los archivos sin abrirlos en un editor
-
-| Comando | Descripción                   | Ejemplo                   |
-|---------|-------------------------------|---------------------------|
-| `cat`   | Muestra el contenido completo | `cat notas.txt`           |
-| `head`  | Muestra las primeras líneas   | `head -n 10 datos.csv`    |
-| `tail`  | Muestra las últimas líneas    | `tail -n 20 registro.log` |
-| `less`  | Muestra el contenido paginado | `less texto.txt`          |
-
-## Editar archivos desde la terminal
-
-Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.
-
-| Comando | Descripción                                                                       | Ejemplo          |
-|-------------------|---------------------------|---------------------------|
-| nano    | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
-| vim     | Editor avanzado con control mediante comandos; guarda con :w y sale con :q        | `vim script.sh`  |
-
-## Buscar y filtrar
-
-Comandos para localizar texto o patrones dentro de archivos o directorios
-
-| Comando | Descripción                          | Ejemplo                |
-|---------|--------------------------------------|------------------------|
-| grep    | Busca texto dentro de archivos       | `grep "error" log.txt` |
-| find    | Busca archivos según criterios       | `find . -name "*.txt"` |
-| `wc`    | Cuenta líneas, palabras o caracteres | `wc -l datos.txt`      |
 
 ## Permisos y propiedades
 
@@ -243,20 +200,9 @@ Comandos para ahorrar espacio o mover varios archivos juntos
 | Comando  | Descripción                                                                               | Ejemplo                                                   |
 |-------------------|---------------------------|---------------------------|
 | `ssh`    | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
-| scp      | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
+| `scp`    | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
 | `scp -r` | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |
 | `rsync`  | Sincroniza directorios locales o remotas, copiando solo los archivos nuevos o modificados | `rsync -av datos/ usuario@servidor:/home/usuario/backup/` |
-
-## Redirección y concatenación
-
-Comandos para conectar procesos o guardar salidas
-
-| Comando | Descripción                                            | Ejemplo                       |
-|-------------------|---------------------------|---------------------------|
-| `>`     | Redirige la salida a un archivo                        | `ls > lista.txt`              |
-| `>>`    | Agrega la salida al final del archivo existente        | `echo "nuevo" >> lista.txt`   |
-| `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
-| `|`     | Conecta la salida de un comando con la entrada de otro | `cat datos.txt | grep "gene"` |
 
 ## Información del sistema
 
