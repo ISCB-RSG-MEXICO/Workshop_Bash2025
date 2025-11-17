@@ -6,12 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mayela Fosado-Mendoza">
-<meta name="author" content="Mariana Devon">
-<meta name="author" content="Emilio Ortiz-Avila">
-<meta name="dcterms.date" content="2025-11-18">
 
-<title>Workshop Bash &amp; R</title>
+<title>Workshop Bash &amp; R - 10&nbsp; Instalación de Git y Bash</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -34,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Bpracticas.html" rel="next">
+<link href="./install_R.html" rel="next">
+<link href="./Cap5_B.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -79,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Información general</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install_B.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Información general</span></a>
   </div>
 </li>
@@ -193,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./install_B.html" class="sidebar-item-text sidebar-link">
+  <a href="./install_B.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
@@ -213,7 +244,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#información-general" id="toc-información-general" class="nav-link active" data-scroll-target="#información-general">Información general</a></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link active" data-scroll-target="#windows"><span class="header-section-number">10.1</span> Windows</a></li>
+  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos"><span class="header-section-number">10.2</span> macOS</a></li>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux"><span class="header-section-number">10.3</span> Linux</a></li>
+  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">10.4</span> Material suplementario</a></li>
   </ul>
 </nav>
     </div>
@@ -222,28 +256,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Workshop Bash &amp; R</h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mayela Fosado-Mendoza </p>
-             <p>Mariana Devon </p>
-             <p>Emilio Ortiz-Avila </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 18, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -251,191 +271,77 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="figures/rsgMexico.jpeg" class="img-fluid" width="200"></p>
-</div>
-</div>
-</div>
-<section id="información-general" class="level1 unnumbered">
-<h1 class="unnumbered">Información general</h1>
+<p>Para participar en este taller necesitas acceso al siguiente software y acceso a un navegador como chrome o firefox.</p>
+<section id="windows" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="windows"><span class="header-section-number">10.1</span> Windows</h2>
+<p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: <a href="https://www.youtube.com/watch?v=t2-l3WvWvqg">Cómo instalar Git en Windows 11 (Actualizado 2025)</a>.</p>
+<ol type="1">
+<li><p>Descarga el instalador de <a href="https://gitforwindows.org/">Git para Windows</a>.</p></li>
+<li><p>Ejecuta el instalador y sigue los siguientes pasos:</p>
 <ul>
-<li><div class="tabset-margin-container"></div><div class="panel-tabset" data-group="globalInfo">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Sobre el curso</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Requisitos previos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Agenda</a></li></ul>
-<div class="tab-content" data-group="globalInfo">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Fuente del curso</p>
+<li><p>Haz clic en <strong>“Next” cuatro veces</strong> (dos veces si ya has instalado Git previamente). No necesitas cambiar nada en las pantallas de Información, ubicación, componentes y menú de inicio.</p></li>
+<li><p>En el menú desplegable <strong>“Choosing the default editor used by Git”, selecciona “Use the Nano editor by default”</strong> (NOTA: necesitarás desplazarte hacia arriba para encontrarlo) y haz clic en “Next”.</p></li>
+<li><p>En la página que dice <strong>“Adjusting the name of the initial branch in new repositories”, asegúrate de que “Let Git decide”</strong> esté seleccionado. Esto garantizará el nivel más alto de compatibilidad para nuestras lecciones.</p></li>
+<li><p>Asegúrate de que esté seleccionada la opción <strong>“Git from the command line and also from 3rd-party software” y haz clic en “Next”.</strong> (Si no haces esto, Git Bash no funcionará correctamente, lo que te obligará a eliminar la instalación de Git Bash, volver a ejecutar el instalador y seleccionar la opción “<strong>Git from the command line and also from 3rd-party software”).</strong></p></li>
+<li><p>Selecciona <strong>“Use bundled OpenSSH”</strong>.</p></li>
+<li><p>Asegúrate de que <strong>“Use the native Windows Secure Channel Library” esté seleccionada y haz clic en “Next”</strong>.</p></li>
+<li><p>Asegúrate de que <strong>“Checkout Windows-style, commit Unix-style line endings” esté seleccionada y haz clic en “Next”.</strong></p></li>
+<li><p>Asegúrate de que <strong>“Use Windows’ default console window”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Default (fast-forward or merge)”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Git Credential Manager”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Asegúrate de que <strong>“Enable file system caching”</strong> esté seleccionada y haz clic en “Next”.</p></li>
+<li><p>Haz clic en <strong>“Install”</strong>.</p></li>
+<li><p>Haz clic en <strong>“Finish” o “Next”</strong>.</p></li>
+</ul></li>
+<li><p>Si tu variable de entorno <strong>“HOME”</strong> no está configurada (o no sabes qué es):</p></li>
+</ol>
 <ul>
-<li><strong>Fechas:</strong> 27 y 28 de noviembre</li>
-<li><strong>Duración del curso:</strong> 15 horas</li>
-<li><strong>Horario:</strong> 8:00 am - 3:30 pm</li>
+<li>Abre el símbolo del sistema (abre el menú de inicio, luego escribe <code>cmd</code> y presiona <strong>Enter</strong>).</li>
+<li>Escribe la siguiente línea exactamente como se muestra en la ventana del símbolo del sistema.</li>
 </ul>
-<p><img src="figures/flyer.jpg" class="img-fluid" width="570"></p>
-<h4 id="instructores" class="anchored"><strong>Instructores</strong></h4>
+<div class="sourceCode" id="cb1" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">setx</span> HOME <span class="st">"%USERPROFILE%"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><strong>Mayela Fosado-Mendoza</strong> - Tesista de licenciatura</li>
-<li><strong>Mariana Devon</strong> - Estudiante de maestría, UAM</li>
-<li><strong>Emilio Ortiz-Avila</strong> - Tesista de licenciatura</li>
+<li>Presiona Enter, deberías ver “SUCCESS: Specified value was saved”.</li>
+<li>Cierra el símbolo del sistema escribiendo “exit” y presionando Enter.</li>
 </ul>
-<p>Ayudantes:</p>
+<p>Esto te proporcionará tanto Git como Bash en el programa <strong>Git Bash</strong>.</p>
+</section>
+<section id="macos" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="macos"><span class="header-section-number">10.2</span> macOS</h2>
+<p>En macOS, el shell por defecto en la mayoría de las versiones es <strong>Bash</strong>, por lo que no es necesario instalarlo Puedes acceder a Bash desde la aplicación <strong>Terminal</strong>, ubicada en <strong>/Applications/Utilities/</strong><br>
+</p>
+<p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: <a href="https://www.youtube.com/watch?v=kdM9YOX2hZ0">Instalar Git fácilmente en MacOS 2025</a><br>
+</p>
+<p>En el sitio oficial de <a href="https://git-scm.com/install/mac">git</a> existen varias opciones para la instalación en macOS, en este caso se llevará a cabo a través de <a href="https://brew.sh/"><strong>Homebrew</strong></a>.</p>
+<ol type="1">
+<li><p>Instalar Homebrew (en caso de que no esté instalado)</p>
 <ul>
-<li><strong>Aaron Espinosa Jaime -</strong> Estudiante de maestría, Cinvestav-LANGEBIO.</li>
-<li><strong>Camilo Pérez</strong> - Estudiante de doctorado, Cinvestav-LANGEBIO.</li>
-<li><strong>Andrés Arredondo</strong> - Ciencias Agrogenómicas, CCM-UNAM. <a href="https://aarredondoc.github.io/andresarredondo/">Pagina web</a></li>
-<li><strong>Johanna Castelán</strong> - Estudiante de maestría, UPAEP</li>
-<li><strong>Daniel Chávez</strong> - Profesor invitado, UAGro.</li>
-</ul>
-<p>Organizadores del curso:</p>
+<li><p>Busca y abre la aplicación de la terminal en tu computadora</p></li>
+<li><p>Copia y pega el siguiente código en la terminal y presiona <strong>Enter</strong></p>
+<p><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p></li>
+<li><p>Presiona <strong>Enter</strong> para comenzar la instalación</p></li>
+<li><p>Una vez que acabe la instalación, verifica que la instalación se haya llevado a cabo correctamente con el siguiente código:</p>
+<p><code>brew --version</code></p>
+<p>Después de presionar <strong>Enter</strong> aparecerá la última versión de <strong>Homebrew</strong> <code>Homebrew 4.5.7</code></p></li>
+</ul></li>
+<li><p>Una vez instalado <strong>Homebrew</strong> copia y pega el siguiente código en la terminal</p>
+<p><code>brew install git</code></p>
+<p>Presiona <strong>Enter</strong></p></li>
+</ol>
+<p>Se recomienda mantener la Terminal anclada en el Dock para facilitar su uso durante el taller</p>
+</section>
+<section id="linux" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="linux"><span class="header-section-number">10.3</span> Linux</h2>
+<p>La mayoría de las distribuciones de <strong>Linux</strong> incluyen <strong>Bash</strong> como shell predeterminado y <strong>Git</strong> instalado por defecto.<br>
+</p>
+<p>Si tu sistema es diferente, abre una terminal y ejecuta el comando:</p>
+<p><code>bash</code></p>
+</section>
+<section id="material-suplementario" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">10.4</span> Material suplementario</h2>
 <ul>
-<li><strong>Abel Lovaco Flores -</strong> Estudiante de maestría, Cinvestav-Irapuato.</li>
-<li><strong>Evelia Lorena Coss-Navarrete</strong> - PostDoc, LIIGH-UNAM. <a href="https://eveliacoss.github.io/">Pagina web</a></li>
-</ul>
-<h4 id="resumen" class="anchored"><strong>Resumen</strong></h4>
-<p>Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.</p>
-<p>El curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.</p>
-<h4 id="objetivos" class="anchored"><strong>Objetivos</strong></h4>
-<p>Al finalizar este curso, las y los participantes serán capaces de:</p>
-<p><strong>En Bash:</strong></p>
-<ul>
-<li>Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.</li>
-<li>Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.</li>
-<li>Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos</li>
-<li>Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.</li>
-</ul>
-<p><strong>En R:</strong></p>
-<ul>
-<li><p>Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.</p></li>
-<li><p>Usar R a través de la interfaz de RStudio para análisis sencillos.</p></li>
-<li><p>Crear variables, usar operadores y ejecutar funciones básicas en R.</p></li>
-<li><p>Administrar paquetes e iniciar proyectos estructurados en RStudio.</p></li>
-<li><p>Generar scripts simples y mantener un flujo de trabajo reproducible.</p></li>
-<li><p>Crear gráficas básicas en R para visualizar datos de manera rápida y clara.</p></li>
-</ul>
-<h2 id="citar-y-reutilizar-el-material-del-curso" class="anchored" data-anchor-id="información-general">Citar y reutilizar el material del curso</h2>
-<p>El contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia <a href="#0">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>No se requiere experiencia previa en programación ni en el uso de Linux.</p>
-<p>Conocimientos básicos sobre el manejo de archivos en computadora.</p>
-<p>Durante el curso las actividades se realizarán en un servidor proporcionado por el equipo docente, por lo que no es necesario instalar Linux, R o Bash en tu computadora.</p>
-<p>Si deseas conservar y trabajar posteriormente con los archivos generados en el curso, es recomendable tener instalado en tu equipo:</p>
-<ul>
-<li><p>Entorno de Linux (Bash)</p></li>
-<li><p>R y Rstudio</p></li>
-</ul>
-<p>Las instrucciones para instalarlos las puedes encontrar al final de esta página.</p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<table class="table">
-<thead>
-<tr class="header">
-<th>Tema</th>
-<th>Tiempo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span style="color:#59B4C3"><strong>27 de noviembre</strong></span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Sección 1 - (08:00 - 13:30 h)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Creación de una cuenta en GitHub</td>
-<td>5 min</td>
-</tr>
-<tr class="even">
-<td>- Introducción a Git / GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 1</strong>: Sincronización y llaves</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10)</em></td>
-<td>10 min</td>
-</tr>
-<tr class="odd">
-<td><strong>Sección 2 - (12:10-13:00 h)</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>- Comandos usados en Github y RStudio</td>
-<td>25 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 2:</strong> Página de inicio en GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td><strong>Sección 3 - (11:30 - 13:30 h) (noviembre)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Buenas prácticas en R</td>
-<td>30 min</td>
-</tr>
-<tr class="even">
-<td>- <strong>Actividad 3:</strong> Página web en GitHub</td>
-<td>1:30 h</td>
-</tr>
-<tr class="odd">
-<td><span style="color:#B33791"><strong>28 de noviembre</strong></span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Sección 1 - (08:00 - 13:30 h)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Creación de una cuenta en GitHub</td>
-<td>5 min</td>
-</tr>
-<tr class="even">
-<td>- Introducción a Git / GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 1</strong>: Sincronización y llaves</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10)</em></td>
-<td>10 min</td>
-</tr>
-<tr class="odd">
-<td><strong>Sección 2 - (12:10-13:00 h)</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>- Comandos usados en Github y RStudio</td>
-<td>25 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 2:</strong> Página de inicio en GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td><strong>Sección 3 - (11:30 - 13:30 h) (noviembre)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Buenas prácticas en R</td>
-<td>30 min</td>
-</tr>
-<tr class="even">
-<td>- <strong>Actividad 3:</strong> Página web en GitHub</td>
-<td>1:30 h</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div></li>
+<li>Tutorial: Nelly Selem – <a href="#0">Bioinformática</a></li>
+<li>En Windows puedes usar <a href="https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/">Git Bash</a> como entorno de práctica</li>
 </ul>
 
 
@@ -792,10 +698,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./Cap5_B.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Buenas practicas en R</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Bpracticas.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./install_R.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

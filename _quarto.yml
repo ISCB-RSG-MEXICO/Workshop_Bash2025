@@ -14,13 +14,14 @@ book:
     - index.qmd
     - Bpracticas.qmd
     - intro_bash.qmd
-    - intro_R.qmd
     - Cap1_B.qmd
-    - Cap1_R.qmd
     - Cap2_B.qmd
     - Cap3_B.qmd
     - Cap4_B.qmd
     - Cap5_B.qmd
+    - intro_R.qmd
+    - Cap1_R.qmd
+    - Cap2_R.qmd
     - install_B.qmd
     - install_R.qmd
   # Information

@@ -6,12 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mayela Fosado-Mendoza">
-<meta name="author" content="Mariana Devon">
-<meta name="author" content="Emilio Ortiz-Avila">
-<meta name="dcterms.date" content="2025-11-18">
 
-<title>Workshop Bash &amp; R</title>
+<title>Workshop Bash &amp; R - 11&nbsp; Instalación de R y RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Bpracticas.html" rel="next">
+<link href="./install_B.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -79,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Información general</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install_R.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Información general</span></a>
   </div>
 </li>
@@ -199,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./install_R.html" class="sidebar-item-text sidebar-link">
+  <a href="./install_R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
@@ -213,7 +209,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#información-general" id="toc-información-general" class="nav-link active" data-scroll-target="#información-general">Información general</a></li>
+  <li><a href="#windows---r" id="toc-windows---r" class="nav-link active" data-scroll-target="#windows---r"><span class="header-section-number">11.1</span> Windows - R</a></li>
+  <li><a href="#windows---rstudio" id="toc-windows---rstudio" class="nav-link" data-scroll-target="#windows---rstudio"><span class="header-section-number">11.2</span> Windows - Rstudio</a></li>
+  <li><a href="#macos---r" id="toc-macos---r" class="nav-link" data-scroll-target="#macos---r"><span class="header-section-number">11.3</span> MacOS - R</a></li>
+  <li><a href="#macos--rstudio" id="toc-macos--rstudio" class="nav-link" data-scroll-target="#macos--rstudio"><span class="header-section-number">11.4</span> MacOS- Rstudio</a></li>
+  <li><a href="#linux---r" id="toc-linux---r" class="nav-link" data-scroll-target="#linux---r"><span class="header-section-number">11.5</span> Linux - R</a></li>
+  <li><a href="#linux---rstudio" id="toc-linux---rstudio" class="nav-link" data-scroll-target="#linux---rstudio"><span class="header-section-number">11.6</span> Linux - RStudio</a></li>
+  <li><a href="#actualizar-r---windows-y-macos" id="toc-actualizar-r---windows-y-macos" class="nav-link" data-scroll-target="#actualizar-r---windows-y-macos"><span class="header-section-number">11.7</span> Actualizar R - Windows y MacOS</a></li>
+  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">11.8</span> Material suplementario</a></li>
   </ul>
 </nav>
     </div>
@@ -222,28 +225,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Workshop Bash &amp; R</h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mayela Fosado-Mendoza </p>
-             <p>Mariana Devon </p>
-             <p>Emilio Ortiz-Avila </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 18, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -251,191 +240,150 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="figures/rsgMexico.jpeg" class="img-fluid" width="200"></p>
-</div>
-</div>
-</div>
-<section id="información-general" class="level1 unnumbered">
-<h1 class="unnumbered">Información general</h1>
+<p>Para participar en este taller necesitas acceso a los siguientes software y acceso a un navegador como chrome o firefox.</p>
+<section id="windows---r" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="windows---r"><span class="header-section-number">11.1</span> Windows - R</h2>
+<p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar R y Rstudio, puedes ver este video tutorial: <a href="https://www.youtube.com/watch?v=H9EBlFDGG4k">Cómo instalar R y RStudio en Windows 11</a>.</p>
+<ol type="1">
+<li><p>Entra a la siguiente <a href="https://cloud.r-project.org/">página</a></p></li>
+<li><p>Haz click en <u><strong>Download R for Windows</strong></u></p></li>
+<li><p>Haz click en <u><strong>install R for the first time</strong></u></p></li>
+<li><p>Haz click en <u><strong>Download R-4.5.2 for Windows</strong></u></p></li>
+<li><p>Ejecuta el instalador y sigue los siguientes pasos:</p>
 <ul>
-<li><div class="tabset-margin-container"></div><div class="panel-tabset" data-group="globalInfo">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Sobre el curso</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Requisitos previos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Agenda</a></li></ul>
-<div class="tab-content" data-group="globalInfo">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Fuente del curso</p>
+<li><p>Selecciona el lenguaje de preferencia durante el proceso y haz click en “<strong>OK</strong>”</p></li>
+<li><p>Haz clic en “<strong>Next</strong>”</p></li>
+<li><p>Haz clic en “<strong>Next</strong>” (Si deseas cambiar el sitio de instalación, haz clic en “<strong>Browse</strong>” y selecciona tu carpeta deseada).</p></li>
+<li><p>Haz click en “<strong>Next</strong>” en las siguientes cuatro ventanas</p></li>
+<li><p>Espera unos minutos a que finalice la instalación y haz click en “<strong>Finish</strong>”</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="windows---rstudio" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="windows---rstudio"><span class="header-section-number">11.2</span> Windows - Rstudio</h2>
+<ol type="1">
+<li>Entra en la siguiente <a href="https://posit.co/download/rstudio-desktop/#download">página</a></li>
+<li>Haz click en <strong>Download RStudio Desktop for Windows</strong></li>
+<li>Ejecuta el instalador y sigue los siguientes pasos:
 <ul>
-<li><strong>Fechas:</strong> 27 y 28 de noviembre</li>
-<li><strong>Duración del curso:</strong> 15 horas</li>
-<li><strong>Horario:</strong> 8:00 am - 3:30 pm</li>
-</ul>
-<p><img src="figures/flyer.jpg" class="img-fluid" width="570"></p>
-<h4 id="instructores" class="anchored"><strong>Instructores</strong></h4>
+<li>Haz clic en “<strong>Next</strong>”</li>
+<li>Haz clic en “<strong>Next</strong>” (Si deseas cambiar el sitio de instalación, haz clic en “<strong>Browse</strong>” y selecciona tu carpeta deseada).</li>
+<li>Haz clic en “<strong>Install</strong>” y espera unos minutos a que acabe el proceso</li>
+<li>Haz clic en “<strong>Finish</strong>”</li>
+</ul></li>
+<li>Abre la aplicación de RStudio</li>
+<li>Haz clic en “<strong>OK</strong>”</li>
+</ol>
+</section>
+<section id="macos---r" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="macos---r"><span class="header-section-number">11.3</span> MacOS - R</h2>
+<p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: <a href="https://www.youtube.com/watch?v=_k8seoE6b-E">Cómo instalar R y R Studio en MacOS</a></p>
+<ol type="1">
+<li><p>Entra a la siguiente <a href="https://cloud.r-project.org/">página</a></p></li>
+<li><p>Haz click en <u><strong>Download R for macOS</strong></u></p></li>
+<li><p>Existen dos versiones de R que dependen del procesador de tu computadora. Para ver la versión de tu procesador, haz click en el ícono de apple en la parte superior izquierda de tu pantalla y selecciona “acerca de esta mac”. En la ventana emergente, la versión de tu procesador aparecerá junto a la palabra “Chip”, por ejemplo: <strong>Chip Apple M1 Pro</strong></p>
 <ul>
-<li><strong>Mayela Fosado-Mendoza</strong> - Tesista de licenciatura</li>
-<li><strong>Mariana Devon</strong> - Estudiante de maestría, UAM</li>
-<li><strong>Emilio Ortiz-Avila</strong> - Tesista de licenciatura</li>
-</ul>
-<p>Ayudantes:</p>
+<li><p>Para Mac con <strong>Apple Silicon</strong> (M1,2,…) haz clic en <u>R-4.5.2-arm64.pkg</u></p></li>
+<li><p>Para Mac con procesador <strong>Intel</strong> haz clic en <u>R-4.5.2-x86_64.pkg</u></p></li>
+</ul></li>
+<li><p>Ejecuta el instalador y sigue los siguientes pasos:</p>
 <ul>
-<li><strong>Aaron Espinosa Jaime -</strong> Estudiante de maestría, Cinvestav-LANGEBIO.</li>
-<li><strong>Camilo Pérez</strong> - Estudiante de doctorado, Cinvestav-LANGEBIO.</li>
-<li><strong>Andrés Arredondo</strong> - Ciencias Agrogenómicas, CCM-UNAM. <a href="https://aarredondoc.github.io/andresarredondo/">Pagina web</a></li>
-<li><strong>Johanna Castelán</strong> - Estudiante de maestría, UPAEP</li>
-<li><strong>Daniel Chávez</strong> - Profesor invitado, UAGro.</li>
-</ul>
-<p>Organizadores del curso:</p>
+<li><p>Haz clic en “<strong>Continuar</strong>” tres veces</p></li>
+<li><p>Haz clic en “<strong>De acuerdo</strong>”</p></li>
+<li><p>Haz click en “<strong>Instalar</strong>”</p></li>
+<li><p>Espera unos minutos a que finalice la instalación y haz click en “<strong>Cerrar</strong>”</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="macos--rstudio" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="macos--rstudio"><span class="header-section-number">11.4</span> MacOS- Rstudio</h2>
+<ol type="1">
+<li>Entra en la siguiente <a href="https://posit.co/download/rstudio-desktop/#download">página</a></li>
+<li>Haz click en <strong>Download RStudio Desktop for macOS 13+</strong>
 <ul>
-<li><strong>Abel Lovaco Flores -</strong> Estudiante de maestría, Cinvestav-Irapuato.</li>
-<li><strong>Evelia Lorena Coss-Navarrete</strong> - PostDoc, LIIGH-UNAM. <a href="https://eveliacoss.github.io/">Pagina web</a></li>
-</ul>
-<h4 id="resumen" class="anchored"><strong>Resumen</strong></h4>
-<p>Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.</p>
-<p>El curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.</p>
-<h4 id="objetivos" class="anchored"><strong>Objetivos</strong></h4>
-<p>Al finalizar este curso, las y los participantes serán capaces de:</p>
-<p><strong>En Bash:</strong></p>
+<li>Para ver la versión de tu procesador, haz click en el ícono de apple en la parte superior izquierda de tu pantalla y selecciona “acerca de esta mac”. En la ventana emergente, la versión de tu sistema operativo aparecerá junto a la palabra “macOS”, por ejemplo: <strong>macOS Sequola</strong> 15.1.1.</li>
+<li>Si la versión de tu sistema operativo está por debajo de la versión 13, haz clic en <u><strong>download a previous version</strong></u>.</li>
+</ul></li>
+<li>Ejecuta el instalador</li>
+<li>Arrastra el ícono de RStudio a la carpeta de aplicaciones y espera a que finalice la instalación</li>
+</ol>
+</section>
+<section id="linux---r" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="linux---r"><span class="header-section-number">11.5</span> Linux - R</h2>
+<ol type="1">
+<li><p>Entra a la siguiente <a href="https://cloud.r-project.org/">página</a></p></li>
+<li><p>Junto a <u><strong>Download R for Linux</strong></u> existen tres opciones, selecciona la que se ajusta a tu distribución de Linux</p>
 <ul>
-<li>Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.</li>
-<li>Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.</li>
-<li>Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos</li>
-<li>Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.</li>
-</ul>
-<p><strong>En R:</strong></p>
+<li><p><u><strong>Debian</strong></u></p></li>
+<li><p><u><strong>Fedora/Redhat</strong></u></p></li>
+<li><p><u><strong>Ubuntu</strong></u></p></li>
+</ul></li>
+<li><p>Para instalar Linux en <strong>Debian</strong> y ejecuta las siguientes líneas de código (presiona <strong>Enter</strong> después de cada línea de código):</p>
 <ul>
-<li><p>Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.</p></li>
-<li><p>Usar R a través de la interfaz de RStudio para análisis sencillos.</p></li>
-<li><p>Crear variables, usar operadores y ejecutar funciones básicas en R.</p></li>
-<li><p>Administrar paquetes e iniciar proyectos estructurados en RStudio.</p></li>
-<li><p>Generar scripts simples y mantener un flujo de trabajo reproducible.</p></li>
-<li><p>Crear gráficas básicas en R para visualizar datos de manera rápida y clara.</p></li>
-</ul>
-<h2 id="citar-y-reutilizar-el-material-del-curso" class="anchored" data-anchor-id="información-general">Citar y reutilizar el material del curso</h2>
-<p>El contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia <a href="#0">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>No se requiere experiencia previa en programación ni en el uso de Linux.</p>
-<p>Conocimientos básicos sobre el manejo de archivos en computadora.</p>
-<p>Durante el curso las actividades se realizarán en un servidor proporcionado por el equipo docente, por lo que no es necesario instalar Linux, R o Bash en tu computadora.</p>
-<p>Si deseas conservar y trabajar posteriormente con los archivos generados en el curso, es recomendable tener instalado en tu equipo:</p>
+<li><p><code>sudo apt update</code></p></li>
+<li><p><code>sudo apt install r-base r-base-dev</code></p></li>
+</ul></li>
+<li><p>Para instalar Linux en <strong>Fedora/Redhat</strong> y ejecuta la siguiente línea de código:</p>
 <ul>
-<li><p>Entorno de Linux (Bash)</p></li>
-<li><p>R y Rstudio</p></li>
-</ul>
-<p>Las instrucciones para instalarlos las puedes encontrar al final de esta página.</p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<table class="table">
-<thead>
-<tr class="header">
-<th>Tema</th>
-<th>Tiempo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span style="color:#59B4C3"><strong>27 de noviembre</strong></span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Sección 1 - (08:00 - 13:30 h)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Creación de una cuenta en GitHub</td>
-<td>5 min</td>
-</tr>
-<tr class="even">
-<td>- Introducción a Git / GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 1</strong>: Sincronización y llaves</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10)</em></td>
-<td>10 min</td>
-</tr>
-<tr class="odd">
-<td><strong>Sección 2 - (12:10-13:00 h)</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>- Comandos usados en Github y RStudio</td>
-<td>25 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 2:</strong> Página de inicio en GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td><strong>Sección 3 - (11:30 - 13:30 h) (noviembre)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Buenas prácticas en R</td>
-<td>30 min</td>
-</tr>
-<tr class="even">
-<td>- <strong>Actividad 3:</strong> Página web en GitHub</td>
-<td>1:30 h</td>
-</tr>
-<tr class="odd">
-<td><span style="color:#B33791"><strong>28 de noviembre</strong></span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Sección 1 - (08:00 - 13:30 h)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Creación de una cuenta en GitHub</td>
-<td>5 min</td>
-</tr>
-<tr class="even">
-<td>- Introducción a Git / GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 1</strong>: Sincronización y llaves</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td>☕ <em>Coffee break (10 min) - (12:00-12:10)</em></td>
-<td>10 min</td>
-</tr>
-<tr class="odd">
-<td><strong>Sección 2 - (12:10-13:00 h)</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>- Comandos usados en Github y RStudio</td>
-<td>25 min</td>
-</tr>
-<tr class="odd">
-<td>- <strong>Actividad 2:</strong> Página de inicio en GitHub</td>
-<td>15 min</td>
-</tr>
-<tr class="even">
-<td><strong>Sección 3 - (11:30 - 13:30 h) (noviembre)</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>- Buenas prácticas en R</td>
-<td>30 min</td>
-</tr>
-<tr class="even">
-<td>- <strong>Actividad 3:</strong> Página web en GitHub</td>
-<td>1:30 h</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div></li>
+<li><p><code>sudo dnf install R</code></p></li>
+<li><p>Presiona <strong>Enter</strong></p></li>
+</ul></li>
+<li><p>Para instalar Linux en <strong>Ubuntu</strong> y ejecuta las siguientes líneas de código (presiona <strong>Enter</strong> después de cada línea de código):</p>
+<ul>
+<li><p><code>sudo apt update -qq</code></p></li>
+<li><p><code>sudo apt install --no-install-recommends software-properties-common dirmngr</code></p></li>
+<li><p><code>wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</code></p></li>
+<li><p><code>sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"</code></p></li>
+<li><p><code>sudo apt install --no-install-recommends r-base</code></p></li>
+</ul></li>
+</ol>
+</section>
+<section id="linux---rstudio" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="linux---rstudio"><span class="header-section-number">11.6</span> Linux - RStudio</h2>
+<ol type="1">
+<li>Entra en la siguiente <a href="https://posit.co/download/rstudio-desktop/#download">página</a></li>
+<li>Desliza la página hasta llegar a la tabla de opciones de instalación</li>
+<li>Selecciona tu opción de accuerdo con la distribución y versión de tu sistema operativo (<u><strong>Debian, Fedora/Redhat, Ubuntu</strong></u>).</li>
+<li>Ejecuta el instalador</li>
+</ol>
+</section>
+<section id="actualizar-r---windows-y-macos" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="actualizar-r---windows-y-macos"><span class="header-section-number">11.7</span> Actualizar R - Windows y MacOS</h2>
+<p>Si ya tienes R instalado en tu computadora, asegúrate de tener la versión más actualizada de R</p>
+<p>Existen diferentes formas de actualizar R, la manera más sencilla es a través de <strong>Rgui,</strong> la interfaz gráfica que viene con R base, no con RStudio.</p>
+<p><strong>Windows y MacOS</strong>:</p>
+<ol type="1">
+<li><p>Escribe <strong>Rgui</strong> en el explorador de archivos/aplicaciones de tu computadora para abrir la aplicación de R.</p></li>
+<li><p>Para actualizar R necesitamos de la paquetería <strong>installr</strong>. Para instalarla ejecuta el siguiente código:</p></li>
+</ol>
+<pre><code>-   `install.packages(installr)`
+-   Presiona **Enter**</code></pre>
+<ol start="3" type="1">
+<li><p>Carga la paquetería con la función <code>library()</code></p>
+<ul>
+<li>library<code>(installr)</code></li>
+<li>Presiona <strong>Enter</strong></li>
+</ul></li>
+<li><p>Para revisar si tienes la versión de R más actualizada ejecuta el siguiente código:</p>
+<ul>
+<li><code>installr(GUI = TRUE)</code></li>
+<li>Presiona <strong>Enter</strong></li>
+<li>En la ventana emergente asegúrate de tener seleccionada la opción “R (updateR)” y haz clic en “OK”</li>
+</ul></li>
+<li><p>Aparecerá otra ventana con información sobre la versión de R que estás usando y si existe una versión más reciente.</p>
+<ul>
+<li>Si <strong>ya tienes la versión más actual</strong>, simplemente haz clic en <strong>“OK”</strong> para cerrar.</li>
+<li>Si <strong>hay una versión nueva disponible</strong>, haz clic en <strong>“Yes”</strong> para comenzar la actualización.</li>
+</ul></li>
+<li><p>Si durante el proceso aparece una ventana preguntando si deseas copiar paquetes o configuraciones anteriores, puedes hacer clic en <strong>“No”</strong> (no es obligatorio copiarlos; puedes reinstalarlos después si lo prefieres).</p></li>
+</ol>
+</section>
+<section id="material-suplementario" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">11.8</span> Material suplementario</h2>
+<ul>
+<li><p>Tutorial: Nelly Selem – <a href="#0">Bioinformática</a></p></li>
+<li><p>En Windows puedes usar <a href="https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/">Git Bash</a> como entorno de práctica</p>
+<!-- --></li>
 </ul>
 
 
@@ -792,11 +740,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./install_B.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Bpracticas.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
