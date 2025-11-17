@@ -57,13 +57,13 @@ R permite registrar y compartir **todo el proceso analítico** con unas pocas l�
 
 Cuando abres RStudio encontrarás cuatro paneles principales:
 
-1.  **Source** (arriba a la izquierda): donde escribes y editas código.
+1. **<span style="color:#e2a9f1">Source</span>** (arriba a la izquierda): donde escribes y editas código.
 
-2.  **Console** (abajo a la izquierda): donde se ejecutan los comandos.
+2.  **<span style="color:#9BCF53">Console</span>** (abajo a la izquierda): donde se ejecutan los comandos.
 
-3.  **Environment / History** (arriba a la derecha): muestra los objetos creados y el historial de comandos.
+3.  **<span style="color:#5ce1e6">Environment / History</span>** (arriba a la derecha): muestra los objetos creados y el historial de comandos.
 
-4.  **Files / Plots / Packages / Help / Viewer** (abajo a la derecha): para explorar resultados, archivos y documentación.
+4.  **<span style="color:#ff91d5">Files / Plots / Packages / Help / Viewer** (abajo a la derecha): para explorar resultados, archivos y documentación.
 
     ![](figures/consola_R.png)
 

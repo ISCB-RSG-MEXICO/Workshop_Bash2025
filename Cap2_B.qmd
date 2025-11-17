@@ -29,9 +29,13 @@ Al escribir nombres con varias palabras, Bash interpreta cada espacio como si fu
 3.  Enlista los archivos que hay en el directorio actual
 4.  Elimina los directorios creados en el inciso 2)
 
+<<<<<<< HEAD
+::: {.callout-tip collapse="true" title="Soluciones"}
+=======
 ::: {.callout-tip collapse="true" icon="false"}
 ## Soluciones
 
+>>>>>>> 62772742fdc00873788f7531cab0085796a693a9
 1.  `mkdir mi_primer_directorio`
 
 ::: callout-important
@@ -161,9 +165,13 @@ Para `fragmento.txt` qué línea de comando utilizarías para...
 
 5.  Muestra las úlimas cinco líneas
 
+<<<<<<< HEAD
+::: {.callout-tip collapse="true" title="Soluciones"}
+=======
 ::: {.callout-tip collapse="true" icon="false"}
 ## Soluciones
 
+>>>>>>> 62772742fdc00873788f7531cab0085796a693a9
 1.  `wc -c fragmento.txt #Esto cuenta el número de caracteres`
 
 2.  ``` wc -w fragmento.txt``#Esto cuenta el número de palabras ```
@@ -213,8 +221,13 @@ Las wildcards buscan patrones en **nombres de archivos**, mientras que `grep` bu
 
 5.  Muestra las líneas que NO tengan letras mayúscula
 
+<<<<<<< HEAD
+::: {.callout-tip collapse="true" title="Soluciones"}
+## 
+=======
 ::: {.callout-tip collapse="true" icon="false"}
 ## Soluciones
+>>>>>>> 62772742fdc00873788f7531cab0085796a693a9
 
 1.  `grep "Aureliano" fragmento.txt` No hay resultados para la búsqueda, el comando `grep` es sensible a mayúsculas y minúsculas. `grep -i "aureliano" fragmento.txt`
 

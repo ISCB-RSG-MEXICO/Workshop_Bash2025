@@ -111,7 +111,133 @@ Puedes guardar el resultado de una operación en un **objeto** usando el operado
 
 Para ver su valor, solo escribe el nombre del objeto:
 
+<<<<<<< HEAD
+```{r}
+log(1)
+```
+
+-   Logaritmo en base 10
+
+```{r}
+log10(10)
+```
+
+-   Exponencial de un número, es decir: $e^x$.
+
+```{r}
+exp(0.5)  # Calcula e^(0.5)
+```
+
+## Variables y objetos en R
+
+### Variables
+
+En el mundo de la programación, las **variables** son elementos esenciales para almacenar y manejar información. En R, una variable funciona como una **etiqueta** que nos permite referirnos a un dato y guardarlo en un espacio de memoria. Para asignar un valor a una variable usamos el operador `<-`, que nos permite darle un nombre a ese dato para utilizarlo más adelante, así:
+
+```{r}
+x <- 10 * 50
+```
+
+Esto significa:
+
+-   **x** es el nombre de la *variable*.
+
+-   `<-` significa "asignar".
+
+-   **10** es el valor del objeto que guardas dentro de la *variable*.
+
+Observa que al asignar un valor **R no imprime el resultado**.\
+
+En su lugar, lo guarda para usarlo después en la *variable*. Para conocer el valor de la variable puedes hacerlo solo poniendo el nombre de la variable y correrlo o utilizar la función `print()` con el nombre de la variable adentro. Así:\
+
+```{r}
+x # solo el nombre de la variable
+print(x) # con la funcion print
+```
+
+Ahora, podrás ver que en la pestaña de **Environment** (panel superior derecho), la variable `x` y su valor han aparecido.
+
+También es posible asignar utilizando `=`:
+
+```{r}
+y = 10 * 50
+
+y
+```
+
+Sin embargo, en la comunidad de R es **mucho menos común**.\
+
+La recomendación general es usar **`<-`**, ya que es más claro en la mayoría de contextos. Además, de que puede haber mayor confusión en códigos más complejos.
+
+#### **Nombres válidos para variables**
+
+Para asignar un objeto a una variable, debemos usar nombres válidos:
+
+-   **Puede contener:** letras, números, puntos (`.`), guiones bajos (`_`)
+
+-    **Debe comenzar con:** letra o punto seguido de letra.
+
+-   **No puede comenzar con:** número, guion bajo, punto seguido de número.
+
+-   **No puede contener:** espacios ni guiones (`-`).
+
+-   R distingue mayúsculas y minúsculas (`Edad` ≠ `edad`).
+
+Ejemplos válidos:
+
+`min_height`
+
+`max.height`
+
+`celsius2kelvin`
+
+`temperatura_media`
+
+Ejemplos inválidos:
+
+`_edad`
+
+`2widths`
+
+`min-length`
+
+`mi variable`
+
+### Objetos
+
+En R, todo lo que guardamos dentro de una variable es un objeto.\
+
+Si la variable es la *etiqueta*, el objeto es el *contenido* que esa etiqueta señala.
+
+Ejemplos de objetos:\
+
+```{r}
+3             # numero
+"hola"        # texto
+1:5           # vector
+matrix(1:6, nrow=2) 
+list(nombre="Ana", edad=21) 
+data.frame(nombre=c("Ana","Luis"), edad=c(21,30)) 
+factor(c("F","M","F")) 
+sum           # funcion
+
+```
+
+Vamos ver cada uno de ellos más detalladamente.
+
+#### Tipos de objetos en R
+
+## Tips en R
+
+### Conocer tu ruta de trabajo
+
+La función `getwd()` te devuelve la ruta absoluta del directorio de trabajo
+
+```{r}
+getwd() 
+=======
 ```{r} resultado}
+>>>>>>> 62772742fdc00873788f7531cab0085796a693a9
 ```
 
 ### Comentarios en R
