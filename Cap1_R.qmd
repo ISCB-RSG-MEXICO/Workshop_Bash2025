@@ -239,6 +239,15 @@ help()
 
 R cuenta con una cantidad enorme de funciones, muchas de las cuales pueden tener argumentos más complejos y usos avanzados. Lo que hemos visto hasta ahora es solo una pequeña muestra; a lo largo del curso exploraremos más funciones y aprenderemos a utilizarlas de manera práctica.
 
+::: callout-important
+No te preocupes si no recuerdas alguna de ellas. Siempre puedes consultar para qué sirve una función de las siguientes maneras:
+
+```{r}
+?mean
+help(mean)
+```
+:::
+
 ## Variables y objetos en R
 
 ### Variables
