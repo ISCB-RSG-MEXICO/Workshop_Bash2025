@@ -55,13 +55,13 @@
 
     -   Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
 
-    -    Usar R a través de la interfaz de RStudio para análisis sencillos.
+    -   Usar R a través de la interfaz de RStudio para análisis sencillos.
 
-    -    Crear variables, usar operadores y ejecutar funciones básicas en R.
+    -   Crear variables, usar operadores y ejecutar funciones básicas en R.
 
-    -    Administrar paquetes e iniciar proyectos estructurados en RStudio.
+    -   Administrar paquetes e iniciar proyectos estructurados en RStudio.
 
-    -    Generar scripts simples y mantener un flujo de trabajo reproducible.
+    -   Generar scripts simples y mantener un flujo de trabajo reproducible.
 
     -   Crear gráficas básicas en R para visualizar datos de manera rápida y clara.
 
@@ -83,7 +83,7 @@
 
     -   R y Rstudio
 
-    Las instrucciones para instalarlos los puedes encontrar en esta página.
+    Las instrucciones para instalarlos las puedes encontrar en esta página, en los capítulos **X y Y (agregar)**.
 
     ### Agenda {#agenda}
 
@@ -113,6 +113,4 @@
     | **Sección 3 - (11:30 - 13:30 h) (noviembre)**  |        |
     | \- Buenas prácticas en R                       | 30 min |
     | \- **Actividad 3:** Página web en GitHub       | 1:30 h |
-
-    ### 
     :::

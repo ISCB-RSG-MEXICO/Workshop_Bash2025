@@ -87,7 +87,8 @@ También puedes escribir números directamente en notación científica:
 5e3 # Nota que no hay signo menos
 ```
 
-#### Comandos incompletos
+::: callout-caution
+## Comandos incompletos
 
 Si escribes una instrucción incompleta, R esperará que la termines.\
 Por ejemplo:
@@ -97,10 +98,23 @@ Por ejemplo:
 Verás que el símbolo de la consola cambia de `>` a `+`.\
 Esto indica que R está esperando que completes el comando.\
 Si deseas cancelar, presiona **Esc** (o **Ctrl + C**).
+:::
 
-## Funciones matemáticas
+## Funciones en R
 
-R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:
+En R, una **función** es un comando que realiza una tarea específica. Para usarla, escribe su nombre seguido de paréntesis `()`. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios.
+
+::: callout-important
+## Importante
+
+Algunas funciones necesitan **argumentos**; otras no.
+:::
+
+Vamos a ver algunos ejemplos:
+
+### Funciones matemáticas
+
+-   Valor absoluto
 
 -   Logaritmo natural
 
@@ -253,8 +267,7 @@ list(nombre="Stanford", edad=39)
 
 #### 6. Data frames
 
-Un **data frame** es como una **tabla** de Excel: tiene filas y columnas.
-Cada columna puede tener **diferentes tipos de datos** (números, texto, etc.).\
+Un **data frame** es como una **tabla** de Excel: tiene filas y columnas. Cada columna puede tener **diferentes tipos de datos** (números, texto, etc.).\
 Se crean con `data.frame()`.\
 Ejemplo:
 
