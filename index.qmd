@@ -36,9 +36,9 @@
 
     #### **Resumen**
 
-    Este curso ofrece una introducción práctica al uso de herramientas computacionales aplicadas a la biología. Las y los participantes aprenderán a comunicarse con la computadora por medio de línea de comandos para la exploración, organización y análisis de datos biológicos.
+    Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar **R a través de la interfaz de RStudio** para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.
 
-    Este curso está diseñado para construir desde cero, paso a paso, las habilidades básicas necesarias en bioinformática. Se abordarán temas como la manipulación de archivos, la automatización de tareas simples y el uso de secuencias biológicas como ejemplo de aplicación en un problema real.
+    El curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.
 
     #### **Objetivos**
 
@@ -114,31 +114,5 @@
     | \- Buenas prácticas en R                       | 30 min |
     | \- **Actividad 3:** Página web en GitHub       | 1:30 h |
 
-    ### Agenda 📆
-
-    +---------------------------------------------------------+---------------+
-    | Tema                                                    | Tiempo        |
-    +=========================================================+:=============:+
-    | 🔷 **Sección** **1 - (11:30 - 13:30 h) (## noviembre)** |               |
-    +---------------------------------------------------------+---------------+
-    | -   Creación de una cuenta en GitHub                    | 5 min         |
-    +---------------------------------------------------------+---------------+
-    | -   Introducción a Git / GitHub                         | 15 min        |
-    +---------------------------------------------------------+---------------+
-    | -   **Actividad 1**: Sincronización y llaves            | 15 min        |
-    +---------------------------------------------------------+---------------+
-    | ☕ *Coffee break (10 min) - (12:00-12:10) ☕*           | 10 min        |
-    +---------------------------------------------------------+---------------+
-    | 🔷  **Sección** **2 - (12:10-13:00 h)**                 |               |
-    +---------------------------------------------------------+---------------+
-    | -   Comandos usados en Github y RStudio                 | 25 min        |
-    +---------------------------------------------------------+---------------+
-    | -   **Actividad 2:** Pagina de inicio en GitHub         | 15 min        |
-    +---------------------------------------------------------+---------------+
-    | 🔷  **Sección 3 - (11:30 - 13:30 h) (## noviembre)**    |               |
-    +---------------------------------------------------------+---------------+
-    | -   Buenas practicas en R                               | 30 min        |
-    +---------------------------------------------------------+---------------+
-    | -   **Actividad 3:** Pagina web en GitHub               | 1:30 min      |
-    +---------------------------------------------------------+---------------+
+    ### 
     :::
