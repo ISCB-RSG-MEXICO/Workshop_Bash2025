@@ -4,10 +4,7 @@
     "href": "index.html",
     "title": "Workshop Bash & R",
     "section": "",
-    "text": "Información general\n\n\nSobre el curso 📌Requisitos previosAgenda 📆\n\n\nFuente del curso\n\nFechas: 27 y 28 de noviembre\nDuración del curso: X horas\nHorario: 9 am -X\n\n\nInstructores\n\nMayela Fosado-Mendoza - Tesista de licenciatura\nMariana Devon - Estudiante de maestría, UAM\nEmilio Ortiz-Avila - Tesista de licenciatura\n\nAyudantes:\n\nAaron Espinosa Jaime - Estudiante de maestria, Cinvestav-LANGEBIO.\nCamilo Pérez - Estudiante de doctorado, Cinvestav-LANGEBIO.\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM.\nJohanna Castelán - Estudiante de maestría, UPAEP\nDaniel Chávez - Profesor invitado, UAGro.\n\nOrganizadores del curso:\n\nAbel Lovaco Flores - Estudiante de maestria, Cinvestav-Irapuato.\nEvelia Lorena Coss-Navarrete - PostDoc, LIIGH-UNAM. Pagina web\n\nResumen\nEste curso ofrece una introducción práctica al uso de herramientas computacionales aplicadas a la biología. Las y los participantes aprenderán a comunicarse con la computadora por medio de línea de comandos para la exploración, organización y análisis de datos biológicos.\nEste curso está diseñado para construir desde cero, paso a paso, las habilidades básicas necesarias en bioinformática. Se abordarán temas como la manipulación de archivos, la automatización de tareas simples y el uso de secuencias biológicas como ejemplo de aplicación en un problema real.\nObjetivos\nAl finalizar este curso, las y los participantes serán capaces de:\n\nComprender el entorno del sistema operativo Linux y el uso básico de la línea de comandos Bash para navegar, organizar y manipular archivos.\nAplicar comandos y expresiones regulares para buscar, filtrar y procesar información contenida en archivos con datos biológicos.\nConstruir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos\nIntegrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.\n\nCitar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).\n\n\n\nNo se requiere experiencia previa en programación ni en el uso de linux\nConocimientos básicos sobre el manejo de archivos en computadora\nAcceso a un entorno Linux, ya sea instalado, virtualizado o en línea\nDisponer de una terminal con Git, en Windows se recomienda utilizar Git Bash.\n\n\n\n\n\n\n\n\n\n\nTema\nTiempo\n\n\n\n\n🔷 Sección 1 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10) ☕\n10 min\n\n\n🔷  Sección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\n🔷  Sección 3 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min",
-    "crumbs": [
-      "Información general"
-    ]
+    "text": "Información general\n\n\nSobre el cursoEn BashEn R y RStudioRequisitos previosAgenda\n\n\nFuente del curso\n\nFechas: 27 y 28 de noviembre\nDuración del curso: 15 horas\nHorario: 8:00 am - 3:30 PM (UTC-6)\n\n\nInstructores\n\nMayela Fosado-Mendoza - Tesista de licenciatura, UAQ-UNAM\nMariana Devon - Estudiante de maestría, UAM\nEmilio Ortiz-Avila - Tesista de licenciatura, UAQ-UNAM\n\nAyudantes:\n\nAaron Espinosa Jaime - Estudiante de maestría, Cinvestav-LANGEBIO\nCamilo Pérez - Estudiante de doctorado, Cinvestav-LANGEBIO\nAndrés Arredondo - Ciencias Agrogenómicas, CCM-UNAM. Pagina web\nJohanna Castelán - Estudiante de maestría, UPAEP\nDaniel Chávez - Profesor invitado, UAGro\n\nOrganizadores del curso:\n\nAbel Lovaco Flores - Estudiante de maestría, Cinvestav-Irapuato\nEvelia Lorena Coss-Navarrete - PostDoc, LIIGH-UNAM. Pagina web\n\nResumen\nEste curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.\nEl curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.\nObjetivos\nAl finalizar este curso, las y los participantes serán capaces de:\n\n\n\nComprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.\nAplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.\nConstruir y ejecutar scripts en Bash para automatizar tareas básicas.\nIntegrar buenas prácticas computacionales que favorezcan la organización y reproducibilidad.\n\n\n\n\nConocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.\nUsar R a través de la interfaz de RStudio para análisis sencillos.\nCrear variables, usar operadores y ejecutar funciones básicas en R.\nAdministrar paquetes e iniciar proyectos estructurados en RStudio.\nGenerar scripts simples y mantener un flujo de trabajo reproducible.\nCrear gráficas básicas en R para visualizar datos de manera rápida y clara.\n\nCitar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).\n\n\n\nNo se requiere experiencia previa en programación ni en el uso de Linux.\nConocimientos básicos sobre el manejo de archivos en computadora.\nDurante el curso usaremos un servidor, por lo que no es necesario instalar nada.\nOpcional: instalación de un enterno Linux como Bash, R y RStudio si deseas descargar y trabajar localmente con los archivos que generemos en el servidor.\n\n\n\n\n\n\n\n\n\n\nTema\nTiempo\n\n\n\n\n27 de noviembre\n\n\n\nSección 1 - (08:00 - 13:30 h)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10)\n10 min\n\n\nSección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\nSección 3 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min\n\n\n28 de noviembre\nSección 1 - (08:00 - 13:30 h)\n\n\n\n\nCreación de una cuenta en GitHub\n\n5 min\n\n\n\nIntroducción a Git / GitHub\n\n15 min\n\n\n\nActividad 1: Sincronización y llaves\n\n15 min\n\n\n☕ Coffee break (10 min) - (12:00-12:10)\n10 min\n\n\nSección 2 - (12:10-13:00 h)\n\n\n\n\nComandos usados en Github y RStudio\n\n25 min\n\n\n\nActividad 2: Pagina de inicio en GitHub\n\n15 min\n\n\nSección 3 - (11:30 - 13:30 h) (## noviembre)\n\n\n\n\nBuenas practicas en R\n\n30 min\n\n\n\nActividad 3: Pagina web en GitHub\n\n1:30 min"
   },
   {
     "objectID": "req_B.html",
@@ -23,41 +20,29 @@
     "objectID": "req_B.html#windows",
     "href": "req_B.html#windows",
     "title": "1  Instalación de Git y Bash",
-    "section": "",
-    "text": "Descarga el instalador de Git para Windows.\nEjecuta el instalador y sigue los siguientes pasos:\n\nHaz clic en “Next” cuatro veces (dos veces si ya has instalado Git previamente). No necesitas cambiar nada en las pantallas de Información, ubicación, componentes y menú de inicio.\nEn el menú desplegable “Choosing the default editor used by Git”, selecciona “Use the Nano editor by default” (NOTA: necesitarás desplazarte hacia arriba para encontrarlo) y haz clic en “Next”.\nEn la página que dice “Adjusting the name of the initial branch in new repositories”, asegúrate de que “Let Git decide” esté seleccionado. Esto garantizará el nivel más alto de compatibilidad para nuestras lecciones.\nAsegúrate de que esté seleccionada la opción “Git from the command line and also from 3rd-party software” y haz clic en “Next”. (Si no haces esto, Git Bash no funcionará correctamente, lo que te obligará a eliminar la instalación de Git Bash, volver a ejecutar el instalador y seleccionar la opción “Git from the command line and also from 3rd-party software”).\nSelecciona “Use bundled OpenSSH”.\nAsegúrate de que “Use the native Windows Secure Channel Library” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Checkout Windows-style, commit Unix-style line endings” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Use Windows’ default console window” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Default (fast-forward or merge)” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Git Credential Manager” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Enable file system caching” esté seleccionada y haz clic en “Next”.\nHaz clic en “Install”.\nHaz clic en “Finish” o “Next”.\n\nSi tu variable de entorno “HOME” no está configurada (o no sabes qué es):\n\n\nAbre el símbolo del sistema (abre el menú de inicio, luego escribe cmd y presiona Enter).\nEscribe la siguiente línea exactamente como se muestra en la ventana del símbolo del sistema.\n\nsetx HOME \"%USERPROFILE%\"\n\nPresiona Enter, deberías ver “SUCCESS: Specified value was saved”.\nCierra el símbolo del sistema escribiendo “exit” y presionando Enter.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalación de Git y Bash</span>"
-    ]
+    "section": "1.1 Windows",
+    "text": "1.1 Windows\nNota: Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: Cómo instalar Git en Windows 11 (Actualizado 2025).\n\nDescarga el instalador de Git para Windows.\nEjecuta el instalador y sigue los siguientes pasos:\n\nHaz clic en “Next” cuatro veces (dos veces si ya has instalado Git previamente). No necesitas cambiar nada en las pantallas de Información, ubicación, componentes y menú de inicio.\nEn el menú desplegable “Choosing the default editor used by Git”, selecciona “Use the Nano editor by default” (NOTA: necesitarás desplazarte hacia arriba para encontrarlo) y haz clic en “Next”.\nEn la página que dice “Adjusting the name of the initial branch in new repositories”, asegúrate de que “Let Git decide” esté seleccionado. Esto garantizará el nivel más alto de compatibilidad para nuestras lecciones.\nAsegúrate de que esté seleccionada la opción “Git from the command line and also from 3rd-party software” y haz clic en “Next”. (Si no haces esto, Git Bash no funcionará correctamente, lo que te obligará a eliminar la instalación de Git Bash, volver a ejecutar el instalador y seleccionar la opción “Git from the command line and also from 3rd-party software”).\nSelecciona “Use bundled OpenSSH”.\nAsegúrate de que “Use the native Windows Secure Channel Library” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Checkout Windows-style, commit Unix-style line endings” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Use Windows’ default console window” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Default (fast-forward or merge)” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Git Credential Manager” esté seleccionada y haz clic en “Next”.\nAsegúrate de que “Enable file system caching” esté seleccionada y haz clic en “Next”.\nHaz clic en “Install”.\nHaz clic en “Finish” o “Next”.\n\nSi tu variable de entorno “HOME” no está configurada (o no sabes qué es):\n\n\nAbre el símbolo del sistema (abre el menú de inicio, luego escribe cmd y presiona Enter).\nEscribe la siguiente línea exactamente como se muestra en la ventana del símbolo del sistema.\n\nsetx HOME \"%USERPROFILE%\"\n\nPresiona Enter, deberías ver “SUCCESS: Specified value was saved”.\nCierra el símbolo del sistema escribiendo “exit” y presionando Enter.\n\nEsto te proporcionará tanto Git como Bash en el programa Git Bash."
   },
   {
     "objectID": "req_B.html#macos",
     "href": "req_B.html#macos",
     "title": "1  Instalación de Git y Bash",
     "section": "1.2 macOS",
-    "text": "1.2 macOS\nEn macOS, el shell por defecto en la mayoría de las versiones es Bash, por lo que no es necesario instalarlo Puedes acceder a Bash desde la aplicación Terminal, ubicada en /Applications/Utilities/\n\nNota: Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: Instalar Git fácilmente en MacOS 2025\n\nEn el sitio oficial de git existen varias opciones para la instalación en macOS, en este caso se llevará a cabo a través de Homebrew.\n\nInstalar Homebrew (en caso de que no esté instalado)\n\nBusca y abre la aplicación de la terminal en tu computadora\nCopia y pega el siguiente código en la terminal y presiona Enter\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nPresiona Enter para comenzar la instalación\nUna vez que acabe la instalación, verifica que la instalación se haya llevado a cabo correctamente con el siguiente código:\nbrew --version\nDespués de presionar Enter aparecerá la última versión de Homebrew Homebrew 4.5.7\n\nUna vez instalado Homebrew copia y pega el siguiente código en la terminal\nbrew install git\nPresiona Enter\n\nSe recomienda mantener la Terminal anclada en el Dock para facilitar su uso durante el taller",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalación de Git y Bash</span>"
-    ]
+    "text": "1.2 macOS\nEn macOS, el shell por defecto en la mayoría de las versiones es Bash, por lo que no es necesario instalarlo Puedes acceder a Bash desde la aplicación Terminal, ubicada en /Applications/Utilities/\n\nNota: Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: Instalar Git fácilmente en MacOS 2025\n\nEn el sitio oficial de git existen varias opciones para la instalación en macOS, en este caso se llevará a cabo a través de Homebrew.\n\nInstalar Homebrew (en caso de que no esté instalado)\n\nBusca y abre la aplicación de la terminal en tu computadora\nCopia y pega el siguiente código en la terminal y presiona Enter\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\nPresiona Enter para comenzar la instalación\nUna vez que acabe la instalación, verifica que la instalación se haya llevado a cabo correctamente con el siguiente código:\nbrew --version\nDespués de presionar Enter aparecerá la última versión de Homebrew Homebrew 4.5.7\n\nUna vez instalado Homebrew copia y pega el siguiente código en la terminal\nbrew install git\nPresiona Enter\n\nSe recomienda mantener la Terminal anclada en el Dock para facilitar su uso durante el taller"
   },
   {
     "objectID": "req_B.html#linux",
     "href": "req_B.html#linux",
     "title": "1  Instalación de Git y Bash",
     "section": "1.3 Linux",
-    "text": "1.3 Linux\nLa mayoría de las distribuciones de Linux incluyen Bash como shell predeterminado y Git instalado por defecto.\n\nSi tu sistema es diferente, abre una terminal y ejecuta el comando:\nbash",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalación de Git y Bash</span>"
-    ]
+    "text": "1.3 Linux\nLa mayoría de las distribuciones de Linux incluyen Bash como shell predeterminado y Git instalado por defecto.\n\nSi tu sistema es diferente, abre una terminal y ejecuta el comando:\nbash"
   },
   {
     "objectID": "req_B.html#material-suplementario",
     "href": "req_B.html#material-suplementario",
     "title": "1  Instalación de Git y Bash",
     "section": "1.4 Material suplementario",
-    "text": "1.4 Material suplementario\n\nTutorial: Nelly Selem – Bioinformática\nEn Windows puedes usar Git Bash como entorno de práctica",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Instalación de Git y Bash</span>"
-    ]
+    "text": "1.4 Material suplementario\n\nTutorial: Nelly Selem – Bioinformática\nEn Windows puedes usar Git Bash como entorno de práctica"
   },
   {
     "objectID": "req_R.html",
@@ -303,71 +288,50 @@
     "objectID": "intro_R.html#qué-es-r",
     "href": "intro_R.html#qué-es-r",
     "title": "5  Conceptos de R",
-    "section": "",
-    "text": "Software libre y de código abierto.\nMultiplataforma (Windows, macOS y Linux).\nPermite realizar análisis reproducibles y automatizados.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conceptos de R</span>"
-    ]
+    "section": "5.1 ¿Qué es R?",
+    "text": "5.1 ¿Qué es R?\nLenguaje de programación y entorno de software creado en 1993 por Ross Ihaka y Robert Gentleman en la Universidad de Auckland, Nueva Zelanda.\nR está diseñado para el análisis estadístico, la visualización de datos y la computación científica.\n\nSoftware libre y de código abierto.\nMultiplataforma (Windows, macOS y Linux).\nPermite realizar análisis reproducibles y automatizados.\n\nR es ampliamente utilizado en biología, ecología, ciencias sociales, economía y muchas otras disciplinas."
   },
   {
     "objectID": "intro_R.html#qué-es-rstudio",
     "href": "intro_R.html#qué-es-rstudio",
     "title": "5  Conceptos de R",
     "section": "5.2 ¿Qué es RStudio?",
-    "text": "5.2 ¿Qué es RStudio?\nRStudio es un Entorno de Desarrollo Integrado (IDE) que facilita el uso de R.\nOfrece una interfaz amigable con herramientas para escribir código, visualizar datos y administrar proyectos.\nVentajas:\n\nPermite ejecutar código y ver resultados de inmediato.\nIntegra control de versiones (Git).\nIncluye paneles para trabajar con archivos, gráficos, paquetes y ayuda.\nFacilita la creación de reportes, presentaciones y scripts reproducibles.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conceptos de R</span>"
-    ]
+    "text": "5.2 ¿Qué es RStudio?\nRStudio es un Entorno de Desarrollo Integrado (IDE) que facilita el uso de R.\nOfrece una interfaz amigable con herramientas para escribir código, visualizar datos y administrar proyectos.\nVentajas:\n\nPermite ejecutar código y ver resultados de inmediato.\nIntegra control de versiones (Git).\nIncluye paneles para trabajar con archivos, gráficos, paquetes y ayuda.\nFacilita la creación de reportes, presentaciones y scripts reproducibles."
   },
   {
     "objectID": "intro_R.html#filosofía-de-r",
     "href": "intro_R.html#filosofía-de-r",
     "title": "5  Conceptos de R",
     "section": "5.3 Filosofía de R",
-    "text": "5.3 Filosofía de R\n\nPromueve la ciencia abierta y reproducible.\nFomenta la transparencia en los análisis al guardar todo el flujo de trabajo en código.\nComunidad activa que desarrolla miles de paquetes (CRAN, Bioconductor, GitHub).",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conceptos de R</span>"
-    ]
+    "text": "5.3 Filosofía de R\n\nPromueve la ciencia abierta y reproducible.\nFomenta la transparencia en los análisis al guardar todo el flujo de trabajo en código.\nComunidad activa que desarrolla miles de paquetes (CRAN, Bioconductor, GitHub)."
   },
   {
     "objectID": "intro_R.html#diferencias-con-hojas-de-cálculo",
     "href": "intro_R.html#diferencias-con-hojas-de-cálculo",
     "title": "5  Conceptos de R",
     "section": "5.4 Diferencias con hojas de cálculo",
-    "text": "5.4 Diferencias con hojas de cálculo\nHerramientas como Excel o Google Sheets son útiles para tareas básicas, pero:\n\nLimitan el tamaño de los datos.\nNo documentan los pasos del análisis.\nNo son fácilmente reproducibles.\n\nR permite registrar y compartir todo el proceso analítico con unas pocas líneas de código.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conceptos de R</span>"
-    ]
+    "text": "5.4 Diferencias con hojas de cálculo\nHerramientas como Excel o Google Sheets son útiles para tareas básicas, pero:\n\nLimitan el tamaño de los datos.\nNo documentan los pasos del análisis.\nNo son fácilmente reproducibles.\n\nR permite registrar y compartir todo el proceso analítico con unas pocas líneas de código."
   },
   {
     "objectID": "intro_R.html#interfaz-básica-de-rstudio",
     "href": "intro_R.html#interfaz-básica-de-rstudio",
     "title": "5  Conceptos de R",
     "section": "5.5 Interfaz básica de RStudio",
-    "text": "5.5 Interfaz básica de RStudio\nCuando abres RStudio encontrarás cuatro paneles principales:\n\nSource (arriba a la izquierda): donde escribes y editas código.\nConsole (abajo a la izquierda): donde se ejecutan los comandos.\nEnvironment / History (arriba a la derecha): muestra los objetos creados y el historial de comandos.\nFiles / Plots / Packages / Help / Viewer (abajo a la derecha): para explorar resultados, archivos y documentación.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conceptos de R</span>"
-    ]
+    "text": "5.5 Interfaz básica de RStudio\nCuando abres RStudio encontrarás cuatro paneles principales:\n\nSource (arriba a la izquierda): donde escribes y editas código.\nConsole (abajo a la izquierda): donde se ejecutan los comandos.\nEnvironment / History (arriba a la derecha): muestra los objetos creados y el historial de comandos.\nFiles / Plots / Packages / Help / Viewer (abajo a la derecha): para explorar resultados, archivos y documentación."
   },
   {
     "objectID": "intro_R.html#flujo-de-trabajo-en-rstudio",
     "href": "intro_R.html#flujo-de-trabajo-en-rstudio",
     "title": "5  Conceptos de R",
     "section": "5.6 Flujo de trabajo en RStudio",
-    "text": "5.6 Flujo de trabajo en RStudio\nExisten dos formas principales de trabajar dentro de RStudio:\n\nProbar y jugar en la consola interactiva de R, y luego copiar el código a un archivo .R para ejecutarlo más tarde.\n\n\nEsta opción es útil al realizar pruebas pequeñas o cuando estás comenzando.\nSin embargo, puede volverse tediosa conforme tu código crece.\n\n\nEscribir directamente en un archivo .R y usar los atajos de teclado de RStudio para ejecutar líneas o bloques de código en la consola interactiva.\n\n\nEs una excelente forma de trabajar desde el inicio, ya que todo tu código queda guardado.\nPodrás ejecutar el archivo completo desde RStudio o mediante la función source() de R.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conceptos de R</span>"
-    ]
+    "text": "5.6 Flujo de trabajo en RStudio\nExisten dos formas principales de trabajar dentro de RStudio:\n\nProbar y jugar en la consola interactiva de R, y luego copiar el código a un archivo .R para ejecutarlo más tarde.\n\n\nEsta opción es útil al realizar pruebas pequeñas o cuando estás comenzando.\nSin embargo, puede volverse tediosa conforme tu código crece.\n\n\nEscribir directamente en un archivo .R y usar los atajos de teclado de RStudio para ejecutar líneas o bloques de código en la consola interactiva.\n\n\nEs una excelente forma de trabajar desde el inicio, ya que todo tu código queda guardado.\nPodrás ejecutar el archivo completo desde RStudio o mediante la función source() de R."
   },
   {
     "objectID": "intro_R.html#material-suplementario",
     "href": "intro_R.html#material-suplementario",
     "title": "5  Conceptos de R",
     "section": "5.7 Material suplementario",
-    "text": "5.7 Material suplementario\nPara aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:\n\nThe Carpentries. (2025). R for Reproducible Scientific Analysis. https://swcarpentry.github.io/r-novice-gapminder/\nCRAN. (2025). The Comprehensive R Archive Network. https://cran.r-project.org/\nWickham, H. & Grolemund, G. (2017). R for Data Science. O'Reilly Media. https://r4ds.had.co.nz/\nRStudio Education. (2024). RStudio Primers. https://posit.cloud/learn/primers",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conceptos de R</span>"
-    ]
+    "text": "5.7 Material suplementario\nPara aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:\n\nThe Carpentries. (2025). R for Reproducible Scientific Analysis. https://swcarpentry.github.io/r-novice-gapminder/\nCRAN. (2025). The Comprehensive R Archive Network. https://cran.r-project.org/\nWickham, H. & Grolemund, G. (2017). R for Data Science. O’Reilly Media. https://r4ds.had.co.nz/\nRStudio Education. (2024). RStudio Primers. https://posit.cloud/learn/primers"
   },
   {
     "objectID": "Cap1_B.html",
@@ -384,50 +348,35 @@
     "href": "Cap1_B.html#estructura-de-un-comando",
     "title": "6  Mis primeros pasos en Bash",
     "section": "6.2 Estructura de un comando",
-    "text": "6.2 Estructura de un comando\nCada comando en Bash sigue una estructura general formada por tres partes principales:\ncomando [opciones] [argumentos]\n\ncomando: la acción que Bash ejecutará (por ejemplo, ls, cp, grep)\nopciones: modificadores que cambian el comportamiento del comando; suelen comenzar con - o -- .\nargumentos: los objetos sobre los que el comando actuará (archivos, directorios, patrones, etc.)\n\nPor ejemplo:\nls -l /home/usuario/\n\nls → lista el contenido de un directorio\n-l → opción que muestra la lista en formato largo\n/home/usuario/ → argumento que indica el directorio a listar\n\nOtro ejemplo:\ngrep -i \"gene\" genes.gtf\n\ngrep → busca texto dentro de los archivos\n-i → opción que ignora mayúsculas y minúsculas\n“gene” → patrón a buscar\ngenes.gft → archivo donde se buscará\n\n\n\n\n\n\n\nNote\n\n\n\nNOTA: Algunos comandos permiten combinar varias opciones\nPor ejemplo:\nls -lah\nAquí -l, -a y -h se aplican simultáneamente:\n\n-l → formato largo\n-a → muestra los archivos ocultos\n-h → tamaños legibles para humanos (por ejemplo, “5K” en lugar de “5120”)",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "text": "6.2 Estructura de un comando\nCada comando en Bash sigue una estructura general formada por tres partes principales:\ncomando [opciones] [argumentos]\n\ncomando: la acción que Bash ejecutará (por ejemplo, ls, cp, grep)\nopciones: modificadores que cambian el comportamiento del comando; suelen comenzar con - o -- .\nargumentos: los objetos sobre los que el comando actuará (archivos, directorios, patrones, etc.)\n\nPor ejemplo:\nls -l /home/usuario/\n\nls → lista el contenido de un directorio\n-l → opción que muestra la lista en formato largo\n/home/usuario/ → argumento que indica el directorio a listar\n\nOtro ejemplo:\ngrep -i \"gene\" genes.gtf\n\ngrep → busca texto dentro de los archivos\n-i → opción que ignora mayúsculas y minúsculas\n“gene” → patrón a buscar\ngenes.gft → archivo donde se buscará\n\n\n\n\n\n\n\nNote\n\n\n\nNOTA: Algunos comandos permiten combinar varias opciones\nPor ejemplo:\nls -lah\nAquí -l, -a y -h se aplican simultáneamente:\n\n-l → formato largo\n-a → muestra los archivos ocultos\n-h → tamaños legibles para humanos (por ejemplo, “5K” en lugar de “5120”)"
   },
   {
     "objectID": "Cap1_B.html#navegación-y-organización-del-entorno-de-trabajo",
     "href": "Cap1_B.html#navegación-y-organización-del-entorno-de-trabajo",
     "title": "6  Mis primeros pasos en Bash",
     "section": "6.3 Navegación y organización del entorno de trabajo",
-    "text": "6.3 Navegación y organización del entorno de trabajo\n\nRuta / Camino absoluto: especifica la ubicación completa desde el directorio raíz /.\ncd /home/usuario/data/\nRuta / Camino relativo: indica la ubicación en relación con el directorio actual.\ncd ../ # Ir a la directorio anterior\n\n\n\n\n\n\n\nNote\n\n\n\nNOTA 1: Si utilizas cd y no indicas una ruta absoluta, te llevara al directorio home (~).\nNOTA 2: Puedes usar la tecla TAB para completar el nombre de directorios o archivos. Si hay varias directorios con el mismo inicio, presiona TAB dos veces para ver las coincidencias.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "text": "6.3 Navegación y organización del entorno de trabajo\n\nRuta / Camino absoluto: especifica la ubicación completa desde el directorio raíz /.\ncd /home/usuario/data/\nRuta / Camino relativo: indica la ubicación en relación con el directorio actual.\ncd ../ # Ir a la directorio anterior\n\n\n\n\n\n\n\nNote\n\n\n\nNOTA 1: Si utilizas cd y no indicas una ruta absoluta, te llevara al directorio home (~).\nNOTA 2: Puedes usar la tecla TAB para completar el nombre de directorios o archivos. Si hay varias directorios con el mismo inicio, presiona TAB dos veces para ver las coincidencias."
   },
   {
     "objectID": "Cap1_B.html#conocer-mi-dirección-ubicación",
     "href": "Cap1_B.html#conocer-mi-dirección-ubicación",
     "title": "6  Mis primeros pasos en Bash",
     "section": "6.4 Conocer mi dirección / ubicación",
-    "text": "6.4 Conocer mi dirección / ubicación\nEl comando pwd (que significa “imprime directorio de trabajo” – print working directory) muestra el directorio actual, es decir, la ubicación en la que te encuentras dentro del sistema de archivos. Por defecto, los comandos que ejecutes actúan sobre este directorio, a menos que especifiques otra ruta.\npwd # /c/Users/emilio\nEn la computadora de Emilio, el sistema de archivos se ve así:\n\n\n\n\n\nEn la parte superior se encuentra el directorio raíz (/), que contiene todo lo demás.\nDentro de él se ubican otros directorios comunes:\n\nbin: programas del sistema\ndata: archivos de datos\nUsers: directorios personales de los usuarios\ntmp: archivos temporales\n\n\n\n\n\n\n\nEjercicio 1\n\n\n\nA partir de /Users/emilio/data/, ¿Cuál de los siguientes comandos lleva al directorio de inicio, que es /Users/emilio\n\ncd .\ncd /\ncd /home/emilio\ncd ../..\ncd ~\ncd home\ncd ~/data/..\ncd\ncd ..\n\n\n\n\n\n\nSolución\n\n\n\n\n\n\nNo: . indica el directorio actual.\nNo: / es el directorio raíz.\nNo: El directorio home es /Users/emilio.\nNo: sube dos niveles, quedando en /Users.\nSí: ~ representa el directorio home del usuario, en este caso /Users/emilio.\nNo: buscaría un directorio home dentro del actual (si existiera).\nSí: sube un nivel desde ~/data .\nSí: cd sin argumentos te lleva al home\nSí: sube un nivel desde el directorio actual.\n\n\n\n\n\n\n\nEjemplo de rutas:",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "text": "6.4 Conocer mi dirección / ubicación\nEl comando pwd (que significa “imprime directorio de trabajo” – print working directory) muestra el directorio actual, es decir, la ubicación en la que te encuentras dentro del sistema de archivos. Por defecto, los comandos que ejecutes actúan sobre este directorio, a menos que especifiques otra ruta.\npwd # /c/Users/emilio\nEn la computadora de Emilio, el sistema de archivos se ve así:\n\n\n\n\n\nEn la parte superior se encuentra el directorio raíz (/), que contiene todo lo demás.\nDentro de él se ubican otros directorios comunes:\n\nbin: programas del sistema\ndata: archivos de datos\nUsers: directorios personales de los usuarios\ntmp: archivos temporales\n\n\n\n\n\n\n\nEjercicio 1\n\n\n\nA partir de /Users/emilio/data/, ¿Cuál de los siguientes comandos lleva al directorio de inicio, que es /Users/emilio\n\ncd .\ncd /\ncd /home/emilio\ncd ../..\ncd ~\ncd home\ncd ~/data/..\ncd\ncd ..\n\n\n\n\n\n\nSolución\n\n\n\n\n\n\nNo: . indica el directorio actual.\nNo: / es el directorio raíz.\nNo: El directorio home es /Users/emilio.\nNo: sube dos niveles, quedando en /Users.\nSí: ~ representa el directorio home del usuario, en este caso /Users/emilio.\nNo: buscaría un directorio home dentro del actual (si existiera).\nSí: sube un nivel desde ~/data .\nSí: cd sin argumentos te lleva al home\nSí: sube un nivel desde el directorio actual.\n\n\n\n\n\n\n\nEjemplo de rutas:"
   },
   {
     "objectID": "Cap1_B.html#explorar-y-obtener-información",
     "href": "Cap1_B.html#explorar-y-obtener-información",
     "title": "6  Mis primeros pasos en Bash",
     "section": "6.5 Explorar y obtener información",
-    "text": "6.5 Explorar y obtener información\nComandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema\n\n\n\n\n\n\n\n\nComandos\nInformación\nEjemplo de uso\n\n\n\n\npwd\nMuestra el directorio actual\npwd\n\n\nhistory\nMuestra el historial de comandos\nhistory\n\n\nls\nObservar el contenido de los archivos en un directorio\nls mi_directorio\n\n\nwhich\nMuestra la ruta del ejecutable de un comando\nwhich python\n\n\nfile\nMuestra el tipo de archivo (texto, binario, etc.)\nfile documento.txt\n\n\nwhoami\nMuestra el usuario actual\nwhoami\n\n\nwhich\nMuestra la ubicación del ejecutable de un comando\nwhich python",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "text": "6.5 Explorar y obtener información\nComandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema\n\n\n\n\n\n\n\n\nComandos\nInformación\nEjemplo de uso\n\n\n\n\npwd\nMuestra el directorio actual\npwd\n\n\nhistory\nMuestra el historial de comandos\nhistory\n\n\nls\nObservar el contenido de los archivos en un directorio\nls mi_directorio\n\n\nfile\nMuestra el tipo de archivo (texto, binario, etc.)\nfile documento.txt\n\n\nwhoami\nMuestra el usuario actual\nwhoami\n\n\nwhich\nMuestra la ubicación del ejecutable de un comando\nwhich python"
   },
   {
     "objectID": "Cap1_B.html#moverse-en-el-sistema-de-archivos",
     "href": "Cap1_B.html#moverse-en-el-sistema-de-archivos",
     "title": "6  Mis primeros pasos en Bash",
     "section": "6.6 Moverse en el sistema de archivos",
-    "text": "6.6 Moverse en el sistema de archivos\nComandos para navegar entre directorios y rutas\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ncd\nCambia de directorio\ncd ~/Documentos\n\n\ncd ..\nSube un nivel en la jerarquía de directorios\ncd ..\n\n\ncd ~\nVa al directorio personal del usuario\ncd ~\n\n\ncd -\nVuelve al directorio anterior\ncd -",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "text": "6.6 Moverse en el sistema de archivos\nComandos para navegar entre directorios y rutas\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ncd\nCambia de directorio\ncd ~/Documentos\n\n\ncd ..\nSube un nivel en la jerarquía de directorios\ncd ..\n\n\ncd ~\nVa al directorio personal del usuario\ncd ~\n\n\ncd -\nVuelve al directorio anterior\ncd -"
   },
   {
     "objectID": "Cap1_B.html#crear-copiar-mover-y-eliminar",
@@ -473,31 +422,22 @@
     "objectID": "Cap1_B.html#permisos-y-propiedades",
     "href": "Cap1_B.html#permisos-y-propiedades",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.11 Permisos y propiedades",
-    "text": "6.11 Permisos y propiedades\nComandos para ver o modificar quién puede leer, escribir o ejecutar archivos\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nls -l\nMuestra permisos y propietarios\nls -l\n\n\nchmod\nCambia permisos de un archivo\nchmod u+x script.sh\n\n\nchown\nCambia propietario del archivo\nchown usuario archivo.txt",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.7 Permisos y propiedades",
+    "text": "6.7 Permisos y propiedades\nComandos para ver o modificar quién puede leer, escribir o ejecutar archivos\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nls -l\nMuestra permisos y propietarios\nls -l\n\n\nchmod\nCambia permisos de un archivo\nchmod u+x script.sh\n\n\nchown\nCambia propietario del archivo\nchown usuario archivo.txt"
   },
   {
     "objectID": "Cap1_B.html#compresión-y-empaquetado",
     "href": "Cap1_B.html#compresión-y-empaquetado",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.12 Compresión y empaquetado",
-    "text": "6.12 Compresión y empaquetado\nComandos para ahorrar espacio o mover varios archivos juntos\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ngzip / gunzip\nComprime o descomprime archivos\ngzip datos.txt\n\n\ntar\nEmpaqueta y comprime directorios\ntar -czf proyecto.tar.gz directorio/\n\n\nzip / unzip\nComprime o descomprime archivos\nzip -r resultados.zip ./resultados/",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.8 Compresión y empaquetado",
+    "text": "6.8 Compresión y empaquetado\nComandos para ahorrar espacio o mover varios archivos juntos\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ngzip / gunzip\nComprime o descomprime archivos\ngzip datos.txt\n\n\ntar\nEmpaqueta y comprime directorios\ntar -czf proyecto.tar.gz directorio/\n\n\nzip / unzip\nComprime o descomprime archivos\nzip -r resultados.zip ./resultados/"
   },
   {
     "objectID": "Cap1_B.html#transferencia-de-archivos-entre-sistemas",
     "href": "Cap1_B.html#transferencia-de-archivos-entre-sistemas",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.13 Transferencia de archivos entre sistemas",
-    "text": "6.13 Transferencia de archivos entre sistemas\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nssh\nConecta de forma segura a otro sistema remoto\nssh usuario@servidor\n\n\nscp\nCopia archivos entre equipos a través de SSH\nscp archivo.txt usuario@servidor:/home/usuario/\n\n\nscp -r\nCopia recursivamente directorios completos\nscp -r datos/ usuario@servidor:/home/usuario/backup/\n\n\nrsync\nSincroniza directorios locales o remotas, copiando solo los archivos nuevos o modificados\nrsync -av datos/ usuario@servidor:/home/usuario/backup/",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.9 Transferencia de archivos entre sistemas",
+    "text": "6.9 Transferencia de archivos entre sistemas\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nssh\nConecta de forma segura a otro sistema remoto\nssh usuario@servidor\n\n\nscp\nCopia archivos entre equipos a través de SSH\nscp archivo.txt usuario@servidor:/home/usuario/\n\n\nscp -r\nCopia recursivamente directorios completos\nscp -r datos/ usuario@servidor:/home/usuario/backup/\n\n\nrsync\nSincroniza directorios locales o remotas, copiando solo los archivos nuevos o modificados\nrsync -av datos/ usuario@servidor:/home/usuario/backup/"
   },
   {
     "objectID": "Cap1_B.html#redirección-y-concatenación",
@@ -513,61 +453,43 @@
     "objectID": "Cap1_B.html#información-del-sistema",
     "href": "Cap1_B.html#información-del-sistema",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.15 Información del sistema",
-    "text": "6.15 Información del sistema\nPara conocer recursos o procesos en ejecución\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ndf -h\nMuestra espacio en el disco\ndf -h\n\n\ntop\nMuestra procesos activos\ntop\n\n\nuname -a\nInformación del sistema operativo\nuname -a",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.10 Información del sistema",
+    "text": "6.10 Información del sistema\nPara conocer recursos o procesos en ejecución\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ndf -h\nMuestra espacio en el disco\ndf -h\n\n\ntop\nMuestra procesos activos\ntop\n\n\nuname -a\nInformación del sistema operativo\nuname -a"
   },
   {
     "objectID": "Cap1_B.html#comandos-de-ayuda",
     "href": "Cap1_B.html#comandos-de-ayuda",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.16 Comandos de ayuda",
-    "text": "6.16 Comandos de ayuda\nPara explorar y aprender sobre otros comandos\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nman\nMuestra el manual de un comando\nman ls\n\n\n-h/--help\nMuestra ayuda rápida\nls -h/ls --help",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.11 Comandos de ayuda",
+    "text": "6.11 Comandos de ayuda\nPara explorar y aprender sobre otros comandos\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nman\nMuestra el manual de un comando\nman ls\n\n\n-h/--help\nMuestra ayuda rápida\nls -h/ls --help"
   },
   {
     "objectID": "Cap1_B.html#consultar-información-sobre-archivos-y-directorios",
     "href": "Cap1_B.html#consultar-información-sobre-archivos-y-directorios",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.17 Consultar información sobre archivos y directorios",
-    "text": "6.17 Consultar información sobre archivos y directorios\n\n6.17.1 Información contenida\nCada columna en la salida anterior tiene un significado:\n\n\n\n6.17.2 Permisos\nCada usuario tiene permisos diferentes cuando crea un archivo. Los permisos pueden modificarse con chmod.\nLos caracteres atribuidos a los permisos son:\n\nr : lectura (Read)\nw : escritura(Write)\nx : ejecución (eXecute)\n\nCada archivo tiene tres grupos de permisos: usuario (u), grupo (g) y otros (o).\nEn el siguiente ejemplo, el usuario cuenta con todos los permisos activos, mientras que el grupo y otros tienen solo permisos de lectura y ejecución.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.12 Consultar información sobre archivos y directorios",
+    "text": "6.12 Consultar información sobre archivos y directorios\n\n6.12.1 Información contenida\nCada columna en la salida anterior tiene un significado:\n\n\n\n\n\n\n\n6.12.2 Permisos\nCada usuario tiene permisos diferentes cuando crea un archivo. Los permisos pueden modificarse con chmod.\nLos caracteres atribuidos a los permisos son:\n\nr : lectura (Read)\nw : escritura(Write)\nx : ejecución (eXecute)\n\nCada archivo tiene tres grupos de permisos: usuario (u), grupo (g) y otros (o).\nEn el siguiente ejemplo, el usuario cuenta con todos los permisos activos, mientras que el grupo y otros tienen solo permisos de lectura y ejecución."
   },
   {
     "objectID": "Cap1_B.html#chmod-cambiar-permisos",
     "href": "Cap1_B.html#chmod-cambiar-permisos",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.18 chmod: Cambiar permisos",
-    "text": "6.18 chmod: Cambiar permisos\nLa representación octal de chmod es muy sencilla\n\nr = Lectura tiene el valor de 4\nw = Escritura tiene el valor de 2\nx = Ejecución tiene el valor de 1\n\n\n\n\nPermisos\nValor\nSignificado\n\n\n\n\nrwx\n7\nLectura, escritura y ejecución\n\n\nrw-\n6\nLectura, escritura\n\n\nr-x\n5\nLectura y ejecución\n\n\nr--\n4\nLectura\n\n\n-wx\n3\nEscritura y ejecución\n\n\n-w-\n2\nEscritura\n\n\n--x\n1\nEjecución\n\n\n---\n0\nSin permisos\n\n\n\nPor lo tanto:\n\n\n\nForma larga\nForma Octal\n\n\n\n\nchmod u=rwx,g=rwx,o=rx\nchmod 775\n\n\nchmod u=rwx,g=rx,o=\nchmod 760\n\n\nchmod u=rw,g=r,o=r\nchmod 644\n\n\nchmod u=rw,g=r,o=\nchmod 640\n\n\nchmod u=rw,go=\nchmod 600\n\n\nchmod u=rwx,go=\nchmod 700",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.13 chmod: Cambiar permisos",
+    "text": "6.13 chmod: Cambiar permisos\nLa representación octal de chmod es muy sencilla\n\nr = Lectura tiene el valor de 4\nw = Escritura tiene el valor de 2\nx = Ejecución tiene el valor de 1\n\n\n\n\nPermisos\nValor\nSignificado\n\n\n\n\nrwx\n7\nLectura, escritura y ejecución\n\n\nrw-\n6\nLectura, escritura\n\n\nr-x\n5\nLectura y ejecución\n\n\nr--\n4\nLectura\n\n\n-wx\n3\nEscritura y ejecución\n\n\n-w-\n2\nEscritura\n\n\n--x\n1\nEjecución\n\n\n---\n0\nSin permisos\n\n\n\nPor lo tanto:\n\n\n\nForma larga\nForma Octal\n\n\n\n\nchmod u=rwx,g=rwx,o=rx\nchmod 775\n\n\nchmod u=rwx,g=rx,o=\nchmod 760\n\n\nchmod u=rw,g=r,o=r\nchmod 644\n\n\nchmod u=rw,g=r,o=\nchmod 640\n\n\nchmod u=rw,go=\nchmod 600\n\n\nchmod u=rwx,go=\nchmod 700"
   },
   {
     "objectID": "Cap1_B.html#comprimir-y-descomprimir-archivos",
     "href": "Cap1_B.html#comprimir-y-descomprimir-archivos",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.19 Comprimir y descomprimir archivos",
-    "text": "6.19 Comprimir y descomprimir archivos\nLos archivos pueden contener diversos tipos de extensiones, dependiendo del objetivo será necesario descomprimirlos y en otros dejarlos comprimidos para no abarcar tanto espacio en tu espacio de trabajo. \n\n\n\n\n\n\n\n\nTipo de archivo\nComprimir\nDescomprimir\n\n\n\n\ndirectorio.tar\ntar -cvf directorio.tar /dir/a/comprimir/directorio\ntar -xvf directorio.tar\n\n\ndirectorio.tar.gz\ntar -czvf directorio.tar.gz /directorio/a/empaquetar/directorio\ntar -zxvf directorio.tar.gz\n\n\narchivo.gz\ngzip -9 archivo.txt\ngunzip -kd archivo.txt.gz\n\n\ndirectorio.zip\nzip -r directorio.zip directorio\nunzip directorio.zip\n\n\n\n\n\n\n\n\n\nEjercicio 2\n\n\n\n\nDescarga todo el repositorio comprimido unix.bioinfo.rsgecuador en tu computadora. El archivo se almacenara con la extension (.ZIP).\nColocate en la directorio donde se encuentra el archivo. Ejemplo en mi computadora: cd \"C:/Users/ecoss/Documents/Respaldos/Github_notes/Workshop_Bash2024/data\"\nDescomprime el archivo ZIP. unzip unix.bioinfo.rsgecuador-gh-pages.zip",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.14 Comprimir y descomprimir archivos",
+    "text": "6.14 Comprimir y descomprimir archivos\nLos archivos pueden tener distintas extensiones según su propósito. En algunos casos será necesario descomprimirlos para acceder a su contenido, y en otros conviene mantenerlos comprimidos para ahorrar espacio en tu entorno de trabajo. \n\n\n\n\n\n\n\n\nTipo de archivo\nComprimir\nDescomprimir\n\n\n\n\ndirectorio.tar\ntar -cvf directorio.tar /dir/a/comprimir/directorio\ntar -xvf directorio.tar\n\n\ndirectorio.tar.gz\ntar -czvf directorio.tar.gz /directorio/a/empaquetar/directorio\ntar -zxvf directorio.tar.gz\n\n\narchivo.gz\ngzip -9 archivo.txt\ngunzip -kd archivo.txt.gz\n\n\ndirectorio.zip\nzip -r directorio.zip directorio\nunzip directorio.zip\n\n\n\n\n\n\n\n\n\nEjercicio 2\n\n\n\n\nDescarga todo el repositorio comprimido unix.bioinfo.rsgecuador en tu computadora. El archivo se almacenara con la extension (.ZIP).\nColocate en la directorio donde se encuentra el archivo. Ejemplo en mi computadora: cd \"C:/Users/ecoss/Documents/Respaldos/Github_notes/Workshop_Bash2024/data\"\nDescomprime el archivo ZIP. unzip unix.bioinfo.rsgecuador-gh-pages.zip"
   },
   {
     "objectID": "Cap1_B.html#material-suplementario",
     "href": "Cap1_B.html#material-suplementario",
     "title": "6  Mis primeros pasos en Bash",
-    "section": "6.20 Material suplementario",
-    "text": "6.20 Material suplementario\n\nSoftware Carpentry. La terminal de Unix\nRSG Ecuador.GNU/Linux para bioinfomatica\nIntroduction to the Unix Shell for TranscriptomicsTutorial.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Mis primeros pasos en Bash</span>"
-    ]
+    "section": "6.15 Material suplementario",
+    "text": "6.15 Material suplementario\n\nSoftware Carpentry. La terminal de Unix\nRSG Ecuador.GNU/Linux para bioinfomatica\nIntroduction to the Unix Shell for TranscriptomicsTutorial."
   },
   {
     "objectID": "Cap1_R.html",
@@ -583,31 +505,22 @@
     "objectID": "Cap1_R.html#ejecutar-código",
     "href": "Cap1_R.html#ejecutar-código",
     "title": "7  Primeros pasos en R",
-    "section": "",
-    "text": "Correr una línea de código: selecciona la línea o colócate al final de ella y presiona Ctrl + Enter (Windows/Linux) o ⌘ + Enter (Mac).\nEsto enviará el código seleccionado a la consola para su ejecución.\nUsar el botón Run: también puedes ejecutar el código haciendo clic en el botón Run, ubicado en la parte superior derecha del panel de scripts.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Primeros pasos en R</span>"
-    ]
+    "section": "7.1 Ejecutar código",
+    "text": "7.1 Ejecutar código\nPuedes ejecutar el código de varias formas:\n\nCorrer una línea de código: selecciona la línea o colócate al final de ella y presiona Ctrl + Enter (Windows/Linux) o ⌘ + Enter (Mac).\nEsto enviará el código seleccionado a la consola para su ejecución.\nUsar el botón Run: también puedes ejecutar el código haciendo clic en el botón Run, ubicado en la parte superior derecha del panel de scripts.\n\nSi no hay texto seleccionado al ejecutar Ctrl + Enter /⌘ + Enter o Run, R ejecutará la línea donde está el cursor; si hay texto seleccionado, ejecutará solo esa parte."
   },
   {
     "objectID": "Cap1_R.html#usar-r-como-calculadora",
     "href": "Cap1_R.html#usar-r-como-calculadora",
     "title": "7  Primeros pasos en R",
     "section": "7.2 Usar R como calculadora",
-    "text": "7.2 Usar R como calculadora\nUna de las formas más sencillas de comenzar a usar R es como una calculadora interactiva.\nLa consola de R puede evaluar expresiones matemáticas y mostrar los resultados de inmediato.\nPor ejemplo, escribe lo siguiente en la consola y presiona Enter:\n\n\nCode\n 3+500\n\n\n[1] 503\n\n\nR responderá con:\nEl número entre corchetes [1] indica el índice del primer elemento mostrado.\nEsto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.\n\nOperaciones básicas\nPuedes realizar diferentes operaciones aritméticas:\n\n\nCode\n3 + 5 # suma \n\n\n[1] 8\n\n\nCode\n7 - 2 # resta \n\n\n[1] 5\n\n\nCode\n4 * 6 # multiplicación \n\n\n[1] 24\n\n\nCode\n9 / 3 # división \n\n\n[1] 3\n\n\nCode\n2^3 # potencia (2 elevado a la 3)\n\n\n[1] 8\n\n\nCuando realices operaciones más complejas en R, el orden de operaciones sigue las mismas reglas matemáticas de siempre:\nDe mayor a menor precedencia:\n\nParéntesis: (, )\nExponentes: ^ o **\nMultiplicación: *\nDivisión: /\nSuma: +\nResta: -\n\n\n\nCode\n4+2 * 3\n\n\n[1] 10\n\n\nUsa paréntesis para agrupar operaciones y forzar el orden de evaluación si difiere del predeterminado, o para aclarar tus intenciones:\n\n\nCode\n# Sin paréntesis: se sigue el orden de operaciones\n 2 + 3 * 4   \n\n\n[1] 14\n\n\nCode\n# Con paréntesis: cambiamos el orden de evaluación\n(2 + 3) * 4 \n\n\n[1] 20\n\n\n\n\nNotación científica\nNúmeros muy pequeños o muy grandes se muestran en notación científica:\n\n\nCode\n7/10000\n\n\n[1] 7e-04\n\n\nEsto es una abreviación de “multiplicado por 10^XX”. Por ejemplo, 7e-4 es equivalente a 7 * 10^(-4).\nTambién puedes escribir números directamente en notación científica:\n\n\nCode\n5e3 # Nota que no hay signo menos\n\n\n[1] 5000\n\n\n\n\nComandos incompletos\nSi escribes una instrucción incompleta, R esperará que la termines.\nPor ejemplo:\n3+\nVerás que el símbolo de la consola cambia de &gt; a +.\nEsto indica que R está esperando que completes el comando.\nSi deseas cancelar, presiona Esc (o Ctrl + C).",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Primeros pasos en R</span>"
-    ]
+    "text": "7.2 Usar R como calculadora\nUna de las formas más sencillas de comenzar a usar R es como una calculadora interactiva.\nLa consola de R puede evaluar expresiones matemáticas y mostrar los resultados de inmediato.\nPor ejemplo, escribe lo siguiente en la consola y presiona Enter:\n\n\nCode\n 3+500\n\n\n[1] 503\n\n\nR responderá con:\nEl número entre corchetes [1] indica el índice del primer elemento mostrado.\nEsto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.\n\n7.2.1 Operaciones básicas\nPuedes realizar diferentes operaciones aritméticas:\n\n\nCode\n3 + 5 # suma \n\n\n[1] 8\n\n\nCode\n7 - 2 # resta \n\n\n[1] 5\n\n\nCode\n4 * 6 # multiplicación \n\n\n[1] 24\n\n\nCode\n9 / 3 # división \n\n\n[1] 3\n\n\nCode\n2^3 # potencia (2 elevado a la 3)\n\n\n[1] 8\n\n\nCuando realices operaciones más complejas en R, el orden de operaciones sigue las mismas reglas matemáticas de siempre:\nDe mayor a menor precedencia:\n\nParéntesis: (, )\nExponentes: ^ o **\nMultiplicación: *\nDivisión: /\nSuma: +\nResta: -\n\n\n\nCode\n4+2 * 3\n\n\n[1] 10\n\n\nUsa paréntesis para agrupar operaciones y forzar el orden de evaluación si difiere del predeterminado, o para aclarar tus intenciones:\n\n\nCode\n# Sin paréntesis: se sigue el orden de operaciones\n 2 + 3 * 4   \n\n\n[1] 14\n\n\nCode\n# Con paréntesis: cambiamos el orden de evaluación\n(2 + 3) * 4 \n\n\n[1] 20\n\n\n\n\n7.2.2 Notación científica\nNúmeros muy pequeños o muy grandes se muestran en notación científica:\n\n\nCode\n7/10000\n\n\n[1] 7e-04\n\n\nEsto es una abreviación de “multiplicado por 10^XX”. Por ejemplo, 7e-4 es equivalente a 7 * 10^(-4).\nTambién puedes escribir números directamente en notación científica:\n\n\nCode\n5e3 # Nota que no hay signo menos\n\n\n[1] 5000\n\n\n\n\n7.2.3 Comparando valores\nTambién podemos hacer comparaciones en R:\nIgualdad:\n\nLos dos signos igual, se leen “es igual a”\n\n\n\nCode\n7 == 7 \n\n\n[1] TRUE\n\n\n\nDesigualdad:\n\nSe lee “no es igual a”\n\n\n\nCode\n1 != 2\n\n\n[1] TRUE\n\n\nMenor que:\n\n\nCode\n1 &lt; 7\n\n\n[1] TRUE\n\n\nMenor o igual que:\n\n\nCode\n7 &lt;= 9\n\n\n[1] TRUE\n\n\nMayor que:\n\n\nCode\n1 &gt; 0\n\n\n[1] TRUE\n\n\nMayor o igual que:\n\n\nCode\n17 &gt;= 27\n\n\n[1] FALSE\n\n\n\nComandos incompletos\nSi escribes una instrucción incompleta, R esperará que la termines.\nPor ejemplo:\n3+\nVerás que el símbolo de la consola cambia de &gt; a +.\nEsto indica que R está esperando que completes el comando.\nSi deseas cancelar, presiona Esc (o Ctrl + C)."
   },
   {
     "objectID": "Cap1_R.html#funciones-matemáticas",
     "href": "Cap1_R.html#funciones-matemáticas",
     "title": "7  Primeros pasos en R",
     "section": "7.3 Funciones matemáticas",
-    "text": "7.3 Funciones matemáticas\nR tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:\n\n7.3.1 Guardar resultados\nPuedes guardar el resultado de una operación en un objeto usando el operador &lt;-:\n\nPara ver su valor, solo escribe el nombre del objeto:\n\n\n\n7.3.2 Comentarios en R\nPuedes agregar comentarios en tu código para explicar qué hace.\nTodo lo que esté después del símbolo # no se ejecutará:\n\n\nLimpiar tu entorno en R\nPuedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:\nked rm(list = ls())}\nPuedes limpiar la consola para empezar de nuevo haciendo clic en el ícono con forma de escoba 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado Ctrl + L(Windows/Linux) o ⌘ + L (Mac).",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Primeros pasos en R</span>"
-    ]
+    "text": "7.3 Funciones matemáticas\nR tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:\n\nFunciones trigonométricas:\n\n\n\nCode\nsin(1) \n\n\n[1] 0.841471\n\n\n\nLogaritmo natural\n\n\n\nCode\nlog(1)\n\n\n[1] 0\n\n\n\nLogaritmo en base 10\n\n\n\nCode\nlog10(10)\n\n\n[1] 1\n\n\n\nExponencial de un número, es decir: \\(e^x\\).\n\n\n\nCode\nexp(0.5)  # Calcula e^(0.5)\n\n\n[1] 1.648721"
   },
   {
     "objectID": "Cap2_B.html",
@@ -622,12 +535,9 @@
   {
     "objectID": "Cap2_B.html#referencia",
     "href": "Cap2_B.html#referencia",
-    "title": "8  Instalar Git Bash en Windows",
-    "section": "",
-    "text": "Guia de instalacion de Git Bash",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Instalar Git Bash en Windows</span>"
-    ]
+    "title": "8  Explorando texto y flujo de datos de Bash",
+    "section": "8.7 Referencia",
+    "text": "8.7 Referencia\n\nGuia de instalacion de Git Bash"
   },
   {
     "objectID": "Cap3_B.html",
@@ -848,5 +758,68 @@
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Buenas practicas en R</span>"
     ]
+  },
+  {
+    "objectID": "Cap1_R.html#variables-y-objetos-en-r",
+    "href": "Cap1_R.html#variables-y-objetos-en-r",
+    "title": "7  Primeros pasos en R",
+    "section": "7.4 Variables y objetos en R",
+    "text": "7.4 Variables y objetos en R\n\n7.4.1 Variables\nEn el mundo de la programación, las variables son elementos esenciales para almacenar y manejar información. En R, una variable funciona como una etiqueta que nos permite referirnos a un dato y guardarlo en un espacio de memoria. Para asignar un valor a una variable usamos el operador &lt;-, que nos permite darle un nombre a ese dato para utilizarlo más adelante, así:\n\n\nCode\nx &lt;- 10 * 50\n\n\nEsto significa:\n\nx es el nombre de la variable.\n&lt;- significa “asignar”.\n10 es el valor del objeto que guardas dentro de la variable.\n\nObserva que al asignar un valor R no imprime el resultado.\n\nEn su lugar, lo guarda para usarlo después en la variable. Para conocer el valor de la variable puedes hacerlo solo poniendo el nombre de la variable y correrlo o utilizar la función print() con el nombre de la variable adentro. Así:\n\n\n\nCode\nx # solo el nombre de la variable\n\n\n[1] 500\n\n\nCode\nprint(x) # con la funcion print\n\n\n[1] 500\n\n\nAhora, podrás ver que en la pestaña de Environment (panel superior derecho), la variable x y su valor han aparecido.\nTambién es posible asignar utilizando =:\n\n\nCode\ny = 10 * 50\n\ny\n\n\n[1] 500\n\n\nSin embargo, en la comunidad de R es mucho menos común.\n\nLa recomendación general es usar &lt;-, ya que es más claro en la mayoría de contextos. Además, de que puede haber mayor confusión en códigos más complejos.\n\n\n7.4.2 Objetos"
+  },
+  {
+    "objectID": "Cap1_R.html#tips-en-r",
+    "href": "Cap1_R.html#tips-en-r",
+    "title": "7  Primeros pasos en R",
+    "section": "7.5 Tips en R",
+    "text": "7.5 Tips en R\n\n7.5.1 Conocer tu ruta de trabajo\nLa función getwd() te devuelve la ruta absoluta del directorio de trabajo\n\n\nCode\ngetwd() \n\n\n[1] \"D:/RSG_Mexico/Workshop_Bash2025\"\n\n\n\n\n7.5.2 Comentarios en R\nPuedes agregar comentarios en tu código para explicar qué hace. Todo lo que escribas después del símbolo # no se ejecuta.\n\n\nCode\n3 + 3 # Asi se ve un comentario\n\n\n[1] 6\n\n\nNota: Evita usar acentos o la letra ñ en los comentarios. Esto ayuda a prevenir que, al abrir el archivo de nuevo, aparezcan caracteres raros como:\n\nÃ¡ en lugar de á\nÃ© en lugar de é\nÃ± en lugar de ñ\nÂ que aparece pegado a letras\n? o � (el famoso \"rombo con signo de interrogación\")\n\n\n\n7.5.3 Limpiar tu entorno en R\nPuedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:\n\n\nCode\nrm(list = ls())\n\n\nPuedes limpiar la consola para empezar de nuevo haciendo clic en el ícono con forma de escoba 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado Ctrl + L(Windows/Linux) o ⌘ + L (Mac)."
+  },
+  {
+    "objectID": "Cap1_B.html#entorno-de-bash",
+    "href": "Cap1_B.html#entorno-de-bash",
+    "title": "6  Mis primeros pasos en Bash",
+    "section": "6.1 Entorno de Bash",
+    "text": "6.1 Entorno de Bash\n\nEl signo $ es un prompt, que nos muestra que la terminal está esperando una entrada; tu terminal puede usar un carácter diferente como prompt y puede agregar información antes de él. Al teclear comandos, ya sea a partir de estas lecciones o de otras fuentes, no escribas el prompt ($), sólo los comandos que le siguen."
+  },
+  {
+    "objectID": "Cap2_B.html#manipulación-de-archivos",
+    "href": "Cap2_B.html#manipulación-de-archivos",
+    "title": "8  Explorando texto y flujo de datos de Bash",
+    "section": "8.1 Manipulación de archivos",
+    "text": "8.1 Manipulación de archivos\nEn la terminal trabajamos dentro de un sistema de archivos organizado en directorios.\nUn directorio cumple la misma función que una “carpeta” en una computadora, pero en el contexto de la línea de comandos se utiliza el término directorio porque proviene de la estructura jerárquica del sistema operativo (como el “árbol de directorios”), no de una metáfora gráfica.\nLa organización en directorios es fundamental para mantener un espacio de trabajo claro y ordenado, especialmente cuando trabajamos con muchos archivos o con proyectos que contienen datos, scripts y resultados.\nPara crear y eliminar directorios usaremos dos comandos básicos:\n\nmkdir - crea directorios nuevos\n\nrmdir - elimina directorios vacíos\n\nEstos comandos permiten organizar tu trabajo de manera estructurada desde la terminal.\n\n\n\n\n\n\nEjercicio 1\n\n\n\n\n¿Cuál es la línea de comando para crear un directorio llamado “mi primer directorio”?\n\n\n\n\n\n\n\n¡Cuidado!\n\n\n\nAl escribir nombres con varias palabras, Bash interpreta cada espacio como si fuera un argumento diferente. Para evitar problemas, es recomendable usar un separador\n\n\n\n¿Qué ocurre si no utilizo separadores para crear “mi primer directorio”?\nEnlista los archivos que hay en el directorio actual\nElimina los directorios creados en el inciso 2)\n\n\n\n\n\n\n\nSoluciones\n\n\n\n\nmkdir mi_primer_directorio\n\n\n\n\n\n\n\nImportant\n\n\n\nPara nombrar un directorio o archivo con más de una palabra es recomendable utilizar un separador, en este caso guiónes bajos.\n\n\n\nBash interpreta que debe de crear tres directorios diferentes: “mi”, “primer”, y “directorio”\nlsols -l\nmkdir mi_segundo_directorio\nrmdir mi_primer_directorio"
+  },
+  {
+    "objectID": "Cap2_B.html#creación-de-un-archivo-de-texto",
+    "href": "Cap2_B.html#creación-de-un-archivo-de-texto",
+    "title": "8  Explorando texto y flujo de datos de Bash",
+    "section": "8.2 Creación de un archivo de texto",
+    "text": "8.2 Creación de un archivo de texto\nAntes de crear y manipular un archivo de texto, aclaremos algunos conceptos básicos:\n¿Qué es un archivo de texto?\nEs un archivo formado por líneas de caracteres que pueden incluir letras, números, espacios y signos de puntuación. No contiene formato (negritas, colores, tamaño de letra), solo texto plano.\n¿Qué es una línea?\nUna línea es un conjunto de caracteres que termina con un salto de línea. Aunque un párrafo se vea largo, si no contiene saltos de línea, sigue siendo una sola línea para la computadora.\n¿Qué es un carácter?\nUn carácter es cualquier símbolo individual: letras (a, b, c), números (0–9), espacios, puntos, comas, saltos de línea, etc.\n¿Qué es un editor de texto en terminal?\nEs un programa que permite crear o modificar archivos sin un entorno gráfico.\nAhora posicionemonos en el directorio con el comando cd: y utilicemos por primera vez el comando nano para crear un archivo de texto\ncd mi_primer_directorio/\nnano fragmento.txt\nEl editor nano es uno de los editores de texto más sencillos y accesibles en Linux.\nPermite crear y modificar archivos directamente desde la terminal sin necesidad de interfaces gráficas, lo que lo convierte en una herramienta esencial cuando se trabaja en servidores remotos o entornos bioinformáticos.\nAl abrir un archivo con nano, verás el contenido del archivo (si existe) y, en la parte inferior, una lista de comandos abreviados.\n\n\n\n\n\n\nNote\n\n\n\nLos atajos se indican con el símbolo ^, que representa la tecla Ctrl.\nPor ejemplo, ^O significa presionar Ctrl + O.\nEn !OS en vez de Ctrl es CMD\n\n\nUna vez dentro de nano, puedes escribir, editar, guardar y salir usando los comandos que aparecen al pie de la pantalla.\nPrincipales comandos de nano\n\n\n\n\n\n\n\n\nAtajo\nAcción\nDescripción\n\n\n\n\nCtrl + O\nGuardar archivo\nGuarda los cambios sin salir.\n\n\nCtrl + X\nSalir\nCierra nano (pide guardar si hay cambios).\n\n\nCtrl + W\nBuscar texto\nBusca una palabra o frase en el archivo.\n\n\nCtrl + K\nCortar línea\nElimina la línea actual y la guarda temporalmente.\n\n\nCtrl + U\nPegar línea\nPega la línea cortada o copiada.\n\n\nCtrl + C\nMostrar posición\nMuestra el número de línea y columna.\n\n\nCtrl + G\nAyuda\nAbre la guía rápida de comandos.\n\n\n\n\n8.2.1 Ejercicio 2: Creación de un archivo de texto\nPara el siguiente ejercicio utilizaremos un fragmento del libro “Cien años de soledad” escrito García Marquez (1967):\n\n\n\n\n\n\nCien años de soledad (fragmento) - Gabriel García Marquez\n\n\n\n“Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar aquella tarde remota en que su padre lo llevó a conocer el hielo. Macondo era entonces una aldea de veinte casas de barro y cañabrava construidas a la orilla de un río de aguas diáfanas que se precipitaban por un lecho de piedras pulidas, blancas y enormes como huevos prehistóricos. El mundo era tan reciente, que muchas cosas carecían de nombre, y para mencionarlas había que señalarlas con el dedo. Todos los años, por el mes de marzo, una familia de gitanos desarrapados plantaba su carpa cerca de la aldea, y con un grande alboroto de pitos y timbales daban a conocer los nuevos inventos. Primero llevaron el imán. Un gitano corpulento de barba montaraz y manos de gorrión, que se presentó con el nombre de Melquíades, hizo una truculenta demostración pública de lo que él mismo llamaba la octava maravilla de los sabios alquimistas de Macedonia. Fue de casa en casa arrastrando dos lingotes metálicos, y todo el mundo se espantó al ver que…” ….\n“Cuando el pirata Francis Drake asaltó Riohacha, en el siglos XVI, la bisabuela de Úrsula Iguarán se asustó tanto con el toque de rebato y el estampido de los cañones, que perdió el control de los nervios y se sentó en un fogón encendido. Las quemaduras la dejaron convertida en una esposa inútil para toda la vida. No podía sentarse sino de medio lado, acomodada en cojines, y algo extraño debió quedarle en el modo de andar, porque nunca volvió a caminar en público. Renunció a toda clase de hábitos sociales obsesionada por la idea de que su cuerpo despedía un olor a chamusquina. El alba la sorprendía en el patio sin atreverse a dormir, porque soñaba que los ingleses con sus feroces perros de asalto se metían por la ventana del dormitorio y la sometían a vergonzosos tormentos con hierros al rojo vivo. Su marido, un comerciante aragonés con quien tenía dos hijos, se gastó media tienda en medicinas y entretenimientos buscando la manera de aliviar sus terrores. Por último liquidó el negocio y llevó la familia a vivir lejos del mar, en una ranchería de indios pacíficos situada en las estribaciones de la sierra, donde le construyó a su mujer un dormitorio sin ventanas para que no tuvieran por donde entrar los piratas de sus pesadillas”. ….\n“El coronel Aureliano Buendía promovió treinta dos levantamientos armados y los perdió todos. Tuvo diecisiete hijos varones de diecisiete mujeres distintas, que fueron exterminados uno tras otro en una sola noche, antes de que el mayor cumpliera treinta y cinco años. Escapó a catorce atentados, a setenta y tres emboscadas y a un pelotón de fusilamiento. Sobrevivió a una carga de estricnina en el café que habría bastado para matar un caballo. Rechazó la Orden del Mérito que le otorgó el presidente de la república. Llegó a ser comandante general de las fuerzas revolucionarias, con jurisdicción y mando de una frontera a la otra, y el hombre más temido por el gobierno, pero nunca permitió que le tomaran una fotografía. Declinó la pensión vitalicia que le ofrecieron después de la guerra y vivió hasta la vejez de los pescaditos de oro que fabricaba en su taller de Macondo. Aunque peleó siempre al frente de sus hombres, la única herida que recibió se la produjo él mismo después de firmar la capitulación de Neerlandia que puso término a casi veinte años de guerras civiles”.\n\n\n\n\n\n\n\n\nAcerca de...\n\n\n\nCien años de soledad (1967) es una de las obras más reconocidas del escritor colombiano Gabriel García Márquez y un pilar fundamental del realismo mágico en la literatura latinoamericana. La novela narra la historia de la familia Buendía a lo largo de varias generaciones, desde la fundación del pueblo ficticio de Macondo hasta su decadencia.\nEn el libro se mezclan hechos cotidianos con elementos fantásticos presentados como parte natural de la vida, reflejando la complejidad social, histórica y emocional de América Latina. La obra explora temas como el tiempo cíclico, la memoria, la soledad, el poder, el destino y los vínculos familiares.\n\n\nCopiemos y peguemos el fragmento del libro en fragmento.txt que abrimos con nano. Puedes pegar texto:\n\nHaciendo clic derecho\nCtrl + v\n\nPara desplazarte desplazarte en el editor puedes utilizar las flechas de tu teclado: → hacia la derecha, ← hacia la izquierda, ↑ hacia arriba y ↓ hacia abajo.\nGuarda el archivo Ctrl + O y para confirmar los cambios presiona Enter\nPara salir del editor presiona Ctrl + X\nUna vez que tenemos un archivo de texto, el siguiente paso es aprender a explorarlo desde la terminal.\nLa mayoría de los análisis en Bash comienzan revisando información básica del archivo: cuántas líneas tiene, cuántas palabras contiene, cómo luce su comienzo o su final, etc.\nAunque podríamos abrir el archivo en un editor cada vez que queramos revisarlo, la terminal ofrece herramientas mucho más rápidas y eficientes para obtener esta información. Estas herramientas no modifican el archivo, solo muestran datos sobre él.\nPara lograr esto, Bash incluye utilidades como:\n\nwc - permite contar caracteres, palabras y líneas.\n\nhead - muestra el inicio de un archivo.\n\ntail - muestra el final del archivo.\n\n\n\n\n\n\n\nEjercicio 3\n\n\n\nPara fragmento.txt qué línea de comando utilizarías para…\n\nContar el número de caracteres\nContar el número de palabras\nContar el número de renglones\nMuestra las primeras cinco líneas\nMuestra las úlimas cinco líneas\n\n\n\n\n\n\n\nSoluciones\n\n\n\n\nwc -c fragmento.txt #Esto cuenta el número de caracteres\nwc -w fragmento.txt``#Esto cuenta el número de palabras\nwc -l fragmento.txt``#Esto cuenta el número de renglones\nhead -5 fragmento.txt``#Esto concatena las primeras cinco líneas\ntail -5 fragmento.txt``#Esto concatena las últimas cinco líneas"
+  },
+  {
+    "objectID": "Cap2_B.html#búsqueda-de-patrones-en-un-archivo-wild-cards",
+    "href": "Cap2_B.html#búsqueda-de-patrones-en-un-archivo-wild-cards",
+    "title": "8  Explorando texto y flujo de datos de Bash",
+    "section": "8.3 Búsqueda de patrones en un archivo (wild cards *[]?)",
+    "text": "8.3 Búsqueda de patrones en un archivo (wild cards *[]?)\nLos wildcards o wild characters son símbolos utilizados para representar uno o más caracteres. Se pueden utilizar con otros comandos para facilitar el procesamiento o búsqueda de archivos, directorios y datos en general.\n\n\n\nWildcard\nFunción\n\n\n\n\n*\nCoincide con cualquier cantidad de caracteres\n\n\n?\nCoincide con un solo caracter\n\n\n[ ]\nCoincide con un conjunto o rango de caracteres\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nEl wildcard más usado es * porque es muy versátil.\n\n\nAdemás de contar líneas, palabras o caracteres, muchas veces queremos buscar si cierta palabra o frase aparece dentro de un archivo de texto.\nEl comando grep sirve para buscar patrones de texto dentro de uno o varios archivos y mostrar las líneas donde aparece ese patrón.\n\n\n\n\n\n\nImportante\n\n\n\nLas wildcards buscan patrones en nombres de archivos, mientras que grep busca patrones dentro del contenido de los archivos.\n\n\n\n\n\n\n\n\nEjercicio 4\n\n\n\n\nMuestra las líneas donde aparece la palabra “Aureliano”. ¿Qué ocurre si en vez de escribir “Aureliano” escribes “aureliano”? ¿Hay alguna manera de buscar ignorando Mayúsculas/minúsculas?\nMuestra las líneas que no contienen la palabra “aldea”\nGuarda en un archivo todas las líneas que tengan la palabra “pirata”\n¿Qué hará el siguiente comando? grep \"[A-Z]\" *.txt\nMuestra las líneas que NO tengan letras mayúscula\n\n\n\n\n\n\n\nSoluciones\n\n\n\n\ngrep \"Aureliano\" fragmento.txt No hay resultados para la búsqueda, el comando grep es sensible a mayúsculas y minúsculas. grep -i \"aureliano\" fragmento.txt\ngrep -v \"aldea\" fragmento.txt\ngrep \"pirata\" fragmento.txt &gt; pirata.txt # El operador \"&gt;\" nos permite redirigir la búsqueda a un archivo de texto nuevo llamado \"pirata.txt\"\nDespliega todas las líneas que contengan al menos una palabra con letra mayúscula\ngrep -v \"[A-Z]\" fragmento.txt"
+  },
+  {
+    "objectID": "Cap2_B.html#uso-de-pipes-para-combinar-comandos-y-operadores",
+    "href": "Cap2_B.html#uso-de-pipes-para-combinar-comandos-y-operadores",
+    "title": "8  Explorando texto y flujo de datos de Bash",
+    "section": "8.4 Uso de pipes (|) para combinar comandos y operadores",
+    "text": "8.4 Uso de pipes (|) para combinar comandos y operadores\nLos pipes permiten encadenar estos comandos para crear un flujo de trabajo donde la salida de un comando pasa directamente a ser la entrada del siguiente. El símbolo | se conoce como pipe.\nLos pipes permiten:\n\nprocesar información sin crear archivos intermedios\ncombinar comandos simples para realizar tareas más complejas\ntrabajar de manera eficiente con archivos grandes\nconstruir flujos de análisis paso a paso\n\nLos corchetes [] se usan para buscar coincidencias específicas con conjunto o un rango de caracteres válidos para una posición.\n\n\n\n\n\n\nEjercicio 5\n\n\n\n\n¿Qué hará la siguiente línea de comando? grep \"años\" fragmento.txt | wc -l\nEscribe una línea de comando que muestre las 3 primeras líneas que contienen la palabra “años”\n¿Qué hará el siguiente comando? grep \"[A-Z]\" fragmento.txt\nEscribe una línea de comando que muestre las líneas que NO tengan letras mayúscula\n\n\n\n\n\n\n\nSoluciones\n\n\n\n\nCuenta cuántas líneas contienen la palabra “años”\ngrep \"años\" fragmento.txt | wc -l\ngrep \"años\" fragmento.txt | head -3\nDespliega todas las líneas que contengan al menos una palabra con letra mayúscula\ngrep -v \"[A-Z]\" fragmento.txt"
+  },
+  {
+    "objectID": "Cap2_B.html#uso-de-expresiones-regulares",
+    "href": "Cap2_B.html#uso-de-expresiones-regulares",
+    "title": "8  Explorando texto y flujo de datos de Bash",
+    "section": "8.5 Uso de expresiones regulares",
+    "text": "8.5 Uso de expresiones regulares\nLas expresiones regulares (regex) permiten buscar patrones más precisos dentro del texto. A diferencia de los comodines del shell (como *, ?, []), las expresiones regulares son interpretadas por comandos como grep y se aplican sobre el contenido de un archivo, no sobre los nombres de archivo.\nAunque existen expresiones regulares muy complejas, podemos comenzar con algunas básicas que son muy útiles en análisis de texto:\n\n^ marca el inicio de una línea\n$ marca el final de una línea\n. coincide con cualquier carácter\n\n\n\n\n\n\n\nEjercicio 6\n\n\n\n¿Qué harán las siguientes líneas de comando?\n\ngrep -i \"^e\" fragmento.txt\ngrep -i \"\\.$\" fragmento.txt\ngrep \"[0-9]\" fragmento.txt\n\n\n\n\n\n\n\nSoluciones\n\n\n\n\nMuestra todas las líneas que comienzan con la letra “e” mayúscula y minúscula\nEncuentra las líneas que terminan con punto “.”\nEncuentra líneas que contengan números"
+  },
+  {
+    "objectID": "Cap2_B.html#lista-de-comandos-importantes",
+    "href": "Cap2_B.html#lista-de-comandos-importantes",
+    "title": "8  Explorando texto y flujo de datos de Bash",
+    "section": "8.6 Lista de comandos importantes",
+    "text": "8.6 Lista de comandos importantes\n\n8.6.1 Crear, copiar, mover y eliminar\nComandos que modifican la estructura de directorios y archivos\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nmkdir\nCrea un nuevo directorio\nmkdir resultados\n\n\ntouch\nCrea un archivo vacío\ntouch notas.txt\n\n\ncp\nCopia archivos o directorios\ncp archivo.txt copia.txt\n\n\nmv\nMueve o renombra archivos\nmv datos.csv directorio/\n\n\nrm\nElimina archivos\nrm archivo.txt\n\n\nrmdir\nElimina directorios vacíos\nrmdir vieja/\n\n\n\n\n\n8.6.2 Editores de archivos\nEstos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\nnano\nEditor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo\nnano script.sh\n\n\nvim\nEditor avanzado con control mediante comandos; guarda con :w y sale con :q\nvim script.sh\n\n\n\n\n\n8.6.3 Exploración de archivos\nComandos para inspeccionar lo que hay dentro de los archivos sin abrirlos en un editor\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ncat\nMuestra el contenido completo\ncat notas.txt\n\n\nhead\nMuestra las primeras líneas\nhead -n 10 datos.csv\n\n\ntail\nMuestra las últimas líneas\ntail -n 20 registro.log\n\n\nless\nMuestra el contenido paginado\nless texto.txt\n\n\n\n\n\n8.6.4 Buscar y filtrar\nComandos para localizar texto o patrones dentro de archivos o directorios\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\ngrep\nBusca texto dentro de archivos\ngrep \"error\" log.txt\n\n\nfind\nBusca archivos según criterios\nfind . -name \"*.txt\"\n\n\nwc\nCuenta líneas, palabras o caracteres\nwc -l datos.txt\n\n\n\n\n\n8.6.5 Redirección y concatenación\nComandos para conectar procesos o guardar salidas\n\n\n\n\n\n\n\n\nComando\nDescripción\nEjemplo\n\n\n\n\n&gt;\nRedirige la salida a un archivo\nls &gt; lista.txt\n\n\n&gt;&gt;\nAgrega la salida al final del archivo existente\necho \"nuevo\" &gt;&gt; lista.txt\n\n\n&lt;\nUsa un archivo como entrada de un comando\nsort &lt; datos.txt\n\n\n|\nConecta la salida de un comando con la entrada de otro\ncat datos.txt | grep \"gene\""
   }
 ]
