@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 2&nbsp; Conceptos Unix y GNU/Linux</title>
+<title>Workshop Bash &amp; R - 10&nbsp; Introducción a las paqueterías y manejo de data frames en R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Cap1_B.html" rel="next">
-<link href="./Bpracticas.html" rel="prev">
+<link href="./install_B.html" rel="next">
+<link href="./Cap1_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro_bash.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap2_R.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_bash.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro_bash.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span></a>
   </div>
 </li>
@@ -190,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link">
+  <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></span></a>
   </div>
 </li>
@@ -212,25 +212,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#qué-es-unix" id="toc-qué-es-unix" class="nav-link active" data-scroll-target="#qué-es-unix"><span class="header-section-number">2.1</span> ¿Qué es UNIX?</a></li>
-  <li><a href="#gnulinux" id="toc-gnulinux" class="nav-link" data-scroll-target="#gnulinux"><span class="header-section-number">2.2</span> GNU/Linux</a></li>
-  <li><a href="#filosofía-gnulinux" id="toc-filosofía-gnulinux" class="nav-link" data-scroll-target="#filosofía-gnulinux"><span class="header-section-number">2.3</span> Filosofía GNU/Linux</a></li>
-  <li><a href="#ubuntu" id="toc-ubuntu" class="nav-link" data-scroll-target="#ubuntu"><span class="header-section-number">2.4</span> Ubuntu</a></li>
-  <li><a href="#shell-bash-bash-shell" id="toc-shell-bash-bash-shell" class="nav-link" data-scroll-target="#shell-bash-bash-shell"><span class="header-section-number">2.5</span> Shell / Bash / Bash Shell</a></li>
-  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">2.6</span> Material suplementario</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></h1>
 </div>
 
 
@@ -245,87 +234,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="qué-es-unix" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="qué-es-unix"><span class="header-section-number">2.1</span> ¿Qué es UNIX?</h2>
-<ul>
-<li>Sistema operativo (SO) creado por <strong>Ken Thompson y Dennis Ritchie</strong> de la empresa <em>Bell Laboratories</em> en 1969.</li>
-<li>SO multitarea y multiusuario.</li>
-</ul>
-</section>
-<section id="gnulinux" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="gnulinux"><span class="header-section-number">2.2</span> GNU/Linux</h2>
-<ul>
-<li>En 1983 <strong>Richard Stallman</strong> lideró la iniciativa <a href="https://www.gnu.org/">GNU</a> (GNU’s Not Unix), SO compatible con UNIX de libre distribución y acceso sin restricciones al código fuente.</li>
-<li>En 1991 <strong>Linus Torvalds</strong> creó su propio <a href="https://linuxjourney.com/lesson/kernel-overview">kernel</a> (Linux), que es la parte del SO que permite la comunicación con los componentes de Hardware. Este kernel fue distribuido de forma libre y gratuita.</li>
-<li>Ambos proyectos se juntaron y se creó <strong>GNU/Linux</strong></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_basico/01_Unix_GNU-Linux/1_Conceptos_Unix_GNU_Linux.html"><img src="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/_images/GNU_LIN1.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="filosofía-gnulinux" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="filosofía-gnulinux"><span class="header-section-number">2.3</span> Filosofía GNU/Linux</h2>
-<ul>
-<li>Los usuarios son libres de <strong>ejecutar, copiar, distribuir, estudiar, cambiar y mejorar</strong> el software.</li>
-<li>El <a href="https://www.gnu.org/philosophy/free-sw.html">software libre</a> se refiere a las libertades mencionadas, no al precio.</li>
-<li><a href="https://opensource.org/">“open source”</a> vs <a href="https://www.gnu.org/philosophy/free-sw.html">“free software”</a>.</li>
-</ul>
-</section>
-<section id="ubuntu" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="ubuntu"><span class="header-section-number">2.4</span> Ubuntu</h2>
-<ul>
-<li>Una de las distribuciones de GNU/Linux más populares.</li>
-<li>Está basada en <a href="https://www.debian.org/">Debian</a> y fue desarrollada por la empresa <a href="https://canonical.com/"><em>Canonical</em></a></li>
-<li>Facilidad de uso e instalación.</li>
-<li>Interfaz de usuario amigable.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_basico/01_Unix_GNU-Linux/1_Conceptos_Unix_GNU_Linux.html"><img src="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/_images/ubuntu.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="shell-bash-bash-shell" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="shell-bash-bash-shell"><span class="header-section-number">2.5</span> Shell / Bash / Bash Shell</h2>
-<ul>
-<li>La <a href="https://en.wikipedia.org/wiki/Unix_shell"><em>shell</em></a> es el programa que provee una <strong>interfaz de línea de comandos (CLI)</strong>, que permite la comunicación entre el usuario y el SO.</li>
-<li>La mayoría de distribuciones de Linux tienen por defecto <a href="https://www.gnu.org/software/bash/"><em>bash</em></a> (“Bourne Again SHell”) como <em>shell</em>. Hay <a href="https://www.educba.com/types-of-shells-in-linux/">otros tipos de shell</a> como <strong>sh, csh, tcsh, ksh, zsh</strong>, entre otras.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/_images/b.png" class="img-fluid figure-img" width="400"></p>
-</figure>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Bash es un intérprete de comandos que te da el poder de hacer tareas simples rápidamente.</p>
-</div>
-</div>
-</section>
-<section id="material-suplementario" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">2.6</span> Material suplementario</h2>
-<p>Si quieren aprender temas más sobre UNIX, GNU/Linux, bash, emulador de terminal y otros tema, pueden explorar los siguientes recursos, que son de acceso libre:</p>
-<ul>
-<li>Kross, S. (2017). <em>The unix workbench</em>. Leanpub. <a href="https://leanpub.com/unix" class="uri">https://leanpub.com/unix</a></li>
-<li>Ross, A. (2019). <em>The Ultimate Linux Newbie Guide</em>. <a href="https://linuxnewbieguide.org/" class="uri">https://linuxnewbieguide.org/</a></li>
-<li>Shotts, W. (2019). <em>The Linux command line: a complete introduction</em>. No Starch Press. <a href="http://www.linuxcommand.org/tlcl.php/index.php" class="uri">http://www.linuxcommand.org/tlcl.php/index.php</a></li>
-<li>Linux Journey. (2020). Linux Journey. <a href="https://linuxjourney.com/" class="uri">https://linuxjourney.com/</a></li>
-<li>GNU. (2020). GNU. <a href="https://www.gnu.org/" class="uri">https://www.gnu.org/</a></li>
-<li><a href="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_basico/01_Unix_GNU-Linux/1_Conceptos_Unix_GNU_Linux.html">GNU/Linux para bioinformatica</a></li>
-</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -678,13 +588,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Bpracticas.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span>
+      <a href="./Cap1_R.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Primeros pasos en R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Cap1_B.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mis primeros pasos en Bash</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./install_B.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
