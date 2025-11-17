@@ -29,7 +29,7 @@ El número entre corchetes `[1]` indica el índice del primer elemento mostrado.
 
 Esto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.
 
-#### Operaciones básicas
+### Operaciones básicas
 
 Puedes realizar diferentes operaciones aritméticas:
 
@@ -53,7 +53,7 @@ De mayor a menor precedencia:
 
 -   División: `/`
 
--    Suma: `+`
+-   Suma: `+`
 
 -   Resta: `-`
 
@@ -71,7 +71,7 @@ Usa paréntesis para agrupar operaciones y forzar el orden de evaluación si dif
 (2 + 3) * 4 
 ```
 
-#### Notación científica
+### Notación científica
 
 Números muy pequeños o muy grandes se muestran en notación científica:
 
@@ -85,6 +85,51 @@ También puedes escribir números directamente en notación científica:
 
 ```{r}
 5e3 # Nota que no hay signo menos
+```
+
+### Comparando valores
+
+También podemos hacer comparaciones en R:
+
+**Igualdad:**
+
+-   Los dos signos igual, se leen "es igual a"
+
+```{r}
+7 == 7 
+```
+
+\
+**Desigualdad**:
+
+-   Se lee "no es igual a"
+
+```{r}
+1 != 2
+```
+
+**Menor que:**
+
+```{r}
+1 < 7
+```
+
+**Menor o igual que:**
+
+```{r}
+7 <= 9
+```
+
+**Mayor que:**
+
+```{r}
+1 > 0
+```
+
+**Mayor o igual que:**
+
+```{r}
+17 >= 27
 ```
 
 #### Comandos incompletos
@@ -126,35 +171,85 @@ log10(10)
 exp(0.5)  # Calcula e^(0.5)
 ```
 
+## Variables y objetos en R
+
+### Variables
+
+En el mundo de la programación, las **variables** son elementos esenciales para almacenar y manejar información. En R, una variable funciona como una **etiqueta** que nos permite referirnos a un dato y guardarlo en un espacio de memoria. Para asignar un valor a una variable usamos el operador `<-`, que nos permite darle un nombre a ese dato para utilizarlo más adelante, así:
+
 ```{r}
-getwd() # devuelve la ruta absoluta del directorio de trabajo
+x <- 10 * 50
 ```
 
-### Guardar resultados
+Esto significa:
 
-Puedes guardar el resultado de una operación en un **objeto** usando el operador `<-`:
+-   **x** es el nombre de la *variable*.
 
-```{r} resultado <- 4 + 6}
+-   `<-` significa "asignar".
+
+-   **10** es el valor del objeto que guardas dentro de la *variable*.
+
+Observa que al asignar un valor **R no imprime el resultado**.\
+
+En su lugar, lo guarda para usarlo después en la *variable*. Para conocer el valor de la variable puedes hacerlo solo poniendo el nombre de la variable y correrlo o utilizar la función `print()` con el nombre de la variable adentro. Así:\
+
+```{r}
+x # solo el nombre de la variable
+print(x) # con la funcion print
 ```
 
-Para ver su valor, solo escribe el nombre del objeto:
+Ahora, podrás ver que en la pestaña de **Environment** (panel superior derecho), la variable `x` y su valor han aparecido.
 
-```{r} resultado}
+También es posible asignar utilizando `=`:
+
+```{r}
+y = 10 * 50
+
+y
+```
+
+Sin embargo, en la comunidad de R es **mucho menos común**.\
+
+La recomendación general es usar **`<-`**, ya que es más claro en la mayoría de contextos. Además, de que puede haber mayor confusión en códigos más complejos.
+
+### Objetos
+
+## Tips en R
+
+### Conocer tu ruta de trabajo
+
+La función `getwd()` te devuelve la ruta absoluta del directorio de trabajo
+
+```{r}
+getwd() 
 ```
 
 ### Comentarios en R
 
-Puedes agregar comentarios en tu código para explicar qué hace.\
-Todo lo que esté después del símbolo `#` no se ejecutará:
+Puedes agregar comentarios en tu código para explicar qué hace. Todo lo que escribas después del símbolo `#` no se ejecuta.
 
-```{r} 3 + 3 # Esto es un comentario}
+```{r}
+3 + 3 # Asi se ve un comentario
 ```
 
-#### Limpiar tu entorno en R
+Nota: Evita usar acentos o la letra ñ en los comentarios. Esto ayuda a prevenir que, al abrir el archivo de nuevo, aparezcan caracteres raros como:
+
+-    `Ã¡` en lugar de **á**
+
+-   `Ã©` en lugar de **é**
+
+-    `Ã±` en lugar de **ñ**
+
+-    `Â` que aparece pegado a letras
+
+-    `?` o `�` (el famoso \"rombo con signo de interrogación\")
+
+### Limpiar tu entorno en R
 
 Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:
 
-```{r} rm(list = ls())}
+```{r}
+rm(list = ls())
 ```
 
 Puedes **limpiar la consola** para empezar de nuevo haciendo clic en el ícono con forma de **escoba** 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado `Ctrl + L`(Windows/Linux) o `⌘ + L` (Mac).
