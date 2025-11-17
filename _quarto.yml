@@ -35,7 +35,7 @@ format:
     number-depth: 3
   # Boton para cambiar tema de oscuro a claro
     theme:
-      light: lux
+      light: minty
       dark: darkly
     code-fold: show # Ocultar codigo
     code-copy: true # Copy button

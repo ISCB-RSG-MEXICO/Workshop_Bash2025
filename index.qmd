@@ -34,17 +34,17 @@
     -   **Abel Lovaco Flores -** Estudiante de maestría, Cinvestav-Irapuato
     -   **Evelia Lorena Coss-Navarrete** - PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
 
-    #### **Resumen**
+    # **Resumen**
 
     Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.
 
     El curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.
 
-    #### **Objetivos**
+    # **Objetivos**
 
     Al finalizar este curso, las y los participantes serán capaces de:
 
-    ### **En Bash**
+    #### **En Bash**
 
     -   Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
 
@@ -54,7 +54,7 @@
 
     -   Integrar buenas prácticas computacionales que favorezcan la organización y reproducibilidad.
 
-    ### **En R y RStudio**
+    #### **En R y RStudio**
 
     -   Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
 
