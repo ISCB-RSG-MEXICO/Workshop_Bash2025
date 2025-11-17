@@ -12,8 +12,6 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - req_B.qmd
-    - req_R.qmd
     - Bpracticas.qmd
     - intro_bash.qmd
     - intro_R.qmd
@@ -23,6 +21,8 @@ book:
     - Cap3_B.qmd
     - Cap4_B.qmd
     - Cap5_B.qmd
+    - install_B.qmd
+    - install_R.qmd
   # Information
   repo-url: https://github.com/ISCB-RSG-MEXICO/Workshop_template # link de Github
   sharing: [twitter, facebook, linkedin]

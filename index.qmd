@@ -13,7 +13,7 @@
     -   **Duración del curso:** 15 horas
     -   **Horario:** 8:00 am - 3:30 pm
 
-    ![](figures/flyer.jpg){width="500"}
+    ![](figures/flyer.jpg){width="570"}
 
     #### **Instructores**
 
@@ -83,7 +83,7 @@
 
     -   R y Rstudio
 
-    Las instrucciones para instalarlos las puedes encontrar en esta página, en los capítulos **X y Y (agregar)**.
+    Las instrucciones para instalarlos las puedes encontrar al final de esta página.
 
     ### Agenda {#agenda}
 

@@ -4,7 +4,7 @@
 
 Puedes ejecutar el código de varias formas:
 
--   **Correr una línea de código:** selecciona la línea o colócate al final de ella y presiona **Ctrl + Enter** (Windows/Linux) o **⌘ + Enter** (Mac).\
+-   **Correr una línea de código:** selecciona la línea o colócate al final de ella y presiona **`Ctrl + Enter`** (Windows/Linux) o **`⌘ + Enter`** (Mac).\
     Esto enviará el código seleccionado a la consola para su ejecución.
 
 -   **Usar el botón *Run*:** también puedes ejecutar el código haciendo clic en el botón **`Run`**, ubicado en la parte superior derecha del panel de scripts.
@@ -114,10 +114,16 @@ Vamos a ver algunos ejemplos:
 
 ### Funciones matemáticas
 
+-   Suma de números
+
+```{r}
+sum(1,2,3,4,5)
+```
+
 -   Valor absoluto
 
 ```{r}
-
+abs(-7)
 ```
 
 ```{r}
@@ -141,6 +147,69 @@ log10(10)
 ```{r}
 exp(0.5)  # Calcula e^(0.5)
 ```
+
+-   Redondear un número
+
+```{r}
+round(3.14159, 2)
+```
+
+**Argumentos:**
+
+1.   `3.14159`→ **El número que quieres redondear** (puede ser un solo número o un vector de números).
+
+2.   `2`→ **Cantidad de decimales a mantener** después del punto. Este argumento es opcional; si no lo pones, R redondea al entero más cercano.
+
+-   Repetir valores
+
+```{r}
+rep(7,9)
+```
+
+Utilizar los argumentos de manera similar a función `round()`.
+
+**Argumentos:**
+
+1.   `7`→ **El número que quieres repetir** (puede ser un solo número o un vector de números).
+
+2.   9 → **Cantidad de veces** que quieres que se reprita el número.
+
+### Funciones útiles y de exploración
+
+-    Ruta absoluta del directorio de trabajo
+
+```{r}
+getwd()  
+```
+
+-   Fecha y hora actual
+
+```{r}
+date()
+```
+
+-   Acceder a la ventana de ayuda de R
+
+```{r}
+help()
+```
+
+::: callout-note
+## Notas rápidas:
+
+-   Todo lo que va dentro de `()` son **argumentos** que la función necesita.
+
+-   Algunas funciones pueden recibir **vectores** (listas de números) como entrada ( `rep()`, `round ()`).
+
+-   Otras funciones no necesitan argumentos (`date()`).
+
+```{=html}
+<!-- -->
+```
+-    Prueba cada función directamente en la consola de R para ver los resultados de inmediato.
+:::
+
+R cuenta con una cantidad enorme de funciones, muchas de las cuales pueden tener argumentos más complejos y usos avanzados. Lo que hemos visto hasta ahora es solo una pequeña muestra; a lo largo del curso exploraremos más funciones y aprenderemos a utilizarlas de manera práctica.
 
 ## Variables y objetos en R
 
@@ -239,7 +308,7 @@ Representan cadenas de texto. Se escriben entre comillas dobles `" "` o simples 
 Ejemplo:
 
 ```{r}
-"Hola"
+"Hola, ¿cómo están?"
 ```
 
 #### 3. Vectores
@@ -280,18 +349,64 @@ Se crean con `data.frame()`.\
 Ejemplo:
 
 ```{r}
-data.frame(nombre=c("Flores","Mariposas"), cantidad=c(40,25))
+data.frame(Tipo=c("Flores","Mariposas", "Libélulas"), Cantidad=c(40,25,10))
 ```
 
 #### 7. Factores
 
-Se usan para **representar datos categóricos**, como género o colores.\
+Se usan para **representar datos categóricos**, como sexo, nacionalidades o colores, etc.\
 Crean internamente un conjunto de niveles posibles.\
 Ejemplo:
 
 ```{r}
-factor(c("F","M","F"))
+factor(c("mexicana", "italiana", "canadiense", "mexicana", "canadiense", "holandesa"))
 ```
+
+### Relación entre variables y objetos
+
+Recuerda que **todos los objetos que vimos**: números, textos o caracteres, vectores, matrices, listas, data frames y factores **pueden guardarse en una variable**.
+
+Al guardar un objeto en una variable, le damos un **nombre** que nos permite **utilizarlo más adelante**, modificarlo o combinarlo con otros objetos según lo necesitemos.
+
+::: callout-note
+## Ejercicio 1
+
+Guardar objetos en variables:
+
+1.  Crea un data frame con la información del ejemplo y guárdalo en una variable llamada `mi_tabla`:
+
+::: {.callout-tip collapse="true"}
+## Solución
+
+```{r}
+mi_tabla <- data.frame(Tipo=c("Flores","Mariposas", "Libélulas"), Cantidad=c(40,25,10))
+```
+
+Ahora `mi_tabla` contiene la tabla completa. Puedes ver su contenido escribiendo:
+
+```{r}
+mi_tabla
+```
+:::
+:::
+
+::: callout-note
+2.  Crea un factor con la información del ejemplo y guárdalo en una variable llamada `colores`:
+
+::: {.callout-tip collapse="true"}
+## Solución
+
+```{r}
+nacionalidad <- factor(c("mexicana", "italiana", "canadiense", "mexicana", "canadiense", "holandesa"))
+```
+
+Ahora `nacionalidad`contiene los niveles: mexicana, italiana, canadiense y holandesa
+
+```{r}
+nacionalidad
+```
+:::
+:::
 
 ## Tips en R
 
@@ -313,7 +428,7 @@ Todo lo que esté después del símbolo `#` no se ejecutará:
 3 + 3 # Esto es un comentario
 ```
 
-#### Limpiar tu entorno en R
+### Limpiar tu entorno en R
 
 Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:
 
