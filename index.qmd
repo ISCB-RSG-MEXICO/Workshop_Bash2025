@@ -5,7 +5,7 @@
 # Información general {.unnumbered}
 
 -   ::: {.panel-tabset group="globalInfo"}
-    ### Sobre el curso 
+    ### Sobre el curso
 
     Fuente del curso
 
@@ -82,57 +82,32 @@
 
     -   Opcional: instalación de un enterno Linux como Bash, R y RStudio si deseas descargar y trabajar localmente con los archivos que generemos en el servidor.
 
-    ### Agenda  {#agenda}
+    ### Agenda {#agenda}
 
-    +------------------------------------------------------+---------------+
-    | Tema                                                 | Tiempo        |
-    +======================================================+:=============:+
-    | **27 de noviembre**                                  |               |
-    +------------------------------------------------------+---------------+
-    | **Sección** **1 - (08:00 - 13:30 h)**                |               |
-    +------------------------------------------------------+---------------+
-    | -   Creación de una cuenta en GitHub                 | 5 min         |
-    +------------------------------------------------------+---------------+
-    | -   Introducción a Git / GitHub                      | 15 min        |
-    +------------------------------------------------------+---------------+
-    | -   **Actividad 1**: Sincronización y llaves         | 15 min        |
-    +------------------------------------------------------+---------------+
-    | ☕ *Coffee break (10 min) - (12:00-12:10)*           | 10 min        |
-    +------------------------------------------------------+---------------+
-    | **Sección** **2 - (12:10-13:00 h)**                  |               |
-    +------------------------------------------------------+---------------+
-    | -   Comandos usados en Github y RStudio              | 25 min        |
-    +------------------------------------------------------+---------------+
-    | -   **Actividad 2:** Pagina de inicio en GitHub      | 15 min        |
-    +------------------------------------------------------+---------------+
-    | **Sección 3 - (11:30 - 13:30 h) (## noviembre)**     |               |
-    +------------------------------------------------------+---------------+
-    | -   Buenas practicas en R                            | 30 min        |
-    +------------------------------------------------------+---------------+
-    | -   **Actividad 3:** Pagina web en GitHub            | 1:30 min      |
-    +------------------------------------------------------+---------------+
-    | **28 de noviembre**                                  |               |
-    |                                                      |               |
-    | **Sección** **1 - (08:00 - 13:30 h)**                |               |
-    +------------------------------------------------------+---------------+
-    | -   Creación de una cuenta en GitHub                 | 5 min         |
-    +------------------------------------------------------+---------------+
-    | -   Introducción a Git / GitHub                      | 15 min        |
-    +------------------------------------------------------+---------------+
-    | -   **Actividad 1**: Sincronización y llaves         | 15 min        |
-    +------------------------------------------------------+---------------+
-    | ☕ *Coffee break (10 min) - (12:00-12:10)*           | 10 min        |
-    +------------------------------------------------------+---------------+
-    | **Sección** **2 - (12:10-13:00 h)**                  |               |
-    +------------------------------------------------------+---------------+
-    | -   Comandos usados en Github y RStudio              | 25 min        |
-    +------------------------------------------------------+---------------+
-    | -   **Actividad 2:** Pagina de inicio en GitHub      | 15 min        |
-    +------------------------------------------------------+---------------+
-    | **Sección 3 - (11:30 - 13:30 h) (## noviembre)**     |               |
-    +------------------------------------------------------+---------------+
-    | -   Buenas practicas en R                            | 30 min        |
-    +------------------------------------------------------+---------------+
-    | -   **Actividad 3:** Pagina web en GitHub            | 1:30 min      |
-    +------------------------------------------------------+---------------+
+    | Tema                                           | Tiempo |
+    |------------------------------------------------|--------|
+    | [**27 de noviembre**]{style="color:#59B4C3"}   |        |
+    | **Sección 1 - (08:00 - 13:30 h)**              |        |
+    | \- Creación de una cuenta en GitHub            | 5 min  |
+    | \- Introducción a Git / GitHub                 | 15 min |
+    | \- **Actividad 1**: Sincronización y llaves    | 15 min |
+    | ☕ *Coffee break (10 min) - (12:00-12:10)*     | 10 min |
+    | **Sección 2 - (12:10-13:00 h)**                |        |
+    | \- Comandos usados en Github y RStudio         | 25 min |
+    | \- **Actividad 2:** Página de inicio en GitHub | 15 min |
+    | **Sección 3 - (11:30 - 13:30 h) (noviembre)**  |        |
+    | \- Buenas prácticas en R                       | 30 min |
+    | \- **Actividad 3:** Página web en GitHub       | 1:30 h |
+    | [**28 de noviembre**]{style="color:#B33791"}   |        |
+    | **Sección 1 - (08:00 - 13:30 h)**              |        |
+    | \- Creación de una cuenta en GitHub            | 5 min  |
+    | \- Introducción a Git / GitHub                 | 15 min |
+    | \- **Actividad 1**: Sincronización y llaves    | 15 min |
+    | ☕ *Coffee break (10 min) - (12:00-12:10)*     | 10 min |
+    | **Sección 2 - (12:10-13:00 h)**                |        |
+    | \- Comandos usados en Github y RStudio         | 25 min |
+    | \- **Actividad 2:** Página de inicio en GitHub | 15 min |
+    | **Sección 3 - (11:30 - 13:30 h) (noviembre)**  |        |
+    | \- Buenas prácticas en R                       | 30 min |
+    | \- **Actividad 3:** Página web en GitHub       | 1:30 h |
     :::

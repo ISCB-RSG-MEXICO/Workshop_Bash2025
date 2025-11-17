@@ -212,7 +212,63 @@ Sin embargo, en la comunidad de R es **mucho menos común**.\
 
 La recomendación general es usar **`<-`**, ya que es más claro en la mayoría de contextos. Además, de que puede haber mayor confusión en códigos más complejos.
 
+#### **Nombres válidos para variables**
+
+Para asignar un objeto a una variable, debemos usar nombres válidos:
+
+-   **Puede contener:** letras, números, puntos (`.`), guiones bajos (`_`)
+
+-    **Debe comenzar con:** letra o punto seguido de letra.
+
+-   **No puede comenzar con:** número, guion bajo, punto seguido de número.
+
+-   **No puede contener:** espacios ni guiones (`-`).
+
+-   R distingue mayúsculas y minúsculas (`Edad` ≠ `edad`).
+
+Ejemplos válidos:
+
+`min_height`
+
+`max.height`
+
+`celsius2kelvin`
+
+`temperatura_media`
+
+Ejemplos inválidos:
+
+`_edad`
+
+`2widths`
+
+`min-length`
+
+`mi variable`
+
 ### Objetos
+
+En R, todo lo que guardamos dentro de una variable es un objeto.\
+
+Si la variable es la *etiqueta*, el objeto es el *contenido* que esa etiqueta señala.
+
+Ejemplos de objetos:\
+
+```{r}
+3             # numero
+"hola"        # texto
+1:5           # vector
+matrix(1:6, nrow=2) 
+list(nombre="Ana", edad=21) 
+data.frame(nombre=c("Ana","Luis"), edad=c(21,30)) 
+factor(c("F","M","F")) 
+sum           # funcion
+
+```
+
+Vamos ver cada uno de ellos más detalladamente.
+
+#### Tipos de objetos en R
 
 ## Tips en R
 
