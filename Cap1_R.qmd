@@ -29,7 +29,7 @@ El número entre corchetes `[1]` indica el índice del primer elemento mostrado.
 
 Esto es útil cuando trabajamos con vectores, ya que R puede manejar múltiples valores al mismo tiempo.
 
-#### Operaciones básicas
+### Operaciones básicas
 
 Puedes realizar diferentes operaciones aritméticas:
 
@@ -71,7 +71,7 @@ Usa paréntesis para agrupar operaciones y forzar el orden de evaluación si dif
 (2 + 3) * 4 
 ```
 
-#### Notación científica
+### Notación científica
 
 Números muy pequeños o muy grandes se muestran en notación científica:
 
@@ -101,20 +101,6 @@ Si deseas cancelar, presiona **Esc** (o **Ctrl + C**).
 ## Funciones matemáticas
 
 R tiene muchas funciones matemáticas integradas. Para usar una función, escribe su nombre seguido de paréntesis de apertura y cierre. Las funciones toman argumentos como entrada, todo lo que escribas dentro de los paréntesis se considera un argumento. Dependiendo de la función, el número de argumentos puede variar desde ninguno hasta varios. Por ejemplo:
-
-### Guardar resultados
-
-Puedes guardar el resultado de una operación en un **objeto** usando el operador `<-`:
-
-```{r}
-resultado <- 4 + 6
-```
-
-Para ver su valor, solo escribe el nombre del objeto:
-
-```{r}
-resultado
-```
 
 -   Logaritmo natural
 
@@ -214,23 +200,77 @@ Ejemplos inválidos:
 En R, todo lo que guardamos dentro de una variable es un objeto.\
 Si la variable es la *etiqueta*, el objeto es el *contenido* que esa etiqueta señala.
 
-Ejemplos de objetos:\
+Existen varios tipos de objetos en R, cada uno con características distintas:
+
+#### 1. Números
+
+Son objetos que representan valores numéricos. Pueden ser enteros o decimales.\
+Ejemplo:
 
 ```{r}
-3             # numero
-"hola"        # texto
-1:5           # vector
-matrix(1:6, nrow=2) 
-list(nombre="Ana", edad=21) 
-data.frame(nombre=c("Ana","Luis"), edad=c(21,30)) 
-factor(c("F","M","F")) 
-sum           # funcion
-
+3
 ```
 
-Vamos ver cada uno de ellos más detalladamente.
+#### 2. Texto o caracteres
 
-#### Tipos de objetos en R
+Representan cadenas de texto. Se escriben entre comillas dobles `" "` o simples `' '`.\
+Ejemplo:
+
+```{r}
+"Hola"
+```
+
+#### 3. Vectores
+
+Son **listas de números o texto**. Todos los elementos deben ser del mismo tipo (numérico, carácter o lógico).\
+Se pueden crear con `c()` o usando secuencias como `1:5`.\
+Ejemplo:
+
+```{r}
+c(1,2,3,4,5,6,7,8,9,10)
+1:27
+```
+
+#### 4. Matrices
+
+Son **tablas con filas y columnas**, todos los elementos del mismo tipo.\
+Se crean con la función `matrix()`.\
+Ejemplo:
+
+```{r}
+matrix(1:6, nrow=2)
+```
+
+#### 5. Listas
+
+Son objetos que pueden **almacenar diferentes tipos de datos** en un solo objeto (números, texto, vectores, etc.).\
+Se crean con `list()`.\
+Ejemplo:
+
+```{r}
+list(nombre="Stanford", edad=39)
+```
+
+#### 6. Data frames
+
+Un **data frame** es como una **tabla** de Excel: tiene filas y columnas.
+Cada columna puede tener **diferentes tipos de datos** (números, texto, etc.).\
+Se crean con `data.frame()`.\
+Ejemplo:
+
+```{r}
+data.frame(nombre=c("Flores","Mariposas"), cantidad=c(40,25))
+```
+
+#### 7. Factores
+
+Se usan para **representar datos categóricos**, como género o colores.\
+Crean internamente un conjunto de niveles posibles.\
+Ejemplo:
+
+```{r}
+factor(c("F","M","F"))
+```
 
 ## Tips en R
 
