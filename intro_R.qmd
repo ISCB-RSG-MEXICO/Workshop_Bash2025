@@ -1,4 +1,4 @@
-# Conceptos de R 
+# Conceptos de R
 
 ## ¿Qué es R?
 
@@ -57,13 +57,13 @@ R permite registrar y compartir **todo el proceso analítico** con unas pocas l�
 
 Cuando abres RStudio encontrarás cuatro paneles principales:
 
-1. **<span style="color:#e2a9f1">Source</span>** (arriba a la izquierda): donde escribes y editas código.
+1.  [**Source**]{style="color:#e2a9f1"} (arriba a la izquierda): donde escribes y editas código.
 
-2.  **<span style="color:#9BCF53">Console</span>** (abajo a la izquierda): donde se ejecutan los comandos.
+2.  [**Console**]{style="color:#9BCF53"} (abajo a la izquierda): donde se ejecutan los comandos.
 
-3.  **<span style="color:#5ce1e6">Environment / History</span>** (arriba a la derecha): muestra los objetos creados y el historial de comandos.
+3.  [**Environment / History**]{style="color:#5ce1e6"} (arriba a la derecha): muestra los objetos creados y el historial de comandos.
 
-4.  **<span style="color:#ff91d5">Files / Plots / Packages / Help / Viewer** (abajo a la derecha): para explorar resultados, archivos y documentación.
+4.  <span style="color:#ff91d5">Files / Plots / Packages / Help / Viewer (abajo a la derecha): para explorar resultados, archivos y documentación.
 
     ![](figures/consola_R.png)
 
@@ -91,6 +91,6 @@ Para aprender más sobre R y RStudio puedes consultar los siguientes recursos ab
 
 -   CRAN. (2025). *The Comprehensive R Archive Network*. <https://cran.r-project.org/>
 
--   Wickham, H. & Grolemund, G. (2017). *R for Data Science*. O\'Reilly Media. <https://r4ds.had.co.nz/>
+-   Wickham, H. & Grolemund, G. (2017). *R for Data Science*. O'Reilly Media. <https://r4ds.had.co.nz/>
 
--    RStudio Education. (2024). *RStudio Primers*. <https://posit.cloud/learn/primers>
+-   RStudio Education. (2024). *RStudio Primers*. <https://posit.cloud/learn/primers>

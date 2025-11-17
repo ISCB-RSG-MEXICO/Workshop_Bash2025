@@ -53,7 +53,7 @@ De mayor a menor precedencia:
 
 -   División: `/`
 
--    Suma: `+`
+-   Suma: `+`
 
 -   Resta: `-`
 
@@ -106,12 +106,18 @@ R tiene muchas funciones matemáticas integradas. Para usar una función, escrib
 
 Puedes guardar el resultado de una operación en un **objeto** usando el operador `<-`:
 
-```{r} resultado <- 4 + 6}
+```{r}
+resultado <- 4 + 6
 ```
 
 Para ver su valor, solo escribe el nombre del objeto:
 
-<<<<<<< HEAD
+```{r}
+resultado
+```
+
+-   Logaritmo natural
+
 ```{r}
 log(1)
 ```
@@ -169,13 +175,13 @@ Sin embargo, en la comunidad de R es **mucho menos común**.\
 
 La recomendación general es usar **`<-`**, ya que es más claro en la mayoría de contextos. Además, de que puede haber mayor confusión en códigos más complejos.
 
-#### **Nombres válidos para variables**
+#### Nombres válidos para variables
 
 Para asignar un objeto a una variable, debemos usar nombres válidos:
 
 -   **Puede contener:** letras, números, puntos (`.`), guiones bajos (`_`)
 
--    **Debe comenzar con:** letra o punto seguido de letra.
+-   **Debe comenzar con:** letra o punto seguido de letra.
 
 -   **No puede comenzar con:** número, guion bajo, punto seguido de número.
 
@@ -206,7 +212,6 @@ Ejemplos inválidos:
 ### Objetos
 
 En R, todo lo que guardamos dentro de una variable es un objeto.\
-
 Si la variable es la *etiqueta*, el objeto es el *contenido* que esa etiqueta señala.
 
 Ejemplos de objetos:\
@@ -235,9 +240,7 @@ La función `getwd()` te devuelve la ruta absoluta del directorio de trabajo
 
 ```{r}
 getwd() 
-=======
-```{r} resultado}
->>>>>>> 62772742fdc00873788f7531cab0085796a693a9
+
 ```
 
 ### Comentarios en R
@@ -245,14 +248,16 @@ getwd()
 Puedes agregar comentarios en tu código para explicar qué hace.\
 Todo lo que esté después del símbolo `#` no se ejecutará:
 
-```{r} 3 + 3 # Esto es un comentario}
+```{r}
+3 + 3 # Esto es un comentario
 ```
 
 #### Limpiar tu entorno en R
 
 Puedes limpiar tu espacio de trabajo (eliminar todos los objetos guardados) con:
 
-```{r} rm(list = ls())}
+```{r}
+rm(list = ls())
 ```
 
 Puedes **limpiar la consola** para empezar de nuevo haciendo clic en el ícono con forma de **escoba** 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado `Ctrl + L`(Windows/Linux) o `⌘ + L` (Mac).
