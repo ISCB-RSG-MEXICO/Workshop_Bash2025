@@ -390,6 +390,28 @@ Ejemplo:
 factor(c("mexicana", "italiana", "canadiense", "mexicana", "canadiense", "holandesa"))
 ```
 
+#### Valores especiales en R (NA, NULL, NaN, Inf)
+
+Además de números, textos, vectores y otros objetos, R también tiene **valores especiales** que aparecen cuando falta información o cuando ocurre algo fuera de lo común.
+
+**NA**\
+Significa *Not Available* (dato no disponible).\
+Aparece cuando falta un dato.
+
+```{r}
+x <- c(1, NA, 3) 
+x
+```
+
+**NULL**\
+Representa *ausencia total de un valor* o \"vacío\".\
+Es diferente de NA porque **NULL es nada**, no ocupa lugar.
+
+```{r}
+y <- NULL
+y
+```
+
 ### Relación entre variables y objetos
 
 Recuerda que **todos los objetos que vimos**: números, textos o caracteres, vectores, matrices, listas, data frames y factores **pueden guardarse en una variable**.
