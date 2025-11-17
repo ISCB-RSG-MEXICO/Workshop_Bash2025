@@ -71,9 +71,9 @@
 
     ### Requisitos previos
 
-    -   No se requiere experiencia previa en programación ni en el uso de linux
+    No se requiere experiencia previa en programación ni en el uso de Linux.
 
-    -   Conocimientos básicos sobre el manejo de archivos en computadora
+    Conocimientos básicos sobre el manejo de archivos en computadora.
 
     Durante el curso las actividades se realizarán en un servidor proporcionado por el equipo docente, por lo que no es necesario instalar Linux, R o Bash en tu computadora.
 
