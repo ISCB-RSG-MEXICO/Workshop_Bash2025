@@ -17,16 +17,16 @@
 
     #### **Instructores**
 
-    -   **Mayela Fosado-Mendoza** - Tesista de licenciatura
-    -   **Mariana Devon** - Estudiante de maestría, UAM
-    -   **Emilio Ortiz-Avila** - Tesista de licenciatura
+    -   **Mayela Fosado-Mendoza** - Tesista de licenciatura, UAQ-UNAM,
+    -   **Mariana Devon** - Estudiante de maestría, UAM.
+    -   **Emilio Ortiz-Avila** - Tesista de licenciatura, UAQ-UNAM.
 
     Ayudantes:
 
     -   **Aaron Espinosa Jaime -** Estudiante de maestría, Cinvestav-LANGEBIO.
     -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
     -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
-    -   **Johanna Castelán** - Estudiante de maestría, UPAEP
+    -   **Johanna Castelán** - Estudiante de maestría, UPAEP.
     -   **Daniel Chávez** - Profesor invitado, UAGro.
 
     Organizadores del curso:

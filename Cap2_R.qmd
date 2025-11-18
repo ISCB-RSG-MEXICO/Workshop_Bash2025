@@ -12,11 +12,11 @@ Actualmente, hay **más de 10,000 paqueterías disponibles en CRAN** (Comprehens
 
 Las paqueterías en R permiten **ampliar las funciones básicas del programa**. Por ejemplo:
 
--    Crear gráficos más avanzados (`ggplot2`).
+-   Crear gráficos más avanzados (`ggplot2`).
 
--    Manipular y limpiar datos fácilmente (`dplyr`, `tidyr`).
+-   Manipular y limpiar datos fácilmente (`dplyr`, `tidyr`).
 
--    Realizar análisis estadísticos complejos (`lme4`, `caret`).
+-   Realizar análisis estadísticos complejos (`lme4`, `caret`).
 
 -   Trabajar con fechas, textos o datos especiales (`lubridate`, `stringr`).
 
@@ -85,18 +85,13 @@ library(ggplot2)
 
 También existe otra manera de cargar las paqueterías. Usando la pestaña de **Packages** en la ventana inferior derecha de Rstudio puedes ver todos las paqueterías instaladas.
 
--    Cada paquete tiene una **casilla de verificación**:
+-   Cada paquete tiene una **casilla de verificación**:
 
-    -    ✅ Casilla marcada → el paquete está **cargado y listo para usar**
+```         
+-    ✅ Casilla marcada → el paquete está **cargado y listo para usar**
 
-    -    ⬜ Casilla vacía → el paquete **no está cargado**
-
-```{=html}
-<!-- -->
+-    ⬜ Casilla vacía → el paquete **no está cargado**
 ```
--    Puedes **marcar la casilla** para cargar un paquete, o **desmarcarla** para descargarlo de la sesión.
 
-```{=html}
-<!-- -->
-```
+-   Puedes **marcar la casilla** para cargar un paquete, o **desmarcarla** para descargarlo de la sesión.
 -   También puedes instalar o actualizar paqueterías usando los botones **Install** y **Update** en la parte superior de la pestaña.
