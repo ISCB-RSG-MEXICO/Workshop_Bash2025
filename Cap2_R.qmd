@@ -95,3 +95,122 @@ También existe otra manera de cargar las paqueterías. Usando la pestaña de **
 
 -   Puedes **marcar la casilla** para cargar un paquete, o **desmarcarla** para descargarlo de la sesión.
 -   También puedes instalar o actualizar paqueterías usando los botones **Install** y **Update** en la parte superior de la pestaña.
+
+# **Manejo de Data Frames en R**
+
+Una vez que sabemos cómo trabajar con paqueterías en R, podemos comenzar a manipular datos de forma más eficiente. Para ello, primero veremos cómo funcionan los **data frames**, qué podemos hacer con ellos y cómo importarlos desde archivos externos.
+
+## **Introducción a los data frames en R**
+
+En R, un **data frame** es una de las estructuras más utilizadas para trabajar con datos. Puede pensarse como una tabla, donde cada columna representa una variable y cada fila corresponde a una observación.\
+
+En esta sección trabajaremos con una base de datos inspirada en el universo de *Harry Potter* (personajes, casas, hechizos, etc.), que nos servirá para practicar las operaciones básicas.
+
+## **Importación y Exportación de Datos**
+
+Antes de manipular datos, es importante aprender a **importarlos** desde archivos externos y **exportarlos** cuando queramos guardar resultados.
+
+### **Funciones principales**
+
+-    **`read.csv()`** -- Importa archivos CSV.
+
+-   **`read.table()`** -- Importa archivos en formatos de tabla más generales.
+
+-    **`write.csv()`** -- Exporta un data frame a un archivo CSV.
+
+Ejemplo básico:
+
+```{r}
+hp_data <- read.csv("hp_data/Characters.csv", sep = ";")
+```
+
+## Cómo explorar un data frame en R
+
+Una vez que tienes un data frame (ya sea creado a mano o importado), es importante aprender a explorarlo para entender su estructura y contenido.
+
+A continuación se presentan las funciones más útiles para esto:
+
+#### **Ver las primeras filas**
+
+Muestra las primeras 6 filas del data frame.
+
+```{r}
+head(hp_data)
+```
+
+Puedes cambiar el número de filas:
+
+```{r}
+head(hp_data, 3)
+```
+
+#### **Ver las últimas filas**
+
+```{r}
+tail(hp_data)
+```
+
+#### **Conocer la estructura del data frame**
+
+```{r}
+str(hp_data)
+```
+
+Esto muestra:
+
+-    número de filas y columnas
+
+-   tipo de cada variable (character, numeric, factor, etc.)
+
+-    una muestra del contenido
+
+#### **Dimensiones del data frame**
+
+Número de filas:
+
+```{r}
+nrow(hp_data)
+```
+
+Número de columnas:
+
+```{r}
+ncol(hp_data)
+```
+
+Filas y columnas juntas:
+
+```{r}
+dim(hp_data)
+```
+
+#### **Nombres de las columnas**
+
+Para poder ver los nombres de las columnas tenemos dos funciones diferentes `names()` o `colnames()`
+
+```{r}
+names(hp_data)
+```
+
+```{r}
+colnames(hp_data)
+```
+
+#### **Ver el data frame completo en una ventana tipo Excel**
+
+Si queremos explorar la base de datos de forma más completa, R ofrece una función que abre una ventana similar a una hoja de cálculo, donde podemos visualizar todas las filas y columnas. Esto se realiza con la función **`View()`**.
+
+```{r}
+View(hp_data)
+```
+
+#### **Resumen estadístico de las variables numéricas**
+
+Para obtener una primera impresión del comportamiento de las **variables numéricas** en un data frame, R ofrece la función **`summary()`**.\
+Esta función genera un **resumen estadístico básico**, que incluye información como el valor mínimo y máximo, la mediana, el promedio y los cuartiles.
+
+Estos datos permiten entender rápidamente cómo están distribuidos los valores, identificar variaciones importantes y detectar posibles valores atípicos dentro del conjunto de datos.
+
+```{r}
+summary(hp_data)
+```
