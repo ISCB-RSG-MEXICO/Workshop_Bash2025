@@ -92,7 +92,7 @@ Una vez dentro de `nano`, puedes escribir, editar, guardar y salir usando los co
 Principales comandos de `nano`
 
 | Atajo      | Acción           | Descripción                                        |
-|:-----------|:-----------------|:---------------------------------------------------|
+|:-----------------|:-----------------|:------------------------------------|
 | `Ctrl + O` | Guardar archivo  | Guarda los cambios sin salir.                      |
 | `Ctrl + X` | Salir            | Cierra `nano` (pide guardar si hay cambios).       |
 | `Ctrl + W` | Buscar texto     | Busca una palabra o frase en el archivo.           |
@@ -151,15 +151,15 @@ Para lograr esto, Bash incluye utilidades como:
 
 Para `fragmento.txt` qué línea de comando utilizarías para...
 
-1.  Contar el número de caracteres
+1.  Contar solamente el número de caracteres
 
-2.  Contar el número de palabras
+2.  Contar solamente el número de palabras
 
-3.  Contar el número de renglones
+3.  Contar solamente el número de renglones
 
-4.  Muestra las primeras cinco líneas
+4.  Muestra las primeras seis líneas
 
-5.  Muestra las úlimas cinco líneas
+5.  Muestra las úlimas siete líneas
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Soluciones
@@ -170,9 +170,9 @@ Para `fragmento.txt` qué línea de comando utilizarías para...
 
 3.  ``` wc -l fragmento.txt``#Esto cuenta el número de renglones ```
 
-4.  ``` head -5 fragmento.txt``#Esto concatena las primeras cinco líneas ```
+4.  ``` head -6 fragmento.txt``#Esto concatena las primeras cinco líneas ```
 
-5.  ``` tail -5 fragmento.txt``#Esto concatena las últimas cinco líneas ```
+5.  ``` tail -7 fragmento.txt``#Esto concatena las últimas cinco líneas ```
 :::
 :::
 
@@ -199,6 +199,16 @@ El comando grep sirve para buscar patrones de texto dentro de uno o varios archi
 
 Las wildcards buscan patrones en **nombres de archivos**, mientras que `grep` busca patrones **dentro del contenido** de los archivos.
 :::
+
+Para el siguiente ejercicio puedes utilizar el comando `grep` con distintas opciones
+
+-   `sin argumentos`: Muestra las líneas en donde encontró las coincidencias
+
+-   `-c`: En lugar de mostrar las líneas, cuenta cuantas coincidencias hay
+
+-   `-v`: Muestra las líneas que no contienen el patrón "\-\--"
+
+-   `-i`: Ignora mayúsulas y minúsculas
 
 ::: callout-note
 ## Ejercicio 4
@@ -319,7 +329,7 @@ Comandos que modifican la estructura de directorios y archivos
 Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.
 
 | Comando | Descripción                                                                       | Ejemplo          |
-|---------|-----------------------------------------------------------------------------------|------------------|
+|-----------------|---------------------------------------|-----------------|
 | `nano`  | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
 | `vim`   | Editor avanzado con control mediante comandos; guarda con :w y sale con :q        | `vim script.sh`  |
 
@@ -349,7 +359,7 @@ Comandos para localizar texto o patrones dentro de archivos o directorios
 Comandos para conectar procesos o guardar salidas
 
 | Comando | Descripción                                            | Ejemplo                       |
-|---------|--------------------------------------------------------|-------------------------------|
+|------------------|-----------------------------------|-------------------|
 | `>`     | Redirige la salida a un archivo                        | `ls > lista.txt`              |
 | `>>`    | Agrega la salida al final del archivo existente        | `echo "nuevo" >> lista.txt`   |
 | `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
