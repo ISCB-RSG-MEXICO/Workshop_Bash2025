@@ -253,6 +253,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#paqueterías-en-r" id="toc-paqueterías-en-r" class="nav-link active" data-scroll-target="#paqueterías-en-r"><span class="header-section-number">10.0.1</span> Paqueterías en R</a></li>
   <li><a href="#para-qué-sirven-las-paqueterías-en-r" id="toc-para-qué-sirven-las-paqueterías-en-r" class="nav-link" data-scroll-target="#para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">10.0.2</span> ¿Para qué sirven las paqueterías en R?</a></li>
   <li><a href="#en-dónde-encontrar-más-paqueterías" id="toc-en-dónde-encontrar-más-paqueterías" class="nav-link" data-scroll-target="#en-dónde-encontrar-más-paqueterías"><span class="header-section-number">10.0.3</span> ¿En dónde encontrar más paqueterías?</a></li>
+  <li><a href="#manejo-de-data-frames-en-r" id="toc-manejo-de-data-frames-en-r" class="nav-link" data-scroll-target="#manejo-de-data-frames-en-r"><span class="header-section-number">11</span> <strong>Manejo de Data Frames en R</strong></a>
+  <ul>
+  <li><a href="#introducción-a-los-data-frames-en-r" id="toc-introducción-a-los-data-frames-en-r" class="nav-link" data-scroll-target="#introducción-a-los-data-frames-en-r"><span class="header-section-number">11.1</span> <strong>Introducción a los data frames en R</strong></a></li>
+  <li><a href="#importación-y-exportación-de-datos" id="toc-importación-y-exportación-de-datos" class="nav-link" data-scroll-target="#importación-y-exportación-de-datos"><span class="header-section-number">11.2</span> <strong>Importación y Exportación de Datos</strong></a>
+  <ul class="collapse">
+  <li><a href="#funciones-principales" id="toc-funciones-principales" class="nav-link" data-scroll-target="#funciones-principales"><span class="header-section-number">11.2.1</span> <strong>Funciones principales</strong></a></li>
+  </ul></li>
+  <li><a href="#cómo-explorar-un-data-frame-en-r" id="toc-cómo-explorar-un-data-frame-en-r" class="nav-link" data-scroll-target="#cómo-explorar-un-data-frame-en-r"><span class="header-section-number">11.3</span> Cómo explorar un data frame en R</a>
+  <ul class="collapse">
+  <li><a href="#ver-las-primeras-filas" id="toc-ver-las-primeras-filas" class="nav-link" data-scroll-target="#ver-las-primeras-filas"><strong>Ver las primeras filas</strong></a></li>
+  <li><a href="#ver-las-últimas-filas" id="toc-ver-las-últimas-filas" class="nav-link" data-scroll-target="#ver-las-últimas-filas"><strong>Ver las últimas filas</strong></a></li>
+  <li><a href="#conocer-la-estructura-del-data-frame" id="toc-conocer-la-estructura-del-data-frame" class="nav-link" data-scroll-target="#conocer-la-estructura-del-data-frame"><strong>Conocer la estructura del data frame</strong></a></li>
+  <li><a href="#dimensiones-del-data-frame" id="toc-dimensiones-del-data-frame" class="nav-link" data-scroll-target="#dimensiones-del-data-frame"><strong>Dimensiones del data frame</strong></a></li>
+  <li><a href="#nombres-de-las-columnas" id="toc-nombres-de-las-columnas" class="nav-link" data-scroll-target="#nombres-de-las-columnas"><strong>Nombres de las columnas</strong></a></li>
+  <li><a href="#ver-el-data-frame-completo-en-una-ventana-tipo-excel" id="toc-ver-el-data-frame-completo-en-una-ventana-tipo-excel" class="nav-link" data-scroll-target="#ver-el-data-frame-completo-en-una-ventana-tipo-excel"><strong>Ver el data frame completo en una ventana tipo Excel</strong></a></li>
+  <li><a href="#resumen-estadístico-de-las-variables-numéricas" id="toc-resumen-estadístico-de-las-variables-numéricas" class="nav-link" data-scroll-target="#resumen-estadístico-de-las-variables-numéricas"><strong>Resumen estadístico de las variables numéricas</strong></a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -379,16 +397,347 @@ Caution
 <pre><code>-    ✅ Casilla marcada → el paquete está **cargado y listo para usar**
 
 -    ⬜ Casilla vacía → el paquete **no está cargado**</code></pre>
-<!-- -->
 <ul>
 <li>Puedes <strong>marcar la casilla</strong> para cargar un paquete, o <strong>desmarcarla</strong> para descargarlo de la sesión.</li>
-</ul>
-<!-- -->
-<ul>
 <li>También puedes instalar o actualizar paqueterías usando los botones <strong>Install</strong> y <strong>Update</strong> en la parte superior de la pestaña.</li>
 </ul>
+</section>
+<section id="manejo-de-data-frames-en-r" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> <strong>Manejo de Data Frames en R</strong></h1>
+<p>Una vez que sabemos cómo trabajar con paqueterías en R, podemos comenzar a manipular datos de forma más eficiente. Para ello, primero veremos cómo funcionan los <strong>data frames</strong>, qué podemos hacer con ellos y cómo importarlos desde archivos externos.</p>
+<section id="introducción-a-los-data-frames-en-r" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="introducción-a-los-data-frames-en-r"><span class="header-section-number">11.1</span> <strong>Introducción a los data frames en R</strong></h2>
+<p>En R, un <strong>data frame</strong> es una de las estructuras más utilizadas para trabajar con datos. Puede pensarse como una tabla, donde cada columna representa una variable y cada fila corresponde a una observación.<br>
+</p>
+<p>En esta sección trabajaremos con una base de datos inspirada en el universo de <em>Harry Potter</em> (personajes, casas, hechizos, etc.), que nos servirá para practicar las operaciones básicas.</p>
+</section>
+<section id="importación-y-exportación-de-datos" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="importación-y-exportación-de-datos"><span class="header-section-number">11.2</span> <strong>Importación y Exportación de Datos</strong></h2>
+<p>Antes de manipular datos, es importante aprender a <strong>importarlos</strong> desde archivos externos y <strong>exportarlos</strong> cuando queramos guardar resultados.</p>
+<section id="funciones-principales" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="funciones-principales"><span class="header-section-number">11.2.1</span> <strong>Funciones principales</strong></h3>
+<ul>
+<li><p><strong><code>read.csv()</code></strong> – Importa archivos CSV.</p></li>
+<li><p><strong><code>read.table()</code></strong> – Importa archivos en formatos de tabla más generales.</p></li>
+<li><p><strong><code>write.csv()</code></strong> – Exporta un data frame a un archivo CSV.</p></li>
+</ul>
+<p>Ejemplo básico:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>hp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"hp_data/Characters.csv"</span>, <span class="at">sep =</span> <span class="st">";"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="cómo-explorar-un-data-frame-en-r" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="cómo-explorar-un-data-frame-en-r"><span class="header-section-number">11.3</span> Cómo explorar un data frame en R</h2>
+<p>Una vez que tienes un data frame (ya sea creado a mano o importado), es importante aprender a explorarlo para entender su estructura y contenido.</p>
+<p>A continuación se presentan las funciones más útiles para esto:</p>
+<section id="ver-las-primeras-filas" class="level4">
+<h4 class="anchored" data-anchor-id="ver-las-primeras-filas"><strong>Ver las primeras filas</strong></h4>
+<p>Muestra las primeras 6 filas del data frame.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Id                                    Name Gender
+1  1                      Harry James Potter   Male
+2  2                   Ronald Bilius Weasley   Male
+3  3                   Hermione Jean Granger Female
+4  4 Albus Percival Wulfric Brian Dumbledore   Male
+5  5                           Rubeus Hagrid   Male
+6  6                      Neville Longbottom   Male
+                                                                   Job
+1                                                              Student
+2                                                              Student
+3                                                              Student
+4                                                           Headmaster
+5 Keeper of Keys and Grounds | Professor of Care of Magical Creatures 
+6                                                              Student
+       House                               Wand             Patronus
+1 Gryffindor        11"  Holly  phoenix feather                 Stag
+2 Gryffindor         12" Ash unicorn tail hair  Jack Russell terrier
+3 Gryffindor 10¾"  vine wood dragon heartstring                Otter
+4 Gryffindor  15" Elder Thestral tail hair core              Phoenix
+5 Gryffindor              16"  Oak unknown core                 None
+6 Gryffindor            13" Cherry unicorn hair        Non-corporeal
+                Species            Blood.status             Hair.colour
+1                 Human              Half-blood                   Black
+2                 Human              Pure-blood                     Red
+3                 Human             Muggle-born                   Brown
+4                 Human              Half-blood Silver| formerly auburn
+5 Half-Human/Half-Giant Part-Human&nbsp;(Half-giant)                   Black
+6                 Human              Pure-blood                   Blond
+    Eye.colour
+1 Bright green
+2         Blue
+3        Brown
+4         Blue
+5        Black
+6             
+                                                                                                   Loyalty
+1 Albus Dumbledore | Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+2                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+3                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+4                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+5                     Albus Dumbledore | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+6                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+                                                                  Skills
+1                   Parseltongue| Defence Against the Dark Arts | Seeker
+2                                   Wizard chess | Quidditch goalkeeping
+3                                                      Almost everything
+4  Considered by many to be one of the most powerful wizards of his time
+5 Resistant to stunning spells| above average strength | crossbowmanship
+6                                                              Herbology
+               Birth          Death
+1       31 July 1980               
+2       1 March 1980               
+3 19 September,&nbsp;1979               
+4   Late August 1881 30 June,&nbsp;1997&nbsp;
+5    6 December&nbsp;1928               
+6      30 July,&nbsp;1980               </code></pre>
+</div>
+</div>
+<p>Puedes cambiar el número de filas:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hp_data, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Id                  Name Gender     Job      House
+1  1    Harry James Potter   Male Student Gryffindor
+2  2 Ronald Bilius Weasley   Male Student Gryffindor
+3  3 Hermione Jean Granger Female Student Gryffindor
+                                Wand             Patronus Species Blood.status
+1        11"  Holly  phoenix feather                 Stag   Human   Half-blood
+2         12" Ash unicorn tail hair  Jack Russell terrier   Human   Pure-blood
+3 10¾"  vine wood dragon heartstring                Otter   Human  Muggle-born
+  Hair.colour   Eye.colour
+1       Black Bright green
+2         Red         Blue
+3       Brown        Brown
+                                                                                                   Loyalty
+1 Albus Dumbledore | Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+2                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+3                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+                                                Skills              Birth Death
+1 Parseltongue| Defence Against the Dark Arts | Seeker       31 July 1980      
+2                 Wizard chess | Quidditch goalkeeping       1 March 1980      
+3                                    Almost everything 19 September,&nbsp;1979      </code></pre>
+</div>
+</div>
+</section>
+<section id="ver-las-últimas-filas" class="level4">
+<h4 class="anchored" data-anchor-id="ver-las-últimas-filas"><strong>Ver las últimas filas</strong></h4>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Id                     Name Gender
+135 135           Septima Vector Female
+136 136 Wilhelmina Grubbly-Plank Female
+137 137          Fenrir Greyback   Male
+138 138      Gellert Grindelwald   Male
+139 139                    Dobby   Male
+140 140                 Kreacher   Male
+                                                                                            Job
+135                                                          Professor&nbsp;of&nbsp;Arithmancyat&nbsp;Hogwarts
+136                               Substitute professor&nbsp;of&nbsp;Care of Magical Creatures&nbsp;at&nbsp;Hogwarts
+137                                                                                            
+138                                                    Revolutionary leader(c.&nbsp;1920s[6]&nbsp;–&nbsp;1945)
+139      Malfoy family's house-elf (? - 1993),\nHogwarts kitchens worker (December 1994 - 1998)
+140 \nBlack family's house-elf (?-1996), \nHarry Potter's house-elf, \nHogwarts kitchen worker 
+    House                                Wand      Patronus   Species
+135                                   Unknown       Unknown    Human&nbsp;
+136                                   Unknown Non-corporeal    Human&nbsp;
+137                                   Unknown          None  Werewolf
+138       15", Elder, Thestral tail hair core                  Human&nbsp;
+139                                                         House elf
+140                                                         House elf
+                Blood.status Hair.colour Eye.colour
+135                                Black           
+136                                 Grey           
+137                                 Grey           
+138 Pure-blood&nbsp;or&nbsp;half-blood       Blond       Blue
+139                                Green           
+140                                White           
+                                       Loyalty
+135 Hogwarts School of Witchcraft and Wizardry
+136 Hogwarts School of Witchcraft and Wizardry
+137             Lord Voldemort &nbsp;| Death Eaters
+138             Gellert Grindelwald's Acolytes
+139                                           
+140                                           
+                                                                                                                                        Skills
+135                                                                                                                                           
+136                                                                                                                                           
+137                                                                                                                            Physical combat
+138                                                                                                                                   Duelling
+139 A type of magic specific to house-elves, performed without a wand which includes the ability to apparate, disarm and make objects levitate
+140                                    Magic performed without a wand which includes the ability to apparate, disarm and make objects levitate
+          Birth            Death
+135 Before&nbsp;1974                 
+136                             
+137    Pre&nbsp;1945                 
+138        1883      March,&nbsp;1998
+139     28 June Late&nbsp;March,&nbsp;1998
+140                             </code></pre>
+</div>
+</div>
+</section>
+<section id="conocer-la-estructura-del-data-frame" class="level4">
+<h4 class="anchored" data-anchor-id="conocer-la-estructura-del-data-frame"><strong>Conocer la estructura del data frame</strong></h4>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   140 obs. of  15 variables:
+ $ Id          : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Name        : chr  "Harry James Potter" "Ronald Bilius Weasley" "Hermione Jean Granger" "Albus Percival Wulfric Brian Dumbledore" ...
+ $ Gender      : chr  "Male" "Male" "Female" "Male" ...
+ $ Job         : chr  "Student" "Student" "Student" "Headmaster" ...
+ $ House       : chr  "Gryffindor" "Gryffindor" "Gryffindor" "Gryffindor" ...
+ $ Wand        : chr  "11\"  Holly  phoenix feather" "12\" Ash unicorn tail hair " "10¾\"  vine wood dragon heartstring" "15\" Elder Thestral tail hair core" ...
+ $ Patronus    : chr  "Stag" "Jack Russell terrier" "Otter" "Phoenix" ...
+ $ Species     : chr  "Human" "Human" "Human" "Human" ...
+ $ Blood.status: chr  "Half-blood" "Pure-blood" "Muggle-born" "Half-blood" ...
+ $ Hair.colour : chr  "Black" "Red" "Brown" "Silver| formerly auburn" ...
+ $ Eye.colour  : chr  "Bright green" "Blue" "Brown" "Blue" ...
+ $ Loyalty     : chr  "Albus Dumbledore | Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry" "Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry" "Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry" "Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry" ...
+ $ Skills      : chr  "Parseltongue| Defence Against the Dark Arts | Seeker" "Wizard chess | Quidditch goalkeeping" "Almost everything" "Considered by many to be one of the most powerful wizards of his time" ...
+ $ Birth       : chr  "31 July 1980" "1 March 1980" "19 September,&nbsp;1979" "Late August 1881" ...
+ $ Death       : chr  "" "" "" "30 June,&nbsp;1997&nbsp;" ...</code></pre>
+</div>
+</div>
+<p>Esto muestra:</p>
+<ul>
+<li><p>número de filas y columnas</p></li>
+<li><p>tipo de cada variable (character, numeric, factor, etc.)</p></li>
+<li><p>una muestra del contenido</p></li>
+</ul>
+</section>
+<section id="dimensiones-del-data-frame" class="level4">
+<h4 class="anchored" data-anchor-id="dimensiones-del-data-frame"><strong>Dimensiones del data frame</strong></h4>
+<p>Número de filas:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 140</code></pre>
+</div>
+</div>
+<p>Número de columnas:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+<p>Filas y columnas juntas:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 140  15</code></pre>
+</div>
+</div>
+</section>
+<section id="nombres-de-las-columnas" class="level4">
+<h4 class="anchored" data-anchor-id="nombres-de-las-columnas"><strong>Nombres de las columnas</strong></h4>
+<p>Para poder ver los nombres de las columnas tenemos dos funciones diferentes <code>names()</code> o <code>colnames()</code></p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Id"           "Name"         "Gender"       "Job"          "House"       
+ [6] "Wand"         "Patronus"     "Species"      "Blood.status" "Hair.colour" 
+[11] "Eye.colour"   "Loyalty"      "Skills"       "Birth"        "Death"       </code></pre>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Id"           "Name"         "Gender"       "Job"          "House"       
+ [6] "Wand"         "Patronus"     "Species"      "Blood.status" "Hair.colour" 
+[11] "Eye.colour"   "Loyalty"      "Skills"       "Birth"        "Death"       </code></pre>
+</div>
+</div>
+</section>
+<section id="ver-el-data-frame-completo-en-una-ventana-tipo-excel" class="level4">
+<h4 class="anchored" data-anchor-id="ver-el-data-frame-completo-en-una-ventana-tipo-excel"><strong>Ver el data frame completo en una ventana tipo Excel</strong></h4>
+<p>Si queremos explorar la base de datos de forma más completa, R ofrece una función que abre una ventana similar a una hoja de cálculo, donde podemos visualizar todas las filas y columnas. Esto se realiza con la función <strong><code>View()</code></strong>.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="resumen-estadístico-de-las-variables-numéricas" class="level4">
+<h4 class="anchored" data-anchor-id="resumen-estadístico-de-las-variables-numéricas"><strong>Resumen estadístico de las variables numéricas</strong></h4>
+<p>Para obtener una primera impresión del comportamiento de las <strong>variables numéricas</strong> en un data frame, R ofrece la función <strong><code>summary()</code></strong>.<br>
+Esta función genera un <strong>resumen estadístico básico</strong>, que incluye información como el valor mínimo y máximo, la mediana, el promedio y los cuartiles.</p>
+<p>Estos datos permiten entender rápidamente cómo están distribuidos los valores, identificar variaciones importantes y detectar posibles valores atípicos dentro del conjunto de datos.</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Id             Name              Gender              Job           
+ Min.   :  1.00   Length:140         Length:140         Length:140        
+ 1st Qu.: 35.75   Class :character   Class :character   Class :character  
+ Median : 70.50   Mode  :character   Mode  :character   Mode  :character  
+ Mean   : 70.50                                                           
+ 3rd Qu.:105.25                                                           
+ Max.   :140.00                                                           
+    House               Wand             Patronus           Species         
+ Length:140         Length:140         Length:140         Length:140        
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+ Blood.status       Hair.colour         Eye.colour          Loyalty         
+ Length:140         Length:140         Length:140         Length:140        
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+    Skills             Birth              Death          
+ Length:140         Length:140         Length:140        
+ Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character  
+                                                         
+                                                         
+                                                         </code></pre>
+</div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -141,7 +141,7 @@ head(hp_data)
 Puedes cambiar el número de filas:
 
 ```{r}
-head(hp_data, 10)
+head(hp_data, 3)
 ```
 
 #### **Ver las últimas filas**
