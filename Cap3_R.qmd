@@ -1,0 +1,69 @@
+# Manipulación y limpieza de datos
+
+En este capítulo aprenderemos **cómo filtrar, seleccionar y transformar datos en R**. Primero veremos la indexación básica y después utilizaremos `dplyr` para manipular la base de datos de manera más sencilla y eficiente.
+
+## **Indexación y Subconjuntos**
+
+La indexación permite **acceder a partes específicas de un data frame**, ya sea por posición, por nombre o usando condiciones lógicas. Es una herramienta fundamental antes de usar paquetes más avanzados.
+
+### **Selección por filas y columnas con `[ ]`**
+
+La sintaxis básica es:
+
+```{r, eval=FALSE}
+dataframe[fila, columna]
+```
+
+-   `dataframe[1, ]` → primera fila
+
+```{=html}
+<!-- -->
+```
+-    `dataframe[, 3]` → tercera columna
+
+```{=html}
+<!-- -->
+```
+-    `dataframe[1:5, 1:2]` → filas 1 a 5 y columnas 1 y 2
+
+Ejemplo:
+
+```{r, eval=FALSE}
+hp_data[ , 2]
+```
+
+```{r, echo=FALSE}
+c(head(hp_data[ , 2]), "...", tail(hp_data[ , 2]))
+```
+
+Otra forma de seleccionar una columna es por el medio del nombre que tiene:
+
+```{r, eval=FALSE}
+hp_data[ , "Name"]
+```
+
+```{r, echo=FALSE}
+c(head(hp_data[ , "Name"]), "...", tail(hp_data[ , "Name"]))
+```
+
+::: callout-important
+### Nota importante: dejar filas o columnas en blanco
+
+Si **no pones nada** antes o después de la coma dentro de los corchetes, R **retorna todas** las filas o todas las columnas, respectivamente.
+
+-    `hp_data[ , ]` → devuelve **todo** el data frame (filas y columnas).
+
+-    `hp_data[ , 3]` → devuelve **todas las filas** de la columna en posición 3.
+
+-    `hp_data[5, ]` → devuelve **todas las columnas** de la fila 5.
+:::
+
+### **Selección de columnas con `$`**
+
+Además de la selección de columnas con los corchetes `[ ]`, podemos utilizar `$` y acceder por su nombre:
+
+```{r, eval=FALSE}
+hp_data$Name
+hp_data$House
+
+```
