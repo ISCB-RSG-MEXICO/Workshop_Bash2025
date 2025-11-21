@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 10&nbsp; Introducción a las paqueterías y manejo de data frames en R</title>
+<title>Workshop Bash &amp; R - 9&nbsp; Introducción al manejo de datos en R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./install_B.html" rel="next">
+<link href="./Cap3_R.html" rel="next">
 <link href="./Cap1_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap2_R.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap2_R.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -195,37 +195,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap3_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exploración y manipulación de archivos fasta</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap4_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Comandos usados en Github y RStudio</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Cap5_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Buenas practicas en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap3_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -250,17 +250,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#paqueterías-en-r" id="toc-paqueterías-en-r" class="nav-link active" data-scroll-target="#paqueterías-en-r"><span class="header-section-number">10.0.1</span> Paqueterías en R</a></li>
-  <li><a href="#para-qué-sirven-las-paqueterías-en-r" id="toc-para-qué-sirven-las-paqueterías-en-r" class="nav-link" data-scroll-target="#para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">10.0.2</span> ¿Para qué sirven las paqueterías en R?</a></li>
-  <li><a href="#en-dónde-encontrar-más-paqueterías" id="toc-en-dónde-encontrar-más-paqueterías" class="nav-link" data-scroll-target="#en-dónde-encontrar-más-paqueterías"><span class="header-section-number">10.0.3</span> ¿En dónde encontrar más paqueterías?</a></li>
-  <li><a href="#manejo-de-data-frames-en-r" id="toc-manejo-de-data-frames-en-r" class="nav-link" data-scroll-target="#manejo-de-data-frames-en-r"><span class="header-section-number">11</span> <strong>Manejo de Data Frames en R</strong></a>
+  <li><a href="#paqueterías-en-r" id="toc-paqueterías-en-r" class="nav-link active" data-scroll-target="#paqueterías-en-r"><span class="header-section-number">9.0.1</span> Paqueterías en R</a></li>
+  <li><a href="#para-qué-sirven-las-paqueterías-en-r" id="toc-para-qué-sirven-las-paqueterías-en-r" class="nav-link" data-scroll-target="#para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">9.0.2</span> ¿Para qué sirven las paqueterías en R?</a></li>
+  <li><a href="#en-dónde-encontrar-más-paqueterías" id="toc-en-dónde-encontrar-más-paqueterías" class="nav-link" data-scroll-target="#en-dónde-encontrar-más-paqueterías"><span class="header-section-number">9.0.3</span> ¿En dónde encontrar más paqueterías?</a></li>
+  <li><a href="#manejo-de-data-frames-en-r" id="toc-manejo-de-data-frames-en-r" class="nav-link" data-scroll-target="#manejo-de-data-frames-en-r"><span class="header-section-number">10</span> <strong>Manejo de Data Frames en R</strong></a>
   <ul>
-  <li><a href="#introducción-a-los-data-frames-en-r" id="toc-introducción-a-los-data-frames-en-r" class="nav-link" data-scroll-target="#introducción-a-los-data-frames-en-r"><span class="header-section-number">11.1</span> <strong>Introducción a los data frames en R</strong></a></li>
-  <li><a href="#importación-y-exportación-de-datos" id="toc-importación-y-exportación-de-datos" class="nav-link" data-scroll-target="#importación-y-exportación-de-datos"><span class="header-section-number">11.2</span> <strong>Importación y Exportación de Datos</strong></a>
+  <li><a href="#introducción-a-los-data-frames-en-r" id="toc-introducción-a-los-data-frames-en-r" class="nav-link" data-scroll-target="#introducción-a-los-data-frames-en-r"><span class="header-section-number">10.1</span> <strong>Introducción a los data frames en R</strong></a></li>
+  <li><a href="#importación-y-exportación-de-datos" id="toc-importación-y-exportación-de-datos" class="nav-link" data-scroll-target="#importación-y-exportación-de-datos"><span class="header-section-number">10.2</span> <strong>Importación y Exportación de Datos</strong></a>
   <ul class="collapse">
-  <li><a href="#funciones-principales" id="toc-funciones-principales" class="nav-link" data-scroll-target="#funciones-principales"><span class="header-section-number">11.2.1</span> <strong>Funciones principales</strong></a></li>
+  <li><a href="#funciones-principales" id="toc-funciones-principales" class="nav-link" data-scroll-target="#funciones-principales"><span class="header-section-number">10.2.1</span> <strong>Funciones principales</strong></a></li>
   </ul></li>
-  <li><a href="#cómo-explorar-un-data-frame-en-r" id="toc-cómo-explorar-un-data-frame-en-r" class="nav-link" data-scroll-target="#cómo-explorar-un-data-frame-en-r"><span class="header-section-number">11.3</span> Cómo explorar un data frame en R</a>
+  <li><a href="#cómo-explorar-un-data-frame-en-r" id="toc-cómo-explorar-un-data-frame-en-r" class="nav-link" data-scroll-target="#cómo-explorar-un-data-frame-en-r"><span class="header-section-number">10.3</span> Cómo explorar un data frame en R</a>
   <ul class="collapse">
   <li><a href="#ver-las-primeras-filas" id="toc-ver-las-primeras-filas" class="nav-link" data-scroll-target="#ver-las-primeras-filas"><strong>Ver las primeras filas</strong></a></li>
   <li><a href="#ver-las-últimas-filas" id="toc-ver-las-últimas-filas" class="nav-link" data-scroll-target="#ver-las-últimas-filas"><strong>Ver las últimas filas</strong></a></li>
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></h1>
 </div>
 
 
@@ -294,14 +294,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="paqueterías-en-r" class="level3" data-number="10.0.1">
-<h3 data-number="10.0.1" class="anchored" data-anchor-id="paqueterías-en-r"><span class="header-section-number">10.0.1</span> Paqueterías en R</h3>
+<section id="paqueterías-en-r" class="level3" data-number="9.0.1">
+<h3 data-number="9.0.1" class="anchored" data-anchor-id="paqueterías-en-r"><span class="header-section-number">9.0.1</span> Paqueterías en R</h3>
 <p>En R, podemos <strong>agregar funciones y herramientas adicionales</strong> mediante <strong>paqueterías (packages),</strong> también llamadas <strong>librerías</strong>.</p>
 <p>Una paquetería es un conjunto de funciones, datos y documentación creado por alguien más, o incluso por ti.</p>
 <p>Actualmente, hay <strong>más de 10,000 paqueterías disponibles en CRAN</strong> (Comprehensive R Archive Network).</p>
 </section>
-<section id="para-qué-sirven-las-paqueterías-en-r" class="level3" data-number="10.0.2">
-<h3 data-number="10.0.2" class="anchored" data-anchor-id="para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">10.0.2</span> ¿Para qué sirven las paqueterías en R?</h3>
+<section id="para-qué-sirven-las-paqueterías-en-r" class="level3" data-number="9.0.2">
+<h3 data-number="9.0.2" class="anchored" data-anchor-id="para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">9.0.2</span> ¿Para qué sirven las paqueterías en R?</h3>
 <p>Las paqueterías en R permiten <strong>ampliar las funciones básicas del programa</strong>. Por ejemplo:</p>
 <ul>
 <li><p>Crear gráficos más avanzados (<code>ggplot2</code>).</p></li>
@@ -311,8 +311,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>En otras palabras, <strong>las paqueterías te dan herramientas listas para usar</strong> que te ahorran tiempo y esfuerzo, sin tener que escribir todo desde cero.</p>
 </section>
-<section id="en-dónde-encontrar-más-paqueterías" class="level3" data-number="10.0.3">
-<h3 data-number="10.0.3" class="anchored" data-anchor-id="en-dónde-encontrar-más-paqueterías"><span class="header-section-number">10.0.3</span> ¿En dónde encontrar más paqueterías?</h3>
+<section id="en-dónde-encontrar-más-paqueterías" class="level3" data-number="9.0.3">
+<h3 data-number="9.0.3" class="anchored" data-anchor-id="en-dónde-encontrar-más-paqueterías"><span class="header-section-number">9.0.3</span> ¿En dónde encontrar más paqueterías?</h3>
 <p>Si quieres explorar más paqueterías de R o buscar herramientas específicas, existen varios sitios confiables donde puedes consultar. Algunos de ellos son:</p>
 <ul>
 <li><p>El <strong>repositorio oficial CRAN</strong> (Comprehensive R Archive Network) contiene todas las paqueterías revisados y se puede consultar en <a href="https://cran.r-project.org/web/packages/" class="uri">https://cran.r-project.org/web/packages/</a>.</p></li>
@@ -402,20 +402,20 @@ Caution
 <li>También puedes instalar o actualizar paqueterías usando los botones <strong>Install</strong> y <strong>Update</strong> en la parte superior de la pestaña.</li>
 </ul>
 </section>
-<section id="manejo-de-data-frames-en-r" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> <strong>Manejo de Data Frames en R</strong></h1>
+<section id="manejo-de-data-frames-en-r" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> <strong>Manejo de Data Frames en R</strong></h1>
 <p>Una vez que sabemos cómo trabajar con paqueterías en R, podemos comenzar a manipular datos de forma más eficiente. Para ello, primero veremos cómo funcionan los <strong>data frames</strong>, qué podemos hacer con ellos y cómo importarlos desde archivos externos.</p>
-<section id="introducción-a-los-data-frames-en-r" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="introducción-a-los-data-frames-en-r"><span class="header-section-number">11.1</span> <strong>Introducción a los data frames en R</strong></h2>
+<section id="introducción-a-los-data-frames-en-r" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introducción-a-los-data-frames-en-r"><span class="header-section-number">10.1</span> <strong>Introducción a los data frames en R</strong></h2>
 <p>En R, un <strong>data frame</strong> es una de las estructuras más utilizadas para trabajar con datos. Puede pensarse como una tabla, donde cada columna representa una variable y cada fila corresponde a una observación.<br>
 </p>
 <p>En esta sección trabajaremos con una base de datos inspirada en el universo de <em>Harry Potter</em> (personajes, casas, hechizos, etc.), que nos servirá para practicar las operaciones básicas.</p>
 </section>
-<section id="importación-y-exportación-de-datos" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="importación-y-exportación-de-datos"><span class="header-section-number">11.2</span> <strong>Importación y Exportación de Datos</strong></h2>
+<section id="importación-y-exportación-de-datos" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="importación-y-exportación-de-datos"><span class="header-section-number">10.2</span> <strong>Importación y Exportación de Datos</strong></h2>
 <p>Antes de manipular datos, es importante aprender a <strong>importarlos</strong> desde archivos externos y <strong>exportarlos</strong> cuando queramos guardar resultados.</p>
-<section id="funciones-principales" class="level3" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="funciones-principales"><span class="header-section-number">11.2.1</span> <strong>Funciones principales</strong></h3>
+<section id="funciones-principales" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="funciones-principales"><span class="header-section-number">10.2.1</span> <strong>Funciones principales</strong></h3>
 <ul>
 <li><p><strong><code>read.csv()</code></strong> – Importa archivos CSV.</p></li>
 <li><p><strong><code>read.table()</code></strong> – Importa archivos en formatos de tabla más generales.</p></li>
@@ -430,8 +430,8 @@ Caution
 </div>
 </section>
 </section>
-<section id="cómo-explorar-un-data-frame-en-r" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="cómo-explorar-un-data-frame-en-r"><span class="header-section-number">11.3</span> Cómo explorar un data frame en R</h2>
+<section id="cómo-explorar-un-data-frame-en-r" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="cómo-explorar-un-data-frame-en-r"><span class="header-section-number">10.3</span> Cómo explorar un data frame en R</h2>
 <p>Una vez que tienes un data frame (ya sea creado a mano o importado), es importante aprender a explorarlo para entender su estructura y contenido.</p>
 <p>A continuación se presentan las funciones más útiles para esto:</p>
 <section id="ver-las-primeras-filas" class="level4">
@@ -734,6 +734,7 @@ Esta función genera un <strong>resumen estadístico básico</strong>, que inclu
                                                          </code></pre>
 </div>
 </div>
+<p>Hasta aquí ya tenemos todo lo necesario para “conocer” tus datos: cómo cargarlos, visualizarlos, revisar sus columnas y obtener un resumen general. Este es el primer paso en cualquier análisis.</p>
 
 
 </section>
@@ -1092,12 +1093,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Cap1_R.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./install_B.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Cap3_R.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

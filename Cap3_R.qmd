@@ -15,18 +15,14 @@ dataframe[fila, columna]
 ```
 
 -   `dataframe[1, ]` → primera fila
-
-```{=html}
-<!-- -->
-```
--    `dataframe[, 3]` → tercera columna
-
-```{=html}
-<!-- -->
-```
--    `dataframe[1:5, 1:2]` → filas 1 a 5 y columnas 1 y 2
+-   `dataframe[, 3]` → tercera columna
+-   `dataframe[1:5, 1:2]` → filas 1 a 5 y columnas 1 y 2
 
 Ejemplo:
+
+```{r, echo=FALSE}
+hp_data <- read.csv("hp_data/Characters.csv", sep = ";")
+```
 
 ```{r, eval=FALSE}
 hp_data[ , 2]
@@ -51,19 +47,60 @@ c(head(hp_data[ , "Name"]), "...", tail(hp_data[ , "Name"]))
 
 Si **no pones nada** antes o después de la coma dentro de los corchetes, R **retorna todas** las filas o todas las columnas, respectivamente.
 
--    `hp_data[ , ]` → devuelve **todo** el data frame (filas y columnas).
+-   `hp_data[ , ]` → devuelve **todo** el data frame (filas y columnas).
 
--    `hp_data[ , 3]` → devuelve **todas las filas** de la columna en posición 3.
+-   `hp_data[ , 3]` → devuelve **todas las filas** de la columna en posición 3.
 
--    `hp_data[5, ]` → devuelve **todas las columnas** de la fila 5.
+-   `hp_data[5, ]` → devuelve **todas las columnas** de la fila 5.
 :::
 
 ### **Selección de columnas con `$`**
 
 Además de la selección de columnas con los corchetes `[ ]`, podemos utilizar `$` y acceder por su nombre:
 
-```{r, eval=FALSE}
+```{r}
 hp_data$Name
 hp_data$House
+```
+
+```{r}
+hp_data[hp_data$Blood.status == "Muggle-born", ] |>
+  knitr::kable() |>
+  kableExtra::kable_styling(full_width = FALSE, bootstrap_options = "striped")
 
 ```
+
+También puedes usarlo para crear vectores o filtrar y esto nos lleva a nuestros otro elementos clave "**los operadores lógicos**" que se utilizan para filtrar filas:
+
+-   `>` mayor que
+-   `<` menor que
+-   `==` igual
+
+```{r}
+knitr::kable(
+  hp_data[hp_data$Blood.status == "Muggle-born", ],
+  caption = "Personajes Muggle-born"
+)
+
+```
+
+```{r}
+hp_data[hp_data$Blood.status == "Muggle-born", ]
+```
+
+-   `!=` diferente
+
+```{r}
+# Personajes que NO son de Gryffindor
+hp_data[hp_data$House != "Gryffindor", ]
+```
+
+-   `%in%` pertenece a un conjunto
+
+    ```{r}
+
+    ```
+
+    ```{r}
+
+    ```

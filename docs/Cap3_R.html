@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Workshop Bash &amp; R - 10&nbsp; Manipulación y limpieza de datos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./install_B.html" rel="next">
+<link href="./Cap2_R.html" rel="prev">
+<link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap3_R.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Workshop Bash &amp; R</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/ISCB-RSG-MEXICO/Workshop_template" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Información general</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Bpracticas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro_bash.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap1_B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Mis primeros pasos en Bash</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap2_B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Explorando texto y flujo de datos de Bash</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap3_B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exploración y manipulación de archivos fasta</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap4_B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap3_R.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install_B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#indexación-y-subconjuntos" id="toc-indexación-y-subconjuntos" class="nav-link active" data-scroll-target="#indexación-y-subconjuntos"><span class="header-section-number">10.1</span> <strong>Indexación y Subconjuntos</strong></a>
+  <ul>
+  <li><a href="#selección-por-filas-y-columnas-con" id="toc-selección-por-filas-y-columnas-con" class="nav-link" data-scroll-target="#selección-por-filas-y-columnas-con"><span class="header-section-number">10.1.1</span> <strong>Selección por filas y columnas con <code>[ ]</code></strong></a></li>
+  <li><a href="#selección-de-columnas-con" id="toc-selección-de-columnas-con" class="nav-link" data-scroll-target="#selección-de-columnas-con"><span class="header-section-number">10.1.2</span> <strong>Selección de columnas con <code>$</code></strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>En este capítulo aprenderemos <strong>cómo filtrar, seleccionar y transformar datos en R</strong>. Primero veremos la indexación básica y después utilizaremos <code>dplyr</code> para manipular la base de datos de manera más sencilla y eficiente.</p>
+<section id="indexación-y-subconjuntos" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="indexación-y-subconjuntos"><span class="header-section-number">10.1</span> <strong>Indexación y Subconjuntos</strong></h2>
+<p>La indexación permite <strong>acceder a partes específicas de un data frame</strong>, ya sea por posición, por nombre o usando condiciones lógicas. Es una herramienta fundamental antes de usar paquetes más avanzados.</p>
+<section id="selección-por-filas-y-columnas-con" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="selección-por-filas-y-columnas-con"><span class="header-section-number">10.1.1</span> <strong>Selección por filas y columnas con <code>[ ]</code></strong></h3>
+<p>La sintaxis básica es:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dataframe[fila, columna]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li><code>dataframe[1, ]</code> → primera fila</li>
+<li><code>dataframe[, 3]</code> → tercera columna</li>
+<li><code>dataframe[1:5, 1:2]</code> → filas 1 a 5 y columnas 1 y 2</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hp_data[ , <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Harry James Potter"                     
+ [2] "Ronald Bilius Weasley"                  
+ [3] "Hermione Jean Granger"                  
+ [4] "Albus Percival Wulfric Brian Dumbledore"
+ [5] "Rubeus Hagrid"                          
+ [6] "Neville Longbottom"                     
+ [7] "..."                                    
+ [8] "Septima Vector"                         
+ [9] "Wilhelmina Grubbly-Plank"               
+[10] "Fenrir Greyback"                        
+[11] "Gellert Grindelwald"                    
+[12] "Dobby"                                  
+[13] "Kreacher"                               </code></pre>
+</div>
+</div>
+<p>Otra forma de seleccionar una columna es por el medio del nombre que tiene:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>hp_data[ , <span class="st">"Name"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Harry James Potter"                     
+ [2] "Ronald Bilius Weasley"                  
+ [3] "Hermione Jean Granger"                  
+ [4] "Albus Percival Wulfric Brian Dumbledore"
+ [5] "Rubeus Hagrid"                          
+ [6] "Neville Longbottom"                     
+ [7] "..."                                    
+ [8] "Septima Vector"                         
+ [9] "Wilhelmina Grubbly-Plank"               
+[10] "Fenrir Greyback"                        
+[11] "Gellert Grindelwald"                    
+[12] "Dobby"                                  
+[13] "Kreacher"                               </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota importante: dejar filas o columnas en blanco
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si <strong>no pones nada</strong> antes o después de la coma dentro de los corchetes, R <strong>retorna todas</strong> las filas o todas las columnas, respectivamente.</p>
+<ul>
+<li><p><code>hp_data[ , ]</code> → devuelve <strong>todo</strong> el data frame (filas y columnas).</p></li>
+<li><p><code>hp_data[ , 3]</code> → devuelve <strong>todas las filas</strong> de la columna en posición 3.</p></li>
+<li><p><code>hp_data[5, ]</code> → devuelve <strong>todas las columnas</strong> de la fila 5.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="selección-de-columnas-con" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="selección-de-columnas-con"><span class="header-section-number">10.1.2</span> <strong>Selección de columnas con <code>$</code></strong></h3>
+<p>Además de la selección de columnas con los corchetes <code>[ ]</code>, podemos utilizar <code>$</code> y acceder por su nombre:</p>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hp_data<span class="sc">$</span>Name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "Harry James Potter"                      
+  [2] "Ronald Bilius Weasley"                   
+  [3] "Hermione Jean Granger"                   
+  [4] "Albus Percival Wulfric Brian Dumbledore" 
+  [5] "Rubeus Hagrid"                           
+  [6] "Neville Longbottom"                      
+  [7] "Fred Weasley"                            
+  [8] "George Weasley"                          
+  [9] "Ginevra (Ginny) Molly Weasley"           
+ [10] "Dean Thomas"                             
+ [11] "Seamus Finnigan"                         
+ [12] "Lily J. Potter"                          
+ [13] "James Potter"                            
+ [14] "Sirius Black"                            
+ [15] "Remus John Lupin"                        
+ [16] "Peter Pettigrew"                         
+ [17] "Percy Ignatius Weasley"                  
+ [18] "(Bill) William Arthur Weasley"           
+ [19] "Charles Weasley"                         
+ [20] "Lee Jordan&nbsp;"                             
+ [21] "Oliver Wood"                             
+ [22] "Angelina Johnson"                        
+ [23] "Katie Bell"                              
+ [24] "Alicia Spinnet"                          
+ [25] "Lavender Brown"                          
+ [26] "Parvati Patil"                           
+ [27] "Romilda Vane"                            
+ [28] "Colin Creevey"                           
+ [29] "Cormac McLaggen"                         
+ [30] "Minerva McGonagall"                      
+ [31] "Molly Weasley"                           
+ [32] "Arthur Weasley"                          
+ [33] "Quirinus Quirrell"                       
+ [34] "Cho Chang"                               
+ [35] "Luna Lovegood"                           
+ [36] "Gilderoy Lockhart"                       
+ [37] "Filius Flitwick"                         
+ [38] "Sybill Patricia Trelawney"               
+ [39] "Garrick Ollivander"                      
+ [40] "Myrtle Elizabeth Warren (Moaning Myrtle)"
+ [41] "Padma Patil"                             
+ [42] "Michael Corner"                          
+ [43] "Marietta Edgecombe"                      
+ [44] "Terry Boot"                              
+ [45] "Anthony Goldstein"                       
+ [46] "Severus Snape"                           
+ [47] "Draco Malfoy"                            
+ [48] "Vincent Crabbe"                          
+ [49] "Gregory Goyle"                           
+ [50] "Bellatrix Lestrange"                     
+ [51] "Dolores Jane Umbridge"                   
+ [52] "Horace Eugene Flaccus Slughorn"          
+ [53] "Lucius Malfoy"                           
+ [54] "Narcissa Malfoy"                         
+ [55] "Regulus Arcturus Black"                  
+ [56] "Pansy Parkinson"                         
+ [57] "Blaise Zabini"                           
+ [58] "Tom Marvolo Riddle"                      
+ [59] "Theodore Nott"                           
+ [60] "Rodolphus Lestrange"                     
+ [61] "Millicent Bulstrode"                     
+ [62] "Graham Montague"                         
+ [63] "Bloody Baron"                            
+ [64] "Marcus Flint"                            
+ [65] "Penelope Clearwater"                     
+ [66] "Roger Davies"                            
+ [67] "Marcus Belby"                            
+ [68] "Salazar Slytherin"                       
+ [69] "Godric Gryffindor"                       
+ [70] "Rowena Ravenclaw"                        
+ [71] "Nicholas de Mimsy-Porpington"            
+ [72] "Cuthbert Binns"                          
+ [73] "Barty Crouch Jr."                        
+ [74] "Charity Burbage"                         
+ [75] "Firenze"                                 
+ [76] "Alecto Carrow"                           
+ [77] "Amycus Carrow"                           
+ [78] "Helga Hufflepuff"                        
+ [79] "Fat Friar"                               
+ [80] "Helena Ravenclaw"                        
+ [81] "Nymphadora Tonks"                        
+ [82] "Pomona Sprout"                           
+ [83] "Newton Scamander"                        
+ [84] "Cedric Diggory"                          
+ [85] "Justin Finch-Fletchley"                  
+ [86] "Zacharias Smith"                         
+ [87] "Hannah Abbott"                           
+ [88] "Ernest Macmillan"                        
+ [89] "Susan Bones"                             
+ [90] "Walden Macnair"                          
+ [91] "Augustus Rookwood"                       
+ [92] "Antonin Dolohov"                         
+ [93] "Corban Yaxley"                           
+ [94] "Igor Karkaroff"                          
+ [95] "Kingsley Shacklebolt"                    
+ [96] "Alastor Moody"                           
+ [97] "Alice Longbottom"                        
+ [98] "Frank Longbottom"                        
+ [99] "Rufus Scrimgeour"                        
+[100] "Cornelius Oswald Fudge"                  
+[101] "Barty Crouch Sr."                        
+[102] "Amos Diggory"                            
+[103] "Dedalus Diggle"                          
+[104] "Elphias Doge"                            
+[105] "Fleur Isabelle Delacour"                 
+[106] "Aberforth Dumbledore"                    
+[107] "Mundungus Fletcher"                      
+[108] "Sturgis Podmore"                         
+[109] "Hestia Jones"                            
+[110] "Marlene McKinnon"                        
+[111] "Fabian Prewett"                          
+[112] "Gideon Prewett"                          
+[113] "Emmeline Vance"                          
+[114] "Edgar Bones"                             
+[115] "Dorcas Meadowes"                         
+[116] "Benjy Fenwick"                           
+[117] "Madame Olympe Maxime"                    
+[118] "Gabrielle Delacour"                      
+[119] "Viktor Krum"                             
+[120] "Petunia Dursley"                         
+[121] "Vernon Dursley"                          
+[122] "Dudley Dursley"                          
+[123] "Marge Dursley"                           
+[124] "Dennis Creevey"                          
+[125] "Albus Severus Potter"                    
+[126] "Scorpius Hyperion Malfoy"                
+[127] "Edward Remus Lupin"                      
+[128] "James Sirius Potter"                     
+[129] "Rose Granger-Weasley"                    
+[130] "Argus Filch"                             
+[131] "Poppy Pomfrey"                           
+[132] "Rolanda Hooch"                           
+[133] "Irma Pince"                              
+[134] "Aurora Sinistra"                         
+[135] "Septima Vector"                          
+[136] "Wilhelmina Grubbly-Plank"                
+[137] "Fenrir Greyback"                         
+[138] "Gellert Grindelwald"                     
+[139] "Dobby"                                   
+[140] "Kreacher"                                </code></pre>
+</div>
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>hp_data<span class="sc">$</span>House</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "Gryffindor"                   "Gryffindor"                  
+  [3] "Gryffindor"                   "Gryffindor"                  
+  [5] "Gryffindor"                   "Gryffindor"                  
+  [7] "Gryffindor"                   "Gryffindor"                  
+  [9] "Gryffindor"                   "Gryffindor"                  
+ [11] "Gryffindor"                   "Gryffindor"                  
+ [13] "Gryffindor"                   "Gryffindor"                  
+ [15] "Gryffindor"                   "Gryffindor"                  
+ [17] "Gryffindor"                   "Gryffindor"                  
+ [19] "Gryffindor"                   "Gryffindor"                  
+ [21] "Gryffindor"                   "Gryffindor"                  
+ [23] "Gryffindor"                   "Gryffindor"                  
+ [25] "Gryffindor"                   "Gryffindor"                  
+ [27] "Gryffindor"                   "Gryffindor"                  
+ [29] "Gryffindor"                   "Gryffindor"                  
+ [31] "Gryffindor"                   "Gryffindor"                  
+ [33] "Ravenclaw"                    "Ravenclaw"                   
+ [35] "Ravenclaw"                    "Ravenclaw"                   
+ [37] "Ravenclaw"                    "Ravenclaw"                   
+ [39] "Ravenclaw"                    "Ravenclaw"                   
+ [41] "Ravenclaw"                    "Ravenclaw"                   
+ [43] "Ravenclaw"                    "Ravenclaw"                   
+ [45] "Ravenclaw"                    "Slytherin"                   
+ [47] "Slytherin"                    "Slytherin"                   
+ [49] "Slytherin"                    "Slytherin"                   
+ [51] "Slytherin"                    "Slytherin"                   
+ [53] "Slytherin"                    "Slytherin"                   
+ [55] "Slytherin"                    "Slytherin"                   
+ [57] "Slytherin"                    "Slytherin"                   
+ [59] "Slytherin"                    "Slytherin"                   
+ [61] "Slytherin"                    "Slytherin"                   
+ [63] "Slytherin"                    "Slytherin"                   
+ [65] "Ravenclaw"                    "Ravenclaw"                   
+ [67] "Ravenclaw"                    "Slytherin"                   
+ [69] "Gryffindor"                   "Ravenclaw"                   
+ [71] "Gryffindor"                   ""                            
+ [73] ""                             ""                            
+ [75] ""                             "Slytherin"                   
+ [77] "Slytherin"                    "Hufflepuff"                  
+ [79] "Hufflepuff"                   "Ravenclaw"                   
+ [81] "Hufflepuff"                   "Hufflepuff"                  
+ [83] "Hufflepuff"                   "Hufflepuff"                  
+ [85] "Hufflepuff"                   "Hufflepuff"                  
+ [87] "Hufflepuff"                   "Hufflepuff"                  
+ [89] "Hufflepuff"                   "Slytherin"                   
+ [91] "Slytherin"                    "Slytherin"                   
+ [93] "Slytherin"                    ""                            
+ [95] ""                             ""                            
+ [97] ""                             "Gryffindor"                  
+ [99] ""                             ""                            
+[101] ""                             ""                            
+[103] ""                             ""                            
+[105] "Beauxbatons Academy of Magic" ""                            
+[107] ""                             ""                            
+[109] ""                             ""                            
+[111] ""                             ""                            
+[113] ""                             "Hufflepuff"                  
+[115] ""                             ""                            
+[117] "Beauxbatons Academy of Magic" "Beauxbatons Academy of Magic"
+[119] "Durmstrang Institute"         ""                            
+[121] ""                             ""                            
+[123] ""                             "Gryffindor"                  
+[125] "Slytherin"                    "Slytherin"                   
+[127] "Hufflepuff"                   "Gryffindor"                  
+[129] "Gryffindor"                   ""                            
+[131] ""                             ""                            
+[133] ""                             ""                            
+[135] ""                             ""                            
+[137] ""                             ""                            
+[139] ""                             ""                            </code></pre>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>hp_data[hp_data<span class="sc">$</span>Blood.status <span class="sc">==</span> <span class="st">"Muggle-born"</span>, ] <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">bootstrap_options =</span> <span class="st">"striped"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Id</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Gender</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Job</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">House</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Wand</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Patronus</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Blood.status</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Hair.colour</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Eye.colour</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Loyalty</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Skills</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Birth</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Death</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Hermione Jean Granger</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">10¾" vine wood dragon heartstring</td>
+<td style="text-align: left;">Otter</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Almost everything</td>
+<td style="text-align: left;">19 September,&nbsp;1979</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Dean Thomas</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Chaser</td>
+<td style="text-align: left;">&nbsp;1 September&nbsp;1979-&nbsp;31 August&nbsp;1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Lily J. Potter</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">10¼" Willow unknown core</td>
+<td style="text-align: left;">Doe</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Auburn</td>
+<td style="text-align: left;">Bright green</td>
+<td style="text-align: left;">Order of the Phoenix</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">30 January,&nbsp;1960&nbsp;</td>
+<td style="text-align: left;">31 October,&nbsp;1981</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">28</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">Colin Creevey</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Mousy</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124;Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Photography</td>
+<td style="text-align: left;">&nbsp;3 May - 31 August&nbsp;1981</td>
+<td style="text-align: left;">2 May,&nbsp;1998</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">40</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">Myrtle Elizabeth Warren (Moaning Myrtle)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Ravenclaw</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Ghost</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">14 June&nbsp;1928&nbsp;-13 June&nbsp;1929</td>
+<td style="text-align: left;">13 June,&nbsp;1943</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">85</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: left;">Justin Finch-Fletchley</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Hufflepuff</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Non-corporeal</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Red</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dumbledore's Army</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1 September&nbsp;1979- 31 August&nbsp;1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">124</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: left;">Dennis Creevey</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Human&nbsp;</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Mousy brown</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dumbledore's Army</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">&nbsp;1 September&nbsp;1982 - 31 August&nbsp;1983</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>También puedes usarlo para crear vectores o filtrar y esto nos lleva a nuestros otro elementos clave “<strong>los operadores lógicos</strong>” que se utilizan para filtrar filas:</p>
+<ul>
+<li><code>&gt;</code> mayor que</li>
+<li><code>&lt;</code> menor que</li>
+<li><code>==</code> igual</li>
+</ul>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  hp_data[hp_data<span class="sc">$</span>Blood.status <span class="sc">==</span> <span class="st">"Muggle-born"</span>, ],</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Personajes Muggle-born"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Personajes Muggle-born</caption>
+<colgroup>
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 12%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 10%">
+<col style="width: 4%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 28%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Id</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Gender</th>
+<th style="text-align: left;">Job</th>
+<th style="text-align: left;">House</th>
+<th style="text-align: left;">Wand</th>
+<th style="text-align: left;">Patronus</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: left;">Blood.status</th>
+<th style="text-align: left;">Hair.colour</th>
+<th style="text-align: left;">Eye.colour</th>
+<th style="text-align: left;">Loyalty</th>
+<th style="text-align: left;">Skills</th>
+<th style="text-align: left;">Birth</th>
+<th style="text-align: left;">Death</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Hermione Jean Granger</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">10¾” vine wood dragon heartstring</td>
+<td style="text-align: left;">Otter</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Dumbledore’s Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Almost everything</td>
+<td style="text-align: left;">19 September,&nbsp;1979</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Dean Thomas</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Dumbledore’s Army | Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Chaser</td>
+<td style="text-align: left;">&nbsp;1 September&nbsp;1979-&nbsp;31 August&nbsp;1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Lily J. Potter</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">10¼” Willow unknown core</td>
+<td style="text-align: left;">Doe</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Auburn</td>
+<td style="text-align: left;">Bright green</td>
+<td style="text-align: left;">Order of the Phoenix</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">30 January,&nbsp;1960&nbsp;</td>
+<td style="text-align: left;">31 October,&nbsp;1981</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">28</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">Colin Creevey</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Mousy</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dumbledore’s Army |Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Photography</td>
+<td style="text-align: left;">&nbsp;3 May - 31 August&nbsp;1981</td>
+<td style="text-align: left;">2 May,&nbsp;1998</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">40</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">Myrtle Elizabeth Warren (Moaning Myrtle)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Ravenclaw</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Ghost</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">14 June&nbsp;1928&nbsp;-13 June&nbsp;1929</td>
+<td style="text-align: left;">13 June,&nbsp;1943</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">85</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: left;">Justin Finch-Fletchley</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Hufflepuff</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Non-corporeal</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Red</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dumbledore’s Army</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1 September&nbsp;1979- 31 August&nbsp;1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">124</td>
+<td style="text-align: right;">124</td>
+<td style="text-align: left;">Dennis Creevey</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Human&nbsp;</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Mousy brown</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dumbledore’s Army</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">&nbsp;1 September&nbsp;1982 - 31 August&nbsp;1983</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>hp_data[hp_data<span class="sc">$</span>Blood.status <span class="sc">==</span> <span class="st">"Muggle-born"</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Id                                     Name Gender     Job      House
+3     3                    Hermione Jean Granger Female Student Gryffindor
+10   10                              Dean Thomas   Male Student Gryffindor
+12   12                           Lily J. Potter Female         Gryffindor
+28   28                            Colin Creevey   Male Student Gryffindor
+40   40 Myrtle Elizabeth Warren (Moaning Myrtle) Female Student  Ravenclaw
+85   85                   Justin Finch-Fletchley   Male Student Hufflepuff
+124 124                           Dennis Creevey   Male Student Gryffindor
+                                  Wand      Patronus Species Blood.status
+3   10¾"  vine wood dragon heartstring         Otter   Human  Muggle-born
+10                             Unknown       Unknown   Human  Muggle-born
+12          10¼"  Willow  unknown core           Doe   Human  Muggle-born
+28                             Unknown       Unknown   Human  Muggle-born
+40                             Unknown       Unknown   Ghost  Muggle-born
+85                             Unknown Non-corporeal   Human  Muggle-born
+124                            Unknown       Unknown  Human&nbsp;  Muggle-born
+    Hair.colour   Eye.colour
+3         Brown        Brown
+10        Black        Brown
+12       Auburn Bright green
+28        Mousy             
+40                          
+85          Red             
+124 Mousy brown             
+                                                                                  Loyalty
+3   Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
+10                         Dumbledore's Army | Hogwarts School of Witchcraft and Wizardry
+12                                                                   Order of the Phoenix
+28                          Dumbledore's Army |Hogwarts School of Witchcraft and Wizardry
+40                                                                                       
+85                                                                      Dumbledore's Army
+124                                                                     Dumbledore's Army
+               Skills                              Birth            Death
+3   Almost everything                 19 September,&nbsp;1979                 
+10             Chaser  &nbsp;1 September&nbsp;1979-&nbsp;31 August&nbsp;1980                 
+12                                     30 January,&nbsp;1960&nbsp; 31 October,&nbsp;1981
+28        Photography            &nbsp;3 May - 31 August&nbsp;1981      2 May,&nbsp;1998
+40                            14 June&nbsp;1928&nbsp;-13 June&nbsp;1929    13 June,&nbsp;1943
+85                      1 September&nbsp;1979- 31 August&nbsp;1980                 
+124                   &nbsp;1 September&nbsp;1982 - 31 August&nbsp;1983                 </code></pre>
+</div>
+</div>
+<ul>
+<li><code>!=</code> diferente</li>
+</ul>
+<div class="cell">
+<details open="">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Personajes que NO son de Gryffindor</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>hp_data[hp_data<span class="sc">$</span>House <span class="sc">!=</span> <span class="st">"Gryffindor"</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Id                                     Name Gender
+33   33                        Quirinus Quirrell   Male
+34   34                                Cho Chang Female
+35   35                            Luna Lovegood Female
+36   36                        Gilderoy Lockhart   Male
+37   37                          Filius Flitwick   Male
+38   38                Sybill Patricia Trelawney Female
+39   39                       Garrick Ollivander   Male
+40   40 Myrtle Elizabeth Warren (Moaning Myrtle) Female
+41   41                              Padma Patil Female
+42   42                           Michael Corner   Male
+43   43                       Marietta Edgecombe Female
+44   44                               Terry Boot   Male
+45   45                        Anthony Goldstein   Male
+46   46                            Severus Snape   Male
+47   47                             Draco Malfoy   Male
+48   48                           Vincent Crabbe   Male
+49   49                            Gregory Goyle   Male
+50   50                      Bellatrix Lestrange Female
+51   51                    Dolores Jane Umbridge Female
+52   52           Horace Eugene Flaccus Slughorn       
+53   53                            Lucius Malfoy   Male
+54   54                          Narcissa Malfoy Female
+55   55                   Regulus Arcturus Black   Male
+56   56                          Pansy Parkinson Female
+57   57                            Blaise Zabini   Male
+58   58                       Tom Marvolo Riddle   Male
+59   59                            Theodore Nott   Male
+60   60                      Rodolphus Lestrange   Male
+61   61                      Millicent Bulstrode Female
+62   62                          Graham Montague   Male
+63   63                             Bloody Baron   Male
+64   64                             Marcus Flint   Male
+65   65                      Penelope Clearwater Female
+66   66                             Roger Davies   Male
+67   67                             Marcus Belby   Male
+68   68                        Salazar Slytherin   Male
+70   70                         Rowena Ravenclaw Female
+72   72                           Cuthbert Binns   Male
+73   73                         Barty Crouch Jr.   Male
+74   74                          Charity Burbage Female
+75   75                                  Firenze   Male
+76   76                            Alecto Carrow Female
+77   77                            Amycus Carrow   Male
+78   78                         Helga Hufflepuff Female
+79   79                                Fat Friar   Male
+80   80                         Helena Ravenclaw Female
+81   81                         Nymphadora Tonks Female
+82   82                            Pomona Sprout Female
+83   83                         Newton Scamander   Male
+84   84                           Cedric Diggory   Male
+85   85                   Justin Finch-Fletchley   Male
+86   86                          Zacharias Smith   Male
+87   87                            Hannah Abbott Female
+88   88                         Ernest Macmillan   Male
+89   89                              Susan Bones Female
+90   90                           Walden Macnair   Male
+91   91                        Augustus Rookwood   Male
+92   92                          Antonin Dolohov   Male
+93   93                            Corban Yaxley   Male
+94   94                           Igor Karkaroff   Male
+95   95                     Kingsley Shacklebolt   Male
+96   96                            Alastor Moody   Male
+97   97                         Alice Longbottom Female
+99   99                         Rufus Scrimgeour   Male
+100 100                   Cornelius Oswald Fudge   Male
+101 101                         Barty Crouch Sr.   Male
+102 102                             Amos Diggory   Male
+103 103                           Dedalus Diggle   Male
+104 104                             Elphias Doge   Male
+105 105                  Fleur Isabelle Delacour Female
+106 106                     Aberforth Dumbledore   Male
+107 107                       Mundungus Fletcher   Male
+108 108                          Sturgis Podmore   Male
+109 109                             Hestia Jones Female
+110 110                         Marlene McKinnon Female
+111 111                           Fabian Prewett   Male
+112 112                           Gideon Prewett   Male
+113 113                           Emmeline Vance Female
+114 114                              Edgar Bones   Male
+115 115                          Dorcas Meadowes Female
+116 116                            Benjy Fenwick   Male
+117 117                     Madame Olympe Maxime Female
+118 118                       Gabrielle Delacour Female
+119 119                              Viktor Krum   Male
+120 120                          Petunia Dursley Female
+121 121                           Vernon Dursley   Male
+122 122                           Dudley Dursley   Male
+123 123                            Marge Dursley Female
+125 125                     Albus Severus Potter   Male
+126 126                 Scorpius Hyperion Malfoy   Male
+127 127                       Edward Remus Lupin   Male
+130 130                              Argus Filch   Male
+131 131                            Poppy Pomfrey Female
+132 132                            Rolanda Hooch Female
+133 133                               Irma Pince Female
+134 134                          Aurora Sinistra Female
+135 135                           Septima Vector Female
+136 136                 Wilhelmina Grubbly-Plank Female
+137 137                          Fenrir Greyback   Male
+138 138                      Gellert Grindelwald   Male
+139 139                                    Dobby   Male
+140 140                                 Kreacher   Male
+                                                                                                     Job
+33                                                              Defence Against the Dark Arts(1991-1992)
+34                                                                                               Student
+35                                                                                               Student
+36                                                              Defence Against the Dark Arts(1992-1993)
+37                                                               Professor of Charms | Head of Ravenclaw
+38                                                                               Professor&nbsp;of&nbsp;Divination
+39                                                                                             Wandmaker
+40                                                                                               Student
+41                                                                                               Student
+42                                                                                               Student
+43                                                                                               Student
+44                                                                                               Student
+45                                                                                               Student
+46                                                              Professor of Potions | Head of Slytherin
+47                                                                                               Student
+48                                                                                               Student
+49                                                                                               Student
+50                                                                                                      
+51                    Professor&nbsp;of&nbsp;Defence Against the Dark Arts&nbsp;| Department of Magical Law Enforcement
+52                                                                                 Professor of Potions 
+53                                                                                       School Governor
+54                                                                                                      
+55                                                                                                      
+56                                                                                               Student
+57                                                                                               Student
+58                                                                                               Student
+59                                                                                               Student
+60                                                                                                      
+61                                                                                               Student
+62                                                                                               Student
+63                                                                                 Slytherin House Ghost
+64                                                                                               Student
+65                                                                                               Student
+66                                                                                               Student
+67                                                                                               Student
+68                                                                                  Founder of Slytherin
+70                                                                                  Founder of Ravenclaw
+72                                                                        Professor&nbsp;of&nbsp;History of Magic&nbsp;
+73                                        Professor&nbsp;of&nbsp;Defence Against the Dark Arts&nbsp;(as Alastor Moody)&nbsp;
+74                                                                           Professor of Muggle Studies
+75                                                                               Professor&nbsp;of&nbsp;Divination
+76                                                                           Professor&nbsp;of&nbsp;Muggle Studies
+77                                                                                Professor&nbsp;of&nbsp;Dark Arts
+78                                                                                 Founder of Hufflepuff
+79                                                                                Hufflepuff House Ghost
+80                                                                                 Ravenclaw House Ghost
+81                                                                                                 Auror
+82                                                     Professor of Herbology | Head of Hufflepuff House
+83  Employee in the&nbsp;Beast Division&nbsp;of the&nbsp;Department for the Regulation and Control of Magical Creatures
+84                                                                                               Student
+85                                                                                               Student
+86                                                                                               Student
+87                                                                                               Student
+88                                                                                               Student
+89                                                                                               Student
+90                                 Executioner&nbsp;for the&nbsp;Committee for the Disposal of Dangerous Creatures
+91                                                                                           Unspeakable
+92                                                                                           Death Eater
+93                                                     Head of the&nbsp;Department of Magical Law Enforcement
+94                                                                    Headmaster of&nbsp;Durmstrang Institute
+95                                                                           Auror  | Minister for Magic
+96                                                                                                Auror 
+97                                                                                                 Auror
+99                                                              Head of&nbsp;Auror Office| Minister for Magic
+100                                                                                   Minister for Magic
+101                                          Head of the&nbsp;Department of International Magical Cooperation
+102                      Employee of the&nbsp;Department for the Regulation and Control of Magical Creatures[
+103                                                                                                     
+104                                                                    Special Advisor to the Wizengamot
+105                                                                Part-time at&nbsp;Gringotts Wizarding Bank
+106                                                               Owner and Barman of the&nbsp;Hog's Head Inn
+107                                                                        Dealer of wizarding artifacts
+108                                                                                        Advance Guard
+109                                                                                        Advance Guard
+110                                                                                                     
+111                                                                                                     
+112                                                                                                     
+113                                                                                        Advance Guard
+114                                                                                                     
+115                                                                                                     
+116                                                                                                     
+117                                                         Headmistress of&nbsp;Beauxbatons Academy of Magic
+118                                                                                                     
+119                                                     Seeker&nbsp;for the&nbsp;Bulgarian National Quidditch team
+120                                                                                                     
+121                                                                                Director at&nbsp;Grunnings
+122                                                                                                     
+123                                                                                          Dog breeder
+125                                                                                              Student
+126                                                                                              Student
+127                                                                                              Student
+130                                                                                Caretaker of&nbsp;Hogwarts
+131                                                                            Matron at&nbsp;Hogwarts School
+132                                                                        Flying Instructor at Hogwarts
+133                                                                                Librarian at Hogwarts
+134                                                                               Astronomer at Hogwarts
+135                                                                   Professor&nbsp;of&nbsp;Arithmancyat&nbsp;Hogwarts
+136                                        Substitute professor&nbsp;of&nbsp;Care of Magical Creatures&nbsp;at&nbsp;Hogwarts
+137                                                                                                     
+138                                                             Revolutionary leader(c.&nbsp;1920s[6]&nbsp;–&nbsp;1945)
+139               Malfoy family's house-elf (? - 1993),\nHogwarts kitchens worker (December 1994 - 1998)
+140          \nBlack family's house-elf (?-1996), \nHarry Potter's house-elf, \nHogwarts kitchen worker 
+                           House                                          Wand
+33                     Ravenclaw                   9" Alder unicorn hair bendy
+34                     Ravenclaw                                       Unknown
+35                     Ravenclaw                                       Unknown
+36                     Ravenclaw                  9" Cherry dragon heartstring
+37                     Ravenclaw                                       Unknown
+38                     Ravenclaw                  9 ½” hazel unicorn hair core
+39                     Ravenclaw              12¾" Hornbeam dragon heartstring
+40                     Ravenclaw                                       Unknown
+41                     Ravenclaw                                       Unknown
+42                     Ravenclaw                                       Unknown
+43                     Ravenclaw                                       Unknown
+44                     Ravenclaw                                       Unknown
+45                     Ravenclaw                                       Unknown
+46                     Slytherin                                       Unknown
+47                     Slytherin                     10" Hawthorn unicorn hair
+48                     Slytherin                                       Unknown
+49                     Slytherin                                       Unknown
+50                     Slytherin                12¾" Walnut dragon heartstring
+51                     Slytherin                   8" Birch dragon heartstring
+52                     Slytherin 10¼" Cedar dragon heartstring fairly flexible
+53                     Slytherin                    Elm and dragon heartstring
+54                     Slytherin                                       Unknown
+55                     Slytherin                                       Unknown
+56                     Slytherin                                       Unknown
+57                     Slytherin                                       Unknown
+58                     Slytherin                 13½" Yew phoenix feather core
+59                     Slytherin                                       Unknown
+60                     Slytherin                                       Unknown
+61                     Slytherin                                       Unknown
+62                     Slytherin                                       Unknown
+63                     Slytherin                                       Unknown
+64                     Slytherin                                       Unknown
+65                     Ravenclaw                                       Unknown
+66                     Ravenclaw                                       Unknown
+67                     Ravenclaw                                       Unknown
+68                     Slytherin                      snakewood, Basilisk horn
+70                     Ravenclaw                                       Unknown
+72                                                                     Unknown
+73                                                                     Unknown
+74                                                                     Unknown
+75                                                                            
+76                     Slytherin                                       Unknown
+77                     Slytherin                                       Unknown
+78                    Hufflepuff                                       Unknown
+79                    Hufflepuff                                       Unknown
+80                     Ravenclaw                                       Unknown
+81                    Hufflepuff                                       Unknown
+82                    Hufflepuff                                       Unknown
+83                    Hufflepuff                                       Unknown
+84                    Hufflepuff                       12¼", Ash, unicorn hair
+85                    Hufflepuff                                       Unknown
+86                    Hufflepuff                                       Unknown
+87                    Hufflepuff                                       Unknown
+88                    Hufflepuff                                       Unknown
+89                    Hufflepuff                                       Unknown
+90                     Slytherin                                       Unknown
+91                     Slytherin                                       Unknown
+92                     Slytherin                                       Unknown
+93                     Slytherin                                       Unknown
+94                                                                     Unknown
+95                                                                     Unknown
+96                                                                     Unknown
+97                                                                     Unknown
+99                                                                     Unknown
+100                                                                    Unknown
+101                                                                    Unknown
+102                                                                    Unknown
+103                                                                    Unknown
+104                                                                    Unknown
+105 Beauxbatons Academy of Magic                     9½", Rosewood, veela hair
+106                                                                    Unknown
+107                                                                    Unknown
+108                                                                    Unknown
+109                                                                    Unknown
+110                                                                    Unknown
+111                                                                    Unknown
+112                                                                    Unknown
+113                                                                    Unknown
+114                   Hufflepuff                                       Unknown
+115                                                                    Unknown
+116                                                                    Unknown
+117 Beauxbatons Academy of Magic                                       Unknown
+118 Beauxbatons Academy of Magic                                       Unknown
+119         Durmstrang Institute            10¼", Hornbeam, dragon heartstring
+120                                                                           
+121                                                                           
+122                                                                           
+123                                                                           
+125                    Slytherin                                       Unknown
+126                    Slytherin                                       Unknown
+127                   Hufflepuff                                       Unknown
+130                                                                           
+131                                                                    Unknown
+132                                                                    Unknown
+133                                                                    Unknown
+134                                                                    Unknown
+135                                                                    Unknown
+136                                                                    Unknown
+137                                                                    Unknown
+138                                        15", Elder, Thestral tail hair core
+139                                                                           
+140                                                                           
+             Patronus                Species               Blood.status
+33      Non-corporeal                  Human                 Half-blood
+34               Swan                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+35               Hare                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+36      Non-corporeal                  Human                 Half-blood
+37      Non-corporeal Human(goblin ancestry)                Part-Goblin
+38      Non-corporeal                  Human                 Half-blood
+39      Non-corporeal                  Human                 Half-blood
+40            Unknown                  Ghost                Muggle-born
+41      Non-corporeal                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+42           Squirrel                  Human                 Half-blood
+43            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+44            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+45      Non-corporeal                  Human                 Half-blood
+46                Doe                  Human                 Half-blood
+47            Unknown                  Human                 Pure-blood
+48            Unknown                  Human                 Pure-blood
+49            Unknown                  Human                 Pure-blood
+50                                     Human                 Pure-blood
+51                Cat                  Human                 Half-blood
+52      Non-corporeal                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+53            Unknown                  Human                 Pure-blood
+54            Unknown                  Human                 Pure-blood
+55      Non-corporeal                  Human                 Pure-blood
+56            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+57            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+58            Unknown                  Human                 Half-blood
+59            Unknown                  Human                 Pure-blood
+60            Unknown                  Human                 Pure-blood
+61            Unknown                  Human                 Half-blood
+62            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+63            Unknown                  Ghost   Pure-blood&nbsp;or&nbsp;half-blood
+64            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+65      Non-corporeal                  Human Muggle-born&nbsp;or&nbsp;half-blood[
+66            Unknown                  Human                           
+67            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+68            Unknown                  Human                 Pure-blood
+70            Unknown                  Human   Pure-blood or half-blood
+72            Unknown                  Ghost                           
+73            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+74      Non-corporeal                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+75                                   Centaur                           
+76            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+77            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+78            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+79            Unknown                  Ghost                           
+80            Unknown                  Ghost   Pure-blood&nbsp;or&nbsp;half-blood
+81  Jack rabbit, Wolf                  Human                 Half-blood
+82      Non-corporeal                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+83            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+84            Unknown                  Human                 Pure-blood
+85      Non-corporeal                  Human                Muggle-born
+86            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+87      Non-corporeal                  Human                 Half-blood
+88               Boar                  Human                 Pure-blood
+89            Unknown                  Human                 Half-blood
+90            Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+91               None                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+92               None                  Human   Pure-blood&nbsp;or&nbsp;Half-blood
+93               None                  Human   Pure-blood&nbsp;or&nbsp;Half-blood
+94               None                  Human   Pure-blood&nbsp;or&nbsp;Half-blood
+95               Lynx                  Human                 Pure-blood
+96      Non-corporeal                  Human                 Pure-blood
+97            Unknown                  Human                 Pure-blood
+99      Non-corporeal                  Human                           
+100     Non-corporeal                  Human   Pure-blood&nbsp;or&nbsp;Half-blood
+101     Non-corporeal                  Human                 Pure-blood
+102     Non-corporeal                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+103     Non-corporeal                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+104     Non-corporeal                  Human                 Pure-blood
+105     Non-corporeal                  Human              Quarter-Veela
+106              Goat                  Human                 Half-blood
+107     Non-corporeal                  Human                Half-blood[
+108           Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+109           Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+110           Unknown                  Human                           
+111           Unknown                  Human                 Pure-blood
+112           Unknown                  Human                 Pure-blood
+113           Unknown                  Human                           
+114           Unknown                  Human   Pure-blood&nbsp;or&nbsp;half-blood
+115           Unknown                  Human                           
+116           Unknown                  Human                           
+117           Unknown  Half-Human/Half-Giant    Part-Human&nbsp;(Half-giant)
+118           Unknown                 Human&nbsp;              Quarter-Veela
+119           Unknown                 Human&nbsp;   Pure-blood&nbsp;or&nbsp;half-blood
+120                                   Human&nbsp;                     Muggle
+121                                   Human&nbsp;                     Muggle
+122                                   Human&nbsp;                     Muggle
+123                                   Human&nbsp;                     Muggle
+125           Unknown                 Human&nbsp;                 Half-blood
+126           Unknown                 Human&nbsp;                 Pure-blood
+127           Unknown Human&nbsp;(Metamorphmagus)                 Half-blood
+130                                   Human&nbsp;                      Squib
+131     Non-corporeal                 Human&nbsp;   Pure-blood&nbsp;or&nbsp;half-blood
+132     Non-corporeal                 Human&nbsp;                           
+133     Non-corporeal                 Human&nbsp;                           
+134           Unknown                 Human&nbsp;   Pure-blood&nbsp;or&nbsp;half-blood
+135           Unknown                 Human&nbsp;                           
+136     Non-corporeal                 Human&nbsp;                           
+137              None               Werewolf                           
+138                                   Human&nbsp;   Pure-blood&nbsp;or&nbsp;half-blood
+139                                House elf                           
+140                                House elf                           
+               Hair.colour                  Eye.colour
+33                                                    
+34                   Black                        Dark
+35            Dirty-blonde                Pale silvery
+36                   Blond                        Blue
+37                   White                            
+38                                                    
+39                                             Silvery
+40                                                    
+41                    Dark                        Dark
+42                   Black                       Brown
+43          Reddish-blonde                        Grey
+44                                                    
+45                  Blonde                        Grey
+46                   Black                       Black
+47             White-blond                        Grey
+48                   Black                       Black
+49                   Brown                            
+50                   Black                            
+51               Iron grey                            
+52                    Bald                  Gooseberry
+53             White-blond                        Grey
+54                  Blonde                        Blue
+55                   Black                            
+56                                                    
+57                   Black                       Brown
+58                    Bald                    Scarlet&nbsp;
+59                   Brown                            
+60                    Dark                        Dark
+61                   Black                            
+62                   Brown                       Brown
+63                                                    
+64                   Black                            
+65                  Blonde                            
+66                    Dark                        Dark
+67                   Brown                        Dark
+68                    Grey                        Dark
+70                   Black                        Dark
+72         White (balding)                       Black
+73             Straw blond              Pale, freckled
+74                  Blonde                            
+75             White-blond          Astonishingly blue
+76                                                    
+77                                                    
+78                   Brown                        Blue
+79                   Brown                            
+80                   Black                        Grey
+81                Variable                    Variable
+82                                                Grey
+83               Red brown                        Blue
+84                    Dark                        Grey
+85                     Red                            
+86                  Blonde                            
+87                  Blonde                       Brown
+88                   Blond                            
+89                                                    
+90                   Black                            
+91           Brown/greying                            
+92                    Dark                            
+93                  Blonde                        Blue
+94  Silver| formerly black                            
+95                    Bald                       Black
+96                    Grey One dark,&nbsp;one electric blue
+97                  Blonde                            
+99                   Tawny                   Yellowish
+100                   Grey                            
+101                   Grey                            
+102                  Brown                       Ruddy
+103                                                   
+104                 Silver                  Grey/Blue[
+105         Silvery-blonde                  Dark blue[
+106                   Grey                 Bright Blue
+107                 Ginger                       Brown
+108         Straw-coloured                       Brown
+109                  Black                            
+110                    Red                       Brown
+111                    Red                        Grey
+112                   Red                    Dark Grey
+113                                                   
+114          Reddish-brown                        Grey
+115                  Black                       Brown
+116                  Black                       Black
+117                  Brown                       Black
+118         Silvery-blonde                            
+119                   Dark                        Dark
+120                 Blonde                            
+121                  Black                            
+122                  Blond                        Blue
+123                   Grey                            
+125              Jet-black                Bright green
+126            White blond                        Grey
+127               Variable                    Variable
+130                   Grey                        Pale
+131                                                   
+132                   Grey                      Yellow
+133                                                   
+134                   Dark                        Dark
+135                  Black                            
+136                   Grey                            
+137                   Grey                            
+138                  Blond                        Blue
+139                  Green                            
+140                  White                            
+                                                          Loyalty
+33                                                 Lord Voldemort
+34  Dumbledore's Army |Hogwarts School of Witchcraft and Wizardry
+35  Dumbledore's Army |Hogwarts School of Witchcraft and Wizardry
+36                                                               
+37                                                               
+38                                                               
+39                                                               
+40                                                               
+41  Dumbledore's Army |Hogwarts School of Witchcraft and Wizardry
+42  Dumbledore's Army |Hogwarts School of Witchcraft and Wizardry
+43                                                               
+44  Dumbledore's Army |Hogwarts School of Witchcraft and Wizardry
+45  Dumbledore's Army |Hogwarts School of Witchcraft and Wizardry
+46                                                               
+47                                                               
+48                                                               
+49                                                               
+50                                 Lord Voldemort &nbsp;| Death Eaters
+51                                              Ministry of Magic
+52                                                               
+53                                 Lord Voldemort &nbsp;| Death Eaters
+54                                 Lord Voldemort &nbsp;| Death Eaters
+55                                                               
+56                                                               
+57                                                               
+58                                                               
+59                                                               
+60                                 Lord Voldemort &nbsp;| Death Eaters
+61                                                               
+62                                                               
+63                                                               
+64                                                               
+65                                                               
+66                                                               
+67                                                               
+68                                                               
+70                                                               
+72                                                               
+73                                 Lord Voldemort &nbsp;| Death Eaters
+74                                                               
+75                                                               
+76                                 Lord Voldemort &nbsp;| Death Eaters
+77                                 Lord Voldemort &nbsp;| Death Eaters
+78                                                               
+79                                                               
+80                                                               
+81                       Ministry of Magic | Order of the Phoenix
+82                                                               
+83                                                               
+84                                                               
+85                                              Dumbledore's Army
+86                                              Dumbledore's Army
+87                                              Dumbledore's Army
+88                                              Dumbledore's Army
+89                                              Dumbledore's Army
+90                                 Lord Voldemort &nbsp;| Death Eaters
+91                                 Lord Voldemort &nbsp;| Death Eaters
+92                                 Lord Voldemort &nbsp;| Death Eaters
+93                                 Lord Voldemort &nbsp;| Death Eaters
+94                                                               
+95                                           Order of the Phoenix
+96                                           Order of the Phoenix
+97                                  Original Order of the Phoenix
+99                                              Minister of Magic
+100                                             Minister of Magic
+101                                             Minister of Magic
+102                                             Minister of Magic
+103                                          Order of the Phoenix
+104                                          Order of the Phoenix
+105                                          Order of the Phoenix
+106                                          Order of the Phoenix
+107                                          Order of the Phoenix
+108                                          Order of the Phoenix
+109                                          Order of the Phoenix
+110                                 Original Order of the Phoenix
+111                                 Original Order of the Phoenix
+112                                 Original Order of the Phoenix
+113                                          Order of the Phoenix
+114                                 Original Order of the Phoenix
+115                                 Original Order of the Phoenix
+116                                 Original Order of the Phoenix
+117                                                              
+118                                                              
+119                                                              
+120                                                              
+121                                                              
+122                                                              
+123                                                              
+125                                                              
+126                                                              
+127                                                              
+130                    Hogwarts School of Witchcraft and Wizardry
+131                    Hogwarts School of Witchcraft and Wizardry
+132                    Hogwarts School of Witchcraft and Wizardry
+133                    Hogwarts School of Witchcraft and Wizardry
+134                    Hogwarts School of Witchcraft and Wizardry
+135                    Hogwarts School of Witchcraft and Wizardry
+136                    Hogwarts School of Witchcraft and Wizardry
+137                                Lord Voldemort &nbsp;| Death Eaters
+138                                Gellert Grindelwald's Acolytes
+139                                                              
+140                                                              
+                                                                                                                                        Skills
+33                                                                        Learned in the theory of Defensive Magic| less adept in the practise
+34                                                                                                                                      Seeker
+35                                                                                                                            Spotting Nargles
+36                                                                                                                                            
+37                                                                                                                                      Charms
+38                                                                                    A Seer, though the gift is unpredictable and unconscious
+39                                                                                                  An incomparable understanding of wandcraft
+40                                                                                                                                            
+41                                                                                                                                     Prefect
+42                                                                                                                                     Potions
+43                                                                Covering up the spots that blight her face after betraying Dumbledore's Army
+44                                                                                                     Potions, also knowledgable about Charms
+45                                                                                                                                     Prefect
+46                                                                                                 Extremely skilled at potions and Occlumency
+47                                                                                                                             Prefect, Seeker
+48                                                                                                                                      Beater
+49                                                                                                                                      Beater
+50                                                                               She is a duellist of great skill and an experienced Occlumens
+51                                                                                                Her punishment quill is of her own invention
+52                                                                     Accomplished Occlumens, expert Potioneer, advanced self-transfiguration
+53                                                                                                              Skilled duellist and potioneer
+54                                                                                                                                            
+55                                                                                                                                      Seeker
+56                                                                                                                                     Prefect
+57                                                                                                                                      Chaser
+58                               Dark Lord, Outstanding manipulation, Parseltongue, Heir of Slytherin, Dark magic, Inferi creation and control
+59                                                                                                                                            
+60                                                                                                                                            
+61                                                                                                                                            
+62                                                                                                                   Quidditch captain, Chaser
+63                                                                                                                          Controlling Peeves
+64                                                                                                                             Chaser, Captain
+65                                                                                                                                     Prefect
+66                                                                                                                   Quidditch Captain, Chaser
+67                                                                                                                                            
+68                                                                          Accomplished Legilimens and one of the first recorded Parselmouths
+70                                                                              Extremely skilled witch, known for her intelligence and wisdom
+72                                                    Boring a class with facts that might be interesting if anyone else was giving the lesson
+73                                                                                                                           Skilled potioneer
+74                                                                                                      Teaching and studying the Muggle world
+75                                                                                                                                            
+76                                                                                                            Spreading anti-Muggle propaganda
+77                                                                                                                             Cruciatus Curse
+78                                                                  Food-related Charms. Many traditional Hogwarts recipes originated with her
+79                                                                                                                  Curing peasants of the pox
+80                                                                                                                                            
+81                                                                                                              Talented Auror, Metamorphmagus
+82                                                                                                                                   Herbology
+83                                                                                                  Magizoology, Order of Merlin, Second Class
+84                                                                                                                              Skilled Seeker
+85                                                                                                                                            
+86                                                                                                                                      Chaser
+87                                                                                            Defensive spells, learned with Dumbledore's Army
+88                                                                               Revising, being a Prefect, getting the wrong end of the stick
+89                                                                                            Defensive spells, learned with Dumbledore's Army
+90                                                                                                                        Liaising with giants
+91                                                                                                                   Spying for Lord Voldemort
+92                                                                        Duelling. Fought and killed Molly Weasley's brothers and Remus Lupin
+93                                                                                                             Imperius curse, undercover work
+94                                                                                                                    Skilled in the Dark Arts
+95                                                                                                    Exceptionally skilled duellist and Auror
+96                                                   A highly accomplished Auror and an outstanding duellist, also skilled in non-verbal magic
+97                                                                                                                                       Auror
+99                                                                                                          Highly regarded as a skilled Auror
+100                                                Turning a blind eye to the continuing threat of Dark Magic in the name of keeping up morale
+101                                                                                             Multilingual, able to fight the Imperius curse
+102                                                               Works for the Department for the Regulation and Control of Magical Creatures
+103                                                   An enthusiastic volunteer for the Order and a helpful escort for Harry and his relatives
+104                                                                                                                                    Writing
+105             part Veela, and therefore possesses some of their magical powers. She was also selected to compete in the Triwizard Tournament
+106                                                                                                              Bartending, caring for Ariana
+107                                           Gathering information for the Order, dealing in stolen cauldrons, 'acquiring' the odd Muggle car
+108                                                                                                      Carrying out guard duty for the Order
+109                                                                                                 Carrying out escort missions for the Order
+110                                                                                                                                           
+111                                                                                                                                   Duelling
+112                                                                                                                                   Duelling
+113                                                                                                                                           
+114                                                                                                                  Said to be a great wizard
+115                                                                                                                                           
+116                                                                                                                                           
+117                                                                                  An ‘excellent dancer’, in the words of Dumbledore himself
+118                                                                          part Veela and therefore may possess some of their magical powers
+119                                                                                                       One of the best Seekers in the world
+120                                                                                                                                           
+121                                                                                         Schmoozing clients, pretending magic doesn't exist
+122                                                                                                                                           
+123                                                                                                                          Breeding bulldogs
+125                                                                                                                                           
+126                                                                                                                                           
+127                                                                                                                                           
+130                                                                                                                      Sniffing out mischief
+131                                                                                                                     Skilled medical healer
+132                                                                                             Teaching, flying, refereeing Quidditch matches
+133                                                                                                                                           
+134                                                                                                                                           
+135                                                                                                                                           
+136                                                                                                                                           
+137                                                                                                                            Physical combat
+138                                                                                                                                   Duelling
+139 A type of magic specific to house-elves, performed without a wand which includes the ability to apparate, disarm and make objects levitate
+140                                    Magic performed without a wand which includes the ability to apparate, disarm and make objects levitate
+                                      Birth                         Death
+33             26 September,1970&nbsp;or earlier                   4 June&nbsp;1992
+34          1 September&nbsp;1978-31 August&nbsp;1979                              
+35                        13 February,&nbsp;1981                              
+36                          26 January 1964                              
+37              17 October&nbsp;1958&nbsp;or earlier&nbsp;                              
+38                   9 March prior to 1962                               
+39                   25 September,&nbsp;pre&nbsp;1908                              
+40               14 June&nbsp;1928&nbsp;-13 June&nbsp;1929                 13 June,&nbsp;1943
+41        &nbsp;1 September&nbsp;1979 - 21 April&nbsp;1980                              
+42       &nbsp;1 September&nbsp;1979 - 31 August&nbsp;1980                              
+43                                1978-1979                              
+44          1 September&nbsp;1979-&nbsp;21 April&nbsp;1980                              
+45        &nbsp;1 September&nbsp;1979-&nbsp;31 August&nbsp;1980                              
+46                           9 January 1960                   2 May,&nbsp;1998
+47                             5 June, 1980                              
+48                             c. 1979-1980                   2 May,&nbsp;1998
+49          1 September&nbsp;1979-31 August&nbsp;1980                              
+50                                     1951                   2 May,&nbsp;1998
+51                                26 August                              
+52                                 28 April                              
+53                                  c. 1954                              
+54                                     1955                              
+55                                     1961                          1979
+56        &nbsp;1 September&nbsp;1979- 31 August&nbsp;1980                              
+57       1 September,&nbsp;1979&nbsp;–&nbsp;21 April,&nbsp;1980                              
+58                         31 December 1926                   2 May,&nbsp;1998
+59       1 September,&nbsp;1979&nbsp;–&nbsp;21 April,&nbsp;1980                              
+60                                 Pre&nbsp;1964                              
+61        1 September&nbsp;1979-&nbsp;31 August&nbsp;1980&nbsp;                              
+62                    In or prior to c.1981                              
+63                                 Post&nbsp;982                  11th century
+64        &nbsp;1 September&nbsp;1975-&nbsp;31 August&nbsp;1976                              
+65        &nbsp;1 September&nbsp;1975-&nbsp;31 August&nbsp;1976                              
+66        &nbsp;1 September&nbsp;1977- 31 August&nbsp;1978                              
+67       &nbsp;1 September&nbsp;1978 - 31 August&nbsp;1979                              
+68                                  Pre&nbsp;976                  11th century
+70                                  Pre&nbsp;976                  11th century
+72                                                              Pre&nbsp;1970s
+73                                     1962                     1995-1996
+74                              Before&nbsp;1976               Late&nbsp;July, 1997
+75                                                                       
+76                                 Pre&nbsp;1981                              
+77                                 Pre&nbsp;1982                              
+78                                  Pre&nbsp;976                  11th century
+79                             10th century                      Pre&nbsp;1988
+80                                 Post&nbsp;982                      996-1000
+81        &nbsp;1 September&nbsp;1972-&nbsp;31 August&nbsp;1973                   2 May,&nbsp;1998
+82                                   15 May                              
+83                         24 February 1897                              
+84            1 September&nbsp;- 30 October&nbsp;1977                 24 June, 1995
+85         1 September&nbsp;1979- 31 August&nbsp;1980                              
+86            1 September&nbsp;1979 -&nbsp;2 May&nbsp;1981                              
+87        1 September&nbsp;1979 -&nbsp;31 August&nbsp;1980                              
+88           21 April&nbsp;1980&nbsp;- 31 August&nbsp;1980                              
+89        1 September&nbsp;1979 - 31 August&nbsp;1980                              
+90                       In or before&nbsp;1970s                              
+91                                 pre&nbsp;1964                              
+92                                 pre&nbsp;1950                              
+93                                Pre&nbsp;1970s                              
+94                                 pre&nbsp;1965 24 June,&nbsp;1995&nbsp;–&nbsp;31 July,&nbsp;1996
+95                                 Pre&nbsp;1973                              
+96                                 Pre&nbsp;1960                 27 July,&nbsp;1997
+97                                                                       
+99                                 Pre&nbsp;1968                1 August,&nbsp;1997
+100                                Pre&nbsp;1964                              
+101                                Pre&nbsp;1940                  27 May, 1995
+102                                                                      
+103                                Pre&nbsp;1964                              
+104       1 September 1880 - 31 August 1881                              
+105                    Pre&nbsp;30 October,&nbsp;1977                              
+106        &nbsp;1 September&nbsp;1883-31 August&nbsp;1884                              
+107                             Before&nbsp;1962                              
+108    &nbsp;8 September&nbsp;1956 -&nbsp;7 September&nbsp;1957                              
+109                                Pre 1978                              
+110                                                            July,&nbsp;1981
+111                                                                  1981
+112                                                                  1981
+113                                pre&nbsp;1964              Early&nbsp;July,&nbsp;1996
+114                                                                  1981
+115                                                                  1981
+116                                                                  1981
+117                                                                      
+118            &nbsp;31 July&nbsp;1985 -&nbsp;30 July&nbsp;1986                              
+119                      April-August,&nbsp;1976                              
+120                                Pre&nbsp;1960                              
+121                                Pre&nbsp;1954                              
+122                           &nbsp;23 June&nbsp;1980                              
+123                                Pre&nbsp;1954                              
+125 Between&nbsp;1 September&nbsp;2005-31 August&nbsp;2006                              
+126 Between&nbsp;1 September&nbsp;2005-31 August&nbsp;2007                              
+127                             April,&nbsp;1998                              
+130                                Pre&nbsp;1951                              
+131                                pre&nbsp;1954                              
+132                                pre&nbsp;1918                              
+133                                Pre&nbsp;1966                              
+134                                Pre&nbsp;1968                              
+135                             Before&nbsp;1974                              
+136                                                                      
+137                                Pre&nbsp;1945                              
+138                                    1883                   March,&nbsp;1998
+139                                 28 June              Late&nbsp;March,&nbsp;1998
+140                                                                      </code></pre>
+</div>
+</div>
+<ul>
+<li><p><code>%in%</code> pertenece a un conjunto</p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Cap2_R.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./install_B.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

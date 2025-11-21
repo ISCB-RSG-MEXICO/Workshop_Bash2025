@@ -215,4 +215,4 @@ Estos datos permiten entender rápidamente cómo están distribuidos los valores
 summary(hp_data)
 ```
 
-Hasta aquí ya tenemos todo lo necesario para \"conocer\" tus datos: cómo cargarlos, visualizarlos, revisar sus columnas y obtener un resumen general. Este es el primer paso en cualquier análisis.
+Hasta aquí ya tenemos todo lo necesario para "conocer" tus datos: cómo cargarlos, visualizarlos, revisar sus columnas y obtener un resumen general. Este es el primer paso en cualquier análisis.

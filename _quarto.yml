@@ -22,7 +22,6 @@ book:
     - Cap1_R.qmd
     - Cap2_R.qmd
     - Cap3_R.qmd
-    - Cap4_R.qmd
     - install_B.qmd
     - install_R.qmd
   # Information
