@@ -2,7 +2,7 @@
 
 ## **Entorno de Bash**
 
-![](img/entornoBash.png)
+![](figures/entornoBash.png){fig-align="center"}
 
 El signo `$` es un **prompt**, que nos muestra que la terminal está esperando una entrada; tu terminal puede usar un carácter diferente como prompt y puede agregar información antes de él. Al teclear comandos, ya sea a partir de estas lecciones o de otras fuentes, no escribas el prompt (*\$*), sólo los comandos que le siguen.
 
@@ -36,13 +36,13 @@ Otro ejemplo:
 grep -i "gene" genes.gtf
 ```
 
--   grep → busca texto dentro de los archivos
+-   `grep` → busca texto dentro de los archivos
 
--   -i → opción que ignora mayúsculas y minúsculas
+-   `-i` → opción que ignora mayúsculas y minúsculas
 
--   "gene" → patrón a buscar
+-   `"gene"` → patrón a buscar
 
--   genes.gft → archivo donde se buscará
+-   `genes.gft` → archivo donde se buscará
 
 ::: callout-note
 **NOTA**: Algunos comandos permiten combinar varias opciones
@@ -156,7 +156,7 @@ Ejemplo de rutas:
 Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema
 
 | Comandos  | Información                                            | Ejemplo de uso       |
-|-------------------|----------------------------------|-------------------|
+|----------------|-----------------------------------------|----------------|
 | `pwd`     | Muestra el directorio actual                           | `pwd`                |
 | `history` | Muestra el historial de comandos                       | `history`            |
 | `ls`      | Observar el contenido de los archivos en un directorio | `ls mi_directorio`   |
@@ -190,7 +190,7 @@ Comandos para ver o modificar quién puede leer, escribir o ejecutar archivos
 Comandos para ahorrar espacio o mover varios archivos juntos
 
 | Comando         | Descripción                      | Ejemplo                                |
-|-------------------|---------------------------|---------------------------|
+|-----------------|-------------------------|------------------------------|
 | `gzip / gunzip` | Comprime o descomprime archivos  | `gzip datos.txt`                       |
 | `tar`           | Empaqueta y comprime directorios | `tar -czf proyecto.tar.gz directorio/` |
 | `zip` / `unzip` | Comprime o descomprime archivos  | `zip -r resultados.zip ./resultados/`  |
@@ -198,7 +198,7 @@ Comandos para ahorrar espacio o mover varios archivos juntos
 ## Transferencia de archivos entre sistemas
 
 | Comando  | Descripción                                                                               | Ejemplo                                                   |
-|-------------------|---------------------------|---------------------------|
+|--------------|------------------------------------|----------------------|
 | `ssh`    | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
 | `scp`    | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
 | `scp -r` | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |
@@ -280,25 +280,6 @@ Por lo tanto:
 | `chmod u=rw,g=r,o=`      | `chmod 640` |
 | `chmod u=rw,go=`         | `chmod 600` |
 | `chmod u=rwx,go=`        | `chmod 700` |
-
-## Comprimir y descomprimir archivos
-
-Los archivos pueden tener distintas extensiones según su propósito. En algunos casos será necesario descomprimirlos para acceder a su contenido, y en otros conviene mantenerlos comprimidos para ahorrar espacio en tu entorno de trabajo. 
-
-| Tipo de archivo   | Comprimir                                                         | Descomprimir                  |
-|-------------------|----------------------------------|-------------------|
-| directorio.tar    | `tar -cvf directorio.tar /dir/a/comprimir/directorio`             | `tar -xvf directorio.tar`     |
-| directorio.tar.gz | `tar -czvf directorio.tar.gz /directorio/a/empaquetar/directorio` | `tar -zxvf directorio.tar.gz` |
-| archivo.gz        | `gzip -9 archivo.txt`                                             | `gunzip -kd archivo.txt.gz`   |
-| directorio.zip    | `zip -r directorio.zip directorio`                                | `unzip directorio.zip`        |
-
-::: callout-note
-## Ejercicio 2
-
-1.  Descarga todo el repositorio comprimido [unix.bioinfo.rsgecuador](https://github.com/RSG-Ecuador/unix.bioinfo.rsgecuador/tree/gh-pages) en tu computadora. El archivo se almacenara con la extension (.ZIP).
-2.  Colocate en la directorio donde se encuentra el archivo. Ejemplo en mi computadora: `cd "C:/Users/ecoss/Documents/Respaldos/Github_notes/Workshop_Bash2024/data"`
-3.  Descomprime el archivo ZIP. `unzip unix.bioinfo.rsgecuador-gh-pages.zip`
-:::
 
 ## Material suplementario
 
