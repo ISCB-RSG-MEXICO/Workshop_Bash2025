@@ -80,6 +80,8 @@ Permite crear y modificar archivos directamente desde la terminal sin necesidad 
 Al abrir un archivo con `nano`, verás el contenido del archivo (si existe) y, en la parte inferior, una lista de comandos abreviados.
 
 ::: callout-note
+## Toma nota
+
 Los atajos se indican con el símbolo `^`, que representa la tecla **Ctrl**.
 
 Por ejemplo, `^O` significa presionar **Ctrl + O**.
@@ -187,6 +189,8 @@ Los `wildcards` o `wild characters` son símbolos utilizados para representar un
 | `[ ]`        | Coincide con un conjunto o rango de caracteres |
 
 ::: callout-important
+## Importante
+
 El wildcard más usado es `*` porque es muy versátil.
 :::
 
@@ -331,7 +335,7 @@ Estos editores permiten crear o modificar archivos directamente desde la termina
 | Comando | Descripción                                                                       | Ejemplo          |
 |-----------------|---------------------------------------|-----------------|
 | `nano`  | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
-| `vim`   | Editor avanzado con control mediante comandos; guarda con :w y sale con :q        | `vim script.sh`  |
+| `vim`   | Editor avanzado con control mediante comandos; guarda con `:w` y sale con `:q`    | `vim script.sh`  |
 
 ### Exploración de archivos
 
@@ -365,6 +369,7 @@ Comandos para conectar procesos o guardar salidas
 | `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
 | `|`     | Conecta la salida de un comando con la entrada de otro | `cat datos.txt | grep "gene"` |
 
-## Referencia
+## Referencias
 
--   Guia de instalacion de [Git Bash](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/#the-bash-shell)
+-   García Márquez, G. (1967). *Cien años de soledad*. Sudamericana.
+-   Biblioteca Nacional de España. (25/04/2014). *Fragmentos de obras* \[PDF\]. [https://www.bne.es/sites/default/files/repositorio-archivos/Fragmentos_de_obras.pdf](https://www.bne.es/sites/default/files/repositorio-archivos/Fragmentos_de_obras.pdf?utm_source=chatgpt.com)

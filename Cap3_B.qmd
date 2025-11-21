@@ -99,6 +99,8 @@ Por partes
 Recuerda que el contenido de un archivo FASTA es **texto plano** que tiene la siguiente estructura:
 
 ::: callout-note
+## archivo.fna
+
 `>encabezado con información #(gen, organismo, ID de acceso...)`
 
 Secuencia de ADN/ARN/aminoácidos
@@ -146,7 +148,7 @@ Una vez dentro de `less`, puedes navegar así:
 | `q`             | Salir de `less`              |
 +-----------------+------------------------------+
 
-**Recuerda:** el símbolo `|` (**pipe**) permite encadenar comandos: la salida de uno pasa como entrada al siguiente. El wildcard `*` funciona como un comodín que representa \"cualquier número de caracteres\" cuando buscas archivos o patrones en nombres dentro del shell.
+**Recuerda:** el símbolo `|` (**pipe**) permite encadenar comandos: la salida de uno pasa como entrada al siguiente. El wildcard `*` funciona como un comodín que representa "cualquier número de caracteres" cuando buscas archivos o patrones en nombres dentro del shell.
 
 ::: callout-note
 ## Ejercicio 2
@@ -185,7 +187,7 @@ Por lo tanto, una manera común de saber cuántas secuencias contiene un archivo
 ## Solución
 
 1.  `grep ">" *`
-2.  grep -c "\>" `C_lupus_familiaris_cds.fna`
+2.  `grep -c ">" C_lupus_familiaris_cds.fna`
 3.  `grep -c ">" *`
 :::
 :::
@@ -214,15 +216,15 @@ Recuerda que el comando `grep` sirve para entontrar patrones en un archivo. `gre
 ## Solución
 
 1.  `grep -o "ATG" *fna | wc -l`
-2.  `cat *fna > todos_cds.fna`
-3.  `cat *faa > todos_prot.fna`
+2.  `cat *.fna > todos_cds.fna`
+3.  `cat *.faa > todos_prot.fna`
 4.  `grep -c ">" todos_*`
 :::
 :::
 
 ## Edición de secuencias con `sed`
 
-`sed` (**stream editor**) es una herramienta que permite **modificar texto sin abrir los archivos**, procesándolo \"en flujo\" mientras pasa por la terminal.
+`sed` (**stream editor**) es una herramienta que permite **modificar texto sin abrir los archivos**, procesándolo "en flujo" mientras pasa por la terminal.
 
 Es muy útil cuando queremos **reemplazar**, **eliminar**, **extraer** o **transformar** patrones en archivos FASTA o cualquier archivo de texto, especialmente cuando se combina con pipes (`|`).
 
@@ -266,35 +268,47 @@ Puedes utilizar un "`|`" y después el comando `less` para visualizar la salida 
 
 1.  `sed 's/ATG/NNN/g' archivo.fna`
 2.  `sed 's/A/N/' H_sapiens_cds.fna`
-3.  `sed 's/GAA/---/g' > mods_cds.fna`
+3.  `sed 's/GAA/---/g' *.fna > mods_cds.fna`
 4.  `sed 's/N//g' X_tropicalis_cds.fna > X_tropicalis_clean.fna`
 5.  `sed 's/^>//g' *fna`
 :::
 :::
 
-## Búsqueda de motivos protéicos en HSPA8
+## EXTRA: Búsqueda de motivos protéicos en HSPA8
 
 HSPA8 contiene varios motivos funcionales muy característicos:
 
-| Motivo                                        | Secuencia aproximada            | Función                                                         |
-|-----------------------------------------------|---------------------------------|-----------------------------------------------------------------|
-| **Motivo de unión a ATP (P-loop / Walker A)** | **GxxxxGKST** (ej. "GIDLGTTYS") | Unión e hidrólisis de ATP                                       |
-| **Motivo IDLGTT**                             | **IDLGTT**                      | Parte del dominio NBD, importante para cambios conformacionales |
-| **Motivo de unión a sustrato**                | **VFTDT** o similares           | Parte del dominio SBD                                           |
-| **Motivo EEVD (C-terminal)**                  | **EEVD**                        | Interacción con co-chaperonas y proteínas TPR                   |
-| **Motivos ricos en glicina**                  | **GGMPGG**, **GGGA**, etc.      | Región C-terminal flexible reguladora                           |
++-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
+| Motivo                                    | Secuencia aproximada        | Función                                                         |
++===========================================+=============================+=================================================================+
+| Motivo de unión a ATP (P-loop / Walker A) | GxxxxGKST (ej. "GIDLGTTYS") | Unión e hidrólisis de ATP                                       |
++-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
+| Motivo IDLGTT                             | IDLGTT                      | Parte del dominio NBD, importante para cambios conformacionales |
++-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
+| Motivo de unión a sustrato                | VFTDT o similares           | Parte del dominio SBD                                           |
++-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
+| Motivo EEVD (C-terminal)                  | EEVD                        | Interacción con co-chaperonas y proteínas TPR                   |
++-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
+| Motivos ricos en glicina                  | GGMPGG, GGGA, etc.          | Región C-terminal flexible reguladora                           |
++-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
 
 ::: callout-note
-## Ejercicio 6
+## Ejercicio Extra
 
 1.  Busca en cada archivo `.faa` cuántas veces aparece el motivo **IDLGTT**
 2.  Muestra solo las líneas donde aparece el motivo en `H_sapiens_prot.faa`
 3.  Extrae **únicamente** las coincidencias del motivo para todos los organismos (una por línea).
 4.  Lista todos los organismos cuya secuencia **termina** con el motivo "EEVD".
-5.   Extrae el fragmento completo de la última línea donde aparezca \"EEVD\".
-6.   Cuenta cuántas proteínas **carecen** de ese motivo.
+5.  Extrae el fragmento completo de la última línea donde aparezca "EEVD".
+6.  Cuenta cuántas proteínas **carecen** de ese motivo.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solución
 :::
 :::
+
+## Referencias
+
+-   National Center for Biotechnology Information. *Orthologs of gene 100496320 (HSPA8) in NCBI Datasets*. Recuperado de <https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs>
+
+-   
