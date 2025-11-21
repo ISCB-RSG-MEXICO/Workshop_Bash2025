@@ -18,10 +18,11 @@ book:
     - Cap2_B.qmd
     - Cap3_B.qmd
     - Cap4_B.qmd
-    - Cap5_B.qmd
     - intro_R.qmd
     - Cap1_R.qmd
     - Cap2_R.qmd
+    - Cap3_R.qmd
+    - Cap4_R.qmd
     - install_B.qmd
     - install_R.qmd
   # Information

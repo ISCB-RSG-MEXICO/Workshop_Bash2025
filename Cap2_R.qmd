@@ -1,4 +1,4 @@
-# Introducción a las paqueterías y manejo de data frames en R
+# Introducción al manejo de datos en R
 
 ### Paqueterías en R
 
@@ -112,11 +112,11 @@ Antes de manipular datos, es importante aprender a **importarlos** desde archivo
 
 ### **Funciones principales**
 
--    **`read.csv()`** -- Importa archivos CSV.
+-   **`read.csv()`** -- Importa archivos CSV.
 
 -   **`read.table()`** -- Importa archivos en formatos de tabla más generales.
 
--    **`write.csv()`** -- Exporta un data frame a un archivo CSV.
+-   **`write.csv()`** -- Exporta un data frame a un archivo CSV.
 
 Ejemplo básico:
 
@@ -158,11 +158,11 @@ str(hp_data)
 
 Esto muestra:
 
--    número de filas y columnas
+-   número de filas y columnas
 
 -   tipo de cada variable (character, numeric, factor, etc.)
 
--    una muestra del contenido
+-   una muestra del contenido
 
 #### **Dimensiones del data frame**
 
@@ -214,3 +214,5 @@ Estos datos permiten entender rápidamente cómo están distribuidos los valores
 ```{r}
 summary(hp_data)
 ```
+
+Hasta aquí ya tenemos todo lo necesario para \"conocer\" tus datos: cómo cargarlos, visualizarlos, revisar sus columnas y obtener un resumen general. Este es el primer paso en cualquier análisis.
