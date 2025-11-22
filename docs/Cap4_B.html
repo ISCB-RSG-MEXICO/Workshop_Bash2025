@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 6&nbsp; Bed tools - Bash</title>
+<title>Workshop Bash &amp; R - 6&nbsp; Bed tools - Preparación de un archivo .bed</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap4_B.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap4_B.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Preparación de un archivo .bed</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap4_B.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Preparación de un archivo .bed</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,14 +218,38 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#qué-es-bedtools" id="toc-qué-es-bedtools" class="nav-link active" data-scroll-target="#qué-es-bedtools"><span class="header-section-number">6.1</span> ¿Qué es <em>bedtools</em>?</a></li>
+  <li><a href="#tipo-de-archivos-utiliza-bedtools" id="toc-tipo-de-archivos-utiliza-bedtools" class="nav-link" data-scroll-target="#tipo-de-archivos-utiliza-bedtools"><span class="header-section-number">6.2</span> Tipo de archivos utiliza <em>bedtools</em></a>
+  <ul>
+  <li><a href="#bed-.bed" id="toc-bed-.bed" class="nav-link" data-scroll-target="#bed-.bed"><span class="header-section-number">6.2.1</span> <strong>1. BED (.bed)</strong></a></li>
+  <li><a href="#gff3-gtf-.gff3-.gtf" id="toc-gff3-gtf-.gff3-.gtf" class="nav-link" data-scroll-target="#gff3-gtf-.gff3-.gtf"><span class="header-section-number">6.2.2</span> <strong>2. GFF3 / GTF (.gff3, .gtf)</strong></a></li>
+  <li><a href="#fasta-.fa-.fasta" id="toc-fasta-.fa-.fasta" class="nav-link" data-scroll-target="#fasta-.fa-.fasta"><span class="header-section-number">6.2.3</span> <strong>3. FASTA (.fa, .fasta)</strong></a></li>
+  <li><a href="#bam-sam-.bam-.sam" id="toc-bam-sam-.bam-.sam" class="nav-link" data-scroll-target="#bam-sam-.bam-.sam"><span class="header-section-number">6.2.4</span> <strong>4. BAM / SAM (.bam, .sam)</strong></a></li>
+  </ul></li>
+  <li><a href="#qué-hace-bedtools" id="toc-qué-hace-bedtools" class="nav-link" data-scroll-target="#qué-hace-bedtools"><span class="header-section-number">6.3</span> ¿Qué hace bedtools?</a></li>
+  <li><a href="#ideas-clave-antes-de-comenzar" id="toc-ideas-clave-antes-de-comenzar" class="nav-link" data-scroll-target="#ideas-clave-antes-de-comenzar"><span class="header-section-number">6.4</span> Ideas clave antes de comenzar</a></li>
+  <li><a href="#exploración-y-preparación-de-la-anotación-genómica" id="toc-exploración-y-preparación-de-la-anotación-genómica" class="nav-link" data-scroll-target="#exploración-y-preparación-de-la-anotación-genómica"><span class="header-section-number">6.5</span> Exploración y preparación de la anotación genómica</a>
+  <ul>
+  <li><a href="#descargar-el-archivo" id="toc-descargar-el-archivo" class="nav-link" data-scroll-target="#descargar-el-archivo"><span class="header-section-number">6.5.1</span> 1. Descargar el archivo</a></li>
+  <li><a href="#visualizar-el-archivo-gff3" id="toc-visualizar-el-archivo-gff3" class="nav-link" data-scroll-target="#visualizar-el-archivo-gff3"><span class="header-section-number">6.5.2</span> 2. Visualizar el archivo GFF3</a></li>
+  <li><a href="#eliminar-líneas-de-comentarios" id="toc-eliminar-líneas-de-comentarios" class="nav-link" data-scroll-target="#eliminar-líneas-de-comentarios"><span class="header-section-number">6.5.3</span> 3. Eliminar líneas de comentarios</a></li>
+  <li><a href="#filtrar-cromosomas-principales" id="toc-filtrar-cromosomas-principales" class="nav-link" data-scroll-target="#filtrar-cromosomas-principales"><span class="header-section-number">6.5.4</span> <strong>4. Filtrar cromosomas principales</strong></a></li>
+  <li><a href="#extraer-únicamente-las-líneas-correspondientes-a-genes" id="toc-extraer-únicamente-las-líneas-correspondientes-a-genes" class="nav-link" data-scroll-target="#extraer-únicamente-las-líneas-correspondientes-a-genes"><span class="header-section-number">6.5.5</span> 5. Extraer únicamente las líneas correspondientes a genes</a></li>
+  <li><a href="#convertir-de-gff3-a-bed" id="toc-convertir-de-gff3-a-bed" class="nav-link" data-scroll-target="#convertir-de-gff3-a-bed"><span class="header-section-number">6.5.6</span> 6. Convertir de GFF3 a BED</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Preparación de un archivo .bed</span></h1>
 </div>
 
 
@@ -240,8 +264,282 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="qué-es-bedtools" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="qué-es-bedtools"><span class="header-section-number">6.1</span> ¿Qué es <em>bedtools</em>?</h2>
+<p><strong>bedtools</strong> es un conjunto de herramientas diseñado para realizar operaciones entre regiones genómicas. Permite trabajar directamente con coordenadas cromosómicas, en lugar de tratar los archivos como texto plano. Con él podemos responder preguntas como:</p>
+<ul>
+<li><p>¿Qué genes se superponen con mis picos de ChIP-seq?</p></li>
+<li><p>¿Cuánta parte de un gen está cubierta por un conjunto de regiones?</p></li>
+<li><p>¿Dónde se solapan distintos grupos de intervalos?</p></li>
+<li><p>¿Qué regiones están cerca unas de otras?</p></li>
+</ul>
+<p>En lugar de tratar los archivos genómicos como texto plano, bedtools entiende las coordenadas cromosómicas y puede manipularlas de forma eficiente y precisa.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ChIP-seq
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+</section>
+<section id="tipo-de-archivos-utiliza-bedtools" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="tipo-de-archivos-utiliza-bedtools"><span class="header-section-number">6.2</span> Tipo de archivos utiliza <em>bedtools</em></h2>
+<section id="bed-.bed" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="bed-.bed"><span class="header-section-number">6.2.1</span> <strong>1. BED (.bed)</strong></h3>
+<p>Archivo tabular que describe intervalos (cromosoma, inicio 0-based, fin 1-based).<br>
+Es el formato más común para picos, regiones reguladoras e intervalos.</p>
+</section>
+<section id="gff3-gtf-.gff3-.gtf" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="gff3-gtf-.gff3-.gtf"><span class="header-section-number">6.2.2</span> <strong>2. GFF3 / GTF (.gff3, .gtf)</strong></h3>
+<p>Archivos de anotación con 9 columnas que describen genes, transcritos, exones, UTRs y otras características. La columna 9 contiene atributos (ej. <code>ID=gene-XYZ</code>) que suelen extraerse con sed/awk.</p>
+</section>
+<section id="fasta-.fa-.fasta" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="fasta-.fa-.fasta"><span class="header-section-number">6.2.3</span> <strong>3. FASTA (.fa, .fasta)</strong></h3>
+<p>Aunque no será el enfoque de este capítulo, bedtools puede usarse para extraer secuencias de distintas regiones o calcular características como contenido GC.</p>
+</section>
+<section id="bam-sam-.bam-.sam" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="bam-sam-.bam-.sam"><span class="header-section-number">6.2.4</span> <strong>4. BAM / SAM (.bam, .sam)</strong></h3>
+<p>Formatos de alineamiento. bedtools puede resumirlos y cruzarlos con regiones, aunque no los utilizaremos aquí.</p>
+</section>
+</section>
+<section id="qué-hace-bedtools" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="qué-hace-bedtools"><span class="header-section-number">6.3</span> ¿Qué hace bedtools?</h2>
+<p>Las funciones de bedtools se agrupan en tres categorías principales:</p>
+<ul>
+<li><p><strong>Comparación entre regiones:</strong> <code>intersect</code> (solapamientos), <code>subtract</code> (restas), <code>merge</code> (uniones).</p></li>
+<li><p><strong>Cuantificación:</strong> <code>coverage</code> (proporción cubierta) y <code>genomecov</code> (perfil de cobertura).</p></li>
+<li><p><strong>Proximidad:</strong> <code>closest</code> (región más cercana) y <code>window</code> (regiones dentro de una distancia).</p></li>
+</ul>
+<p>Estas operaciones generan tablas que pueden importarse directamente en R para análisis posteriores.</p>
+</section>
+<section id="ideas-clave-antes-de-comenzar" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="ideas-clave-antes-de-comenzar"><span class="header-section-number">6.4</span> Ideas clave antes de comenzar</h2>
+<p>Antes de trabajar con <em>bedtools</em> conviene tener presente que los genomas se describen como intervalos en un cromosoma, y que formatos como BED y GFF3 no son más que tablas que registran esas posiciones. Al entender esto, se vuelve natural usar <em>bedtools</em> para comparar regiones, medir solapamientos y relacionar distintos conjuntos de datos de manera precisa, en vez de depender de búsquedas de texto que no reconocen coordenadas. Con esta base, las operaciones de <em>bedtools</em> encajan sin dificultad dentro del flujo de análisis que después continuaremos en R.</p>
+</section>
+<section id="exploración-y-preparación-de-la-anotación-genómica" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="exploración-y-preparación-de-la-anotación-genómica"><span class="header-section-number">6.5</span> Exploración y preparación de la anotación genómica</h2>
+<p>El objetivo de este primer paso es familiarizarnos con la estructura de un archivo GFF3 y preparar una versión reducida que podamos usar más adelante con <em>bedtools</em>. Antes de cualquier análisis, necesitamos entender cómo se organizan las anotaciones del genoma y aprender a filtrar la información que realmente nos interesa.</p>
+<p><em>Drosophila melanogaster</em> es un organismo modelo ampliamente estudiado, con un genoma relativamente pequeño y bien anotado. Esto permite trabajar con archivos ligeros, fáciles de manipular y suficientemente ricos para practicar filtrado, extracción y análisis con <em>bedtools</em> sin generar problemas de rendimiento.</p>
+<section id="descargar-el-archivo" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="descargar-el-archivo"><span class="header-section-number">6.5.1</span> 1. Descargar el archivo</h3>
+<p>Ensembl mantiene un <strong>servidor FTP público</strong> (<a href="https://ftp.ensembl.org/pub/" class="uri">https://ftp.ensembl.org/pub/</a>) donde se almacenan todas sus versiones de genomas y anotaciones. FTP (“File Transfer Protocol”) es simplemente un sitio desde el cual se pueden descargar archivos grandes de manera directa.</p>
+<p>Dentro del FTP de Ensembl encontrarás:</p>
+<ul>
+<li><p>Anotaciones genómicas en GFF3 o GTF</p></li>
+<li><p>Secuencias del genoma en FASTA</p></li>
+<li><p>Archivos de proteínas y transcritos</p></li>
+<li><p>Metadatos y documentación</p></li>
+<li><p>Versiones anteriores y actuales de cada especie</p></li>
+</ul>
+<p>En el servidor FTP de Ensembl se encuentran todas las anotaciones genómicas organizadas por especie y versión. Tu tarea es descargar el archivo GFF3 correspondiente a <em>Drosophila melanogaster</em> (release 112), siguiendo la ruta que nos lleva al archivo dentro del FTP.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejercicio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Usa el comando <code>wget</code> para descargar el archivo: <code>Drosophila_melanogaster.BDGP6.46.112.gff3.gz</code> ubicado en la ruta <code>https://ftp.ensembl.org/pub/release-112/gff3/drosophila_melanogaster/</code></p>
+<p>¿Qué comando usarías para descargar este archivo en tu directorio actual?</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>wget https://ftp.ensembl.org/pub/release-112/gff3/drosophila_melanogaster/Drosophila_melanogaster.BDGP6.46.112.gff3.gz</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizar-el-archivo-gff3" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="visualizar-el-archivo-gff3"><span class="header-section-number">6.5.2</span> 2. Visualizar el archivo GFF3</h3>
+<p>El archivo que descargamos está comprimido en formato <code>.gz</code>. No necesitamos descomprimirlo para explorarlo: herramientas como <code>zless</code> pueden leerlo directamente.</p>
+<p><code>zless Drosophila_melanogaster.BDGP6.46.112.gff3.gz</code></p>
+<p>Aquí podemos observar que el GFF3 es una tabla con 9 columnas que describen características del genoma: cromosoma, posiciones, tipo de anotación (gene, exon, mRNA, etc.) y una columna final con atributos.</p>
+</section>
+<section id="eliminar-líneas-de-comentarios" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="eliminar-líneas-de-comentarios"><span class="header-section-number">6.5.3</span> 3. Eliminar líneas de comentarios</h3>
+<p>Los archivos GFF suelen comenzar con metadatos que no necesitamos para este análisis. Podemos filtrarlos usando <code>zgrep</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejercicio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En el archivo <code>.gff3.gz</code> las líneas que no corresponden a anotaciones reales comienzan con un “<code>#</code>”</p>
+<p>¿Qué línea de comando utilizarías para eliminar ese contenido?</p>
+<p><strong>Redirige</strong> la salida a un archivo llamado <code>Dmel_clean.gff3</code></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>zgrep -v '^#' Drosophila_melanogaster.BDGP6.46.112.gff3.gz &gt; Dmel_clean.gff3</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="filtrar-cromosomas-principales" class="level3" data-number="6.5.4">
+<h3 data-number="6.5.4" class="anchored" data-anchor-id="filtrar-cromosomas-principales"><span class="header-section-number">6.5.4</span> <strong>4. Filtrar cromosomas principales</strong></h3>
+<p>El archivo GFF3 de <em>Drosophila</em> contiene no solo los cromosomas reales (2L, 2R, 3L, 3R, 4, X y Y), sino también numerosos contigs secundarios y fragmentos pequeños que no necesitamos para nuestro análisis. Para trabajar con un archivo más claro y manejable, filtraremos únicamente las anotaciones que pertenezcan a los cromosomas principales.</p>
+<p><code>grep -P '^(2L|2R|3L|3R|4|X|Y)\t' Dmel_clean.gff3 &gt; Dmel_main.gff3</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><em>Nota</em>: La opción <code>-P</code> permite usar expresiones regulares más completas.</p></li>
+<li><p>Los paréntesis <code>()</code> agrupan varias alternativas y el símbolo <code>|</code> significa “o”.</p></li>
+<li><p>Usamos <strong>comillas simples</strong> para que el patrón se interprete literalmente y no se expandan caracteres especiales (como <code>\t</code>) dentro del shell.</p></li>
+<li><p>El código <code>\t</code> representa un <strong>tabulador</strong>, lo que asegura que el nombre del cromosoma coincida exactamente seguido por una tabulación, tal como aparece en un archivo GFF3.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejercicio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modifica el comando anterior para que, en lugar de conservar todos los cromosomas principales, se quede <strong>únicamente</strong> con las anotaciones del cromosoma <strong>2L</strong> y guarde el resultado en un archivo llamado <code>Dmel_2L.gff3</code>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>grep -P '^2L\t' Dmel_clean.gff3 &gt; Dmel_2L.gff3</code></p>
+<p>o también</p>
+<p><code>grep -P '^2L\t' Dmel_main.gff3 &gt; Dmel_2L.gff3</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Este comando selecciona solo las líneas cuyo cromosoma coincide con uno de los principales, dejándonos un archivo depurado y listo para los pasos siguientes.</p>
+</section>
+<section id="extraer-únicamente-las-líneas-correspondientes-a-genes" class="level3" data-number="6.5.5">
+<h3 data-number="6.5.5" class="anchored" data-anchor-id="extraer-únicamente-las-líneas-correspondientes-a-genes"><span class="header-section-number">6.5.5</span> 5. Extraer únicamente las líneas correspondientes a genes</h3>
+<p>El archivo GFF incluye muchos tipos de anotaciones: exones, transcritos, UTRs, regiones reguladoras, entre otros. Cada uno describe una parte distinta del genoma. Sin embargo, para comenzar a trabajar con <em>bedtools</em> es útil enfocarnos solamente en los <strong>genes</strong>, que se identifican en la tercera columna del GFF con la etiqueta <code>gene</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejercicio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Filtra del archivo <code>Dmel_2L.gff3</code> únicamente las líneas donde la tercera columna sea <strong>gene</strong> y guarda el resultado en <code>Dmel_main_genes.gff3</code>.</p>
+<p>En el ejercicio anterior filtraste cromosomas usando <code>grep -P</code> y un patrón específico. Aquí la idea es la misma: usar <code>grep -P</code> para buscar la palabra <strong>gene</strong>, pero asegurándote de que esté exactamente entre dos tabuladores.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>grep -P '\tgene\t' Dmel_2L.gff3 &gt; Dmel_2L_genes.gff3</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="convertir-de-gff3-a-bed" class="level3" data-number="6.5.6">
+<h3 data-number="6.5.6" class="anchored" data-anchor-id="convertir-de-gff3-a-bed"><span class="header-section-number">6.5.6</span> 6. Convertir de GFF3 a BED</h3>
+<p>El formato BED es el que usaremos con <em>bedtools</em> porque trabaja con coordenadas simples y en sistema 0-based. Para generar un BED a partir de las anotaciones de genes en el GFF3, usamos <code>awk</code> para extraer las columnas necesarias y ajustar la posición inicial (restándole 1):</p>
+<p><code>awk -F "\t" 'BEGIN{OFS="\t"} { split($9,a,";"); print $1, $4-1, $5, a[1] }' Dmel_2L_genes.gff3 &gt; genes_2L.bed</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En el formato BED, la coordenada inicial usa un sistema basado en 0 (<em>0-based</em>), por lo que debemos restarle 1 al inicio; en cambio, la posición final se mantiene igual porque ya coincide entre ambos formatos.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Acerca de awk
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>awk</strong> es una herramienta que permite trabajar con archivos de texto divididos en columnas. Sirve para seleccionar campos, modificarlos y generar nuevas salidas basadas en ellos. En bioinformática se usa mucho para <strong>convertir formatos</strong>, porque facilita tomar columnas específicas (como cromosoma, inicio y fin) y reorganizarlas para crear archivos como BED.</p>
+</div>
+</div>
+</div>
+<p>Con esta conversión obtenemos un archivo BED limpio y compatible con los requisitos de <em>bedtools</em>. Este será el <strong>input principal</strong> para los ejercicios del siguiente apartado, donde comenzaremos a realizar operaciones entre regiones genómicas.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
