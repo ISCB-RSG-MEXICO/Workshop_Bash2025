@@ -164,7 +164,7 @@ hp_data[hp_data$House %in% c("Gryffindor", "Hufflepuff"), ] |>
 ::: callout-note
 ## Ejercicio 1
 
-Realiza un código para buscar personajes cuyo color de ojos sea Slytherin y Ravenclaw
+Realiza un código para buscar personajes cuya casa sea Slytherin o Ravenclaw
 
 ::: {.callout-tip collapse="true"}
 ## Solución
@@ -254,7 +254,7 @@ hp_data |>   filter(House == "Ravenclaw") |>   select(Name, Blood.status) |>
 
 Se lee como:
 
-> "Toma hp_data, luego filtra House == Ravenclaw, luego selecciona Name y BloodStatus".
+> "Toma hp_data, luego filtra House == Ravenclaw, luego selecciona `Name` y `Blood.status`".
 
 ## **3.3. Operaciones Clave de Manipulación**
 
@@ -315,13 +315,13 @@ hp_data |>   filter(House == "Slytherin", Blood.status == "Half-blood") |>
 
 En algunas columnas, como **Skills**, aparecen varias habilidades juntas, separadas por `|` para poder filtrar un texto específico, podemos utilizar `grepl( )`. Esta función nos permite buscar coincidencias dentro de un texto, porque **busca texto dentro de un string**, aunque esté acompañado de:
 
--    otras habilidades
+-   otras habilidades
 
--    espacios
+-   espacios
 
--    otros símbolos
+-   otros símbolos
 
--    mayúsculas/minúsculas (si quieres ignorarlo se puede)
+-   mayúsculas/minúsculas (si quieres ignorarlo se puede)
 
 Ejemplo:
 
@@ -463,9 +463,9 @@ hp_data |>   arrange(desc(Name)) |>
 Cuando necesitamos **resumir información**, obtener **estadísticas por categoría** o calcular valores como **promedios, totales o máximos**, utilizamos las funciones `group_by()` y `summarise()`.\
 Estas dos funciones suelen trabajar juntas:
 
--    **`group_by()`**: organiza los datos en grupos según una o más variables.
+-   **`group_by()`**: organiza los datos en grupos según una o más variables.
 
--    **`summarise()`**: calcula resúmenes para cada grupo (conteos, medias, mínimos, máximos, etc.).
+-   **`summarise()`**: calcula resúmenes para cada grupo (conteos, medias, mínimos, máximos, etc.).
 
 En conjunto, permiten transformar tablas grandes en resúmenes claros y compactos.
 
@@ -479,10 +479,9 @@ hp_data |>   group_by(House) |>   summarise(N = n())
 
 -   `group_by(House)` separa los datos por cada casa.
 
-```{=html}
 <!-- -->
-```
--    `summarise()` calcula un resultado para cada grupo; en este caso, `n()` cuenta cuántas filas hay en cada casa.
+
+-   `summarise()` calcula un resultado para cada grupo; en este caso, `n()` cuenta cuántas filas hay en cada casa.
 
 ::: callout-note
 ## Ejercicio 3
