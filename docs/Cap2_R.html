@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 10&nbsp; Introducción a las paqueterías y manejo de data frames en R</title>
+<title>Workshop Bash &amp; R - 9&nbsp; Introducción al manejo de datos en R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./install_B.html" rel="next">
+<link href="./Cap3_R.html" rel="next">
 <link href="./Cap1_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -98,6 +98,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 </head>
 
@@ -110,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap2_R.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Cap2_R.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -195,49 +198,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap3_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exploración y manipulación de archivos fasta</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap4_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Comandos usados en Github y RStudio</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Cap5_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Buenas practicas en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap3_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap4_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualización y Analisis de Datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
     </ul>
@@ -250,17 +259,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#paqueterías-en-r" id="toc-paqueterías-en-r" class="nav-link active" data-scroll-target="#paqueterías-en-r"><span class="header-section-number">10.0.1</span> Paqueterías en R</a></li>
-  <li><a href="#para-qué-sirven-las-paqueterías-en-r" id="toc-para-qué-sirven-las-paqueterías-en-r" class="nav-link" data-scroll-target="#para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">10.0.2</span> ¿Para qué sirven las paqueterías en R?</a></li>
-  <li><a href="#en-dónde-encontrar-más-paqueterías" id="toc-en-dónde-encontrar-más-paqueterías" class="nav-link" data-scroll-target="#en-dónde-encontrar-más-paqueterías"><span class="header-section-number">10.0.3</span> ¿En dónde encontrar más paqueterías?</a></li>
-  <li><a href="#manejo-de-data-frames-en-r" id="toc-manejo-de-data-frames-en-r" class="nav-link" data-scroll-target="#manejo-de-data-frames-en-r"><span class="header-section-number">11</span> <strong>Manejo de Data Frames en R</strong></a>
+  <li><a href="#paqueterías-en-r" id="toc-paqueterías-en-r" class="nav-link active" data-scroll-target="#paqueterías-en-r"><span class="header-section-number">9.0.1</span> Paqueterías en R</a></li>
+  <li><a href="#para-qué-sirven-las-paqueterías-en-r" id="toc-para-qué-sirven-las-paqueterías-en-r" class="nav-link" data-scroll-target="#para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">9.0.2</span> ¿Para qué sirven las paqueterías en R?</a></li>
+  <li><a href="#en-dónde-encontrar-más-paqueterías" id="toc-en-dónde-encontrar-más-paqueterías" class="nav-link" data-scroll-target="#en-dónde-encontrar-más-paqueterías"><span class="header-section-number">9.0.3</span> ¿En dónde encontrar más paqueterías?</a></li>
+  <li><a href="#manejo-de-data-frames-en-r" id="toc-manejo-de-data-frames-en-r" class="nav-link" data-scroll-target="#manejo-de-data-frames-en-r"><span class="header-section-number">10</span> <strong>Manejo de Data Frames en R</strong></a>
   <ul>
-  <li><a href="#introducción-a-los-data-frames-en-r" id="toc-introducción-a-los-data-frames-en-r" class="nav-link" data-scroll-target="#introducción-a-los-data-frames-en-r"><span class="header-section-number">11.1</span> <strong>Introducción a los data frames en R</strong></a></li>
-  <li><a href="#importación-y-exportación-de-datos" id="toc-importación-y-exportación-de-datos" class="nav-link" data-scroll-target="#importación-y-exportación-de-datos"><span class="header-section-number">11.2</span> <strong>Importación y Exportación de Datos</strong></a>
+  <li><a href="#introducción-a-los-data-frames-en-r" id="toc-introducción-a-los-data-frames-en-r" class="nav-link" data-scroll-target="#introducción-a-los-data-frames-en-r"><span class="header-section-number">10.1</span> <strong>Introducción a los data frames en R</strong></a></li>
+  <li><a href="#importación-y-exportación-de-datos" id="toc-importación-y-exportación-de-datos" class="nav-link" data-scroll-target="#importación-y-exportación-de-datos"><span class="header-section-number">10.2</span> <strong>Importación y Exportación de Datos</strong></a>
   <ul class="collapse">
-  <li><a href="#funciones-principales" id="toc-funciones-principales" class="nav-link" data-scroll-target="#funciones-principales"><span class="header-section-number">11.2.1</span> <strong>Funciones principales</strong></a></li>
+  <li><a href="#funciones-principales" id="toc-funciones-principales" class="nav-link" data-scroll-target="#funciones-principales"><span class="header-section-number">10.2.1</span> <strong>Funciones principales</strong></a></li>
   </ul></li>
-  <li><a href="#cómo-explorar-un-data-frame-en-r" id="toc-cómo-explorar-un-data-frame-en-r" class="nav-link" data-scroll-target="#cómo-explorar-un-data-frame-en-r"><span class="header-section-number">11.3</span> Cómo explorar un data frame en R</a>
+  <li><a href="#cómo-explorar-un-data-frame-en-r" id="toc-cómo-explorar-un-data-frame-en-r" class="nav-link" data-scroll-target="#cómo-explorar-un-data-frame-en-r"><span class="header-section-number">10.3</span> Cómo explorar un data frame en R</a>
   <ul class="collapse">
   <li><a href="#ver-las-primeras-filas" id="toc-ver-las-primeras-filas" class="nav-link" data-scroll-target="#ver-las-primeras-filas"><strong>Ver las primeras filas</strong></a></li>
   <li><a href="#ver-las-últimas-filas" id="toc-ver-las-últimas-filas" class="nav-link" data-scroll-target="#ver-las-últimas-filas"><strong>Ver las últimas filas</strong></a></li>
@@ -270,6 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ver-el-data-frame-completo-en-una-ventana-tipo-excel" id="toc-ver-el-data-frame-completo-en-una-ventana-tipo-excel" class="nav-link" data-scroll-target="#ver-el-data-frame-completo-en-una-ventana-tipo-excel"><strong>Ver el data frame completo en una ventana tipo Excel</strong></a></li>
   <li><a href="#resumen-estadístico-de-las-variables-numéricas" id="toc-resumen-estadístico-de-las-variables-numéricas" class="nav-link" data-scroll-target="#resumen-estadístico-de-las-variables-numéricas"><strong>Resumen estadístico de las variables numéricas</strong></a></li>
   </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">10.4</span> Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -279,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></h1>
 </div>
 
 
@@ -294,14 +304,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="paqueterías-en-r" class="level3" data-number="10.0.1">
-<h3 data-number="10.0.1" class="anchored" data-anchor-id="paqueterías-en-r"><span class="header-section-number">10.0.1</span> Paqueterías en R</h3>
+<section id="paqueterías-en-r" class="level3" data-number="9.0.1">
+<h3 data-number="9.0.1" class="anchored" data-anchor-id="paqueterías-en-r"><span class="header-section-number">9.0.1</span> Paqueterías en R</h3>
 <p>En R, podemos <strong>agregar funciones y herramientas adicionales</strong> mediante <strong>paqueterías (packages),</strong> también llamadas <strong>librerías</strong>.</p>
 <p>Una paquetería es un conjunto de funciones, datos y documentación creado por alguien más, o incluso por ti.</p>
 <p>Actualmente, hay <strong>más de 10,000 paqueterías disponibles en CRAN</strong> (Comprehensive R Archive Network).</p>
 </section>
-<section id="para-qué-sirven-las-paqueterías-en-r" class="level3" data-number="10.0.2">
-<h3 data-number="10.0.2" class="anchored" data-anchor-id="para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">10.0.2</span> ¿Para qué sirven las paqueterías en R?</h3>
+<section id="para-qué-sirven-las-paqueterías-en-r" class="level3" data-number="9.0.2">
+<h3 data-number="9.0.2" class="anchored" data-anchor-id="para-qué-sirven-las-paqueterías-en-r"><span class="header-section-number">9.0.2</span> ¿Para qué sirven las paqueterías en R?</h3>
 <p>Las paqueterías en R permiten <strong>ampliar las funciones básicas del programa</strong>. Por ejemplo:</p>
 <ul>
 <li><p>Crear gráficos más avanzados (<code>ggplot2</code>).</p></li>
@@ -311,8 +321,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>En otras palabras, <strong>las paqueterías te dan herramientas listas para usar</strong> que te ahorran tiempo y esfuerzo, sin tener que escribir todo desde cero.</p>
 </section>
-<section id="en-dónde-encontrar-más-paqueterías" class="level3" data-number="10.0.3">
-<h3 data-number="10.0.3" class="anchored" data-anchor-id="en-dónde-encontrar-más-paqueterías"><span class="header-section-number">10.0.3</span> ¿En dónde encontrar más paqueterías?</h3>
+<section id="en-dónde-encontrar-más-paqueterías" class="level3" data-number="9.0.3">
+<h3 data-number="9.0.3" class="anchored" data-anchor-id="en-dónde-encontrar-más-paqueterías"><span class="header-section-number">9.0.3</span> ¿En dónde encontrar más paqueterías?</h3>
 <p>Si quieres explorar más paqueterías de R o buscar herramientas específicas, existen varios sitios confiables donde puedes consultar. Algunos de ellos son:</p>
 <ul>
 <li><p>El <strong>repositorio oficial CRAN</strong> (Comprehensive R Archive Network) contiene todas las paqueterías revisados y se puede consultar en <a href="https://cran.r-project.org/web/packages/" class="uri">https://cran.r-project.org/web/packages/</a>.</p></li>
@@ -365,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -402,20 +412,20 @@ Caution
 <li>También puedes instalar o actualizar paqueterías usando los botones <strong>Install</strong> y <strong>Update</strong> en la parte superior de la pestaña.</li>
 </ul>
 </section>
-<section id="manejo-de-data-frames-en-r" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> <strong>Manejo de Data Frames en R</strong></h1>
+<section id="manejo-de-data-frames-en-r" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> <strong>Manejo de Data Frames en R</strong></h1>
 <p>Una vez que sabemos cómo trabajar con paqueterías en R, podemos comenzar a manipular datos de forma más eficiente. Para ello, primero veremos cómo funcionan los <strong>data frames</strong>, qué podemos hacer con ellos y cómo importarlos desde archivos externos.</p>
-<section id="introducción-a-los-data-frames-en-r" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="introducción-a-los-data-frames-en-r"><span class="header-section-number">11.1</span> <strong>Introducción a los data frames en R</strong></h2>
+<section id="introducción-a-los-data-frames-en-r" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introducción-a-los-data-frames-en-r"><span class="header-section-number">10.1</span> <strong>Introducción a los data frames en R</strong></h2>
 <p>En R, un <strong>data frame</strong> es una de las estructuras más utilizadas para trabajar con datos. Puede pensarse como una tabla, donde cada columna representa una variable y cada fila corresponde a una observación.<br>
 </p>
 <p>En esta sección trabajaremos con una base de datos inspirada en el universo de <em>Harry Potter</em> (personajes, casas, hechizos, etc.), que nos servirá para practicar las operaciones básicas.</p>
 </section>
-<section id="importación-y-exportación-de-datos" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="importación-y-exportación-de-datos"><span class="header-section-number">11.2</span> <strong>Importación y Exportación de Datos</strong></h2>
+<section id="importación-y-exportación-de-datos" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="importación-y-exportación-de-datos"><span class="header-section-number">10.2</span> <strong>Importación y Exportación de Datos</strong></h2>
 <p>Antes de manipular datos, es importante aprender a <strong>importarlos</strong> desde archivos externos y <strong>exportarlos</strong> cuando queramos guardar resultados.</p>
-<section id="funciones-principales" class="level3" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="funciones-principales"><span class="header-section-number">11.2.1</span> <strong>Funciones principales</strong></h3>
+<section id="funciones-principales" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="funciones-principales"><span class="header-section-number">10.2.1</span> <strong>Funciones principales</strong></h3>
 <ul>
 <li><p><strong><code>read.csv()</code></strong> – Importa archivos CSV.</p></li>
 <li><p><strong><code>read.table()</code></strong> – Importa archivos en formatos de tabla más generales.</p></li>
@@ -430,8 +440,8 @@ Caution
 </div>
 </section>
 </section>
-<section id="cómo-explorar-un-data-frame-en-r" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="cómo-explorar-un-data-frame-en-r"><span class="header-section-number">11.3</span> Cómo explorar un data frame en R</h2>
+<section id="cómo-explorar-un-data-frame-en-r" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="cómo-explorar-un-data-frame-en-r"><span class="header-section-number">10.3</span> Cómo explorar un data frame en R</h2>
 <p>Una vez que tienes un data frame (ya sea creado a mano o importado), es importante aprender a explorarlo para entender su estructura y contenido.</p>
 <p>A continuación se presentan las funciones más útiles para esto:</p>
 <section id="ver-las-primeras-filas" class="level4">
@@ -442,92 +452,225 @@ Caution
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Id                                    Name Gender
-1  1                      Harry James Potter   Male
-2  2                   Ronald Bilius Weasley   Male
-3  3                   Hermione Jean Granger Female
-4  4 Albus Percival Wulfric Brian Dumbledore   Male
-5  5                           Rubeus Hagrid   Male
-6  6                      Neville Longbottom   Male
-                                                                   Job
-1                                                              Student
-2                                                              Student
-3                                                              Student
-4                                                           Headmaster
-5 Keeper of Keys and Grounds | Professor of Care of Magical Creatures 
-6                                                              Student
-       House                               Wand             Patronus
-1 Gryffindor        11"  Holly  phoenix feather                 Stag
-2 Gryffindor         12" Ash unicorn tail hair  Jack Russell terrier
-3 Gryffindor 10¾"  vine wood dragon heartstring                Otter
-4 Gryffindor  15" Elder Thestral tail hair core              Phoenix
-5 Gryffindor              16"  Oak unknown core                 None
-6 Gryffindor            13" Cherry unicorn hair        Non-corporeal
-                Species            Blood.status             Hair.colour
-1                 Human              Half-blood                   Black
-2                 Human              Pure-blood                     Red
-3                 Human             Muggle-born                   Brown
-4                 Human              Half-blood Silver| formerly auburn
-5 Half-Human/Half-Giant Part-Human&nbsp;(Half-giant)                   Black
-6                 Human              Pure-blood                   Blond
-    Eye.colour
-1 Bright green
-2         Blue
-3        Brown
-4         Blue
-5        Black
-6             
-                                                                                                   Loyalty
-1 Albus Dumbledore | Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-2                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-3                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-4                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-5                     Albus Dumbledore | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-6                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-                                                                  Skills
-1                   Parseltongue| Defence Against the Dark Arts | Seeker
-2                                   Wizard chess | Quidditch goalkeeping
-3                                                      Almost everything
-4  Considered by many to be one of the most powerful wizards of his time
-5 Resistant to stunning spells| above average strength | crossbowmanship
-6                                                              Herbology
-               Birth          Death
-1       31 July 1980               
-2       1 March 1980               
-3 19 September,&nbsp;1979               
-4   Late August 1881 30 June,&nbsp;1997&nbsp;
-5    6 December&nbsp;1928               
-6      30 July,&nbsp;1980               </code></pre>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Id</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Gender</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Job</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">House</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Wand</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Patronus</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Species</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Blood.status</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Hair.colour</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Eye.colour</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Loyalty</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Skills</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Birth</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Death</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Harry James Potter</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">11" Holly phoenix feather</td>
+<td style="text-align: left;">Stag</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Half-blood</td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;">Bright green</td>
+<td style="text-align: left;">Albus Dumbledore &amp;#124; Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Parseltongue&amp;#124; Defence Against the Dark Arts &amp;#124; Seeker</td>
+<td style="text-align: left;">31 July 1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Ronald Bilius Weasley</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">12" Ash unicorn tail hair</td>
+<td style="text-align: left;">Jack Russell terrier</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Pure-blood</td>
+<td style="text-align: left;">Red</td>
+<td style="text-align: left;">Blue</td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Wizard chess &amp;#124; Quidditch goalkeeping</td>
+<td style="text-align: left;">1 March 1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Hermione Jean Granger</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">10¾" vine wood dragon heartstring</td>
+<td style="text-align: left;">Otter</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Almost everything</td>
+<td style="text-align: left;">19 September,&nbsp;1979</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Albus Percival Wulfric Brian Dumbledore</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Headmaster</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">15" Elder Thestral tail hair core</td>
+<td style="text-align: left;">Phoenix</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Half-blood</td>
+<td style="text-align: left;">Silver&amp;#124; formerly auburn</td>
+<td style="text-align: left;">Blue</td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Considered by many to be one of the most powerful wizards of his time</td>
+<td style="text-align: left;">Late August 1881</td>
+<td style="text-align: left;">30 June,&nbsp;1997&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Rubeus Hagrid</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Keeper of Keys and Grounds &amp;#124; Professor of Care of Magical Creatures</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">16" Oak unknown core</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Half-Human/Half-Giant</td>
+<td style="text-align: left;">Part-Human&nbsp;(Half-giant)</td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;">Albus Dumbledore &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Resistant to stunning spells&amp;#124; above average strength &amp;#124; crossbowmanship</td>
+<td style="text-align: left;">6 December&nbsp;1928</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Neville Longbottom</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">13" Cherry unicorn hair</td>
+<td style="text-align: left;">Non-corporeal</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Pure-blood</td>
+<td style="text-align: left;">Blond</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Herbology</td>
+<td style="text-align: left;">30 July,&nbsp;1980</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
 </div>
 </div>
 <p>Puedes cambiar el número de filas:</p>
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hp_data, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hp_data, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Id                  Name Gender     Job      House
-1  1    Harry James Potter   Male Student Gryffindor
-2  2 Ronald Bilius Weasley   Male Student Gryffindor
-3  3 Hermione Jean Granger Female Student Gryffindor
-                                Wand             Patronus Species Blood.status
-1        11"  Holly  phoenix feather                 Stag   Human   Half-blood
-2         12" Ash unicorn tail hair  Jack Russell terrier   Human   Pure-blood
-3 10¾"  vine wood dragon heartstring                Otter   Human  Muggle-born
-  Hair.colour   Eye.colour
-1       Black Bright green
-2         Red         Blue
-3       Brown        Brown
-                                                                                                   Loyalty
-1 Albus Dumbledore | Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-2                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-3                    Dumbledore's Army | Order of the Phoenix | Hogwarts School of Witchcraft and Wizardry
-                                                Skills              Birth Death
-1 Parseltongue| Defence Against the Dark Arts | Seeker       31 July 1980      
-2                 Wizard chess | Quidditch goalkeeping       1 March 1980      
-3                                    Almost everything 19 September,&nbsp;1979      </code></pre>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Id</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Gender</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Job</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">House</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Wand</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Patronus</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Species</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Blood.status</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Hair.colour</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Eye.colour</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Loyalty</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Skills</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Birth</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Death</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Harry James Potter</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">11" Holly phoenix feather</td>
+<td style="text-align: left;">Stag</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Half-blood</td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;">Bright green</td>
+<td style="text-align: left;">Albus Dumbledore &amp;#124; Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Parseltongue&amp;#124; Defence Against the Dark Arts &amp;#124; Seeker</td>
+<td style="text-align: left;">31 July 1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Ronald Bilius Weasley</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">12" Ash unicorn tail hair</td>
+<td style="text-align: left;">Jack Russell terrier</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Pure-blood</td>
+<td style="text-align: left;">Red</td>
+<td style="text-align: left;">Blue</td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Wizard chess &amp;#124; Quidditch goalkeeping</td>
+<td style="text-align: left;">1 March 1980</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Hermione Jean Granger</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Student</td>
+<td style="text-align: left;">Gryffindor</td>
+<td style="text-align: left;">10¾" vine wood dragon heartstring</td>
+<td style="text-align: left;">Otter</td>
+<td style="text-align: left;">Human</td>
+<td style="text-align: left;">Muggle-born</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">Dumbledore's Army &amp;#124; Order of the Phoenix &amp;#124; Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;">Almost everything</td>
+<td style="text-align: left;">19 September,&nbsp;1979</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
 </div>
 </div>
 </section>
@@ -536,58 +679,146 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>     Id                     Name Gender
-135 135           Septima Vector Female
-136 136 Wilhelmina Grubbly-Plank Female
-137 137          Fenrir Greyback   Male
-138 138      Gellert Grindelwald   Male
-139 139                    Dobby   Male
-140 140                 Kreacher   Male
-                                                                                            Job
-135                                                          Professor&nbsp;of&nbsp;Arithmancyat&nbsp;Hogwarts
-136                               Substitute professor&nbsp;of&nbsp;Care of Magical Creatures&nbsp;at&nbsp;Hogwarts
-137                                                                                            
-138                                                    Revolutionary leader(c.&nbsp;1920s[6]&nbsp;–&nbsp;1945)
-139      Malfoy family's house-elf (? - 1993),\nHogwarts kitchens worker (December 1994 - 1998)
-140 \nBlack family's house-elf (?-1996), \nHarry Potter's house-elf, \nHogwarts kitchen worker 
-    House                                Wand      Patronus   Species
-135                                   Unknown       Unknown    Human&nbsp;
-136                                   Unknown Non-corporeal    Human&nbsp;
-137                                   Unknown          None  Werewolf
-138       15", Elder, Thestral tail hair core                  Human&nbsp;
-139                                                         House elf
-140                                                         House elf
-                Blood.status Hair.colour Eye.colour
-135                                Black           
-136                                 Grey           
-137                                 Grey           
-138 Pure-blood&nbsp;or&nbsp;half-blood       Blond       Blue
-139                                Green           
-140                                White           
-                                       Loyalty
-135 Hogwarts School of Witchcraft and Wizardry
-136 Hogwarts School of Witchcraft and Wizardry
-137             Lord Voldemort &nbsp;| Death Eaters
-138             Gellert Grindelwald's Acolytes
-139                                           
-140                                           
-                                                                                                                                        Skills
-135                                                                                                                                           
-136                                                                                                                                           
-137                                                                                                                            Physical combat
-138                                                                                                                                   Duelling
-139 A type of magic specific to house-elves, performed without a wand which includes the ability to apparate, disarm and make objects levitate
-140                                    Magic performed without a wand which includes the ability to apparate, disarm and make objects levitate
-          Birth            Death
-135 Before&nbsp;1974                 
-136                             
-137    Pre&nbsp;1945                 
-138        1883      March,&nbsp;1998
-139     28 June Late&nbsp;March,&nbsp;1998
-140                             </code></pre>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Id</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Gender</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Job</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">House</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Wand</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Patronus</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Species</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Blood.status</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Hair.colour</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Eye.colour</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Loyalty</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Skills</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Birth</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Death</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">135</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: left;">Septima Vector</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Professor&nbsp;of&nbsp;Arithmancyat&nbsp;Hogwarts</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Human&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Before&nbsp;1974</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">136</td>
+<td style="text-align: right;">136</td>
+<td style="text-align: left;">Wilhelmina Grubbly-Plank</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Substitute professor&nbsp;of&nbsp;Care of Magical Creatures&nbsp;at&nbsp;Hogwarts</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Non-corporeal</td>
+<td style="text-align: left;">Human&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Grey</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hogwarts School of Witchcraft and Wizardry</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">137</td>
+<td style="text-align: right;">137</td>
+<td style="text-align: left;">Fenrir Greyback</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Werewolf</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Grey</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Lord Voldemort &nbsp;&amp;#124; Death Eaters</td>
+<td style="text-align: left;">Physical combat</td>
+<td style="text-align: left;">Pre&nbsp;1945</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">138</td>
+<td style="text-align: right;">138</td>
+<td style="text-align: left;">Gellert Grindelwald</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Revolutionary leader(c.&nbsp;1920s[6]&nbsp;–&nbsp;1945)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">15", Elder, Thestral tail hair core</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Human&nbsp;</td>
+<td style="text-align: left;">Pure-blood&nbsp;or&nbsp;half-blood</td>
+<td style="text-align: left;">Blond</td>
+<td style="text-align: left;">Blue</td>
+<td style="text-align: left;">Gellert Grindelwald's Acolytes</td>
+<td style="text-align: left;">Duelling</td>
+<td style="text-align: left;">1883</td>
+<td style="text-align: left;">March,&nbsp;1998</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">139</td>
+<td style="text-align: right;">139</td>
+<td style="text-align: left;">Dobby</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Malfoy family's house-elf (? - 1993), Hogwarts kitchens worker (December 1994 - 1998)</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|House elf</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|Green</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|A type of magic specific to house-elves, performed without a wand which includes the ability to apparate, disarm and make objects levitate</td>
+<td style="text-align: left;">|28 June</td>
+<td style="text-align: left;">|Late&nbsp;March,&nbsp;1998</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">140</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: left;">Kreacher</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Black family's house-elf (?-1996), Harry Potter's house-elf, Hogwarts kitchen worke</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|House el</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|White</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|Magic performed without a wand which includes the ability to apparate, disarm and make objects levitate</td>
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">|</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 </div>
 </div>
 </section>
@@ -596,7 +827,7 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   140 obs. of  15 variables:
@@ -630,7 +861,7 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 140</code></pre>
@@ -640,7 +871,7 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 15</code></pre>
@@ -650,7 +881,7 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 140  15</code></pre>
@@ -663,7 +894,7 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Id"           "Name"         "Gender"       "Job"          "House"       
@@ -674,7 +905,7 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Id"           "Name"         "Gender"       "Job"          "House"       
@@ -689,7 +920,7 @@ Caution
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -701,7 +932,7 @@ Esta función genera un <strong>resumen estadístico básico</strong>, que inclu
 <div class="cell">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(hp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Id             Name              Gender              Job           
@@ -734,9 +965,18 @@ Esta función genera un <strong>resumen estadístico básico</strong>, que inclu
                                                          </code></pre>
 </div>
 </div>
-
-
+<p>Hasta aquí ya tenemos todo lo necesario para “conocer” tus datos: cómo cargarlos, visualizarlos, revisar sus columnas y obtener un resumen general. Este es el primer paso en cualquier análisis.</p>
 </section>
+</section>
+<section id="referencias" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="referencias"><span class="header-section-number">10.4</span> Referencias</h2>
+<ul>
+<li><p>The Carpentries. (2025). <em>R for Reproducible Scientific Analysis</em>. <a href="https://swcarpentry.github.io/r-novice-gapminder/" class="uri">https://swcarpentry.github.io/r-novice-gapminder/</a></p></li>
+<li><p>Demiryürek, G. (2021). <em>Harry Potter Dataset</em>. Kaggle.<br>
+<a href="https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset" class="uri">https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset</a></p></li>
+</ul>
+
+
 </section>
 </section>
 
@@ -1092,12 +1332,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Cap1_R.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./install_B.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Cap3_R.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

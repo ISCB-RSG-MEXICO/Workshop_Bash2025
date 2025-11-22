@@ -195,49 +195,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap3_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conectar a GitHub con SSH</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exploración y manipulación de archivos fasta</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap4_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Comandos usados en Github y RStudio</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Cap5_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Buenas practicas en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción a las paqueterías y manejo de data frames en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap3_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap4_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualización y Analisis de Datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
     </ul>
@@ -267,8 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#permisos" id="toc-permisos" class="nav-link" data-scroll-target="#permisos"><span class="header-section-number">3.12.2</span> <strong>Permisos</strong></a></li>
   </ul></li>
   <li><a href="#chmod-cambiar-permisos" id="toc-chmod-cambiar-permisos" class="nav-link" data-scroll-target="#chmod-cambiar-permisos"><span class="header-section-number">3.13</span> <strong><code>chmod</code>: Cambiar permisos</strong></a></li>
-  <li><a href="#comprimir-y-descomprimir-archivos" id="toc-comprimir-y-descomprimir-archivos" class="nav-link" data-scroll-target="#comprimir-y-descomprimir-archivos"><span class="header-section-number">3.14</span> Comprimir y descomprimir archivos</a></li>
-  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">3.15</span> Material suplementario</a></li>
+  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">3.14</span> Material suplementario</a></li>
   </ul>
 </nav>
     </div>
@@ -294,7 +299,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="entorno-de-bash" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="entorno-de-bash"><span class="header-section-number">3.1</span> <strong>Entorno de Bash</strong></h2>
-<p><img src="img/entornoBash.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/entornoBash.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <p>El signo&nbsp;<code>$</code>&nbsp;es un&nbsp;<strong>prompt</strong>, que nos muestra que la terminal está esperando una entrada; tu terminal puede usar un carácter diferente como prompt y puede agregar información antes de él. Al teclear comandos, ya sea a partir de estas lecciones o de otras fuentes, no escribas el prompt (<em>$</em>), sólo los comandos que le siguen.</p>
 </section>
 <section id="estructura-de-un-comando" class="level2" data-number="3.2">
@@ -316,10 +325,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Otro ejemplo:</p>
 <div class="sourceCode" id="cb2" data-code-copy="true" data-eval="false"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-i</span> <span class="st">"gene"</span> genes.gtf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>grep → busca texto dentro de los archivos</p></li>
-<li><p>-i → opción que ignora mayúsculas y minúsculas</p></li>
-<li><p>“gene” → patrón a buscar</p></li>
-<li><p>genes.gft → archivo donde se buscará</p></li>
+<li><p><code>grep</code> → busca texto dentro de los archivos</p></li>
+<li><p><code>-i</code> → opción que ignora mayúsculas y minúsculas</p></li>
+<li><p><code>"gene"</code> → patrón a buscar</p></li>
+<li><p><code>genes.gft</code> → archivo donde se buscará</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -446,9 +455,9 @@ Solución
 <p>Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema</p>
 <table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 47%">
-<col style="width: 26%">
+<col style="width: 12%">
+<col style="width: 62%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -571,9 +580,9 @@ Solución
 <p>Comandos para ahorrar espacio o mover varios archivos juntos</p>
 <table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 36%">
-<col style="width: 36%">
+<col style="width: 18%">
+<col style="width: 37%">
+<col style="width: 43%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -605,8 +614,8 @@ Solución
 <h2 data-number="3.9" class="anchored" data-anchor-id="transferencia-de-archivos-entre-sistemas"><span class="header-section-number">3.9</span> Transferencia de archivos entre sistemas</h2>
 <table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 36%">
+<col style="width: 6%">
+<col style="width: 56%">
 <col style="width: 36%">
 </colgroup>
 <thead>
@@ -824,65 +833,8 @@ Solución
 </tbody>
 </table>
 </section>
-<section id="comprimir-y-descomprimir-archivos" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="comprimir-y-descomprimir-archivos"><span class="header-section-number">3.14</span> Comprimir y descomprimir archivos</h2>
-<p>Los archivos pueden tener distintas extensiones según su propósito. En algunos casos será necesario descomprimirlos para acceder a su contenido, y en otros conviene mantenerlos comprimidos para ahorrar espacio en tu entorno de trabajo.&nbsp;</p>
-<table class="table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 47%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tipo de archivo</th>
-<th>Comprimir</th>
-<th>Descomprimir</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>directorio.tar</td>
-<td><code>tar -cvf directorio.tar /dir/a/comprimir/directorio</code></td>
-<td><code>tar -xvf directorio.tar</code></td>
-</tr>
-<tr class="even">
-<td>directorio.tar.gz</td>
-<td><code>tar -czvf directorio.tar.gz /directorio/a/empaquetar/directorio</code></td>
-<td><code>tar -zxvf directorio.tar.gz</code></td>
-</tr>
-<tr class="odd">
-<td>archivo.gz</td>
-<td><code>gzip -9 archivo.txt</code></td>
-<td><code>gunzip -kd archivo.txt.gz</code></td>
-</tr>
-<tr class="even">
-<td>directorio.zip</td>
-<td><code>zip -r directorio.zip directorio</code></td>
-<td><code>unzip directorio.zip</code></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ejercicio 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Descarga todo el repositorio comprimido <a href="https://github.com/RSG-Ecuador/unix.bioinfo.rsgecuador/tree/gh-pages">unix.bioinfo.rsgecuador</a> en tu computadora. El archivo se almacenara con la extension (.ZIP).</li>
-<li>Colocate en la directorio donde se encuentra el archivo. Ejemplo en mi computadora: <code>cd "C:/Users/ecoss/Documents/Respaldos/Github_notes/Workshop_Bash2024/data"</code></li>
-<li>Descomprime el archivo ZIP. <code>unzip unix.bioinfo.rsgecuador-gh-pages.zip</code></li>
-</ol>
-</div>
-</div>
-</section>
-<section id="material-suplementario" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">3.15</span> Material suplementario</h2>
+<section id="material-suplementario" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">3.14</span> Material suplementario</h2>
 <ul>
 <li>Software Carpentry. <a href="https://swcarpentry.github.io/shell-novice-es/02-filedir.html">La terminal de Unix</a></li>
 <li>RSG Ecuador.<a href="https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_avanzado/02_Bash/1_bash.html">GNU/Linux para bioinfomatica</a></li>
