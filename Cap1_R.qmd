@@ -25,6 +25,8 @@ Un **script** es un archivo de texto donde puedes escribir tus instrucciones de 
     ![](figures/Sript_R.png)
 
 ::: callout-caution
+## Nota importante:
+
 No olvides **guardar tu script y los cambios** que realices con frecuencia, para no perder nada. Para guardar, usa `Ctrl + S` (Windows/Linux) o `⌘ + S` (Mac), o ve a `File → Save`.
 :::
 
@@ -231,15 +233,14 @@ help()
 
 -   Otras funciones no necesitan argumentos (`date()`).
 
-```{=html}
-<!-- -->
-```
 -   Prueba cada función directamente en la consola de R para ver los resultados de inmediato.
 :::
 
 R cuenta con una cantidad enorme de funciones, muchas de las cuales pueden tener argumentos más complejos y usos avanzados. Lo que hemos visto hasta ahora es solo una pequeña muestra; a lo largo del curso exploraremos más funciones y aprenderemos a utilizarlas de manera práctica.
 
 ::: callout-important
+## Importante
+
 No te preocupes si no recuerdas alguna de ellas. Siempre puedes consultar para qué sirve una función de las siguientes maneras:
 
 ```{r}
@@ -450,6 +451,8 @@ mi_tabla
 :::
 
 ::: callout-note
+## Ejercicio 2
+
 2.  Crea un factor con la información del ejemplo y guárdalo en una variable llamada `colores`:
 
 ::: {.callout-tip collapse="true"}
@@ -496,3 +499,15 @@ rm(list = ls())
 ```
 
 Puedes **limpiar la consola** para empezar de nuevo haciendo clic en el ícono con forma de **escoba** 🧹, ubicado en la esquina superior derecha de la consola, o utilizando el atajo de teclado `Ctrl + L`(Windows/Linux) o `⌘ + L` (Mac).
+
+## Material suplementario
+
+Para aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:
+
+-   The Carpentries. (2025). *R for Reproducible Scientific Analysis*. <https://swcarpentry.github.io/r-novice-gapminder/>
+
+-   CRAN. (2025). *The Comprehensive R Archive Network*. <https://cran.r-project.org/>
+
+-   Wickham, H. & Grolemund, G. (2017). *R for Data Science*. O'Reilly Media. <https://r4ds.had.co.nz/>
+
+-   RStudio Education. (2024). *RStudio Primers*. <https://posit.cloud/learn/primers>

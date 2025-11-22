@@ -156,7 +156,7 @@ Ejemplo de rutas:
 Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema
 
 | Comandos  | Información                                            | Ejemplo de uso       |
-|----------------|-----------------------------------------|----------------|
+|-----------|--------------------------------------------------------|----------------------|
 | `pwd`     | Muestra el directorio actual                           | `pwd`                |
 | `history` | Muestra el historial de comandos                       | `history`            |
 | `ls`      | Observar el contenido de los archivos en un directorio | `ls mi_directorio`   |
@@ -190,7 +190,7 @@ Comandos para ver o modificar quién puede leer, escribir o ejecutar archivos
 Comandos para ahorrar espacio o mover varios archivos juntos
 
 | Comando         | Descripción                      | Ejemplo                                |
-|-----------------|-------------------------|------------------------------|
+|-----------------|----------------------------------|----------------------------------------|
 | `gzip / gunzip` | Comprime o descomprime archivos  | `gzip datos.txt`                       |
 | `tar`           | Empaqueta y comprime directorios | `tar -czf proyecto.tar.gz directorio/` |
 | `zip` / `unzip` | Comprime o descomprime archivos  | `zip -r resultados.zip ./resultados/`  |
@@ -198,7 +198,7 @@ Comandos para ahorrar espacio o mover varios archivos juntos
 ## Transferencia de archivos entre sistemas
 
 | Comando  | Descripción                                                                               | Ejemplo                                                   |
-|--------------|------------------------------------|----------------------|
+|----------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | `ssh`    | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
 | `scp`    | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
 | `scp -r` | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |

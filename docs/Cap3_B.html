@@ -196,14 +196,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Cap4_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualización y Analisis de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./install_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
     </ul>
@@ -224,7 +230,8 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#exploración-del-contenido-de-un-archivo-fasta" id="toc-exploración-del-contenido-de-un-archivo-fasta" class="nav-link" data-scroll-target="#exploración-del-contenido-de-un-archivo-fasta"><span class="header-section-number">5.4</span> Exploración del contenido de un archivo FASTA</a></li>
   <li><a href="#edición-de-secuencias-con-sed" id="toc-edición-de-secuencias-con-sed" class="nav-link" data-scroll-target="#edición-de-secuencias-con-sed"><span class="header-section-number">5.5</span> Edición de secuencias con <code>sed</code></a></li>
-  <li><a href="#búsqueda-de-motivos-protéicos-en-hspa8" id="toc-búsqueda-de-motivos-protéicos-en-hspa8" class="nav-link" data-scroll-target="#búsqueda-de-motivos-protéicos-en-hspa8"><span class="header-section-number">5.6</span> Búsqueda de motivos protéicos en HSPA8</a></li>
+  <li><a href="#extra-búsqueda-de-motivos-protéicos-en-hspa8" id="toc-extra-búsqueda-de-motivos-protéicos-en-hspa8" class="nav-link" data-scroll-target="#extra-búsqueda-de-motivos-protéicos-en-hspa8"><span class="header-section-number">5.6</span> EXTRA: Búsqueda de motivos protéicos en HSPA8</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5.7</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -408,7 +415,7 @@ Solución
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+archivo.fna
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -478,7 +485,7 @@ Note
 </tr>
 </tbody>
 </table>
-<p><strong>Recuerda:</strong> el símbolo <code>|</code> (<strong>pipe</strong>) permite encadenar comandos: la salida de uno pasa como entrada al siguiente. El wildcard <code>*</code> funciona como un comodín que representa "cualquier número de caracteres" cuando buscas archivos o patrones en nombres dentro del shell.</p>
+<p><strong>Recuerda:</strong> el símbolo <code>|</code> (<strong>pipe</strong>) permite encadenar comandos: la salida de uno pasa como entrada al siguiente. El wildcard <code>*</code> funciona como un comodín que representa “cualquier número de caracteres” cuando buscas archivos o patrones en nombres dentro del shell.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -549,7 +556,7 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>grep "&gt;" *</code></li>
-<li>grep -c “&gt;” <code>C_lupus_familiaris_cds.fna</code></li>
+<li><code>grep -c "&gt;" C_lupus_familiaris_cds.fna</code></li>
 <li><code>grep -c "&gt;" *</code></li>
 </ol>
 </div>
@@ -595,8 +602,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>grep -o "ATG" *fna | wc -l</code></li>
-<li><code>cat *fna &gt; todos_cds.fna</code></li>
-<li><code>cat *faa &gt; todos_prot.fna</code></li>
+<li><code>cat *.fna &gt; todos_cds.fna</code></li>
+<li><code>cat *.faa &gt; todos_prot.fna</code></li>
 <li><code>grep -c "&gt;" todos_*</code></li>
 </ol>
 </div>
@@ -607,7 +614,7 @@ Solución
 </section>
 <section id="edición-de-secuencias-con-sed" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="edición-de-secuencias-con-sed"><span class="header-section-number">5.5</span> Edición de secuencias con <code>sed</code></h2>
-<p><code>sed</code> (<strong>stream editor</strong>) es una herramienta que permite <strong>modificar texto sin abrir los archivos</strong>, procesándolo "en flujo" mientras pasa por la terminal.</p>
+<p><code>sed</code> (<strong>stream editor</strong>) es una herramienta que permite <strong>modificar texto sin abrir los archivos</strong>, procesándolo “en flujo” mientras pasa por la terminal.</p>
 <p>Es muy útil cuando queremos <strong>reemplazar</strong>, <strong>eliminar</strong>, <strong>extraer</strong> o <strong>transformar</strong> patrones en archivos FASTA o cualquier archivo de texto, especialmente cuando se combina con pipes (<code>|</code>).</p>
 <p><code>sed</code> no cambia el archivo original a menos que se indique explícitamente; por defecto solo <strong>imprime el resultado modificado</strong>, lo cual lo hace seguro y práctico para análisis rápidos.</p>
 <p>Por ejemplo:</p>
@@ -664,7 +671,7 @@ Solución
 <ol type="1">
 <li><code>sed 's/ATG/NNN/g' archivo.fna</code></li>
 <li><code>sed 's/A/N/' H_sapiens_cds.fna</code></li>
-<li><code>sed 's/GAA/---/g' &gt; mods_cds.fna</code></li>
+<li><code>sed 's/GAA/---/g' *.fna &gt; mods_cds.fna</code></li>
 <li><code>sed 's/N//g' X_tropicalis_cds.fna &gt; X_tropicalis_clean.fna</code></li>
 <li><code>sed 's/^&gt;//g' *fna</code></li>
 </ol>
@@ -674,14 +681,14 @@ Solución
 </div>
 </div>
 </section>
-<section id="búsqueda-de-motivos-protéicos-en-hspa8" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="búsqueda-de-motivos-protéicos-en-hspa8"><span class="header-section-number">5.6</span> Búsqueda de motivos protéicos en HSPA8</h2>
+<section id="extra-búsqueda-de-motivos-protéicos-en-hspa8" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="extra-búsqueda-de-motivos-protéicos-en-hspa8"><span class="header-section-number">5.6</span> EXTRA: Búsqueda de motivos protéicos en HSPA8</h2>
 <p>HSPA8 contiene varios motivos funcionales muy característicos:</p>
 <table class="table">
 <colgroup>
-<col style="width: 32%">
-<col style="width: 22%">
-<col style="width: 44%">
+<col style="width: 31%">
+<col style="width: 21%">
+<col style="width: 46%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -692,28 +699,28 @@ Solución
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Motivo de unión a ATP (P-loop / Walker A)</strong></td>
-<td><strong>GxxxxGKST</strong> (ej. “GIDLGTTYS”)</td>
+<td>Motivo de unión a ATP (P-loop / Walker A)</td>
+<td>GxxxxGKST (ej. “GIDLGTTYS”)</td>
 <td>Unión e hidrólisis de ATP</td>
 </tr>
 <tr class="even">
-<td><strong>Motivo IDLGTT</strong></td>
-<td><strong>IDLGTT</strong></td>
+<td>Motivo IDLGTT</td>
+<td>IDLGTT</td>
 <td>Parte del dominio NBD, importante para cambios conformacionales</td>
 </tr>
 <tr class="odd">
-<td><strong>Motivo de unión a sustrato</strong></td>
-<td><strong>VFTDT</strong> o similares</td>
+<td>Motivo de unión a sustrato</td>
+<td>VFTDT o similares</td>
 <td>Parte del dominio SBD</td>
 </tr>
 <tr class="even">
-<td><strong>Motivo EEVD (C-terminal)</strong></td>
-<td><strong>EEVD</strong></td>
+<td>Motivo EEVD (C-terminal)</td>
+<td>EEVD</td>
 <td>Interacción con co-chaperonas y proteínas TPR</td>
 </tr>
 <tr class="odd">
-<td><strong>Motivos ricos en glicina</strong></td>
-<td><strong>GGMPGG</strong>, <strong>GGGA</strong>, etc.</td>
+<td>Motivos ricos en glicina</td>
+<td>GGMPGG, GGGA, etc.</td>
 <td>Región C-terminal flexible reguladora</td>
 </tr>
 </tbody>
@@ -724,7 +731,7 @@ Solución
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Ejercicio 6
+Ejercicio Extra
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -733,7 +740,7 @@ Ejercicio 6
 <li>Muestra solo las líneas donde aparece el motivo en <code>H_sapiens_prot.faa</code></li>
 <li>Extrae <strong>únicamente</strong> las coincidencias del motivo para todos los organismos (una por línea).</li>
 <li>Lista todos los organismos cuya secuencia <strong>termina</strong> con el motivo “EEVD”.</li>
-<li>Extrae el fragmento completo de la última línea donde aparezca "EEVD".</li>
+<li>Extrae el fragmento completo de la última línea donde aparezca “EEVD”.</li>
 <li>Cuenta cuántas proteínas <strong>carecen</strong> de ese motivo.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -754,6 +761,13 @@ Solución
 </div>
 </div>
 </div>
+</section>
+<section id="referencias" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="referencias"><span class="header-section-number">5.7</span> Referencias</h2>
+<ul>
+<li><p>National Center for Biotechnology Information. <em>Orthologs of gene 100496320 (HSPA8) in NCBI Datasets</em>. Recuperado de <a href="https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs" class="uri">https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs</a></p></li>
+<li></li>
+</ul>
 
 
 </section>

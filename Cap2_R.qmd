@@ -68,6 +68,8 @@ update.packages("ggplot2")
 ```
 
 ::: callout-caution
+## Importante
+
 Si no específicas, por defecto R, revisa todas las paqueterías instaladas. Dependiendo de la versión de R y de tu configuración, puede actualizarlas todas.
 :::
 
@@ -134,20 +136,50 @@ A continuación se presentan las funciones más útiles para esto:
 
 Muestra las primeras 6 filas del data frame.
 
-```{r}
+```{r, eval=FALSE}
 head(hp_data)
+```
+
+```{r, echo=FALSE}
+head(hp_data) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
 ```
 
 Puedes cambiar el número de filas:
 
-```{r}
+```{r, eval=FALSE}
 head(hp_data, 3)
+```
+
+```{r, echo=FALSE}
+head(hp_data, 3) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
 ```
 
 #### **Ver las últimas filas**
 
-```{r}
+```{r, eval=FALSE}
 tail(hp_data)
+```
+
+```{r, echo=FALSE}
+tail(hp_data) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
 ```
 
 #### **Conocer la estructura del data frame**
@@ -216,3 +248,10 @@ summary(hp_data)
 ```
 
 Hasta aquí ya tenemos todo lo necesario para "conocer" tus datos: cómo cargarlos, visualizarlos, revisar sus columnas y obtener un resumen general. Este es el primer paso en cualquier análisis.
+
+## Referencias
+
+-   The Carpentries. (2025). *R for Reproducible Scientific Analysis*. <https://swcarpentry.github.io/r-novice-gapminder/>
+
+-   Demiryürek, G. (2021). *Harry Potter Dataset*. Kaggle.\
+    <https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset>
