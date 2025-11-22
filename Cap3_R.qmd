@@ -21,7 +21,7 @@ dataframe[fila, columna]
 Ejemplo:
 
 ```{r, echo=FALSE}
-hp_data <- read.csv("hp_data/Characters.csv", sep = ";")
+hp_data <- read.csv("hp_data/Characters.csv", sep = ";") #cargar dataframe para este capitulo
 ```
 
 ```{r, eval=FALSE}
@@ -58,49 +58,455 @@ Si **no pones nada** antes o después de la coma dentro de los corchetes, R **re
 
 Además de la selección de columnas con los corchetes `[ ]`, podemos utilizar `$` y acceder por su nombre:
 
-```{r}
+Podemos seleccionar la columna `Name` y la columna `House`, respectivamente.
+
+```{r, eval=FALSE}
 hp_data$Name
 hp_data$House
 ```
 
-```{r}
-hp_data[hp_data$Blood.status == "Muggle-born", ] |>
+```{r, echo=FALSE}
+#codigo para visualizar mejor los resultados en HTML
+data.frame(Name = hp_data$Name) |>
   knitr::kable() |>
-  kableExtra::kable_styling(full_width = FALSE, bootstrap_options = "striped")
-
+  kableExtra::kable_styling(full_width = FALSE) |>
+  kableExtra::scroll_box(height = "300px")
 ```
 
-También puedes usarlo para crear vectores o filtrar y esto nos lleva a nuestros otro elementos clave "**los operadores lógicos**" que se utilizan para filtrar filas:
-
--   `>` mayor que
--   `<` menor que
--   `==` igual
-
-```{r}
-knitr::kable(
-  hp_data[hp_data$Blood.status == "Muggle-born", ],
-  caption = "Personajes Muggle-born"
-)
-
+```{r, echo=FALSE}
+data.frame(House = hp_data$House) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(full_width = FALSE) |>
+  kableExtra::scroll_box(height = "300px")
 ```
 
-```{r}
+También puedes usarlo para crear vectores o filtrar, como veremos más adelante.
+
+## **Operadores lógicos para filtrar filas**
+
+Son fundamentales para extraer subconjuntos de datos.
+
+::: callout-note
+## Nota:
+
+*hp_data* no incluye variables numéricas, por lo que estos ejemplos no se ejecutan, pero se muestran para ilustrar la sintaxis.
+:::
+
+#### `>` mayor que
+
+```{r, eval=FALSE}
+# Ejemplo hipotético: columna Age (no existe en hp_data)
+# Personajes mayores a 32
+hp_data[hp_data$Age > 18, ]
+```
+
+#### `<` menor que
+
+```{r, eval=FALSE}
+# Otro ejemplo hipotético:
+# Personajes menores a 32 
+hp_data[hp_data$Age < 32, ]
+```
+
+#### `==` igual
+
+```{r, eval=FALSE}
+# Personajes nacidos de padres muggles
 hp_data[hp_data$Blood.status == "Muggle-born", ]
 ```
 
--   `!=` diferente
+```{r, echo=FALSE}
+hp_data[hp_data$Blood.status == "Muggle-born", ] |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
 
-```{r}
+#### `!=` diferente
+
+```{r, eval=FALSE}
 # Personajes que NO son de Gryffindor
 hp_data[hp_data$House != "Gryffindor", ]
 ```
 
--   `%in%` pertenece a un conjunto
+```{r, echo=FALSE}
+hp_data[hp_data$House != "Gryffindor", ] |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
 
-    ```{r}
+```
 
-    ```
+#### `%in%` pertenece a un conjunto
 
-    ```{r}
+```{r, eval=FALSE}
+# Personajes que pertenecen a las casas de Gryffindor y Hufflepuff
+hp_data[hp_data$House %in% c("Gryffindor", "Hufflepuff"), ]
+```
 
-    ```
+```{r, echo=FALSE}
+hp_data[hp_data$House %in% c("Gryffindor", "Hufflepuff"), ] |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+
+```
+
+::: callout-note
+## Ejercicio 1
+
+Realiza un código para buscar personajes cuyo color de ojos sea Slytherin y Ravenclaw
+
+::: {.callout-tip collapse="true"}
+## Solución
+
+```{r, eval=FALSE}
+# Personajes que pertenecen a las casas de Slytherin y Ravenclaw
+hp_data[hp_data$House %in% c("Slytherin", "Ravenclaw"), ]
+```
+
+```{r, echo=FALSE}
+hp_data[hp_data$House %in% c("Slytherin", "Ravenclaw"), ] |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+:::
+:::
+
+## **Introducción a dplyr (Tidyverse)**
+
+`dplyr` es una de las herramientas más importantes para manipulación de datos en R. Permite trabajar de forma clara, rápida y legible.
+
+### **¿Qué es dplyr?**
+
+Es un paquete del ecosistema tidyverse diseñado para:
+
+-   Seleccionar columnas
+
+-   Filtrar filas
+
+-   Ordenar
+
+-   Transformar
+
+-   Resumir datos
+
+Todo usando una sintaxis fácil de leer.
+
+### **Concepto de datos tidy**
+
+Un conjunto de datos tidy cumple tres reglas:
+
+1.  Cada columna es una variable
+
+2.  Cada fila es una observación
+
+3.  Cada valor es una celda única
+
+Esto facilita análisis, visualización y modelado.
+
+### Instalación y carga de *dplyr*
+
+Para utilizar las funciones de **dplyr**, primero es necesario **instalar** el paquete (solo la primera vez), y después **cargarlo** cada vez que inicies una sesión en R.
+
+```{r, eval=FALSE}
+install.packages("dplyr")
+```
+
+Y ahora lo cargamos, con la función que habíamos visto `library`
+
+```{r}
+library(dplyr)
+```
+
+### **Operador pipe `|>`**
+
+Permite encadenar operaciones de manera clara.
+
+Ejemplo:
+
+```{r, eval=FALSE}
+hp_data |>   filter(House == "Ravenclaw") |>   select(Name, Blood.status)
+```
+
+```{r, echo=FALSE}
+hp_data |>   filter(House == "Ravenclaw") |>   select(Name, Blood.status) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+Se lee como:
+
+> "Toma hp_data, luego filtra House == Ravenclaw, luego selecciona Name y BloodStatus".
+
+## **3.3. Operaciones Clave de Manipulación**
+
+Aquí aplicamos las funciones más usadas de `dplyr` sobre la base de Harry Potter.
+
+### **`select()` -- seleccionar columnas**
+
+```{r, eval=FALSE}
+# Seleccionamos las columnas de los nombres, casas y patronus
+hp_data |>   select(Name, House, Patronus) 
+```
+
+```{r, echo=FALSE}
+hp_data |>   select(Name, House, Patronus) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+### **`filter()` -- filtrar filas**
+
+```{r, eval=FALSE}
+# Seleccionamos solo a los personajes de Ravenclaw
+hp_data |>   filter(House == "Ravenclaw") 
+```
+
+```{r, echo=FALSE}
+hp_data |>   filter(House == "Ravenclaw") |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+Con múltiples filtros:
+
+```{r, eval=FALSE}
+# Seleccionamos ahora personajes de Slytherin que sean sangre mestiza
+hp_data |>   filter(House == "Slytherin", Blood.status == "Half-blood") 
+```
+
+```{r, echo=FALSE}
+hp_data |>   filter(House == "Slytherin", Blood.status == "Half-blood") |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+#### **Filtrar texto dentro de una columna con `grepl()`**
+
+En algunas columnas, como **Skills**, aparecen varias habilidades juntas, separadas por `|` para poder filtrar un texto específico, podemos utilizar `grepl( )`. Esta función nos permite buscar coincidencias dentro de un texto, porque **busca texto dentro de un string**, aunque esté acompañado de:
+
+-    otras habilidades
+
+-    espacios
+
+-    otros símbolos
+
+-    mayúsculas/minúsculas (si quieres ignorarlo se puede)
+
+Ejemplo:
+
+```{r, eval=FALSE}
+hp_data |>
+  filter(grepl("Animagus", Skills))
+```
+
+```{r, echo=FALSE}
+hp_data |>
+  filter(grepl("Animagus", Skills)) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+Si queremos especificar que ignore si son mayúsculas o minúsculas, se utiliza el argumento `ignore.case = TRUE`, junto con el código anterior\
+
+```{r, eval=FALSE}
+hp_data |>
+  filter(grepl("Animagus", Skills, ignore.case=TRUE))
+```
+
+```{r, echo=FALSE}
+hp_data |>
+  filter(grepl("Animagus", Skills, ignore.case=TRUE)) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+
+```
+
+::: callout-note
+## Ejercicio 2
+
+Realiza un filtro para buscar a los personajes que tienen patronus con forma de gato (`Cat`), cisne (`Swan`) y fénix (`Phoenix`)
+
+::: {.callout-tip collapse="TRUE"}
+## Solución
+
+```{r}
+hp_data |> 
+  filter(grepl("Cat|Phoenix|Swan", Patronus, ignore.case = TRUE))
+```
+
+::: {.callout-warning collapse="TRUE"}
+Para buscar **varios patrones al mismo tiempo**, debes unirlos en **una sola expresión regular** usando `"|"` (OR)
+:::
+:::
+:::
+
+### **`mutate()` -- crear o modificar columnas**
+
+La función de `mutate()` nos permite crear nuevas columnas o transformar columnas existentes usando operaciones, funciones o condiciones. Es una herramienta esencial para preparar datos antes de analizarlos
+
+Crear una columna nueva:
+
+```{r, eval=FALSE}
+# Creamos una nueva columna con la longitud de los nombres de cada personaje 
+hp_data |>   mutate(NameLength = nchar(Name)) 
+```
+
+```{r, echo=FALSE}
+hp_data |>   mutate(NameLength = nchar(Name)) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+Modificar una existente:
+
+En este caso `mutate` toma el resultado de la condición y lo reemplaza con TRUE o FALSE dependiendo si se cumple la condición en una nueva columna.
+
+```{r, eval=FALSE}
+hp_data |>  mutate(Ocupacion = Job == "Student") 
+```
+
+```{r, echo=FALSE}
+hp_data |>  mutate(Ocupacion = Job == "Student") |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+En este ejemplo convierte a la columna en TRUE si el personaje es estudiante o FALSE si tiene alguna otra ocupación.
+
+### **`arrange()` -- ordenar filas**
+
+La función de `arrange` nos ayuda a ordenar las filas ya sea en orden ascendente o descendente.
+
+#### Orden ascendente
+
+```{r, eval=FALSE}
+# Ordena las filas por orden alfabetico de acuerdo al nombre de los personajes A a la Z
+hp_data |> arrange(Name) 
+```
+
+```{r, echo=FALSE}
+hp_data |>  arrange(Name)  |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+#### Orden descendente:
+
+```{r, eval=FALSE}
+# Ordena las filas por orden alfabetico de acuerdo al nombre de los personajes Z a la A
+hp_data |>   arrange(desc(Name)) 
+```
+
+```{r, echo=FALSE}
+hp_data |>   arrange(desc(Name)) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped")
+  ) |>
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+### **`group_by() + summarise()` : resumir datos por categorías**
+
+Cuando necesitamos **resumir información**, obtener **estadísticas por categoría** o calcular valores como **promedios, totales o máximos**, utilizamos las funciones `group_by()` y `summarise()`.\
+Estas dos funciones suelen trabajar juntas:
+
+-    **`group_by()`**: organiza los datos en grupos según una o más variables.
+
+-    **`summarise()`**: calcula resúmenes para cada grupo (conteos, medias, mínimos, máximos, etc.).
+
+En conjunto, permiten transformar tablas grandes en resúmenes claros y compactos.
+
+Ejemplo:
+
+Contar personajes por casa:
+
+```{r}
+hp_data |>   group_by(House) |>   summarise(N = n()) 
+```
+
+-   `group_by(House)` separa los datos por cada casa.
+
+```{=html}
+<!-- -->
+```
+-    `summarise()` calcula un resultado para cada grupo; en este caso, `n()` cuenta cuántas filas hay en cada casa.
+
+::: callout-note
+## Ejercicio 3
+
+Realiza el conteo de cada uno de los tipos de Patronus.
+
+::: {.callout-tip collapse="TRUE"}
+## Solución
+
+```{r}
+hp_data |>   group_by(Patronus) |>   summarise(N = n()) 
+```
+:::
+:::
+
+::: callout-important
+## Nota Importante:
+
+Recuerda que cualquier resultado obtenido ya sea mediante indexación con corchetes, creación de subconjuntos o manipulación con funciones de **dplyr** puede guardarse como un **nuevo data frame**. Esto es muy útil cuando deseas continuar el análisis más adelante, trabajar solo con una parte específica de los datos o mantener tus resultados organizados.
+:::
+
+## Referencias
+
+-   The Carpentries. (2025). *R for Reproducible Scientific Analysis*. <https://swcarpentry.github.io/r-novice-gapminder/>
+
+-   Demiryürek, G. (2021). *Harry Potter Dataset*. Kaggle.\
+    <https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset>
