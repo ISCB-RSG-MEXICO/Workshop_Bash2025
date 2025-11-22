@@ -11,7 +11,7 @@ La organización en directorios es fundamental para mantener un espacio de traba
 
 Para crear y eliminar directorios usaremos dos comandos básicos:
 
--   `mkdir` - crea directorios nuevos\
+-   `mkdir` - crea directorios nuevos
 -   `rmdir` - elimina directorios vacíos
 
 Estos comandos permiten organizar tu trabajo de manera estructurada desde la terminal.
@@ -40,7 +40,7 @@ Para nombrar un directorio o archivo con más de una palabra es recomendable uti
 
 2.  Bash interpreta que debe de crear tres directorios diferentes: "mi", "primer", y "directorio"
 
-3.  `ls`o`ls -l`
+3.  `ls` o `ls -l`
 
 4.  `mkdir mi_segundo_directorio`
 
