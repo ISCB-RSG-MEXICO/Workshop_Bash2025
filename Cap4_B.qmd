@@ -63,7 +63,19 @@ El objetivo de este primer paso es familiarizarnos con la estructura de un archi
 
 *Drosophila melanogaster* es un organismo modelo ampliamente estudiado, con un genoma relativamente pequeño y bien anotado. Esto permite trabajar con archivos ligeros, fáciles de manipular y suficientemente ricos para practicar filtrado, extracción y análisis con *bedtools* sin generar problemas de rendimiento.
 
-### 1. Descargar el archivo
+### Prepara el directorio de trabajo
+
+Crea un directorio nuevo para trabajar en este capítulo y muevete a el
+
+``` bash
+mkdir bed_tools
+```
+
+``` bash
+cd bed_tools
+```
+
+### Descargar el archivo
 
 Ensembl mantiene un **servidor FTP público** (<https://ftp.ensembl.org/pub/>) donde se almacenan todas sus versiones de genomas y anotaciones. FTP ("File Transfer Protocol") es simplemente un sitio desde el cual se pueden descargar archivos grandes de manera directa.
 
