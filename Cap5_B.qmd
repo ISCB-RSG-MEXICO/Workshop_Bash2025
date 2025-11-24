@@ -1,5 +1,116 @@
-# Bed tools - Procesamiento
+# Bed tools - Análisis de regiones genómicas
 
-wget <https://ftp.ensembl.org/pub/release-112/gff3/drosophila_melanogaster/Drosophila_melanogaster.BDGP6.46.112.gff3.gz> zgrep -v '\^#' Drosophila_melanogaster.BDGP6.46.112.gff3.gz \> Dmel_clean.gff3 grep -P '\^(2L\|2R\|3L\|3R\|4\|X\|Y)\t' Dmel_clean.gff3 \> Dmel_main.gff3 grep -P'\^2L\t' Dmel_main.gff3 \> Dmel_2L.gff3 grep -P '\tgene\t' Dmel_2L.gff3 \> Dmel_2L_genes.gff3 awk -F "\t" 'BEGIN{OFS="\t"} { split(\$9,a,";"); print \$1, \$4-1, \$5, a\[1\] }' Dmel_2L_genes.gff3 \> genes_2L.bed
+En el capítulo anterior aprendimos a trabajar con un archivo GFF3 de *Drosophila melanogaster*: eliminamos comentarios, filtramos solo los cromosomas principales y extraímos las anotaciones de genes del cromosoma 2L. Después, convertimos esas anotaciones a formato BED, obteniendo el archivo `genes_2L.bed`, el cual será utilizado en este capítulo.
 
-wget <https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM853nnn/GSM853481/suppl/GSM853481_2011-1333_2011-1334.merged_2011-1335_peaks.bed.gz> gunzip GSM853481_2011-1333_2011-1334.merged_2011-1335_peaks.bed.gz grep -P '\^2L\t' GSM853481_2011-1333_2011-1334.merged_2011-1335_peaks.bed \> peaks_2L.bed sort -k1,1 -k2,2n peaks_2L.bed \> peaks_2L.sorted.bed \# instalar bedtools con sudo apt-get install bedtools bedtools intersect -a genes_2L.bed -b peaks_2L.sorted.bed \> genes_peaks_intersect.bed bedtools coverage -a genes_2L.bed -b peaks_2L.sorted.bed \> genes_coverage.tsv
+En este capítulo aprenderemos a combinar esas regiones anotadas con datos experimentales reales utilizando **bedtools**, una herramienta diseñada para operar con coordenadas genómicas. Trabajaremos con **picos de ChIP-seq** para la marca epigenética H3K4me3. Con estos datos podemos responder preguntas como:
+
+-   ¿Qué genes tienen picos encima o cerca de ellos?
+
+-   ¿Qué fracción de un gen está cubierta por señal de ChIP-seq?
+
+Para ello descargaremos un archivo BED de picos desde GEO e integraremos con el archivo que se creó en el capítulo anterior de los genes 2L.
+
+::: {.callout-note collapse="true"}
+## Acerca de GEO
+
+El **Gene Expression Omnibus (GEO)** es un repositorio público del NCBI dedicado a almacenar, organizar y distribuir datos de genómica funcional. Reúne resultados de técnicas como microarreglos, ChIP-seq, RNA-seq y otras plataformas de alto rendimiento. En GEO se pueden encontrar tanto los datos crudos (por ejemplo, archivos FASTQ o CEL) como los datos procesados y sus archivos suplementarios, que pueden incluir matrices de expresión, archivos BED de picos, anotaciones y metadatos experimentales.
+:::
+
+## Descarga los picos de ChiP-seq
+
+En GEO (NCBI) es posible obtener archivos suplementarios que contienen picos ya procesados. Esto evita tener que correr herramientas de peak-calling como MACS2 y nos da un archivo listo para usar.
+
+Para este capítulo usaremos el archivo BED suplementario del experimento **GSM853481**, que corresponde a ChIP-seq de H3K4me3 en *Drosophila*. El archivo contiene las coordenadas de picos identificados por MACS.
+
+::: callout-note
+## Ejercicio
+
+1.  Usa el comando `wget` para descargar el archivo: `GSM853481_2011-1333_2011-1334.merged_2011-1335_peaks.bed.gz` ubicado en la ruta: [`https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM853nnn/GSM853481/suppl/`](https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM853nnn/GSM853481/suppl/)
+
+¿Qué comando usarías para descargar este archivo en tu directorio actual?
+
+2.  Descomprime el archivo
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solución
+
+1.  `wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM853nnn/GSM853481/suppl/GSM853481_2011-1333_2011-1334.merged_2011-1335_peaks.bed.gz`
+2.  `gunzip GSM853481_2011-1333_2011-1334.merged_2011-1335_peaks.bed.gz`
+:::
+:::
+
+## Filtrar el cromosoma 2L
+
+Para mantener coherencia con el archivo de genes preparado en el capítulo anterior, trabajaremos únicamente con los picos del cromosoma 2L.
+
+::: callout-note
+## Ejercicio
+
+Usa el mismo patrón del ejercicio del capítulo anterior para seleccionar solo las líneas que **comiencen** con `2L` seguido de un tabulador.
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solución
+
+``` bash
+grep -P '^2L\t' GSM853481_2011-1333_2011-1334.merged_2011-1335_peaks.bed > peaks_2L.bed
+```
+:::
+:::
+
+## Preparar el archivo de picos para *bedtools*
+
+Algunos comandos de *bedtools* requieren que los archivos BED estén ordenados por cromosoma y coordenadas. Para ordenar un archivo, usamos el comando `sort` del sistema.
+
+``` bash
+sort -k1,1 -k2,2n peaks_2L.bed > peaks_2L.sorted.bed
+```
+
+-   `-k1,1`: ordena por la primera columna (cromosoma)
+
+-   `-k2,2n`: luego ordena por la segunda columna (inicio), numéricamente
+
+El archivo `peaks_2L.sorted.bed` será el que usemos con *bedtools*.
+
+## Usar *bedtools* para comparar genes y picos
+
+Hasta este punto, ya tenemos los dos archivos BED que necesitamos:
+
+-   `genes_2L.bed` --- archivo con anotaciones génicas de 2L (obtenido del archivo GFF3 en el capítulo previo).
+
+-   `peaks_2L.sorted.bed` --- generado a partir de los datos de ChIP-seq en 2L
+
+Ahora podemos comenzar a integrar ambas fuentes de datos utilizando *bedtools*.
+
+### Intersect: identificar genes con picos
+
+`bedtools intersect` permite encontrar regiones que se solapan. Usaremos el archivo de genes como referencia:
+
+``` bash
+bedtools intersect -a genes_2L.bed -b peaks_2L.sorted.bed > genes_peaks_intersect.bed
+```
+
+El archivo resultante incluye las entradas de `genes_2L.bed` que tienen un pico encima o que se solapan con uno. Esto permite responder preguntas como: ¿Qué genes del cromosoma 2L muestran enriquecimiento de H3K4me3?
+
+### Coverage: identificar qué tan cubierto está cada gen
+
+`bedtools coverage` calcula, para cada región del archivo A, qué proporción está cubierta por regiones del archivo B.
+
+``` bash
+bedtools coverage -a genes_2L.bed -b peaks_2L.sorted.bed > genes_coverage.tsv
+```
+
+La salida incluye información como:
+
+-   cuántos picos caen en cada gen
+
+-   cuántas bases del gen están cubiertas
+
+-   qué fracción del gen está cubierta
+
+Este resultado será la base del ejercicio final en R, donde exploraremos estos valores y generaremos resúmenes visuales a partir de ellos.
+
+## Referencias
+
+-   Barrett, T., et al. (2013). NCBI GEO: Archive for functional genomics data sets---update. *Nucleic Acids Research, 41*(D1), D991--D995. <https://doi.org/10.1093/nar/gks1193>
+
+-   Quinlan, A. R., & Hall, I. M. (2010). BEDTools: A flexible suite of utilities for comparing genomic features. *Bioinformatics, 26*(6), 841--842. <https://doi.org/10.1093/bioinformatics/btq033>

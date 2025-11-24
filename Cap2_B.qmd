@@ -70,9 +70,13 @@ Es un programa que permite crear o modificar archivos sin un entorno gráfico.
 
 Ahora posicionemonos en el directorio con el comando `cd:` y utilicemos por primera vez el comando `nano` para crear un archivo de texto
 
-`cd mi_primer_directorio/`
+``` bash
+cd mi_primer_directorio/
+```
 
-`nano fragmento.txt`
+``` bash
+nano fragmento.txt
+```
 
 El editor `nano` es uno de los editores de texto más sencillos y accesibles en Linux.\
 Permite crear y modificar archivos directamente desde la terminal sin necesidad de interfaces gráficas, lo que lo convierte en una herramienta esencial cuando se trabaja en servidores remotos o entornos bioinformáticos.

@@ -6,9 +6,13 @@ Ahora que ya sabes buscar, filtrar y manipular texto, vamos a aplicar las mismas
 
 Crea un directorio nuevo para trabajar en este capítulo y muevete a el
 
-`mkdir Ejercicio_hsp70`
+``` bash
+mkdir Ejercicio_hsp70
+```
 
-`cd Ejercicio_hsp70`
+``` bash
+cd Ejercicio_hsp70
+```
 
 ## Descarga el archivo desde github
 
@@ -24,9 +28,11 @@ Para obtener archivos desde Internet directamente en tu terminal podemos usar el
 
 Cuando el proceso de descarga termine, podrás verificar que el archivo se descargó correctamente con:
 
-`ls`
+``` bash
+ls
+```
 
-Deberías ver `ncbi_seqdata.tar.gz` presente en tu directorio
+Deberías ver el archivo `ncbi_seqdata.tar.gz` presente en tu directorio
 
 ## Descomprime el archivo
 
@@ -108,7 +114,9 @@ Secuencia de ADN/ARN/aminoácidos
 
 Una vez descomprimido el archivo `ncbi_seqdata.tar.gz`, ahora tienes una carpeta con varios archivos FASTA.
 
-`ls ncbi_seqdata/`
+``` bash
+ls ncbi_seqdata/
+```
 
 Antes de analizarlos a fondo, es útil **ver su contenido sin abrirlos en un editor** sin inundar la terminal con miles de caracteres.
 
@@ -232,7 +240,9 @@ Es muy útil cuando queremos **reemplazar**, **eliminar**, **extraer** o **trans
 
 Por ejemplo:
 
-`sed 's/AAA/TTT/g' archivo.fna`
+``` bash
+sed 's/AAA/TTT/g' archivo.fna
+```
 
 -   `/`→ Separador (puedes utilizar cualquiera)
 
@@ -310,5 +320,3 @@ HSPA8 contiene varios motivos funcionales muy característicos:
 ## Referencias
 
 -   National Center for Biotechnology Information. *Orthologs of gene 100496320 (HSPA8) in NCBI Datasets*. Recuperado de <https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs>
-
--   
