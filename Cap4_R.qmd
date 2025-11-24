@@ -2,9 +2,9 @@
 
 ### ¿Qué es tidyverse?
 
-Es una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño, una gramática y estructuras de datos subyacentes.
+Es una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructuras de datos.
 
-![](images/Screenshot 2025-11-22 at 1.54.58 p.m.-02.png){fig-align="center" width="323"}
+![](images/Screenshot 2025-11-22 at 1.54.58 p.m.-03.png){fig-align="center" width="366" height="381"}
 
 Instala el tidyverse completo con:
 
