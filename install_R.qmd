@@ -148,11 +148,3 @@ Existen diferentes formas de actualizar R, la manera más sencilla es a través 
     -   Si **hay una versión nueva disponible**, haz clic en **"Yes"** para comenzar la actualización.
 
 6.  Si durante el proceso aparece una ventana preguntando si deseas copiar paquetes o configuraciones anteriores, puedes hacer clic en **"No"** (no es obligatorio copiarlos; puedes reinstalarlos después si lo prefieres).
-
-## Material suplementario
-
--   Tutorial: Nelly Selem -- [Bioinformática](#0)
-
--   En Windows puedes usar [Git Bash](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/) como entorno de práctica
-
-    <!-- -->

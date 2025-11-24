@@ -2,7 +2,7 @@
 
 ## **Entorno de Bash**
 
-![](figures/entornoBash.png){fig-align="center"}
+![](figures/entornoBash.png){fig-align="center" width="1350"}
 
 El signo `$` es un **prompt**, que nos muestra que la terminal está esperando una entrada; tu terminal puede usar un carácter diferente como prompt y puede agregar información antes de él. Al teclear comandos, ya sea a partir de estas lecciones o de otras fuentes, no escribas el prompt (*\$*), sólo los comandos que le siguen.
 
@@ -33,7 +33,7 @@ Por ejemplo:
 Otro ejemplo:
 
 ``` {.bash code-copy="true" eval="false"}
-grep -i "gene" genes.gtf
+grep -i "gene" genes.gtf # este es un ejemplo
 ```
 
 -   `grep` → busca texto dentro de los archivos
@@ -90,7 +90,7 @@ pwd # /c/Users/emilio
 
 En la computadora de Emilio, el sistema de archivos se ve así:
 
-[![](https://swcarpentry.github.io/shell-novice-es/fig/filesystem.svg){fig-align="center"}](https://swcarpentry.github.io/shell-novice-es/02-filedir.html)
+[![](figures/archivos.png){fig-align="center"}](https://swcarpentry.github.io/shell-novice-es/02-filedir.html)
 
 En la parte superior se encuentra el **directorio raíz** (`/`), que contiene todo lo demás.
 
@@ -149,14 +149,14 @@ A partir de `/Users/emilio/data/`, ¿Cuál de los siguientes comandos lleva al 
 
 Ejemplo de rutas:
 
-[![](https://github.com/raynamharris/Shell_Intro_for_Transcriptomics/raw/master/lessons/figures/nav_dirs.png)](https://github.com/raynamharris/Shell_Intro_for_Transcriptomics/blob/master/lessons/02_Navigating_Dirs.md)
+![](figures/rutas.png)
 
 ## Explorar y obtener información
 
 Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema
 
 | Comandos  | Información                                            | Ejemplo de uso       |
-|-----------|--------------------------------------------------------|----------------------|
+|------------------|------------------------------------|------------------|
 | `pwd`     | Muestra el directorio actual                           | `pwd`                |
 | `history` | Muestra el historial de comandos                       | `history`            |
 | `ls`      | Observar el contenido de los archivos en un directorio | `ls mi_directorio`   |
@@ -175,30 +175,10 @@ Comandos para navegar entre directorios y rutas
 | `cd ~`  | Va al directorio personal del usuario        | `cd ~`            |
 | `cd -`  | Vuelve al directorio anterior                | `cd -`            |
 
-## Permisos y propiedades
-
-Comandos para ver o modificar quién puede leer, escribir o ejecutar archivos
-
-| Comando | Descripción                     | Ejemplo                     |
-|---------|---------------------------------|-----------------------------|
-| `ls -l` | Muestra permisos y propietarios | `ls -l`                     |
-| `chmod` | Cambia permisos de un archivo   | `chmod u+x script.sh`       |
-| `chown` | Cambia propietario del archivo  | `chown usuario archivo.txt` |
-
-## Compresión y empaquetado
-
-Comandos para ahorrar espacio o mover varios archivos juntos
-
-| Comando         | Descripción                      | Ejemplo                                |
-|-----------------|----------------------------------|----------------------------------------|
-| `gzip / gunzip` | Comprime o descomprime archivos  | `gzip datos.txt`                       |
-| `tar`           | Empaqueta y comprime directorios | `tar -czf proyecto.tar.gz directorio/` |
-| `zip` / `unzip` | Comprime o descomprime archivos  | `zip -r resultados.zip ./resultados/`  |
-
 ## Transferencia de archivos entre sistemas
 
 | Comando  | Descripción                                                                               | Ejemplo                                                   |
-|----------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+|-------------------|---------------------------------|---------------------|
 | `ssh`    | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
 | `scp`    | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
 | `scp -r` | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |
@@ -227,27 +207,43 @@ Para explorar y aprender sobre otros comandos
 
 ### **Información contenida**
 
-Cada columna en la salida anterior tiene un significado:
+Tras listar los elementos de un directorio usando el comando `ls -l`, cada linea muestra información detallada acerca de un archivo o directorio. La primera columna corresponde a los permisos, que indican que puede hacer cada tipo de usuario con ese archivo
 
-[![](img/ejemplo_datos.png)](https://eveliacoss.github.io/RNAseq_classFEB2024/Presentaciones/Dia1_AspectosGenerales.html#74)
+Los permisos se representan con tres letras:
 
-### **Permisos**
+-   `r` : lectura (**R**ead)
 
-Cada usuario tiene permisos diferentes cuando crea un archivo. Los permisos pueden modificarse con `chmod`.
+-   `w` : escritura (**W**rite)
 
-Los caracteres atribuidos a los permisos son:
+-   `x` : ejecución (e**X**ecute)
 
--   `r` : lectura (Read)
+Cada archivo tiene tres grupos de permisos:
 
--   `w` : escritura(Write)
+-   usuario (u): el dueño del sistema
 
--   `x` : ejecución (eXecute)
+-   grupo (g): usuarios que pertenecen al mismo grupo
 
-Cada archivo tiene tres grupos de permisos: usuario (u), grupo (g) y otros (o).
+-   otros (o): cualquier otro usuario del sistema
 
 En el siguiente ejemplo, el usuario cuenta con todos los permisos activos, mientras que el grupo y otros tienen solo permisos de lectura y ejecución.
 
-[![](img/permisos.png)](https://eveliacoss.github.io/RNAseq_classFEB2024/Presentaciones/Dia1_AspectosGenerales.html#75)
+![](figures/permisos.png)
+
+En la gráfica se muestran visualmente las partes principales:
+
+-   Permisos
+
+-   Número de enlaces
+
+-   Usuario propietario
+
+-   Tamaño
+
+-   Fecha y hora de última modificación
+
+-   Nombre del archivo o directorio
+
+Esta información permite entender no solo los permisos, sino también quién es el dueño del archivo, cuándo fue modificado por última vez y si se trata de un archivo o un directorio.
 
 ## **`chmod`: Cambiar permisos**
 
@@ -285,4 +281,4 @@ Por lo tanto:
 
 -   Software Carpentry. [La terminal de Unix](https://swcarpentry.github.io/shell-novice-es/02-filedir.html)
 -   RSG Ecuador.[GNU/Linux para bioinfomatica](https://rsg-ecuador.github.io/unix.bioinfo.rsgecuador/content/Curso_avanzado/02_Bash/1_bash.html)
--   [Introduction to the Unix Shell for Transcriptomics](https://github.com/raynamharris/Shell_Intro_for_Transcriptomics/tree/master)Tutorial.
+-   [Introduction to the Unix Shell for Transcriptomics Tutorial](https://github.com/raynamharris/Shell_Intro_for_Transcriptomics/tree/master).

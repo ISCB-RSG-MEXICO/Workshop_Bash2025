@@ -89,8 +89,3 @@ La mayoría de las distribuciones de **Linux** incluyen **Bash** como shell pred
 Si tu sistema es diferente, abre una terminal y ejecuta el comando:
 
 `bash`
-
-## Material suplementario
-
--   Tutorial: Nelly Selem -- [Bioinformática](#0)
--   En Windows puedes usar [Git Bash](https://miguel-mx.github.io/2024-01-24-ccm-unam-swc/) como entorno de práctica
