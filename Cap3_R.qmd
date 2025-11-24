@@ -480,7 +480,7 @@ hp_data |>   group_by(House) |>   summarise(N = n())
 -   `group_by(House)` separa los datos por cada casa.
 
 ```{=html}
-<!-- -->
+
 ```
 -    `summarise()` calcula un resultado para cada grupo; en este caso, `n()` cuenta cuántas filas hay en cada casa.
 
