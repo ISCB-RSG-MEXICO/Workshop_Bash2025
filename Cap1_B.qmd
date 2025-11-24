@@ -33,7 +33,7 @@ Por ejemplo:
 Otro ejemplo:
 
 ``` {.bash code-copy="true" eval="false"}
-grep -i "gene" genes.gtf
+grep -i "gene" genes.gtf # este es un ejemplo
 ```
 
 -   `grep` → busca texto dentro de los archivos
@@ -156,7 +156,7 @@ Ejemplo de rutas:
 Comandos para mirar que hay, dónde estás y conocer detalles de los archivos o del sistema
 
 | Comandos  | Información                                            | Ejemplo de uso       |
-|------------------|-------------------------------------|------------------|
+|------------------|------------------------------------|------------------|
 | `pwd`     | Muestra el directorio actual                           | `pwd`                |
 | `history` | Muestra el historial de comandos                       | `history`            |
 | `ls`      | Observar el contenido de los archivos en un directorio | `ls mi_directorio`   |
@@ -178,7 +178,7 @@ Comandos para navegar entre directorios y rutas
 ## Transferencia de archivos entre sistemas
 
 | Comando  | Descripción                                                                               | Ejemplo                                                   |
-|------------------|---------------------------------|---------------------|
+|-------------------|---------------------------------|---------------------|
 | `ssh`    | Conecta de forma segura a otro sistema remoto                                             | `ssh usuario@servidor`                                    |
 | `scp`    | Copia archivos entre equipos a través de SSH                                              | `scp archivo.txt usuario@servidor:/home/usuario/`         |
 | `scp -r` | Copia recursivamente directorios completos                                                | `scp -r datos/ usuario@servidor:/home/usuario/backup/`    |
@@ -237,7 +237,7 @@ En la gráfica se muestran visualmente las partes principales:
 
 -   Usuario propietario
 
--    Tamaño
+-   Tamaño
 
 -   Fecha y hora de última modificación
 
