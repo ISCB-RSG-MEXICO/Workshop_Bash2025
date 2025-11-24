@@ -68,11 +68,11 @@ El objetivo de este primer paso es familiarizarnos con la estructura de un archi
 Crea un directorio nuevo para trabajar en este capítulo y muevete a el
 
 ``` bash
-mkdir bed_tools
+mkdir bedtools
 ```
 
 ``` bash
-cd bed_tools
+cd bedtools
 ```
 
 ### Descargar el archivo
