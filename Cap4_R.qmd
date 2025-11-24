@@ -1,13 +1,43 @@
 # Visualización y Análisis de Datos
 
-### ¿Qué es tidyverse?
+### 🔹¿Qué es tidyverse?
 
 Es una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño, una gramática y estructuras de datos subyacentes.
 
-![](images/Screenshot 2025-11-22 at 1.54.58 p.m.-01.png){fig-align="center" width="381"}
+![](images/Screenshot 2025-11-22 at 1.54.58 p.m.-02.png){fig-align="center" width="323"}
 
 Instala el tidyverse completo con:
 
 ::: callout-note
 `install.packages("tidyverse")`
+:::
+
+Paquetes esenciales:
+
+-   **ggplot2** → graficar
+
+-   **dplyr** → manipulación de datos
+
+-   **tidyr** → ordenar datos
+
+-   **readr** → leer datos
+
+-   **tibble** → dataframes modernos
+
+-   **stringr / forcats** → texto y factores
+
+## 🎨 **Introducción a `ggplot2`**
+
+🔹 ¿Qué es ggplot2?
+
+-   Es un paquete de R para crear visualizaciones profesionales.
+
+-   Se basa en la **Gramática de los Gráficos** (“Grammar of Graphics”).
+
+-   Te permite construir gráficos por capas: datos → estética → geometría → tema → etiquetas.
+
+Carga con:
+
+::: callout-note
+`library(ggplot2)`
 :::
