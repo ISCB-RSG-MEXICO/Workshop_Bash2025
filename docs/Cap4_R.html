@@ -401,7 +401,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-tidyverse" id="toc-qué-es-tidyverse" class="nav-link active" data-scroll-target="#qué-es-tidyverse"><span class="header-section-number">12.0.1</span> ¿Qué es tidyverse?</a></li>
+  <li><a href="#qué-es-tidyverse" id="toc-qué-es-tidyverse" class="nav-link active" data-scroll-target="#qué-es-tidyverse"><span class="header-section-number">12.0.1</span> <strong>🔍¿Qué es <code>tidyverse</code>?</strong></a></li>
+  <li><a href="#introducción-a-ggplot2" id="toc-introducción-a-ggplot2" class="nav-link" data-scroll-target="#introducción-a-ggplot2"><span class="header-section-number">12.0.2</span> <strong>⭐️Introducción a <code>ggplot2</code></strong></a></li>
+  <li><a href="#los-5-bloques-de-la-gramática-en-ggplot2" id="toc-los-5-bloques-de-la-gramática-en-ggplot2" class="nav-link" data-scroll-target="#los-5-bloques-de-la-gramática-en-ggplot2"><span class="header-section-number">12.0.3</span> 🧩 Los 5 bloques de la Gramática en <code>ggplot2</code></a></li>
   </ul>
 </nav>
     </div>
@@ -429,15 +431,94 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="qué-es-tidyverse" class="level3" data-number="12.0.1">
-<h3 data-number="12.0.1" class="anchored" data-anchor-id="qué-es-tidyverse"><span class="header-section-number">12.0.1</span> ¿Qué es tidyverse?</h3>
-<p>Es una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño, una gramática y estructuras de datos subyacentes.</p>
+<h3 data-number="12.0.1" class="anchored" data-anchor-id="qué-es-tidyverse"><span class="header-section-number">12.0.1</span> <strong>🔍¿Qué es <code>tidyverse</code>?</strong></h3>
+<p>Es una colección de paquetes de <code>R</code> con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-11-22 at 1.54.58 p.m..png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="423"></p>
+<p><img src="images/Screenshot 2025-11-22 at 1.54.58 p.m.-03.png" class="quarto-figure quarto-figure-center figure-img" width="366" height="381"></p>
 </figure>
 </div>
 <p>Instala el tidyverse completo con:</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>{r}</p>
+<p><code>install.packages("tidyverse")</code></p>
+</div>
+</div>
+<p>Paquetes escenciales:</p>
+<ul>
+<li><p><strong><code>ggplot2</code></strong> → gráficar</p></li>
+<li><p><strong><code>dplyr</code></strong> → Manipulación de datos</p></li>
+<li><p><strong><code>tidyr</code></strong> → ordenar datos</p></li>
+<li><p><strong><code>readr</code></strong> → leer datos</p></li>
+<li><p><strong><code>tibble</code></strong> → dataframes modernos</p></li>
+<li><p><strong><code>stringr/forcats</code></strong> → texto y factores</p></li>
+</ul>
+</section>
+<section id="introducción-a-ggplot2" class="level3" data-number="12.0.2">
+<h3 data-number="12.0.2" class="anchored" data-anchor-id="introducción-a-ggplot2"><span class="header-section-number">12.0.2</span> <strong>⭐️Introducción a <code>ggplot2</code></strong></h3>
+<p>¿Qué es <code>ggplot2</code>?</p>
+<p><strong><code>ggplot2</code></strong> es un paquete de <code>R</code> que sirve para hacer <strong>gráficos estéticos, claros y profesionales</strong> con muy poco código.</p>
+<p>Lo que hace especial a <code>ggplot2</code> es que construyes los gráficos <strong>por partes</strong>, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:</p>
+<p><code>datos → estética → geometría → tema → etiquetas.</code></p>
+<p>Esto permite que:</p>
+<ul>
+<li><p>Tus gráficos sean fáciles de leer y de hacer.</p></li>
+<li><p>Modificar elementos y que está acción no destruya todo el gráfico.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/IMG_9994.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="223"></p>
+</figure>
+</div>
+<ul>
+<li>Poder adaptar cualquier visualización biológica (expresión, abundancia, etc.)</li>
+</ul>
+<p>Cargamos la libreria con:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>{r}</p>
+<p><code>library(ggplot2)</code></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>NOTA:</p>
+<p>Recuerda que en Rstudio por default te desglosará la lista de librerias/paquetes que empiecen con “g” si observas que no te aparece es por que no se cargo correctamente.</p>
+</div>
+</div>
+</section>
+<section id="los-5-bloques-de-la-gramática-en-ggplot2" class="level3" data-number="12.0.3">
+<h3 data-number="12.0.3" class="anchored" data-anchor-id="los-5-bloques-de-la-gramática-en-ggplot2"><span class="header-section-number">12.0.3</span> 🧩 Los 5 bloques de la Gramática en <code>ggplot2</code></h3>
+<ol type="1">
+<li><strong>Datos <code>(data)</code></strong></li>
+</ol>
+<p>El conjunto de datos que quieres graficar.</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #7F0000;     /* rojo intenso */ border-left: 6px solid #FF0000; /* rojo brillante */ color: #FFDFA3;                 /* dorado suave */">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -447,7 +528,72 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>install.packages("tidyverse")</code></p>
+<p>{r}</p>
+<p><code>data = hp_data</code></p>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Estética <code>(aes = aesthetics)</code></strong> Indica qué variable va al eje X, al Y, al color, tamaño, etc.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #003B1A;       border-left: 6px solid #00A651;   color: #E0FFE8;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>{r}</code></p>
+<p><code>aes(x = Sepal.Length, y = Sepal.Width, color = Species)</code></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li><strong>Geometría <code>(geom)</code></strong></li>
+</ol>
+<p>Corresponde a el tipo de gráfico:</p>
+<ul>
+<li><p><code>geom_point()</code> → puntos</p></li>
+<li><p><code>geom_histogram()</code> → histogramas</p></li>
+<li><p><code>geom_boxplot()</code> → boxplots</p></li>
+<li><p><code>geom_bar()</code> → barras</p></li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Escalas <code>(scale_)</code></strong></li>
+</ol>
+<p>Permite ajustar los colores, tamaños, ejes, etc.</p>
+<p>Ejemplo:</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #001A4D;       border-left: 6px solid #0047FF;   color: #E6D5B8;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>{r}</code></p>
+<p>scale_color_brewer(palette = “Set2”)</p>
+</div>
+</div>
+<ol start="5" type="1">
+<li><strong>Temas <code>(theme)</code></strong></li>
+</ol>
+<p>Aspecto final del gráfico: fondo, líneas, letras.</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #FFF200;       border-left: 6px solid #FFD300;   color: #3A3A00;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>{r}</code></p>
+<p><code>theme_minimal()</code></p>
 </div>
 </div>
 

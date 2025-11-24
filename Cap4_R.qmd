@@ -1,22 +1,24 @@
 # Visualización y Análisis de Datos
 
-### ¿Qué es `tidyverse`?
+### **🔍¿Qué es `tidyverse`?**
 
-Es una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructuras de datos.
+Es una colección de paquetes de `R` con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.
 
 ![](images/Screenshot 2025-11-22 at 1.54.58 p.m.-03.png){fig-align="center" width="366" height="381"}
 
 Instala el tidyverse completo con:
 
 ::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+{r}
+
 `install.packages("tidyverse")`
 :::
 
-Paquetes esenciales:
+Paquetes escenciales:
 
--   **`ggplot2`** → graficar
+-   **`ggplot2`** → gráficar
 
--   **`dplyr`** → manipulación de datos
+-   **`dplyr`** → Manipulación de datos
 
 -   **`tidyr`** → ordenar datos
 
@@ -26,30 +28,91 @@ Paquetes esenciales:
 
 -   **`stringr/forcats`** → texto y factores
 
-## **Introducción a `ggplot2`**
+### **⭐️Introducción a `ggplot2`**
 
-🔹 ¿Qué es ggplot2?
+¿Qué es `ggplot2`?
 
-**ggplot2** es un paquete de R que sirve para hacer **gráficos estéticos, claros y profesionales** con muy poco código.
+**`ggplot2`** es un paquete de `R` que sirve para hacer **gráficos estéticos, claros y profesionales** con muy poco código.
 
-Lo que hace especial a ggplot2 es que construyes los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
+Lo que hace especial a `ggplot2` es que construyes los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
 
 `datos → estética → geometría → tema → etiquetas.`
 
 Esto permite que:
 
--   Tus gráficos sean fáciles de leer
+-   Tus gráficos sean fáciles de leer y de hacer.
 
--   Seas consistente
+-   Modificar elementos y que está acción no destruya todo el gráfico.
 
--   Cambiar un elemento y que esté no destruya todo el gráfico
+![](images/IMG_9994.jpg){fig-align="center" width="223"}
 
-![](images/IMG_9994.jpg){fig-align="center" width="339"}
+-   Poder adaptar cualquier visualización biológica (expresión, abundancia, etc.)
 
--   Puedas adaptar cualquier visualización biologica (expresión, abundancia, etc.)
+Cargamos la libreria con:
 
-Cargamos con:
+::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+{r}
 
-::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
 `library(ggplot2)`
+:::
+
+::: {.callout-tip icon="false"}
+NOTA:
+
+Recuerda que en Rstudio por default te desglosará la lista de librerias/paquetes que empiecen con "g" si observas que no te aparece es por que no se cargo correctamente.
+:::
+
+### 🧩 Los 5 bloques de la Gramática en `ggplot2`
+
+1.   **Datos `(data)`**
+
+El conjunto de datos que quieres graficar.
+
+::: {.callout-note style="background-color: #7F0000;     /* rojo intenso */ border-left: 6px solid #FF0000; /* rojo brillante */ color: #FFDFA3;                 /* dorado suave */"}
+{r}
+
+`data = hp_data`
+:::
+
+2.  **Estética `(aes = aesthetics)`**
+    Indica qué variable va al eje X, al Y, al color, tamaño, etc.
+
+::: {.callout-note style="background-color: #003B1A;       border-left: 6px solid #00A651;   color: #E0FFE8;"}
+`{r}`
+
+`aes(x = Sepal.Length, y = Sepal.Width, color = Species)`
+:::
+
+3.  **Geometría `(geom)`**
+
+Corresponde a el tipo de gráfico:
+
+-   `geom_point()` → puntos
+
+-   `geom_histogram()` → histogramas
+
+-   `geom_boxplot()` → boxplots
+
+-   `geom_bar()` → barras
+
+4.  **Escalas `(scale_)`**
+
+Permite ajustar los colores, tamaños, ejes, etc.
+
+Ejemplo:
+
+::: {.callout-note style="background-color: #001A4D;       border-left: 6px solid #0047FF;   color: #E6D5B8;"}
+`{r}`
+
+scale_color_brewer(palette = "Set2")
+:::
+
+5.  **Temas `(theme)`**
+
+Aspecto final del gráfico: fondo, líneas, letras.
+
+::: {.callout-note style="background-color: #FFF200;       border-left: 6px solid #FFD300;   color: #3A3A00;"}
+`{r}`
+
+`theme_minimal()`
 :::
