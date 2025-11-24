@@ -1,1 +1,162 @@
-# Visualización y Analisis de Datos 
+# Visualización y Análisis de Datos
+
+Hay tres sistemas principales de graficación en R, el sistema de graficación `base`, el paquete de `lattice` y el paquete `ggplot2`.
+
+::: {.callout-important .#note}
+¡ATENCIÓN!
+
+Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de `tidyverse` (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨)
+:::
+
+## **🔍¿Qué es `tidyverse`?**
+
+Es una colección de paquetes de `R` con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.
+
+![](images/lol-01.png){fig-align="center"}
+
+Instala el paquete tidyverse completo con:
+
+::: {.callout-note .#code style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+{r}
+
+`install.packages("tidyverse")`
+:::
+
+Paquetes escenciales:
+
+-   **`ggplot2`** → gráficar
+
+-   **`dplyr`** → Manipulación de datos
+
+-   **`tidyr`** → ordenar datos
+
+-   **`readr`** → leer datos
+
+-   **`tibble`** → dataframes modernos
+
+-   **`stringr/forcats`** → texto y factores
+
+## **⭐️Introducción a `ggplot2`**
+
+`ggplot2` es un paquete de `R` súper efectivo para crear gráficos de calidad para publicación y se basa en la gramática de los gráficos, la idea de que cualquier gráfico se puede construir a partir del mismo conjunto de componentes: un conjunto de datos, la estética de mapeo y capas gráficas:
+
+-   Los conjuntos de datos son los datos que nostros, los usuario, proporcionamos.
+
+-   La estética de mapeo es lo que conecta los datos con los gráficos. Le decimos a ggplot2 cómo usar los datos para afectar el aspecto del gráfico, para cambiar lo que se traza en el eje X o Y, o el tamaño o color de diferentes puntos de datos.
+
+-   Las capas son la salida gráfica real de ggplot2. Las capas determinan qué tipos de trama se muestran (plot de dispersión, histograma, etc.), el sistema de coordenadas utilizado (rectangular, polar, otros) y otros aspectos importantes del gráfico. La idea de capas de gráficos puede ser familiar para usted si ha utilizado programas de edición de imágenes como Photoshop, Illustrator o Inkscape.
+
+### En resumen
+
+**`ggplot2`** es un paquete de `R` que sirve para hacer **gráficos estéticos, claros y profesionales para publicación** con muy poco código.
+
+Lo que hace especial a `ggplot2` es que construye los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
+
+::: {.callout-note .#note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
+`datos → estética → geometría → tema → etiquetas.`
+:::
+
+Esto permite que:
+
+-   Tus gráficos sean fáciles de leer y de hacer.
+
+-   Modificar elementos y que está acción no destruya todo el gráfico.
+
+![](images/IMG_9994.jpg){fig-align="center" width="223"}
+
+-   Poder adaptar cualquier visualización biológica (expresión, abundancia, etc.)
+
+Cargamos la libreria con:
+
+::: {.callout-note .#code style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+{r}
+
+`library(ggplot2)`
+:::
+
+::: {.callout-tip icon="false"}
+NOTA:
+
+Recuerda que en Rstudio por default te desglosará la lista de librerias/paquetes que empiecen con "g" si observas que no te aparece es por que no se cargo correctamente.
+:::
+
+## 🧩 Los 5 bloques de la Gramática en `ggplot2`
+
+1.  **Datos `(data)`**
+
+El conjunto de datos que quieres graficar.
+
+::: {.callout-note style="background-color: #7F0000;     /* rojo intenso */ border-left: 6px solid #FF0000; /* rojo brillante */ color: #FFDFA3;                 /* dorado suave */"}
+{r}
+
+`#Cargamos el data y definimos la variable`
+
+`hp_data <- read.csv("hp_data/Characters.csv", sep = ";")`
+:::
+
+2.  **Estética `(aes = aesthetics)`** Indica qué variable va al eje X, al Y, al color, tamaño, etc.
+
+::: {.callout-note style="background-color: #003B1A;       border-left: 6px solid #00A651;   color: #E0FFE8;"}
+`{r}`
+
+`#Indicamos las variables`
+
+aes(x = Birth, y = Gender, color = House)
+:::
+
+3.  **Geometría `(geom)`**
+
+Corresponde a el tipo de gráfico:
+
+-   `geom_point()` → puntos
+
+-   `geom_histogram()` → histogramas
+
+-   `geom_boxplot()` → boxplots
+
+-   `geom_bar()` → barras
+
+-   
+
+4.  **Escalas `(scale_)`**
+
+Permite ajustar los colores, tamaños, ejes, etc.
+
+::: {.callout-note style="background-color: #001A4D;       border-left: 6px solid #0047FF;   color: #E6D5B8;"}
+`{r}`
+
+`#Definimos la paleta de colores`
+
+`hp_cols <- c( "Gryffindor" = "#b30000", # rojo intenso "Slytherin" = "#005f2f", # verde fuerte "Ravenclaw" = "#002b80", # azul profundo "Hufflepuff" = "#e6b800", # amarillo dorado "Beauxbatons Academy of Magic" = "#6ea8ff", # azul claro elegante "Durmstrang Institute" = "#660000" # burdeos oscuro )`
+
+`#Ajustamos los colores`
+
+`scale_fill_manual(values = hp_cols)`
+:::
+
+5.  **Temas `(theme)`**
+
+Aspecto final del gráfico: fondo, líneas, letras.
+
+::: {.callout-note style="background-color: #FFF200;       border-left: 6px solid #FFD300;   color: #3A3A00;"}
+`{r}`
+
+`theme_minimal()`
+:::
+
+## 🎨 Ejemplo explicado paso a paso
+
+::: callout-note
+`{r}`
+
+#Ahora juntamos todo lo aprendido!
+
+`hp_data %>% count(House) %>% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = "white") + coord_polar(theta = "y") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) + theme_minimal()`
+:::
+
+![](images/clipboard-3599886339.png){fig-align="center" width="391"}
+
+### Referencias
+
+-   The Carpentries. (2025). *R for Reproducible Scientific Analysis*. \
+    <https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html>
