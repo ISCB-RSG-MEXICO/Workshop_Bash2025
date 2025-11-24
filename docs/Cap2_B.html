@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -172,44 +206,50 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Cap5_B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bed tools - Análisis de regiones genómicas</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap3_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap4_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualización y Analisis de Datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visualización y Análisis de Datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
     </ul>
@@ -357,8 +397,8 @@ Important
 <p><strong>¿Qué es un editor de texto en terminal?</strong></p>
 <p>Es un programa que permite crear o modificar archivos sin un entorno gráfico.</p>
 <p>Ahora posicionemonos en el directorio con el comando <code>cd:</code> y utilicemos por primera vez el comando <code>nano</code> para crear un archivo de texto</p>
-<p><code>cd mi_primer_directorio/</code></p>
-<p><code>nano fragmento.txt</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> mi_primer_directorio/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> fragmento.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El editor <code>nano</code> es uno de los editores de texto más sencillos y accesibles en Linux.<br>
 Permite crear y modificar archivos directamente desde la terminal sin necesidad de interfaces gráficas, lo que lo convierte en una herramienta esencial cuando se trabaja en servidores remotos o entornos bioinformáticos.</p>
 <p>Al abrir un archivo con <code>nano</code>, verás el contenido del archivo (si existe) y, en la parte inferior, una lista de comandos abreviados.</p>
@@ -374,15 +414,14 @@ Toma nota
 <div class="callout-body-container callout-body">
 <p>Los atajos se indican con el símbolo <code>^</code>, que representa la tecla <strong>Ctrl</strong>.</p>
 <p>Por ejemplo, <code>^O</code> significa presionar <strong>Ctrl + O</strong>.</p>
-<p>En !OS en vez de <strong>Ctrl</strong> es <strong>CMD</strong></p>
 </div>
 </div>
 <p>Una vez dentro de <code>nano</code>, puedes escribir, editar, guardar y salir usando los comandos que aparecen al pie de la pantalla.</p>
 <p>Principales comandos de <code>nano</code></p>
 <table class="table">
 <colgroup>
-<col style="width: 24%">
-<col style="width: 24%">
+<col style="width: 25%">
+<col style="width: 25%">
 <col style="width: 50%">
 </colgroup>
 <thead>
@@ -471,7 +510,8 @@ Acerca de...
 <p>Copiemos y peguemos el fragmento del libro en <code>fragmento.txt</code>&nbsp;que abrimos con <code>nano</code>. Puedes pegar texto:</p>
 <ul>
 <li><p>Haciendo clic derecho</p></li>
-<li><p><code>Ctrl + v</code></p></li>
+<li><p><code>Ctrl + v # windows</code></p></li>
+<li><p><code>Cmd + v # windows</code></p></li>
 </ul>
 <p>Para desplazarte desplazarte en el editor puedes utilizar las flechas de tu teclado: → hacia la derecha, ← hacia la izquierda, ↑ hacia arriba y ↓ hacia abajo.</p>
 <p>Guarda el archivo <code>Ctrl + O</code> y para confirmar los cambios presiona <strong>Enter</strong></p>
@@ -785,9 +825,9 @@ Soluciones
 <p>Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.</p>
 <table class="table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 53%">
-<col style="width: 23%">
+<col style="width: 24%">
+<col style="width: 50%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -885,8 +925,8 @@ Soluciones
 <p>Comandos para conectar procesos o guardar salidas</p>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 48%">
+<col style="width: 26%">
+<col style="width: 47%">
 <col style="width: 26%">
 </colgroup>
 <thead>
