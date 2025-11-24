@@ -1,10 +1,18 @@
 # Visualización y Análisis de Datos
 
+Hay tres sistemas principales de graficación en R, el sistema de graficación `base`, el paquete de `lattice` y el paquete `ggplot2`.
+
+::: callout-important
+¡ATENCIÓN!
+
+Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de `tidyverse` (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨)
+:::
+
 ### **🔍¿Qué es `tidyverse`?**
 
 Es una colección de paquetes de `R` con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.
 
-![](images/Screenshot 2025-11-22 at 1.54.58 p.m.-03.png){fig-align="center" width="366" height="381"}
+![](images/Screenshot%202025-11-22%20at%201.54.58%20p.m.-03.png){fig-align="center" width="366" height="381"}
 
 Instala el tidyverse completo con:
 
@@ -30,13 +38,23 @@ Paquetes escenciales:
 
 ### **⭐️Introducción a `ggplot2`**
 
-¿Qué es `ggplot2`?
+`ggplot2` es un paquete de `R` súper efectivo para crear gráficos de calidad para publicación y se basa en la gramática de los gráficos, la idea de que cualquier gráfico se puede construir a partir del mismo conjunto de componentes: un conjunto de datos, la estética de mapeo y capas gráficas:
 
-**`ggplot2`** es un paquete de `R` que sirve para hacer **gráficos estéticos, claros y profesionales** con muy poco código.
+-   Los conjuntos de datos son los datos que nostros, los usuario, proporcionamos.
 
-Lo que hace especial a `ggplot2` es que construyes los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
+-   La estética de mapeo es lo que conecta los datos con los gráficos. Le decimos a ggplot2 cómo usar los datos para afectar el aspecto del gráfico, para cambiar lo que se traza en el eje X o Y, o el tamaño o color de diferentes puntos de datos.
 
+-   Las capas son la salida gráfica real de ggplot2. Las capas determinan qué tipos de trama se muestran (plot de dispersión, histograma, etc.), el sistema de coordenadas utilizado (rectangular, polar, otros) y otros aspectos importantes del gráfico. La idea de capas de gráficos puede ser familiar para usted si ha utilizado programas de edición de imágenes como Photoshop, Illustrator o Inkscape.
+
+#### En resumen
+
+**`ggplot2`** es un paquete de `R` que sirve para hacer **gráficos estéticos, claros y profesionales para publicación** con muy poco código.
+
+Lo que hace especial a `ggplot2` es que construye los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
+
+::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
 `datos → estética → geometría → tema → etiquetas.`
+:::
 
 Esto permite que:
 
@@ -64,7 +82,7 @@ Recuerda que en Rstudio por default te desglosará la lista de librerias/paquete
 
 ### 🧩 Los 5 bloques de la Gramática en `ggplot2`
 
-1.   **Datos `(data)`**
+1.  **Datos `(data)`**
 
 El conjunto de datos que quieres graficar.
 
@@ -74,8 +92,7 @@ El conjunto de datos que quieres graficar.
 `data = hp_data`
 :::
 
-2.  **Estética `(aes = aesthetics)`**
-    Indica qué variable va al eje X, al Y, al color, tamaño, etc.
+2.  **Estética `(aes = aesthetics)`** Indica qué variable va al eje X, al Y, al color, tamaño, etc.
 
 ::: {.callout-note style="background-color: #003B1A;       border-left: 6px solid #00A651;   color: #E0FFE8;"}
 `{r}`
@@ -116,3 +133,13 @@ Aspecto final del gráfico: fondo, líneas, letras.
 
 `theme_minimal()`
 :::
+
+### 🎨 Ejemplo explicado paso a paso
+
+::: callout-note
+`{r}`
+
+`ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + geom_point() + theme_minimal()`
+:::
+
+### Referencias

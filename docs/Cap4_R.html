@@ -402,8 +402,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#qué-es-tidyverse" id="toc-qué-es-tidyverse" class="nav-link active" data-scroll-target="#qué-es-tidyverse"><span class="header-section-number">12.0.1</span> <strong>🔍¿Qué es <code>tidyverse</code>?</strong></a></li>
-  <li><a href="#introducción-a-ggplot2" id="toc-introducción-a-ggplot2" class="nav-link" data-scroll-target="#introducción-a-ggplot2"><span class="header-section-number">12.0.2</span> <strong>⭐️Introducción a <code>ggplot2</code></strong></a></li>
+  <li><a href="#introducción-a-ggplot2" id="toc-introducción-a-ggplot2" class="nav-link" data-scroll-target="#introducción-a-ggplot2"><span class="header-section-number">12.0.2</span> <strong>⭐️Introducción a <code>ggplot2</code></strong></a>
+  <ul>
+  <li><a href="#en-resumen" id="toc-en-resumen" class="nav-link" data-scroll-target="#en-resumen">En resumen</a></li>
+  </ul></li>
   <li><a href="#los-5-bloques-de-la-gramática-en-ggplot2" id="toc-los-5-bloques-de-la-gramática-en-ggplot2" class="nav-link" data-scroll-target="#los-5-bloques-de-la-gramática-en-ggplot2"><span class="header-section-number">12.0.3</span> 🧩 Los 5 bloques de la Gramática en <code>ggplot2</code></a></li>
+  <li><a href="#ejemplo-explicado-paso-a-paso" id="toc-ejemplo-explicado-paso-a-paso" class="nav-link" data-scroll-target="#ejemplo-explicado-paso-a-paso"><span class="header-section-number">12.0.4</span> 🎨 Ejemplo explicado paso a paso</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">12.0.5</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -430,6 +435,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Hay tres sistemas principales de graficación en R, el sistema de graficación <code>base</code>, el paquete de <code>lattice</code> y el paquete <code>ggplot2</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¡ATENCIÓN!</p>
+<p>Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de <code>tidyverse</code> (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨)</p>
+</div>
+</div>
 <section id="qué-es-tidyverse" class="level3" data-number="12.0.1">
 <h3 data-number="12.0.1" class="anchored" data-anchor-id="qué-es-tidyverse"><span class="header-section-number">12.0.1</span> <strong>🔍¿Qué es <code>tidyverse</code>?</strong></h3>
 <p>Es una colección de paquetes de <code>R</code> con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.</p>
@@ -465,10 +485,29 @@ Note
 </section>
 <section id="introducción-a-ggplot2" class="level3" data-number="12.0.2">
 <h3 data-number="12.0.2" class="anchored" data-anchor-id="introducción-a-ggplot2"><span class="header-section-number">12.0.2</span> <strong>⭐️Introducción a <code>ggplot2</code></strong></h3>
-<p>¿Qué es <code>ggplot2</code>?</p>
-<p><strong><code>ggplot2</code></strong> es un paquete de <code>R</code> que sirve para hacer <strong>gráficos estéticos, claros y profesionales</strong> con muy poco código.</p>
-<p>Lo que hace especial a <code>ggplot2</code> es que construyes los gráficos <strong>por partes</strong>, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:</p>
+<p><code>ggplot2</code> es un paquete de <code>R</code> súper efectivo para crear gráficos de calidad para publicación y se basa en la gramática de los gráficos, la idea de que cualquier gráfico se puede construir a partir del mismo conjunto de componentes: un conjunto de datos, la estética de mapeo y capas gráficas:</p>
+<ul>
+<li><p>Los conjuntos de datos son los datos que nostros, los usuario, proporcionamos.</p></li>
+<li><p>La estética de mapeo es lo que conecta los datos con los gráficos. Le decimos a ggplot2 cómo usar los datos para afectar el aspecto del gráfico, para cambiar lo que se traza en el eje X o Y, o el tamaño o color de diferentes puntos de datos.</p></li>
+<li><p>Las capas son la salida gráfica real de ggplot2. Las capas determinan qué tipos de trama se muestran (plot de dispersión, histograma, etc.), el sistema de coordenadas utilizado (rectangular, polar, otros) y otros aspectos importantes del gráfico. La idea de capas de gráficos puede ser familiar para usted si ha utilizado programas de edición de imágenes como Photoshop, Illustrator o Inkscape.</p></li>
+</ul>
+<section id="en-resumen" class="level4">
+<h4 class="anchored" data-anchor-id="en-resumen">En resumen</h4>
+<p><strong><code>ggplot2</code></strong> es un paquete de <code>R</code> que sirve para hacer <strong>gráficos estéticos, claros y profesionales para publicación</strong> con muy poco código.</p>
+<p>Lo que hace especial a <code>ggplot2</code> es que construye los gráficos <strong>por partes</strong>, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><code>datos → estética → geometría → tema → etiquetas.</code></p>
+</div>
+</div>
 <p>Esto permite que:</p>
 <ul>
 <li><p>Tus gráficos sean fáciles de leer y de hacer.</p></li>
@@ -511,6 +550,7 @@ Tip
 <p>Recuerda que en Rstudio por default te desglosará la lista de librerias/paquetes que empiecen con “g” si observas que no te aparece es por que no se cargo correctamente.</p>
 </div>
 </div>
+</section>
 </section>
 <section id="los-5-bloques-de-la-gramática-en-ggplot2" class="level3" data-number="12.0.3">
 <h3 data-number="12.0.3" class="anchored" data-anchor-id="los-5-bloques-de-la-gramática-en-ggplot2"><span class="header-section-number">12.0.3</span> 🧩 Los 5 bloques de la Gramática en <code>ggplot2</code></h3>
@@ -596,6 +636,26 @@ Note
 <p><code>theme_minimal()</code></p>
 </div>
 </div>
+</section>
+<section id="ejemplo-explicado-paso-a-paso" class="level3" data-number="12.0.4">
+<h3 data-number="12.0.4" class="anchored" data-anchor-id="ejemplo-explicado-paso-a-paso"><span class="header-section-number">12.0.4</span> 🎨 Ejemplo explicado paso a paso</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>{r}</code></p>
+<p><code>ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + geom_point() + theme_minimal()</code></p>
+</div>
+</div>
+</section>
+<section id="referencias" class="level3" data-number="12.0.5">
+<h3 data-number="12.0.5" class="anchored" data-anchor-id="referencias"><span class="header-section-number">12.0.5</span> Referencias</h3>
 
 
 </section>
