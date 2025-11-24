@@ -28,6 +28,7 @@
     -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
     -   **Johanna Castelán** - Estudiante de maestría, UPAEP.
     -   **Daniel Chávez** - Profesor invitado, UAGro.
+		-   **Athony Mederos** - Estudiante de posgrado,UAQ.
 
     Organizadores del curso:
 
