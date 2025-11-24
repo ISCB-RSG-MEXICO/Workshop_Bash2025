@@ -438,43 +438,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Hay tres sistemas principales de graficación en R, el sistema de graficación <code>base</code>, el paquete de <code>lattice</code> y el paquete <code>ggplot2</code>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>¡ATENCIÓN!</p>
-<p>Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de <code>tidyverse</code> (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨)</p>
-</div>
-</div>
+<p>::: {.callout-important .#note} ¡ATENCIÓN!</p>
+<p>Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de <code>tidyverse</code> (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨) :::</p>
 <section id="qué-es-tidyverse" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="qué-es-tidyverse"><span class="header-section-number">12.1</span> <strong>🔍¿Qué es <code>tidyverse</code>?</strong></h2>
 <p>Es una colección de paquetes de <code>R</code> con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-11-22 at 1.54.58 p.m.-03.png" class="quarto-figure quarto-figure-center figure-img" width="366" height="381"></p>
+<p><img src="images/lol-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Instala el tidyverse completo con:</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>{r}</p>
-<p><code>install.packages("tidyverse")</code></p>
-</div>
-</div>
+<p>Instala el paquete tidyverse completo con:</p>
+<p>::: {.callout-note .#code style=“background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}” icon=“false”} {r}</p>
+<p><code>install.packages("tidyverse")</code> :::</p>
 <p>Paquetes escenciales:</p>
 <ul>
 <li><p><strong><code>ggplot2</code></strong> → gráficar</p></li>
@@ -497,19 +473,7 @@ Note
 <h3 data-number="12.2.1" class="anchored" data-anchor-id="en-resumen"><span class="header-section-number">12.2.1</span> En resumen</h3>
 <p><strong><code>ggplot2</code></strong> es un paquete de <code>R</code> que sirve para hacer <strong>gráficos estéticos, claros y profesionales para publicación</strong> con muy poco código.</p>
 <p>Lo que hace especial a <code>ggplot2</code> es que construye los gráficos <strong>por partes</strong>, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:</p>
-<div class="callout callout-style-default callout-note callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>datos → estética → geometría → tema → etiquetas.</code></p>
-</div>
-</div>
+<p>::: {.callout-note .#note style=“background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}”} <code>datos → estética → geometría → tema → etiquetas.</code> :::</p>
 <p>Esto permite que:</p>
 <ul>
 <li><p>Tus gráficos sean fáciles de leer y de hacer.</p></li>
@@ -524,20 +488,8 @@ Note
 <li>Poder adaptar cualquier visualización biológica (expresión, abundancia, etc.)</li>
 </ul>
 <p>Cargamos la libreria con:</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>{r}</p>
-<p><code>library(ggplot2)</code></p>
-</div>
-</div>
+<p>::: {.callout-note .#code style=“background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}” icon=“false”} {r}</p>
+<p><code>library(ggplot2)</code> :::</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -571,7 +523,8 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>{r}</p>
-<p><code>data = hp_data</code></p>
+<p><code>#Cargamos el data y definimos la variable</code></p>
+<p><code>hp_data &lt;- read.csv("hp_data/Characters.csv", sep = ";")</code></p>
 </div>
 </div>
 <ol start="2" type="1">
@@ -588,7 +541,8 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><code>{r}</code></p>
-<p><code>aes(x = Sepal.Length, y = Sepal.Width, color = Species)</code></p>
+<p><code>#Indicamos las variables</code></p>
+<p>aes(x = Birth, y = Gender, color = House)</p>
 </div>
 </div>
 <ol start="3" type="1">
@@ -600,6 +554,7 @@ Note
 <li><p><code>geom_histogram()</code> → histogramas</p></li>
 <li><p><code>geom_boxplot()</code> → boxplots</p></li>
 <li><p><code>geom_bar()</code> → barras</p></li>
+<li></li>
 </ul>
 <ol start="4" type="1">
 <li><strong>Escalas <code>(scale_)</code></strong></li>
@@ -616,7 +571,10 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><code>{r}</code></p>
-<p>scale_color_brewer(palette = “Set2”)</p>
+<p><code>#Definimos la paleta de colores</code></p>
+<p><code>hp_cols &lt;- c( "Gryffindor" = "#b30000", # rojo intenso "Slytherin" = "#005f2f", # verde fuerte "Ravenclaw" = "#002b80", # azul profundo "Hufflepuff" = "#e6b800", # amarillo dorado "Beauxbatons Academy of Magic" = "#6ea8ff", # azul claro elegante "Durmstrang Institute" = "#660000" # burdeos oscuro )</code></p>
+<p><code>#Ajustamos los colores</code></p>
+<p><code>scale_fill_manual(values = hp_cols)</code></p>
 </div>
 </div>
 <ol start="5" type="1">
@@ -651,11 +609,21 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><code>{r}</code></p>
-<p><code>ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + geom_point() + theme_minimal()</code></p>
+<p>#Ahora juntamos todo lo aprendido!</p>
+<p><code>hp_data %&gt;% count(House) %&gt;% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = "white") + coord_polar(theta = "y") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) + theme_minimal()</code></p>
 </div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3599886339.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="391"></p>
+</figure>
 </div>
 <section id="referencias" class="level3" data-number="12.4.1">
 <h3 data-number="12.4.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">12.4.1</span> Referencias</h3>
+<ul>
+<li>The Carpentries. (2025). <em>R for Reproducible Scientific Analysis</em>.<br>
+<a href="https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html" class="uri">https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html</a></li>
+</ul>
 
 
 </section>

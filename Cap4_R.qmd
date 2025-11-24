@@ -2,7 +2,7 @@
 
 Hay tres sistemas principales de graficación en R, el sistema de graficación `base`, el paquete de `lattice` y el paquete `ggplot2`.
 
-::: callout-important
+::: {.callout-important .#note}
 ¡ATENCIÓN!
 
 Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de `tidyverse` (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨)
@@ -12,11 +12,11 @@ Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mund
 
 Es una colección de paquetes de `R` con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.
 
-![](images/Screenshot%202025-11-22%20at%201.54.58%20p.m.-03.png){fig-align="center" width="366" height="381"}
+![](images/lol-01.png){fig-align="center"}
 
-Instala el tidyverse completo con:
+Instala el paquete tidyverse completo con:
 
-::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+::: {.callout-note .#code style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
 {r}
 
 `install.packages("tidyverse")`
@@ -52,7 +52,7 @@ Paquetes escenciales:
 
 Lo que hace especial a `ggplot2` es que construye los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
 
-::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
+::: {.callout-note .#note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
 `datos → estética → geometría → tema → etiquetas.`
 :::
 
@@ -68,7 +68,7 @@ Esto permite que:
 
 Cargamos la libreria con:
 
-::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+::: {.callout-note .#code style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
 {r}
 
 `library(ggplot2)`
@@ -89,7 +89,9 @@ El conjunto de datos que quieres graficar.
 ::: {.callout-note style="background-color: #7F0000;     /* rojo intenso */ border-left: 6px solid #FF0000; /* rojo brillante */ color: #FFDFA3;                 /* dorado suave */"}
 {r}
 
-`data = hp_data`
+`#Cargamos el data y definimos la variable`
+
+`hp_data <- read.csv("hp_data/Characters.csv", sep = ";")`
 :::
 
 2.  **Estética `(aes = aesthetics)`** Indica qué variable va al eje X, al Y, al color, tamaño, etc.
@@ -97,7 +99,9 @@ El conjunto de datos que quieres graficar.
 ::: {.callout-note style="background-color: #003B1A;       border-left: 6px solid #00A651;   color: #E0FFE8;"}
 `{r}`
 
-`aes(x = Sepal.Length, y = Sepal.Width, color = Species)`
+`#Indicamos las variables`
+
+aes(x = Birth, y = Gender, color = House)
 :::
 
 3.  **Geometría `(geom)`**
@@ -112,6 +116,8 @@ Corresponde a el tipo de gráfico:
 
 -   `geom_bar()` → barras
 
+-   
+
 4.  **Escalas `(scale_)`**
 
 Permite ajustar los colores, tamaños, ejes, etc.
@@ -119,7 +125,13 @@ Permite ajustar los colores, tamaños, ejes, etc.
 ::: {.callout-note style="background-color: #001A4D;       border-left: 6px solid #0047FF;   color: #E6D5B8;"}
 `{r}`
 
-scale_color_brewer(palette = "Set2")
+`#Definimos la paleta de colores`
+
+`hp_cols <- c( "Gryffindor" = "#b30000", # rojo intenso "Slytherin" = "#005f2f", # verde fuerte "Ravenclaw" = "#002b80", # azul profundo "Hufflepuff" = "#e6b800", # amarillo dorado "Beauxbatons Academy of Magic" = "#6ea8ff", # azul claro elegante "Durmstrang Institute" = "#660000" # burdeos oscuro )`
+
+`#Ajustamos los colores`
+
+`scale_fill_manual(values = hp_cols)`
 :::
 
 5.  **Temas `(theme)`**
@@ -137,7 +149,14 @@ Aspecto final del gráfico: fondo, líneas, letras.
 ::: callout-note
 `{r}`
 
-`ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + geom_point() + theme_minimal()`
+#Ahora juntamos todo lo aprendido!
+
+`hp_data %>% count(House) %>% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = "white") + coord_polar(theta = "y") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) + theme_minimal()`
 :::
 
+![](images/clipboard-3599886339.png){fig-align="center" width="391"}
+
 ### Referencias
+
+-   The Carpentries. (2025). *R for Reproducible Scientific Analysis*. \
+    <https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html>
