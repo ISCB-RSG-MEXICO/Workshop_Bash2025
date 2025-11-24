@@ -44,7 +44,7 @@ Paquetes escenciales:
 
 -   La estética de mapeo es lo que conecta los datos con los gráficos. Le decimos a ggplot2 cómo usar los datos para afectar el aspecto del gráfico, para cambiar lo que se traza en el eje X o Y, o el tamaño o color de diferentes puntos de datos.
 
--   Las capas son la salida gráfica real de ggplot2. Las capas determinan qué tipos de trama se muestran (plot de dispersión, histograma, etc.), el sistema de coordenadas utilizado (rectangular, polar, otros) y otros aspectos importantes del gráfico. La idea de capas de gráficos puede ser familiar para usted si ha utilizado programas de edición de imágenes como Photoshop, Illustrator o Inkscape.
+-   Las capas son la salida gráfica real de ggplot2. Las capas determinan qué tipos de trama se muestran (plot de dispersión, histograma, etc.), el sistema de coordenadas utilizado (rectangular, polar, otros) y otros aspectos importantes del gráfico.
 
 ### En resumen
 
@@ -52,7 +52,7 @@ Paquetes escenciales:
 
 Lo que hace especial a `ggplot2` es que construye los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
 
-::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
+::: callout-note
 `datos → estética → geometría → tema → etiquetas.`
 :::
 
