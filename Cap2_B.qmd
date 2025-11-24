@@ -89,8 +89,6 @@ Al abrir un archivo con `nano`, verás el contenido del archivo (si existe) y, e
 Los atajos se indican con el símbolo `^`, que representa la tecla **Ctrl**.
 
 Por ejemplo, `^O` significa presionar **Ctrl + O**.
-
-En !OS en vez de **Ctrl** es **CMD**
 :::
 
 Una vez dentro de `nano`, puedes escribir, editar, guardar y salir usando los comandos que aparecen al pie de la pantalla.
@@ -98,7 +96,7 @@ Una vez dentro de `nano`, puedes escribir, editar, guardar y salir usando los co
 Principales comandos de `nano`
 
 | Atajo      | Acción           | Descripción                                        |
-|:-----------------|:-----------------|:------------------------------------|
+|:-----------------|:-----------------|:-----------------------------------|
 | `Ctrl + O` | Guardar archivo  | Guarda los cambios sin salir.                      |
 | `Ctrl + X` | Salir            | Cierra `nano` (pide guardar si hay cambios).       |
 | `Ctrl + W` | Buscar texto     | Busca una palabra o frase en el archivo.           |
@@ -133,7 +131,9 @@ Copiemos y peguemos el fragmento del libro en `fragmento.txt` que abrimos con `
 
 -   Haciendo clic derecho
 
--   `Ctrl + v`
+-   `Ctrl + v # windows`
+
+-   `Cmd + v # windows`
 
 Para desplazarte desplazarte en el editor puedes utilizar las flechas de tu teclado: → hacia la derecha, ← hacia la izquierda, ↑ hacia arriba y ↓ hacia abajo.
 
@@ -337,7 +337,7 @@ Comandos que modifican la estructura de directorios y archivos
 Estos editores permiten crear o modificar archivos directamente desde la terminal, especialmente útil al trabajar en servidores remotos o sin entorno gráfico.
 
 | Comando | Descripción                                                                       | Ejemplo          |
-|-----------------|---------------------------------------|-----------------|
+|------------------|-------------------------------------|------------------|
 | `nano`  | Editor sencillo y fácil de usar; guarda con Ctrl+O y cierra con Ctrl+X el archivo | `nano script.sh` |
 | `vim`   | Editor avanzado con control mediante comandos; guarda con `:w` y sale con `:q`    | `vim script.sh`  |
 
@@ -367,7 +367,7 @@ Comandos para localizar texto o patrones dentro de archivos o directorios
 Comandos para conectar procesos o guardar salidas
 
 | Comando | Descripción                                            | Ejemplo                       |
-|------------------|-----------------------------------|-------------------|
+|-------------------|-----------------------------------|-------------------|
 | `>`     | Redirige la salida a un archivo                        | `ls > lista.txt`              |
 | `>>`    | Agrega la salida al final del archivo existente        | `echo "nuevo" >> lista.txt`   |
 | `<`     | Usa un archivo como entrada de un comando              | `sort < datos.txt`            |
