@@ -8,7 +8,7 @@ Es una colección de paquetes de R con una filosofía de diseño predefinida, di
 
 Instala el tidyverse completo con:
 
-::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058;" icon="false"}
+::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
 `install.packages("tidyverse")`
 :::
 
@@ -50,6 +50,6 @@ Esto permite que:
 
 Cargamos con:
 
-::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058;"}
+::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
 `library(ggplot2)`
 :::
