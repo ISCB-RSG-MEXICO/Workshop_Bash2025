@@ -284,39 +284,6 @@ Puedes utilizar un "`|`" y después el comando `less` para visualizar la salida 
 :::
 :::
 
-## EXTRA: Búsqueda de motivos protéicos en HSPA8
-
-HSPA8 contiene varios motivos funcionales muy característicos:
-
-+-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
-| Motivo                                    | Secuencia aproximada        | Función                                                         |
-+===========================================+=============================+=================================================================+
-| Motivo de unión a ATP (P-loop / Walker A) | GxxxxGKST (ej. "GIDLGTTYS") | Unión e hidrólisis de ATP                                       |
-+-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
-| Motivo IDLGTT                             | IDLGTT                      | Parte del dominio NBD, importante para cambios conformacionales |
-+-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
-| Motivo de unión a sustrato                | VFTDT o similares           | Parte del dominio SBD                                           |
-+-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
-| Motivo EEVD (C-terminal)                  | EEVD                        | Interacción con co-chaperonas y proteínas TPR                   |
-+-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
-| Motivos ricos en glicina                  | GGMPGG, GGGA, etc.          | Región C-terminal flexible reguladora                           |
-+-------------------------------------------+-----------------------------+-----------------------------------------------------------------+
-
-::: callout-note
-## Ejercicio Extra
-
-1.  Busca en cada archivo `.faa` cuántas veces aparece el motivo **IDLGTT**
-2.  Muestra solo las líneas donde aparece el motivo en `H_sapiens_prot.faa`
-3.  Extrae **únicamente** las coincidencias del motivo para todos los organismos (una por línea).
-4.  Lista todos los organismos cuya secuencia **termina** con el motivo "EEVD".
-5.  Extrae el fragmento completo de la última línea donde aparezca "EEVD".
-6.  Cuenta cuántas proteínas **carecen** de ese motivo.
-
-::: {.callout-tip collapse="true" icon="false"}
-## Solución
-:::
-:::
-
 ## Referencias
 
 -   National Center for Biotechnology Information. *Orthologs of gene 100496320 (HSPA8) in NCBI Datasets*. Recuperado de <https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs>
