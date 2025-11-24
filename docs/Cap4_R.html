@@ -438,8 +438,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Hay tres sistemas principales de graficación en R, el sistema de graficación <code>base</code>, el paquete de <code>lattice</code> y el paquete <code>ggplot2</code>.</p>
-<p>::: {.callout-important .#note} ¡ATENCIÓN!</p>
-<p>Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de <code>tidyverse</code> (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨) :::</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¡ATENCIÓN!</p>
+<p>Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de <code>tidyverse</code> (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨)</p>
+</div>
+</div>
 <section id="qué-es-tidyverse" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="qué-es-tidyverse"><span class="header-section-number">12.1</span> <strong>🔍¿Qué es <code>tidyverse</code>?</strong></h2>
 <p>Es una colección de paquetes de <code>R</code> con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.</p>
@@ -449,8 +461,20 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Instala el paquete tidyverse completo con:</p>
-<p>::: {.callout-note .#code style=“background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}” icon=“false”} {r}</p>
-<p><code>install.packages("tidyverse")</code> :::</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>{r}</p>
+<p><code>install.packages("tidyverse")</code></p>
+</div>
+</div>
 <p>Paquetes escenciales:</p>
 <ul>
 <li><p><strong><code>ggplot2</code></strong> → gráficar</p></li>
@@ -473,7 +497,19 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="12.2.1" class="anchored" data-anchor-id="en-resumen"><span class="header-section-number">12.2.1</span> En resumen</h3>
 <p><strong><code>ggplot2</code></strong> es un paquete de <code>R</code> que sirve para hacer <strong>gráficos estéticos, claros y profesionales para publicación</strong> con muy poco código.</p>
 <p>Lo que hace especial a <code>ggplot2</code> es que construye los gráficos <strong>por partes</strong>, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:</p>
-<p>::: {.callout-note .#note style=“background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}”} <code>datos → estética → geometría → tema → etiquetas.</code> :::</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>datos → estética → geometría → tema → etiquetas.</code></p>
+</div>
+</div>
 <p>Esto permite que:</p>
 <ul>
 <li><p>Tus gráficos sean fáciles de leer y de hacer.</p></li>
@@ -488,8 +524,20 @@ ul.task-list li input[type="checkbox"] {
 <li>Poder adaptar cualquier visualización biológica (expresión, abundancia, etc.)</li>
 </ul>
 <p>Cargamos la libreria con:</p>
-<p>::: {.callout-note .#code style=“background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}” icon=“false”} {r}</p>
-<p><code>library(ggplot2)</code> :::</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>{r}</p>
+<p><code>library(ggplot2)</code></p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

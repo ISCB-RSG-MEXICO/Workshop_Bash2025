@@ -2,7 +2,7 @@
 
 Hay tres sistemas principales de graficación en R, el sistema de graficación `base`, el paquete de `lattice` y el paquete `ggplot2`.
 
-::: {.callout-important .#note}
+::: callout-important
 ¡ATENCIÓN!
 
 Antes de hablar del paquete con el qué graficaremos tenemos que hablar del mundo de `tidyverse` (hablaremos someramente, ya que es un paquete súper complejo que literal requiere un curso completo para hablar de él ✨)
@@ -16,7 +16,7 @@ Es una colección de paquetes de `R` con una filosofía de diseño predefinida, 
 
 Instala el paquete tidyverse completo con:
 
-::: {.callout-note .#code style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
 {r}
 
 `install.packages("tidyverse")`
@@ -52,7 +52,7 @@ Paquetes escenciales:
 
 Lo que hace especial a `ggplot2` es que construye los gráficos **por partes**, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:
 
-::: {.callout-note .#note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
+::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}"}
 `datos → estética → geometría → tema → etiquetas.`
 :::
 
@@ -68,7 +68,7 @@ Esto permite que:
 
 Cargamos la libreria con:
 
-::: {.callout-note .#code style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
+::: {.callout-note style="background-color: #ffe4f7; border-left: 6px solid #ff69b4; color: #6b0058; ::: {.callout-note}" icon="false"}
 {r}
 
 `library(ggplot2)`
