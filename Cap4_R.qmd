@@ -5,3 +5,9 @@
 Es una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño, una gramática y estructuras de datos subyacentes.
 
 ![](images/Screenshot 2025-11-22 at 1.54.58 p.m..png){fig-align="center" width="423"}
+
+Instala el tidyverse completo con:
+
+::: callout-note
+`install.packages("tidyverse")`
+:::

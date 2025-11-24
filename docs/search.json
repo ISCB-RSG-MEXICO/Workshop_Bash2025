@@ -383,5 +383,15 @@
     "title": "3  Mis primeros pasos en Bash",
     "section": "3.14 Material suplementario",
     "text": "3.14 Material suplementario\n\nSoftware Carpentry. La terminal de Unix\nRSG Ecuador.GNU/Linux para bioinfomatica\nIntroduction to the Unix Shell for TranscriptomicsTutorial."
+  },
+  {
+    "objectID": "Cap4_R.html",
+    "href": "Cap4_R.html",
+    "title": "11  Visualización y Análisis de Datos",
+    "section": "",
+    "text": "11.0.1 ¿Qué es tidyverse?\nEs una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño, una gramática y estructuras de datos subyacentes.\n\n\n\n\n\nInstala el tidyverse completo con:\n\n\n\n\n\n\nNote\n\n\n\ninstall.packages(\"tidyverse\")",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   }
 ]
