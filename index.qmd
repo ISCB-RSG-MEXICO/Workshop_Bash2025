@@ -86,7 +86,7 @@
 
     -   R y Rstudio
 
-    Las instrucciones para instalarlos las puedes encontrar en el [capítulo 14](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html#windows) para instalación de Bash y [capítulo 15](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html#windows---r) para la instalación de R y Rstudio.
+    Las instrucciones para instalarlos las puedes encontrar en el [capítulo 14](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html) para instalación de Bash y [capítulo 15](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html) para la instalación de R y Rstudio.
 
     ### Agenda {#agenda}
 
