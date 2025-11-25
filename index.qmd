@@ -76,7 +76,9 @@
 
     Conocimientos básicos sobre el manejo de archivos en computadora.
 
-    Durante el curso las actividades se realizarán en un servidor proporcionado por el equipo docente, por lo que no es necesario instalar Linux, R o Bash en tu computadora.
+    Durante el curso, todas las actividades se realizarán en un servidor proporcionado por el equipo docente. Antes de comenzar, te recomendamos revisar el **tutorial introductorio** disponible aquí: [Tutorial de acceso a Better Lab](https://www.canva.com/design/DAG5rDzKmuM/w_v8XwossbDWRGt5IKg6ZQ/edit?utm_content=DAG5rDzKmuM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+    Gracias a este servidor, **no es necesario instalar Linux, R ni Bash** en tu computadora.
 
     Si deseas conservar y trabajar posteriormente con los archivos generados en el curso, es recomendable tener instalado en tu equipo:
 
@@ -84,7 +86,7 @@
 
     -   R y Rstudio
 
-    Las instrucciones para instalarlos las puedes encontrar al final de esta página.
+    Las instrucciones para instalarlos las puedes encontrar en los capítulos 14 para instalación de Bash y capítulo 15 para la instalación de R y Rstudio.
 
     ### Agenda {#agenda}
 

@@ -1,4 +1,4 @@
-# Instalación de R y RStudio
+# Instalación de R y RStudio {#descarga-R}
 
 Para participar en este taller necesitas acceso a los siguientes software y acceso a un navegador como chrome o firefox.
 

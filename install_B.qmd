@@ -1,4 +1,4 @@
-# Instalación de Git y Bash
+# Instalación de Git y Bash {#descarga-Bash}
 
 Para participar en este taller necesitas acceso al siguiente software y acceso a un navegador como chrome o firefox.
 
