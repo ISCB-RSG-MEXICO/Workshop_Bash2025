@@ -1,6 +1,6 @@
 # Introducción al manejo de datos en R
 
-### Paqueterías en R
+## Paqueterías en R
 
 En R, podemos **agregar funciones y herramientas adicionales** mediante **paqueterías (packages),** también llamadas **librerías**.
 
@@ -98,21 +98,21 @@ También existe otra manera de cargar las paqueterías. Usando la pestaña de **
 -   Puedes **marcar la casilla** para cargar un paquete, o **desmarcarla** para descargarlo de la sesión.
 -   También puedes instalar o actualizar paqueterías usando los botones **Install** y **Update** en la parte superior de la pestaña.
 
-# **Manejo de Data Frames en R**
+## **Manejo de Data Frames en R**
 
 Una vez que sabemos cómo trabajar con paqueterías en R, podemos comenzar a manipular datos de forma más eficiente. Para ello, primero veremos cómo funcionan los **data frames**, qué podemos hacer con ellos y cómo importarlos desde archivos externos.
 
-## **Introducción a los data frames en R**
+### **Introducción a los data frames en R**
 
 En R, un **data frame** es una de las estructuras más utilizadas para trabajar con datos. Puede pensarse como una tabla, donde cada columna representa una variable y cada fila corresponde a una observación.\
 
 En esta sección trabajaremos con una base de datos inspirada en el universo de *Harry Potter* (personajes, casas, hechizos, etc.), que nos servirá para practicar las operaciones básicas.
 
-## **Importación y Exportación de Datos**
+### **Importación y Exportación de Datos**
 
 Antes de manipular datos, es importante aprender a **importarlos** desde archivos externos y **exportarlos** cuando queramos guardar resultados.
 
-### **Funciones principales**
+#### **Funciones principales**
 
 -   **`read.csv()`** -- Importa archivos CSV.
 
@@ -126,7 +126,7 @@ Ejemplo básico:
 hp_data <- read.csv("hp_data/Characters.csv", sep = ";")
 ```
 
-## Cómo explorar un data frame en R
+### Cómo explorar un data frame en R
 
 Una vez que tienes un data frame (ya sea creado a mano o importado), es importante aprender a explorarlo para entender su estructura y contenido.
 
@@ -135,6 +135,10 @@ A continuación se presentan las funciones más útiles para esto:
 #### **Ver las primeras filas**
 
 Muestra las primeras 6 filas del data frame.
+
+```{r, echo=FALSE}
+library(kableExtra)
+```
 
 ```{r, eval=FALSE}
 head(hp_data)
