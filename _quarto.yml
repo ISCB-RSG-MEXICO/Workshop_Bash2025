@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: docs
+  
+execute: 
+  cache: false
 
 book:
   title: "Workshop Bash & R"
@@ -27,7 +30,7 @@ book:
     - install_B.qmd
     - install_R.qmd
   # Information
-  repo-url: https://github.com/ISCB-RSG-MEXICO/Workshop_template # link de Github
+  repo-url: https://github.com/ISCB-RSG-MEXICO/Workshop_Bash2025 # link de Github
   sharing: [twitter, facebook, linkedin]
   favicon: "rsgMexico.jpeg" # icono de la pagina en pestana
 
@@ -45,4 +48,3 @@ format:
     freeze: false  # Desactivar congelamiento
 
 editor: visual
-
