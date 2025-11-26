@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -93,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Workshop Bash &amp; R</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/ISCB-RSG-MEXICO/Workshop_template" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ISCB-RSG-MEXICO/Workshop_Bash2025" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -167,49 +201,61 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap4_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Preparación de un archivo .bed</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Cap5_B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bed tools - Análisis de regiones genómicas</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap1_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap2_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap3_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Manipulación y limpieza de datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Cap4_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualización y Analisis de Datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visualización y Análisis de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Bedtools_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">BedTools R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
     </ul>
@@ -230,8 +276,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#exploración-del-contenido-de-un-archivo-fasta" id="toc-exploración-del-contenido-de-un-archivo-fasta" class="nav-link" data-scroll-target="#exploración-del-contenido-de-un-archivo-fasta"><span class="header-section-number">5.4</span> Exploración del contenido de un archivo FASTA</a></li>
   <li><a href="#edición-de-secuencias-con-sed" id="toc-edición-de-secuencias-con-sed" class="nav-link" data-scroll-target="#edición-de-secuencias-con-sed"><span class="header-section-number">5.5</span> Edición de secuencias con <code>sed</code></a></li>
-  <li><a href="#extra-búsqueda-de-motivos-protéicos-en-hspa8" id="toc-extra-búsqueda-de-motivos-protéicos-en-hspa8" class="nav-link" data-scroll-target="#extra-búsqueda-de-motivos-protéicos-en-hspa8"><span class="header-section-number">5.6</span> EXTRA: Búsqueda de motivos protéicos en HSPA8</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5.7</span> Referencias</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5.6</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -259,8 +304,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="prepara-el-directorio-de-trabajo" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="prepara-el-directorio-de-trabajo"><span class="header-section-number">5.1</span> Prepara el directorio de trabajo</h2>
 <p>Crea un directorio nuevo para trabajar en este capítulo y muevete a el</p>
-<p><code>mkdir Ejercicio_hsp70</code></p>
-<p><code>cd Ejercicio_hsp70</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> Ejercicio_hsp70</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Ejercicio_hsp70</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="descarga-el-archivo-desde-github" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="descarga-el-archivo-desde-github"><span class="header-section-number">5.2</span> Descarga el archivo desde github</h2>
@@ -270,8 +315,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Para obtener archivos desde Internet directamente en tu terminal podemos usar el comando <code>wget</code>, una herramienta muy útil para transferir datos desde servidores web.</p>
 <p><code>wget https://github.com/ISCB-RSG-MEXICO/Workshop_Bash2025/raw/refs/heads/main/ncbi_seqdata.tar.gz</code></p>
 <p>Cuando el proceso de descarga termine, podrás verificar que el archivo se descargó correctamente con:</p>
-<p><code>ls</code></p>
-<p>Deberías ver <code>ncbi_seqdata.tar.gz</code> presente en tu directorio</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Deberías ver el archivo <code>ncbi_seqdata.tar.gz</code> presente en tu directorio</p>
 </section>
 <section id="descomprime-el-archivo" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="descomprime-el-archivo"><span class="header-section-number">5.3</span> Descomprime el archivo</h2>
@@ -424,7 +469,7 @@ archivo.fna
 </div>
 </div>
 <p>Una vez descomprimido el archivo <code>ncbi_seqdata.tar.gz</code>, ahora tienes una carpeta con varios archivos FASTA.</p>
-<p><code>ls ncbi_seqdata/</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ncbi_seqdata/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Antes de analizarlos a fondo, es útil <strong>ver su contenido sin abrirlos en un editor</strong> sin inundar la terminal con miles de caracteres.</p>
 <p>El comando <code>less</code> permite revisar archivos largos <strong>sin cargarlos completos en pantalla</strong> y moviéndote libremente dentro de ellos.</p>
 <p>Es ideal para explorar FASTA grandes porque:</p>
@@ -618,7 +663,7 @@ Solución
 <p>Es muy útil cuando queremos <strong>reemplazar</strong>, <strong>eliminar</strong>, <strong>extraer</strong> o <strong>transformar</strong> patrones en archivos FASTA o cualquier archivo de texto, especialmente cuando se combina con pipes (<code>|</code>).</p>
 <p><code>sed</code> no cambia el archivo original a menos que se indique explícitamente; por defecto solo <strong>imprime el resultado modificado</strong>, lo cual lo hace seguro y práctico para análisis rápidos.</p>
 <p>Por ejemplo:</p>
-<p><code>sed 's/AAA/TTT/g' archivo.fna</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="st">'s/AAA/TTT/g'</span> archivo.fna</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p><code>/</code>→ Separador (puedes utilizar cualquiera)</p></li>
 <li><p><code>AAA</code> → patrón dentro del archivo que se quiere reemplazar</p></li>
@@ -681,92 +726,10 @@ Solución
 </div>
 </div>
 </section>
-<section id="extra-búsqueda-de-motivos-protéicos-en-hspa8" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="extra-búsqueda-de-motivos-protéicos-en-hspa8"><span class="header-section-number">5.6</span> EXTRA: Búsqueda de motivos protéicos en HSPA8</h2>
-<p>HSPA8 contiene varios motivos funcionales muy característicos:</p>
-<table class="table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 21%">
-<col style="width: 46%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Motivo</th>
-<th>Secuencia aproximada</th>
-<th>Función</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Motivo de unión a ATP (P-loop / Walker A)</td>
-<td>GxxxxGKST (ej. “GIDLGTTYS”)</td>
-<td>Unión e hidrólisis de ATP</td>
-</tr>
-<tr class="even">
-<td>Motivo IDLGTT</td>
-<td>IDLGTT</td>
-<td>Parte del dominio NBD, importante para cambios conformacionales</td>
-</tr>
-<tr class="odd">
-<td>Motivo de unión a sustrato</td>
-<td>VFTDT o similares</td>
-<td>Parte del dominio SBD</td>
-</tr>
-<tr class="even">
-<td>Motivo EEVD (C-terminal)</td>
-<td>EEVD</td>
-<td>Interacción con co-chaperonas y proteínas TPR</td>
-</tr>
-<tr class="odd">
-<td>Motivos ricos en glicina</td>
-<td>GGMPGG, GGGA, etc.</td>
-<td>Región C-terminal flexible reguladora</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ejercicio Extra
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Busca en cada archivo <code>.faa</code> cuántas veces aparece el motivo <strong>IDLGTT</strong></li>
-<li>Muestra solo las líneas donde aparece el motivo en <code>H_sapiens_prot.faa</code></li>
-<li>Extrae <strong>únicamente</strong> las coincidencias del motivo para todos los organismos (una por línea).</li>
-<li>Lista todos los organismos cuya secuencia <strong>termina</strong> con el motivo “EEVD”.</li>
-<li>Extrae el fragmento completo de la última línea donde aparezca “EEVD”.</li>
-<li>Cuenta cuántas proteínas <strong>carecen</strong> de ese motivo.</li>
-</ol>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solución
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="referencias" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="referencias"><span class="header-section-number">5.7</span> Referencias</h2>
+<section id="referencias" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="referencias"><span class="header-section-number">5.6</span> Referencias</h2>
 <ul>
-<li><p>National Center for Biotechnology Information. <em>Orthologs of gene 100496320 (HSPA8) in NCBI Datasets</em>. Recuperado de <a href="https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs" class="uri">https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs</a></p></li>
-<li></li>
+<li>National Center for Biotechnology Information. <em>Orthologs of gene 100496320 (HSPA8) in NCBI Datasets</em>. Recuperado de <a href="https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs" class="uri">https://www.ncbi.nlm.nih.gov/datasets/gene/100496320/#orthologs</a></li>
 </ul>
 
 
@@ -1129,7 +1092,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Cap4_B.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Bash</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bed tools - Preparación de un archivo .bed</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
