@@ -1,0 +1,163 @@
+# 💻 Introducción
+
+Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos. \
+
+Incluye:
+
+-   Preparación del ambiente
+-   Comandos esenciales de Bedtools
+-   Lectura y manipulación de BED/GFF en R
+-   Ejemplos prácticos
+
+------------------------------------------------------------------------
+
+# 🔧 Requerimientos
+
+## Software necesario
+
+-   **R** (versión 4+)
+-   **RStudio** (opcional)
+-   **Bedtools** instalado en tu sistema
+-   Paquetes R:
+    -   `tidyverse`
+    -   `rtracklayer`
+    -   `data.table`
+    -   `GenomicRanges`
+
+``` r
+install.packages(c("tidyverse", "data.table"))
+BiocManager::install(c("rtracklayer", "GenomicRanges"))
+```
+
+------------------------------------------------------------------------
+
+# 🧬 ¿Qué es Bedtools?
+
+**Bedtools** es una suite de herramientas para realizar operaciones sobre regiones genómicas.
+
+Permite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Conversión entre formatos
+
+------------------------------------------------------------------------
+
+# 📁 Formatos comúnes (BED, GFF, FASTA)
+
+## Formato BED
+
+Columnas mínimas: \
+1. cromosoma 2. inicio 3. fin
+
+Ejemplo:
+
+```         
+chr1    1000    1500
+chr1    2000    2300
+```
+
+## Formato GFF/GTF
+
+tiene 9 columnas (atributos más complejos).
+
+------------------------------------------------------------------------
+
+# ✨ Comandos básicos de Bedtools
+
+## Intersectar regiones
+
+``` bash
+bedtools intersect -a A.bed -b B.bed > interseccion.bed
+```
+
+## Unir regiones
+
+``` bash
+bedtools merge -i regiones.bed > regiones_unidas.bed
+```
+
+## Complemento genómico
+
+``` bash
+bedtools complement -i regiones.bed -g genome_file.txt > complement.bed
+```
+
+## Cobertura
+
+``` bash
+bedtools coverage -a regiones.bed -b alineamientos.bam > coverage.txt
+```
+
+------------------------------------------------------------------------
+
+# 📥 Leer archivos BED en R
+
+## Con `rtracklayer`
+
+``` r
+library(rtracklayer)
+bed <- import("archivo.bed", format = "BED")
+bed
+```
+
+## Con `data.table`
+
+``` r
+library(data.table)
+bed <- fread("archivo.bed", header = FALSE)
+colnames(bed) <- c("chr", "start", "end")
+bed
+```
+
+------------------------------------------------------------------------
+
+# 🔗 Convertir BED a GRanges
+
+``` r
+library(GenomicRanges)
+bed_gr <- makeGRangesFromDataFrame(bed, keep.extra.columns = TRUE)
+bed_gr
+```
+
+------------------------------------------------------------------------
+
+# 📤 Exportar BED desde R
+
+``` r
+export(bed_gr, "salida.bed", format = "BED")
+```
+
+------------------------------------------------------------------------
+
+# 🧪 Ejemplo práctico completo
+
+``` r
+library(rtracklayer)
+library(GenomicRanges)
+
+# 1. Cargar BED
+a <- import("A.bed", format = "BED")
+b <- import("B.bed", format = "BED")
+
+# 2. Intersección en R (similar a bedtools intersect)
+inter <- subsetByOverlaps(a, b)
+inter
+
+# 3. Exportar resultado
+export(inter, "intersect_R.bed", format = "BED")
+```
+
+------------------------------------------------------------------------
+
+# 🧭 Integrar R + Bedtools desde R
+
+Puedes ejecutar Bedtools dentro de R:
+
+``` r
+system("bedtools intersect -a A.bed -b B.bed > inter.bed")
+```
+
+------------------------------------------------------------------------
+
+# Referencias 
+
+-   Bedtools manual [https://bedtools.readthedocs.io/](https://bedtools.readthedocs.io/?utm_source=chatgpt.com)
+-   Bioconductor: GenomicRanges, rtracklayer <https://bioconductor.org/packages/release/bioc/html/rtracklayer.html>
+-   UCSC Genome Browser formatos <https://genome.ucsc.edu/>
