@@ -163,7 +163,7 @@ ChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:
 
 Trabajar en R para bioinformática requiere código limpio, reproducible y fácil de compartir. Aquí tienes un conjunto de buenas prácticas recomendadas por expertos y comunidades como *R for Data Science*, *The Tidyverse Style Guide*, *Bioconductor* y *The Carpentries*.
 
-## 📁 1. Organiza tus proyectos con *project-based workflows*
+## 📁Organiza tus proyectos con *project-based workflows*
 
 -   Usa siempre un **RStudio Project (`.Rproj`)**.
 
@@ -187,7 +187,7 @@ Trabajar en R para bioinformática requiere código limpio, reproducible y fáci
 `/figures`
 :::
 
-## 📦 2. Carga solo los paquetes necesarios
+## 📦 Carga solo los paquetes necesarios
 
 -   Evita cargar 10 paquetes si solo usas 1 función.
 
@@ -195,7 +195,7 @@ Trabajar en R para bioinformática requiere código limpio, reproducible y fáci
 
 -   Incluye siempre una sección “Paquetes” en tus scripts `.R`.
 
-## ✏️ 3. Fórmula de oro: *estilo + consistencia*
+## ✏️ Fórmula de oro: *estilo + consistencia*
 
 Sigue guías como **tidyverse style guide**:
 
@@ -215,7 +215,7 @@ Sigue guías como **tidyverse style guide**:
 `<- df %>% filter(House == "Ravenclaw")`
 :::
 
-## 🧱 4. Modulariza tu código
+## 🧱 Modulariza tu código
 
 -   Divide análisis largos en **funciones** y **scripts separados**.
 
@@ -226,7 +226,7 @@ Sigue guías como **tidyverse style guide**:
 Esto evita repetir código y hace tus análisis más reproducibles.
 
 ## 
-🔄 5. Haz tu código *pipeline-friendly*
+🔄 Haz tu código *pipeline-friendly*
 
 Prefiere el estilo tidyverse:
 
@@ -238,7 +238,7 @@ Prefiere el estilo tidyverse:
 
 En lugar de 10 líneas de transformaciones anidadas ilegibles.
 
-## 🧪 6. Valida tus datos antes de analizarlos
+## 🧪 Valida tus datos antes de analizarlos
 
 Incluye checks preventivos:
 
@@ -250,7 +250,7 @@ r
 
 Esto evita errores sorpresivos al final del análisis.
 
-## 🌱 7. Haz que tus gráficos sean reproducibles
+## 🌱 Haz que tus gráficos sean reproducibles
 
 Incluye:
 
@@ -270,7 +270,7 @@ r
 `ggsave("figures/house_plot.png", width = 6, height = 4, dpi = 300)`
 :::
 
-## 📚 8. Documenta tus scripts
+## 📚Documenta tus scripts
 
 Al inicio de cada archivo `.R` incluye:
 
@@ -280,7 +280,7 @@ r
 `# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse`
 :::
 
-## 🧬 9. Usa herramientas de análisis reproducible
+## 🧬 Usa herramientas de análisis reproducible
 
 Para proyectos grandes:
 
@@ -292,7 +292,7 @@ Para proyectos grandes:
 
 -   **Bioconductor** para análisis genómicos estandarizados
 
-## 🧼 10. Limpia tu entorno (pero no demasiado)
+## 🧼Limpia tu entorno (pero no demasiado)
 
 -   Evita usar `rm(list = ls())` a menos que sea estrictamente necesario.
 
