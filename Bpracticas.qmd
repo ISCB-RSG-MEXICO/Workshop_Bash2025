@@ -134,7 +134,7 @@ Estas medidas fortalecen la confianza en los resultados y evitan problemas grave
 
 -   Después que funcione *bien*.
 
--   Optimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.
+-   Optimiza el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.
 
 ## 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?
 
