@@ -320,12 +320,6 @@ ChatGPT puede mejorar tus análisis en R de forma ética y eficiente:
 
 > En pocas palabras: **ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática**, pero siempre con criterio científico tuyo 💛.
 
-::: callout-note
-## Ejemplo de como Evelia Coss realiza sus documentos 💜
-
-Aqui les dejamos el script que le da a sus alumnos [VisualizacionDatos.R](https://github.com/EveliaCoss/RNAseq_classFEB2024/blob/main/Practica_Dia3/scripts/VisualizacionDatos.R) del curso de [Análisis de datos de RNA-Seq](https://github.com/EveliaCoss/RNAseq_classFEB2024).
-:::
-
 ## Referencias
 
 -   Wilson, et al. 2014. [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745). PLOS Biology
