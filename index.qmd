@@ -4,118 +4,165 @@
 
 # Información general {.unnumbered}
 
--   ::: {.panel-tabset group="globalInfo"}
-    ### Sobre el curso
+::: {.panel-tabset group="globalInfo"}
 
-    Fuente del curso
+### Sobre el curso
 
-    -   **Fechas:** 27 y 28 de noviembre
-    -   **Duración del curso:** 15 horas
-    -   **Horario:** 8:00 am - 3:30 pm
+Fuente del curso
 
-    ![](figures/flyer.jpg){width="570"}
+- **Fechas:** 27 y 28 de noviembre
+- **Duración del curso:** 15 horas
+- **Horario:** 8:00 am - 3:30 pm
 
-    #### **Instructores**
+![](figures/flyer.jpg){width="570"}
 
-    -   **Mayela Fosado-Mendoza** - Tesista de licenciatura, UAQ-UNAM,
-    -   **Mariana Devon** - Estudiante de maestría, UAM.
-    -   **Emilio Ortiz-Avila** - Tesista de licenciatura, UAQ-UNAM.
+#### **Instructores**
 
-    Ayudantes:
+- **Mayela Fosado-Mendoza** - Tesista de licenciatura, UAQ-UNAM,
+- **Mariana Devon** - Estudiante de maestría, UAM.
+- **Emilio Ortiz-Avila** - Tesista de licenciatura, UAQ-UNAM.
 
-    -   **Aaron Espinosa Jaime -** Estudiante de maestría, Cinvestav-LANGEBIO.
-    -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
-    -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
-    -   **Johanna Castelán** - Estudiante de maestría, UPAEP.
-    -   **Daniel Chávez** - Profesor invitado, UAGro.
-    -   **Anthony Mederos** - Estudiante de posgrado,UAQ.
+Ayudantes:
 
-    Organizadores del curso:
+- **Aaron Espinosa Jaime** – Estudiante de maestría, Cinvestav-LANGEBIO.
+- **Camilo Pérez** – Estudiante de doctorado, Cinvestav-LANGEBIO.
+- **Andrés Arredondo** – Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
+- **Johanna Castelán** – Estudiante de maestría, UPAEP.
+- **Daniel Chávez** – Profesor invitado, UAGro.
+- **Anthony Mederos** – Estudiante de posgrado, UAQ.
 
-    -   **Abel Lovaco Flores -** Estudiante de maestría, Cinvestav-Irapuato.
-    -   **Evelia Lorena Coss-Navarrete** - PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
+Organizadores del curso:
 
-    Para conocer más sobre nosotros, puedes visitar la [presentación del equipo.](https://www.canva.com/design/DAG5riUrw2o/HI00GY0PqIWyyvfy4pUciw/edit?utm_content=DAG5riUrw2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- **Abel Lovaco Flores** – Estudiante de maestría, Cinvestav-Irapuato.
+- **Evelia Lorena Coss-Navarrete** – PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
 
-    #### **Resumen**
+Para conocer más sobre nosotros, puedes visitar la [presentación del equipo.](https://www.canva.com/design/DAG5riUrw2o/HI00GY0PqIWyyvfy4pUciw/edit?utm_content=DAG5riUrw2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-    Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.
+#### **Resumen**
 
-    El curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.
+Este curso ofrece una introducción práctica al uso de herramientas computacionales esenciales en bioinformática. Las y los participantes aprenderán a interactuar con la computadora mediante la línea de comandos Bash para explorar, organizar y manipular archivos, así como a utilizar R a través de la interfaz de RStudio para realizar análisis básicos, generar gráficas simples y estructurar proyectos reproducibles.
 
-    #### **Objetivos**
+El curso está diseñado para construir, desde cero y paso a paso, las habilidades fundamentales necesarias en programación aplicada a la biología. Se abordarán temas como la gestión y filtrado de archivos en Bash, la automatización de tareas simples y la creación de scripts y visualizaciones en R como parte del análisis científico.
 
-    Al finalizar este curso, las y los participantes serán capaces de:
+#### **Objetivos**
 
-    **En Bash:**
+Al finalizar este curso, las y los participantes serán capaces de:
 
-    -   Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
-    -   Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.
-    -   Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos
-    -   Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
+**En Bash:**
 
-    **En R:**
+- Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
+- Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.
+- Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos.
+- Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
 
-    -   Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
+**En R:**
 
-    -   Usar R a través de la interfaz de RStudio para análisis sencillos.
+- Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
+- Usar R a través de la interfaz de RStudio para análisis sencillos.
+- Crear variables, usar operadores y ejecutar funciones básicas en R.
+- Administrar paquetes e iniciar proyectos estructurados en RStudio.
+- Generar scripts simples y mantener un flujo de trabajo reproducible.
+- Crear gráficas básicas en R para visualizar datos de manera rápida y clara.
 
-    -   Crear variables, usar operadores y ejecutar funciones básicas en R.
+## Citar y reutilizar el material del curso
 
-    -   Administrar paquetes e iniciar proyectos estructurados en RStudio.
+El contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](#0).
 
-    -   Generar scripts simples y mantener un flujo de trabajo reproducible.
+### Requisitos previos
 
-    -   Crear gráficas básicas en R para visualizar datos de manera rápida y clara.
+No se requiere experiencia previa en programación ni en el uso de Linux.
 
-    ## Citar y reutilizar el material del curso
+Conocimientos básicos sobre el manejo de archivos en computadora.
 
-    El contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](#0).
+Durante el curso, todas las actividades se realizarán en un servidor proporcionado por el equipo docente. Antes de comenzar, te recomendamos revisar el **tutorial introductorio** disponible aquí:  
+[Tutorial de acceso a Better Lab](https://www.canva.com/design/DAG5rDzKmuM/w_v8XwossbDWRGt5IKg6ZQ/edit?utm_content=DAG5rDzKmuM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-    ### Requisitos previos
+Gracias a este servidor, **no es necesario instalar Linux, R ni Bash** en tu computadora.
 
-    No se requiere experiencia previa en programación ni en el uso de Linux.
+Si deseas conservar y trabajar posteriormente con los archivos generados en el curso, es recomendable tener instalado en tu equipo:
 
-    Conocimientos básicos sobre el manejo de archivos en computadora.
+- Entorno de Linux (Bash)
+- R y Rstudio
 
-    Durante el curso, todas las actividades se realizarán en un servidor proporcionado por el equipo docente. Antes de comenzar, te recomendamos revisar el **tutorial introductorio** disponible aquí: [Tutorial de acceso a Better Lab](https://www.canva.com/design/DAG5rDzKmuM/w_v8XwossbDWRGt5IKg6ZQ/edit?utm_content=DAG5rDzKmuM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+Las instrucciones para instalarlos están en:
 
-    Gracias a este servidor, **no es necesario instalar Linux, R ni Bash** en tu computadora.
+- [Capítulo 14: Instalar Bash](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html)
+- [Capítulo 15: Instalar R y RStudio](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html)
 
-    Si deseas conservar y trabajar posteriormente con los archivos generados en el curso, es recomendable tener instalado en tu equipo:
-
-    -   Entorno de Linux (Bash)
-
-    -   R y Rstudio
-
-    Las instrucciones para instalarlos las puedes encontrar en el [capítulo 14](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html) para instalación de Bash y [capítulo 15](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html) para la instalación de R y Rstudio.
-
-    ### Agenda {#agenda}
-
-    | Tema                                           | Tiempo |
-    |------------------------------------------------|--------|
-    | [**27 de noviembre**]{style="color:#59B4C3"}   |        |
-    | **Sección 1 - (08:00 - 13:30 h)**              |        |
-    | \- Creación de una cuenta en GitHub            | 5 min  |
-    | \- Introducción a Git / GitHub                 | 15 min |
-    | \- **Actividad 1**: Sincronización y llaves    | 15 min |
-    | ☕ *Coffee break (10 min) - (12:00-12:10)*     | 10 min |
-    | **Sección 2 - (12:10-13:00 h)**                |        |
-    | \- Comandos usados en Github y RStudio         | 25 min |
-    | \- **Actividad 2:** Página de inicio en GitHub | 15 min |
-    | **Sección 3 - (11:30 - 13:30 h) (noviembre)**  |        |
-    | \- Buenas prácticas en R                       | 30 min |
-    | \- **Actividad 3:** Página web en GitHub       | 1:30 h |
-    | [**28 de noviembre**]{style="color:#B33791"}   |        |
-    | **Sección 1 - (08:00 - 13:30 h)**              |        |
-    | \- Creación de una cuenta en GitHub            | 5 min  |
-    | \- Introducción a Git / GitHub                 | 15 min |
-    | \- **Actividad 1**: Sincronización y llaves    | 15 min |
-    | ☕ *Coffee break (10 min) - (12:00-12:10)*     | 10 min |
-    | **Sección 2 - (12:10-13:00 h)**                |        |
-    | \- Comandos usados en Github y RStudio         | 25 min |
-    | \- **Actividad 2:** Página de inicio en GitHub | 15 min |
-    | **Sección 3 - (11:30 - 13:30 h) (noviembre)**  |        |
-    | \- Buenas prácticas en R                       | 30 min |
-    | \- **Actividad 3:** Página web en GitHub       | 1:30 h |
-    :::
+### Agenda {#agenda}
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Tema                                                            | Horario            | Tiempo         |           |
++=================================================================+====================+================+===========+
+| [**27 de noviembre**]{style="color:#59B4C3"}                    |                    |                |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 1 - (8:00 - 9:45 h)**]{style="color:#FF937E"}        | **8:00 - 09:45 h** | **1 h 45 min** |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Presentación                                                    | 8:00 h             | 30 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Buenas prácticas en bioinformática                              | 8:30 h             | 30 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Conceptos Unix y GNU/Linux                                      | 9:00 h             | 15 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Mis primero pasos en Bash                                       | 9:15 h             | 30 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                      | **9:45 h**         | **15 min**     |           |
+|                                                                 |                    |                |           |
+| Realizar [pre-encuesta](https://forms.gle/febD2A6o4zj4uLzu9)    |                    |                |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 2 - (10:00 - 12:15 h)**]{style="color:#8CA9FF"}      | **10:00 h**        | **2 h 15 min** |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Explorando texto y flujo de datos en Bash                       | 10:00 h            | 1 h            |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                      | **11:00 h**        | **15 min**     |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Exploración y manipulación de archivos fasta                    | 11:15 h            | 1 h            |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Comida 🍴**                                                   | **12: 15 h**       | **1 h**        |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 3 (13:15 - 15:30 h)**]{style="color:#016B61"}        | **13:15 h**        | **2 h 15 min** |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Bed tools - Preparación de un archivo .bed                      | 13:15 h            | 1 h            |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                      | **14:15 h**        | **10 min**     |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Bed tools - Análisis de regiones genómicas                      | 14:25 h            | 45 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Cierre**                                                      | **15:10 h**        | **20 min**     |           |
+|                                                                 |                    |                |           |
+| Realizar [inter-encuesta](https://forms.gle/cfBcd5tzUBqcMyQt9)  |                    |                |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| [**28 de noviembre**]{style="color:#B33791"}                    |                    |                |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 1 - (8:00 - 9:45 h)**]{style="color:#FFA4A4"}        | **8:00 h**         | **1 h 45 min** |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Inicio**                                                      | 8:00 h             | 30 min         |           |
+|                                                                 |                    |                |           |
+| Revisión: responder preguntas de la última encuesta             |                    |                |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Conceptos de R                                                  | 8:45 h             | 1 h            |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                      | **9:45 h**         | **15 min**     |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 2 - (10:00 - 11:00 h)**]{style="color:#5A9690"}      | **10:00 h**        | **2 h 15 min** |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Mis primeros pasos en R                                         | 10:00 h            | 1 h            |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                      | 11:00 h            | 15 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Introducción al manejo de datos en R                            | 11:15 h            | 1 h            |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| **Comida 🍴**                                                   | **12:15 h**        | **1 h**        |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 3 (13:15 - 15:30 h)**]{style="color:#9BCF53"}        | **13:15 h**        | **2 h 15 min** |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Manipulación y limpieza de datos                                | 13:15 h            | 30 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Visualización y Análisis de datos                               | 13:45 h            | 50 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Bed Tools R                                                     | 14:35 h            | 45 min         |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+| Clausura                                                        | 15:10 h            | 20 min         |           |
+|                                                                 |                    |                |           |
+| Realizar [última encuesta](https://forms.gle/zvZurTpKxSXYBwh2A) |                    |                |           |
++-----------------------------------------------------------------+--------------------+----------------+-----------+
+:::
