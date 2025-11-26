@@ -23,7 +23,7 @@
 
     Ayudantes:
 
-    -   **Aaron Espinosa Jaime -** Estudiante de maestría, Cinvestav-LANGEBIO.
+    -   **Aaron Espinosa Jaime -** Estudiante de doctorado, Cinvestav-LANGEBIO.
     -   **Camilo Pérez** - Estudiante de doctorado, Cinvestav-LANGEBIO.
     -   **Andrés Arredondo** - Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
     -   **Johanna Castelán** - Estudiante de maestría, UPAEP.
@@ -32,8 +32,10 @@
 
     Organizadores del curso:
 
-    -   **Abel Lovaco Flores -** Estudiante de maestría, Cinvestav-Irapuato.
-    -   **Evelia Lorena Coss-Navarrete** - PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
+    -   **Dr. Daniel Ochoa Martínez -** COLEGIO DE POSTGRADUADOS. Campus Montecillo.
+    -   **Dr. Candelario Ortega Acosta -** COLEGIO DE POSTGRADUADOS. Campus Montecillo.
+    -   **M.C. Rodrigo Muñoz Javier -** COLEGIO DE POSTGRADUADOS. Campus Montecillo.
+    -   **Jose Abel Lovaco Flores -** RSG-Mèxico.
 
     Para conocer más sobre nosotros, puedes visitar la [presentación del equipo.](https://www.canva.com/design/DAG5riUrw2o/HI00GY0PqIWyyvfy4pUciw/edit?utm_content=DAG5riUrw2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
