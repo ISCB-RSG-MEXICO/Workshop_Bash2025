@@ -118,13 +118,13 @@ Estas medidas fortalecen la confianza en los resultados y evitan problemas grave
     ::: {.callout-note style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }" icon="false"}
     ~bash~
 
-    `if [ ! -s "$file" ]; then echo "Error: archivo vacío o no existe" >&2 exit 1 fi`
+    `#validación de un archivo vacio if [ ! -s "$file" ]; then  #Si el archivo no existe o tiene tamaño 0, entra al thenecho "Error: archivo vacío o no existe" >&2  #imprime el mensaje. y >&2 envía el mensaje al stderr (salida de error)exit 1  #1 es un código de error (0 = éxito, cualquier otro número = fallo).fi  #Es el cierre del if`
 
     `r`
 
-    `if (!file.exists(fasta_path)) {    stop("El archivo FASTA no existe: ", fasta_path) }`
+    `if (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop("El archivo FASTA no existe: ", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional`
 
-    `seqs <- read.fasta(fasta_path) if (length(seqs) == 0) { stop("El archivo FASTA está vacío.") }`
+    `seqs <- read.fasta(fasta_path)` `# lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional`
     :::
 
 ### 
