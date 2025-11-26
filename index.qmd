@@ -5,36 +5,36 @@
 # Información general {.unnumbered}
 
 ::: {.panel-tabset group="globalInfo"}
+
 ### Sobre el curso
 
--   **Fechas:** 27 y 28 de noviembre
--   **Duración del curso:** 15 horas
--   **Horario:** 8:00 am - 3:30 pm
+Fuente del curso
+
+- **Fechas:** 27 y 28 de noviembre
+- **Duración del curso:** 15 horas
+- **Horario:** 8:00 am - 3:30 pm
 
 ![](figures/flyer.jpg){width="570"}
 
 #### **Instructores**
 
--   **Mayela Fosado-Mendoza** - Tesista de licenciatura, UAQ-UNAM,
--   **Mariana Devon** - Estudiante de maestría, UAM.
--   **Emilio Ortiz-Avila** - Tesista de licenciatura, UAQ-UNAM.
+- **Mayela Fosado-Mendoza** - Tesista de licenciatura, UAQ-UNAM,
+- **Mariana Devon** - Estudiante de maestría, UAM.
+- **Emilio Ortiz-Avila** - Tesista de licenciatura, UAQ-UNAM.
 
 Ayudantes:
 
--   **Aaron Espinosa Jaime** -- Estudiante de maestría, Cinvestav-LANGEBIO.
--   **Camilo Pérez** -- Estudiante de doctorado, Cinvestav-LANGEBIO.
--   **Andrés Arredondo** -- Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
--   **Johanna Castelán** -- Estudiante de maestría, UPAEP.
--   **Daniel Chávez** -- Profesor invitado, UAGro.
--   **Anthony Mederos** -- Estudiante de posgrado, UAQ.
+- **Aaron Espinosa Jaime** – Estudiante de maestría, Cinvestav-LANGEBIO.
+- **Camilo Pérez** – Estudiante de doctorado, Cinvestav-LANGEBIO.
+- **Andrés Arredondo** – Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
+- **Johanna Castelán** – Estudiante de maestría, UPAEP.
+- **Daniel Chávez** – Profesor invitado, UAGro.
+- **Anthony Mederos** – Estudiante de posgrado, UAQ.
 
 Organizadores del curso:
 
--   **Abel Lovaco Flores** -- Estudiante de maestría, Cinvestav-Irapuato.
--   **Evelia Lorena Coss-Navarrete** -- PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
--   **Dr. Daniel Ochoa Martínez -** COLPOS.
--   **Dr. Candelario Ortega Acosta -** COLPOS.
--   **M.C. Rodrigo Muñoz Javier** - COLPOS.
+- **Abel Lovaco Flores** – Estudiante de maestría, Cinvestav-Irapuato.
+- **Evelia Lorena Coss-Navarrete** – PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
 
 Para conocer más sobre nosotros, puedes visitar la [presentación del equipo.](https://www.canva.com/design/DAG5riUrw2o/HI00GY0PqIWyyvfy4pUciw/edit?utm_content=DAG5riUrw2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
@@ -50,19 +50,19 @@ Al finalizar este curso, las y los participantes serán capaces de:
 
 **En Bash:**
 
--   Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
--   Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.
--   Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos.
--   Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
+- Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
+- Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.
+- Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos.
+- Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
 
 **En R:**
 
--   Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
--   Usar R a través de la interfaz de RStudio para análisis sencillos.
--   Crear variables, usar operadores y ejecutar funciones básicas en R.
--   Administrar paquetes e iniciar proyectos estructurados en RStudio.
--   Generar scripts simples y mantener un flujo de trabajo reproducible.
--   Crear gráficas básicas en R para visualizar datos de manera rápida y clara.
+- Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
+- Usar R a través de la interfaz de RStudio para análisis sencillos.
+- Crear variables, usar operadores y ejecutar funciones básicas en R.
+- Administrar paquetes e iniciar proyectos estructurados en RStudio.
+- Generar scripts simples y mantener un flujo de trabajo reproducible.
+- Crear gráficas básicas en R para visualizar datos de manera rápida y clara.
 
 ## Citar y reutilizar el material del curso
 
@@ -74,23 +74,22 @@ No se requiere experiencia previa en programación ni en el uso de Linux.
 
 Conocimientos básicos sobre el manejo de archivos en computadora.
 
-Durante el curso, todas las actividades se realizarán en un servidor proporcionado por el equipo docente. Antes de comenzar, te recomendamos revisar el **tutorial introductorio** disponible aquí:\
+Durante el curso, todas las actividades se realizarán en un servidor proporcionado por el equipo docente. Antes de comenzar, te recomendamos revisar el **tutorial introductorio** disponible aquí:  
 [Tutorial de acceso a Better Lab](https://www.canva.com/design/DAG5rDzKmuM/w_v8XwossbDWRGt5IKg6ZQ/edit?utm_content=DAG5rDzKmuM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 Gracias a este servidor, **no es necesario instalar Linux, R ni Bash** en tu computadora.
 
 Si deseas conservar y trabajar posteriormente con los archivos generados en el curso, es recomendable tener instalado en tu equipo:
 
--   Entorno de Linux (Bash)
--   R y Rstudio
+- Entorno de Linux (Bash)
+- R y Rstudio
 
 Las instrucciones para instalarlos están en:
 
--   [Capítulo 14: Instalar Bash](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html)
--   [Capítulo 15: Instalar R y RStudio](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html)
+- [Capítulo 14: Instalar Bash](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html)
+- [Capítulo 15: Instalar R y RStudio](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html)
 
-### Agenda
-
+### Agenda {#agenda}
 +-----------------------------------------------------------------+--------------------+----------------+-----------+
 | Tema                                                            | Horario            | Tiempo         |           |
 +=================================================================+====================+================+===========+
