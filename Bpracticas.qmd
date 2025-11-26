@@ -88,12 +88,12 @@ Estas medidas fortalecen la confianza en los resultados y evitan problemas grave
         -   *Información de salida (Outpus)*: Graficas, figuras, tablas, etc.
     :::
 
-![](https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg){fig-align="center"}
+![](https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg){fig-align="center" width="430"}
 
 ## ⭐ Puntos clave para buenas prácticas en bioinformática
 
 ### 
-✏️ 1. Escribe programas para personas, no para máquinas
+ 1. Escribe programas para personas, no para máquinas ✏️
 
 -   Documenta qué hace tu código y por qué.
 
@@ -104,7 +104,7 @@ Estas medidas fortalecen la confianza en los resultados y evitan problemas grave
 Divide tu código en **funciones pequeñas de un solo propósito**.
 
 ### 
-➰ 3. No repitas código
+3. No repitas código
 
 -   Crea pasos reproducibles o que se repitan por si solos (Usa funciones, loops y scripts reproducibles).
 
