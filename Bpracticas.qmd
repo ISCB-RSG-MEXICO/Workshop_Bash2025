@@ -57,9 +57,7 @@ Estas medidas fortalecen la confianza en los resultados y evitan problemas grave
 
 5.  Verificación / Realizar pruebas
 
-6.  Depuración / Detectar los errores y corregirlos
-
-> Programacion defensiva
+6.  Depuración / Detectar los errores y corregirlos (Programacion defensiva)
 
 7.  Documentación
 :::
