@@ -1,4 +1,4 @@
-# Introducción a Bedtools en R
+# Introducción a BEDtools en R 🧬
 
 Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos. \
 Incluye:
