@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 1&nbsp; Buenas prácticas en bioinformática</title>
+<title>1&nbsp; Buenas prácticas en bioinformática – Workshop Bash &amp; R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,24 +33,33 @@ ul.task-list li input[type="checkbox"] {
 <link href="./intro_bash.html" rel="next">
 <link href="./index.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-48ea7e3db632d341d5086b92b089557c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-782840226bd1d2b7d68ec24e73d3f23a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-48ea7e3db632d341d5086b92b089557c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -59,26 +68,190 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bpracticas.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bpracticas.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,30 +261,30 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Workshop Bash &amp; R</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/ISCB-RSG-MEXICO/Workshop_template" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -221,24 +394,47 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#materiales-informativos" id="toc-materiales-informativos" class="nav-link active" data-scroll-target="#materiales-informativos"><span class="header-section-number">1.1</span> Materiales informativos</a></li>
-  <li><a href="#un-algoritmo-nos-permite-resolver-un-problema" id="toc-un-algoritmo-nos-permite-resolver-un-problema" class="nav-link" data-scroll-target="#un-algoritmo-nos-permite-resolver-un-problema"><span class="header-section-number">1.2</span> <strong>Un algoritmo nos permite resolver un problema ⭐</strong></a></li>
-  <li><a href="#para-escribir-un-buen-software-necesitas" id="toc-para-escribir-un-buen-software-necesitas" class="nav-link" data-scroll-target="#para-escribir-un-buen-software-necesitas"><span class="header-section-number">1.3</span> <strong>Para escribir un buen software necesitas:</strong></a></li>
-  <li><a href="#paso-7-documentación" id="toc-paso-7-documentación" class="nav-link" data-scroll-target="#paso-7-documentación"><span class="header-section-number">1.4</span> <strong>Paso 7: Documentación</strong></a></li>
-  <li><a href="#puntos-claves-para-buenas-prácticas-en-bioinfo" id="toc-puntos-claves-para-buenas-prácticas-en-bioinfo" class="nav-link" data-scroll-target="#puntos-claves-para-buenas-prácticas-en-bioinfo"><span class="header-section-number">1.5</span> Puntos claves para buenas prácticas en bioinfo ⭐</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">1.6</span> Referencias</a></li>
+  <li><a href="#qué-es-un-algoritmo" id="toc-qué-es-un-algoritmo" class="nav-link active" data-scroll-target="#qué-es-un-algoritmo"><span class="header-section-number">1.1</span> ⭐ ¿Qué es un algoritmo?</a></li>
+  <li><a href="#qué-necesitamos-para-escribir-un-buen-software" id="toc-qué-necesitamos-para-escribir-un-buen-software" class="nav-link" data-scroll-target="#qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">1.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</a></li>
+  <li><a href="#ética-y-responsabilidad-en-bioinformática" id="toc-ética-y-responsabilidad-en-bioinformática" class="nav-link" data-scroll-target="#ética-y-responsabilidad-en-bioinformática"><span class="header-section-number">1.3</span> 🔐 Ética y responsabilidad en bioinformática</a></li>
+  <li><a href="#pasos-para-escribir-un-buen-software" id="toc-pasos-para-escribir-un-buen-software" class="nav-link" data-scroll-target="#pasos-para-escribir-un-buen-software"><span class="header-section-number">1.4</span> 🧪 Pasos para escribir un buen software</a></li>
+  <li><a href="#puntos-clave-para-buenas-prácticas-en-bioinformática" id="toc-puntos-clave-para-buenas-prácticas-en-bioinformática" class="nav-link" data-scroll-target="#puntos-clave-para-buenas-prácticas-en-bioinformática"><span class="header-section-number">1.5</span> ⭐ Puntos clave para buenas prácticas en bioinformática</a>
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">1.5.1</span> </a></li>
+  <li><a href="#usa-modularidad" id="toc-usa-modularidad" class="nav-link" data-scroll-target="#usa-modularidad"><span class="header-section-number">1.5.2</span> 🧱 2. Usa modularidad</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">1.5.3</span> </a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"><span class="header-section-number">1.5.4</span> </a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><span class="header-section-number">1.5.5</span> </a></li>
+  </ul></li>
+  <li><a href="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" id="toc-cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="nav-link" data-scroll-target="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">1.6</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</a></li>
+  <li><a href="#buenas-prácticas-en-r" id="toc-buenas-prácticas-en-r" class="nav-link" data-scroll-target="#buenas-prácticas-en-r"><span class="header-section-number">2</span> 🦾 Buenas prácticas en <strong>R</strong></a>
+  <ul>
+  <li><a href="#organiza-tus-proyectos-con-project-based-workflows" id="toc-organiza-tus-proyectos-con-project-based-workflows" class="nav-link" data-scroll-target="#organiza-tus-proyectos-con-project-based-workflows"><span class="header-section-number">2.1</span> 📁 1. Organiza tus proyectos con <em>project-based workflows</em></a></li>
+  <li><a href="#carga-solo-los-paquetes-necesarios" id="toc-carga-solo-los-paquetes-necesarios" class="nav-link" data-scroll-target="#carga-solo-los-paquetes-necesarios"><span class="header-section-number">2.2</span> 📦 2. Carga solo los paquetes necesarios</a></li>
+  <li><a href="#fórmula-de-oro-estilo-consistencia" id="toc-fórmula-de-oro-estilo-consistencia" class="nav-link" data-scroll-target="#fórmula-de-oro-estilo-consistencia"><span class="header-section-number">2.3</span> ✏️ 3. Fórmula de oro: <em>estilo + consistencia</em></a></li>
+  <li><a href="#modulariza-tu-código" id="toc-modulariza-tu-código" class="nav-link" data-scroll-target="#modulariza-tu-código"><span class="header-section-number">2.4</span> 🧱 4. Modulariza tu código</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"><span class="header-section-number">2.5</span> </a></li>
+  <li><a href="#valida-tus-datos-antes-de-analizarlos" id="toc-valida-tus-datos-antes-de-analizarlos" class="nav-link" data-scroll-target="#valida-tus-datos-antes-de-analizarlos"><span class="header-section-number">2.6</span> 🧪 6. Valida tus datos antes de analizarlos</a></li>
+  <li><a href="#haz-que-tus-gráficos-sean-reproducibles" id="toc-haz-que-tus-gráficos-sean-reproducibles" class="nav-link" data-scroll-target="#haz-que-tus-gráficos-sean-reproducibles"><span class="header-section-number">2.7</span> 🌱 7. Haz que tus gráficos sean reproducibles</a></li>
+  <li><a href="#documenta-tus-scripts" id="toc-documenta-tus-scripts" class="nav-link" data-scroll-target="#documenta-tus-scripts"><span class="header-section-number">2.8</span> 📚 8. Documenta tus scripts</a></li>
+  <li><a href="#usa-herramientas-de-análisis-reproducible" id="toc-usa-herramientas-de-análisis-reproducible" class="nav-link" data-scroll-target="#usa-herramientas-de-análisis-reproducible"><span class="header-section-number">2.9</span> 🧬 9. Usa herramientas de análisis reproducible</a></li>
+  <li><a href="#limpia-tu-entorno-pero-no-demasiado" id="toc-limpia-tu-entorno-pero-no-demasiado" class="nav-link" data-scroll-target="#limpia-tu-entorno-pero-no-demasiado"><span class="header-section-number">2.10</span> 🧼 10. Limpia tu entorno (pero no demasiado)</a></li>
+  <li><a href="#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" id="toc-cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" class="nav-link" data-scroll-target="#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r"><span class="header-section-number">2.11</span> 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">2.12</span> Referencias</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -255,9 +451,50 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<p>Notas personales recabadas a partir de los tutoriales y ejemplos 😊. Espero que les funcione 💜</p>
+
+<section id="qué-es-un-algoritmo" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="qué-es-un-algoritmo"><span class="header-section-number">1.1</span> ⭐ ¿Qué es un algoritmo?</h2>
+<p>Un <strong>algoritmo</strong> es un método para resolver un problema mediante una serie de pasos <strong>definidos, precisos</strong> y <strong>finitos</strong>.</p>
+<ul>
+<li><strong>Definido</strong>: si se sigue dos veces, se obtiene el mismo resultado (Es reproducible).</li>
+<li><strong>Preciso</strong>: implica el orden de realización de cada uno de los pasos.</li>
+<li><strong>Finito</strong>: Tiene un numero determinado de pasos, implica que tiene un fin.</li>
+</ul>
+<p>Un algoritmo podemos definirlo como un <strong>programa o software</strong>.</p>
+</section>
+<section id="qué-necesitamos-para-escribir-un-buen-software" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">1.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</h2>
+<blockquote class="blockquote">
+<p>Crear software confiable implica aplicar principios de ingeniería:</p>
+<ul>
+<li><p><strong>Código mantenible (maintainable code)</strong></p></li>
+<li><p><strong>Control de versiones</strong> (version control, ej. Git)</p></li>
+<li><p><strong>Rastreadores de problemas</strong> (issue trackers)</p></li>
+<li><p><strong>Revisiones de código</strong> (code reviews)</p></li>
+<li><p><strong>Pruebas unitarias</strong> (unit testing)</p></li>
+<li><p><strong>Automatización de tareas</strong> (task automation)</p></li>
+</ul>
+<p>Basado en <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745"><em>Wilson, et al.&nbsp;2014. PLOS Biology</em></a></p>
+</blockquote>
+</section>
+<section id="ética-y-responsabilidad-en-bioinformática" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="ética-y-responsabilidad-en-bioinformática"><span class="header-section-number">1.3</span> 🔐 Ética y responsabilidad en bioinformática</h2>
+<p>En bioinformática es crucial garantizar el <strong>uso ético y responsable</strong> de datos, especialmente cuando incluyen <strong>genomas humanos</strong> o información sensible.<br>
+</p>
+<p>Esto implica:</p>
+<ul>
+<li><p>Proteger la privacidad del individuo.</p></li>
+<li><p>Respetar las regulaciones y marcos legales vigentes.</p></li>
+<li><p>Mantener prácticas transparentes y reproducibles.</p></li>
+<li><p>Evitar errores que comprometan la integridad del análisis.</p></li>
+</ul>
+<p>Estas medidas fortalecen la confianza en los resultados y evitan problemas graves como <strong>retractaciones científicas</strong>.</p>
+</section>
+<section id="pasos-para-escribir-un-buen-software" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="pasos-para-escribir-un-buen-software"><span class="header-section-number">1.4</span> 🧪 Pasos para escribir un buen software</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -265,57 +502,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-title-container flex-fill">
 Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://eveliacoss.github.io/LCG2025_S1_Buenaspracticas_presentacion/Dia1_BuenasPracticas.html#1">Presentación completa</a> empleando Rmarkdown</p>
-</div>
-</div>
-<section id="materiales-informativos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="materiales-informativos"><span class="header-section-number">1.1</span> Materiales informativos</h2>
-<ul>
-<li><a href="https://comunidadbioinfo.github.io/cdsb2023/creaci%C3%B3n-de-vi%C3%B1etas.html">Curso de Joselyn Cristina Chávez Fuentes</a></li>
-<li>Me ayudo mucho este <a href="https://www.youtube.com/watch?v=7ZgZ6qUKZvE&amp;ab_channel=DaniMedi">Video</a></li>
-<li><a href="https://comunidadbioinfo.github.io/cdsb2023/documentaci%C3%B3n-de-funciones.html">Documentación de funciones de Andrés Arredondo Cruz</a></li>
-</ul>
-<p>💪 Estuve muy intensa viendo su codigo. Muchas gracias por tenerlos publico.</p>
-</section>
-<section id="un-algoritmo-nos-permite-resolver-un-problema" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="un-algoritmo-nos-permite-resolver-un-problema"><span class="header-section-number">1.2</span> <strong>Un algoritmo nos permite resolver un problema ⭐</strong></h2>
-<p>Un <strong>algoritmo</strong> es un método para resolver un problema mediante una serie de pasos <strong>definidos, precisos</strong> y <strong>finitos</strong>.</p>
-<ul>
-<li><strong>Definido</strong>: si se sigue dos veces, se obtiene el mismo resultado. Es reproducible.</li>
-<li><strong>Preciso</strong>: implica el orden de realización de cada uno de los pasos.</li>
-<li><strong>Finito</strong>: Tiene un numero determinado de pasos, implica que tiene un fin.</li>
-</ul>
-<blockquote class="blockquote">
-<p>Un algoritmo podemos definirlo como un <strong>programa o software</strong>.</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://allisonhorst.com/allison-horst"><img src="reproducible/figures/allison-horst-code-kitchen.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-</section>
-<section id="para-escribir-un-buen-software-necesitas" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="para-escribir-un-buen-software-necesitas"><span class="header-section-number">1.3</span> <strong>Para escribir un buen software necesitas:</strong></h2>
-<blockquote class="blockquote">
-<p>Escribir <strong>código mantenible (maintainable code), usar control de versiones (version control) y rastreadores de problemas (issue trackers), revisiones de código (code reviews), pruebas unitarias (unit testing) y automatización de tareas (task automation)</strong>.</p>
-<p><a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Wilson, <em>et al.</em> 2014. <em>PLOS Biology</em></a></p>
-</blockquote>
-<p>En bioinformática, es fundamental garantizar el uso <strong>ético y responsable de datos sensibles</strong>, como los genomas humanos, respetando la privacidad y los marcos legales vigentes. Al mismo tiempo, se debe fomentar la ciencia abierta <strong>mediante prácticas transparentes y reproducibles</strong>, sin comprometer la integridad de la información. Estas acciones no solo fortalecen la <strong>confianza en los resultados</strong>, sino que también previenen errores graves que podrían derivar en la <strong>retracción de artículos científicos</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://devcom.com/tech-blog/code-quality-definition-how-to-improve-code-quality/"><img src="reproducible/figures/what-code-quality-1.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pasos para escribir un buen software
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -335,24 +521,18 @@ Pasos para escribir un buen software
 </ol>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/homersapien.jpg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="paso-7-documentación" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="paso-7-documentación"><span class="header-section-number">1.4</span> <strong>Paso 7: Documentación</strong></h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<ul>
+<li><div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+🗂️ Paso 7: Documentación
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Incluye siempre:</p>
 <ul>
 <li><p><em>Título</em> (opcional)</p></li>
 <li><p><em>Autor (author)</em>: Su nombre</p></li>
@@ -368,47 +548,300 @@ Note
 </ul></li>
 </ul>
 </div>
-</div>
+</div></li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section>
-<section id="puntos-claves-para-buenas-prácticas-en-bioinfo" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="puntos-claves-para-buenas-prácticas-en-bioinfo"><span class="header-section-number">1.5</span> Puntos claves para buenas prácticas en bioinfo ⭐</h2>
-<ol type="1">
-<li><p>Escriba <strong>programas para personas, no para computadoras</strong> (Documenta qué hace y por qué). - Se coherente en la nomenclatura, indentación y otros aspectos del estilo.</p></li>
-<li><p>Modularidad: Divide los programas en <em>funciones cortas de un solo propósito.</em> 💻 📚</p></li>
-<li><p><strong>No repitas tu código</strong>. Crea pasos reproducibles o que se repitan por si solas. ➰</p></li>
-<li><p>Planifique los errores (<strong>Programacion defensiva</strong>) 🚩</p></li>
+<section id="puntos-clave-para-buenas-prácticas-en-bioinformática" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="puntos-clave-para-buenas-prácticas-en-bioinformática"><span class="header-section-number">1.5</span> ⭐ Puntos clave para buenas prácticas en bioinformática</h2>
+<section id="section" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="section"><span class="header-section-number">1.5.1</span> </h3>
+<p>✏️ 1. Escribe programas para personas, no para máquinas</p>
+<ul>
+<li><p>Documenta <strong>qué hace</strong> tu código y <strong>por qué</strong>.</p></li>
+<li><p>Mantén coherencia en nombres, indentación y estilo.</p></li>
+</ul>
+</section>
+<section id="usa-modularidad" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="usa-modularidad"><span class="header-section-number">1.5.2</span> 🧱 2. Usa modularidad</h3>
+<ul>
+<li>Divide tu código en <strong>funciones pequeñas de un solo propósito</strong>.</li>
+</ul>
+</section>
+<section id="section-1" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="section-1"><span class="header-section-number">1.5.3</span> </h3>
+<p>➰ 3. No repitas código</p>
+<ul>
+<li>Crea pasos reproducibles o que se repitan por si solos (Usa funciones, loops y scripts reproducibles).</li>
+</ul>
+</section>
+<section id="section-2" class="level3" data-number="1.5.4">
+<h3 data-number="1.5.4" class="anchored" data-anchor-id="section-2"><span class="header-section-number">1.5.4</span> </h3>
+<p>🚩 4. Planifica los errores (<strong>programación defensiva)</strong></p>
+<ul>
+<li><p>~Es&nbsp;una&nbsp;práctica&nbsp;donde&nbsp;<strong>asumes&nbsp;que&nbsp;pueden&nbsp;ocurrir&nbsp;errores</strong>&nbsp;y&nbsp;<strong>preparas&nbsp;tu&nbsp;código</strong>&nbsp;para&nbsp;detectarlos,&nbsp;avisar&nbsp;y&nbsp;manejar&nbsp;la&nbsp;situación&nbsp;sin&nbsp;que&nbsp;todo&nbsp;truene.<br>
+</p>
+<p>No&nbsp;se&nbsp;trata&nbsp;de&nbsp;ser&nbsp;pesimista:&nbsp;es&nbsp;ser&nbsp;<strong>realista</strong>.~</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><sub>bash</sub></p>
+<p><code>if [ ! -s "$file" ]; then echo "Error: archivo vacío o no existe" &gt;&amp;2 exit 1 fi</code></p>
+<p><code>r</code></p>
+<p><code>if (!file.exists(fasta_path)) {    stop("El archivo FASTA no existe: ", fasta_path) }</code></p>
+<p><code>seqs &lt;- read.fasta(fasta_path) if (length(seqs) == 0) { stop("El archivo FASTA está vacío.") }</code></p>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="section-3" class="level3" data-number="1.5.5">
+<h3 data-number="1.5.5" class="anchored" data-anchor-id="section-3"><span class="header-section-number">1.5.5</span> </h3>
+<p>⚙️ 5. Optimiza al final</p>
+<ul>
+<li><p>Primero que funcione.</p></li>
+<li><p>Después que funcione <em>bien</em>.</p></li>
 <li><p>Optimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.</p></li>
-<li><p>Colaborar - Busque siempre bibliotecas de software bien mantenidas que hagan lo que necesita. 👥</p></li>
-</ol>
+</ul>
+</section>
+</section>
+<section id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">1.6</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</h2>
+<p><sub>Aunque&nbsp;hoy&nbsp;en&nbsp;día&nbsp;existe&nbsp;cierto&nbsp;tabú&nbsp;alrededor&nbsp;del&nbsp;uso&nbsp;de&nbsp;la&nbsp;IA&nbsp;como&nbsp;ChatGPT,&nbsp;es&nbsp;una&nbsp;herramienta&nbsp;que&nbsp;realmente&nbsp;puede&nbsp;facilitarnos&nbsp;la&nbsp;vida.&nbsp;No&nbsp;reemplaza&nbsp;nuestro&nbsp;criterio,&nbsp;solo&nbsp;lo&nbsp;complementa.&nbsp;¡Úsala&nbsp;sin&nbsp;miedo!&nbsp;Puede&nbsp;ayudarte&nbsp;muchísimo.&nbsp;✨</sub></p>
+<p>ChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:</p>
+<ul>
+<li><p><strong>Documentación automática</strong>: genera descripciones, títulos, secciones y ejemplos para tus scripts.</p></li>
+<li><p><strong>Explicación de código</strong>: te ayuda a entender funciones complejas o pipelines bioinformáticos.</p></li>
+<li><p><strong>Optimización responsable</strong>: sugiere mejoras sin comprometer la reproducibilidad.</p></li>
+<li><p><strong>Buenas prácticas</strong>: te recuerda estándares como estilo, modularidad, defensividad y testing.</p></li>
+<li><p><strong>Aprendizaje guiado</strong>: explica conceptos (FASTQ, SAM/BAM, ensambladores, alineadores, R, Python).</p></li>
+<li><p><strong>Depuración asistida</strong>: señala errores comunes y propone soluciones.</p></li>
+<li><p><strong>Reproducibilidad</strong>: ayuda a generar pipelines claros, estructurados y bien documentados.</p></li>
+<li><p><strong>Plantillas listas para usar</strong>: para README, <code>.qmd</code>, scripts, workflows o Snakemake.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>ChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad.</strong></p>
+</blockquote>
+</section>
+<section id="buenas-prácticas-en-r" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 🦾 Buenas prácticas en <strong>R</strong></h1>
+<p>Trabajar en R para bioinformática requiere código limpio, reproducible y fácil de compartir. Aquí tienes un conjunto de buenas prácticas recomendadas por expertos y comunidades como <em>R for Data Science</em>, <em>The Tidyverse Style Guide</em>, <em>Bioconductor</em> y <em>The Carpentries</em>.</p>
+<section id="organiza-tus-proyectos-con-project-based-workflows" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="organiza-tus-proyectos-con-project-based-workflows"><span class="header-section-number">2.1</span> 📁 1. Organiza tus proyectos con <em>project-based workflows</em></h2>
+<ul>
+<li><p>Usa siempre un <strong>RStudio Project (<code>.Rproj</code>)</strong>.</p></li>
+<li><p>Evita rutas absolutas como:<br>
+<code>setwd("C:/Users/Mariana/Desktop/")</code> ❌</p></li>
+<li><p>Usa rutas relativas con <strong><code>here::here()</code></strong> o <strong><code>fs</code></strong>:<br>
+<code>here("data", "input.csv")</code> ✔️</p></li>
+<li><p>Mantén carpetas claras:</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><sub>bash</sub></p>
+<p><code>/data</code></p>
+<p><code>/scripts</code></p>
+<p><code>/results</code></p>
+<p><code>/figures</code></p>
+</div>
+</div>
+</section>
+<section id="carga-solo-los-paquetes-necesarios" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="carga-solo-los-paquetes-necesarios"><span class="header-section-number">2.2</span> 📦 2. Carga solo los paquetes necesarios</h2>
+<ul>
+<li><p>Evita cargar 10 paquetes si solo usas 1 función.</p></li>
+<li><p>Usa <strong><code>pacman::p_load()</code></strong> o declara explícitamente tus dependencias.</p></li>
+<li><p>Incluye siempre una sección “Paquetes” en tus scripts <code>.R</code>.</p></li>
+</ul>
+</section>
+<section id="fórmula-de-oro-estilo-consistencia" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="fórmula-de-oro-estilo-consistencia"><span class="header-section-number">2.3</span> ✏️ 3. Fórmula de oro: <em>estilo + consistencia</em></h2>
+<p>Sigue guías como <strong>tidyverse style guide</strong>:</p>
+<ul>
+<li><p>Nombres de objetos en snake_case → <code>mi_dataframe</code>, <code>hp_colors</code>.</p></li>
+<li><p>Espacios consistentes después de comas y operadores.</p></li>
+<li><p>Líneas cortas (&lt; 80 caracteres).</p></li>
+<li><p>Comentarios claros con:</p></li>
+</ul>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="background-color: #7F0000;     /* rojo intenso */ border-left: 6px solid #FF0000; /* rojo brillante */ color: #FFDFA3;                 /* dorado suave */">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>r</code></p>
+<p><code># Filtrar solo Ravenclaw df_ravens</code></p>
+<p><code>&lt;- df %&gt;% filter(House == "Ravenclaw")</code></p>
+</div>
+</div>
+</section>
+<section id="modulariza-tu-código" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="modulariza-tu-código"><span class="header-section-number">2.4</span> 🧱 4. Modulariza tu código</h2>
+<ul>
+<li><p>Divide análisis largos en <strong>funciones</strong> y <strong>scripts separados</strong>.</p></li>
+<li><p>Guarda funciones en <code>/scripts/functions.R</code>.</p></li>
+<li><p>Usa <code>source("scripts/functions.R")</code> cuando sea necesario.</p></li>
+</ul>
+<p>Esto evita repetir código y hace tus análisis más reproducibles.</p>
+</section>
+<section id="section-4" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="section-4"><span class="header-section-number">2.5</span> </h2>
+<p>🔄 5. Haz tu código <em>pipeline-friendly</em></p>
+<p>Prefiere el estilo tidyverse:</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #FFF200;       border-left: 6px solid #FFD300;   color: &quot;black&quot;;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>r</code></p>
+<p><code>hp_data %&gt;%   count(House) %&gt;%     mutate(percent = n / sum(n))</code></p>
+</div>
+</div>
+<p>En lugar de 10 líneas de transformaciones anidadas ilegibles.</p>
+</section>
+<section id="valida-tus-datos-antes-de-analizarlos" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="valida-tus-datos-antes-de-analizarlos"><span class="header-section-number">2.6</span> 🧪 6. Valida tus datos antes de analizarlos</h2>
+<p>Incluye checks preventivos:</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #001A4D;       border-left: 6px solid #0047FF;   color: #E6D5B8;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>r</p>
+<p><code>stopifnot(is.data.frame(hp_data)) stopifnot(all(c("House") %in% names(hp_data)))</code></p>
+</div>
+</div>
+<p>Esto evita errores sorpresivos al final del análisis.</p>
+</section>
+<section id="haz-que-tus-gráficos-sean-reproducibles" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="haz-que-tus-gráficos-sean-reproducibles"><span class="header-section-number">2.7</span> 🌱 7. Haz que tus gráficos sean reproducibles</h2>
+<p>Incluye:</p>
+<ul>
+<li><p>Título</p></li>
+<li><p>Ejes (o explícitamente sin ejes)</p></li>
+<li><p>Paletas documentadas</p></li>
+<li><p>Tamaños de punto, fuente, etc.</p></li>
+</ul>
+<p>Y <strong>guarda tus figuras con código reproducible</strong>, en una carpeta específica:</p>
+<div class="callout callout-style-default callout-note callout-titled" style="background-color: #003B1A;       border-left: 6px solid #00A651;   color: #E0FFE8;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>r</p>
+<p><code>ggsave("figures/house_plot.png", width = 6, height = 4, dpi = 300)</code></p>
+</div>
+</div>
+</section>
+<section id="documenta-tus-scripts" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="documenta-tus-scripts"><span class="header-section-number">2.8</span> 📚 8. Documenta tus scripts</h2>
+<p>Al inicio de cada archivo <code>.R</code> incluye:</p>
+<div class="callout callout-style-default callout-note callout-titled" style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>r</p>
+<p><code># Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse</code></p>
+</div>
+</div>
+</section>
+<section id="usa-herramientas-de-análisis-reproducible" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="usa-herramientas-de-análisis-reproducible"><span class="header-section-number">2.9</span> 🧬 9. Usa herramientas de análisis reproducible</h2>
+<p>Para proyectos grandes:</p>
+<ul>
+<li><p><strong>R Markdown</strong> o <strong>Quarto (<code>.qmd</code>)</strong></p></li>
+<li><p><strong>renv</strong> para versiones de paquetes</p></li>
+<li><p><strong>targets</strong> o <strong>drake</strong> para pipelines complejos</p></li>
+<li><p><strong>Bioconductor</strong> para análisis genómicos estandarizados</p></li>
+</ul>
+</section>
+<section id="limpia-tu-entorno-pero-no-demasiado" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="limpia-tu-entorno-pero-no-demasiado"><span class="header-section-number">2.10</span> 🧼 10. Limpia tu entorno (pero no demasiado)</h2>
+<ul>
+<li><p>Evita usar <code>rm(list = ls())</code> a menos que sea estrictamente necesario.</p></li>
+<li><p>Un proyecto bien estructurado no depende del “entorno emocionado”.</p></li>
+</ul>
+</section>
+<section id="cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r"><span class="header-section-number">2.11</span> 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?</h2>
+<p>ChatGPT puede mejorar tus análisis en R de forma ética y eficiente:</p>
+<ul>
+<li><p><strong>Genera código limpio y estilizado</strong> siguiendo guías tidyverse.</p></li>
+<li><p><strong>Transforma scripts sucios</strong> en pipelines claros y reproducibles.</p></li>
+<li><p><strong>Explica errores en R con detalle</strong> (p.&nbsp;ej., <code>object not found</code>, <code>NAs introduced</code>).</p></li>
+<li><p><strong>Sugiere paletas, temas de ggplot y estilos visuales</strong>.</p></li>
+<li><p><strong>Documenta automáticamente tus funciones</strong> con formato <code>roxygen2</code>.</p></li>
+<li><p><strong>Optimiza la lógica</strong> sin sacrificar claridad.</p></li>
+<li><p><strong>Te genera plantillas listas para <code>.qmd</code>, pipelines o workflows</strong>.</p></li>
+<li><p><strong>Ayuda a detectar malas prácticas</strong> como copiar y pegar código o usar rutas absolutas.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>En pocas palabras: <strong>ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática</strong>, pero siempre con criterio científico tuyo 💛.</p>
+</blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Ejemplo de como realizo mis documentos 💜
+Ejemplo de como Evelia Coss realiza sus documentos 💜
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Aqui les dejo el script que les doy a mis alumnos <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024/blob/main/Practica_Dia3/scripts/VisualizacionDatos.R">VisualizacionDatos.R</a> del curso de <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024">Análisis de datos de RNA-Seq</a>.</p>
+<p>Aqui les dejamos el script que le da a sus alumnos <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024/blob/main/Practica_Dia3/scripts/VisualizacionDatos.R">VisualizacionDatos.R</a> del curso de <a href="https://github.com/EveliaCoss/RNAseq_classFEB2024">Análisis de datos de RNA-Seq</a>.</p>
 </div>
 </div>
 </section>
-<section id="referencias" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="referencias"><span class="header-section-number">1.6</span> Referencias</h2>
+<section id="referencias" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="referencias"><span class="header-section-number">2.12</span> Referencias</h2>
 <ul>
-<li>Presentación de <a href="https://miriamll.github.io/teaching_R_Rmd/Repro#1">Reproducibilidad de Miriam Lerma</a></li>
-<li>Presentación <a href="https://miriamll.github.io/teaching_R_Rmd/GitGithubZenodo#1">introducción a Git, GitHub y Zenodo de Miriam Lerma</a></li>
-<li><a href="https://lcg-cursos.github.io/material/introbioinfo/L2-buenas-practicas.html#1">Presentación de Introducción a la Bioinformática - Heladia Salgado</a></li>
-<li><a href="https://flor14.github.io/rladies-jujuy/presentacion.html?panelset=compendio&amp;panelset1=bibliograf%25C3%25ADa#3">Mi próximo artículo científico en R de Florencia D´Andrea</a></li>
-<li><a href="https://github.com/WhitakerLab/ReproducibleResearch">Kristie Reproducible Research</a></li>
-<li><a href="https://figshare.com/articles/journal_contribution/Showing_your_working_a_how_to_guide_to_reproducible_research/5443201/1?file=9410686">Presentación de Kristie</a></li>
-<li><a href="https://ifb-elixirfr.github.io/IFB-FAIR-bioinfo-training/assets/pdf/Session2020/01_introduction.pdf">FAIR- bioinformatic</a></li>
+<li>Wilson, et al.&nbsp;2014. <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>. PLOS Biology</li>
+<li>Wickham, H. (2019), The Tidyverse Style Guide.<a href="https://style.tidyverse.org/" class="uri">https://style.tidyverse.org/</a></li>
+<li>RStudio / Posit, R Projects Workflow.<a href="https://docs.posit.co/" class="uri">https://docs.posit.co/</a></li>
+<li>Bioconductor Project, Best practices for reproducible genomics workflows.<a href="https://bioconductor.org/" class="uri">https://bioconductor.org/</a></li>
 <li><a href="https://github.com/AliciaMstt/BioinfInvRepro2016-II/blob/master/Unidad1/Unidad1_Bioinf_e_Investigaci%C3%B3n_Reproducible.md">Unidad 1 Bioinformática e investigación reproducible</a></li>
 <li><a href="https://academic.oup.com/bib/article/24/6/bbad375/7326135">The five pillars of computational reproducibility: bioinformatics and beyond</a></li>
 <li><a href="https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_ES/02OpenScienceBasics/04ReproducibleResearchAndDataAnalysis.html">Investigación reproducible y análisis de datos</a></li>
@@ -423,373 +856,440 @@ Ejemplo de como realizo mis documentos 💜
 <li><a href="https://learning.nceas.ucsb.edu/2024-10-coreR/">Training Materials</a></li>
 <li><a href="https://damiandeluca.com.ar/como-comenzar-con-visual-studio-code-una-guia-para-principiantes">Visual Studio Code</a></li>
 <li><a href="https://blog.ml.cmu.edu/2020/08/31/5-reproducibility/">Articulo reproducibilidad</a></li>
+<li>Holistic AI Guidelines &amp; Human-Centered AI Practices</li>
 </ul>
 
 
 </section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
       return false;
     }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
         }
-      }
-      return codeEl.innerText;
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
     }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-});
-</script>
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Información general">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Información general</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro_bash.html" class="pagination-link">
+      <a href="./intro_bash.html" class="pagination-link" aria-label="Conceptos Unix y GNU/Linux">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
