@@ -266,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Workshop Bash &amp; R</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/ISCB-RSG-MEXICO/Workshop_template" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ISCB-RSG-MEXICO/Workshop_Bash2025" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -511,13 +511,8 @@ Note
 <li><p>Codificación / Escribir el código</p></li>
 <li><p>Compilación y ejecución del programa</p></li>
 <li><p>Verificación / Realizar pruebas</p></li>
-<li><p>Depuración / Detectar los errores y corregirlos</p></li>
-</ol>
-<blockquote class="blockquote">
-<p>Programacion defensiva</p>
-</blockquote>
-<ol start="7" type="1">
-<li>Documentación</li>
+<li><p>Depuración / Detectar los errores y corregirlos (Programacion defensiva)</p></li>
+<li><p>Documentación</p></li>
 </ol>
 </div>
 </div>
@@ -597,10 +592,10 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><sub>bash</sub></p>
-<p><code>if [ ! -s "$file" ]; then echo "Error: archivo vacío o no existe" &gt;&amp;2 exit 1 fi</code></p>
+<p><code>#validación de un archivo vacio if [ ! -s "$file" ]; then  #Si el archivo no existe o tiene tamaño 0, entra al thenecho "Error: archivo vacío o no existe" &gt;&amp;2  #imprime el mensaje. y &gt;&amp;2 envía el mensaje al stderr (salida de error)exit 1  #1 es un código de error (0 = éxito, cualquier otro número = fallo).fi  #Es el cierre del if</code></p>
 <p><code>r</code></p>
-<p><code>if (!file.exists(fasta_path)) {    stop("El archivo FASTA no existe: ", fasta_path) }</code></p>
-<p><code>seqs &lt;- read.fasta(fasta_path) if (length(seqs) == 0) { stop("El archivo FASTA está vacío.") }</code></p>
+<p><code>if (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop("El archivo FASTA no existe: ", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional</code></p>
+<p><code>seqs &lt;- read.fasta(fasta_path)</code> <code># lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional</code></p>
 </div>
 </div></li>
 </ul>
@@ -611,7 +606,7 @@ Note
 <ul>
 <li><p>Primero que funcione.</p></li>
 <li><p>Después que funcione <em>bien</em>.</p></li>
-<li><p>Optimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.</p></li>
+<li><p>Optimiza el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.</p></li>
 </ul>
 </section>
 </section>

@@ -88,43 +88,43 @@ Estas medidas fortalecen la confianza en los resultados y evitan problemas grave
         -   *Información de salida (Outpus)*: Graficas, figuras, tablas, etc.
     :::
 
-![](https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg){fig-align="center"}
+![](https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg){fig-align="center" width="430"}
 
 ## ⭐ Puntos clave para buenas prácticas en bioinformática
 
 ### 
-✏️ 1. Escribe programas para personas, no para máquinas
+ 1. Escribe programas para personas, no para máquinas ✏️
 
--   Documenta **qué hace** tu código y **por qué**.
+-   Documenta qué hace tu código y por qué.
 
 -   Mantén coherencia en nombres, indentación y estilo.
 
 ### 🧱 2. Usa modularidad
 
--   Divide tu código en **funciones pequeñas de un solo propósito**.
+Divide tu código en **funciones pequeñas de un solo propósito**.
 
 ### 
-➰ 3. No repitas código
+3. No repitas código
 
 -   Crea pasos reproducibles o que se repitan por si solos (Usa funciones, loops y scripts reproducibles).
 
 ### 
 🚩 4. Planifica los errores (**programación defensiva)**
 
--   ~Es\ una\ práctica\ donde\ **asumes\ que\ pueden\ ocurrir\ errores**\ y\ **preparas\ tu\ código**\ para\ detectarlos,\ avisar\ y\ manejar\ la\ situación\ sin\ que\ todo\ truene.\
-
-    No\ se\ trata\ de\ ser\ pesimista:\ es\ ser\ **realista**.~
+-   Es una práctica donde **asumes que pueden ocurrir errores** y **preparas tu código** para detectarlos, avisar y manejar la situación sin que todo truene.~\
+    ~
+    No se trata de ser pesimista: es ser **realista**.
 
     ::: {.callout-note style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }" icon="false"}
     ~bash~
 
-    `if [ ! -s "$file" ]; then echo "Error: archivo vacío o no existe" >&2 exit 1 fi`
+    `#validación de un archivo vacio if [ ! -s "$file" ]; then  #Si el archivo no existe o tiene tamaño 0, entra al thenecho "Error: archivo vacío o no existe" >&2  #imprime el mensaje. y >&2 envía el mensaje al stderr (salida de error)exit 1  #1 es un código de error (0 = éxito, cualquier otro número = fallo).fi  #Es el cierre del if`
 
     `r`
 
-    `if (!file.exists(fasta_path)) {    stop("El archivo FASTA no existe: ", fasta_path) }`
+    `if (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop("El archivo FASTA no existe: ", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional`
 
-    `seqs <- read.fasta(fasta_path) if (length(seqs) == 0) { stop("El archivo FASTA está vacío.") }`
+    `seqs <- read.fasta(fasta_path)` `# lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional`
     :::
 
 ### 
@@ -134,11 +134,11 @@ Estas medidas fortalecen la confianza en los resultados y evitan problemas grave
 
 -   Después que funcione *bien*.
 
--   Optimice el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.
+-   Optimiza el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.
 
 ## 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?
 
-~Aunque\ hoy\ en\ día\ existe\ cierto\ tabú\ alrededor\ del\ uso\ de\ la\ IA\ como\ ChatGPT,\ es\ una\ herramienta\ que\ realmente\ puede\ facilitarnos\ la\ vida.\ No\ reemplaza\ nuestro\ criterio,\ solo\ lo\ complementa.\ ¡Úsala\ sin\ miedo!\ Puede\ ayudarte\ muchísimo.\ ✨~
+Aunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨
 
 ChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:
 
