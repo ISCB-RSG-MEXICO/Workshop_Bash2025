@@ -5,36 +5,35 @@
 # Información general {.unnumbered}
 
 ::: {.panel-tabset group="globalInfo"}
-
 ### Sobre el curso
 
 Fuente del curso
 
-- **Fechas:** 27 y 28 de noviembre
-- **Duración del curso:** 15 horas
-- **Horario:** 8:00 am - 3:30 pm
+-   **Fechas:** 27 y 28 de noviembre
+-   **Duración del curso:** 15 horas
+-   **Horario:** 8:00 am - 3:30 pm
 
 ![](figures/flyer.jpg){width="570"}
 
 #### **Instructores**
 
-- **Mayela Fosado-Mendoza** - Tesista de licenciatura, UAQ-UNAM,
-- **Mariana Devon** - Estudiante de maestría, UAM.
-- **Emilio Ortiz-Avila** - Tesista de licenciatura, UAQ-UNAM.
+-   **Mayela Fosado-Mendoza** - Tesista de licenciatura, UAQ-UNAM,
+-   **Mariana Devon** - Estudiante de maestría, UAM.
+-   **Emilio Ortiz-Avila** - Tesista de licenciatura, UAQ-UNAM.
 
 Ayudantes:
 
-- **Aaron Espinosa Jaime** – Estudiante de maestría, Cinvestav-LANGEBIO.
-- **Camilo Pérez** – Estudiante de doctorado, Cinvestav-LANGEBIO.
-- **Andrés Arredondo** – Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
-- **Johanna Castelán** – Estudiante de maestría, UPAEP.
-- **Daniel Chávez** – Profesor invitado, UAGro.
-- **Anthony Mederos** – Estudiante de posgrado, UAQ.
+-   **Aaron Espinosa Jaime** -- Estudiante de maestría, Cinvestav-LANGEBIO.
+-   **Camilo Pérez** -- Estudiante de doctorado, Cinvestav-LANGEBIO.
+-   **Andrés Arredondo** -- Ciencias Agrogenómicas, CCM-UNAM. [Pagina web](https://aarredondoc.github.io/andresarredondo/)
+-   **Johanna Castelán** -- Estudiante de maestría, UPAEP.
+-   **Daniel Chávez** -- Profesor invitado, UAGro.
+-   **Anthony Mederos** -- Estudiante de posgrado, UAQ.
 
 Organizadores del curso:
 
-- **Abel Lovaco Flores** – Estudiante de maestría, Cinvestav-Irapuato.
-- **Evelia Lorena Coss-Navarrete** – PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
+-   **Abel Lovaco Flores** -- Estudiante de maestría, Cinvestav-Irapuato.
+-   **Evelia Lorena Coss-Navarrete** -- PostDoc, LIIGH-UNAM. [Pagina web](https://eveliacoss.github.io/)
 
 Para conocer más sobre nosotros, puedes visitar la [presentación del equipo.](https://www.canva.com/design/DAG5riUrw2o/HI00GY0PqIWyyvfy4pUciw/edit?utm_content=DAG5riUrw2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
@@ -50,19 +49,19 @@ Al finalizar este curso, las y los participantes serán capaces de:
 
 **En Bash:**
 
-- Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
-- Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.
-- Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos.
-- Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
+-   Comprender el entorno del sistema operativo Linux y utilizar la línea de comandos Bash para navegar, organizar y manipular archivos y directorios.
+-   Aplicar comandos esenciales y expresiones regulares para buscar, filtrar y procesar información contenida en archivos.
+-   Construir y ejecutar secuencias de comandos en Bash para realizar tareas básicas de análisis o procesamiento de archivos con datos biológicos.
+-   Integrar buenas prácticas computacionales que promuevan la reproducibilidad y la organización en proyectos bioinformáticos.
 
 **En R:**
 
-- Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
-- Usar R a través de la interfaz de RStudio para análisis sencillos.
-- Crear variables, usar operadores y ejecutar funciones básicas en R.
-- Administrar paquetes e iniciar proyectos estructurados en RStudio.
-- Generar scripts simples y mantener un flujo de trabajo reproducible.
-- Crear gráficas básicas en R para visualizar datos de manera rápida y clara.
+-   Conocer la interfaz de RStudio y ubicar sus principales paneles y herramientas.
+-   Usar R a través de la interfaz de RStudio para análisis sencillos.
+-   Crear variables, usar operadores y ejecutar funciones básicas en R.
+-   Administrar paquetes e iniciar proyectos estructurados en RStudio.
+-   Generar scripts simples y mantener un flujo de trabajo reproducible.
+-   Crear gráficas básicas en R para visualizar datos de manera rápida y clara.
 
 ## Citar y reutilizar el material del curso
 
@@ -74,95 +73,98 @@ No se requiere experiencia previa en programación ni en el uso de Linux.
 
 Conocimientos básicos sobre el manejo de archivos en computadora.
 
-Durante el curso, todas las actividades se realizarán en un servidor proporcionado por el equipo docente. Antes de comenzar, te recomendamos revisar el **tutorial introductorio** disponible aquí:  
+Durante el curso, todas las actividades se realizarán en un servidor proporcionado por el equipo docente. Antes de comenzar, te recomendamos revisar el **tutorial introductorio** disponible aquí:\
 [Tutorial de acceso a Better Lab](https://www.canva.com/design/DAG5rDzKmuM/w_v8XwossbDWRGt5IKg6ZQ/edit?utm_content=DAG5rDzKmuM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 Gracias a este servidor, **no es necesario instalar Linux, R ni Bash** en tu computadora.
 
 Si deseas conservar y trabajar posteriormente con los archivos generados en el curso, es recomendable tener instalado en tu equipo:
 
-- Entorno de Linux (Bash)
-- R y Rstudio
+-   Entorno de Linux (Bash)
+-   R y Rstudio
 
 Las instrucciones para instalarlos están en:
 
-- [Capítulo 14: Instalar Bash](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html)
-- [Capítulo 15: Instalar R y RStudio](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html)
+-   [Capítulo 14: Instalar Bash](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_B.html)
+-   [Capítulo 15: Instalar R y RStudio](https://iscb-rsg-mexico.github.io/Workshop_Bash2025/install_R.html)
 
 ### Agenda {#agenda}
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Tema                                                            | Horario            | Tiempo         |           |
-+=================================================================+====================+================+===========+
-| [**27 de noviembre**]{style="color:#59B4C3"}                    |                    |                |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| [**Sección 1 - (8:00 - 9:45 h)**]{style="color:#FF937E"}        | **8:00 - 09:45 h** | **1 h 45 min** |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Presentación                                                    | 8:00 h             | 30 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Buenas prácticas en bioinformática                              | 8:30 h             | 30 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Conceptos Unix y GNU/Linux                                      | 9:00 h             | 15 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Mis primero pasos en Bash                                       | 9:15 h             | 30 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Receso**                                                      | **9:45 h**         | **15 min**     |           |
-|                                                                 |                    |                |           |
-| Realizar [pre-encuesta](https://forms.gle/febD2A6o4zj4uLzu9)    |                    |                |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| [**Sección 2 - (10:00 - 12:15 h)**]{style="color:#8CA9FF"}      | **10:00 h**        | **2 h 15 min** |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Explorando texto y flujo de datos en Bash                       | 10:00 h            | 1 h            |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Receso**                                                      | **11:00 h**        | **15 min**     |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Exploración y manipulación de archivos fasta                    | 11:15 h            | 1 h            |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Comida 🍴**                                                   | **12: 15 h**       | **1 h**        |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| [**Sección 3 (13:15 - 15:30 h)**]{style="color:#016B61"}        | **13:15 h**        | **2 h 15 min** |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Bed tools - Preparación de un archivo .bed                      | 13:15 h            | 1 h            |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Receso**                                                      | **14:15 h**        | **10 min**     |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Bed tools - Análisis de regiones genómicas                      | 14:25 h            | 45 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Cierre**                                                      | **15:10 h**        | **20 min**     |           |
-|                                                                 |                    |                |           |
-| Realizar [inter-encuesta](https://forms.gle/cfBcd5tzUBqcMyQt9)  |                    |                |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| [**28 de noviembre**]{style="color:#B33791"}                    |                    |                |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| [**Sección 1 - (8:00 - 9:45 h)**]{style="color:#FFA4A4"}        | **8:00 h**         | **1 h 45 min** |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Inicio**                                                      | 8:00 h             | 30 min         |           |
-|                                                                 |                    |                |           |
-| Revisión: responder preguntas de la última encuesta             |                    |                |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Conceptos de R                                                  | 8:45 h             | 1 h            |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Receso**                                                      | **9:45 h**         | **15 min**     |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| [**Sección 2 - (10:00 - 11:00 h)**]{style="color:#5A9690"}      | **10:00 h**        | **2 h 15 min** |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Mis primeros pasos en R                                         | 10:00 h            | 1 h            |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Receso**                                                      | 11:00 h            | 15 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Introducción al manejo de datos en R                            | 11:15 h            | 1 h            |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| **Comida 🍴**                                                   | **12:15 h**        | **1 h**        |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| [**Sección 3 (13:15 - 15:30 h)**]{style="color:#9BCF53"}        | **13:15 h**        | **2 h 15 min** |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Manipulación y limpieza de datos                                | 13:15 h            | 30 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Visualización y Análisis de datos                               | 13:45 h            | 50 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Bed Tools R                                                     | 14:35 h            | 45 min         |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
-| Clausura                                                        | 15:10 h            | 20 min         |           |
-|                                                                 |                    |                |           |
-| Realizar [última encuesta](https://forms.gle/zvZurTpKxSXYBwh2A) |                    |                |           |
-+-----------------------------------------------------------------+--------------------+----------------+-----------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Tema                                                                                                                                                   | Horario            | Tiempo         |           |
++========================================================================================================================================================+====================+================+===========+
+| [**27 de noviembre**]{style="color:#59B4C3"}                                                                                                           |                    |                |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Registro de participantes presencial                                                                                                                   | 8:00 h             | 1 h            |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 1 - (9:00 - 9:50 h)**]{style="color:#FF937E"}                                                                                               | **9:00 - 09:50 h** | **1 h 50 min** |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Presentación del curso - Palabras de bienvenida por la **Dra. Reyna I. Rojas Martínez**, directora del campus Montecillo del Colegio de Postgraduados  | 9:00 h             | 30 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Buenas prácticas en bioinformática                                                                                                                     | 9:30 h             | 30 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Conceptos Unix y GNU/Linux                                                                                                                             | 10:00 h            | 15 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Mis primero pasos en Bash                                                                                                                              | 10:15 h            | 30 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                                                                                                             | **10:45 h**        | **15 min**     |           |
+|                                                                                                                                                        |                    |                |           |
+| Realizar [pre-encuesta](https://forms.gle/febD2A6o4zj4uLzu9)                                                                                           |                    |                |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 2 - (10:00 - 12:15 h)**]{style="color:#8CA9FF"}                                                                                             | **11:00 h**        | **2 h 15 min** |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Explorando texto y flujo de datos en Bash                                                                                                              | 11:00 h            | 45 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Exploración y manipulación de archivos fasta (primera parte)                                                                                           | 11:45 h            | 30 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Comida 🍴**                                                                                                                                          | **12: 15 h**       | **1 h**        |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 3 (13:15 - 15:30 h)**]{style="color:#016B61"}                                                                                               | **13:15 h**        | **2 h 15 min** |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Exploración y manipulación de archivos fasta (primera parte)                                                                                           | 13:15              | 15 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Bed tools - Preparación de un archivo .bed                                                                                                             | 13:30 h            | 45 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                                                                                                             | **14:15 h**        | **10 min**     |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Bed tools - Análisis de regiones genómicas                                                                                                             | 14:25 h            | 45 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Cierre**                                                                                                                                             | **15:10 h**        | **20 min**     |           |
+|                                                                                                                                                        |                    |                |           |
+| Realizar [inter-encuesta](https://forms.gle/cfBcd5tzUBqcMyQt9)                                                                                         |                    |                |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| [**28 de noviembre**]{style="color:#B33791"}                                                                                                           |                    |                |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 1 - (8:00 - 9:45 h)**]{style="color:#FFA4A4"}                                                                                               | **8:00 h**         | **1 h 45 min** |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Inicio**                                                                                                                                             | 8:00 h             | 30 min         |           |
+|                                                                                                                                                        |                    |                |           |
+| Revisión: responder preguntas de la última encuesta                                                                                                    |                    |                |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Conceptos de R                                                                                                                                         | 8:45 h             | 1 h            |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                                                                                                             | **9:45 h**         | **15 min**     |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 2 - (10:00 - 11:00 h)**]{style="color:#5A9690"}                                                                                             | **10:00 h**        | **2 h 15 min** |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Mis primeros pasos en R                                                                                                                                | 10:00 h            | 1 h            |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Receso**                                                                                                                                             | 11:00 h            | 15 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Introducción al manejo de datos en R                                                                                                                   | 11:15 h            | 1 h            |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| **Comida 🍴**                                                                                                                                          | **12:15 h**        | **1 h**        |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| [**Sección 3 (13:15 - 15:30 h)**]{style="color:#9BCF53"}                                                                                               | **13:15 h**        | **2 h 15 min** |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Manipulación y limpieza de datos                                                                                                                       | 13:15 h            | 30 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Visualización y Análisis de datos                                                                                                                      | 13:45 h            | 50 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Bed Tools R                                                                                                                                            | 14:35 h            | 45 min         |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
+| Clausura                                                                                                                                               | 15:10 h            | 20 min         |           |
+|                                                                                                                                                        |                    |                |           |
+| Realizar [última encuesta](https://forms.gle/zvZurTpKxSXYBwh2A)                                                                                        |                    |                |           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+----------------+-----------+
 :::
