@@ -1,6 +1,6 @@
 # Introducción a BEDtools en R 🧬
 
-Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos. \
+Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
 Incluye:
 
 -   Preparación del ambiente
@@ -42,7 +42,7 @@ Permite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Con
 
 ## Formato BED
 
-Columnas mínimas: \
+Columnas mínimas:\
 1. cromosoma 2. inicio 3. fin
 
 Ejemplo:
@@ -155,7 +155,7 @@ system("bedtools intersect -a A.bed -b B.bed > inter.bed")
 
 ------------------------------------------------------------------------
 
-## Referencias 
+## Referencias
 
 -   Bedtools manual [https://bedtools.readthedocs.io/](https://bedtools.readthedocs.io/?utm_source=chatgpt.com)
 -   Bioconductor: GenomicRanges, rtracklayer <https://bioconductor.org/packages/release/bioc/html/rtracklayer.html>

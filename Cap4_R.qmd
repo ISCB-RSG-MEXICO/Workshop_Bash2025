@@ -156,7 +156,183 @@ Aspecto final del gráfico: fondo, líneas, letras.
 
 ![](images/clipboard-3599886339.png){fig-align="center" width="391"}
 
+## Creación de histogramas y diagramas de dispersión básicos.
+
+FALTA METER INFO
+
+# Estadística Descriptiva en R 
+
+La **estadística descriptiva** permite resumir y entender rápidamente las características principales de un conjunto de datos. En esta sección cubriremos los conceptos esenciales:
+
+-   **Media**
+-   **Mediana**
+-   **Desviación estándar**
+-   **Resumen de datos**
+-   Implementación práctica en **R**
+
+------------------------------------------------------------------------
+
+## 🧠 Conceptos Básicos
+
+### 🔸 Media
+
+La **media** es simplemente el **promedio** de los datos.\
+👉 Tomas todos los valores, los sumas y los divides entre la cantidad de datos.
+
+Ejemplo:\
+Datos: 4, 6, 10\
+Media = (4 + 6 + 10) / 3 = **6.67**
+
+![](images/Screenshot 2025-11-26 at 12.59.09 p.m.-01.png)
+
+### 🔸 Mediana
+
+::: callout-note
+Ejemplo:\
+
+Datos: 2, 8, 5 → ordenados: 2, 5, 8\
+Mediana = 5
+:::
+
+Si hay **números pares**, no hay un valor justo al centro, así que tomas los dos del centro y sacas su promedio.
+
+::: callout-note
+Ejemplo:\
+
+Datos: 1, 3, 7, 10 → del centro: 3 y 7 → mediana = (3+7)/2 = **5**
+:::
+
+La mediana sirve mucho cuando hay valores extremos (outliers) que podrían afectar la media.
+
+### 🔸 Desviación Estándar
+
+-   Es una medida que indica **qué tan dispersos** o **separados** están los datos respecto a la media.
+
+-   Si la desviación estándar es **pequeña**, los valores están **muy cerca** del promedio.
+
+-   Si es **grande**, los valores están **muy separados** y hay más variabilidad.
+
+![](images/Screenshot 2025-11-26 at 12.59.28 p.m..png)
+
+### 🔸 Resumen de datos
+
+::: callout-note
+Incluye: \
+- Mínimo: Es el valor **más pequeño** del conjunto de datos, Ayuda a saber cuál es el extremo más bajo.\
+- 1er cuartil (Q1) : Es el valor qué marca el **25%** de los datos inferiores cuando están ordenados.
+
+Es decir:
+
+-   25% de los datos están por **debajo** de Q1
+
+-   75% están por **encima**
+
+Q1 ayuda a saber dónde empieza la parte “baja” de los datos.\
+- Mediana: Es el valor que divide los datos en dos partes iguales (50%).\
+(Es muy útil cuando hay valores extremos porque **no se altera tanto como la media**).\
+- Media: El promedio de los datos (Se usa para representar el “centro”, pero es sensible a valores extremos).\
+- 3er cuartil (Q3): Es el valor que marca el **75%** de los datos ordenados.
+
+Significa:
+
+-   75% de los datos están por **debajo**
+
+-   25% por **encima**
+
+-   Ayuda a ver dónde empieza la parte “alta” de los datos.
+
+\- Máximo: Es el valor **más grande** del conjunto.
+:::
+
+------------------------------------------------------------------------
+
+## 📥 1. Cargar datos en R
+
+Usaremos un vector de ejemplo llamado `x`:
+
+``` r
+x <- c(5, 8, 12, 4, 6, 9, 10, 7)
+```
+
+------------------------------------------------------------------------
+
+## 📐 2. Calcular medidas básicas
+
+### Media
+
+``` r
+mean(x)
+```
+
+### Mediana
+
+``` r
+median(x)
+```
+
+### Desviación estándar
+
+``` r
+sd(x)
+```
+
+------------------------------------------------------------------------
+
+### 📦 3. Resumen de datos
+
+R ofrece una función integrada:
+
+``` r
+summary(x)
+```
+
+Esto muestra: - Mínimo - Q1 - Mediana - Media - Q3 - Máximo
+
+------------------------------------------------------------------------
+
+## 📊 4. Visualización básica
+
+Para complementar la estadística descriptiva, podemos usar un **histograma**:
+
+``` r
+hist(x, main = "Histograma de valores", xlab = "Valores", col = "lightpink")
+```
+
+Y un **boxplot**:
+
+``` r
+boxplot(x, main = "Boxplot de valores", col = "lightblue")
+```
+
+------------------------------------------------------------------------
+
+## 🧪 5. Ejemplo completo
+
+``` r
+x <- c(5, 8, 12, 4, 6, 9, 10, 7)
+
+media <- mean(x)
+mediana <- median(x)
+desv <- sd(x)
+resumen <- summary(x)
+
+cat("Media:", media, "\n")
+cat("Mediana:", mediana, "\n")
+cat("Desviación Estándar:", desv, "\n")
+cat("\nResumen:\n")
+print(resumen)
+```
+
+------------------------------------------------------------------------
+
+-   La estadística descriptiva permite obtener una visión general rápida de los datos.
+-   R facilita estos cálculos con funciones simples e intuitivas.
+-   Estas herramientas son la base para análisis más avanzados en genómica y ciencias de datos.
+
 ### Referencias
 
--   The Carpentries. (2025). *R for Reproducible Scientific Analysis*. \
+-   The Carpentries. (2025). *R for Reproducible Scientific Analysis*.\
     <https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html>
+-   Demiryürek, G. (2021). *Harry Potter Dataset*. Kaggle.\
+    <https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset>
+-   
