@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -407,9 +442,29 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#en-resumen" id="toc-en-resumen" class="nav-link" data-scroll-target="#en-resumen"><span class="header-section-number">12.2.1</span> En resumen</a></li>
   </ul></li>
   <li><a href="#los-5-bloques-de-la-gramática-en-ggplot2" id="toc-los-5-bloques-de-la-gramática-en-ggplot2" class="nav-link" data-scroll-target="#los-5-bloques-de-la-gramática-en-ggplot2"><span class="header-section-number">12.3</span> 🧩 Los 5 bloques de la Gramática en <code>ggplot2</code></a></li>
-  <li><a href="#ejemplo-explicado-paso-a-paso" id="toc-ejemplo-explicado-paso-a-paso" class="nav-link" data-scroll-target="#ejemplo-explicado-paso-a-paso"><span class="header-section-number">12.4</span> 🎨 Ejemplo explicado paso a paso</a>
+  <li><a href="#ejemplo-explicado-paso-a-paso" id="toc-ejemplo-explicado-paso-a-paso" class="nav-link" data-scroll-target="#ejemplo-explicado-paso-a-paso"><span class="header-section-number">12.4</span> 🎨 Ejemplo explicado paso a paso</a></li>
+  <li><a href="#estadística-descriptiva-en-r" id="toc-estadística-descriptiva-en-r" class="nav-link" data-scroll-target="#estadística-descriptiva-en-r"><span class="header-section-number">13</span> Estadística Descriptiva en R</a>
   <ul>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">12.4.1</span> Referencias</a></li>
+  <li><a href="#conceptos-básicos" id="toc-conceptos-básicos" class="nav-link" data-scroll-target="#conceptos-básicos"><span class="header-section-number">13.1</span> 🧠 Conceptos Básicos</a>
+  <ul class="collapse">
+  <li><a href="#media" id="toc-media" class="nav-link" data-scroll-target="#media"><span class="header-section-number">13.1.1</span> 🔸 Media</a></li>
+  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">13.1.2</span> 🔸 Mediana</a></li>
+  <li><a href="#desviación-estándar" id="toc-desviación-estándar" class="nav-link" data-scroll-target="#desviación-estándar"><span class="header-section-number">13.1.3</span> 🔸 Desviación Estándar</a></li>
+  <li><a href="#resumen-de-datos" id="toc-resumen-de-datos" class="nav-link" data-scroll-target="#resumen-de-datos"><span class="header-section-number">13.1.4</span> 🔸 Resumen de datos</a></li>
+  </ul></li>
+  <li><a href="#cargar-datos-en-r" id="toc-cargar-datos-en-r" class="nav-link" data-scroll-target="#cargar-datos-en-r"><span class="header-section-number">13.2</span> 📥 1. Cargar datos en R</a></li>
+  <li><a href="#calcular-medidas-básicas" id="toc-calcular-medidas-básicas" class="nav-link" data-scroll-target="#calcular-medidas-básicas"><span class="header-section-number">13.3</span> 📐 2. Calcular medidas básicas</a>
+  <ul class="collapse">
+  <li><a href="#media-1" id="toc-media-1" class="nav-link" data-scroll-target="#media-1"><span class="header-section-number">13.3.1</span> Media</a></li>
+  <li><a href="#mediana-1" id="toc-mediana-1" class="nav-link" data-scroll-target="#mediana-1"><span class="header-section-number">13.3.2</span> Mediana</a></li>
+  <li><a href="#desviación-estándar-1" id="toc-desviación-estándar-1" class="nav-link" data-scroll-target="#desviación-estándar-1"><span class="header-section-number">13.3.3</span> Desviación estándar</a></li>
+  <li><a href="#resumen-de-datos-1" id="toc-resumen-de-datos-1" class="nav-link" data-scroll-target="#resumen-de-datos-1"><span class="header-section-number">13.3.4</span> 📦 3. Resumen de datos</a></li>
+  </ul></li>
+  <li><a href="#visualización-básica" id="toc-visualización-básica" class="nav-link" data-scroll-target="#visualización-básica"><span class="header-section-number">13.4</span> 📊 4. Visualización básica</a></li>
+  <li><a href="#ejemplo-completo" id="toc-ejemplo-completo" class="nav-link" data-scroll-target="#ejemplo-completo"><span class="header-section-number">13.5</span> 🧪 5. Ejemplo completo</a>
+  <ul class="collapse">
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">13.5.1</span> Referencias</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -602,7 +657,6 @@ Note
 <li><p><code>geom_histogram()</code> → histogramas</p></li>
 <li><p><code>geom_boxplot()</code> → boxplots</p></li>
 <li><p><code>geom_bar()</code> → barras</p></li>
-<li></li>
 </ul>
 <ol start="4" type="1">
 <li><strong>Escalas <code>(scale_)</code></strong></li>
@@ -666,14 +720,188 @@ Note
 <p><img src="images/clipboard-3599886339.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="391"></p>
 </figure>
 </div>
-<section id="referencias" class="level3" data-number="12.4.1">
-<h3 data-number="12.4.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">12.4.1</span> Referencias</h3>
+</section>
+<section id="estadística-descriptiva-en-r" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Estadística Descriptiva en R</h1>
+<p>La <strong>estadística descriptiva</strong> permite resumir y entender rápidamente las características principales de un conjunto de datos. En esta sección cubriremos los conceptos esenciales:</p>
+<ul>
+<li><strong>Media</strong></li>
+<li><strong>Mediana</strong></li>
+<li><strong>Desviación estándar</strong></li>
+<li><strong>Resumen de datos</strong></li>
+<li>Implementación práctica en <strong>R</strong></li>
+</ul>
+<hr>
+<section id="conceptos-básicos" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="conceptos-básicos"><span class="header-section-number">13.1</span> 🧠 Conceptos Básicos</h2>
+<section id="media" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="media"><span class="header-section-number">13.1.1</span> 🔸 Media</h3>
+<p>La <strong>media</strong> es simplemente el <strong>promedio</strong> de los datos.<br>
+👉 Tomas todos los valores, los sumas y los divides entre la cantidad de datos.</p>
+<p>Ejemplo:<br>
+Datos: 4, 6, 10<br>
+Media = (4 + 6 + 10) / 3 = <strong>6.67</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screenshot 2025-11-26 at 12.59.09 p.m.-03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="574"></p>
+</figure>
+</div>
+</section>
+<section id="mediana" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="mediana"><span class="header-section-number">13.1.2</span> 🔸 Mediana</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ejemplo:<br>
+</p>
+<p>Datos: 2, 8, 5 → ordenados: 2, 5, 8<br>
+Mediana = 5</p>
+</div>
+</div>
+<p>Si hay <strong>números pares</strong>, no hay un valor justo al centro, así que tomas los dos del centro y sacas su promedio.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ejemplo:<br>
+</p>
+<p>Datos: 1, 3, 7, 10 → del centro: 3 y 7 → mediana = (3+7)/2 = <strong>5</strong></p>
+</div>
+</div>
+<p>La mediana sirve mucho cuando hay valores extremos (outliers) que podrían afectar la media.</p>
+</section>
+<section id="desviación-estándar" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="desviación-estándar"><span class="header-section-number">13.1.3</span> 🔸 Desviación Estándar</h3>
+<ul>
+<li><p>Es una medida que indica <strong>qué tan dispersos</strong> o <strong>separados</strong> están los datos respecto a la media.</p></li>
+<li><p>Si la desviación estándar es <strong>pequeña</strong>, los valores están <strong>muy cerca</strong> del promedio.</p></li>
+<li><p>Si es <strong>grande</strong>, los valores están <strong>muy separados</strong> y hay más variabilidad.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screenshot 2025-11-26 at 12.59.28 p.m.-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="588"></p>
+</figure>
+</div>
+</section>
+<section id="resumen-de-datos" class="level3" data-number="13.1.4">
+<h3 data-number="13.1.4" class="anchored" data-anchor-id="resumen-de-datos"><span class="header-section-number">13.1.4</span> 🔸 Resumen de datos</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Incluye:<br>
+- Mínimo: Es el valor <strong>más pequeño</strong> del conjunto de datos, Ayuda a saber cuál es el extremo más bajo.<br>
+- 1er cuartil (Q1) : Es el valor qué marca el <strong>25%</strong> de los datos inferiores cuando están ordenados.</p>
+<p>Es decir:</p>
+<ul>
+<li><p>25% de los datos están por <strong>debajo</strong> de Q1</p></li>
+<li><p>75% están por <strong>encima</strong></p></li>
+</ul>
+<p>Q1 ayuda a saber dónde empieza la parte “baja” de los datos.<br>
+- Mediana: Es el valor que divide los datos en dos partes iguales (50%).<br>
+(Es muy útil cuando hay valores extremos porque <strong>no se altera tanto como la media</strong>).<br>
+- Media: El promedio de los datos (Se usa para representar el “centro”, pero es sensible a valores extremos).<br>
+- 3er cuartil (Q3): Es el valor que marca el <strong>75%</strong> de los datos ordenados.</p>
+<p>Significa:</p>
+<ul>
+<li><p>75% de los datos están por <strong>debajo</strong></p></li>
+<li><p>25% por <strong>encima</strong></p></li>
+<li><p>Ayuda a ver dónde empieza la parte “alta” de los datos.</p></li>
+</ul>
+<p>- Máximo: Es el valor <strong>más grande</strong> del conjunto.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="cargar-datos-en-r" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="cargar-datos-en-r"><span class="header-section-number">13.2</span> 📥 1. Cargar datos en R</h2>
+<p>Usaremos un vector de ejemplo llamado <code>x</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="calcular-medidas-básicas" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="calcular-medidas-básicas"><span class="header-section-number">13.3</span> 📐 2. Calcular medidas básicas</h2>
+<section id="media-1" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="media-1"><span class="header-section-number">13.3.1</span> Media</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="mediana-1" class="level3" data-number="13.3.2">
+<h3 data-number="13.3.2" class="anchored" data-anchor-id="mediana-1"><span class="header-section-number">13.3.2</span> Mediana</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="desviación-estándar-1" class="level3" data-number="13.3.3">
+<h3 data-number="13.3.3" class="anchored" data-anchor-id="desviación-estándar-1"><span class="header-section-number">13.3.3</span> Desviación estándar</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="resumen-de-datos-1" class="level3" data-number="13.3.4">
+<h3 data-number="13.3.4" class="anchored" data-anchor-id="resumen-de-datos-1"><span class="header-section-number">13.3.4</span> 📦 3. Resumen de datos</h3>
+<p>R ofrece una función integrada:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto muestra: - Mínimo - Q1 - Mediana - Media - Q3 - Máximo</p>
+<hr>
+</section>
+</section>
+<section id="visualización-básica" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="visualización-básica"><span class="header-section-number">13.4</span> 📊 4. Visualización básica</h2>
+<p>Para complementar la estadística descriptiva, podemos usar un <strong>histograma</strong>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">main =</span> <span class="st">"Histograma de valores"</span>, <span class="at">xlab =</span> <span class="st">"Valores"</span>, <span class="at">col =</span> <span class="st">"lightpink"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y un <strong>boxplot</strong>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(x, <span class="at">main =</span> <span class="st">"Boxplot de valores"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="ejemplo-completo" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="ejemplo-completo"><span class="header-section-number">13.5</span> 🧪 5. Ejemplo completo</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">7</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(x)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>desv <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> <span class="fu">summary</span>(x)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media:"</span>, media, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mediana:"</span>, mediana, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desviación Estándar:"</span>, desv, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Resumen:</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resumen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<ul>
+<li>La estadística descriptiva permite obtener una visión general rápida de los datos.</li>
+<li>R facilita estos cálculos con funciones simples e intuitivas.</li>
+<li>Estas herramientas son la base para análisis más avanzados en genómica y ciencias de datos.</li>
+</ul>
+<section id="referencias" class="level3" data-number="13.5.1">
+<h3 data-number="13.5.1" class="anchored" data-anchor-id="referencias"><span class="header-section-number">13.5.1</span> Referencias</h3>
 <ul>
 <li>The Carpentries. (2025). <em>R for Reproducible Scientific Analysis</em>.<br>
 <a href="https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html" class="uri">https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html</a></li>
+<li>Demiryürek, G. (2021). <em>Harry Potter Dataset</em>. Kaggle.<br>
+<a href="https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset" class="uri">https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset</a></li>
+<li></li>
 </ul>
 
 
+</section>
 </section>
 </section>
 

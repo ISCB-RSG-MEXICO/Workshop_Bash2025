@@ -28,91 +28,11 @@ Un algoritmo podemos definirlo como un **programa o software**.
 >
 > Basado en [*Wilson, et al. 2014. PLOS Biology*](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)
 
-## 🔐 Ética y responsabilidad en bioinformática
-
-En bioinformática es crucial garantizar el **uso ético y responsable** de datos, especialmente cuando incluyen **genomas humanos** o información sensible.\
-
-Esto implica:
-
--   Proteger la privacidad del individuo.
-
--   Respetar las regulaciones y marcos legales vigentes.
-
--   Mantener prácticas transparentes y reproducibles.
-
--   Evitar errores que comprometan la integridad del análisis.
-
-Estas medidas fortalecen la confianza en los resultados y evitan problemas graves como **retractaciones científicas**.
-
-## 🧪 Pasos para escribir un buen software
-
-::: callout-note
-1.  Análisis del problema / Definir el problema
-
-2.  Diseño del algoritmo / Diseño del programa
-
-3.  Codificación / Escribir el código
-
-4.  Compilación y ejecución del programa
-
-5.  Verificación / Realizar pruebas
-
-6.  Depuración / Detectar los errores y corregirlos (Programacion defensiva)
-
-7.  Documentación
-:::
-
--   ::: callout-note
-    ### 🗂️ Paso 7: Documentación
-
-    Incluye siempre:
-
-    -   *Título* (opcional)
-
-    -   *Autor (author)*: Su nombre
-
-    -   *Dia (date)*: Fecha de creación
-
-    -   *Paquetes (packages)*
-
-    -   *Directorio de trabajo (Working directory)*: En que carpeta se encuentra tu datos y programa.
-
-    -   *Información descriptiva del programa (Description)*: ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.
-
-    -   *Usage* ¿Cómo se utiliza?
-
-    -   *Argumentos (Arguments)*
-
-        -   *Información de entrada (Data Inputs)*: Ej: Solo numeros enteros (sin decimales).
-
-        -   *Información de salida (Outpus)*: Graficas, figuras, tablas, etc.
-    :::
-
 ![](https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg){fig-align="center" width="430"}
 
-## ⭐ Puntos clave para buenas prácticas en bioinformática
+### 🚩Planifica los errores (**programación defensiva)**
 
-### 
- Escribe programas para personas, no para máquinas ✏️
-
--   Documenta qué hace tu código y por qué.
-
--   Mantén coherencia en nombres, indentación y estilo.
-
-### 🧱Usa modularidad
-
--   Divide tu código en **funciones pequeñas de un solo propósito**.
-
--   No repitas código
-
--   Crea pasos reproducibles o que se repitan por si solos (Usa funciones, loops y scripts reproducibles).
-
-### 
-🚩Planifica los errores (**programación defensiva)**
-
-Es una práctica donde **asumes que pueden ocurrir errores** y **preparas tu código** para detectarlos, avisar y manejar la situación sin que todo truene.~\
-~
-No se trata de ser pesimista: es ser **realista**.
+Es una práctica donde **asumes que pueden ocurrir errores** y **preparas tu código** para detectarlos, avisar y manejar la situación sin que todo truene.
 
 -   ::: {.callout-note style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }" icon="false"}
     ~bash~
@@ -123,17 +43,8 @@ No se trata de ser pesimista: es ser **realista**.
 
     `if (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop("El archivo FASTA no existe: ", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional`
 
-    `seqs <- read.fasta(fasta_path)` `# lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional`
+    `seqs <- read.fasta(fasta_path)` ``` # lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional ```
     :::
-
-### 
-⚙️ Optimiza al final
-
--   Primero que funcione.
-
--   Después que funcione *bien*.
-
--   Optimiza el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.
 
 ## 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?
 
@@ -163,57 +74,13 @@ ChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:
 
 Trabajar en R para bioinformática requiere código limpio, reproducible y fácil de compartir. Aquí tienes un conjunto de buenas prácticas recomendadas por expertos y comunidades como *R for Data Science*, *The Tidyverse Style Guide*, *Bioconductor* y *The Carpentries*.
 
-## 📁Organiza tus proyectos con *project-based workflows*
-
--   Usa siempre un **RStudio Project (`.Rproj`)**.
-
--   Evita rutas absolutas como:\
-    `setwd("C:/Users/Mariana/Desktop/")` ❌
-
--   Usa rutas relativas con **`here::here()`** o **`fs`**:\
-    `here("data", "input.csv")` ✔️
-
--   Mantén carpetas claras:
-
-::: {.callout-note style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }"}
-~bash~
-
-`/data`
-
-`/scripts`
-
-`/results`
-
-`/figures`
-:::
-
 ## 📦 Carga solo los paquetes necesarios
 
 -   Evita cargar 10 paquetes si solo usas 1 función.
 
--   Usa **`pacman::p_load()`** o declara explícitamente tus dependencias.
+-   Declara explícitamente tus dependencias.
 
 -   Incluye siempre una sección “Paquetes” en tus scripts `.R`.
-
-## ✏️ Fórmula de oro: *estilo + consistencia*
-
-Sigue guías como **tidyverse style guide**:
-
--   Nombres de objetos en snake_case → `mi_dataframe`, `hp_colors`.
-
--   Espacios consistentes después de comas y operadores.
-
--   Líneas cortas (\< 80 caracteres).
-
--   Comentarios claros con:
-
-::: {.callout-note style="background-color: #7F0000;     /* rojo intenso */ border-left: 6px solid #FF0000; /* rojo brillante */ color: #FFDFA3;                 /* dorado suave */" icon="false"}
-`r`
-
-`# Filtrar solo Ravenclaw df_ravens`
-
-`<- df %>% filter(House == "Ravenclaw")`
-:::
 
 ## 🧱 Modulariza tu código
 
@@ -221,54 +88,9 @@ Sigue guías como **tidyverse style guide**:
 
 -   Guarda funciones en `/scripts/functions.R`.
 
--   Usa `source("scripts/functions.R")` cuando sea necesario.
-
 Esto evita repetir código y hace tus análisis más reproducibles.
 
-## 
 🔄 Haz tu código *pipeline-friendly*
-
-Prefiere el estilo tidyverse:
-
-::: {.callout-note style="background-color: #FFF200;       border-left: 6px solid #FFD300;   color: \"black\";"}
-`r`
-
-`hp_data %>%   count(House) %>%     mutate(percent = n / sum(n))`
-:::
-
-En lugar de 10 líneas de transformaciones anidadas ilegibles.
-
-## 🧪 Valida tus datos antes de analizarlos
-
-Incluye checks preventivos:
-
-::: {.callout-note style="background-color: #001A4D;       border-left: 6px solid #0047FF;   color: #E6D5B8;"}
-r
-
-`stopifnot(is.data.frame(hp_data)) stopifnot(all(c("House") %in% names(hp_data)))`
-:::
-
-Esto evita errores sorpresivos al final del análisis.
-
-## 🌱 Haz que tus gráficos sean reproducibles
-
-Incluye:
-
--   Título
-
--   Ejes (o explícitamente sin ejes)
-
--   Paletas documentadas
-
--   Tamaños de punto, fuente, etc.
-
-Y **guarda tus figuras con código reproducible**, en una carpeta específica:
-
-::: {.callout-note style="background-color: #003B1A;       border-left: 6px solid #00A651;   color: #E0FFE8;"}
-r
-
-`ggsave("figures/house_plot.png", width = 6, height = 4, dpi = 300)`
-:::
 
 ## 📚Documenta tus scripts
 
@@ -279,24 +101,6 @@ r
 
 `# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse`
 :::
-
-## 🧬 Usa herramientas de análisis reproducible
-
-Para proyectos grandes:
-
--   **R Markdown** o **Quarto (`.qmd`)**
-
--   **renv** para versiones de paquetes
-
--   **targets** o **drake** para pipelines complejos
-
--   **Bioconductor** para análisis genómicos estandarizados
-
-## 🧼Limpia tu entorno (pero no demasiado)
-
--   Evita usar `rm(list = ls())` a menos que sea estrictamente necesario.
-
--   Un proyecto bien estructurado no depende del “entorno emocionado”.
 
 ## 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?
 

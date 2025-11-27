@@ -116,8 +116,6 @@ Corresponde a el tipo de gráfico:
 
 -   `geom_bar()` → barras
 
--   
-
 4.  **Escalas `(scale_)`**
 
 Permite ajustar los colores, tamaños, ejes, etc.
@@ -156,11 +154,7 @@ Aspecto final del gráfico: fondo, líneas, letras.
 
 ![](images/clipboard-3599886339.png){fig-align="center" width="391"}
 
-## Creación de histogramas y diagramas de dispersión básicos.
-
-FALTA METER INFO
-
-# Estadística Descriptiva en R 
+# Estadística Descriptiva en R
 
 La **estadística descriptiva** permite resumir y entender rápidamente las características principales de un conjunto de datos. En esta sección cubriremos los conceptos esenciales:
 
@@ -183,7 +177,7 @@ Ejemplo:\
 Datos: 4, 6, 10\
 Media = (4 + 6 + 10) / 3 = **6.67**
 
-![](images/Screenshot 2025-11-26 at 12.59.09 p.m.-01.png)
+![](images/Screenshot 2025-11-26 at 12.59.09 p.m.-03.png){fig-align="center" width="574"}
 
 ### 🔸 Mediana
 
@@ -212,12 +206,12 @@ La mediana sirve mucho cuando hay valores extremos (outliers) que podrían afect
 
 -   Si es **grande**, los valores están **muy separados** y hay más variabilidad.
 
-![](images/Screenshot 2025-11-26 at 12.59.28 p.m..png)
+![](images/Screenshot 2025-11-26 at 12.59.28 p.m.-01.png){fig-align="center" width="588"}
 
 ### 🔸 Resumen de datos
 
 ::: callout-note
-Incluye: \
+Incluye:\
 - Mínimo: Es el valor **más pequeño** del conjunto de datos, Ayuda a saber cuál es el extremo más bajo.\
 - 1er cuartil (Q1) : Es el valor qué marca el **25%** de los datos inferiores cuando están ordenados.
 
