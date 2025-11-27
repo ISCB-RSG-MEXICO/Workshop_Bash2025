@@ -1,9 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Introducción a BEDtools en R 🧬
 =======
 # BedTools R
 
 ## 💻 Introducción
+=======
+# BedTools R
+
+## 💻 Introducción
+
+Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
 
 Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
 >>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
