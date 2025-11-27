@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Introducción a BEDtools en R 🧬
 =======
 # BedTools R
