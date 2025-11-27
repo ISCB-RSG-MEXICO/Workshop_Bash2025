@@ -14,9 +14,6 @@ Este documento proporciona una guía básica para trabajar con **R**, **Bedtools
 >>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
 
 Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
-
-Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
 Incluye:
 
 -   Preparación del ambiente
