@@ -381,14 +381,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Bedtools_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introducción a BEDtools en R 🧬</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./install_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
     </ul>
@@ -402,10 +408,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#qué-es-un-algoritmo" id="toc-qué-es-un-algoritmo" class="nav-link active" data-scroll-target="#qué-es-un-algoritmo"><span class="header-section-number">1.1</span> ⭐ ¿Qué es un algoritmo?</a></li>
-  <li><a href="#qué-necesitamos-para-escribir-un-buen-software" id="toc-qué-necesitamos-para-escribir-un-buen-software" class="nav-link" data-scroll-target="#qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">1.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</a>
-  <ul>
-  <li><a href="#planifica-los-errores-programación-defensiva" id="toc-planifica-los-errores-programación-defensiva" class="nav-link" data-scroll-target="#planifica-los-errores-programación-defensiva"><span class="header-section-number">1.2.1</span> 🚩Planifica los errores (<strong>programación defensiva)</strong></a></li>
-  </ul></li>
+  <li><a href="#qué-necesitamos-para-escribir-un-buen-software" id="toc-qué-necesitamos-para-escribir-un-buen-software" class="nav-link" data-scroll-target="#qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">1.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</a></li>
   <li><a href="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" id="toc-cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="nav-link" data-scroll-target="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">1.3</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</a></li>
   <li><a href="#buenas-prácticas-en-r" id="toc-buenas-prácticas-en-r" class="nav-link" data-scroll-target="#buenas-prácticas-en-r"><span class="header-section-number">2</span> 🦾 Buenas prácticas en <strong>R</strong></a>
   <ul>
@@ -470,29 +473,6 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="430"></p>
 </figure>
 </div>
-<section id="planifica-los-errores-programación-defensiva" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="planifica-los-errores-programación-defensiva"><span class="header-section-number">1.2.1</span> 🚩Planifica los errores (<strong>programación defensiva)</strong></h3>
-<p>Es una práctica donde <strong>asumes que pueden ocurrir errores</strong> y <strong>preparas tu código</strong> para detectarlos, avisar y manejar la situación sin que todo truene.</p>
-<ul>
-<li><div class="callout callout-style-default callout-note no-icon callout-titled" style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><sub>bash</sub></p>
-<p><code>#validación de un archivo vacio if [ ! -s "$file" ]; then  #Si el archivo no existe o tiene tamaño 0, entra al thenecho "Error: archivo vacío o no existe" &gt;&amp;2  #imprime el mensaje. y &gt;&amp;2 envía el mensaje al stderr (salida de error)exit 1  #1 es un código de error (0 = éxito, cualquier otro número = fallo).fi  #Es el cierre del if</code></p>
-<p><code>r</code></p>
-<p><code>if (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop("El archivo FASTA no existe: ", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional</code></p>
-<p><code>seqs &lt;- read.fasta(fasta_path)</code> <code># lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional</code></p>
-</div>
-</div></li>
-</ul>
-</section>
 </section>
 <section id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">1.3</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</h2>

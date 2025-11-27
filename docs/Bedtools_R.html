@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 8&nbsp; Conceptos de R</title>
+<title>Workshop Bash &amp; R - 13&nbsp; BedTools R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Cap1_R.html" rel="next">
-<link href="./Cap5_B.html" rel="prev">
+<link href="./install_B.html" rel="next">
+<link href="./Cap4_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro_R.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bedtools_R.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">BedTools R</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_R.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></span></a>
   </div>
 </li>
@@ -208,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Bedtools_R.html" class="sidebar-item-text sidebar-link">
+  <a href="./Bedtools_R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">BedTools R</span></span></a>
   </div>
 </li>
@@ -234,13 +268,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-r" id="toc-qué-es-r" class="nav-link active" data-scroll-target="#qué-es-r"><span class="header-section-number">8.1</span> ¿Qué es R?</a></li>
-  <li><a href="#qué-es-rstudio" id="toc-qué-es-rstudio" class="nav-link" data-scroll-target="#qué-es-rstudio"><span class="header-section-number">8.2</span> ¿Qué es RStudio?</a></li>
-  <li><a href="#filosofía-de-r" id="toc-filosofía-de-r" class="nav-link" data-scroll-target="#filosofía-de-r"><span class="header-section-number">8.3</span> Filosofía de R</a></li>
-  <li><a href="#diferencias-con-hojas-de-cálculo" id="toc-diferencias-con-hojas-de-cálculo" class="nav-link" data-scroll-target="#diferencias-con-hojas-de-cálculo"><span class="header-section-number">8.4</span> Diferencias con hojas de cálculo</a></li>
-  <li><a href="#interfaz-básica-de-rstudio" id="toc-interfaz-básica-de-rstudio" class="nav-link" data-scroll-target="#interfaz-básica-de-rstudio"><span class="header-section-number">8.5</span> Interfaz básica de RStudio</a></li>
-  <li><a href="#flujo-de-trabajo-en-rstudio" id="toc-flujo-de-trabajo-en-rstudio" class="nav-link" data-scroll-target="#flujo-de-trabajo-en-rstudio"><span class="header-section-number">8.6</span> Flujo de trabajo en RStudio</a></li>
-  <li><a href="#material-suplementario" id="toc-material-suplementario" class="nav-link" data-scroll-target="#material-suplementario"><span class="header-section-number">8.7</span> Material suplementario</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">13.1</span> 💻 Introducción</a></li>
+  <li><a href="#requerimientos" id="toc-requerimientos" class="nav-link" data-scroll-target="#requerimientos"><span class="header-section-number">13.2</span> 🔧 Requerimientos</a>
+  <ul>
+  <li><a href="#software-necesario" id="toc-software-necesario" class="nav-link" data-scroll-target="#software-necesario"><span class="header-section-number">13.2.1</span> Software necesario</a></li>
+  </ul></li>
+  <li><a href="#qué-es-bedtools" id="toc-qué-es-bedtools" class="nav-link" data-scroll-target="#qué-es-bedtools"><span class="header-section-number">13.3</span> 🧬 ¿Qué es Bedtools?</a></li>
+  <li><a href="#formatos-comúnes-bed-gff-fasta" id="toc-formatos-comúnes-bed-gff-fasta" class="nav-link" data-scroll-target="#formatos-comúnes-bed-gff-fasta"><span class="header-section-number">13.4</span> 📁 Formatos comúnes (BED, GFF, FASTA)</a>
+  <ul>
+  <li><a href="#formato-bed" id="toc-formato-bed" class="nav-link" data-scroll-target="#formato-bed"><span class="header-section-number">13.4.1</span> Formato BED</a></li>
+  <li><a href="#formato-gffgtf" id="toc-formato-gffgtf" class="nav-link" data-scroll-target="#formato-gffgtf"><span class="header-section-number">13.4.2</span> Formato GFF/GTF</a></li>
+  </ul></li>
+  <li><a href="#comandos-básicos-de-bedtools" id="toc-comandos-básicos-de-bedtools" class="nav-link" data-scroll-target="#comandos-básicos-de-bedtools"><span class="header-section-number">13.5</span> ✨ Comandos básicos de Bedtools</a>
+  <ul>
+  <li><a href="#intersectar-regiones" id="toc-intersectar-regiones" class="nav-link" data-scroll-target="#intersectar-regiones"><span class="header-section-number">13.5.1</span> Intersectar regiones</a></li>
+  <li><a href="#unir-regiones" id="toc-unir-regiones" class="nav-link" data-scroll-target="#unir-regiones"><span class="header-section-number">13.5.2</span> Unir regiones</a></li>
+  <li><a href="#complemento-genómico" id="toc-complemento-genómico" class="nav-link" data-scroll-target="#complemento-genómico"><span class="header-section-number">13.5.3</span> Complemento genómico</a></li>
+  <li><a href="#cobertura" id="toc-cobertura" class="nav-link" data-scroll-target="#cobertura"><span class="header-section-number">13.5.4</span> Cobertura</a></li>
+  </ul></li>
+  <li><a href="#leer-archivos-bed-en-r" id="toc-leer-archivos-bed-en-r" class="nav-link" data-scroll-target="#leer-archivos-bed-en-r"><span class="header-section-number">13.6</span> 📥 Leer archivos BED en R</a>
+  <ul>
+  <li><a href="#con-rtracklayer" id="toc-con-rtracklayer" class="nav-link" data-scroll-target="#con-rtracklayer"><span class="header-section-number">13.6.1</span> Con <code>rtracklayer</code></a></li>
+  <li><a href="#con-data.table" id="toc-con-data.table" class="nav-link" data-scroll-target="#con-data.table"><span class="header-section-number">13.6.2</span> Con <code>data.table</code></a></li>
+  </ul></li>
+  <li><a href="#convertir-bed-a-granges" id="toc-convertir-bed-a-granges" class="nav-link" data-scroll-target="#convertir-bed-a-granges"><span class="header-section-number">13.7</span> 🔗 Convertir BED a GRanges</a></li>
+  <li><a href="#exportar-bed-desde-r" id="toc-exportar-bed-desde-r" class="nav-link" data-scroll-target="#exportar-bed-desde-r"><span class="header-section-number">13.8</span> 📤 Exportar BED desde R</a></li>
+  <li><a href="#ejemplo-práctico-completo" id="toc-ejemplo-práctico-completo" class="nav-link" data-scroll-target="#ejemplo-práctico-completo"><span class="header-section-number">13.9</span> 🧪 Ejemplo práctico completo</a></li>
+  <li><a href="#integrar-r-bedtools-desde-r" id="toc-integrar-r-bedtools-desde-r" class="nav-link" data-scroll-target="#integrar-r-bedtools-desde-r"><span class="header-section-number">13.10</span> 🧭 Integrar R + Bedtools desde R</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">13.11</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -249,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Conceptos de R</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">BedTools R</span></h1>
 </div>
 
 
@@ -264,94 +319,140 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="qué-es-r" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="qué-es-r"><span class="header-section-number">8.1</span> ¿Qué es R?</h2>
-<p>Lenguaje de programación y entorno de software creado en 1993 por <strong>Ross Ihaka</strong> y <strong>Robert Gentleman</strong> en la Universidad de Auckland, Nueva Zelanda.</p>
-<p>R está diseñado para el <strong>análisis estadístico</strong>, la <strong>visualización de datos</strong> y la <strong>computación científica</strong>.</p>
+<section id="introducción" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">13.1</span> 💻 Introducción</h2>
+<p>Este documento proporciona una guía básica para trabajar con <strong>R</strong>, <strong>Bedtools</strong>, y archivos genómicos.<br>
+</p>
+<p>Incluye:</p>
 <ul>
-<li><p>Software libre y de código abierto.</p></li>
-<li><p>Multiplataforma (Windows, macOS y Linux).</p></li>
-<li><p>Permite realizar análisis reproducibles y automatizados.</p></li>
+<li>Preparación del ambiente</li>
+<li>Comandos esenciales de Bedtools</li>
+<li>Lectura y manipulación de BED/GFF en R</li>
+<li>Ejemplos prácticos</li>
 </ul>
-<p>R es ampliamente utilizado en biología, ecología, ciencias sociales, economía y muchas otras disciplinas.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://download.logo.wine/logo/R_(programming_language)/R_(programming_language)-Logo.wine.png" class="img-fluid figure-img" width="400"></p>
-</figure>
-</div>
+<hr>
 </section>
-<section id="qué-es-rstudio" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="qué-es-rstudio"><span class="header-section-number">8.2</span> ¿Qué es RStudio?</h2>
-<p><strong>RStudio</strong> es un <strong>Entorno de Desarrollo Integrado (IDE)</strong> que facilita el uso de R.<br>
-Ofrece una interfaz amigable con herramientas para escribir código, visualizar datos y administrar proyectos.</p>
-<p>Ventajas:</p>
+<section id="requerimientos" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="requerimientos"><span class="header-section-number">13.2</span> 🔧 Requerimientos</h2>
+<section id="software-necesario" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="software-necesario"><span class="header-section-number">13.2.1</span> Software necesario</h3>
 <ul>
-<li><p>Permite ejecutar código y ver resultados de inmediato.</p></li>
-<li><p>Integra control de versiones (Git).</p></li>
-<li><p>Incluye paneles para trabajar con archivos, gráficos, paquetes y ayuda.</p></li>
-<li><p>Facilita la creación de reportes, presentaciones y scripts reproducibles.</p></li>
+<li><strong>R</strong> (versión 4+)</li>
+<li><strong>RStudio</strong> (opcional)</li>
+<li><strong>Bedtools</strong> instalado en tu sistema</li>
+<li>Paquetes R:
+<ul>
+<li><code>tidyverse</code></li>
+<li><code>rtracklayer</code></li>
+<li><code>data.table</code></li>
+<li><code>GenomicRanges</code></li>
+</ul></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.marefa.org/w/images/thumb/d/d0/RStudio_logo_flat.svg/1200px-RStudio_logo_flat.svg.png" class="img-fluid figure-img" width="400"></p>
-</figure>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"data.table"</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">"rtracklayer"</span>, <span class="st">"GenomicRanges"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
-<section id="filosofía-de-r" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="filosofía-de-r"><span class="header-section-number">8.3</span> Filosofía de R</h2>
-<ul>
-<li><p>Promueve la <strong>ciencia abierta y reproducible</strong>.</p></li>
-<li><p>Fomenta la <strong>transparencia en los análisis</strong> al guardar todo el flujo de trabajo en código.</p></li>
-<li><p>Comunidad activa que desarrolla miles de paquetes (CRAN, Bioconductor, GitHub).</p></li>
-</ul>
 </section>
-<section id="diferencias-con-hojas-de-cálculo" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="diferencias-con-hojas-de-cálculo"><span class="header-section-number">8.4</span> Diferencias con hojas de cálculo</h2>
-<p>Herramientas como <strong>Excel</strong> o <strong>Google Sheets</strong> son útiles para tareas básicas, pero:</p>
-<ul>
-<li><p>Limitan el tamaño de los datos.</p></li>
-<li><p>No documentan los pasos del análisis.</p></li>
-<li><p>No son fácilmente reproducibles.</p></li>
-</ul>
-<p>R permite registrar y compartir <strong>todo el proceso analítico</strong> con unas pocas líneas de código.</p>
+<section id="qué-es-bedtools" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="qué-es-bedtools"><span class="header-section-number">13.3</span> 🧬 ¿Qué es Bedtools?</h2>
+<p><strong>Bedtools</strong> es una suite de herramientas para realizar operaciones sobre regiones genómicas.</p>
+<p>Permite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Conversión entre formatos</p>
+<hr>
 </section>
-<section id="interfaz-básica-de-rstudio" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="interfaz-básica-de-rstudio"><span class="header-section-number">8.5</span> Interfaz básica de RStudio</h2>
-<p>Cuando abres RStudio encontrarás cuatro paneles principales:</p>
-<ol type="1">
-<li><p><span style="color:#e2a9f1"><strong>Source</strong></span> (arriba a la izquierda): donde escribes y editas código.</p></li>
-<li><p><span style="color:#9BCF53"><strong>Console</strong></span> (abajo a la izquierda): donde se ejecutan los comandos.</p></li>
-<li><p><span style="color:#5ce1e6"><strong>Environment / History</strong></span> (arriba a la derecha): muestra los objetos creados y el historial de comandos.</p></li>
-<li><p><span style="color:#ff91d5"><strong>Files / Plots / Packages / Help / Viewer</strong></span> (abajo a la derecha): para explorar resultados, archivos y documentación.</p>
-<p><img src="figures/consola_R.png" class="img-fluid"></p></li>
-</ol>
+<section id="formatos-comúnes-bed-gff-fasta" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="formatos-comúnes-bed-gff-fasta"><span class="header-section-number">13.4</span> 📁 Formatos comúnes (BED, GFF, FASTA)</h2>
+<section id="formato-bed" class="level3" data-number="13.4.1">
+<h3 data-number="13.4.1" class="anchored" data-anchor-id="formato-bed"><span class="header-section-number">13.4.1</span> Formato BED</h3>
+<p>Columnas mínimas:<br>
+1. cromosoma 2. inicio 3. fin</p>
+<p>Ejemplo:</p>
+<pre><code>chr1    1000    1500
+chr1    2000    2300</code></pre>
 </section>
-<section id="flujo-de-trabajo-en-rstudio" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="flujo-de-trabajo-en-rstudio"><span class="header-section-number">8.6</span> Flujo de trabajo en RStudio</h2>
-<p>Existen dos formas principales de trabajar dentro de <strong>RStudio</strong>:</p>
-<ol type="1">
-<li><strong>Probar y jugar en la consola interactiva</strong> de R, y luego copiar el código a un archivo <code>.R</code> para ejecutarlo más tarde.</li>
-</ol>
-<ul>
-<li><p>Esta opción es útil al realizar pruebas pequeñas o cuando estás comenzando.</p></li>
-<li><p>Sin embargo, puede volverse tediosa conforme tu código crece.</p></li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Escribir directamente en un archivo <code>.R</code></strong> y usar los atajos de teclado de RStudio para ejecutar líneas o bloques de código en la consola interactiva.</li>
-</ol>
-<ul>
-<li><p>Es una excelente forma de trabajar desde el inicio, ya que todo tu código queda guardado.</p></li>
-<li><p>Podrás ejecutar el archivo completo desde RStudio o mediante la función <code>source()</code> de R.</p></li>
-</ul>
+<section id="formato-gffgtf" class="level3" data-number="13.4.2">
+<h3 data-number="13.4.2" class="anchored" data-anchor-id="formato-gffgtf"><span class="header-section-number">13.4.2</span> Formato GFF/GTF</h3>
+<p>tiene 9 columnas (atributos más complejos).</p>
+<hr>
 </section>
-<section id="material-suplementario" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="material-suplementario"><span class="header-section-number">8.7</span> Material suplementario</h2>
-<p>Para aprender más sobre R y RStudio puedes consultar los siguientes recursos abiertos:</p>
+</section>
+<section id="comandos-básicos-de-bedtools" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="comandos-básicos-de-bedtools"><span class="header-section-number">13.5</span> ✨ Comandos básicos de Bedtools</h2>
+<section id="intersectar-regiones" class="level3" data-number="13.5.1">
+<h3 data-number="13.5.1" class="anchored" data-anchor-id="intersectar-regiones"><span class="header-section-number">13.5.1</span> Intersectar regiones</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> intersect <span class="at">-a</span> A.bed <span class="at">-b</span> B.bed <span class="op">&gt;</span> interseccion.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="unir-regiones" class="level3" data-number="13.5.2">
+<h3 data-number="13.5.2" class="anchored" data-anchor-id="unir-regiones"><span class="header-section-number">13.5.2</span> Unir regiones</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> merge <span class="at">-i</span> regiones.bed <span class="op">&gt;</span> regiones_unidas.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="complemento-genómico" class="level3" data-number="13.5.3">
+<h3 data-number="13.5.3" class="anchored" data-anchor-id="complemento-genómico"><span class="header-section-number">13.5.3</span> Complemento genómico</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> complement <span class="at">-i</span> regiones.bed <span class="at">-g</span> genome_file.txt <span class="op">&gt;</span> complement.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="cobertura" class="level3" data-number="13.5.4">
+<h3 data-number="13.5.4" class="anchored" data-anchor-id="cobertura"><span class="header-section-number">13.5.4</span> Cobertura</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> coverage <span class="at">-a</span> regiones.bed <span class="at">-b</span> alineamientos.bam <span class="op">&gt;</span> coverage.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="leer-archivos-bed-en-r" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="leer-archivos-bed-en-r"><span class="header-section-number">13.6</span> 📥 Leer archivos BED en R</h2>
+<section id="con-rtracklayer" class="level3" data-number="13.6.1">
+<h3 data-number="13.6.1" class="anchored" data-anchor-id="con-rtracklayer"><span class="header-section-number">13.6.1</span> Con <code>rtracklayer</code></h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtracklayer)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bed <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"archivo.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="con-data.table" class="level3" data-number="13.6.2">
+<h3 data-number="13.6.2" class="anchored" data-anchor-id="con-data.table"><span class="header-section-number">13.6.2</span> Con <code>data.table</code></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>bed <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"archivo.bed"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bed) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"chr"</span>, <span class="st">"start"</span>, <span class="st">"end"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="convertir-bed-a-granges" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="convertir-bed-a-granges"><span class="header-section-number">13.7</span> 🔗 Convertir BED a GRanges</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GenomicRanges)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>bed_gr <span class="ot">&lt;-</span> <span class="fu">makeGRangesFromDataFrame</span>(bed, <span class="at">keep.extra.columns =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bed_gr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="exportar-bed-desde-r" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="exportar-bed-desde-r"><span class="header-section-number">13.8</span> 📤 Exportar BED desde R</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">export</span>(bed_gr, <span class="st">"salida.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="ejemplo-práctico-completo" class="level2" data-number="13.9">
+<h2 data-number="13.9" class="anchored" data-anchor-id="ejemplo-práctico-completo"><span class="header-section-number">13.9</span> 🧪 Ejemplo práctico completo</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtracklayer)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GenomicRanges)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Cargar BED</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"A.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"B.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Intersección en R (similar a bedtools intersect)</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>inter <span class="ot">&lt;-</span> <span class="fu">subsetByOverlaps</span>(a, b)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>inter</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Exportar resultado</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">export</span>(inter, <span class="st">"intersect_R.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="integrar-r-bedtools-desde-r" class="level2" data-number="13.10">
+<h2 data-number="13.10" class="anchored" data-anchor-id="integrar-r-bedtools-desde-r"><span class="header-section-number">13.10</span> 🧭 Integrar R + Bedtools desde R</h2>
+<p>Puedes ejecutar Bedtools dentro de R:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">"bedtools intersect -a A.bed -b B.bed &gt; inter.bed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="referencias" class="level2" data-number="13.11">
+<h2 data-number="13.11" class="anchored" data-anchor-id="referencias"><span class="header-section-number">13.11</span> Referencias</h2>
 <ul>
-<li><p>The Carpentries. (2025). <em>R for Reproducible Scientific Analysis</em>. <a href="https://swcarpentry.github.io/r-novice-gapminder/" class="uri">https://swcarpentry.github.io/r-novice-gapminder/</a></p></li>
-<li><p>CRAN. (2025). <em>The Comprehensive R Archive Network</em>. <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
-<li><p>Wickham, H. &amp; Grolemund, G. (2017). <em>R for Data Science</em>. O’Reilly Media. <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></p></li>
-<li><p>RStudio Education. (2024). <em>RStudio Primers</em>. <a href="https://posit.cloud/learn/primers" class="uri">https://posit.cloud/learn/primers</a></p></li>
+<li>Bedtools manual <a href="https://bedtools.readthedocs.io/?utm_source=chatgpt.com">https://bedtools.readthedocs.io/</a></li>
+<li>Bioconductor: GenomicRanges, rtracklayer <a href="https://bioconductor.org/packages/release/bioc/html/rtracklayer.html" class="uri">https://bioconductor.org/packages/release/bioc/html/rtracklayer.html</a></li>
+<li>UCSC Genome Browser formatos <a href="https://genome.ucsc.edu/" class="uri">https://genome.ucsc.edu/</a></li>
 </ul>
 
 
@@ -708,13 +809,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Cap5_B.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bed tools - Análisis de regiones genómicas</span></span>
+      <a href="./Cap4_R.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visualización y Análisis de Datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Cap1_R.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mis primeros pasos en R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./install_B.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

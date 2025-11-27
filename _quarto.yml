@@ -27,6 +27,7 @@ book:
     - Cap2_R.qmd
     - Cap3_R.qmd
     - Cap4_R.qmd
+    - Bedtools_R.qmd
     - install_B.qmd
     - install_R.qmd
   # Information

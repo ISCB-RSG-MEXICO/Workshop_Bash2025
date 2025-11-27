@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 # Introducción a BEDtools en R 🧬
+=======
+# BedTools R
+
+## 💻 Introducción
+
+Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
 
 Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
 Incluye:
@@ -40,7 +48,7 @@ Permite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Con
 
 ## 📁 Formatos comúnes (BED, GFF, FASTA)
 
-## Formato BED
+### Formato BED
 
 Columnas mínimas:\
 1. cromosoma 2. inicio 3. fin
@@ -52,7 +60,7 @@ chr1    1000    1500
 chr1    2000    2300
 ```
 
-## Formato GFF/GTF
+### Formato GFF/GTF
 
 tiene 9 columnas (atributos más complejos).
 
