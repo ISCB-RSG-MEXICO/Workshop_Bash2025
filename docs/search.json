@@ -4,14 +4,20 @@
     "href": "index.html",
     "title": "Workshop Bash & R",
     "section": "",
-    "text": "Información general"
+    "text": "Información general",
+    "crumbs": [
+      "Información general"
+    ]
   },
   {
     "objectID": "index.html#citar-y-reutilizar-el-material-del-curso",
     "href": "index.html#citar-y-reutilizar-el-material-del-curso",
     "title": "Workshop Bash & R",
     "section": "Citar y reutilizar el material del curso",
-    "text": "Citar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)."
+    "text": "Citar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).",
+    "crumbs": [
+      "Información general"
+    ]
   },
   {
     "objectID": "Bpracticas.html",
