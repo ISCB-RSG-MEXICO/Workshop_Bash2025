@@ -535,70 +535,100 @@
     "href": "Cap4_R.html",
     "title": "12  Visualización y Análisis de Datos",
     "section": "",
-    "text": "13 Estadística Descriptiva en R\nLa estadística descriptiva permite resumir y entender rápidamente las características principales de un conjunto de datos. En esta sección cubriremos los conceptos esenciales:"
+    "text": "12.1 🔍¿Qué es tidyverse?\nHay tres sistemas principales de graficación en R, el sistema de graficación base, el paquete de lattice y el paquete ggplot2.\nEs una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.\nInstala el paquete tidyverse completo con:\nPaquetes escenciales:",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#qué-es-tidyverse",
     "href": "Cap4_R.html#qué-es-tidyverse",
     "title": "12  Visualización y Análisis de Datos",
-    "section": "12.1 🔍¿Qué es tidyverse?",
-    "text": "12.1 🔍¿Qué es tidyverse?\nEs una colección de paquetes de R con una filosofía de diseño predefinida, diseñada para la manipulación y visualización en ciencia de datos. Todos los paquetes comparten una filosofía de diseño, gramática y estructura de datos.\n\n\n\n\n\nInstala el paquete tidyverse completo con:\n\n\n\n\n\n\nNote\n\n\n\n{r}\ninstall.packages(\"tidyverse\")\n\n\nPaquetes escenciales:\n\nggplot2 → gráficar\ndplyr → Manipulación de datos\ntidyr → ordenar datos\nreadr → leer datos\ntibble → dataframes modernos\nstringr/forcats → texto y factores"
+    "section": "",
+    "text": "Note\n\n\n\n{r}\ninstall.packages(\"tidyverse\")\n\n\n\n\nggplot2 → gráficar\ndplyr → Manipulación de datos\ntidyr → ordenar datos\nreadr → leer datos\ntibble → dataframes modernos\nstringr/forcats → texto y factores",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#introducción-a-ggplot2",
     "href": "Cap4_R.html#introducción-a-ggplot2",
     "title": "12  Visualización y Análisis de Datos",
     "section": "12.2 ⭐️Introducción a ggplot2",
-    "text": "12.2 ⭐️Introducción a ggplot2\nggplot2 es un paquete de R súper efectivo para crear gráficos de calidad para publicación y se basa en la gramática de los gráficos, la idea de que cualquier gráfico se puede construir a partir del mismo conjunto de componentes: un conjunto de datos, la estética de mapeo y capas gráficas:\n\nLos conjuntos de datos son los datos que nostros, los usuario, proporcionamos.\nLa estética de mapeo es lo que conecta los datos con los gráficos. Le decimos a ggplot2 cómo usar los datos para afectar el aspecto del gráfico, para cambiar lo que se traza en el eje X o Y, o el tamaño o color de diferentes puntos de datos.\nLas capas son la salida gráfica real de ggplot2. Las capas determinan qué tipos de trama se muestran (plot de dispersión, histograma, etc.), el sistema de coordenadas utilizado (rectangular, polar, otros) y otros aspectos importantes del gráfico.\n\n\n12.2.1 En resumen\nggplot2 es un paquete de R que sirve para hacer gráficos estéticos, claros y profesionales para publicación con muy poco código.\nLo que hace especial a ggplot2 es que construye los gráficos por partes, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:\n\n\n\n\n\n\nNote\n\n\n\ndatos → estética → geometría → tema → etiquetas.\n\n\nEsto permite que:\n\nTus gráficos sean fáciles de leer y de hacer.\nModificar elementos y que está acción no destruya todo el gráfico.\n\n\n\n\n\n\n\nPoder adaptar cualquier visualización biológica (expresión, abundancia, etc.)\n\nCargamos la libreria con:\n\n\n\n\n\n\nNote\n\n\n\n{r}\nlibrary(ggplot2)\n\n\n\n\n\n\n\n\nTip\n\n\n\nNOTA:\nRecuerda que en Rstudio por default te desglosará la lista de librerias/paquetes que empiecen con “g” si observas que no te aparece es por que no se cargo correctamente."
+    "text": "12.2 ⭐️Introducción a ggplot2\nggplot2 es un paquete de R súper efectivo para crear gráficos de calidad para publicación y se basa en la gramática de los gráficos, la idea de que cualquier gráfico se puede construir a partir del mismo conjunto de componentes: un conjunto de datos, la estética de mapeo y capas gráficas:\n\nLos conjuntos de datos son los datos que nostros, los usuario, proporcionamos.\nLa estética de mapeo es lo que conecta los datos con los gráficos. Le decimos a ggplot2 cómo usar los datos para afectar el aspecto del gráfico, para cambiar lo que se traza en el eje X o Y, o el tamaño o color de diferentes puntos de datos.\nLas capas son la salida gráfica real de ggplot2. Las capas determinan qué tipos de trama se muestran (plot de dispersión, histograma, etc.), el sistema de coordenadas utilizado (rectangular, polar, otros) y otros aspectos importantes del gráfico.\n\n\n12.2.1 En resumen\nggplot2 es un paquete de R que sirve para hacer gráficos estéticos, claros y profesionales para publicación con muy poco código.\nLo que hace especial a ggplot2 es que construye los gráficos por partes, como si armaras un “sándwich”, es decir te permite construir gráficos por capas:\n\n\n\n\n\n\nNote\n\n\n\ndatos → estética → geometría → tema → etiquetas.\n\n\nEsto permite que:\n\nTus gráficos sean fáciles de leer y de hacer.\nModificar elementos y que está acción no destruya todo el gráfico.\n\n\n\n\n\n\n\nPoder adaptar cualquier visualización biológica (expresión, abundancia, etc.)\n\nCargamos la libreria con:\n\n\n\n\n\n\nNote\n\n\n\n{r}\nlibrary(ggplot2)\n\n\n\n\n\n\n\n\nTip\n\n\n\nNOTA:\nRecuerda que en Rstudio por default te desglosará la lista de librerias/paquetes que empiecen con “g” si observas que no te aparece es por que no se cargo correctamente.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#los-5-bloques-de-la-gramática-en-ggplot2",
     "href": "Cap4_R.html#los-5-bloques-de-la-gramática-en-ggplot2",
     "title": "12  Visualización y Análisis de Datos",
     "section": "12.3 🧩 Los 5 bloques de la Gramática en ggplot2",
-    "text": "12.3 🧩 Los 5 bloques de la Gramática en ggplot2\n\nDatos (data)\n\nEl conjunto de datos que quieres graficar.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Cargamos el data y definimos la variable\nhp_data &lt;- read.csv(\"hp_data/Characters.csv\", sep = \";\")\n\n\n\nEstética (aes = aesthetics) Indica qué variable va al eje X, al Y, al color, tamaño, etc.\n\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Indicamos las variables\naes(x = Birth, y = Gender, color = House)\n\n\n\nGeometría (geom)\n\nCorresponde a el tipo de gráfico:\n\ngeom_point() → puntos\ngeom_histogram() → histogramas\ngeom_boxplot() → boxplots\ngeom_bar() → barras\n\n\n\n\n\n\n\nNote\n\n\n\nAQUí DEJAMOS ESTE LINK QUE TE PERMITIRÁ CONOCER TODOS LOS PLOTS QUE PUEDES REALIZAR CON LA PAQUETERIA ggplot2.\nhttps://r-charts.com/ggplot2/#google_vignette\n\n\n\nEscalas (scale_)\n\nPermite ajustar los colores, tamaños, ejes, etc.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Definimos la paleta de colores\nhp_cols &lt;- c( \"Gryffindor\" = \"#b30000\", # rojo intenso \"Slytherin\" = \"#005f2f\", # verde fuerte \"Ravenclaw\" = \"#002b80\", # azul profundo \"Hufflepuff\" = \"#e6b800\", # amarillo dorado \"Beauxbatons Academy of Magic\" = \"#6ea8ff\", # azul claro elegante \"Durmstrang Institute\" = \"#660000\" # burdeos oscuro )\n#Ajustamos los colores\nscale_fill_manual(values = hp_cols)\n\n\n\nTemas (theme)\n\nAspecto final del gráfico: fondo, líneas, letras.\n\n\n\n\n\n\nNote\n\n\n\n{r}\ntheme_minimal()"
+    "text": "12.3 🧩 Los 5 bloques de la Gramática en ggplot2\n\nDatos (data)\n\nEl conjunto de datos que quieres graficar.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Cargamos el data y definimos la variable\nhp_data &lt;- read.csv(\"hp_data/Characters.csv\", sep = \";\")\n\n\n\nEstética (aes = aesthetics) Indica qué variable va al eje X, al Y, al color, tamaño, etc.\n\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Indicamos las variables\naes(x = Birth, y = Gender, color = House)\n\n\n\nGeometría (geom)\n\nCorresponde a el tipo de gráfico:\n\ngeom_point() → puntos\ngeom_histogram() → histogramas\ngeom_boxplot() → boxplots\ngeom_bar() → barras\n\n\n\n\n\n\n\nNote\n\n\n\nAQUí DEJAMOS ESTE LINK QUE TE PERMITIRÁ CONOCER TODOS LOS PLOTS QUE PUEDES REALIZAR CON LA PAQUETERIA ggplot2.\nhttps://r-charts.com/ggplot2/#google_vignette\n\n\n\nEscalas (scale_)\n\nPermite ajustar los colores, tamaños, ejes, etc.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Definimos la paleta de colores\nhp_cols &lt;- c( \"Gryffindor\" = \"#b30000\", # rojo intenso \"Slytherin\" = \"#005f2f\", # verde fuerte \"Ravenclaw\" = \"#002b80\", # azul profundo \"Hufflepuff\" = \"#e6b800\", # amarillo dorado \"Beauxbatons Academy of Magic\" = \"#6ea8ff\", # azul claro elegante \"Durmstrang Institute\" = \"#660000\" # burdeos oscuro )\n#Ajustamos los colores\nscale_fill_manual(values = hp_cols)\n\n\n\nTemas (theme)\n\nAspecto final del gráfico: fondo, líneas, letras.\n\n\n\n\n\n\nNote\n\n\n\n{r}\ntheme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#ejemplo-explicado-paso-a-paso",
     "href": "Cap4_R.html#ejemplo-explicado-paso-a-paso",
     "title": "12  Visualización y Análisis de Datos",
     "section": "12.4 🎨 Ejemplo explicado paso a paso",
-    "text": "12.4 🎨 Ejemplo explicado paso a paso\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Ahora juntamos todo lo aprendido!\nhp_data %&gt;% count(House) %&gt;% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = \"white\") + coord_polar(theta = \"y\") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) + theme_minimal()"
+    "text": "12.4 🎨 Ejemplo explicado paso a paso\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Ahora juntamos todo lo aprendido!\nhp_data %&gt;% count(House) %&gt;% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = \"white\") + coord_polar(theta = \"y\") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) +``labs(title = \"Casas de Hogwarts\") +theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#conceptos-básicos",
     "href": "Cap4_R.html#conceptos-básicos",
     "title": "12  Visualización y Análisis de Datos",
     "section": "13.1 🧠 Conceptos Básicos",
-    "text": "13.1 🧠 Conceptos Básicos\n\n13.1.1 🔸 Media\nLa media es simplemente el promedio de los datos.\n👉 Tomas todos los valores, los sumas y los divides entre la cantidad de datos.\nEjemplo:\nDatos: 4, 6, 10\nMedia = (4 + 6 + 10) / 3 = 6.67\n\n\n\n\n\n\n\n13.1.2 🔸 Mediana\n\n\n\n\n\n\nNote\n\n\n\nEjemplo:\n\nDatos: 2, 8, 5 → ordenados: 2, 5, 8\nMediana = 5\n\n\nSi hay números pares, no hay un valor justo al centro, así que tomas los dos del centro y sacas su promedio.\n\n\n\n\n\n\nNote\n\n\n\nEjemplo:\n\nDatos: 1, 3, 7, 10 → del centro: 3 y 7 → mediana = (3+7)/2 = 5\n\n\nLa mediana sirve mucho cuando hay valores extremos (outliers) que podrían afectar la media.\n\n\n13.1.3 🔸 Desviación Estándar\n\nEs una medida que indica qué tan dispersos o separados están los datos respecto a la media.\nSi la desviación estándar es pequeña, los valores están muy cerca del promedio.\nSi es grande, los valores están muy separados y hay más variabilidad.\n\n\n\n\n\n\n\n\n13.1.4 🔸 Resumen de datos\n\n\n\n\n\n\nNote\n\n\n\nIncluye:\n- Mínimo: Es el valor más pequeño del conjunto de datos, Ayuda a saber cuál es el extremo más bajo.\n- 1er cuartil (Q1) : Es el valor qué marca el 25% de los datos inferiores cuando están ordenados.\nEs decir:\n\n25% de los datos están por debajo de Q1\n75% están por encima\n\nQ1 ayuda a saber dónde empieza la parte “baja” de los datos.\n- Mediana: Es el valor que divide los datos en dos partes iguales (50%).\n(Es muy útil cuando hay valores extremos porque no se altera tanto como la media).\n- Media: El promedio de los datos (Se usa para representar el “centro”, pero es sensible a valores extremos).\n- 3er cuartil (Q3): Es el valor que marca el 75% de los datos ordenados.\nSignifica:\n\n75% de los datos están por debajo\n25% por encima\nAyuda a ver dónde empieza la parte “alta” de los datos.\n\n- Máximo: Es el valor más grande del conjunto."
+    "text": "13.1 🧠 Conceptos Básicos\n\n13.1.1 🔸 Media\nLa media es simplemente el promedio de los datos.\n👉 Tomas todos los valores, los sumas y los divides entre la cantidad de datos.\nEjemplo:\nDatos: 4, 6, 10\nMedia = (4 + 6 + 10) / 3 = 6.67\n\n\n\n\n\n\n\n13.1.2 🔸 Mediana\n\n\n\n\n\n\nNote\n\n\n\nEjemplo:\n\nDatos: 2, 8, 5 → ordenados: 2, 5, 8\nMediana = 5\n\n\nSi hay números pares, no hay un valor justo al centro, así que tomas los dos del centro y sacas su promedio.\n\n\n\n\n\n\nNote\n\n\n\nEjemplo:\n\nDatos: 1, 3, 7, 10 → del centro: 3 y 7 → mediana = (3+7)/2 = 5\n\n\nLa mediana sirve mucho cuando hay valores extremos (outliers) que podrían afectar la media.\n\n\n13.1.3 🔸 Desviación Estándar\n\nEs una medida que indica qué tan dispersos o separados están los datos respecto a la media.\nSi la desviación estándar es pequeña, los valores están muy cerca del promedio.\nSi es grande, los valores están muy separados y hay más variabilidad.\n\n\n\n\n\n\n\n\n13.1.4 🔸 Resumen de datos\n\n\n\n\n\n\nNote\n\n\n\nIncluye:\n- Mínimo: Es el valor más pequeño del conjunto de datos, Ayuda a saber cuál es el extremo más bajo.\n- 1er cuartil (Q1) : Es el valor qué marca el 25% de los datos inferiores cuando están ordenados.\nEs decir:\n\n25% de los datos están por debajo de Q1\n75% están por encima\n\nQ1 ayuda a saber dónde empieza la parte “baja” de los datos.\n- Mediana: Es el valor que divide los datos en dos partes iguales (50%).\n(Es muy útil cuando hay valores extremos porque no se altera tanto como la media).\n- Media: El promedio de los datos (Se usa para representar el “centro”, pero es sensible a valores extremos).\n- 3er cuartil (Q3): Es el valor que marca el 75% de los datos ordenados.\nSignifica:\n\n75% de los datos están por debajo\n25% por encima\nAyuda a ver dónde empieza la parte “alta” de los datos.\n\n- Máximo: Es el valor más grande del conjunto.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#cargar-datos-en-r",
     "href": "Cap4_R.html#cargar-datos-en-r",
     "title": "12  Visualización y Análisis de Datos",
     "section": "13.2 📥 1. Cargar datos en R",
-    "text": "13.2 📥 1. Cargar datos en R\nUsaremos un vector de ejemplo llamado x:\nx &lt;- c(5, 8, 12, 4, 6, 9, 10, 7)"
+    "text": "13.2 📥 1. Cargar datos en R\nUsaremos un vector de ejemplo llamado x:\nx &lt;- c(5, 8, 12, 4, 6, 9, 10, 7)",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#calcular-medidas-básicas",
     "href": "Cap4_R.html#calcular-medidas-básicas",
     "title": "12  Visualización y Análisis de Datos",
     "section": "13.3 📐 2. Calcular medidas básicas",
-    "text": "13.3 📐 2. Calcular medidas básicas\n\n13.3.1 Media\nmean(x)\n\n\n13.3.2 Mediana\nmedian(x)\n\n\n13.3.3 Desviación estándar\nsd(x)\n\n\n\n13.3.4 📦 3. Resumen de datos\nR ofrece una función integrada:\nsummary(x)\nEsto muestra: - Mínimo - Q1 - Mediana - Media - Q3 - Máximo"
+    "text": "13.3 📐 2. Calcular medidas básicas\n\n13.3.1 Media\nmean(x)\n\n\n13.3.2 Mediana\nmedian(x)\n\n\n13.3.3 Desviación estándar\nsd(x)\n\n\n\n13.3.4 📦 3. Resumen de datos\nR ofrece una función integrada:\nsummary(x)\nEsto muestra: - Mínimo - Q1 - Mediana - Media - Q3 - Máximo",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#visualización-básica",
     "href": "Cap4_R.html#visualización-básica",
     "title": "12  Visualización y Análisis de Datos",
     "section": "13.4 📊 4. Visualización básica",
-    "text": "13.4 📊 4. Visualización básica\nPara complementar la estadística descriptiva, podemos usar un histograma:\nhist(x, main = \"Histograma de valores\", xlab = \"Valores\", col = \"lightpink\")\nY un boxplot:\nboxplot(x, main = \"Boxplot de valores\", col = \"lightblue\")"
+    "text": "13.4 📊 4. Visualización básica\nPara complementar la estadística descriptiva, podemos usar un histograma:\nhist(x, main = \"Histograma de valores\", xlab = \"Valores\", col = \"lightpink\")\nY un boxplot:\nboxplot(x, main = \"Boxplot de valores\", col = \"lightblue\")",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Cap4_R.html#ejemplo-completo",
     "href": "Cap4_R.html#ejemplo-completo",
     "title": "12  Visualización y Análisis de Datos",
     "section": "13.5 🧪 5. Ejemplo completo",
-    "text": "13.5 🧪 5. Ejemplo completo\nx &lt;- c(5, 8, 12, 4, 6, 9, 10, 7)\n\nmedia &lt;- mean(x)\nmediana &lt;- median(x)\ndesv &lt;- sd(x)\nresumen &lt;- summary(x)\n\ncat(\"Media:\", media, \"\\n\")\ncat(\"Mediana:\", mediana, \"\\n\")\ncat(\"Desviación Estándar:\", desv, \"\\n\")\ncat(\"\\nResumen:\\n\")\nprint(resumen)\n\n\nLa estadística descriptiva permite obtener una visión general rápida de los datos.\nR facilita estos cálculos con funciones simples e intuitivas.\nEstas herramientas son la base para análisis más avanzados en genómica y ciencias de datos.\n\n\n13.5.1 Referencias\n\nThe Carpentries. (2025). R for Reproducible Scientific Analysis.\nhttps://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html\nDemiryürek, G. (2021). Harry Potter Dataset. Kaggle.\nhttps://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset\nMontgomery, D. C., & Runger, G. C. (2014). Applied Statistics and Probability for Engineers.\nCrawley, M. J. (2015). Statistics: An Introduction Using R.\nWickham, H., & Grolemund, G. (2016). R for Data Science."
+    "text": "13.5 🧪 5. Ejemplo completo\nx &lt;- c(5, 8, 12, 4, 6, 9, 10, 7)\n\nmedia &lt;- mean(x)\nmediana &lt;- median(x)\ndesv &lt;- sd(x)\nresumen &lt;- summary(x)\n\ncat(\"Media:\", media, \"\\n\")\ncat(\"Mediana:\", mediana, \"\\n\")\ncat(\"Desviación Estándar:\", desv, \"\\n\")\ncat(\"\\nResumen:\\n\")\nprint(resumen)\n\n\nLa estadística descriptiva permite obtener una visión general rápida de los datos.\nR facilita estos cálculos con funciones simples e intuitivas.\nEstas herramientas son la base para análisis más avanzados en genómica y ciencias de datos.\n\n\n13.5.1 Referencias\n\nThe Carpentries. (2025). R for Reproducible Scientific Analysis.\nhttps://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html\nDemiryürek, G. (2021). Harry Potter Dataset. Kaggle.\nhttps://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset\nMontgomery, D. C., & Runger, G. C. (2014). Applied Statistics and Probability for Engineers.\nCrawley, M. J. (2015). Statistics: An Introduction Using R.\nWickham, H., & Grolemund, G. (2016). R for Data Science.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Visualización y Análisis de Datos</span>"
+    ]
   },
   {
     "objectID": "Bedtools_R.html",

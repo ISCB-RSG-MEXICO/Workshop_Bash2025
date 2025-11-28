@@ -155,7 +155,7 @@ Aspecto final del gráfico: fondo, líneas, letras.
 
 #Ahora juntamos todo lo aprendido!
 
-`hp_data %>% count(House) %>% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = "white") + coord_polar(theta = "y") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) + theme_minimal()`
+`hp_data %>% count(House) %>% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = "white") + coord_polar(theta = "y") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) +``labs(title = "Casas de Hogwarts") +theme_minimal()`
 :::
 
 ![](images/clipboard-3599886339.png){fig-align="center" width="391"}
