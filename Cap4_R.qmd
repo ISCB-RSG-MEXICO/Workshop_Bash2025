@@ -62,7 +62,7 @@ Esto permite que:
 
 -   Modificar elementos y que está acción no destruya todo el gráfico.
 
-![](images/IMG_9994.jpg){fig-align="center" width="223"}
+![](images/IMG_9994.jpg){fig-align="center" width="315"}
 
 -   Poder adaptar cualquier visualización biológica (expresión, abundancia, etc.)
 
@@ -116,6 +116,12 @@ Corresponde a el tipo de gráfico:
 
 -   `geom_bar()` → barras
 
+::: callout-note
+AQUí DEJAMOS ESTE LINK QUE TE PERMITIRÁ CONOCER TODOS LOS PLOTS QUE PUEDES REALIZAR CON LA PAQUETERIA ggplot2.
+
+<https://r-charts.com/ggplot2/#google_vignette>
+:::
+
 4.  **Escalas `(scale_)`**
 
 Permite ajustar los colores, tamaños, ejes, etc.
@@ -162,7 +168,6 @@ La **estadística descriptiva** permite resumir y entender rápidamente las cara
 -   **Mediana**
 -   **Desviación estándar**
 -   **Resumen de datos**
--   Implementación práctica en **R**
 
 ------------------------------------------------------------------------
 
@@ -177,7 +182,7 @@ Ejemplo:\
 Datos: 4, 6, 10\
 Media = (4 + 6 + 10) / 3 = **6.67**
 
-![](images/Screenshot 2025-11-26 at 12.59.09 p.m.-03.png){fig-align="center" width="574"}
+![](figures/media.png){fig-align="center" width="592"}
 
 ### 🔸 Mediana
 
@@ -206,7 +211,7 @@ La mediana sirve mucho cuando hay valores extremos (outliers) que podrían afect
 
 -   Si es **grande**, los valores están **muy separados** y hay más variabilidad.
 
-![](images/Screenshot 2025-11-26 at 12.59.28 p.m.-01.png){fig-align="center" width="588"}
+![](figures/DS.png){fig-align="center" width="580"}
 
 ### 🔸 Resumen de datos
 
@@ -329,4 +334,6 @@ print(resumen)
     <https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html>
 -   Demiryürek, G. (2021). *Harry Potter Dataset*. Kaggle.\
     <https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset>
--   
+-   Montgomery, D. C., & Runger, G. C. (2014). *Applied Statistics and Probability for Engineers*.
+-   Crawley, M. J. (2015). *Statistics: An Introduction Using R*.
+-   Wickham, H., & Grolemund, G. (2016). *R for Data Science*.
