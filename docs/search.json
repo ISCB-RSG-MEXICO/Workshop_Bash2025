@@ -1,283 +1,80 @@
 [
   {
-    "objectID": "Bedtools_R.html#introducción",
-    "href": "Bedtools_R.html#introducción",
-    "title": "13  BedTools R",
-    "section": "13.1 💻 Introducción",
-    "text": "13.1 💻 Introducción\nEste documento proporciona una guía básica para trabajar con R, Bedtools, y archivos genómicos.\n\nIncluye:\n\nPreparación del ambiente\nComandos esenciales de Bedtools\nLectura y manipulación de BED/GFF en R\nEjemplos prácticos"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workshop Bash & R",
+    "section": "",
+    "text": "Información general"
   },
   {
-    "objectID": "Bedtools_R.html#requerimientos",
-    "href": "Bedtools_R.html#requerimientos",
-    "title": "13  BedTools R",
-    "section": "13.2 🔧 Requerimientos",
-    "text": "13.2 🔧 Requerimientos\n\n13.2.1 Software necesario\n\nR (versión 4+)\nRStudio (opcional)\nBedtools instalado en tu sistema\nPaquetes R:\n\ntidyverse\nrtracklayer\ndata.table\nGenomicRanges\n\n\ninstall.packages(c(\"tidyverse\", \"data.table\"))\nBiocManager::install(c(\"rtracklayer\", \"GenomicRanges\"))"
-  },
-  {
-    "objectID": "Bedtools_R.html#qué-es-bedtools",
-    "href": "Bedtools_R.html#qué-es-bedtools",
-    "title": "13  BedTools R",
-    "section": "13.3 🧬 ¿Qué es Bedtools?",
-    "text": "13.3 🧬 ¿Qué es Bedtools?\nBedtools es una suite de herramientas para realizar operaciones sobre regiones genómicas.\nPermite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Conversión entre formatos"
-  },
-  {
-    "objectID": "Bedtools_R.html#formatos-comúnes-bed-gff-fasta",
-    "href": "Bedtools_R.html#formatos-comúnes-bed-gff-fasta",
-    "title": "13  BedTools R",
-    "section": "13.4 📁 Formatos comúnes (BED, GFF, FASTA)",
-    "text": "13.4 📁 Formatos comúnes (BED, GFF, FASTA)\n\n13.4.1 Formato BED\nColumnas mínimas:\n1. cromosoma 2. inicio 3. fin\nEjemplo:\nchr1    1000    1500\nchr1    2000    2300\n\n\n13.4.2 Formato GFF/GTF\ntiene 9 columnas (atributos más complejos)."
-  },
-  {
-    "objectID": "Bedtools_R.html#comandos-básicos-de-bedtools",
-    "href": "Bedtools_R.html#comandos-básicos-de-bedtools",
-    "title": "13  BedTools R",
-    "section": "13.5 ✨ Comandos básicos de Bedtools",
-    "text": "13.5 ✨ Comandos básicos de Bedtools\n\n13.5.1 Intersectar regiones\nbedtools intersect -a A.bed -b B.bed &gt; interseccion.bed\n\n\n13.5.2 Unir regiones\nbedtools merge -i regiones.bed &gt; regiones_unidas.bed\n\n\n13.5.3 Complemento genómico\nbedtools complement -i regiones.bed -g genome_file.txt &gt; complement.bed\n\n\n13.5.4 Cobertura\nbedtools coverage -a regiones.bed -b alineamientos.bam &gt; coverage.txt"
-  },
-  {
-    "objectID": "Bedtools_R.html#leer-archivos-bed-en-r",
-    "href": "Bedtools_R.html#leer-archivos-bed-en-r",
-    "title": "13  BedTools R",
-    "section": "13.6 📥 Leer archivos BED en R",
-    "text": "13.6 📥 Leer archivos BED en R\n\n13.6.1 Con rtracklayer\nlibrary(rtracklayer)\nbed &lt;- import(\"archivo.bed\", format = \"BED\")\nbed\n\n\n13.6.2 Con data.table\nlibrary(data.table)\nbed &lt;- fread(\"archivo.bed\", header = FALSE)\ncolnames(bed) &lt;- c(\"chr\", \"start\", \"end\")\nbed"
-  },
-  {
-    "objectID": "Bedtools_R.html#convertir-bed-a-granges",
-    "href": "Bedtools_R.html#convertir-bed-a-granges",
-    "title": "13  BedTools R",
-    "section": "13.7 🔗 Convertir BED a GRanges",
-    "text": "13.7 🔗 Convertir BED a GRanges\nlibrary(GenomicRanges)\nbed_gr &lt;- makeGRangesFromDataFrame(bed, keep.extra.columns = TRUE)\nbed_gr"
-  },
-  {
-    "objectID": "Bedtools_R.html#exportar-bed-desde-r",
-    "href": "Bedtools_R.html#exportar-bed-desde-r",
-    "title": "13  BedTools R",
-    "section": "13.8 📤 Exportar BED desde R",
-    "text": "13.8 📤 Exportar BED desde R\nexport(bed_gr, \"salida.bed\", format = \"BED\")"
-  },
-  {
-    "objectID": "Bedtools_R.html#ejemplo-práctico-completo",
-    "href": "Bedtools_R.html#ejemplo-práctico-completo",
-    "title": "13  BedTools R",
-    "section": "13.9 🧪 Ejemplo práctico completo",
-    "text": "13.9 🧪 Ejemplo práctico completo\nlibrary(rtracklayer)\nlibrary(GenomicRanges)\n\n# 1. Cargar BED\na &lt;- import(\"A.bed\", format = \"BED\")\nb &lt;- import(\"B.bed\", format = \"BED\")\n\n# 2. Intersección en R (similar a bedtools intersect)\ninter &lt;- subsetByOverlaps(a, b)\ninter\n\n# 3. Exportar resultado\nexport(inter, \"intersect_R.bed\", format = \"BED\")"
-  },
-  {
-    "objectID": "Bedtools_R.html#integrar-r-bedtools-desde-r",
-    "href": "Bedtools_R.html#integrar-r-bedtools-desde-r",
-    "title": "13  BedTools R",
-    "section": "13.10 🧭 Integrar R + Bedtools desde R",
-    "text": "13.10 🧭 Integrar R + Bedtools desde R\nPuedes ejecutar Bedtools dentro de R:\nsystem(\"bedtools intersect -a A.bed -b B.bed &gt; inter.bed\")"
-  },
-  {
-    "objectID": "Bedtools_R.html#referencias",
-    "href": "Bedtools_R.html#referencias",
-    "title": "13  BedTools R",
-    "section": "13.11 Referencias",
-    "text": "13.11 Referencias\n\nBedtools manual https://bedtools.readthedocs.io/\nBioconductor: GenomicRanges, rtracklayer https://bioconductor.org/packages/release/bioc/html/rtracklayer.html\nUCSC Genome Browser formatos https://genome.ucsc.edu/"
+    "objectID": "index.html#citar-y-reutilizar-el-material-del-curso",
+    "href": "index.html#citar-y-reutilizar-el-material-del-curso",
+    "title": "Workshop Bash & R",
+    "section": "Citar y reutilizar el material del curso",
+    "text": "Citar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)."
   },
   {
     "objectID": "Bpracticas.html",
     "href": "Bpracticas.html",
     "title": "1  Buenas prácticas en bioinformática",
     "section": "",
-<<<<<<< HEAD
-    "text": "1.1 ⭐ ¿Qué es un algoritmo?\nUn algoritmo es un método para resolver un problema mediante una serie de pasos definidos, precisos y finitos.\nUn algoritmo podemos definirlo como un programa o software.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
     "text": "2 🦾 Buenas prácticas en R\nTrabajar en R para bioinformática requiere código limpio, reproducible y fácil de compartir. Aquí tienes un conjunto de buenas prácticas recomendadas por expertos y comunidades como R for Data Science, The Tidyverse Style Guide, Bioconductor y The Carpentries."
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#qué-es-un-algoritmo",
     "href": "Bpracticas.html#qué-es-un-algoritmo",
     "title": "1  Buenas prácticas en bioinformática",
-<<<<<<< HEAD
-    "section": "",
-    "text": "Definido: si se sigue dos veces, se obtiene el mismo resultado (Es reproducible).\nPreciso: implica el orden de realización de cada uno de los pasos.\nFinito: Tiene un numero determinado de pasos, implica que tiene un fin.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
     "section": "1.1 ⭐ ¿Qué es un algoritmo?",
     "text": "1.1 ⭐ ¿Qué es un algoritmo?\nUn algoritmo es un método para resolver un problema mediante una serie de pasos definidos, precisos y finitos.\n\nDefinido: si se sigue dos veces, se obtiene el mismo resultado (Es reproducible).\nPreciso: implica el orden de realización de cada uno de los pasos.\nFinito: Tiene un numero determinado de pasos, implica que tiene un fin.\n\nUn algoritmo podemos definirlo como un programa o software."
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#qué-necesitamos-para-escribir-un-buen-software",
     "href": "Bpracticas.html#qué-necesitamos-para-escribir-un-buen-software",
     "title": "1  Buenas prácticas en bioinformática",
     "section": "1.2 🧩 ¿Qué necesitamos para escribir un buen software?",
-<<<<<<< HEAD
-    "text": "1.2 🧩 ¿Qué necesitamos para escribir un buen software?\n\nCrear software confiable implica aplicar principios de ingeniería:\n\nCódigo mantenible (maintainable code)\nControl de versiones (version control, ej. Git)\nRastreadores de problemas (issue trackers)\nRevisiones de código (code reviews)\nPruebas unitarias (unit testing)\nAutomatización de tareas (task automation)\n\nBasado en Wilson, et al. 2014. PLOS Biology",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
     "text": "1.2 🧩 ¿Qué necesitamos para escribir un buen software?\n\nCrear software confiable implica aplicar principios de ingeniería:\n\nCódigo mantenible (maintainable code)\nControl de versiones (version control, ej. Git)\nRastreadores de problemas (issue trackers)\nRevisiones de código (code reviews)\nPruebas unitarias (unit testing)\nAutomatización de tareas (task automation)\n\nBasado en Wilson, et al. 2014. PLOS Biology"
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
-  },
-  {
-    "objectID": "Bpracticas.html#ética-y-responsabilidad-en-bioinformática",
-    "href": "Bpracticas.html#ética-y-responsabilidad-en-bioinformática",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "1.3 🔐 Ética y responsabilidad en bioinformática",
-    "text": "1.3 🔐 Ética y responsabilidad en bioinformática\nEn bioinformática es crucial garantizar el uso ético y responsable de datos, especialmente cuando incluyen genomas humanos o información sensible.\n\nEsto implica:\n\nProteger la privacidad del individuo.\nRespetar las regulaciones y marcos legales vigentes.\nMantener prácticas transparentes y reproducibles.\nEvitar errores que comprometan la integridad del análisis.\n\nEstas medidas fortalecen la confianza en los resultados y evitan problemas graves como retractaciones científicas."
-  },
-  {
-    "objectID": "Bpracticas.html#pasos-para-escribir-un-buen-software",
-    "href": "Bpracticas.html#pasos-para-escribir-un-buen-software",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "1.4 🧪 Pasos para escribir un buen software",
-    "text": "1.4 🧪 Pasos para escribir un buen software\n\n\n\n\n\n\nNote\n\n\n\n\nAnálisis del problema / Definir el problema\nDiseño del algoritmo / Diseño del programa\nCodificación / Escribir el código\nCompilación y ejecución del programa\nVerificación / Realizar pruebas\nDepuración / Detectar los errores y corregirlos (Programacion defensiva)\nDocumentación\n\n\n\n\n\n\n\n\n\n\n🗂️ Paso 7: Documentación\n\n\n\nIncluye siempre:\n\nTítulo (opcional)\nAutor (author): Su nombre\nDia (date): Fecha de creación\nPaquetes (packages)\nDirectorio de trabajo (Working directory): En que carpeta se encuentra tu datos y programa.\nInformación descriptiva del programa (Description): ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.\nUsage ¿Cómo se utiliza?\nArgumentos (Arguments)\n\nInformación de entrada (Data Inputs): Ej: Solo numeros enteros (sin decimales).\nInformación de salida (Outpus): Graficas, figuras, tablas, etc."
-  },
-  {
-    "objectID": "Bpracticas.html#puntos-clave-para-buenas-prácticas-en-bioinformática",
-    "href": "Bpracticas.html#puntos-clave-para-buenas-prácticas-en-bioinformática",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "1.5 ⭐ Puntos clave para buenas prácticas en bioinformática",
-    "text": "1.5 ⭐ Puntos clave para buenas prácticas en bioinformática\n\n1.5.1 \nEscribe programas para personas, no para máquinas ✏️\n\nDocumenta qué hace tu código y por qué.\nMantén coherencia en nombres, indentación y estilo.\n\n\n\n1.5.2 🧱Usa modularidad\n\nDivide tu código en funciones pequeñas de un solo propósito.\nNo repitas código\nCrea pasos reproducibles o que se repitan por si solos (Usa funciones, loops y scripts reproducibles).\n\n\n\n1.5.3 \n🚩Planifica los errores (programación defensiva)\nEs una práctica donde asumes que pueden ocurrir errores y preparas tu código para detectarlos, avisar y manejar la situación sin que todo truene.~\n~ No se trata de ser pesimista: es ser realista.\n\n\n\n\n\n\n\nNote\n\n\n\nbash\n#validación de un archivo vacio if [ ! -s \"$file\" ]; then  #Si el archivo no existe o tiene tamaño 0, entra al thenecho \"Error: archivo vacío o no existe\" &gt;&2  #imprime el mensaje. y &gt;&2 envía el mensaje al stderr (salida de error)exit 1  #1 es un código de error (0 = éxito, cualquier otro número = fallo).fi  #Es el cierre del if\nr\nif (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop(\"El archivo FASTA no existe: \", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional\nseqs &lt;- read.fasta(fasta_path) # lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop(\"El archivo FASTA está vacío.\") #Se detiene y imprime el mensaje}``#cierre del condicional\n\n\n\n\n\n1.5.4 \n⚙️ Optimiza al final\n\nPrimero que funcione.\nDespués que funcione bien.\nOptimiza el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo."
   },
   {
     "objectID": "Bpracticas.html#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática",
     "href": "Bpracticas.html#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática",
     "title": "1  Buenas prácticas en bioinformática",
-<<<<<<< HEAD
     "section": "1.3 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?",
-    "text": "1.3 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?\nAunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨\nChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:\n\nDocumentación automática: genera descripciones, títulos, secciones y ejemplos para tus scripts.\nExplicación de código: te ayuda a entender funciones complejas o pipelines bioinformáticos.\nOptimización responsable: sugiere mejoras sin comprometer la reproducibilidad.\nBuenas prácticas: te recuerda estándares como estilo, modularidad, defensividad y testing.\nAprendizaje guiado: explica conceptos (FASTQ, SAM/BAM, ensambladores, alineadores, R, Python).\nDepuración asistida: señala errores comunes y propone soluciones.\nReproducibilidad: ayuda a generar pipelines claros, estructurados y bien documentados.\nPlantillas listas para usar: para README, .qmd, scripts, workflows o Snakemake.\n\n\nChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
-    "section": "1.6 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?",
-    "text": "1.6 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?\nAunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨\nChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:\n\nDocumentación automática: genera descripciones, títulos, secciones y ejemplos para tus scripts.\nExplicación de código: te ayuda a entender funciones complejas o pipelines bioinformáticos.\nOptimización responsable: sugiere mejoras sin comprometer la reproducibilidad.\nBuenas prácticas: te recuerda estándares como estilo, modularidad, defensividad y testing.\nAprendizaje guiado: explica conceptos (FASTQ, SAM/BAM, ensambladores, alineadores, R, Python).\nDepuración asistida: señala errores comunes y propone soluciones.\nReproducibilidad: ayuda a generar pipelines claros, estructurados y bien documentados.\nPlantillas listas para usar: para README, .qmd, scripts, workflows o Snakemake.\n\n\nChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad."
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
-  },
-  {
-    "objectID": "Bpracticas.html#organiza-tus-proyectos-con-project-based-workflows",
-    "href": "Bpracticas.html#organiza-tus-proyectos-con-project-based-workflows",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "2.1 📁 1. Organiza tus proyectos con project-based workflows",
-    "text": "2.1 📁 1. Organiza tus proyectos con project-based workflows\n\nUsa siempre un RStudio Project (.Rproj).\nEvita rutas absolutas como:\nsetwd(\"C:/Users/Mariana/Desktop/\") ❌\nUsa rutas relativas con here::here() o fs:\nhere(\"data\", \"input.csv\") ✔️\nMantén carpetas claras:\n\n\n\n\n\n\n\nNote\n\n\n\nbash\n/data\n/scripts\n/results\n/figures"
+    "text": "1.3 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?\nAunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨\nChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:\n\nDocumentación automática: genera descripciones, títulos, secciones y ejemplos para tus scripts.\nExplicación de código: te ayuda a entender funciones complejas o pipelines bioinformáticos.\nOptimización responsable: sugiere mejoras sin comprometer la reproducibilidad.\nBuenas prácticas: te recuerda estándares como estilo, modularidad, defensividad y testing.\nAprendizaje guiado: explica conceptos (FASTQ, SAM/BAM, ensambladores, alineadores, R, Python).\nDepuración asistida: señala errores comunes y propone soluciones.\nReproducibilidad: ayuda a generar pipelines claros, estructurados y bien documentados.\nPlantillas listas para usar: para README, .qmd, scripts, workflows o Snakemake.\n\n\nChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad."
   },
   {
     "objectID": "Bpracticas.html#carga-solo-los-paquetes-necesarios",
     "href": "Bpracticas.html#carga-solo-los-paquetes-necesarios",
     "title": "1  Buenas prácticas en bioinformática",
-<<<<<<< HEAD
     "section": "2.1 📦 Carga solo los paquetes necesarios",
-    "text": "2.1 📦 Carga solo los paquetes necesarios\n\nEvita cargar 10 paquetes si solo usas 1 función.\nDeclara explícitamente tus dependencias.\nIncluye siempre una sección “Paquetes” en tus scripts .R.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
-    "section": "2.2 📦 2. Carga solo los paquetes necesarios",
-    "text": "2.2 📦 2. Carga solo los paquetes necesarios\n\nEvita cargar 10 paquetes si solo usas 1 función.\nUsa pacman::p_load() o declara explícitamente tus dependencias.\nIncluye siempre una sección “Paquetes” en tus scripts .R."
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
-  },
-  {
-    "objectID": "Bpracticas.html#fórmula-de-oro-estilo-consistencia",
-    "href": "Bpracticas.html#fórmula-de-oro-estilo-consistencia",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "2.3 ✏️ 3. Fórmula de oro: estilo + consistencia",
-    "text": "2.3 ✏️ 3. Fórmula de oro: estilo + consistencia\nSigue guías como tidyverse style guide:\n\nNombres de objetos en snake_case → mi_dataframe, hp_colors.\nEspacios consistentes después de comas y operadores.\nLíneas cortas (&lt; 80 caracteres).\nComentarios claros con:\n\n\n\n\n\n\n\nNote\n\n\n\nr\n# Filtrar solo Ravenclaw df_ravens\n&lt;- df %&gt;% filter(House == \"Ravenclaw\")"
+    "text": "2.1 📦 Carga solo los paquetes necesarios\n\nEvita cargar 10 paquetes si solo usas 1 función.\nDeclara explícitamente tus dependencias.\nIncluye siempre una sección “Paquetes” en tus scripts .R."
   },
   {
     "objectID": "Bpracticas.html#modulariza-tu-código",
     "href": "Bpracticas.html#modulariza-tu-código",
     "title": "1  Buenas prácticas en bioinformática",
-<<<<<<< HEAD
     "section": "2.2 🧱 Modulariza tu código",
-    "text": "2.2 🧱 Modulariza tu código\n\nDivide análisis largos en funciones y scripts separados.\nGuarda funciones en /scripts/functions.R.\n\nEsto evita repetir código y hace tus análisis más reproducibles.\n🔄 Haz tu código pipeline-friendly",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
-    "section": "2.4 🧱 4. Modulariza tu código",
-    "text": "2.4 🧱 4. Modulariza tu código\n\nDivide análisis largos en funciones y scripts separados.\nGuarda funciones en /scripts/functions.R.\nUsa source(\"scripts/functions.R\") cuando sea necesario.\n\nEsto evita repetir código y hace tus análisis más reproducibles."
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
-  },
-  {
-    "objectID": "Bpracticas.html#section-3",
-    "href": "Bpracticas.html#section-3",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "2.5 ",
-    "text": "2.5 \n🔄 5. Haz tu código pipeline-friendly\nPrefiere el estilo tidyverse:\n\n\n\n\n\n\nNote\n\n\n\nr\nhp_data %&gt;%   count(House) %&gt;%     mutate(percent = n / sum(n))\n\n\nEn lugar de 10 líneas de transformaciones anidadas ilegibles."
-  },
-  {
-    "objectID": "Bpracticas.html#valida-tus-datos-antes-de-analizarlos",
-    "href": "Bpracticas.html#valida-tus-datos-antes-de-analizarlos",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "2.6 🧪 6. Valida tus datos antes de analizarlos",
-    "text": "2.6 🧪 6. Valida tus datos antes de analizarlos\nIncluye checks preventivos:\n\n\n\n\n\n\nNote\n\n\n\nr\nstopifnot(is.data.frame(hp_data)) stopifnot(all(c(\"House\") %in% names(hp_data)))\n\n\nEsto evita errores sorpresivos al final del análisis."
-  },
-  {
-    "objectID": "Bpracticas.html#haz-que-tus-gráficos-sean-reproducibles",
-    "href": "Bpracticas.html#haz-que-tus-gráficos-sean-reproducibles",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "2.7 🌱 7. Haz que tus gráficos sean reproducibles",
-    "text": "2.7 🌱 7. Haz que tus gráficos sean reproducibles\nIncluye:\n\nTítulo\nEjes (o explícitamente sin ejes)\nPaletas documentadas\nTamaños de punto, fuente, etc.\n\nY guarda tus figuras con código reproducible, en una carpeta específica:\n\n\n\n\n\n\nNote\n\n\n\nr\nggsave(\"figures/house_plot.png\", width = 6, height = 4, dpi = 300)"
+    "text": "2.2 🧱 Modulariza tu código\n\nDivide análisis largos en funciones y scripts separados.\nGuarda funciones en /scripts/functions.R.\n\nEsto evita repetir código y hace tus análisis más reproducibles.\n🔄 Haz tu código pipeline-friendly"
   },
   {
     "objectID": "Bpracticas.html#documenta-tus-scripts",
     "href": "Bpracticas.html#documenta-tus-scripts",
     "title": "1  Buenas prácticas en bioinformática",
-<<<<<<< HEAD
     "section": "2.3 📚Documenta tus scripts",
-    "text": "2.3 📚Documenta tus scripts\nAl inicio de cada archivo .R incluye:\n\n\n\n\n\n\nNote\n\n\n\nr\n# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
-    "section": "2.8 📚 8. Documenta tus scripts",
-    "text": "2.8 📚 8. Documenta tus scripts\nAl inicio de cada archivo .R incluye:\n\n\n\n\n\n\nNote\n\n\n\nr\n# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse"
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
-  },
-  {
-    "objectID": "Bpracticas.html#usa-herramientas-de-análisis-reproducible",
-    "href": "Bpracticas.html#usa-herramientas-de-análisis-reproducible",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "2.9 🧬 9. Usa herramientas de análisis reproducible",
-    "text": "2.9 🧬 9. Usa herramientas de análisis reproducible\nPara proyectos grandes:\n\nR Markdown o Quarto (.qmd)\nrenv para versiones de paquetes\ntargets o drake para pipelines complejos\nBioconductor para análisis genómicos estandarizados"
-  },
-  {
-    "objectID": "Bpracticas.html#limpia-tu-entorno-pero-no-demasiado",
-    "href": "Bpracticas.html#limpia-tu-entorno-pero-no-demasiado",
-    "title": "1  Buenas prácticas en bioinformática",
-    "section": "2.10 🧼 10. Limpia tu entorno (pero no demasiado)",
-    "text": "2.10 🧼 10. Limpia tu entorno (pero no demasiado)\n\nEvita usar rm(list = ls()) a menos que sea estrictamente necesario.\nUn proyecto bien estructurado no depende del “entorno emocionado”."
+    "text": "2.3 📚Documenta tus scripts\nAl inicio de cada archivo .R incluye:\n\n\n\n\n\n\nNote\n\n\n\nr\n# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse"
   },
   {
     "objectID": "Bpracticas.html#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r",
     "href": "Bpracticas.html#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r",
     "title": "1  Buenas prácticas en bioinformática",
-<<<<<<< HEAD
     "section": "2.4 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?",
-    "text": "2.4 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?\nChatGPT puede mejorar tus análisis en R de forma ética y eficiente:\n\nGenera código limpio y estilizado siguiendo guías tidyverse.\nTransforma scripts sucios en pipelines claros y reproducibles.\nExplica errores en R con detalle (p. ej., object not found, NAs introduced).\nSugiere paletas, temas de ggplot y estilos visuales.\nDocumenta automáticamente tus funciones con formato roxygen2.\nOptimiza la lógica sin sacrificar claridad.\nTe genera plantillas listas para .qmd, pipelines o workflows.\nAyuda a detectar malas prácticas como copiar y pegar código o usar rutas absolutas.\n\n\nEn pocas palabras: ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática, pero siempre con criterio científico tuyo 💛.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
-    "section": "2.11 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?",
-    "text": "2.11 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?\nChatGPT puede mejorar tus análisis en R de forma ética y eficiente:\n\nGenera código limpio y estilizado siguiendo guías tidyverse.\nTransforma scripts sucios en pipelines claros y reproducibles.\nExplica errores en R con detalle (p. ej., object not found, NAs introduced).\nSugiere paletas, temas de ggplot y estilos visuales.\nDocumenta automáticamente tus funciones con formato roxygen2.\nOptimiza la lógica sin sacrificar claridad.\nTe genera plantillas listas para .qmd, pipelines o workflows.\nAyuda a detectar malas prácticas como copiar y pegar código o usar rutas absolutas.\n\n\nEn pocas palabras: ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática, pero siempre con criterio científico tuyo 💛."
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
+    "text": "2.4 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?\nChatGPT puede mejorar tus análisis en R de forma ética y eficiente:\n\nGenera código limpio y estilizado siguiendo guías tidyverse.\nTransforma scripts sucios en pipelines claros y reproducibles.\nExplica errores en R con detalle (p. ej., object not found, NAs introduced).\nSugiere paletas, temas de ggplot y estilos visuales.\nDocumenta automáticamente tus funciones con formato roxygen2.\nOptimiza la lógica sin sacrificar claridad.\nTe genera plantillas listas para .qmd, pipelines o workflows.\nAyuda a detectar malas prácticas como copiar y pegar código o usar rutas absolutas.\n\n\nEn pocas palabras: ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática, pero siempre con criterio científico tuyo 💛."
   },
   {
     "objectID": "Bpracticas.html#referencias",
     "href": "Bpracticas.html#referencias",
     "title": "1  Buenas prácticas en bioinformática",
-<<<<<<< HEAD
     "section": "2.5 Referencias",
-    "text": "2.5 Referencias\n\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nWickham, H. (2019), The Tidyverse Style Guide.https://style.tidyverse.org/\nRStudio / Posit, R Projects Workflow.https://docs.posit.co/\nBioconductor Project, Best practices for reproducible genomics workflows.https://bioconductor.org/\nUnidad 1 Bioinformática e investigación reproducible\nThe five pillars of computational reproducibility: bioinformatics and beyond\nInvestigación reproducible y análisis de datos\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial\nMarkdwn Guide - Getting Started\nAllison Horst - Imagenes\nStatistical Computing using R and Python\nTraining Materials\nVisual Studio Code\nArticulo reproducibilidad\nHolistic AI Guidelines & Human-Centered AI Practices",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
-    ]
-=======
-    "section": "2.12 Referencias",
-    "text": "2.12 Referencias\n\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nWickham, H. (2019), The Tidyverse Style Guide.https://style.tidyverse.org/\nRStudio / Posit, R Projects Workflow.https://docs.posit.co/\nBioconductor Project, Best practices for reproducible genomics workflows.https://bioconductor.org/\nUnidad 1 Bioinformática e investigación reproducible\nThe five pillars of computational reproducibility: bioinformatics and beyond\nInvestigación reproducible y análisis de datos\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial\nMarkdwn Guide - Getting Started\nAllison Horst - Imagenes\nStatistical Computing using R and Python\nTraining Materials\nVisual Studio Code\nArticulo reproducibilidad\nHolistic AI Guidelines & Human-Centered AI Practices"
->>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
+    "text": "2.5 Referencias\n\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nWickham, H. (2019), The Tidyverse Style Guide.https://style.tidyverse.org/\nRStudio / Posit, R Projects Workflow.https://docs.posit.co/\nBioconductor Project, Best practices for reproducible genomics workflows.https://bioconductor.org/\nUnidad 1 Bioinformática e investigación reproducible\nThe five pillars of computational reproducibility: bioinformatics and beyond\nInvestigación reproducible y análisis de datos\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial\nMarkdwn Guide - Getting Started\nAllison Horst - Imagenes\nStatistical Computing using R and Python\nTraining Materials\nVisual Studio Code\nArticulo reproducibilidad\nHolistic AI Guidelines & Human-Centered AI Practices"
   },
   {
     "objectID": "intro_bash.html#qué-es-unix",
@@ -728,6 +525,13 @@
     "text": "11.5 Referencias\n\nThe Carpentries. (2025). R for Reproducible Scientific Analysis. https://swcarpentry.github.io/r-novice-gapminder/\nDemiryürek, G. (2021). Harry Potter Dataset. Kaggle.\nhttps://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset"
   },
   {
+    "objectID": "Cap4_R.html",
+    "href": "Cap4_R.html",
+    "title": "12  Visualización y Análisis de Datos",
+    "section": "",
+    "text": "13 Estadística Descriptiva en R\nLa estadística descriptiva permite resumir y entender rápidamente las características principales de un conjunto de datos. En esta sección cubriremos los conceptos esenciales:"
+  },
+  {
     "objectID": "Cap4_R.html#qué-es-tidyverse",
     "href": "Cap4_R.html#qué-es-tidyverse",
     "title": "12  Visualización y Análisis de Datos",
@@ -746,14 +550,133 @@
     "href": "Cap4_R.html#los-5-bloques-de-la-gramática-en-ggplot2",
     "title": "12  Visualización y Análisis de Datos",
     "section": "12.3 🧩 Los 5 bloques de la Gramática en ggplot2",
-    "text": "12.3 🧩 Los 5 bloques de la Gramática en ggplot2\n\nDatos (data)\n\nEl conjunto de datos que quieres graficar.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Cargamos el data y definimos la variable\nhp_data &lt;- read.csv(\"hp_data/Characters.csv\", sep = \";\")\n\n\n\nEstética (aes = aesthetics) Indica qué variable va al eje X, al Y, al color, tamaño, etc.\n\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Indicamos las variables\naes(x = Birth, y = Gender, color = House)\n\n\n\nGeometría (geom)\n\nCorresponde a el tipo de gráfico:\n\ngeom_point() → puntos\ngeom_histogram() → histogramas\ngeom_boxplot() → boxplots\ngeom_bar() → barras\n\n\n\nEscalas (scale_)\n\nPermite ajustar los colores, tamaños, ejes, etc.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Definimos la paleta de colores\nhp_cols &lt;- c( \"Gryffindor\" = \"#b30000\", # rojo intenso \"Slytherin\" = \"#005f2f\", # verde fuerte \"Ravenclaw\" = \"#002b80\", # azul profundo \"Hufflepuff\" = \"#e6b800\", # amarillo dorado \"Beauxbatons Academy of Magic\" = \"#6ea8ff\", # azul claro elegante \"Durmstrang Institute\" = \"#660000\" # burdeos oscuro )\n#Ajustamos los colores\nscale_fill_manual(values = hp_cols)\n\n\n\nTemas (theme)\n\nAspecto final del gráfico: fondo, líneas, letras.\n\n\n\n\n\n\nNote\n\n\n\n{r}\ntheme_minimal()"
+    "text": "12.3 🧩 Los 5 bloques de la Gramática en ggplot2\n\nDatos (data)\n\nEl conjunto de datos que quieres graficar.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Cargamos el data y definimos la variable\nhp_data &lt;- read.csv(\"hp_data/Characters.csv\", sep = \";\")\n\n\n\nEstética (aes = aesthetics) Indica qué variable va al eje X, al Y, al color, tamaño, etc.\n\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Indicamos las variables\naes(x = Birth, y = Gender, color = House)\n\n\n\nGeometría (geom)\n\nCorresponde a el tipo de gráfico:\n\ngeom_point() → puntos\ngeom_histogram() → histogramas\ngeom_boxplot() → boxplots\ngeom_bar() → barras\n\n\n\n\n\n\n\nNote\n\n\n\nAQUí DEJAMOS ESTE LINK QUE TE PERMITIRÁ CONOCER TODOS LOS PLOTS QUE PUEDES REALIZAR CON LA PAQUETERIA ggplot2.\nhttps://r-charts.com/ggplot2/#google_vignette\n\n\n\nEscalas (scale_)\n\nPermite ajustar los colores, tamaños, ejes, etc.\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Definimos la paleta de colores\nhp_cols &lt;- c( \"Gryffindor\" = \"#b30000\", # rojo intenso \"Slytherin\" = \"#005f2f\", # verde fuerte \"Ravenclaw\" = \"#002b80\", # azul profundo \"Hufflepuff\" = \"#e6b800\", # amarillo dorado \"Beauxbatons Academy of Magic\" = \"#6ea8ff\", # azul claro elegante \"Durmstrang Institute\" = \"#660000\" # burdeos oscuro )\n#Ajustamos los colores\nscale_fill_manual(values = hp_cols)\n\n\n\nTemas (theme)\n\nAspecto final del gráfico: fondo, líneas, letras.\n\n\n\n\n\n\nNote\n\n\n\n{r}\ntheme_minimal()"
   },
   {
     "objectID": "Cap4_R.html#ejemplo-explicado-paso-a-paso",
     "href": "Cap4_R.html#ejemplo-explicado-paso-a-paso",
     "title": "12  Visualización y Análisis de Datos",
     "section": "12.4 🎨 Ejemplo explicado paso a paso",
-    "text": "12.4 🎨 Ejemplo explicado paso a paso\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Ahora juntamos todo lo aprendido!\nhp_data %&gt;% count(House) %&gt;% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = \"white\") + coord_polar(theta = \"y\") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) + theme_minimal()\n\n\n\n\n\n\n\n\n12.4.1 Referencias\n\nThe Carpentries. (2025). R for Reproducible Scientific Analysis.\nhttps://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html"
+    "text": "12.4 🎨 Ejemplo explicado paso a paso\n\n\n\n\n\n\nNote\n\n\n\n{r}\n#Ahora juntamos todo lo aprendido!\nhp_data %&gt;% count(House) %&gt;% ggplot(aes(x = 2, y = n, fill = House)) + geom_col(width = 1, color = \"white\") + coord_polar(theta = \"y\") + scale_fill_manual(values = hp_cols) + xlim(1.5, 2.5) + theme_minimal()"
+  },
+  {
+    "objectID": "Cap4_R.html#conceptos-básicos",
+    "href": "Cap4_R.html#conceptos-básicos",
+    "title": "12  Visualización y Análisis de Datos",
+    "section": "13.1 🧠 Conceptos Básicos",
+    "text": "13.1 🧠 Conceptos Básicos\n\n13.1.1 🔸 Media\nLa media es simplemente el promedio de los datos.\n👉 Tomas todos los valores, los sumas y los divides entre la cantidad de datos.\nEjemplo:\nDatos: 4, 6, 10\nMedia = (4 + 6 + 10) / 3 = 6.67\n\n\n\n\n\n\n\n13.1.2 🔸 Mediana\n\n\n\n\n\n\nNote\n\n\n\nEjemplo:\n\nDatos: 2, 8, 5 → ordenados: 2, 5, 8\nMediana = 5\n\n\nSi hay números pares, no hay un valor justo al centro, así que tomas los dos del centro y sacas su promedio.\n\n\n\n\n\n\nNote\n\n\n\nEjemplo:\n\nDatos: 1, 3, 7, 10 → del centro: 3 y 7 → mediana = (3+7)/2 = 5\n\n\nLa mediana sirve mucho cuando hay valores extremos (outliers) que podrían afectar la media.\n\n\n13.1.3 🔸 Desviación Estándar\n\nEs una medida que indica qué tan dispersos o separados están los datos respecto a la media.\nSi la desviación estándar es pequeña, los valores están muy cerca del promedio.\nSi es grande, los valores están muy separados y hay más variabilidad.\n\n\n\n\n\n\n\n\n13.1.4 🔸 Resumen de datos\n\n\n\n\n\n\nNote\n\n\n\nIncluye:\n- Mínimo: Es el valor más pequeño del conjunto de datos, Ayuda a saber cuál es el extremo más bajo.\n- 1er cuartil (Q1) : Es el valor qué marca el 25% de los datos inferiores cuando están ordenados.\nEs decir:\n\n25% de los datos están por debajo de Q1\n75% están por encima\n\nQ1 ayuda a saber dónde empieza la parte “baja” de los datos.\n- Mediana: Es el valor que divide los datos en dos partes iguales (50%).\n(Es muy útil cuando hay valores extremos porque no se altera tanto como la media).\n- Media: El promedio de los datos (Se usa para representar el “centro”, pero es sensible a valores extremos).\n- 3er cuartil (Q3): Es el valor que marca el 75% de los datos ordenados.\nSignifica:\n\n75% de los datos están por debajo\n25% por encima\nAyuda a ver dónde empieza la parte “alta” de los datos.\n\n- Máximo: Es el valor más grande del conjunto."
+  },
+  {
+    "objectID": "Cap4_R.html#cargar-datos-en-r",
+    "href": "Cap4_R.html#cargar-datos-en-r",
+    "title": "12  Visualización y Análisis de Datos",
+    "section": "13.2 📥 1. Cargar datos en R",
+    "text": "13.2 📥 1. Cargar datos en R\nUsaremos un vector de ejemplo llamado x:\nx &lt;- c(5, 8, 12, 4, 6, 9, 10, 7)"
+  },
+  {
+    "objectID": "Cap4_R.html#calcular-medidas-básicas",
+    "href": "Cap4_R.html#calcular-medidas-básicas",
+    "title": "12  Visualización y Análisis de Datos",
+    "section": "13.3 📐 2. Calcular medidas básicas",
+    "text": "13.3 📐 2. Calcular medidas básicas\n\n13.3.1 Media\nmean(x)\n\n\n13.3.2 Mediana\nmedian(x)\n\n\n13.3.3 Desviación estándar\nsd(x)\n\n\n\n13.3.4 📦 3. Resumen de datos\nR ofrece una función integrada:\nsummary(x)\nEsto muestra: - Mínimo - Q1 - Mediana - Media - Q3 - Máximo"
+  },
+  {
+    "objectID": "Cap4_R.html#visualización-básica",
+    "href": "Cap4_R.html#visualización-básica",
+    "title": "12  Visualización y Análisis de Datos",
+    "section": "13.4 📊 4. Visualización básica",
+    "text": "13.4 📊 4. Visualización básica\nPara complementar la estadística descriptiva, podemos usar un histograma:\nhist(x, main = \"Histograma de valores\", xlab = \"Valores\", col = \"lightpink\")\nY un boxplot:\nboxplot(x, main = \"Boxplot de valores\", col = \"lightblue\")"
+  },
+  {
+    "objectID": "Cap4_R.html#ejemplo-completo",
+    "href": "Cap4_R.html#ejemplo-completo",
+    "title": "12  Visualización y Análisis de Datos",
+    "section": "13.5 🧪 5. Ejemplo completo",
+    "text": "13.5 🧪 5. Ejemplo completo\nx &lt;- c(5, 8, 12, 4, 6, 9, 10, 7)\n\nmedia &lt;- mean(x)\nmediana &lt;- median(x)\ndesv &lt;- sd(x)\nresumen &lt;- summary(x)\n\ncat(\"Media:\", media, \"\\n\")\ncat(\"Mediana:\", mediana, \"\\n\")\ncat(\"Desviación Estándar:\", desv, \"\\n\")\ncat(\"\\nResumen:\\n\")\nprint(resumen)\n\n\nLa estadística descriptiva permite obtener una visión general rápida de los datos.\nR facilita estos cálculos con funciones simples e intuitivas.\nEstas herramientas son la base para análisis más avanzados en genómica y ciencias de datos.\n\n\n13.5.1 Referencias\n\nThe Carpentries. (2025). R for Reproducible Scientific Analysis.\nhttps://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html\nDemiryürek, G. (2021). Harry Potter Dataset. Kaggle.\nhttps://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset\nMontgomery, D. C., & Runger, G. C. (2014). Applied Statistics and Probability for Engineers.\nCrawley, M. J. (2015). Statistics: An Introduction Using R.\nWickham, H., & Grolemund, G. (2016). R for Data Science."
+  },
+  {
+    "objectID": "Bedtools_R.html",
+    "href": "Bedtools_R.html",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "",
+    "text": "14 ## 💻 Introducción"
+  },
+  {
+    "objectID": "Bedtools_R.html#introducción-1",
+    "href": "Bedtools_R.html#introducción-1",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.1 💻 Introducción",
+    "text": "15.1 💻 Introducción\nEste documento proporciona una guía básica para trabajar con R, Bedtools, y archivos genómicos.\nIncluye:\n\nPreparación del ambiente\nComandos esenciales de Bedtools\nLectura y manipulación de BED/GFF en R\nEjemplos prácticos"
+  },
+  {
+    "objectID": "Bedtools_R.html#requerimientos",
+    "href": "Bedtools_R.html#requerimientos",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.2 🔧 Requerimientos",
+    "text": "15.2 🔧 Requerimientos\n\n15.2.1 Software necesario\n\nR (versión 4+)\nRStudio (opcional)\nBedtools instalado en tu sistema\nPaquetes R:\n\ntidyverse\nrtracklayer\ndata.table\nGenomicRanges\n\n\ninstall.packages(c(\"tidyverse\", \"data.table\"))\nBiocManager::install(c(\"rtracklayer\", \"GenomicRanges\"))"
+  },
+  {
+    "objectID": "Bedtools_R.html#qué-es-bedtools",
+    "href": "Bedtools_R.html#qué-es-bedtools",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.3 🧬 ¿Qué es Bedtools?",
+    "text": "15.3 🧬 ¿Qué es Bedtools?\nBedtools es una suite de herramientas para realizar operaciones sobre regiones genómicas.\nPermite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Conversión entre formatos"
+  },
+  {
+    "objectID": "Bedtools_R.html#formatos-comúnes-bed-gff-fasta",
+    "href": "Bedtools_R.html#formatos-comúnes-bed-gff-fasta",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.4 📁 Formatos comúnes (BED, GFF, FASTA)",
+    "text": "15.4 📁 Formatos comúnes (BED, GFF, FASTA)\n\n15.4.1 Formato BED\nColumnas mínimas:\n1. cromosoma 2. inicio 3. fin\nEjemplo:\nchr1    1000    1500\nchr1    2000    2300\n\n\n15.4.2 Formato GFF/GTF\ntiene 9 columnas (atributos más complejos)."
+  },
+  {
+    "objectID": "Bedtools_R.html#comandos-básicos-de-bedtools",
+    "href": "Bedtools_R.html#comandos-básicos-de-bedtools",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.5 ✨ Comandos básicos de Bedtools",
+    "text": "15.5 ✨ Comandos básicos de Bedtools\n\n15.5.1 Intersectar regiones\nbedtools intersect -a A.bed -b B.bed &gt; interseccion.bed\n\n\n15.5.2 Unir regiones\nbedtools merge -i regiones.bed &gt; regiones_unidas.bed\n\n\n15.5.3 Complemento genómico\nbedtools complement -i regiones.bed -g genome_file.txt &gt; complement.bed\n\n\n15.5.4 Cobertura\nbedtools coverage -a regiones.bed -b alineamientos.bam &gt; coverage.txt"
+  },
+  {
+    "objectID": "Bedtools_R.html#leer-archivos-bed-en-r",
+    "href": "Bedtools_R.html#leer-archivos-bed-en-r",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.6 📥 Leer archivos BED en R",
+    "text": "15.6 📥 Leer archivos BED en R\n\n15.6.1 Con rtracklayer\nlibrary(rtracklayer)\nbed &lt;- import(\"archivo.bed\", format = \"BED\")\nbed\n\n\n15.6.2 Con data.table\nlibrary(data.table)\nbed &lt;- fread(\"archivo.bed\", header = FALSE)\ncolnames(bed) &lt;- c(\"chr\", \"start\", \"end\")\nbed"
+  },
+  {
+    "objectID": "Bedtools_R.html#convertir-bed-a-granges",
+    "href": "Bedtools_R.html#convertir-bed-a-granges",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.7 🔗 Convertir BED a GRanges",
+    "text": "15.7 🔗 Convertir BED a GRanges\nlibrary(GenomicRanges)\nbed_gr &lt;- makeGRangesFromDataFrame(bed, keep.extra.columns = TRUE)\nbed_gr"
+  },
+  {
+    "objectID": "Bedtools_R.html#exportar-bed-desde-r",
+    "href": "Bedtools_R.html#exportar-bed-desde-r",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.8 📤 Exportar BED desde R",
+    "text": "15.8 📤 Exportar BED desde R\nexport(bed_gr, \"salida.bed\", format = \"BED\")"
+  },
+  {
+    "objectID": "Bedtools_R.html#ejemplo-práctico-completo",
+    "href": "Bedtools_R.html#ejemplo-práctico-completo",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.9 🧪 Ejemplo práctico completo",
+    "text": "15.9 🧪 Ejemplo práctico completo\nlibrary(rtracklayer)\nlibrary(GenomicRanges)\n\n# 1. Cargar BED\na &lt;- import(\"A.bed\", format = \"BED\")\nb &lt;- import(\"B.bed\", format = \"BED\")\n\n# 2. Intersección en R (similar a bedtools intersect)\ninter &lt;- subsetByOverlaps(a, b)\ninter\n\n# 3. Exportar resultado\nexport(inter, \"intersect_R.bed\", format = \"BED\")"
+  },
+  {
+    "objectID": "Bedtools_R.html#integrar-r-bedtools-desde-r",
+    "href": "Bedtools_R.html#integrar-r-bedtools-desde-r",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.10 🧭 Integrar R + Bedtools desde R",
+    "text": "15.10 🧭 Integrar R + Bedtools desde R\nPuedes ejecutar Bedtools dentro de R:\nsystem(\"bedtools intersect -a A.bed -b B.bed &gt; inter.bed\")"
+  },
+  {
+    "objectID": "Bedtools_R.html#referencias",
+    "href": "Bedtools_R.html#referencias",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "15.11 Referencias",
+    "text": "15.11 Referencias\n\nBedtools manual https://bedtools.readthedocs.io/\nBioconductor: GenomicRanges, rtracklayer https://bioconductor.org/packages/release/bioc/html/rtracklayer.html\nUCSC Genome Browser formatos https://genome.ucsc.edu/"
   },
   {
     "objectID": "install_B.html#windows",
@@ -824,19 +747,5 @@
     "title": "15  Instalación de R y RStudio",
     "section": "15.7 Actualizar R - Windows y MacOS",
     "text": "15.7 Actualizar R - Windows y MacOS\nSi ya tienes R instalado en tu computadora, asegúrate de tener la versión más actualizada de R\nExisten diferentes formas de actualizar R, la manera más sencilla es a través de Rgui, la interfaz gráfica que viene con R base, no con RStudio.\nWindows y MacOS:\n\nEscribe Rgui en el explorador de archivos/aplicaciones de tu computadora para abrir la aplicación de R.\nPara actualizar R necesitamos de la paquetería installr. Para instalarla ejecuta el siguiente código:\n\n-   `install.packages(installr)`\n-   Presiona **Enter**\n\nCarga la paquetería con la función library()\n\nlibrary(installr)\nPresiona Enter\n\nPara revisar si tienes la versión de R más actualizada ejecuta el siguiente código:\n\ninstallr(GUI = TRUE)\nPresiona Enter\nEn la ventana emergente asegúrate de tener seleccionada la opción “R (updateR)” y haz clic en “OK”\n\nAparecerá otra ventana con información sobre la versión de R que estás usando y si existe una versión más reciente.\n\nSi ya tienes la versión más actual, simplemente haz clic en “OK” para cerrar.\nSi hay una versión nueva disponible, haz clic en “Yes” para comenzar la actualización.\n\nSi durante el proceso aparece una ventana preguntando si deseas copiar paquetes o configuraciones anteriores, puedes hacer clic en “No” (no es obligatorio copiarlos; puedes reinstalarlos después si lo prefieres)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Workshop Bash & R",
-    "section": "",
-    "text": "Información general"
-  },
-  {
-    "objectID": "index.html#citar-y-reutilizar-el-material-del-curso",
-    "href": "index.html#citar-y-reutilizar-el-material-del-curso",
-    "title": "Workshop Bash & R",
-    "section": "Citar y reutilizar el material del curso",
-    "text": "Citar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)."
   }
 ]
