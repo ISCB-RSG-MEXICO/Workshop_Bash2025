@@ -28,6 +28,7 @@ book:
     - Cap3_R.qmd
     - Cap4_R.qmd
     - Bedtools_R.qmd
+    - version_extendida_BPB.qmd
     - install_B.qmd
     - install_R.qmd
   # Information

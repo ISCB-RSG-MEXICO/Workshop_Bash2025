@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 1&nbsp; Buenas prácticas en bioinformática</title>
+<title>Workshop Bash &amp; R - 14&nbsp; Buenas prácticas en bioinformática</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro_bash.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./install_B.html" rel="next">
+<link href="./Bedtools_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bpracticas.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./version_extendida_BPB.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Bpracticas.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Bpracticas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span></a>
   </div>
 </li>
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./version_extendida_BPB.html" class="sidebar-item-text sidebar-link">
+  <a href="./version_extendida_BPB.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span></a>
   </div>
 </li>
@@ -240,16 +240,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-un-algoritmo" id="toc-qué-es-un-algoritmo" class="nav-link active" data-scroll-target="#qué-es-un-algoritmo"><span class="header-section-number">1.1</span> ⭐ ¿Qué es un algoritmo?</a></li>
-  <li><a href="#qué-necesitamos-para-escribir-un-buen-software" id="toc-qué-necesitamos-para-escribir-un-buen-software" class="nav-link" data-scroll-target="#qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">1.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</a></li>
-  <li><a href="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" id="toc-cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="nav-link" data-scroll-target="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">1.3</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</a></li>
-  <li><a href="#buenas-prácticas-en-r" id="toc-buenas-prácticas-en-r" class="nav-link" data-scroll-target="#buenas-prácticas-en-r"><span class="header-section-number">2</span> 🦾 Buenas prácticas en <strong>R</strong></a>
+  <li><a href="#qué-es-un-algoritmo" id="toc-qué-es-un-algoritmo" class="nav-link active" data-scroll-target="#qué-es-un-algoritmo"><span class="header-section-number">14.1</span> ⭐ ¿Qué es un algoritmo?</a></li>
+  <li><a href="#qué-necesitamos-para-escribir-un-buen-software" id="toc-qué-necesitamos-para-escribir-un-buen-software" class="nav-link" data-scroll-target="#qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">14.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</a></li>
+  <li><a href="#ética-y-responsabilidad-en-bioinformática" id="toc-ética-y-responsabilidad-en-bioinformática" class="nav-link" data-scroll-target="#ética-y-responsabilidad-en-bioinformática"><span class="header-section-number">14.3</span> 🔐 Ética y responsabilidad en bioinformática</a></li>
+  <li><a href="#pasos-para-escribir-un-buen-software" id="toc-pasos-para-escribir-un-buen-software" class="nav-link" data-scroll-target="#pasos-para-escribir-un-buen-software"><span class="header-section-number">14.4</span> 🧪 Pasos para escribir un buen software</a></li>
+  <li><a href="#puntos-clave-para-buenas-prácticas-en-bioinformática" id="toc-puntos-clave-para-buenas-prácticas-en-bioinformática" class="nav-link" data-scroll-target="#puntos-clave-para-buenas-prácticas-en-bioinformática"><span class="header-section-number">14.5</span> ⭐ Puntos clave para buenas prácticas en bioinformática</a>
   <ul>
-  <li><a href="#carga-solo-los-paquetes-necesarios" id="toc-carga-solo-los-paquetes-necesarios" class="nav-link" data-scroll-target="#carga-solo-los-paquetes-necesarios"><span class="header-section-number">2.1</span> 📦 Carga solo los paquetes necesarios</a></li>
-  <li><a href="#modulariza-tu-código" id="toc-modulariza-tu-código" class="nav-link" data-scroll-target="#modulariza-tu-código"><span class="header-section-number">2.2</span> 🧱 Modulariza tu código</a></li>
-  <li><a href="#documenta-tus-scripts" id="toc-documenta-tus-scripts" class="nav-link" data-scroll-target="#documenta-tus-scripts"><span class="header-section-number">2.3</span> 📚Documenta tus scripts</a></li>
-  <li><a href="#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" id="toc-cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" class="nav-link" data-scroll-target="#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r"><span class="header-section-number">2.4</span> 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">2.5</span> Referencias</a></li>
+  <li><a href="#escribe-programas-para-personas-no-para-máquinas" id="toc-escribe-programas-para-personas-no-para-máquinas" class="nav-link" data-scroll-target="#escribe-programas-para-personas-no-para-máquinas"><span class="header-section-number">14.5.1</span> Escribe programas para personas, no para máquinas ✏️</a></li>
+  <li><a href="#usa-modularidad" id="toc-usa-modularidad" class="nav-link" data-scroll-target="#usa-modularidad"><span class="header-section-number">14.5.2</span> 🧱Usa modularidad</a></li>
+  <li><a href="#planifica-los-errores-programación-defensiva" id="toc-planifica-los-errores-programación-defensiva" class="nav-link" data-scroll-target="#planifica-los-errores-programación-defensiva"><span class="header-section-number">14.5.3</span> 🚩Planifica los errores (<strong>programación defensiva)</strong></a></li>
+  </ul></li>
+  <li><a href="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" id="toc-cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="nav-link" data-scroll-target="#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">14.6</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</a></li>
+  <li><a href="#buenas-prácticas-en-r" id="toc-buenas-prácticas-en-r" class="nav-link" data-scroll-target="#buenas-prácticas-en-r"><span class="header-section-number">15</span> 🦾 Buenas prácticas en <strong>R</strong></a>
+  <ul>
+  <li><a href="#organiza-tus-proyectos-con-project-based-workflows" id="toc-organiza-tus-proyectos-con-project-based-workflows" class="nav-link" data-scroll-target="#organiza-tus-proyectos-con-project-based-workflows"><span class="header-section-number">15.1</span> 📁Organiza tus proyectos con <em>project-based workflows</em></a></li>
+  <li><a href="#carga-solo-los-paquetes-necesarios" id="toc-carga-solo-los-paquetes-necesarios" class="nav-link" data-scroll-target="#carga-solo-los-paquetes-necesarios"><span class="header-section-number">15.2</span> 📦 Carga solo los paquetes necesarios</a></li>
+  <li><a href="#fórmula-de-oro-estilo-consistencia" id="toc-fórmula-de-oro-estilo-consistencia" class="nav-link" data-scroll-target="#fórmula-de-oro-estilo-consistencia"><span class="header-section-number">15.3</span> ✏️ Fórmula de oro: <em>estilo + consistencia</em></a></li>
+  <li><a href="#modulariza-tu-código" id="toc-modulariza-tu-código" class="nav-link" data-scroll-target="#modulariza-tu-código"><span class="header-section-number">15.4</span> 🧱 Modulariza tu código</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">15.5</span> </a></li>
+  <li><a href="#valida-tus-datos-antes-de-analizarlos" id="toc-valida-tus-datos-antes-de-analizarlos" class="nav-link" data-scroll-target="#valida-tus-datos-antes-de-analizarlos"><span class="header-section-number">15.6</span> 🧪 Valida tus datos antes de analizarlos</a></li>
+  <li><a href="#haz-que-tus-gráficos-sean-reproducibles" id="toc-haz-que-tus-gráficos-sean-reproducibles" class="nav-link" data-scroll-target="#haz-que-tus-gráficos-sean-reproducibles"><span class="header-section-number">15.7</span> 🌱 Haz que tus gráficos sean reproducibles</a></li>
+  <li><a href="#documenta-tus-scripts" id="toc-documenta-tus-scripts" class="nav-link" data-scroll-target="#documenta-tus-scripts"><span class="header-section-number">15.8</span> 📚Documenta tus scripts</a></li>
+  <li><a href="#usa-herramientas-de-análisis-reproducible" id="toc-usa-herramientas-de-análisis-reproducible" class="nav-link" data-scroll-target="#usa-herramientas-de-análisis-reproducible"><span class="header-section-number">15.9</span> 🧬 Usa herramientas de análisis reproducible</a></li>
+  <li><a href="#limpia-tu-entorno-pero-no-demasiado" id="toc-limpia-tu-entorno-pero-no-demasiado" class="nav-link" data-scroll-target="#limpia-tu-entorno-pero-no-demasiado"><span class="header-section-number">15.10</span> 🧼Limpia tu entorno (pero no demasiado)</a></li>
+  <li><a href="#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" id="toc-cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" class="nav-link" data-scroll-target="#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r"><span class="header-section-number">15.11</span> 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">15.12</span> Referencias</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -259,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></h1>
 </div>
 
 
@@ -274,8 +289,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="qué-es-un-algoritmo" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="qué-es-un-algoritmo"><span class="header-section-number">1.1</span> ⭐ ¿Qué es un algoritmo?</h2>
+<section id="qué-es-un-algoritmo" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="qué-es-un-algoritmo"><span class="header-section-number">14.1</span> ⭐ ¿Qué es un algoritmo?</h2>
 <p>Un <strong>algoritmo</strong> es un método para resolver un problema mediante una serie de pasos <strong>definidos, precisos</strong> y <strong>finitos</strong>.</p>
 <ul>
 <li><strong>Definido</strong>: si se sigue dos veces, se obtiene el mismo resultado (Es reproducible).</li>
@@ -284,8 +299,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Un algoritmo podemos definirlo como un <strong>programa o software</strong>.</p>
 </section>
-<section id="qué-necesitamos-para-escribir-un-buen-software" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">1.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</h2>
+<section id="qué-necesitamos-para-escribir-un-buen-software" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="qué-necesitamos-para-escribir-un-buen-software"><span class="header-section-number">14.2</span> 🧩 ¿Qué necesitamos para escribir un buen software?</h2>
 <blockquote class="blockquote">
 <p>Crear software confiable implica aplicar principios de ingeniería:</p>
 <ul>
@@ -298,14 +313,107 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Basado en <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745"><em>Wilson, et al.&nbsp;2014. PLOS Biology</em></a></p>
 </blockquote>
+</section>
+<section id="ética-y-responsabilidad-en-bioinformática" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="ética-y-responsabilidad-en-bioinformática"><span class="header-section-number">14.3</span> 🔐 Ética y responsabilidad en bioinformática</h2>
+<p>En bioinformática es crucial garantizar el <strong>uso ético y responsable</strong> de datos, especialmente cuando incluyen <strong>genomas humanos</strong> o información sensible.</p>
+<p>Esto implica:</p>
+<ul>
+<li><p>Proteger la privacidad del individuo.</p></li>
+<li><p>Respetar las regulaciones y marcos legales vigentes.</p></li>
+<li><p>Mantener prácticas transparentes y reproducibles.</p></li>
+<li><p>Evitar errores que comprometan la integridad del análisis.</p></li>
+</ul>
+<p>Estas medidas fortalecen la confianza en los resultados y evitan problemas graves como <strong>retractaciones científicas</strong>.</p>
+</section>
+<section id="pasos-para-escribir-un-buen-software" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="pasos-para-escribir-un-buen-software"><span class="header-section-number">14.4</span> 🧪 Pasos para escribir un buen software</h2>
+<ol type="1">
+<li><p>Análisis del problema / Definir el problema</p></li>
+<li><p>Diseño del algoritmo / Diseño del programa</p></li>
+<li><p>Codificación / Escribir el código</p></li>
+<li><p>Compilación y ejecución del programa</p></li>
+<li><p>Verificación / Realizar pruebas</p></li>
+<li><p>Depuración / Detectar los errores y corregirlos (Programacion defensiva)</p></li>
+<li><p>Documentación</p></li>
+</ol>
+<ul>
+<li><div>
+<h3 id="paso-7-documentación" data-number="14.4.1" class="anchored"><span class="header-section-number">14.4.1</span> 🗂️ Paso 7: Documentación</h3>
+<p>Incluye siempre:</p>
+<ul>
+<li><p><em>Título</em> (opcional)</p></li>
+<li><p><em>Autor (author)</em>: Su nombre</p></li>
+<li><p><em>Dia (date)</em>: Fecha de creación</p></li>
+<li><p><em>Paquetes (packages)</em></p></li>
+<li><p><em>Directorio de trabajo (Working directory)</em>: En que carpeta se encuentra tu datos y programa.</p></li>
+<li><p><em>Información descriptiva del programa (Description)</em>: ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.</p></li>
+<li><p><em>Usage</em> ¿Cómo se utiliza?</p></li>
+<li><p><em>Argumentos (Arguments)</em></p>
+<ul>
+<li><p><em>Información de entrada (Data Inputs)</em>: Ej: Solo numeros enteros (sin decimales).</p></li>
+<li><p><em>Información de salida (Outpus)</em>: Graficas, figuras, tablas, etc.</p></li>
+</ul></li>
+</ul>
+</div></li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg" class="img-fluid figure-img" width="430"></p>
 </figure>
 </div>
 </section>
-<section id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">1.3</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</h2>
+<section id="puntos-clave-para-buenas-prácticas-en-bioinformática" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="puntos-clave-para-buenas-prácticas-en-bioinformática"><span class="header-section-number">14.5</span> ⭐ Puntos clave para buenas prácticas en bioinformática</h2>
+<section id="escribe-programas-para-personas-no-para-máquinas" class="level3" data-number="14.5.1">
+<h3 data-number="14.5.1" class="anchored" data-anchor-id="escribe-programas-para-personas-no-para-máquinas"><span class="header-section-number">14.5.1</span> Escribe programas para personas, no para máquinas ✏️</h3>
+<ul>
+<li><p>Documenta qué hace tu código y por qué.</p></li>
+<li><p>Mantén coherencia en nombres, indentación y estilo.</p></li>
+</ul>
+</section>
+<section id="usa-modularidad" class="level3" data-number="14.5.2">
+<h3 data-number="14.5.2" class="anchored" data-anchor-id="usa-modularidad"><span class="header-section-number">14.5.2</span> 🧱Usa modularidad</h3>
+<ul>
+<li><p>Divide tu código en <strong>funciones pequeñas de un solo propósito</strong>.</p></li>
+<li><p>No repitas código</p></li>
+<li><p>Crea pasos reproducibles o que se repitan por si solos (Usa funciones, loops y scripts reproducibles).</p></li>
+</ul>
+</section>
+<section id="planifica-los-errores-programación-defensiva" class="level3" data-number="14.5.3">
+<h3 data-number="14.5.3" class="anchored" data-anchor-id="planifica-los-errores-programación-defensiva"><span class="header-section-number">14.5.3</span> 🚩Planifica los errores (<strong>programación defensiva)</strong></h3>
+<p>Es una práctica donde <strong>asumes que pueden ocurrir errores</strong> y <strong>preparas tu código</strong> para detectarlos, avisar y manejar la situación sin que todo truene.~<br>
+~ No se trata de ser pesimista: es ser <strong>realista</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><sub><code>bash</code></sub></p>
+<p><code>#validación de un archivo vacio if [ ! -s "$file" ]; then  #Si el archivo no existe o tiene tamaño 0, entra al thenecho "Error: archivo vacío o no existe" &gt;&amp;2  #imprime el mensaje. y &gt;&amp;2 envía el mensaje al stderr (salida de error)exit 1  #1 es un código de error (0 = éxito, cualquier otro número = fallo).fi  #Es el cierre del if</code></p>
+<p><code>r</code></p>
+<p><code>if (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop("El archivo FASTA no existe: ", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional</code></p>
+<p><code>seqs &lt;- read.fasta(fasta_path)</code> <code># lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional</code></p>
+<section id="section" class="level3" data-number="14.5.4">
+<h3 data-number="14.5.4" class="anchored" data-anchor-id="section"><span class="header-section-number">14.5.4</span> </h3>
+</section>
+</div>
+</div>
+<p>⚙️ Optimiza al final</p>
+<ul>
+<li><p>Primero que funcione.</p></li>
+<li><p>Después que funcione <em>bien</em>.</p></li>
+<li><p>Optimiza el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.</p></li>
+</ul>
+</section>
+</section>
+<section id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática"><span class="header-section-number">14.6</span> 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?</h2>
 <p>Aunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨</p>
 <p>ChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:</p>
 <ul>
@@ -322,30 +430,20 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>ChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad.</strong></p>
 </blockquote>
 </section>
-<section id="buenas-prácticas-en-r" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> 🦾 Buenas prácticas en <strong>R</strong></h1>
+<section id="buenas-prácticas-en-r" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> 🦾 Buenas prácticas en <strong>R</strong></h1>
 <p>Trabajar en R para bioinformática requiere código limpio, reproducible y fácil de compartir. Aquí tienes un conjunto de buenas prácticas recomendadas por expertos y comunidades como <em>R for Data Science</em>, <em>The Tidyverse Style Guide</em>, <em>Bioconductor</em> y <em>The Carpentries</em>.</p>
-<section id="carga-solo-los-paquetes-necesarios" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="carga-solo-los-paquetes-necesarios"><span class="header-section-number">2.1</span> 📦 Carga solo los paquetes necesarios</h2>
+<section id="organiza-tus-proyectos-con-project-based-workflows" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="organiza-tus-proyectos-con-project-based-workflows"><span class="header-section-number">15.1</span> 📁Organiza tus proyectos con <em>project-based workflows</em></h2>
 <ul>
-<li><p>Evita cargar 10 paquetes si solo usas 1 función.</p></li>
-<li><p>Declara explícitamente tus dependencias.</p></li>
-<li><p>Incluye siempre una sección “Paquetes” en tus scripts <code>.R</code>.</p></li>
+<li><p>Usa siempre un <strong>RStudio Project (<code>.Rproj</code>)</strong>.</p></li>
+<li><p>Evita rutas absolutas como:<br>
+<code>setwd("C:/Users/Mariana/Desktop/")</code> ❌ (si mueves el archivo esto causará errores)</p></li>
+<li><p>Usa rutas relativas con <strong><code>here::here()</code></strong> o <strong><code>fs</code></strong>:<br>
+<code>here("data", "input.csv")</code> ✔️</p></li>
+<li><p>Mantén carpetas claras:</p></li>
 </ul>
-</section>
-<section id="modulariza-tu-código" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="modulariza-tu-código"><span class="header-section-number">2.2</span> 🧱 Modulariza tu código</h2>
-<ul>
-<li><p>Divide análisis largos en <strong>funciones</strong> y <strong>scripts separados</strong>.</p></li>
-<li><p>Guarda funciones en <code>/scripts/functions.R</code>.</p></li>
-</ul>
-<p>Esto evita repetir código y hace tus análisis más reproducibles.</p>
-<p>🔄 Haz tu código <em>pipeline-friendly</em></p>
-</section>
-<section id="documenta-tus-scripts" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="documenta-tus-scripts"><span class="header-section-number">2.3</span> 📚Documenta tus scripts</h2>
-<p>Al inicio de cada archivo <code>.R</code> incluye:</p>
-<div class="callout callout-style-default callout-note callout-titled" style=".callout {   background: #faf4f7;   border-left: 5px solid #d8a1b5; /* rose gold */   padding: 1.1rem 1.3rem;   border-radius: 12px;   color: #8a4f62;   box-shadow: 0px 3px 10px rgba(214, 150, 170, 0.2); }">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -355,13 +453,106 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>r</p>
-<p><code># Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse</code></p>
+<p><sub>bash</sub></p>
+<p><code>/data</code></p>
+<p><code>/scripts</code></p>
+<p><code>/results</code></p>
+<p><code>/figures</code></p>
 </div>
 </div>
 </section>
-<section id="cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r"><span class="header-section-number">2.4</span> 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?</h2>
+<section id="carga-solo-los-paquetes-necesarios" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="carga-solo-los-paquetes-necesarios"><span class="header-section-number">15.2</span> 📦 Carga solo los paquetes necesarios</h2>
+<ul>
+<li><p>Evita cargar 10 paquetes si solo usas 1 función. (indica enmascaramiento)</p></li>
+<li><p>Incluye siempre una sección “Paquetes” en tus scripts <code>.R</code>.</p></li>
+</ul>
+</section>
+<section id="fórmula-de-oro-estilo-consistencia" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="fórmula-de-oro-estilo-consistencia"><span class="header-section-number">15.3</span> ✏️ Fórmula de oro: <em>estilo + consistencia</em></h2>
+<p>Sigue guías como <strong>tidyverse style guide</strong>:</p>
+<ul>
+<li><p>Nombres de objetos en snake_case → <code>mi_dataframe</code>, <code>hp_colors</code>.</p></li>
+<li><p>Espacios consistentes después de comas y operadores.</p></li>
+<li><p>Líneas cortas (&lt; 80 caracteres).</p></li>
+<li><p>Comentarios claros como:</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>r</code></p>
+<p><code># Filtrar solo Ravenclaw df_ravens &lt;- df %&gt;% filter(House == "Ravenclaw")</code></p>
+</div>
+</div>
+</section>
+<section id="modulariza-tu-código" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="modulariza-tu-código"><span class="header-section-number">15.4</span> 🧱 Modulariza tu código</h2>
+<ul>
+<li><p>Divide análisis largos en <strong>funciones</strong> y <strong>scripts separados</strong>.</p></li>
+<li><p>Guarda funciones en <code>/scripts</code></p></li>
+</ul>
+<p>Esto evita repetir código y hace tus análisis más reproducibles.</p>
+</section>
+<section id="section-1" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="section-1"><span class="header-section-number">15.5</span> </h2>
+<p>🔄 Haz tu código <em>pipeline-friendly</em></p>
+<p>Prefiere el estilo tidyverse:</p>
+<p><code>r</code></p>
+<p><code>hp_data %&gt;%   count(House) %&gt;%     mutate(percent = n / sum(n))</code></p>
+<p>En lugar de 10 líneas de transformaciones anidadas ilegibles.</p>
+</section>
+<section id="valida-tus-datos-antes-de-analizarlos" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="valida-tus-datos-antes-de-analizarlos"><span class="header-section-number">15.6</span> 🧪 Valida tus datos antes de analizarlos</h2>
+<p>Incluye checks preventivos:</p>
+<p>r</p>
+<p><code>stopifnot(is.data.frame(hp_data)) stopifnot(all(c("House") %in% names(hp_data)))</code></p>
+<p>Esto evita errores sorpresivos al final del análisis.</p>
+</section>
+<section id="haz-que-tus-gráficos-sean-reproducibles" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="haz-que-tus-gráficos-sean-reproducibles"><span class="header-section-number">15.7</span> 🌱 Haz que tus gráficos sean reproducibles</h2>
+<p>Incluye:</p>
+<ul>
+<li><p>Título</p></li>
+<li><p>Ejes (o explícitamente sin ejes)</p></li>
+<li><p>Paletas documentadas</p></li>
+<li><p>Tamaños de punto, fuente, etc.</p></li>
+</ul>
+<p>Y <strong>guarda tus figuras con código reproducible</strong>, en una carpeta específica:</p>
+<p>r</p>
+<p><code>ggsave("figures/house_plot.png", width = 6, height = 4, dpi = 300)</code></p>
+</section>
+<section id="documenta-tus-scripts" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="documenta-tus-scripts"><span class="header-section-number">15.8</span> 📚Documenta tus scripts</h2>
+<p>Al inicio de cada archivo <code>.R</code> incluye:</p>
+<p>r</p>
+<p><code># Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse</code></p>
+</section>
+<section id="usa-herramientas-de-análisis-reproducible" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="usa-herramientas-de-análisis-reproducible"><span class="header-section-number">15.9</span> 🧬 Usa herramientas de análisis reproducible</h2>
+<p>Para proyectos grandes:</p>
+<ul>
+<li><p><strong>R Markdown</strong> o <strong>Quarto (<code>.qmd</code>)</strong></p></li>
+<li><p><strong>renv</strong> para versiones de paquetes</p></li>
+<li><p><strong>targets</strong> o <strong>drake</strong> para pipelines complejos</p></li>
+<li><p><strong>Bioconductor</strong> para análisis genómicos estandarizados</p></li>
+</ul>
+</section>
+<section id="limpia-tu-entorno-pero-no-demasiado" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="limpia-tu-entorno-pero-no-demasiado"><span class="header-section-number">15.10</span> 🧼Limpia tu entorno (pero no demasiado)</h2>
+<ul>
+<li><p>Evita usar <code>rm(list = ls())</code> a menos que sea estrictamente necesario.</p></li>
+<li><p>Un proyecto bien estructurado no depende del “entorno emocionado”.</p></li>
+</ul>
+</section>
+<section id="cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r" class="level2" data-number="15.11">
+<h2 data-number="15.11" class="anchored" data-anchor-id="cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r"><span class="header-section-number">15.11</span> 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?</h2>
 <p>ChatGPT puede mejorar tus análisis en R de forma ética y eficiente:</p>
 <ul>
 <li><p><strong>Genera código limpio y estilizado</strong> siguiendo guías tidyverse.</p></li>
@@ -377,8 +568,8 @@ Note
 <p>En pocas palabras: <strong>ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática</strong>, pero siempre con criterio científico tuyo 💛.</p>
 </blockquote>
 </section>
-<section id="referencias" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="referencias"><span class="header-section-number">2.5</span> Referencias</h2>
+<section id="referencias" class="level2" data-number="15.12">
+<h2 data-number="15.12" class="anchored" data-anchor-id="referencias"><span class="header-section-number">15.12</span> Referencias</h2>
 <ul>
 <li>Wilson, et al.&nbsp;2014. <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>. PLOS Biology</li>
 <li>Wickham, H. (2019), The Tidyverse Style Guide.<a href="https://style.tidyverse.org/" class="uri">https://style.tidyverse.org/</a></li>
@@ -756,13 +947,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Información general</span>
+      <a href="./Bedtools_R.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introducción a BEDtools en R 🧬</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro_bash.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conceptos Unix y GNU/Linux</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./install_B.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
