@@ -81,30 +81,43 @@
     "href": "Bpracticas.html",
     "title": "1  Buenas prácticas en bioinformática",
     "section": "",
+<<<<<<< HEAD
     "text": "1.1 ⭐ ¿Qué es un algoritmo?\nUn algoritmo es un método para resolver un problema mediante una serie de pasos definidos, precisos y finitos.\nUn algoritmo podemos definirlo como un programa o software.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "text": "2 🦾 Buenas prácticas en R\nTrabajar en R para bioinformática requiere código limpio, reproducible y fácil de compartir. Aquí tienes un conjunto de buenas prácticas recomendadas por expertos y comunidades como R for Data Science, The Tidyverse Style Guide, Bioconductor y The Carpentries."
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#qué-es-un-algoritmo",
     "href": "Bpracticas.html#qué-es-un-algoritmo",
     "title": "1  Buenas prácticas en bioinformática",
+<<<<<<< HEAD
     "section": "",
     "text": "Definido: si se sigue dos veces, se obtiene el mismo resultado (Es reproducible).\nPreciso: implica el orden de realización de cada uno de los pasos.\nFinito: Tiene un numero determinado de pasos, implica que tiene un fin.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "section": "1.1 ⭐ ¿Qué es un algoritmo?",
+    "text": "1.1 ⭐ ¿Qué es un algoritmo?\nUn algoritmo es un método para resolver un problema mediante una serie de pasos definidos, precisos y finitos.\n\nDefinido: si se sigue dos veces, se obtiene el mismo resultado (Es reproducible).\nPreciso: implica el orden de realización de cada uno de los pasos.\nFinito: Tiene un numero determinado de pasos, implica que tiene un fin.\n\nUn algoritmo podemos definirlo como un programa o software."
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#qué-necesitamos-para-escribir-un-buen-software",
     "href": "Bpracticas.html#qué-necesitamos-para-escribir-un-buen-software",
     "title": "1  Buenas prácticas en bioinformática",
     "section": "1.2 🧩 ¿Qué necesitamos para escribir un buen software?",
+<<<<<<< HEAD
     "text": "1.2 🧩 ¿Qué necesitamos para escribir un buen software?\n\nCrear software confiable implica aplicar principios de ingeniería:\n\nCódigo mantenible (maintainable code)\nControl de versiones (version control, ej. Git)\nRastreadores de problemas (issue trackers)\nRevisiones de código (code reviews)\nPruebas unitarias (unit testing)\nAutomatización de tareas (task automation)\n\nBasado en Wilson, et al. 2014. PLOS Biology",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "text": "1.2 🧩 ¿Qué necesitamos para escribir un buen software?\n\nCrear software confiable implica aplicar principios de ingeniería:\n\nCódigo mantenible (maintainable code)\nControl de versiones (version control, ej. Git)\nRastreadores de problemas (issue trackers)\nRevisiones de código (code reviews)\nPruebas unitarias (unit testing)\nAutomatización de tareas (task automation)\n\nBasado en Wilson, et al. 2014. PLOS Biology"
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#ética-y-responsabilidad-en-bioinformática",
@@ -131,11 +144,16 @@
     "objectID": "Bpracticas.html#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática",
     "href": "Bpracticas.html#cómo-te-puede-ayudar-chatgpt-en-tus-buenas-prácticas-de-bioinformática",
     "title": "1  Buenas prácticas en bioinformática",
+<<<<<<< HEAD
     "section": "1.3 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?",
     "text": "1.3 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?\nAunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨\nChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:\n\nDocumentación automática: genera descripciones, títulos, secciones y ejemplos para tus scripts.\nExplicación de código: te ayuda a entender funciones complejas o pipelines bioinformáticos.\nOptimización responsable: sugiere mejoras sin comprometer la reproducibilidad.\nBuenas prácticas: te recuerda estándares como estilo, modularidad, defensividad y testing.\nAprendizaje guiado: explica conceptos (FASTQ, SAM/BAM, ensambladores, alineadores, R, Python).\nDepuración asistida: señala errores comunes y propone soluciones.\nReproducibilidad: ayuda a generar pipelines claros, estructurados y bien documentados.\nPlantillas listas para usar: para README, .qmd, scripts, workflows o Snakemake.\n\n\nChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "section": "1.6 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?",
+    "text": "1.6 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?\nAunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨\nChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:\n\nDocumentación automática: genera descripciones, títulos, secciones y ejemplos para tus scripts.\nExplicación de código: te ayuda a entender funciones complejas o pipelines bioinformáticos.\nOptimización responsable: sugiere mejoras sin comprometer la reproducibilidad.\nBuenas prácticas: te recuerda estándares como estilo, modularidad, defensividad y testing.\nAprendizaje guiado: explica conceptos (FASTQ, SAM/BAM, ensambladores, alineadores, R, Python).\nDepuración asistida: señala errores comunes y propone soluciones.\nReproducibilidad: ayuda a generar pipelines claros, estructurados y bien documentados.\nPlantillas listas para usar: para README, .qmd, scripts, workflows o Snakemake.\n\n\nChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad."
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#organiza-tus-proyectos-con-project-based-workflows",
@@ -148,11 +166,16 @@
     "objectID": "Bpracticas.html#carga-solo-los-paquetes-necesarios",
     "href": "Bpracticas.html#carga-solo-los-paquetes-necesarios",
     "title": "1  Buenas prácticas en bioinformática",
+<<<<<<< HEAD
     "section": "2.1 📦 Carga solo los paquetes necesarios",
     "text": "2.1 📦 Carga solo los paquetes necesarios\n\nEvita cargar 10 paquetes si solo usas 1 función.\nDeclara explícitamente tus dependencias.\nIncluye siempre una sección “Paquetes” en tus scripts .R.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "section": "2.2 📦 2. Carga solo los paquetes necesarios",
+    "text": "2.2 📦 2. Carga solo los paquetes necesarios\n\nEvita cargar 10 paquetes si solo usas 1 función.\nUsa pacman::p_load() o declara explícitamente tus dependencias.\nIncluye siempre una sección “Paquetes” en tus scripts .R."
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#fórmula-de-oro-estilo-consistencia",
@@ -165,11 +188,16 @@
     "objectID": "Bpracticas.html#modulariza-tu-código",
     "href": "Bpracticas.html#modulariza-tu-código",
     "title": "1  Buenas prácticas en bioinformática",
+<<<<<<< HEAD
     "section": "2.2 🧱 Modulariza tu código",
     "text": "2.2 🧱 Modulariza tu código\n\nDivide análisis largos en funciones y scripts separados.\nGuarda funciones en /scripts/functions.R.\n\nEsto evita repetir código y hace tus análisis más reproducibles.\n🔄 Haz tu código pipeline-friendly",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "section": "2.4 🧱 4. Modulariza tu código",
+    "text": "2.4 🧱 4. Modulariza tu código\n\nDivide análisis largos en funciones y scripts separados.\nGuarda funciones en /scripts/functions.R.\nUsa source(\"scripts/functions.R\") cuando sea necesario.\n\nEsto evita repetir código y hace tus análisis más reproducibles."
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#section-3",
@@ -196,11 +224,16 @@
     "objectID": "Bpracticas.html#documenta-tus-scripts",
     "href": "Bpracticas.html#documenta-tus-scripts",
     "title": "1  Buenas prácticas en bioinformática",
+<<<<<<< HEAD
     "section": "2.3 📚Documenta tus scripts",
     "text": "2.3 📚Documenta tus scripts\nAl inicio de cada archivo .R incluye:\n\n\n\n\n\n\nNote\n\n\n\nr\n# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "section": "2.8 📚 8. Documenta tus scripts",
+    "text": "2.8 📚 8. Documenta tus scripts\nAl inicio de cada archivo .R incluye:\n\n\n\n\n\n\nNote\n\n\n\nr\n# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse"
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#usa-herramientas-de-análisis-reproducible",
@@ -220,21 +253,31 @@
     "objectID": "Bpracticas.html#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r",
     "href": "Bpracticas.html#cómo-chatgpt-te-ayuda-con-buenas-prácticas-en-r",
     "title": "1  Buenas prácticas en bioinformática",
+<<<<<<< HEAD
     "section": "2.4 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?",
     "text": "2.4 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?\nChatGPT puede mejorar tus análisis en R de forma ética y eficiente:\n\nGenera código limpio y estilizado siguiendo guías tidyverse.\nTransforma scripts sucios en pipelines claros y reproducibles.\nExplica errores en R con detalle (p. ej., object not found, NAs introduced).\nSugiere paletas, temas de ggplot y estilos visuales.\nDocumenta automáticamente tus funciones con formato roxygen2.\nOptimiza la lógica sin sacrificar claridad.\nTe genera plantillas listas para .qmd, pipelines o workflows.\nAyuda a detectar malas prácticas como copiar y pegar código o usar rutas absolutas.\n\n\nEn pocas palabras: ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática, pero siempre con criterio científico tuyo 💛.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "section": "2.11 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?",
+    "text": "2.11 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?\nChatGPT puede mejorar tus análisis en R de forma ética y eficiente:\n\nGenera código limpio y estilizado siguiendo guías tidyverse.\nTransforma scripts sucios en pipelines claros y reproducibles.\nExplica errores en R con detalle (p. ej., object not found, NAs introduced).\nSugiere paletas, temas de ggplot y estilos visuales.\nDocumenta automáticamente tus funciones con formato roxygen2.\nOptimiza la lógica sin sacrificar claridad.\nTe genera plantillas listas para .qmd, pipelines o workflows.\nAyuda a detectar malas prácticas como copiar y pegar código o usar rutas absolutas.\n\n\nEn pocas palabras: ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática, pero siempre con criterio científico tuyo 💛."
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "Bpracticas.html#referencias",
     "href": "Bpracticas.html#referencias",
     "title": "1  Buenas prácticas en bioinformática",
+<<<<<<< HEAD
     "section": "2.5 Referencias",
     "text": "2.5 Referencias\n\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nWickham, H. (2019), The Tidyverse Style Guide.https://style.tidyverse.org/\nRStudio / Posit, R Projects Workflow.https://docs.posit.co/\nBioconductor Project, Best practices for reproducible genomics workflows.https://bioconductor.org/\nUnidad 1 Bioinformática e investigación reproducible\nThe five pillars of computational reproducibility: bioinformatics and beyond\nInvestigación reproducible y análisis de datos\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial\nMarkdwn Guide - Getting Started\nAllison Horst - Imagenes\nStatistical Computing using R and Python\nTraining Materials\nVisual Studio Code\nArticulo reproducibilidad\nHolistic AI Guidelines & Human-Centered AI Practices",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Buenas prácticas en bioinformática</span>"
     ]
+=======
+    "section": "2.12 Referencias",
+    "text": "2.12 Referencias\n\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nWickham, H. (2019), The Tidyverse Style Guide.https://style.tidyverse.org/\nRStudio / Posit, R Projects Workflow.https://docs.posit.co/\nBioconductor Project, Best practices for reproducible genomics workflows.https://bioconductor.org/\nUnidad 1 Bioinformática e investigación reproducible\nThe five pillars of computational reproducibility: bioinformatics and beyond\nInvestigación reproducible y análisis de datos\nHaydee tutorial: Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos\nAlejandra Medina tutorial: Control de versiones con GitHub y RStudio\nWilson, et al. 2014. Best Practices for Scientific Computing. PLOS Biology\nEvelia Coss - tutorial Buenas practicas en R\nEvelia Coss - Make your CV tutorial\nMarkdwn Guide - Getting Started\nAllison Horst - Imagenes\nStatistical Computing using R and Python\nTraining Materials\nVisual Studio Code\nArticulo reproducibilidad\nHolistic AI Guidelines & Human-Centered AI Practices"
+>>>>>>> 69ed77511deb65f42d2e5ee93dab28a2c62ac3e9
   },
   {
     "objectID": "intro_bash.html#qué-es-unix",
