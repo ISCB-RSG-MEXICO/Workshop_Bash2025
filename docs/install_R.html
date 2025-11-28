@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 15&nbsp; Instalación de R y RStudio</title>
+<title>Workshop Bash &amp; R - 16&nbsp; Instalación de R y RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install_R.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install_R.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -213,14 +213,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./version_extendida_BPB.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Buenas prácticas en bioinformática</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./install_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install_R.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></a>
   </div>
 </li>
     </ul>
@@ -233,13 +239,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#windows---r" id="toc-windows---r" class="nav-link active" data-scroll-target="#windows---r"><span class="header-section-number">15.1</span> Windows - R</a></li>
-  <li><a href="#windows---rstudio" id="toc-windows---rstudio" class="nav-link" data-scroll-target="#windows---rstudio"><span class="header-section-number">15.2</span> Windows - Rstudio</a></li>
-  <li><a href="#macos---r" id="toc-macos---r" class="nav-link" data-scroll-target="#macos---r"><span class="header-section-number">15.3</span> MacOS - R</a></li>
-  <li><a href="#macos--rstudio" id="toc-macos--rstudio" class="nav-link" data-scroll-target="#macos--rstudio"><span class="header-section-number">15.4</span> MacOS- Rstudio</a></li>
-  <li><a href="#linux---r" id="toc-linux---r" class="nav-link" data-scroll-target="#linux---r"><span class="header-section-number">15.5</span> Linux - R</a></li>
-  <li><a href="#linux---rstudio" id="toc-linux---rstudio" class="nav-link" data-scroll-target="#linux---rstudio"><span class="header-section-number">15.6</span> Linux - RStudio</a></li>
-  <li><a href="#actualizar-r---windows-y-macos" id="toc-actualizar-r---windows-y-macos" class="nav-link" data-scroll-target="#actualizar-r---windows-y-macos"><span class="header-section-number">15.7</span> Actualizar R - Windows y MacOS</a></li>
+  <li><a href="#windows---r" id="toc-windows---r" class="nav-link active" data-scroll-target="#windows---r"><span class="header-section-number">16.1</span> Windows - R</a></li>
+  <li><a href="#windows---rstudio" id="toc-windows---rstudio" class="nav-link" data-scroll-target="#windows---rstudio"><span class="header-section-number">16.2</span> Windows - Rstudio</a></li>
+  <li><a href="#macos---r" id="toc-macos---r" class="nav-link" data-scroll-target="#macos---r"><span class="header-section-number">16.3</span> MacOS - R</a></li>
+  <li><a href="#macos--rstudio" id="toc-macos--rstudio" class="nav-link" data-scroll-target="#macos--rstudio"><span class="header-section-number">16.4</span> MacOS- Rstudio</a></li>
+  <li><a href="#linux---r" id="toc-linux---r" class="nav-link" data-scroll-target="#linux---r"><span class="header-section-number">16.5</span> Linux - R</a></li>
+  <li><a href="#linux---rstudio" id="toc-linux---rstudio" class="nav-link" data-scroll-target="#linux---rstudio"><span class="header-section-number">16.6</span> Linux - RStudio</a></li>
+  <li><a href="#actualizar-r---windows-y-macos" id="toc-actualizar-r---windows-y-macos" class="nav-link" data-scroll-target="#actualizar-r---windows-y-macos"><span class="header-section-number">16.7</span> Actualizar R - Windows y MacOS</a></li>
   </ul>
 </nav>
     </div>
@@ -248,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="descarga-R" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></h1>
+<h1 class="title"><span id="descarga-R" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Instalación de R y RStudio</span></span></h1>
 </div>
 
 
@@ -264,8 +270,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Para participar en este taller necesitas acceso a los siguientes software y acceso a un navegador como chrome o firefox.</p>
-<section id="windows---r" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="windows---r"><span class="header-section-number">15.1</span> Windows - R</h2>
+<section id="windows---r" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="windows---r"><span class="header-section-number">16.1</span> Windows - R</h2>
 <p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar R y Rstudio, puedes ver este video tutorial: <a href="https://www.youtube.com/watch?v=H9EBlFDGG4k">Cómo instalar R y RStudio en Windows 11</a>.</p>
 <ol type="1">
 <li><p>Entra a la siguiente <a href="https://cloud.r-project.org/">página</a></p></li>
@@ -282,8 +288,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ol>
 </section>
-<section id="windows---rstudio" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="windows---rstudio"><span class="header-section-number">15.2</span> Windows - Rstudio</h2>
+<section id="windows---rstudio" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="windows---rstudio"><span class="header-section-number">16.2</span> Windows - Rstudio</h2>
 <ol type="1">
 <li>Entra en la siguiente <a href="https://posit.co/download/rstudio-desktop/#download">página</a></li>
 <li>Haz click en <strong>Download RStudio Desktop for Windows</strong></li>
@@ -298,8 +304,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Haz clic en “<strong>OK</strong>”</li>
 </ol>
 </section>
-<section id="macos---r" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="macos---r"><span class="header-section-number">15.3</span> MacOS - R</h2>
+<section id="macos---r" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="macos---r"><span class="header-section-number">16.3</span> MacOS - R</h2>
 <p><strong>Nota:</strong> Para obtener más detalles sobre cómo instalar y configurar Git Bash, puedes ver este video tutorial: <a href="https://www.youtube.com/watch?v=_k8seoE6b-E">Cómo instalar R y R Studio en MacOS</a></p>
 <ol type="1">
 <li><p>Entra a la siguiente <a href="https://cloud.r-project.org/">página</a></p></li>
@@ -318,8 +324,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ol>
 </section>
-<section id="macos--rstudio" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="macos--rstudio"><span class="header-section-number">15.4</span> MacOS- Rstudio</h2>
+<section id="macos--rstudio" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="macos--rstudio"><span class="header-section-number">16.4</span> MacOS- Rstudio</h2>
 <ol type="1">
 <li>Entra en la siguiente <a href="https://posit.co/download/rstudio-desktop/#download">página</a></li>
 <li>Haz click en <strong>Download RStudio Desktop for macOS 13+</strong>
@@ -331,8 +337,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Arrastra el ícono de RStudio a la carpeta de aplicaciones y espera a que finalice la instalación</li>
 </ol>
 </section>
-<section id="linux---r" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="linux---r"><span class="header-section-number">15.5</span> Linux - R</h2>
+<section id="linux---r" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="linux---r"><span class="header-section-number">16.5</span> Linux - R</h2>
 <ol type="1">
 <li><p>Entra a la siguiente <a href="https://cloud.r-project.org/">página</a></p></li>
 <li><p>Junto a <u><strong>Download R for Linux</strong></u> existen tres opciones, selecciona la que se ajusta a tu distribución de Linux</p>
@@ -361,8 +367,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ol>
 </section>
-<section id="linux---rstudio" class="level2" data-number="15.6">
-<h2 data-number="15.6" class="anchored" data-anchor-id="linux---rstudio"><span class="header-section-number">15.6</span> Linux - RStudio</h2>
+<section id="linux---rstudio" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="linux---rstudio"><span class="header-section-number">16.6</span> Linux - RStudio</h2>
 <ol type="1">
 <li>Entra en la siguiente <a href="https://posit.co/download/rstudio-desktop/#download">página</a></li>
 <li>Desliza la página hasta llegar a la tabla de opciones de instalación</li>
@@ -370,8 +376,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Ejecuta el instalador</li>
 </ol>
 </section>
-<section id="actualizar-r---windows-y-macos" class="level2" data-number="15.7">
-<h2 data-number="15.7" class="anchored" data-anchor-id="actualizar-r---windows-y-macos"><span class="header-section-number">15.7</span> Actualizar R - Windows y MacOS</h2>
+<section id="actualizar-r---windows-y-macos" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="actualizar-r---windows-y-macos"><span class="header-section-number">16.7</span> Actualizar R - Windows y MacOS</h2>
 <p>Si ya tienes R instalado en tu computadora, asegúrate de tener la versión más actualizada de R</p>
 <p>Existen diferentes formas de actualizar R, la manera más sencilla es a través de <strong>Rgui,</strong> la interfaz gráfica que viene con R base, no con RStudio.</p>
 <p><strong>Windows y MacOS</strong>:</p>
@@ -756,7 +762,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./install_B.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
