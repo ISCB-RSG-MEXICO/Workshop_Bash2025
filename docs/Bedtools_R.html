@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Workshop Bash &amp; R - 13&nbsp; Introducción a BEDtools en R 🧬</title>
+<title>13&nbsp; Introducción a BEDtools en R 🧬 – Workshop Bash &amp; R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -67,24 +33,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./install_B.html" rel="next">
 <link href="./Cap4_R.html" rel="prev">
 <link href="./rsgMexico.jpeg" rel="icon" type="image/jpeg">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-48ea7e3db632d341d5086b92b089557c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-782840226bd1d2b7d68ec24e73d3f23a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-48ea7e3db632d341d5086b92b089557c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -93,26 +68,190 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bedtools_R.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introducción a BEDtools en R 🧬</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Bedtools_R.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introducción a BEDtools en R 🧬</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -122,30 +261,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Workshop Bash &amp; R</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/ISCB-RSG-MEXICO/Workshop_Bash2025" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -261,50 +400,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">14</span> ## 💻 Introducción</a></li>
-  <li><a href="#bedtools-r" id="toc-bedtools-r" class="nav-link" data-scroll-target="#bedtools-r"><span class="header-section-number">15</span> BedTools R</a>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"><span class="header-section-number">13.1</span> 💻</a></li>
+  <li><a href="#cargar-paquetes" id="toc-cargar-paquetes" class="nav-link" data-scroll-target="#cargar-paquetes"><span class="header-section-number">13.2</span> 📦 Cargar paquetes</a>
   <ul>
-  <li><a href="#introducción-1" id="toc-introducción-1" class="nav-link" data-scroll-target="#introducción-1"><span class="header-section-number">15.1</span> 💻 Introducción</a></li>
-  <li><a href="#requerimientos" id="toc-requerimientos" class="nav-link" data-scroll-target="#requerimientos"><span class="header-section-number">15.2</span> 🔧 Requerimientos</a>
+  <li><a href="#recordemos-lo-siguiente" id="toc-recordemos-lo-siguiente" class="nav-link" data-scroll-target="#recordemos-lo-siguiente"><span class="header-section-number">13.2.1</span> Recordemos lo siguiente:</a></li>
+  <li><a href="#lectura-de-archivos-generados-por-bedtools" id="toc-lectura-de-archivos-generados-por-bedtools" class="nav-link" data-scroll-target="#lectura-de-archivos-generados-por-bedtools"><span class="header-section-number">13.2.2</span> Lectura de archivos generados por Bedtools</a>
   <ul class="collapse">
-  <li><a href="#software-necesario" id="toc-software-necesario" class="nav-link" data-scroll-target="#software-necesario"><span class="header-section-number">15.2.1</span> Software necesario</a></li>
+  <li><a href="#archivo-de-coverage" id="toc-archivo-de-coverage" class="nav-link" data-scroll-target="#archivo-de-coverage">Archivo de <strong>coverage</strong></a></li>
   </ul></li>
-  <li><a href="#qué-es-bedtools" id="toc-qué-es-bedtools" class="nav-link" data-scroll-target="#qué-es-bedtools"><span class="header-section-number">15.3</span> 🧬 ¿Qué es Bedtools?</a></li>
-  <li><a href="#formatos-comúnes-bed-gff-fasta" id="toc-formatos-comúnes-bed-gff-fasta" class="nav-link" data-scroll-target="#formatos-comúnes-bed-gff-fasta"><span class="header-section-number">15.4</span> 📁 Formatos comúnes (BED, GFF, FASTA)</a>
-  <ul class="collapse">
-  <li><a href="#formato-bed" id="toc-formato-bed" class="nav-link" data-scroll-target="#formato-bed"><span class="header-section-number">15.4.1</span> Formato BED</a></li>
-  <li><a href="#formato-gffgtf" id="toc-formato-gffgtf" class="nav-link" data-scroll-target="#formato-gffgtf"><span class="header-section-number">15.4.2</span> Formato GFF/GTF</a></li>
+  <li><a href="#archivo-de-intersect-bedtools-intersect--wa" id="toc-archivo-de-intersect-bedtools-intersect--wa" class="nav-link" data-scroll-target="#archivo-de-intersect-bedtools-intersect--wa"><span class="header-section-number">13.2.3</span> Archivo de <strong>intersect</strong> (bedtools intersect -wa)</a></li>
+  <li><a href="#chequeos-de-consistencia" id="toc-chequeos-de-consistencia" class="nav-link" data-scroll-target="#chequeos-de-consistencia"><span class="header-section-number">13.2.4</span> 🧪 Chequeos de consistencia</a></li>
+  <li><a href="#genes-con-y-sin-picos-según-coverage" id="toc-genes-con-y-sin-picos-según-coverage" class="nav-link" data-scroll-target="#genes-con-y-sin-picos-según-coverage"><span class="header-section-number">13.2.5</span> Genes con y sin picos (según coverage)</a></li>
+  <li><a href="#verificar-consistencia-del-archivo-intersect" id="toc-verificar-consistencia-del-archivo-intersect" class="nav-link" data-scroll-target="#verificar-consistencia-del-archivo-intersect"><span class="header-section-number">13.2.6</span> Verificar consistencia del archivo intersect</a></li>
+  <li><a href="#cruzar-coverage-con-intersect-para-validar" id="toc-cruzar-coverage-con-intersect-para-validar" class="nav-link" data-scroll-target="#cruzar-coverage-con-intersect-para-validar"><span class="header-section-number">13.2.7</span> Cruzar coverage con intersect para validar</a></li>
+  <li><a href="#comparar-consistencia-entre-ambos-archivos" id="toc-comparar-consistencia-entre-ambos-archivos" class="nav-link" data-scroll-target="#comparar-consistencia-entre-ambos-archivos"><span class="header-section-number">13.2.8</span> Comparar consistencia entre ambos archivos</a></li>
+  <li><a href="#exploración-visual-y-estadística-básica" id="toc-exploración-visual-y-estadística-básica" class="nav-link" data-scroll-target="#exploración-visual-y-estadística-básica"><span class="header-section-number">13.2.9</span> Exploración visual y estadística básica</a></li>
+  <li><a href="#resumen-de-cobertura-por-grupo-con-vs-sin-picos" id="toc-resumen-de-cobertura-por-grupo-con-vs-sin-picos" class="nav-link" data-scroll-target="#resumen-de-cobertura-por-grupo-con-vs-sin-picos"><span class="header-section-number">13.2.10</span> Resumen de cobertura por grupo (con vs sin picos)</a></li>
+  <li><a href="#boxplot-de-fracción-cubierta" id="toc-boxplot-de-fracción-cubierta" class="nav-link" data-scroll-target="#boxplot-de-fracción-cubierta"><span class="header-section-number">13.2.11</span> Boxplot de fracción cubierta</a></li>
   </ul></li>
-  <li><a href="#comandos-básicos-de-bedtools" id="toc-comandos-básicos-de-bedtools" class="nav-link" data-scroll-target="#comandos-básicos-de-bedtools"><span class="header-section-number">15.5</span> ✨ Comandos básicos de Bedtools</a>
-  <ul class="collapse">
-  <li><a href="#intersectar-regiones" id="toc-intersectar-regiones" class="nav-link" data-scroll-target="#intersectar-regiones"><span class="header-section-number">15.5.1</span> Intersectar regiones</a></li>
-  <li><a href="#unir-regiones" id="toc-unir-regiones" class="nav-link" data-scroll-target="#unir-regiones"><span class="header-section-number">15.5.2</span> Unir regiones</a></li>
-  <li><a href="#complemento-genómico" id="toc-complemento-genómico" class="nav-link" data-scroll-target="#complemento-genómico"><span class="header-section-number">15.5.3</span> Complemento genómico</a></li>
-  <li><a href="#cobertura" id="toc-cobertura" class="nav-link" data-scroll-target="#cobertura"><span class="header-section-number">15.5.4</span> Cobertura</a></li>
-  </ul></li>
-  <li><a href="#leer-archivos-bed-en-r" id="toc-leer-archivos-bed-en-r" class="nav-link" data-scroll-target="#leer-archivos-bed-en-r"><span class="header-section-number">15.6</span> 📥 Leer archivos BED en R</a>
-  <ul class="collapse">
-  <li><a href="#con-rtracklayer" id="toc-con-rtracklayer" class="nav-link" data-scroll-target="#con-rtracklayer"><span class="header-section-number">15.6.1</span> Con <code>rtracklayer</code></a></li>
-  <li><a href="#con-data.table" id="toc-con-data.table" class="nav-link" data-scroll-target="#con-data.table"><span class="header-section-number">15.6.2</span> Con <code>data.table</code></a></li>
-  </ul></li>
-  <li><a href="#convertir-bed-a-granges" id="toc-convertir-bed-a-granges" class="nav-link" data-scroll-target="#convertir-bed-a-granges"><span class="header-section-number">15.7</span> 🔗 Convertir BED a GRanges</a></li>
-  <li><a href="#exportar-bed-desde-r" id="toc-exportar-bed-desde-r" class="nav-link" data-scroll-target="#exportar-bed-desde-r"><span class="header-section-number">15.8</span> 📤 Exportar BED desde R</a></li>
-  <li><a href="#ejemplo-práctico-completo" id="toc-ejemplo-práctico-completo" class="nav-link" data-scroll-target="#ejemplo-práctico-completo"><span class="header-section-number">15.9</span> 🧪 Ejemplo práctico completo</a></li>
-  <li><a href="#integrar-r-bedtools-desde-r" id="toc-integrar-r-bedtools-desde-r" class="nav-link" data-scroll-target="#integrar-r-bedtools-desde-r"><span class="header-section-number">15.10</span> 🧭 Integrar R + Bedtools desde R</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">15.11</span> Referencias</a></li>
-  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">13.3</span> Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -321,16 +448,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
 
-<p>======= # BedTools R</p>
-<section id="introducción" class="level1" data-number="14">
-<h1 data-number="14"><span class="header-section-number">14</span> ## 💻 Introducción</h1>
-</section>
-<section id="bedtools-r" class="level1" data-number="15">
-<h1 data-number="15"><span class="header-section-number">15</span> BedTools R</h1>
-<section id="introducción-1" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="introducción-1"><span class="header-section-number">15.1</span> 💻 Introducción</h2>
+
+<section id="section" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="section"><span class="header-section-number">13.1</span> 💻</h2>
 <p>Este documento proporciona una guía básica para trabajar con <strong>R</strong>, <strong>Bedtools</strong>, y archivos genómicos.<br>
 Incluye:</p>
 <ul>
@@ -341,123 +464,239 @@ Incluye:</p>
 </ul>
 <hr>
 </section>
-<section id="requerimientos" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="requerimientos"><span class="header-section-number">15.2</span> 🔧 Requerimientos</h2>
-<section id="software-necesario" class="level3" data-number="15.2.1">
-<h3 data-number="15.2.1" class="anchored" data-anchor-id="software-necesario"><span class="header-section-number">15.2.1</span> Software necesario</h3>
+<section id="cargar-paquetes" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="cargar-paquetes"><span class="header-section-number">13.2</span> 📦 Cargar paquetes</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>{r} # Instalar paquetes si es la primera vez  install.packages(c("readr", "dplyr", "ggplot2"))</code></p>
+<p><code>#Cargar de librerías necesarias:</code></p>
+<p><code>library(readr) # Lectura de archivos (TSV, CSV, texto) library(dplyr) # Manipulación de datos (pipes, mutate, filter…) library(ggplot2) # Gráficos (histogramas, dispersión, boxplots)</code></p>
+</div>
+</div>
+<section id="recordemos-lo-siguiente" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="recordemos-lo-siguiente"><span class="header-section-number">13.2.1</span> Recordemos lo siguiente:</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>📌 Descripción de las columnas del resumen de genes</p>
+<p>A continuación se explica el significado de cada columna generada en el análisis:</p>
 <ul>
-<li><strong>R</strong> (versión 4+)</li>
-<li><strong>RStudio</strong> (opcional)</li>
-<li><strong>Bedtools</strong> instalado en tu sistema</li>
-<li>Paquetes R:
-<ul>
-<li><code>tidyverse</code></li>
-<li><code>rtracklayer</code></li>
-<li><code>data.table</code></li>
-<li><code>GenomicRanges</code></li>
-</ul></li>
+<li><p><strong>chrom</strong><br>
+Cromosoma donde se encuentra el gen (por ejemplo: <em>chr1</em>, <em>chr2</em>, <em>chrX</em>).</p></li>
+<li><p><strong>start</strong><br>
+Posición inicial del gen en el cromosoma (coordenadas genómicas en formato BED).</p></li>
+<li><p><strong>end</strong><br>
+Posición final del gen en el cromosoma.</p></li>
+<li><p><strong>gene_id</strong><br>
+Identificador único del gen (por ejemplo: ENSG00000123456 o el nombre del gen).</p></li>
+<li><p><strong>number_of_peaks</strong><br>
+Número total de picos que intersectan el gen.<br>
+Se refiere a cuántas regiones (por ejemplo, ATAC-seq o ChIP-seq) se solapan con el gen.</p></li>
+<li><p><strong>bases_overlapped</strong><br>
+Cantidad de bases (nucleótidos) dentro del gen que están cubiertas por picos.<br>
+Resume cuánto del gen está siendo “tocado” por regiones de interés.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"data.table"</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="fu">c</span>(<span class="st">"rtracklayer"</span>, <span class="st">"GenomicRanges"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
+</div>
+</div>
+</section>
+<section id="lectura-de-archivos-generados-por-bedtools" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="lectura-de-archivos-generados-por-bedtools"><span class="header-section-number">13.2.2</span> Lectura de archivos generados por Bedtools</h3>
+<section id="archivo-de-coverage" class="level4">
+<h4 class="anchored" data-anchor-id="archivo-de-coverage">Archivo de <strong>coverage</strong></h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>#Leer archivo obtenido con bedtools coverage</code></p>
+<p><code>coverage &lt;- read.delim(file = "Archivos_Bash/genes_coverage.tsv", col.names = c("chrom",            # Cromosoma"start",            # Inicio del gen"end",              # Fin del gen"gene_id",          # ID del gen"number_of_peaks",  # Número de picos que intersectan el gen"bases_overlapped", # Número total de bases cubiertas por picos"gene_length",      # Longitud total del gen"fraction_covered"  # Proporción cubierta por picos))</code></p>
+<p><code>#Vista general del objeto cargado</code></p>
+<p><code>glimpse(coverage)head(coverage)</code></p>
+</div>
+</div>
 </section>
 </section>
-<section id="qué-es-bedtools" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="qué-es-bedtools"><span class="header-section-number">15.3</span> 🧬 ¿Qué es Bedtools?</h2>
-<p><strong>Bedtools</strong> es una suite de herramientas para realizar operaciones sobre regiones genómicas.</p>
-<p>Permite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Conversión entre formatos</p>
-<hr>
+<section id="archivo-de-intersect-bedtools-intersect--wa" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="archivo-de-intersect-bedtools-intersect--wa"><span class="header-section-number">13.2.3</span> Archivo de <strong>intersect</strong> (bedtools intersect -wa)</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>#Leer archivo de intersecciones (solo genes con al menos un pico)intersect_genes &lt;- read.delim("Archivos_Bash/genes_peaks_intersect.bed", col.names = c("chrom", "start", "end", "gene_id"))</code></p>
+<p><code>#vista general del objeto cargado</code></p>
+<p><code>glimpse(intersect_genes) head(intersect_genes)</code></p>
+</div>
+</div>
 </section>
-<section id="formatos-comúnes-bed-gff-fasta" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="formatos-comúnes-bed-gff-fasta"><span class="header-section-number">15.4</span> 📁 Formatos comúnes (BED, GFF, FASTA)</h2>
-<section id="formato-bed" class="level3" data-number="15.4.1">
-<h3 data-number="15.4.1" class="anchored" data-anchor-id="formato-bed"><span class="header-section-number">15.4.1</span> Formato BED</h3>
-<p>Columnas mínimas:<br>
-1. cromosoma 2. inicio 3. fin</p>
-<p>Ejemplo:</p>
-<pre><code>chr1    1000    1500
-chr1    2000    2300</code></pre>
+<section id="chequeos-de-consistencia" class="level3" data-number="13.2.4">
+<h3 data-number="13.2.4" class="anchored" data-anchor-id="chequeos-de-consistencia"><span class="header-section-number">13.2.4</span> 🧪 Chequeos de consistencia</h3>
+<p>Validar la fracción cubierta</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>coverage_check &lt;- coverage %&gt;%mutate(fraction_calc = bases_overlapped / gene_length,        # Recalcular fraccióndiff_fraction = abs(fraction_calc - fraction_covered)  # Comparar con la reportada)</code></p>
+<p><code>#Si todo está bien, los valores deberían ser cercanos a 0summary(coverage_check$diff_fraction)</code></p>
+</div>
+</div>
 </section>
-<section id="formato-gffgtf" class="level3" data-number="15.4.2">
-<h3 data-number="15.4.2" class="anchored" data-anchor-id="formato-gffgtf"><span class="header-section-number">15.4.2</span> Formato GFF/GTF</h3>
-<p>tiene 9 columnas (atributos más complejos).</p>
-<hr>
+<section id="genes-con-y-sin-picos-según-coverage" class="level3" data-number="13.2.5">
+<h3 data-number="13.2.5" class="anchored" data-anchor-id="genes-con-y-sin-picos-según-coverage"><span class="header-section-number">13.2.5</span> Genes con y sin picos (según coverage)</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>coverage %&gt;% summarise(total_genes = n(),          # Número total de genesgenes_con_picos = sum(number_of_peaks &gt; 0),    # Genes con ≥1 picogenes_sin_picos = sum(number_of_peaks == 0)    # Genes sin picos)</code></p>
+</div>
+</div>
+</section>
+<section id="verificar-consistencia-del-archivo-intersect" class="level3" data-number="13.2.6">
+<h3 data-number="13.2.6" class="anchored" data-anchor-id="verificar-consistencia-del-archivo-intersect"><span class="header-section-number">13.2.6</span> Verificar consistencia del archivo intersect</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>intersect_genes %&gt;% summarise( genes_intersect_unicos = n_distinct(gene_id),  # Cuántos genes aparecen al menos una vezfilas_intersect = n()                          # Número total de filas (varios picos por gen))</code></p>
+</div>
+</div>
+</section>
+<section id="cruzar-coverage-con-intersect-para-validar" class="level3" data-number="13.2.7">
+<h3 data-number="13.2.7" class="anchored" data-anchor-id="cruzar-coverage-con-intersect-para-validar"><span class="header-section-number">13.2.7</span> Cruzar coverage con intersect para validar</h3>
+<p>Añadir columna indicando si un gen aparece en intersect</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>coverage_validado &lt;- coverage %&gt;%mutate(en_intersect = gene_id %in% intersect_genes$gene_id)</code></p>
+</div>
+</div>
+</section>
+<section id="comparar-consistencia-entre-ambos-archivos" class="level3" data-number="13.2.8">
+<h3 data-number="13.2.8" class="anchored" data-anchor-id="comparar-consistencia-entre-ambos-archivos"><span class="header-section-number">13.2.8</span> Comparar consistencia entre ambos archivos</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>coverage_validado %&gt;%count(number_of_peaks &gt; 0, en_intersect) %&gt;%rename(tiene_picos_según_coverage = number_of_peaks &gt; 0)</code></p>
+</div>
+</div>
+<p>(Idealmente, genes con picos según coverage deben estar presentes en intersect).</p>
+</section>
+<section id="exploración-visual-y-estadística-básica" class="level3" data-number="13.2.9">
+<h3 data-number="13.2.9" class="anchored" data-anchor-id="exploración-visual-y-estadística-básica"><span class="header-section-number">13.2.9</span> Exploración visual y estadística básica</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>#Histograma de fracción cubiertaggplot(coverage, aes(x = fraction_covered)) +geom_histogram(bins = 50) +labs( title = "Distribución de la fracción de cobertura por gen",x = "Fracción cubierta",y = "Número de genes")</code></p>
+</div>
+</div>
+</section>
+<section id="resumen-de-cobertura-por-grupo-con-vs-sin-picos" class="level3" data-number="13.2.10">
+<h3 data-number="13.2.10" class="anchored" data-anchor-id="resumen-de-cobertura-por-grupo-con-vs-sin-picos"><span class="header-section-number">13.2.10</span> Resumen de cobertura por grupo (con vs sin picos)</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>coverage %&gt;%<br>
+mutate(tiene_picos = number_of_peaks &gt; 0) %&gt;%<br>
+group_by(tiene_picos) %&gt;%<br>
+summarise(<br>
+n_genes = n(),<br>
+mediana_fraccion = median(fraction_covered),<br>
+promedio_fraccion = mean(fraction_covered),<br>
+max_fraccion = max(fraction_covered)<br>
+)</p>
+</div>
+</div>
+</section>
+<section id="boxplot-de-fracción-cubierta" class="level3" data-number="13.2.11">
+<h3 data-number="13.2.11" class="anchored" data-anchor-id="boxplot-de-fracción-cubierta"><span class="header-section-number">13.2.11</span> Boxplot de fracción cubierta</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>coverage %&gt;%mutate(tiene_picos = ifelse(number_of_peaks &gt; 0, "Con picos", "Sin picos")) %&gt;%ggplot(aes(x = tiene_picos, y = fraction_covered)) +geom_boxplot() +labs(title = "Cobertura de picos por gen",x = "Grupo de genes",y = "Fracción cubierta")</code></p>
+</div>
+</div>
 </section>
 </section>
-<section id="comandos-básicos-de-bedtools" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="comandos-básicos-de-bedtools"><span class="header-section-number">15.5</span> ✨ Comandos básicos de Bedtools</h2>
-<section id="intersectar-regiones" class="level3" data-number="15.5.1">
-<h3 data-number="15.5.1" class="anchored" data-anchor-id="intersectar-regiones"><span class="header-section-number">15.5.1</span> Intersectar regiones</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> intersect <span class="at">-a</span> A.bed <span class="at">-b</span> B.bed <span class="op">&gt;</span> interseccion.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="unir-regiones" class="level3" data-number="15.5.2">
-<h3 data-number="15.5.2" class="anchored" data-anchor-id="unir-regiones"><span class="header-section-number">15.5.2</span> Unir regiones</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> merge <span class="at">-i</span> regiones.bed <span class="op">&gt;</span> regiones_unidas.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="complemento-genómico" class="level3" data-number="15.5.3">
-<h3 data-number="15.5.3" class="anchored" data-anchor-id="complemento-genómico"><span class="header-section-number">15.5.3</span> Complemento genómico</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> complement <span class="at">-i</span> regiones.bed <span class="at">-g</span> genome_file.txt <span class="op">&gt;</span> complement.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="cobertura" class="level3" data-number="15.5.4">
-<h3 data-number="15.5.4" class="anchored" data-anchor-id="cobertura"><span class="header-section-number">15.5.4</span> Cobertura</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> coverage <span class="at">-a</span> regiones.bed <span class="at">-b</span> alineamientos.bam <span class="op">&gt;</span> coverage.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-</section>
-<section id="leer-archivos-bed-en-r" class="level2" data-number="15.6">
-<h2 data-number="15.6" class="anchored" data-anchor-id="leer-archivos-bed-en-r"><span class="header-section-number">15.6</span> 📥 Leer archivos BED en R</h2>
-<section id="con-rtracklayer" class="level3" data-number="15.6.1">
-<h3 data-number="15.6.1" class="anchored" data-anchor-id="con-rtracklayer"><span class="header-section-number">15.6.1</span> Con <code>rtracklayer</code></h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtracklayer)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bed <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"archivo.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="con-data.table" class="level3" data-number="15.6.2">
-<h3 data-number="15.6.2" class="anchored" data-anchor-id="con-data.table"><span class="header-section-number">15.6.2</span> Con <code>data.table</code></h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>bed <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"archivo.bed"</span>, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bed) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"chr"</span>, <span class="st">"start"</span>, <span class="st">"end"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-</section>
-<section id="convertir-bed-a-granges" class="level2" data-number="15.7">
-<h2 data-number="15.7" class="anchored" data-anchor-id="convertir-bed-a-granges"><span class="header-section-number">15.7</span> 🔗 Convertir BED a GRanges</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GenomicRanges)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>bed_gr <span class="ot">&lt;-</span> <span class="fu">makeGRangesFromDataFrame</span>(bed, <span class="at">keep.extra.columns =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bed_gr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-<section id="exportar-bed-desde-r" class="level2" data-number="15.8">
-<h2 data-number="15.8" class="anchored" data-anchor-id="exportar-bed-desde-r"><span class="header-section-number">15.8</span> 📤 Exportar BED desde R</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">export</span>(bed_gr, <span class="st">"salida.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-<section id="ejemplo-práctico-completo" class="level2" data-number="15.9">
-<h2 data-number="15.9" class="anchored" data-anchor-id="ejemplo-práctico-completo"><span class="header-section-number">15.9</span> 🧪 Ejemplo práctico completo</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtracklayer)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GenomicRanges)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Cargar BED</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"A.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"B.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Intersección en R (similar a bedtools intersect)</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>inter <span class="ot">&lt;-</span> <span class="fu">subsetByOverlaps</span>(a, b)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>inter</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Exportar resultado</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">export</span>(inter, <span class="st">"intersect_R.bed"</span>, <span class="at">format =</span> <span class="st">"BED"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-<section id="integrar-r-bedtools-desde-r" class="level2" data-number="15.10">
-<h2 data-number="15.10" class="anchored" data-anchor-id="integrar-r-bedtools-desde-r"><span class="header-section-number">15.10</span> 🧭 Integrar R + Bedtools desde R</h2>
-<p>Puedes ejecutar Bedtools dentro de R:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">"bedtools intersect -a A.bed -b B.bed &gt; inter.bed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-<section id="referencias" class="level2" data-number="15.11">
-<h2 data-number="15.11" class="anchored" data-anchor-id="referencias"><span class="header-section-number">15.11</span> Referencias</h2>
+<section id="referencias" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="referencias"><span class="header-section-number">13.3</span> Referencias</h2>
 <ul>
 <li>Bedtools manual <a href="https://bedtools.readthedocs.io/?utm_source=chatgpt.com">https://bedtools.readthedocs.io/</a></li>
 <li>Bioconductor: GenomicRanges, rtracklayer <a href="https://bioconductor.org/packages/release/bioc/html/rtracklayer.html" class="uri">https://bioconductor.org/packages/release/bioc/html/rtracklayer.html</a></li>
@@ -466,370 +705,434 @@ chr1    2000    2300</code></pre>
 
 
 </section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
       return false;
     }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
         }
-      }
-      return codeEl.innerText;
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
     }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-});
-</script>
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Cap4_R.html" class="pagination-link">
+      <a href="./Cap4_R.html" class="pagination-link" aria-label="Visualización y Análisis de Datos">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Visualización y Análisis de Datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./install_B.html" class="pagination-link">
+      <a href="./install_B.html" class="pagination-link" aria-label="Instalación de Git y Bash">
         <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Instalación de Git y Bash</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

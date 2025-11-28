@@ -4,14 +4,20 @@
     "href": "index.html",
     "title": "Workshop Bash & R",
     "section": "",
-    "text": "Información general"
+    "text": "Información general",
+    "crumbs": [
+      "Información general"
+    ]
   },
   {
     "objectID": "index.html#citar-y-reutilizar-el-material-del-curso",
     "href": "index.html#citar-y-reutilizar-el-material-del-curso",
     "title": "Workshop Bash & R",
     "section": "Citar y reutilizar el material del curso",
-    "text": "Citar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)."
+    "text": "Citar y reutilizar el material del curso\nEl contenido de este curso puede reutilizarse y adaptarse libremente, siempre que se otorgue el crédito correspondiente. Todo el material está disponible bajo la licencia Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).",
+    "crumbs": [
+      "Información general"
+    ]
   },
   {
     "objectID": "Bpracticas.html",
@@ -599,7 +605,10 @@
     "href": "Bedtools_R.html",
     "title": "13  Introducción a BEDtools en R 🧬",
     "section": "",
-    "text": "14 ## 💻 Introducción"
+    "text": "13.1 💻\nEste documento proporciona una guía básica para trabajar con R, Bedtools, y archivos genómicos.\nIncluye:",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introducción a BEDtools en R 🧬</span>"
+    ]
   },
   {
     "objectID": "Bedtools_R.html#introducción-1",
@@ -675,8 +684,11 @@
     "objectID": "Bedtools_R.html#referencias",
     "href": "Bedtools_R.html#referencias",
     "title": "13  Introducción a BEDtools en R 🧬",
-    "section": "15.11 Referencias",
-    "text": "15.11 Referencias\n\nBedtools manual https://bedtools.readthedocs.io/\nBioconductor: GenomicRanges, rtracklayer https://bioconductor.org/packages/release/bioc/html/rtracklayer.html\nUCSC Genome Browser formatos https://genome.ucsc.edu/"
+    "section": "13.3 Referencias",
+    "text": "13.3 Referencias\n\nBedtools manual https://bedtools.readthedocs.io/\nBioconductor: GenomicRanges, rtracklayer https://bioconductor.org/packages/release/bioc/html/rtracklayer.html\nUCSC Genome Browser formatos https://genome.ucsc.edu/",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introducción a BEDtools en R 🧬</span>"
+    ]
   },
   {
     "objectID": "install_B.html#windows",
@@ -747,5 +759,25 @@
     "title": "15  Instalación de R y RStudio",
     "section": "15.7 Actualizar R - Windows y MacOS",
     "text": "15.7 Actualizar R - Windows y MacOS\nSi ya tienes R instalado en tu computadora, asegúrate de tener la versión más actualizada de R\nExisten diferentes formas de actualizar R, la manera más sencilla es a través de Rgui, la interfaz gráfica que viene con R base, no con RStudio.\nWindows y MacOS:\n\nEscribe Rgui en el explorador de archivos/aplicaciones de tu computadora para abrir la aplicación de R.\nPara actualizar R necesitamos de la paquetería installr. Para instalarla ejecuta el siguiente código:\n\n-   `install.packages(installr)`\n-   Presiona **Enter**\n\nCarga la paquetería con la función library()\n\nlibrary(installr)\nPresiona Enter\n\nPara revisar si tienes la versión de R más actualizada ejecuta el siguiente código:\n\ninstallr(GUI = TRUE)\nPresiona Enter\nEn la ventana emergente asegúrate de tener seleccionada la opción “R (updateR)” y haz clic en “OK”\n\nAparecerá otra ventana con información sobre la versión de R que estás usando y si existe una versión más reciente.\n\nSi ya tienes la versión más actual, simplemente haz clic en “OK” para cerrar.\nSi hay una versión nueva disponible, haz clic en “Yes” para comenzar la actualización.\n\nSi durante el proceso aparece una ventana preguntando si deseas copiar paquetes o configuraciones anteriores, puedes hacer clic en “No” (no es obligatorio copiarlos; puedes reinstalarlos después si lo prefieres)."
+  },
+  {
+    "objectID": "Bedtools_R.html#section",
+    "href": "Bedtools_R.html#section",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "",
+    "text": "Preparación del ambiente\nComandos esenciales de Bedtools\nLectura y manipulación de BED/GFF en R\nEjemplos prácticos",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introducción a BEDtools en R 🧬</span>"
+    ]
+  },
+  {
+    "objectID": "Bedtools_R.html#cargar-paquetes",
+    "href": "Bedtools_R.html#cargar-paquetes",
+    "title": "13  Introducción a BEDtools en R 🧬",
+    "section": "13.2 📦 Cargar paquetes",
+    "text": "13.2 📦 Cargar paquetes\n\n\n\n\n\n\nNote\n\n\n\n{r} # Instalar paquetes si es la primera vez  install.packages(c(\"readr\", \"dplyr\", \"ggplot2\"))\n#Cargar de librerías necesarias:\nlibrary(readr) # Lectura de archivos (TSV, CSV, texto) library(dplyr) # Manipulación de datos (pipes, mutate, filter…) library(ggplot2) # Gráficos (histogramas, dispersión, boxplots)\n\n\n\n13.2.1 Recordemos lo siguiente:\n\n\n\n\n\n\nNote\n\n\n\n📌 Descripción de las columnas del resumen de genes\nA continuación se explica el significado de cada columna generada en el análisis:\n\nchrom\nCromosoma donde se encuentra el gen (por ejemplo: chr1, chr2, chrX).\nstart\nPosición inicial del gen en el cromosoma (coordenadas genómicas en formato BED).\nend\nPosición final del gen en el cromosoma.\ngene_id\nIdentificador único del gen (por ejemplo: ENSG00000123456 o el nombre del gen).\nnumber_of_peaks\nNúmero total de picos que intersectan el gen.\nSe refiere a cuántas regiones (por ejemplo, ATAC-seq o ChIP-seq) se solapan con el gen.\nbases_overlapped\nCantidad de bases (nucleótidos) dentro del gen que están cubiertas por picos.\nResume cuánto del gen está siendo “tocado” por regiones de interés.\n\n\n\n\n\n13.2.2 Lectura de archivos generados por Bedtools\n\nArchivo de coverage\n\n\n\n\n\n\nNote\n\n\n\n#Leer archivo obtenido con bedtools coverage\ncoverage &lt;- read.delim(file = \"Archivos_Bash/genes_coverage.tsv\", col.names = c(\"chrom\",            # Cromosoma\"start\",            # Inicio del gen\"end\",              # Fin del gen\"gene_id\",          # ID del gen\"number_of_peaks\",  # Número de picos que intersectan el gen\"bases_overlapped\", # Número total de bases cubiertas por picos\"gene_length\",      # Longitud total del gen\"fraction_covered\"  # Proporción cubierta por picos))\n#Vista general del objeto cargado\nglimpse(coverage)head(coverage)\n\n\n\n\n\n13.2.3 Archivo de intersect (bedtools intersect -wa)\n\n\n\n\n\n\nNote\n\n\n\n#Leer archivo de intersecciones (solo genes con al menos un pico)intersect_genes &lt;- read.delim(\"Archivos_Bash/genes_peaks_intersect.bed\", col.names = c(\"chrom\", \"start\", \"end\", \"gene_id\"))\n#vista general del objeto cargado\nglimpse(intersect_genes) head(intersect_genes)\n\n\n\n\n13.2.4 🧪 Chequeos de consistencia\nValidar la fracción cubierta\n\n\n\n\n\n\nNote\n\n\n\ncoverage_check &lt;- coverage %&gt;%mutate(fraction_calc = bases_overlapped / gene_length,        # Recalcular fraccióndiff_fraction = abs(fraction_calc - fraction_covered)  # Comparar con la reportada)\n#Si todo está bien, los valores deberían ser cercanos a 0summary(coverage_check$diff_fraction)\n\n\n\n\n13.2.5 Genes con y sin picos (según coverage)\n\n\n\n\n\n\nNote\n\n\n\ncoverage %&gt;% summarise(total_genes = n(),          # Número total de genesgenes_con_picos = sum(number_of_peaks &gt; 0),    # Genes con ≥1 picogenes_sin_picos = sum(number_of_peaks == 0)    # Genes sin picos)\n\n\n\n\n13.2.6 Verificar consistencia del archivo intersect\n\n\n\n\n\n\nNote\n\n\n\nintersect_genes %&gt;% summarise( genes_intersect_unicos = n_distinct(gene_id),  # Cuántos genes aparecen al menos una vezfilas_intersect = n()                          # Número total de filas (varios picos por gen))\n\n\n\n\n13.2.7 Cruzar coverage con intersect para validar\nAñadir columna indicando si un gen aparece en intersect\n\n\n\n\n\n\nNote\n\n\n\ncoverage_validado &lt;- coverage %&gt;%mutate(en_intersect = gene_id %in% intersect_genes$gene_id)\n\n\n\n\n13.2.8 Comparar consistencia entre ambos archivos\n\n\n\n\n\n\nNote\n\n\n\ncoverage_validado %&gt;%count(number_of_peaks &gt; 0, en_intersect) %&gt;%rename(tiene_picos_según_coverage = number_of_peaks &gt; 0)\n\n\n(Idealmente, genes con picos según coverage deben estar presentes en intersect).\n\n\n13.2.9 Exploración visual y estadística básica\n\n\n\n\n\n\nNote\n\n\n\n#Histograma de fracción cubiertaggplot(coverage, aes(x = fraction_covered)) +geom_histogram(bins = 50) +labs( title = \"Distribución de la fracción de cobertura por gen\",x = \"Fracción cubierta\",y = \"Número de genes\")\n\n\n\n\n13.2.10 Resumen de cobertura por grupo (con vs sin picos)\n\n\n\n\n\n\nNote\n\n\n\ncoverage %&gt;%\nmutate(tiene_picos = number_of_peaks &gt; 0) %&gt;%\ngroup_by(tiene_picos) %&gt;%\nsummarise(\nn_genes = n(),\nmediana_fraccion = median(fraction_covered),\npromedio_fraccion = mean(fraction_covered),\nmax_fraccion = max(fraction_covered)\n)\n\n\n\n\n13.2.11 Boxplot de fracción cubierta\n\n\n\n\n\n\nNote\n\n\n\ncoverage %&gt;%mutate(tiene_picos = ifelse(number_of_peaks &gt; 0, \"Con picos\", \"Sin picos\")) %&gt;%ggplot(aes(x = tiene_picos, y = fraction_covered)) +geom_boxplot() +labs(title = \"Cobertura de picos por gen\",x = \"Grupo de genes\",y = \"Fracción cubierta\")",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Introducción a BEDtools en R 🧬</span>"
+    ]
   }
 ]

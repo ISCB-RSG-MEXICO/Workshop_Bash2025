@@ -1,12 +1,6 @@
 # Introducción a BEDtools en R 🧬
-=======
-# BedTools R
 
-## 💻 Introducción
-=======
-# BedTools R
-
-## 💻 Introducción
+## 💻 
 
 Este documento proporciona una guía básica para trabajar con **R**, **Bedtools**, y archivos genómicos.\
 Incluye:
@@ -18,150 +12,131 @@ Incluye:
 
 ------------------------------------------------------------------------
 
-## 🔧 Requerimientos
+## 📦 Cargar paquetes
 
-### Software necesario
+::: callout-note
+`{r} # Instalar paquetes si es la primera vez  install.packages(c("readr", "dplyr", "ggplot2"))`
 
--   **R** (versión 4+)
--   **RStudio** (opcional)
--   **Bedtools** instalado en tu sistema
--   Paquetes R:
-    -   `tidyverse`
-    -   `rtracklayer`
-    -   `data.table`
-    -   `GenomicRanges`
+`#Cargar de librerías necesarias:`
 
-``` r
-install.packages(c("tidyverse", "data.table"))
-BiocManager::install(c("rtracklayer", "GenomicRanges"))
-```
+`library(readr) # Lectura de archivos (TSV, CSV, texto) library(dplyr) # Manipulación de datos (pipes, mutate, filter…) library(ggplot2) # Gráficos (histogramas, dispersión, boxplots)`
+:::
 
-------------------------------------------------------------------------
+### Recordemos lo siguiente:
 
-## 🧬 ¿Qué es Bedtools?
+::: callout-note
+📌 Descripción de las columnas del resumen de genes
 
-**Bedtools** es una suite de herramientas para realizar operaciones sobre regiones genómicas.
+A continuación se explica el significado de cada columna generada en el análisis:
 
-Permite: - Intersecciones - Complementos - Uniones - Filtrados - Cobertura - Conversión entre formatos
+-   **chrom**\
+    Cromosoma donde se encuentra el gen (por ejemplo: *chr1*, *chr2*, *chrX*).
 
-------------------------------------------------------------------------
+-   **start**\
+    Posición inicial del gen en el cromosoma (coordenadas genómicas en formato BED).
 
-## 📁 Formatos comúnes (BED, GFF, FASTA)
+-   **end**\
+    Posición final del gen en el cromosoma.
 
-### Formato BED
+-   **gene_id**\
+    Identificador único del gen (por ejemplo: ENSG00000123456 o el nombre del gen).
 
-Columnas mínimas:\
-1. cromosoma 2. inicio 3. fin
+-   **number_of_peaks**\
+    Número total de picos que intersectan el gen.\
+    Se refiere a cuántas regiones (por ejemplo, ATAC-seq o ChIP-seq) se solapan con el gen.
 
-Ejemplo:
+-   **bases_overlapped**\
+    Cantidad de bases (nucleótidos) dentro del gen que están cubiertas por picos.\
+    Resume cuánto del gen está siendo “tocado” por regiones de interés.
+:::
 
-```         
-chr1    1000    1500
-chr1    2000    2300
-```
+###  Lectura de archivos generados por Bedtools
 
-### Formato GFF/GTF
+#### Archivo de **coverage**
 
-tiene 9 columnas (atributos más complejos).
+::: callout-note
+`#Leer archivo obtenido con bedtools coverage`
 
-------------------------------------------------------------------------
+`coverage <- read.delim(file = "Archivos_Bash/genes_coverage.tsv", col.names = c("chrom",            # Cromosoma"start",            # Inicio del gen"end",              # Fin del gen"gene_id",          # ID del gen"number_of_peaks",  # Número de picos que intersectan el gen"bases_overlapped", # Número total de bases cubiertas por picos"gene_length",      # Longitud total del gen"fraction_covered"  # Proporción cubierta por picos))`
 
-## ✨ Comandos básicos de Bedtools
+`#Vista general del objeto cargado`
 
-### Intersectar regiones
+`glimpse(coverage)head(coverage)`
+:::
 
-``` bash
-bedtools intersect -a A.bed -b B.bed > interseccion.bed
-```
+### Archivo de **intersect** (bedtools intersect -wa)
 
-### Unir regiones
+::: callout-note
+`#Leer archivo de intersecciones (solo genes con al menos un pico)intersect_genes <- read.delim("Archivos_Bash/genes_peaks_intersect.bed", col.names = c("chrom", "start", "end", "gene_id"))`
 
-``` bash
-bedtools merge -i regiones.bed > regiones_unidas.bed
-```
+`#vista general del objeto cargado`
 
-### Complemento genómico
+`glimpse(intersect_genes) head(intersect_genes)`
+:::
 
-``` bash
-bedtools complement -i regiones.bed -g genome_file.txt > complement.bed
-```
+### 🧪 Chequeos de consistencia
 
-### Cobertura
+Validar la fracción cubierta
 
-``` bash
-bedtools coverage -a regiones.bed -b alineamientos.bam > coverage.txt
-```
+::: callout-note
+`coverage_check <- coverage %>%mutate(fraction_calc = bases_overlapped / gene_length,        # Recalcular fraccióndiff_fraction = abs(fraction_calc - fraction_covered)  # Comparar con la reportada)`
 
-------------------------------------------------------------------------
+`#Si todo está bien, los valores deberían ser cercanos a 0summary(coverage_check$diff_fraction)`
+:::
 
-## 📥 Leer archivos BED en R
+### Genes con y sin picos (según coverage)
 
-### Con `rtracklayer`
+::: callout-note
+`coverage %>% summarise(total_genes = n(),          # Número total de genesgenes_con_picos = sum(number_of_peaks > 0),    # Genes con ≥1 picogenes_sin_picos = sum(number_of_peaks == 0)    # Genes sin picos)`
+:::
 
-``` r
-library(rtracklayer)
-bed <- import("archivo.bed", format = "BED")
-bed
-```
+### Verificar consistencia del archivo intersect
 
-### Con `data.table`
+::: callout-note
+`intersect_genes %>% summarise( genes_intersect_unicos = n_distinct(gene_id),  # Cuántos genes aparecen al menos una vezfilas_intersect = n()                          # Número total de filas (varios picos por gen))`
+:::
 
-``` r
-library(data.table)
-bed <- fread("archivo.bed", header = FALSE)
-colnames(bed) <- c("chr", "start", "end")
-bed
-```
+### Cruzar coverage con intersect para validar
 
-------------------------------------------------------------------------
+Añadir columna indicando si un gen aparece en intersect
 
-## 🔗 Convertir BED a GRanges
+::: callout-note
+`coverage_validado <- coverage %>%mutate(en_intersect = gene_id %in% intersect_genes$gene_id)`
+:::
 
-``` r
-library(GenomicRanges)
-bed_gr <- makeGRangesFromDataFrame(bed, keep.extra.columns = TRUE)
-bed_gr
-```
+### Comparar consistencia entre ambos archivos
 
-------------------------------------------------------------------------
+::: callout-note
+`coverage_validado %>%count(number_of_peaks > 0, en_intersect) %>%rename(tiene_picos_según_coverage = number_of_peaks > 0)`
+:::
 
-## 📤 Exportar BED desde R
+(Idealmente, genes con picos según coverage deben estar presentes en intersect).
 
-``` r
-export(bed_gr, "salida.bed", format = "BED")
-```
+### Exploración visual y estadística básica
 
-------------------------------------------------------------------------
+::: callout-note
+`#Histograma de fracción cubiertaggplot(coverage, aes(x = fraction_covered)) +geom_histogram(bins = 50) +labs( title = "Distribución de la fracción de cobertura por gen",x = "Fracción cubierta",y = "Número de genes")`
+:::
 
-## 🧪 Ejemplo práctico completo
+### Resumen de cobertura por grupo (con vs sin picos)
 
-``` r
-library(rtracklayer)
-library(GenomicRanges)
+::: callout-note
+coverage %\>%\
+mutate(tiene_picos = number_of_peaks \> 0) %\>%\
+group_by(tiene_picos) %\>%\
+summarise(\
+n_genes = n(),\
+mediana_fraccion = median(fraction_covered),\
+promedio_fraccion = mean(fraction_covered),\
+max_fraccion = max(fraction_covered)\
+)
+:::
 
-# 1. Cargar BED
-a <- import("A.bed", format = "BED")
-b <- import("B.bed", format = "BED")
+### Boxplot de fracción cubierta 
 
-# 2. Intersección en R (similar a bedtools intersect)
-inter <- subsetByOverlaps(a, b)
-inter
-
-# 3. Exportar resultado
-export(inter, "intersect_R.bed", format = "BED")
-```
-
-------------------------------------------------------------------------
-
-## 🧭 Integrar R + Bedtools desde R
-
-Puedes ejecutar Bedtools dentro de R:
-
-``` r
-system("bedtools intersect -a A.bed -b B.bed > inter.bed")
-```
-
-------------------------------------------------------------------------
+::: callout-note
+`coverage %>%mutate(tiene_picos = ifelse(number_of_peaks > 0, "Con picos", "Sin picos")) %>%ggplot(aes(x = tiene_picos, y = fraction_covered)) +geom_boxplot() +labs(title = "Cobertura de picos por gen",x = "Grupo de genes",y = "Fracción cubierta")`
+:::
 
 ## Referencias
 
