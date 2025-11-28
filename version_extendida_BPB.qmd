@@ -1,0 +1,328 @@
+# Buenas prácticas en bioinformática
+
+## ⭐ ¿Qué es un algoritmo?
+
+Un **algoritmo** es un método para resolver un problema mediante una serie de pasos **definidos, precisos** y **finitos**.
+
+-   **Definido**: si se sigue dos veces, se obtiene el mismo resultado (Es reproducible).
+-   **Preciso**: implica el orden de realización de cada uno de los pasos.
+-   **Finito**: Tiene un numero determinado de pasos, implica que tiene un fin.
+
+Un algoritmo podemos definirlo como un **programa o software**.
+
+## 🧩 ¿Qué necesitamos para escribir un buen software?
+
+> Crear software confiable implica aplicar principios de ingeniería:
+>
+> -   **Código mantenible (maintainable code)**
+>
+> -   **Control de versiones** (version control, ej. Git)
+>
+> -   **Rastreadores de problemas** (issue trackers)
+>
+> -   **Revisiones de código** (code reviews)
+>
+> -   **Pruebas unitarias** (unit testing)
+>
+> -   **Automatización de tareas** (task automation)
+>
+> Basado en [*Wilson, et al. 2014. PLOS Biology*](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)
+
+## 🔐 Ética y responsabilidad en bioinformática
+
+En bioinformática es crucial garantizar el **uso ético y responsable** de datos, especialmente cuando incluyen **genomas humanos** o información sensible.
+
+Esto implica:
+
+-   Proteger la privacidad del individuo.
+
+-   Respetar las regulaciones y marcos legales vigentes.
+
+-   Mantener prácticas transparentes y reproducibles.
+
+-   Evitar errores que comprometan la integridad del análisis.
+
+Estas medidas fortalecen la confianza en los resultados y evitan problemas graves como **retractaciones científicas**.
+
+## 🧪 Pasos para escribir un buen software
+
+1.  Análisis del problema / Definir el problema
+
+2.  Diseño del algoritmo / Diseño del programa
+
+3.  Codificación / Escribir el código
+
+4.  Compilación y ejecución del programa
+
+5.  Verificación / Realizar pruebas
+
+6.  Depuración / Detectar los errores y corregirlos (Programacion defensiva)
+
+7.  Documentación
+
+-   <div>
+
+    ### 🗂️ Paso 7: Documentación
+
+    Incluye siempre:
+
+    -   *Título* (opcional)
+
+    -   *Autor (author)*: Su nombre
+
+    -   *Dia (date)*: Fecha de creación
+
+    -   *Paquetes (packages)*
+
+    -   *Directorio de trabajo (Working directory)*: En que carpeta se encuentra tu datos y programa.
+
+    -   *Información descriptiva del programa (Description)*: ¿Para qué sirve el programa? Ej: El siguiente programa realiza la suma de dos numeros enteros a partir de la entrada del usuario y posteriormente la imprime en pantalla.
+
+    -   *Usage* ¿Cómo se utiliza?
+
+    -   *Argumentos (Arguments)*
+
+        -   *Información de entrada (Data Inputs)*: Ej: Solo numeros enteros (sin decimales).
+
+        -   *Información de salida (Outpus)*: Graficas, figuras, tablas, etc.
+
+    </div>
+
+![](https://eveliacoss.github.io/Buenaspracticas_R_Mayo2024/BestPractices/figures/meme_documentacion.jpg){fig-align="center" width="430"}
+
+## ⭐ Puntos clave para buenas prácticas en bioinformática
+
+### Escribe programas para personas, no para máquinas ✏️
+
+-   Documenta qué hace tu código y por qué.
+
+-   Mantén coherencia en nombres, indentación y estilo.
+
+### 🧱Usa modularidad
+
+-   Divide tu código en **funciones pequeñas de un solo propósito**.
+
+-   No repitas código
+
+-   Crea pasos reproducibles o que se repitan por si solos (Usa funciones, loops y scripts reproducibles).
+
+### 🚩Planifica los errores (**programación defensiva)**
+
+Es una práctica donde **asumes que pueden ocurrir errores** y **preparas tu código** para detectarlos, avisar y manejar la situación sin que todo truene.\~\
+\~ No se trata de ser pesimista: es ser **realista**.
+
+::: callout-note
+~`bash`~
+
+`#validación de un archivo vacio if [ ! -s "$file" ]; then  #Si el archivo no existe o tiene tamaño 0, entra al thenecho "Error: archivo vacío o no existe" >&2  #imprime el mensaje. y >&2 envía el mensaje al stderr (salida de error)exit 1  #1 es un código de error (0 = éxito, cualquier otro número = fallo).fi  #Es el cierre del if`
+
+`r`
+
+`if (!file.exists(fasta_path)) { #Si NO existe el archivo fasta   stop("El archivo FASTA no existe: ", fasta_path)  #Detiene completamente la ejecución del script.} #cierre del condicional`
+
+`seqs <- read.fasta(fasta_path)` ``` # lee el archivo y guarda las secuencias en el objeto seqsif (length(seqs) == 0) {  #length(seqs) == 0 → no se cargó ninguna secuencia.stop("El archivo FASTA está vacío.") #Se detiene y imprime el mensaje}``#cierre del condicional ```
+
+### 
+:::
+
+⚙️ Optimiza al final
+
+-   Primero que funcione.
+
+-   Después que funcione *bien*.
+
+-   Optimiza el software sólo después de que funcione correctamente. - Si funciona no lo modifiques, simplificalo.
+
+## 🤖 ¿Cómo te puede ayudar ChatGPT en tus buenas prácticas de bioinformática?
+
+Aunque hoy en día existe cierto tabú alrededor del uso de la IA como ChatGPT, es una herramienta que realmente puede facilitarnos la vida. No reemplaza nuestro criterio, solo lo complementa. ¡Úsala sin miedo! Puede ayudarte muchísimo. ✨
+
+ChatGPT puede ser una herramienta poderosa para mejorar tu flujo de trabajo:
+
+-   **Documentación automática**: genera descripciones, títulos, secciones y ejemplos para tus scripts.
+
+-   **Explicación de código**: te ayuda a entender funciones complejas o pipelines bioinformáticos.
+
+-   **Optimización responsable**: sugiere mejoras sin comprometer la reproducibilidad.
+
+-   **Buenas prácticas**: te recuerda estándares como estilo, modularidad, defensividad y testing.
+
+-   **Aprendizaje guiado**: explica conceptos (FASTQ, SAM/BAM, ensambladores, alineadores, R, Python).
+
+-   **Depuración asistida**: señala errores comunes y propone soluciones.
+
+-   **Reproducibilidad**: ayuda a generar pipelines claros, estructurados y bien documentados.
+
+-   **Plantillas listas para usar**: para README, `.qmd`, scripts, workflows o Snakemake.
+
+> **ChatGPT no reemplaza tu criterio científico, pero sí amplifica tu precisión, claridad y reproducibilidad.**
+
+# 🦾 Buenas prácticas en **R**
+
+Trabajar en R para bioinformática requiere código limpio, reproducible y fácil de compartir. Aquí tienes un conjunto de buenas prácticas recomendadas por expertos y comunidades como *R for Data Science*, *The Tidyverse Style Guide*, *Bioconductor* y *The Carpentries*.
+
+## 📁Organiza tus proyectos con *project-based workflows*
+
+-   Usa siempre un **RStudio Project (`.Rproj`)**.
+
+-   Evita rutas absolutas como:\
+    `setwd("C:/Users/Mariana/Desktop/")` ❌ (si mueves el archivo esto causará errores)
+
+-   Usa rutas relativas con **`here::here()`** o **`fs`**:\
+    `here("data", "input.csv")` ✔️
+
+-   Mantén carpetas claras:
+
+::: callout-note
+~bash~
+
+`/data`
+
+`/scripts`
+
+`/results`
+
+`/figures`
+:::
+
+## 📦 Carga solo los paquetes necesarios
+
+-   Evita cargar 10 paquetes si solo usas 1 función. (indica enmascaramiento)
+
+-   Incluye siempre una sección “Paquetes” en tus scripts `.R`.
+
+## ✏️ Fórmula de oro: *estilo + consistencia*
+
+Sigue guías como **tidyverse style guide**:
+
+-   Nombres de objetos en snake_case → `mi_dataframe`, `hp_colors`.
+
+-   Espacios consistentes después de comas y operadores.
+
+-   Líneas cortas (\< 80 caracteres).
+
+-   Comentarios claros como:
+
+::: callout-note
+`r`
+
+`# Filtrar solo Ravenclaw df_ravens <- df %>% filter(House == "Ravenclaw")`
+:::
+
+## 🧱 Modulariza tu código
+
+-   Divide análisis largos en **funciones** y **scripts separados**.
+
+-   Guarda funciones en `/scripts`
+
+Esto evita repetir código y hace tus análisis más reproducibles.
+
+## 
+
+🔄 Haz tu código *pipeline-friendly*
+
+Prefiere el estilo tidyverse:
+
+`r`
+
+`hp_data %>%   count(House) %>%     mutate(percent = n / sum(n))`
+
+En lugar de 10 líneas de transformaciones anidadas ilegibles.
+
+## 🧪 Valida tus datos antes de analizarlos
+
+Incluye checks preventivos:
+
+r
+
+`stopifnot(is.data.frame(hp_data)) stopifnot(all(c("House") %in% names(hp_data)))`
+
+Esto evita errores sorpresivos al final del análisis.
+
+## 🌱 Haz que tus gráficos sean reproducibles
+
+Incluye:
+
+-   Título
+
+-   Ejes (o explícitamente sin ejes)
+
+-   Paletas documentadas
+
+-   Tamaños de punto, fuente, etc.
+
+Y **guarda tus figuras con código reproducible**, en una carpeta específica:
+
+r
+
+`ggsave("figures/house_plot.png", width = 6, height = 4, dpi = 300)`
+
+## 📚Documenta tus scripts
+
+Al inicio de cada archivo `.R` incluye:
+
+r
+
+`# Title: Distribución de casas HP # Author: Mariana Devon # Date: 2025-11-25 # Description: Analiza la proporción de casas y genera un gráfico. # Inputs: hp_data.csv # Outputs: figure/house_pie.png # Packages: tidyverse`
+
+## 🧬 Usa herramientas de análisis reproducible
+
+Para proyectos grandes:
+
+-   **R Markdown** o **Quarto (`.qmd`)**
+
+-   **renv** para versiones de paquetes
+
+-   **targets** o **drake** para pipelines complejos
+
+-   **Bioconductor** para análisis genómicos estandarizados
+
+## 🧼Limpia tu entorno (pero no demasiado)
+
+-   Evita usar `rm(list = ls())` a menos que sea estrictamente necesario.
+
+-   Un proyecto bien estructurado no depende del “entorno emocionado”.
+
+## 🤖 ¿Cómo ChatGPT te ayuda con buenas prácticas en R?
+
+ChatGPT puede mejorar tus análisis en R de forma ética y eficiente:
+
+-   **Genera código limpio y estilizado** siguiendo guías tidyverse.
+
+-   **Transforma scripts sucios** en pipelines claros y reproducibles.
+
+-   **Explica errores en R con detalle** (p. ej., `object not found`, `NAs introduced`).
+
+-   **Sugiere paletas, temas de ggplot y estilos visuales**.
+
+-   **Documenta automáticamente tus funciones** con formato `roxygen2`.
+
+-   **Optimiza la lógica** sin sacrificar claridad.
+
+-   **Te genera plantillas listas para `.qmd`, pipelines o workflows**.
+
+-   **Ayuda a detectar malas prácticas** como copiar y pegar código o usar rutas absolutas.
+
+> En pocas palabras: **ChatGPT actúa como asistente, auditor de estilo, tutor de R y copiloto de bioinformática**, pero siempre con criterio científico tuyo 💛.
+
+## Referencias
+
+-   Wilson, et al. 2014. [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745). PLOS Biology
+-   Wickham, H. (2019), The Tidyverse Style Guide.<https://style.tidyverse.org/>
+-   RStudio / Posit, R Projects Workflow.<https://docs.posit.co/>
+-   Bioconductor Project, Best practices for reproducible genomics workflows.<https://bioconductor.org/>
+-   [Unidad 1 Bioinformática e investigación reproducible](https://github.com/AliciaMstt/BioinfInvRepro2016-II/blob/master/Unidad1/Unidad1_Bioinf_e_Investigaci%C3%B3n_Reproducible.md)
+-   [The five pillars of computational reproducibility: bioinformatics and beyond](https://academic.oup.com/bib/article/24/6/bbad375/7326135)
+-   [Investigación reproducible y análisis de datos](https://open-science-training-handbook.github.io/Open-Science-Training-Handbook_ES/02OpenScienceBasics/04ReproducibleResearchAndDataAnalysis.html)
+-   Haydee tutorial: [Temas Selectos de Análisis Numérico y Computación Científica: Computo científico para el análisis de datos](https://haydeeperuyero.github.io/Computo_Cientifico/)
+-   Alejandra Medina tutorial: [Control de versiones con GitHub y RStudio](https://comunidadbioinfo.github.io/cdsb2023/control-de-versiones-con-github-y-rstudio.html)
+-   Wilson, et al. 2014. [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745). PLOS Biology
+-   Evelia Coss - tutorial [Buenas practicas en R](https://github.com/EveliaCoss/Buenaspracticas_R_Mayo2024)
+-   Evelia Coss - [Make your CV tutorial](https://github.com/EveliaCoss/Make_yourCV)
+-   Markdwn Guide - [Getting Started](https://www.markdownguide.org/getting-started/)
+-   Allison Horst - [Imagenes](https://allisonhorst.com/allison-horst)
+-   [Statistical Computing using R and Python](https://srvanderplas.github.io/stat-computing-r-python/)
+-   [Training Materials](https://learning.nceas.ucsb.edu/2024-10-coreR/)
+-   [Visual Studio Code](https://damiandeluca.com.ar/como-comenzar-con-visual-studio-code-una-guia-para-principiantes)
+-   [Articulo reproducibilidad](https://blog.ml.cmu.edu/2020/08/31/5-reproducibility/)
+-   Holistic AI Guidelines & Human-Centered AI Practices
